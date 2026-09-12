@@ -29,10 +29,12 @@ def test_catalog_keeps_all_sources_and_exact_endpoints(client):
 
 @pytest.mark.parametrize('source,scope', [('metaPee', 'renal_cell_carcinoma'), ('MetaVir', 'aggressive_prostate_cancer')])
 def test_settings_markup_is_complete_and_scope_aware(client, source, scope):
-    response = client.get(f'/settings?source={source}&scope={scope}')
+    response = client.get(f'/settings?source={source}&scope={scope}&include_subexposures=no')
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.select_one('#disease option[selected]')['data-scope-key'] == scope
+    assert soup.select_one('#include-subexposures option[selected]')['value'] == 'no'
+    assert soup.select_one('#include-subexposures').find_parent('section')['id'] == 'exposure-settings'
     ids = [el['id'] for el in soup.select('[id]')]
     assert len(ids) == len(set(ids))
     for key in ['settings-sex','settings-race','settings-age','settings-years','settings-effect-measure','settings-forest-scale','settings-study-design','settings-manual-risk','settings-source-citation','settings-risk-context','reset-settings']:
@@ -65,7 +67,8 @@ def test_source_page_assets_and_summary(client, source):
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.title.string.startswith('metaUro')
     assert len(soup.select('#disease option')) == 14
-    assert soup.select_one('#include-subexposures')
+    assert not soup.select_one('#include-subexposures')
+    assert 'Saved evidence' not in soup.header.get_text()
     assert not soup.select_one('#analysis-settings-dialog')
     assert soup.select_one('link[href="/static/theme.css"]')
     assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir'))
@@ -122,7 +125,7 @@ def test_chatgpt_track_remains_visible_and_settings_aware(client):
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.body['data-evidence-track'] == 'chatgpt'
-    assert 'Saved ChatGPT evidence' in soup.select_one('.evidence-track-label').get_text()
+    assert 'ChatGPT view' in soup.select_one('.evidence-track-label').get_text()
     settings = client.get('/settings?source=MetaVir&track=chatgpt')
     assert b'"track": "chatgpt"' in settings.data
 

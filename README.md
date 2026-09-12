@@ -44,6 +44,7 @@ python scripts/verify_evidence.py --original-parent /path/containing/metaPee/and
 pip install pytest
 pytest tests
 node tests/settings.test.js static/analysis-settings.js
+node tests/navigation.test.js
 python scripts/verify_evidence.py
 ```
 

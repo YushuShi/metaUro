@@ -8,9 +8,13 @@
     const option = select?.selectedOptions?.[0];
     return config.scopes.find(item => (item.source === (option?.dataset.source || config.source)) && [item.id,item.label].includes(option?.dataset.scopeKey || option?.value)) || config.current;
   }
+  function exposureMode() {
+    const value = document.getElementById('include-subexposures')?.value || new URL(location.href).searchParams.get('include_subexposures') || 'yes';
+    return ['no', 'false', '0'].includes(value.toLowerCase()) ? 'no' : 'yes';
+  }
   function navigation() {
     const item = selectedScope();
-    const mode = document.getElementById('include-subexposures')?.value || new URL(location.href).searchParams.get('include_subexposures') || 'yes';
+    const mode = exposureMode();
     document.querySelectorAll('[data-uro-nav]').forEach(link => {
       const page = link.dataset.uroNav;
       const url = new URL(page === 'settings' ? '/settings' : `${item.prefix}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.group_id === 'prostate' ? 'chatgpt' : ''}`, location.origin);
@@ -28,7 +32,7 @@
         event.stopImmediatePropagation();
         const url = new URL(config.page === 'settings' ? '/settings' : `${item.prefix}/`,location.origin);
         url.searchParams.set('scope',item.id);
-        url.searchParams.set('include_subexposures',document.getElementById('include-subexposures')?.value || 'yes');
+        url.searchParams.set('include_subexposures',exposureMode());
         const exposure = document.getElementById('exposure')?.value;
         if(exposure)url.searchParams.set('exposure',exposure);
         location.assign(url.pathname+url.search);return;
@@ -48,6 +52,11 @@
     if(exposure && document.getElementById('exposure')) document.getElementById('exposure').value=exposure;
     navigation();
     document.getElementById('reset-settings')?.addEventListener('click',()=>{
+      const exposure = document.getElementById('include-subexposures');
+      if (exposure) {
+        exposure.value = 'yes';
+        exposure.dispatchEvent(new Event('change', {bubbles: true}));
+      }
       window.AnalysisSettings?.reset();
       const status=document.getElementById('settings-save-status');
       if(status)status.textContent=`Defaults restored for ${selectedScope().group.toLowerCase()} preferences.`;

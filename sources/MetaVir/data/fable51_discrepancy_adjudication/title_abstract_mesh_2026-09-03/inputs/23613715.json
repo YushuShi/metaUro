@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:19.343202-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "fd1a80c582f94a091a6ec6ed3d0306a066073ce3edf0074d289fae27ef00fe0c",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "23613715",
+      "title": "Consumption of fish products across the lifespan and prostate cancer risk.",
+      "abstract": "To examine whether fish and fish oil consumption across the lifespan is associated with a lower risk of prostate cancer. The study was nested among 2268 men aged 67-96 years in the AGES-Reykjavik cohort study. In 2002 to 2006, dietary habits were assessed, for early life, midlife and later life using a validated food frequency questionnaire. Participants were followed for prostate cancer diagnosis and mortality through 2009 via linkage to nationwide cancer- and mortality registers. Adjusting for potential confounders, we used regression models to estimate odds ratios (ORs) and hazard ratios (HRs) for prostate cancer according to fish and fish oil consumption. Among the 2268 men, we ascertained 214 prevalent and 133 incident prostate cancer cases, of which 63 had advanced disease. High fish consumption in early- and midlife was not associated with overall or advanced prostate cancer. High intake of salted or smoked fish was associated with a 2-fold increased risk of advanced prostate cancer both in early life (95% CI: 1.08, 3.62) and in later life (95% CI: 1.04, 5.00). Men consuming fish oil in later life had a lower risk of advanced prostate cancer [HR (95%CI): 0.43 (0.19, 0.95)], no association was found for early life or midlife consumption. Salted or smoked fish may increase risk of advanced prostate cancer, whereas fish oil consumption may be protective against progression of prostate cancer in elderly men. In a setting with very high fish consumption, no association was found between overall fish consumption in early or midlife and prostate cancer risk.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Aging / drug effects, physiology",
+        "Feeding Behavior / drug effects, physiology",
+        "Fish Oils / pharmacology",
+        "Fish Products",
+        "Humans",
+        "Male",
+        "Prostatic Neoplasms / pathology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "23613715",
+      "contexts": [
+        {
+          "context_id": "23613715|Fish oil|Prostate cancer",
+          "exposure": "Fish oil",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2268",
+              "effect_measure_type": "HR",
+              "effect_size": "0.43",
+              "ci_lower": "0.19",
+              "ci_upper": "0.95",
+              "p_value": "0.03982460573104232",
+              "comparison": "fish-oil consumption in later life versus nonconsumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2050",
+              "effect_measure_type": "HR",
+              "effect_size": "0.72",
+              "ci_lower": "0.48",
+              "ci_upper": "1.06",
+              "p_value": "0.119",
+              "comparison": "extreme_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

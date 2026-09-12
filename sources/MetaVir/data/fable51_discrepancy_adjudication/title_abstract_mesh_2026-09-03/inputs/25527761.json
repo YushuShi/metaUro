@@ -1,0 +1,116 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:43.679576-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "a3538fab0c00866c5946f4bddce29b22d1fcf6321bcb5d91ea0160e831239e20",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25527761",
+      "title": "Calcium and phosphorus intake and prostate cancer risk: a 24-y follow-up study.",
+      "abstract": "High calcium intake has been associated with an increased risk of advanced-stage and high-grade prostate cancer. Several studies have found a positive association between phosphorus intake and prostate cancer risk. We investigated the joint association between calcium and phosphorus and risk of prostate cancer in the Health Professionals Follow-Up Study, with a focus on lethal and high-grade disease. In total, 47,885 men in the cohort reported diet data in 1986 and every 4 y thereafter. From 1986 to 2010, 5861 cases of prostate cancer were identified, including 789 lethal cancers (fatal or metastatic). We used Cox proportional hazards models to assess the association between calcium and phosphorus intake and prostate cancer, with adjustment for potential confounding. Calcium intakes >2000 mg/d were associated with greater risk of total prostate cancer and lethal and high-grade cancers. These associations were attenuated and no longer statistically significant when phosphorus intake was adjusted for. Phosphorus intake was associated with greater risk of total, lethal, and high-grade cancers, independent of calcium and intakes of red meat, white meat, dairy, and fish. In latency analysis, calcium and phosphorus had independent effects for different time periods between exposure and diagnosis. Calcium intake was associated with an increased risk of advanced-stage and high-grade disease 12-16 y after exposure, whereas high phosphorus was associated with increased risk of advanced-stage and high-grade disease 0-8 y after exposure. Phosphorus is independently associated with risk of lethal and high-grade prostate cancer. Calcium may not have a strong independent effect on prostate cancer risk except with long latency periods.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Calcium, Dietary / adverse effects",
+        "Cohort Studies",
+        "Dairy Products / adverse effects",
+        "Dietary Supplements / adverse effects",
+        "Follow-Up Studies",
+        "Health Personnel",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Meat / adverse effects",
+        "Middle Aged",
+        "Neoplasm Grading",
+        "Neoplasm Staging",
+        "Phosphorus, Dietary / adverse effects",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostate / pathology",
+        "Prostatic Neoplasms / epidemiology, etiology, mortality, pathology",
+        "Risk Factors",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25527761",
+      "contexts": [
+        {
+          "context_id": "25527761|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "47885",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "47885",
+              "effect_measure_type": "RR",
+              "effect_size": "1.24",
+              "ci_lower": "1.02",
+              "ci_upper": "1.51",
+              "p_value": "0.02",
+              "comparison": "categorical"
+            }
+          }
+        },
+        {
+          "context_id": "25527761|Phosphorus|Prostate cancer",
+          "exposure": "Phosphorus",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "47885",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "47885",
+              "effect_measure_type": "RR",
+              "effect_size": "1.12",
+              "ci_lower": "1.03",
+              "ci_upper": "1.23",
+              "p_value": "0.003",
+              "comparison": "quintiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

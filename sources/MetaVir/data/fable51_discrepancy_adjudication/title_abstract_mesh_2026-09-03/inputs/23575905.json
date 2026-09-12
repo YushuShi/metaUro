@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:10.616511-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9bf1513ba0618b3f5379c36b03f68f4764251cc2d07661685fcee8efb6aadb48",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "23575905",
+      "title": "Plasma phospholipid fatty acids, dietary fatty acids and prostate cancer risk.",
+      "abstract": "Animal and experimental studies have demonstrated that long-chain n-3 fatty acids inhibit the development of prostate cancer, whereas n-6 fatty acids might promote it. We performed a case-cohort analysis within the Melbourne Collaborative Cohort Study using a random sample of 1,717 men and 464 prostate cancer cases to investigate associations between fatty acids assessed in plasma phospholipids (PPLs) or diet (estimated using a 121-item food frequency questionnaire) and prostate cancer risk. Hazard ratios (HRs) and 95% confidence intervals (CIs) were estimated using Cox regression. Prostate cancer risk was positively associated with %PPL saturated fatty acids (SFAs); HR [95% CI] = 1.51 [1.06, 2.16] (Q5 vs. Q1, fifth vs. first quintile); p-trend = 0.003. HRs (Q5 to Q2 vs. Q1) were significantly elevated for %PPL palmitic acid. %PPL oleic acid was inversely associated with risk, HR = 0.62 [0.43, 0.91] (Q5 vs. Q1); p-trend = 0.04. No statistically significant linear trends were observed for dietary intakes. The HRs were elevated for moderate intakes of linoleic acid (Q2 and Q3 vs. Q1, 1.58 [1.10, 2.28] and 1.70 [1.18, 2.46], respectively), but the increase was not significant for higher intakes (Q4 and Q5). No association varied significantly by tumour aggressiveness (all p-homogeneity > 0.1). Prostate cancer risk was positively associated with %PPL SFA, largely attributable to palmitic acid and inversely associated with %PPL monounsaturated fatty acids, largely attributable to oleic acid. Higher risks were also observed for dietary n-6 polyunsaturated fats, primarily linoleic acid.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Case-Control Studies",
+        "Cohort Studies",
+        "Diet",
+        "Dietary Fats / administration & dosage",
+        "Fatty Acids / blood",
+        "Fatty Acids, Monounsaturated / administration & dosage",
+        "Fatty Acids, Omega-6 / administration & dosage",
+        "Female",
+        "Humans",
+        "Linoleic Acid / administration & dosage",
+        "Male",
+        "Middle Aged",
+        "Oleic Acid / administration & dosage",
+        "Palmitic Acid / administration & dosage",
+        "Phospholipids / blood",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood",
+        "Risk Factors",
+        "Surveys and Questionnaires"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "23575905",
+      "contexts": [
+        {
+          "context_id": "23575905|Linoleic acid|Prostate cancer",
+          "exposure": "Linoleic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "HR",
+              "effect_size": "1.7",
+              "ci_lower": "1.18",
+              "ci_upper": "2.46",
+              "p_value": null,
+              "comparison": "Dietary intake quintile 3 versus quintile 1"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1717",
+              "effect_measure_type": "HR",
+              "effect_size": "1.58",
+              "ci_lower": "1.1",
+              "ci_upper": "2.28",
+              "p_value": null,
+              "comparison": "Q2 vs. Q1 of dietary linoleic acid intake"
+            }
+          }
+        },
+        {
+          "context_id": "23575905|Oleic acid|Prostate cancer",
+          "exposure": "Oleic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "HR",
+              "effect_size": "0.62",
+              "ci_lower": "0.43",
+              "ci_upper": "0.91",
+              "p_value": "0.04",
+              "comparison": "Plasma phospholipid quintile 5 versus quintile 1"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1717",
+              "effect_measure_type": "HR",
+              "effect_size": "0.62",
+              "ci_lower": "0.43",
+              "ci_upper": "0.91",
+              "p_value": "0.04",
+              "comparison": "Q5 vs. Q1 of %PPL oleic acid"
+            }
+          }
+        },
+        {
+          "context_id": "23575905|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

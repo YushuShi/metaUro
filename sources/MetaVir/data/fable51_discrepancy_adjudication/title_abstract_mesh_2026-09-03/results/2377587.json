@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:07:39.774804-04:00",
+  "pmid": "2377587",
+  "work_key": "72073ed4a5bedc4c7a032d3c41163e940faf15bfcd446d5ddae2dcb601295fb5",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/2377587_0001.json",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "2377587",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "2377587|Monounsaturated fat (MUFA)|Prostate cancer",
+        "exposure": "Monounsaturated fat (MUFA)",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CHATGPT_CORRECT",
+        "adjudicated_value": "20 (countries; ecological analytic units)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "from 20 countries with reliable registry data",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Ecological study: analytic sample is 20 countries, not individual participants; confirm this satisfies the SAMPLE_SIZE definition",
+        "one_sentence_explanation": "The abstract states incidence and per capita fat data came from 20 countries, so ChatGPT's 20 matches the ecological analytic sample size, whereas no participant count exists in this country-level design."
+      },
+      {
+        "context_id": "2377587|Omega-6 fatty acids|Prostate cancer",
+        "exposure": "Omega-6 fatty acids",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE (ELIGIBLE_NOT_POOLABLE)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "polyunsaturated (total, fish omega-3, omega-6) fats",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": false,
+        "manual_review_reason": null,
+        "one_sentence_explanation": "The abstract shows omega-6 fat was a specified exposure correlated with male prostate cancer incidence in an original human ecological study, so the exposure-incidence relationship was evaluated and the record should be included even without a reported omega-6 estimate."
+      },
+      {
+        "context_id": "2377587|Total dietary fiber intake|Prostate cancer",
+        "exposure": "Total dietary fiber intake",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Fiber intake, when included in the analysis, affected the magnitude of the fat-cancer correlations",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract describes fiber as a variable included in regressions modifying fat-cancer correlations; unclear whether a fiber-prostate incidence association was itself evaluated",
+        "one_sentence_explanation": "The abstract shows fiber was included in the analysis but presents it as a covariate altering fat-cancer correlations, so title+abstract+MeSH cannot determine whether a separable fiber-prostate incidence relationship was evaluated."
+      }
+    ]
+  }
+}

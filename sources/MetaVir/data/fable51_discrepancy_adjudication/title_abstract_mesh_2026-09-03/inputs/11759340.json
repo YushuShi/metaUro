@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:21:47.167226-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c757252ad1a44d2b96eb73d96a1d593a0a967d8b15c3c9ece5bb07a52f7fc5b0",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11759340",
+      "title": "Are there age-dependent effects of diet on prostate cancer risk?",
+      "abstract": "To examine whether there are age-dependent effects of diet on prostate cancer risk. We have postulated that nutritional factors that may affect the risk of initiation would be more likely to be identified among younger patients, whereas those that may affect the risk of progression would be more clearly identifiable among older patients. Study subjects were 320 patients with prostate cancer and 246 controls with no systematic disease, hospitalised in six major hospitals in Athens, Greece. Logistic regression models were fitted separately for men under 70 years and 70 years or older. Polyunsaturated lipids substantially increased the risk among younger subjects, but played little role among older ones (p for interaction 0.21). Cooked tomatoes had a strong protective effect among older persons, but not among younger subjects (p for interaction 0.009). Last, vitamin E was strongly inversely related to prostate cancer risk among younger subjects, but not among older subjects (p for interaction 0.15). Even a simple straight forward interpretation of the data, i.e., that older cases of prostate cancer have a different dietary risk profile than younger ones, has potentially useful implications.",
+      "mesh": [
+        "Adult",
+        "Age Factors",
+        "Aged",
+        "Fatty Acids, Unsaturated / adverse effects",
+        "Feeding Behavior",
+        "Greece",
+        "Humans",
+        "Solanum lycopersicum",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / etiology, prevention & control",
+        "Risk",
+        "Urban Population",
+        "Vitamin E / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11759340",
+      "contexts": [
+        {
+          "context_id": "11759340|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.009",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "566",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        },
+        {
+          "context_id": "11759340|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.15",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "566",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

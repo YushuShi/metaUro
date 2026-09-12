@@ -1,0 +1,404 @@
+{
+  "schema_version": 1,
+  "receipt_id": "66724cf40e9efa7be80e141bf2273de6773462a86c28430e04821d8968e63e7b",
+  "requested_at": "2026-09-03T17:19:27.905316-04:00",
+  "received_at": "2026-09-03T17:19:51.056672-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "ed00a01a72302a09f74adae999455a5a875c1f8b869a93863e2ecf02f3a2dc08",
+  "dispatch_work_unit_key": "f9864ee378e7e6db2b60369737d052e30171b97e8a8e3fa277d4b6c44049a9af",
+  "attempt": 2,
+  "context_ids": [
+    "23632476|Alcohol|Bladder cancer",
+    "23632476|Tea|Bladder cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Tea": 1
+  },
+  "input_digest": "87887da56ff04dfb825222912d32578f24ba53f29e4537cccfc143ef065c040e",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 17118,
+    "cached_input_tokens": 0,
+    "output_tokens": 4466,
+    "reasoning_tokens": 988
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.029586",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "7c97ed31-bb79-44b1-aac8-f743a61d6c59",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.029586"
+  },
+  "output_sha256": "d3f2e0a776edc782dd0ec042d558b06dc649d9544d16ec86b197db01baab0213",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"23632476|Alcohol|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study reports risk estimates for total alcoholic beverage intake and bladder cancer with adjustment for confounders.\",\n      \"extraction\": {\n        \"effect_size\": 0.77,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.62,\n        \"ci_upper\": 0.95,\n        \"p_value\": 0.016,\n        \"total_n\": 2306,\n        \"cases\": 1007,\n        \"comparison_type\": \"categorical_high_vs_low\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Hospital and clinic-based case-control study in Houston, Texas\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"As shown in Table 1, 1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We conducted a case–control study with 1007 patients with histopathologically confirmed bladder cancer and 1299 healthy matched controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total alcoholic beverage (serving/day) ... 0.39+ ... 0.77 (0.62–0.95)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.77 (0.62–0.95)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total alcoholic beverage (serving/day) ... 0.39+ ... 0.77 (0.62–0.95) ... P = 0.016\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Total alcoholic beverage (serving/day): Never vs 0.39+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"We conducted a case–control study with 1007 patients with histopathologically confirmed bladder cancer and 1299 healthy matched controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this study, cases and controls were retrospectively interviewed about their fluid consumption.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Discussion, paragraph 8\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Bladder cancer cases were enrolled from the University of Texas MD Anderson Cancer Center and Baylor College of Medicine.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Materials and Methods, Study population\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The majority of the study participants were white (91.46% for cases and 90.84% for controls, P =0.595).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"In addition, a food frequency questionnaire (FFQ) was administered to assess usual food intake during the year before diagnosis for the cases and the year before the interview among controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Materials and Methods, Data collection\"\n          },\n          \"gender\": {\n            \"excerpt\": \"1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Adjusting for age, sex, ethnicity, energy intake, and smoking.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2, footnote a\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"23632476|Tea|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study reports risk estimates for tea intake and bladder cancer with adjustment for potential confounders.\",\n      \"extraction\": {\n        \"effect_size\": 0.65,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.53,\n        \"ci_upper\": 0.81,\n        \"p_value\": \"<0.001\",\n        \"total_n\": 2306,\n        \"cases\": 1007,\n        \"comparison_type\": \"categorical_high_vs_low\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Hospital and clinic-based case-control study in Houston, Texas\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"As shown in Table 1, 1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We conducted a case–control study with 1007 patients with histopathologically confirmed bladder cancer and 1299 healthy matched controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"All types of tea (serving/day) ... 0.71+ ... 0.65 (0.53–0.81)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.65 (0.53–0.81)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"All types of tea (serving/day) ... 0.71+ ... 0.65 (0.53–0.81) ... P < 0.001\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"All types of tea (serving/day): Never vs 0.71+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"We conducted a case–control study with 1007 patients with histopathologically confirmed bladder cancer and 1299 healthy matched controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this study, cases and controls were retrospectively interviewed about their fluid consumption.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Discussion, paragraph 8\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Bladder cancer cases were enrolled from the University of Texas MD Anderson Cancer Center and Baylor College of Medicine.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Materials and Methods, Study population\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The majority of the study participants were white (91.46% for cases and 90.84% for controls, P =0.595).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"In addition, a food frequency questionnaire (FFQ) was administered to assess usual food intake during the year before diagnosis for the cases and the year before the interview among controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Materials and Methods, Data collection\"\n          },\n          \"gender\": {\n            \"excerpt\": \"1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Adjusting for age, sex, ethnicity, energy intake, and smoking.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/\",\n            \"location\": \"Table 2, footnote a\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "23632476|Alcohol|Bladder cancer",
+      "pmid": "23632476",
+      "pmcid": "PMC3681021",
+      "published_date": "2013-06-11",
+      "title": "Fluid intake, genetic variants of UDP-glucuronosyltransferases, and bladder cancer risk.",
+      "authors": [
+        "Wang J",
+        "Wu X",
+        "Kamat A",
+        "Barton Grossman H",
+        "Dinney CP",
+        "Lin J"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23632476/",
+      "exposure": "Alcohol",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study reports risk estimates for total alcoholic beverage intake and bladder cancer with adjustment for confounders.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.77,
+        "effect_type": "OR",
+        "ci_lower": 0.62,
+        "ci_upper": 0.95,
+        "p_value": 0.016,
+        "total_n": 2306,
+        "cases": 1007,
+        "comparison_type": "categorical_high_vs_low",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Hospital and clinic-based case-control study in Houston, Texas",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.77,
+        "reported_ci_lower": 0.62,
+        "reported_ci_upper": 0.95,
+        "reported_p_value": 0.016,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "As shown in Table 1 , 1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Results, paragraph 1; total_n derived from reported group counts 1007 + 1299 = 2306"
+          },
+          "cases": {
+            "excerpt": "Case ( n =1007)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Abstract, Methods"
+          },
+          "effect_size": {
+            "excerpt": "Consumption of alcoholic beverages was inversely associated with bladder cancer risk, with ORs 0.59 (95% CI=0.48–0.74) for <0.39 serving per day and 0.77 (95% CI=0.62–0.95) for ⩾0.39 serving per day.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Consumption of alcoholic beverages was inversely associated with bladder cancer risk, with ORs 0.59 (95% CI=0.48–0.74) for <0.39 serving per day and 0.77 (95% CI=0.62–0.95) for ⩾0.39 serving per day.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "0.016 P for trend",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "We conducted a case–control study with 1007 patients with histopathologically confirmed bladder cancer and 1299 healthy matched controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "In this study, cases and controls were retrospectively interviewed about their fluid consumption.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Discussion, paragraph 8"
+          },
+          "continent": {
+            "excerpt": "Bladder cancer cases were enrolled from the University of Texas MD Anderson Cancer Center and Baylor College of Medicine.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Materials and Methods, Study population"
+          },
+          "ethnicity": {
+            "excerpt": "The majority of the study participants were white (91.46% for cases and 90.84% for controls, P =0.595).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Results, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "In addition, a food frequency questionnaire (FFQ) was administered to assess usual food intake during the year before diagnosis for the cases and the year before the interview among controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Materials and Methods, Data collection"
+          },
+          "gender": {
+            "excerpt": "1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Results, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "Adjusting for age, sex, ethnicity, energy intake, and smoking.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2, footnote a"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "The majority of the study participants were white (91.46% for cases and 90.84% for controls, P =0.595)."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 41764,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "d8c3e3a6edeaaf44ccbb571ae3e1a206a3423e2ba82bde41d31f0810e2611b57",
+      "pmc_source_receipt_digest": "b72cb866389d217936413c107790b4f17e10acc1bed356f668b8c4491bf05c5a",
+      "pmc_source_raw_sha256": "858143469457b3de08bc905a229de5a888da51940548708af7a507bdad08651b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "8e9603924e272c3904cd0895d4eadd7a22c1f17377244e10a435ac615d5d7d81"
+    },
+    {
+      "context_id": "23632476|Tea|Bladder cancer",
+      "pmid": "23632476",
+      "pmcid": "PMC3681021",
+      "published_date": "2013-06-11",
+      "title": "Fluid intake, genetic variants of UDP-glucuronosyltransferases, and bladder cancer risk.",
+      "authors": [
+        "Wang J",
+        "Wu X",
+        "Kamat A",
+        "Barton Grossman H",
+        "Dinney CP",
+        "Lin J"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23632476/",
+      "exposure": "Tea",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study reports risk estimates for tea intake and bladder cancer with adjustment for potential confounders.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.65,
+        "effect_type": "OR",
+        "ci_lower": 0.53,
+        "ci_upper": 0.81,
+        "p_value": 0.001,
+        "total_n": 2306,
+        "cases": 1007,
+        "comparison_type": "categorical_high_vs_low",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Hospital and clinic-based case-control study in Houston, Texas",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.65,
+        "reported_ci_lower": 0.53,
+        "reported_ci_upper": 0.81,
+        "reported_p_value": 0.001,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "As shown in Table 1 , 1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Results, paragraph 1; total_n derived from reported group counts 1007 + 1299 = 2306"
+          },
+          "cases": {
+            "excerpt": "Case ( n =1007)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Abstract, Methods"
+          },
+          "effect_size": {
+            "excerpt": "No significant association was found between overall water consumption (tap and bottle water combined) and the risk of bladder cancer. Increased tea consumption conferred significantly reduced risks, with ORs of 0.74 (95% CI=0.59–0.92) for <0.71 serving per day and 0.65 (95% CI=0.53–0.81) for ⩾0.71 serving per day, with a significant dose-response trend ( P for trend<0.001).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Increased tea consumption conferred significantly reduced risks, with ORs of 0.74 (95% CI=0.59–0.92) for <0.71 serving per day and 0.65 (95% CI=0.53–0.81) for ⩾0.71 serving per day, with a significant dose-response trend ( P for trend<0.001).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.001",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "We conducted a case–control study with 1007 patients with histopathologically confirmed bladder cancer and 1299 healthy matched controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "In this study, cases and controls were retrospectively interviewed about their fluid consumption.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Discussion, paragraph 8"
+          },
+          "continent": {
+            "excerpt": "Bladder cancer cases were enrolled from the University of Texas MD Anderson Cancer Center and Baylor College of Medicine.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Materials and Methods, Study population"
+          },
+          "ethnicity": {
+            "excerpt": "The majority of the study participants were white (91.46% for cases and 90.84% for controls, P =0.595).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Results, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "In addition, a food frequency questionnaire (FFQ) was administered to assess usual food intake during the year before diagnosis for the cases and the year before the interview among controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Materials and Methods, Data collection"
+          },
+          "gender": {
+            "excerpt": "1007 cases (784 men, 223 women) and 1299 controls (1013 men, 286 women) were included in the study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Results, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "Adjusting for age, sex, ethnicity, energy intake, and smoking.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3681021/",
+            "location": "Table 2, footnote a"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "The majority of the study participants were white (91.46% for cases and 90.84% for controls, P =0.595)."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 41764,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "d8c3e3a6edeaaf44ccbb571ae3e1a206a3423e2ba82bde41d31f0810e2611b57",
+      "pmc_source_receipt_digest": "b72cb866389d217936413c107790b4f17e10acc1bed356f668b8c4491bf05c5a",
+      "pmc_source_raw_sha256": "858143469457b3de08bc905a229de5a888da51940548708af7a507bdad08651b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "d3707b3458a3a01907564693735a28fa85832533d2778356e9cdddf5de574816"
+    }
+  ]
+}

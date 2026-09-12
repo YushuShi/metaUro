@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:33.778579-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "835889fd874eba4b01168f7b99ca0880ea15921d0e619cfbd3f9fd30f2d300d7",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12876090",
+      "title": "Incidence of cancer and mortality following alpha-tocopherol and beta-carotene supplementation: a postintervention follow-up.",
+      "abstract": "In the Finnish Alpha-Tocopherol, Beta-Carotene Cancer Prevention (ATBC) Study, alpha-tocopherol supplementation decreased prostate cancer incidence, whereas beta-carotene increased the risk of lung cancer and total mortality. Postintervention follow-up provides information regarding duration of the intervention effects and may reveal potential late effects of these antioxidants. To analyze postintervention effects of alpha-tocopherol and beta-carotene on cancer incidence and total and cause-specific mortality. Postintervention follow-up assessment of cancer incidence and cause-specific mortality (6 years [May 1, 1993-April 30, 1999]) and total mortality (8 years [May 1, 1993-April 30, 2001]) of 25 563 men. In the ATBC Study, 29 133 male smokers aged 50 to 69 years received alpha-tocopherol (50 mg), beta-carotene (20 mg), both agents, or placebo daily for 5 to 8 years. End point information was obtained from the Finnish Cancer Registry and the Register of Causes of Death. Cancer cases were confirmed through medical record review. Site-specific cancer incidence and total and cause-specific mortality and calendar time-specific risk for lung cancer incidence and total mortality. Overall posttrial relative risk (RR) for lung cancer incidence (n = 1037) was 1.06 (95% confidence interval [CI], 0.94-1.20) among recipients of beta-carotene compared with nonrecipients. For prostate cancer incidence (n = 672), the RR was 0.88 (95% CI, 0.76-1.03) for participants receiving alpha-tocopherol compared with nonrecipients. No late preventive effects on other cancers were observed for either supplement. There were 7261 individuals who died by April 30, 2001, during the posttrial follow-up period; the RR was 1.01 (95% CI, 0.96-1.05) for alpha-tocopherol recipients vs nonrecipients and 1.07 (95% CI, 1.02-1.12) for beta-carotene recipients vs nonrecipients. Regarding duration of intervention effects and potential late effects, the excess risk for beta-carotene recipients was no longer evident 4 to 6 years after ending the intervention and was primarily due to cardiovascular diseases. The beneficial and adverse effects of supplemental alpha-tocopherol and beta-carotene disappeared during postintervention follow-up. The preventive effects of alpha-tocopherol on prostate cancer require confirmation in other trials. Smokers should avoid beta-carotene supplementation.",
+      "mesh": [
+        "Aged",
+        "Antioxidants / therapeutic use",
+        "Cause of Death",
+        "Dietary Supplements",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Lung Neoplasms / epidemiology",
+        "Male",
+        "Middle Aged",
+        "Neoplasms / epidemiology, prevention & control",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk",
+        "Smoking / adverse effects",
+        "alpha-Tocopherol / therapeutic use",
+        "beta Carotene / therapeutic use"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12876090",
+      "contexts": [
+        {
+          "context_id": "12876090|Antioxidants|Prostate cancer",
+          "exposure": "Antioxidants",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-COMPOUND"
+            }
+          }
+        },
+        {
+          "context_id": "12876090|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

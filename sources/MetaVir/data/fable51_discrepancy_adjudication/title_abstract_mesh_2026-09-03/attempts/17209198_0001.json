@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "requested_at": "2026-09-03T18:25:57.939456-04:00",
+  "received_at": "2026-09-03T18:26:22.831090-04:00",
+  "pmid": "17209198",
+  "context_ids": [
+    "17209198|Selenium|Prostate cancer"
+  ],
+  "work_key": "46004436bdcde03db0f88e6dd7110aabeb9a7480c16a017c349987f19563f79f",
+  "attempt": 1,
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "input_digest": "8672e34e0cd8e5da35a8c543232ce6aeab46af4cbe6d0fd9030257df8988ef22",
+  "response_mode": "standard",
+  "request_id": "",
+  "finish_reason": "stop",
+  "usage": {
+    "input_tokens": 3620,
+    "cached_input_tokens": 0,
+    "output_tokens": 2131,
+    "reasoning_tokens": 0
+  },
+  "response_cost_usd": "0.14275000000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "f5c70cef-a3fc-459b-abb9-fac26bc09001",
+    "x-litellm-model-id": "fe58e1448ee364fc929e8d6aae32c9532d9c9a4d94575e59bc9d975cc39001d6",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.14275000000000002"
+  },
+  "output_sha256": "628f6f98242016a0f3e47f398d07a3b39cba0b2077a7dc9953e69be90723aa0b",
+  "output_text": "{\"schema_version\":\"metavir-fable51-adjudication-v1\",\"pmid\":\"17209198\",\"source_scope\":\"TITLE_ABSTRACT_MESH_ONLY\",\"results\":[{\"context_id\":\"17209198|Selenium|Prostate cancer\",\"exposure\":\"Selenium\",\"field\":\"EFFECT_SIZE\",\"tam_assessment\":\"INSUFFICIENT\",\"verdict\":\"INSUFFICIENT_TITLE_ABSTRACT_MESH\",\"adjudicated_value\":null,\"evidence_source\":\"NONE\",\"evidence_text\":\"Overall, serum selenium was not associated with prostate cancer risk (P for trend = 0.70)\",\"evidence_type\":\"BIOSPECIMEN\",\"manual_review_needed\":true,\"manual_review_reason\":\"Overall OR not numerically reported in abstract; Claude+Gemini 0.84 may derive from full text, while ChatGPT 0.58 is the high-vitamin-E subgroup estimate rather than the overall target.\",\"one_sentence_explanation\":\"The abstract gives no numeric overall OR for serum selenium (only P for trend = 0.70), so Claude+Gemini's 0.84 cannot be verified, and ChatGPT's 0.58 is a vitamin E subgroup estimate, not the overall target.\"},{\"context_id\":\"17209198|Selenium|Prostate cancer\",\"exposure\":\"Selenium\",\"field\":\"CI_OR_P_VALUE\",\"tam_assessment\":\"SUFFICIENT\",\"verdict\":\"CLAUDE_GEMINI_CORRECT\",\"adjudicated_value\":\"P for trend = 0.70 (overall serum selenium quartiles)\",\"evidence_source\":\"ABSTRACT\",\"evidence_text\":\"Overall, serum selenium was not associated with prostate cancer risk (P for trend = 0.70)\",\"evidence_type\":\"BIOSPECIMEN\",\"manual_review_needed\":true,\"manual_review_reason\":\"Claude+Gemini p=0.7 matches the overall estimate, but its CI (0.62-1.14) is not verifiable from the abstract; ChatGPT's CI/p belong to the high-vitamin-E subgroup.\",\"one_sentence_explanation\":\"The abstract reports P for trend = 0.70 for the overall serum selenium analysis, supporting Claude+Gemini's p-value, whereas ChatGPT's 0.37-0.91 and p=0.05 belong to the high vitamin E intake subgroup.\"}]}",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "17209198: NONE evidence_source requires null/blank evidence_text"
+}

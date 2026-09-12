@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:29:25.241996-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "17881cdcf94fce64eac9cd3df1a9480c0b19b0c8d222b8222f2bdf97bd1cc3cf",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "20693267",
+      "title": "Diet, supplement use, and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "abstract": "The authors examined nutritional risk factors for prostate cancer among 9,559 participants in the Prostate Cancer Prevention Trial (United States and Canada, 1994-2003). The presence or absence of cancer was determined by prostate biopsy, which was recommended during the trial because of an elevated prostate-specific antigen level or an abnormal digital rectal examination and was offered to all men at the trial's end. Nutrient intake was assessed using a food frequency questionnaire and a structured supplement-use questionnaire. Cancer was detected in 1,703 men; 127 cancers were high-grade (Gleason score 8-10). There were no associations of any nutrient or supplement with prostate cancer risk overall. Risk of high-grade cancer was associated with high intake of polyunsaturated fats (quartile 4 vs. quartile 1: odds ratio = 2.41, 95% confidence interval (CI): 1.33, 4.38). Dietary calcium was positively associated with low-grade cancer but inversely associated with high-grade cancer (for quartile 4 vs. quartile 1, odds ratios were 1.27 (95% CI: 1.02, 1.57) and 0.43 (95% CI: 0.21, 0.89), respectively). Neither dietary nor supplemental intakes of nutrients often suggested for prostate cancer prevention, including lycopene, long-chain n-3 fatty acids, vitamin D, vitamin E, and selenium, were significantly associated with cancer risk. High intake of n-6 fatty acids, through their effects on inflammation and oxidative stress, may increase prostate cancer risk.",
+      "mesh": [
+        "Age Factors",
+        "Aged",
+        "Body Mass Index",
+        "Diet / statistics & numerical data",
+        "Dietary Supplements",
+        "Digital Rectal Examination",
+        "Exercise",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / epidemiology, prevention & control",
+        "Risk Factors",
+        "Socioeconomic Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "20693267",
+      "contexts": [
+        {
+          "context_id": "20693267|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "1.27",
+              "ci_lower": "1.02",
+              "ci_upper": "1.57",
+              "p_value": "0.029819986149265166",
+              "comparison": "quartile 4 versus quartile 1 for low-grade cancer"
+            },
+            "Claude+Gemini": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "1.16",
+              "ci_lower": "0.95",
+              "ci_upper": "1.43",
+              "p_value": "0.15485340346043527",
+              "comparison": "quartile 4 vs. quartile 1"
+            }
+          }
+        },
+        {
+          "context_id": "20693267|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "9559",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "1.06",
+              "ci_lower": "0.89",
+              "ci_upper": "1.26",
+              "p_value": "0.897",
+              "comparison": "quartile 4 vs. quartile 1"
+            }
+          }
+        },
+        {
+          "context_id": "20693267|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "9559",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "1.08",
+              "ci_lower": "0.92",
+              "ci_upper": "1.28",
+              "p_value": "0.456",
+              "comparison": "quartile 4 vs. quartile 1"
+            }
+          }
+        },
+        {
+          "context_id": "20693267|Omega-6 fatty acids|Prostate cancer",
+          "exposure": "Omega-6 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "2.41",
+              "ci_lower": "1.33",
+              "ci_upper": "4.38",
+              "p_value": "0.002",
+              "comparison": "Highest versus lowest quartile of dietary polyunsaturated fat intake (quartile 4 versus quartile 1), for high-grade prostate cancer (Gleason score 8–10)"
+            },
+            "Claude+Gemini": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "0.95",
+              "ci_lower": "0.81",
+              "ci_upper": "1.11",
+              "p_value": "0.507",
+              "comparison": "quartile 4 vs. quartile 1"
+            }
+          }
+        },
+        {
+          "context_id": "20693267|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "9559",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "1.06",
+              "ci_lower": "0.89",
+              "ci_upper": "1.25",
+              "p_value": "0.184",
+              "comparison": "highest vs. lowest category"
+            }
+          }
+        },
+        {
+          "context_id": "20693267|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "9559",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "1.1",
+              "ci_lower": "0.91",
+              "ci_upper": "1.33",
+              "p_value": "0.261",
+              "comparison": "quartile 4 vs. quartile 1"
+            }
+          }
+        },
+        {
+          "context_id": "20693267|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "9559",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "9559",
+              "effect_measure_type": "OR",
+              "effect_size": "1.08",
+              "ci_lower": "0.96",
+              "ci_upper": "1.23",
+              "p_value": "0.199",
+              "comparison": "highest vs. lowest category"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

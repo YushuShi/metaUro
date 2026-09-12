@@ -1,0 +1,937 @@
+{
+  "schema_version": 1,
+  "receipt_id": "bfae52566f675cb32f0731c56a6c725efce478ac717d334a79dd76d532ef940b",
+  "requested_at": "2026-09-02T08:15:05.836928+08:00",
+  "received_at": "2026-09-02T08:16:21.935802+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "43ba14ad6f0d845e69c9fe7b3a1f7d2e67540ea8c26e304c816f69af2ccf23e0",
+  "attempt": 1,
+  "context_ids": [
+    "32340289|Zinc|Prostate cancer",
+    "32359345|Dietary protein intake|Prostate cancer",
+    "32369574|Lycopene|Prostate cancer",
+    "32369574|Tomato|Prostate cancer",
+    "32388358|Soy|Prostate cancer",
+    "32398996|Copper|Prostate cancer",
+    "32398996|Iron|Prostate cancer",
+    "32398996|Manganese|Prostate cancer",
+    "32398996|Selenium|Prostate cancer",
+    "32398996|Zinc|Prostate cancer",
+    "32406054|Nitric oxide|Prostate cancer",
+    "32447398|Dairy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Copper": 1,
+    "Dairy": 1,
+    "Dietary protein intake": 1,
+    "Iron": 1,
+    "Lycopene": 1,
+    "Manganese": 1,
+    "Nitric oxide": 1,
+    "Selenium": 1,
+    "Soy": 1,
+    "Tomato": 1,
+    "Zinc": 2
+  },
+  "input_digest": "db628b800516f3a909321edeab99f38903a8df61c61ce138d9fd92c3fa265060",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10312,
+    "cached_input_tokens": 0,
+    "output_tokens": 8525,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.264685",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "15604275-2e67-4abd-b2ca-a17f9ec19693",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.264685"
+  },
+  "output_sha256": "6d2aa78c2cae1aa7c464ec61ea0fdfd8ed044a5269546810f98e28873cee1c46",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"32340289|Zinc|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a narrative review summarizing zinc's roles in cancer rather than an original human study of zinc and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32359345|Dietary protein intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-WRONG-OUTCOME\",\"reason\":\"The only outcome analyzed is prostate-specific antigen level in men without prostate tumor history, not incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32369574|Lycopene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study exclusively used TRAMP mice fed lycopene beadlets, providing no human data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32369574|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Dietary tomato powder was tested only in a murine TRAMP castration-resistant prostate cancer model.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32388358|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"Soy intake is reported only jointly as \\\"the intake of nuts and soya products\\\" with no soy-specific risk estimate reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32398996|Copper|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control comparison of serum copper measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":92,\"cases\":40,\"comparison_type\":\"Prostate cancer cases versus BPH and healthy male controls (serum copper levels)\",\"design\":\"case_control\",\"timing\":\"Blood collected at new diagnosis, before any intervention\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"cases\":{\"excerpt\":\"40 newly diagnosed prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"The levels of serum Cu and Fe were significantly higher in prostate cancer patients than in control groups.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"timing\":{\"excerpt\":\"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"No\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32398996|Iron|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control comparison of serum iron measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":92,\"cases\":40,\"comparison_type\":\"Prostate cancer cases versus BPH and healthy male controls (serum iron levels)\",\"design\":\"case_control\",\"timing\":\"Blood collected at new diagnosis, before any intervention\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"cases\":{\"excerpt\":\"40 newly diagnosed prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"The levels of serum Cu and Fe were significantly higher in prostate cancer patients than in control groups.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"timing\":{\"excerpt\":\"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"No\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32398996|Manganese|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control comparison of serum manganese measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":92,\"cases\":40,\"comparison_type\":\"Prostate cancer cases versus BPH and healthy male controls (serum manganese levels)\",\"design\":\"case_control\",\"timing\":\"Blood collected at new diagnosis, before any intervention\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"cases\":{\"excerpt\":\"40 newly diagnosed prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Serum Se, Zn, and Mn levels of prostate cancer patients were significantly decreased compared to control groups.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"timing\":{\"excerpt\":\"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"No\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32398996|Selenium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control comparison of serum selenium measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":92,\"cases\":40,\"comparison_type\":\"Prostate cancer cases versus BPH and healthy male controls (serum selenium levels)\",\"design\":\"case_control\",\"timing\":\"Blood collected at new diagnosis, before any intervention\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"cases\":{\"excerpt\":\"40 newly diagnosed prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Serum Se, Zn, and Mn levels of prostate cancer patients were significantly decreased compared to control groups.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"timing\":{\"excerpt\":\"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"No\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32398996|Zinc|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control comparison of serum zinc measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":92,\"cases\":40,\"comparison_type\":\"Prostate cancer cases versus BPH and healthy male controls (serum zinc levels)\",\"design\":\"case_control\",\"timing\":\"Blood collected at new diagnosis, before any intervention\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"cases\":{\"excerpt\":\"40 newly diagnosed prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Serum Se, Zn, and Mn levels of prostate cancer patients were significantly decreased compared to control groups.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"timing\":{\"excerpt\":\"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32398996/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"No\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32406054|Nitric oxide|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a systematic review and meta-analysis of eNOS gene polymorphisms rather than an original human study of a nutritional exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32447398|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The publication is a qualitative systematic review of yogurt and fermented milk and health outcomes, not primary research.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "32340289|Zinc|Prostate cancer",
+      "pmid": "32340289",
+      "pmcid": "PMC7216164",
+      "published_date": "2020-04-23",
+      "title": "Growth Modulatory Role of Zinc in Prostate Cancer and Application to Cancer Therapeutics.",
+      "authors": [
+        "To PK",
+        "Do MH",
+        "Cho JH",
+        "Jung C"
+      ],
+      "journal": "International journal of molecular sciences",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32340289/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a narrative review summarizing zinc's roles in cancer rather than an original human study of zinc and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32359345|Dietary protein intake|Prostate cancer",
+      "pmid": "32359345",
+      "pmcid": "PMC7195731",
+      "published_date": "2020-05-02",
+      "title": "Is there a non-linear relationship between dietary protein intake and prostate-specific antigen: proof from the national health and nutrition examination survey (2003-2010).",
+      "authors": [
+        "Song J",
+        "Chen C",
+        "He S",
+        "Chen W",
+        "Su J",
+        "Yuan D",
+        "Sun F",
+        "Zhu J"
+      ],
+      "journal": "Lipids in health and disease",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32359345/",
+      "exposure": "Dietary protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-WRONG-OUTCOME",
+      "reason": "The only outcome analyzed is prostate-specific antigen level in men without prostate tumor history, not incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32369574|Lycopene|Prostate cancer",
+      "pmid": "32369574",
+      "pmcid": "PMC7330476",
+      "published_date": "2020-07-01",
+      "title": "Dietary Tomato or Lycopene Do Not Reduce Castration-Resistant Prostate Cancer Progression in a Murine Model.",
+      "authors": [
+        "Rowles JL",
+        "Smith JW",
+        "Applegate CC",
+        "Miller RJ",
+        "Wallig MA",
+        "Kaur A",
+        "Sarol JN",
+        "Musaad S",
+        "Clinton SK",
+        "O'Brien WD",
+        "Erdman JW"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32369574/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study exclusively used TRAMP mice fed lycopene beadlets, providing no human data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32369574|Tomato|Prostate cancer",
+      "pmid": "32369574",
+      "pmcid": "PMC7330476",
+      "published_date": "2020-07-01",
+      "title": "Dietary Tomato or Lycopene Do Not Reduce Castration-Resistant Prostate Cancer Progression in a Murine Model.",
+      "authors": [
+        "Rowles JL",
+        "Smith JW",
+        "Applegate CC",
+        "Miller RJ",
+        "Wallig MA",
+        "Kaur A",
+        "Sarol JN",
+        "Musaad S",
+        "Clinton SK",
+        "O'Brien WD",
+        "Erdman JW"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32369574/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Dietary tomato powder was tested only in a murine TRAMP castration-resistant prostate cancer model.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32388358|Soy|Prostate cancer",
+      "pmid": "32388358",
+      "pmcid": "",
+      "published_date": "2020-08-15",
+      "title": "Genetic variants in xenobiotic detoxification enzymes, antioxidant defenses and hormonal pathways as biomarkers of susceptibility to prostate cancer.",
+      "authors": [
+        "Martinez-Gonzalez LJ",
+        "Antúnez-Rodríguez A",
+        "Vazquez-Alonso F",
+        "Hernandez AF",
+        "Alvarez-Cubero MJ"
+      ],
+      "journal": "The Science of the total environment",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32388358/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "Soy intake is reported only jointly as \"the intake of nuts and soya products\" with no soy-specific risk estimate reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32398996|Copper|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Copper",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control comparison of serum copper measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "Prostate cancer cases versus BPH and healthy male controls (serum copper levels)",
+        "design": "case_control",
+        "timing": "Blood collected at new diagnosis, before any intervention",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "The levels of serum Cu and Fe were significantly higher in prostate cancer patients than in control groups.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32398996|Iron|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Iron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control comparison of serum iron measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "Prostate cancer cases versus BPH and healthy male controls (serum iron levels)",
+        "design": "case_control",
+        "timing": "Blood collected at new diagnosis, before any intervention",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "The levels of serum Cu and Fe were significantly higher in prostate cancer patients than in control groups.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32398996|Manganese|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Manganese",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control comparison of serum manganese measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "Prostate cancer cases versus BPH and healthy male controls (serum manganese levels)",
+        "design": "case_control",
+        "timing": "Blood collected at new diagnosis, before any intervention",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Serum Se, Zn, and Mn levels of prostate cancer patients were significantly decreased compared to control groups.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32398996|Selenium|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control comparison of serum selenium measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "Prostate cancer cases versus BPH and healthy male controls (serum selenium levels)",
+        "design": "case_control",
+        "timing": "Blood collected at new diagnosis, before any intervention",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Serum Se, Zn, and Mn levels of prostate cancer patients were significantly decreased compared to control groups.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32398996|Zinc|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control comparison of serum zinc measured by ICP-MS in newly diagnosed prostate cancer patients versus BPH and healthy male controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "Prostate cancer cases versus BPH and healthy male controls (serum zinc levels)",
+        "design": "case_control",
+        "timing": "Blood collected at new diagnosis, before any intervention",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male subjects",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Serum Se, Zn, and Mn levels of prostate cancer patients were significantly decreased compared to control groups.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "trace elements Se, Zn, Cu, Mn and Fe were measured by ICP-MS",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32406054|Nitric oxide|Prostate cancer",
+      "pmid": "32406054",
+      "pmcid": "",
+      "published_date": "2020-06-24",
+      "title": "Association of Endothelial Nitric Oxide Synthase Gene Polymorphisms with Susceptibility to Prostate Cancer: a Comprehensive Systematic Review and Meta-Analysis.",
+      "authors": [
+        "Abedinzadeh M",
+        "Dastgheib SA",
+        "Maleki H",
+        "Heiranizadeh N",
+        "Zare M",
+        "Jafari-Nedooshan J",
+        "Kargar S",
+        "Neamatzadeh H"
+      ],
+      "journal": "Urology journal",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32406054/",
+      "exposure": "Nitric oxide",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a systematic review and meta-analysis of eNOS gene polymorphisms rather than an original human study of a nutritional exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32447398|Dairy|Prostate cancer",
+      "pmid": "32447398",
+      "pmcid": "PMC8579104",
+      "published_date": "2021-04-07",
+      "title": "Yogurt, cultured fermented milk, and health: a systematic review.",
+      "authors": [
+        "Savaiano DA",
+        "Hutkins RW"
+      ],
+      "journal": "Nutrition reviews",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32447398/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The publication is a qualitative systematic review of yogurt and fermented milk and health outcomes, not primary research.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

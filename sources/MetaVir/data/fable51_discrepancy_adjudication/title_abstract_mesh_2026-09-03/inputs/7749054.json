@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:08:04.082816-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "84ef192ba27dc30736bd0061e840c17ae398d1921264a228c27916047d36dca2",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "7749054",
+      "title": "Dietary factors and risk of prostate cancer: a case-control study in Ontario, Canada.",
+      "abstract": "The relationship between risk of prostate cancer and dietary intake of energy, fat, vitamin A, and other nutrients was investigated in a case-control study conducted in Ontario, Canada. Cases were men with a recent, histologically confirmed diagnosis of adenocarcinoma of the prostate notified to the Ontario Cancer Registry between April 1990 and April 1992. Controls were selected randomly from assessment lists maintained by the Ontario Ministry of Revenue, and were frequency-matched to the cases on age. The study included 207 cases (51.4 percent of those eligible) and 207 controls (39.4 percent of those eligible), and information on dietary intake was collected from them by means of a quantitative diet history. There was a positive association between energy intake and risk of prostate cancer, such that men at the uppermost quartile level of energy intake had a 75 percent increase in risk. In contrast, there was no clear association between the non-energy effects of total fat and monounsaturated fat intake and prostate cancer risk. There was some evidence for an inverse association with saturated fat intake, although the dose-response pattern was irregular. There was a weak (statistically nonsignificant) positive association between polyunsaturated fat intake and risk of prostate cancer. Relatively high levels of retinol intake were associated with reduced risk, but there was essentially no association between dietary beta-carotene intake and risk. There was no alteration in risk in association with dietary fiber, cholesterol, and vitamins C and E. Although these patterns were evident both overall and within age-strata, and persisted after adjustment for a number of potential confounding factors, they could reflect (in particular) the effect of nonrespondent bias.",
+      "mesh": [
+        "Adenocarcinoma / etiology",
+        "Aged",
+        "Carotenoids / administration & dosage",
+        "Case-Control Studies",
+        "Diet / adverse effects",
+        "Dietary Fats / adverse effects",
+        "Energy Intake",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / etiology, prevention & control",
+        "Risk Factors",
+        "Vitamin A / administration & dosage",
+        "beta Carotene"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "7749054",
+      "contexts": [
+        {
+          "context_id": "7749054|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "414",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "quartile levels of dietary intake from a quantitative diet history"
+            }
+          }
+        },
+        {
+          "context_id": "7749054|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Relatively high levels of retinol intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "414",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

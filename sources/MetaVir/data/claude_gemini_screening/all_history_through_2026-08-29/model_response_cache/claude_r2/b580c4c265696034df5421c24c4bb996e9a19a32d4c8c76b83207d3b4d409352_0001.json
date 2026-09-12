@@ -1,0 +1,765 @@
+{
+  "schema_version": 1,
+  "receipt_id": "6f70de6ce2b387c9b589e1473bfebc7bbc3ff34ca5c6c1b5c3ec87be313e6a5d",
+  "requested_at": "2026-09-02T07:51:54.232167+08:00",
+  "received_at": "2026-09-02T07:53:01.988196+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "b580c4c265696034df5421c24c4bb996e9a19a32d4c8c76b83207d3b4d409352",
+  "attempt": 1,
+  "context_ids": [
+    "19912103|Boron|Prostate cancer",
+    "19914697|Antioxidants|Prostate cancer",
+    "19914697|Vitamin E|Prostate cancer",
+    "19921446|Alpha-linolenic acid|Prostate cancer",
+    "19921446|Omega-3 fatty acids|Prostate cancer",
+    "19939760|Vitamin D|Prostate cancer",
+    "19951012|Red clover|Prostate cancer",
+    "19951012|Soy|Prostate cancer",
+    "19952760|Soy isoflavones|Prostate cancer",
+    "19952760|Soy|Prostate cancer",
+    "19954068|Green tea|Prostate cancer",
+    "19954068|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alpha-linolenic acid": 1,
+    "Antioxidants": 1,
+    "Boron": 1,
+    "Green tea": 1,
+    "Omega-3 fatty acids": 1,
+    "Red clover": 1,
+    "Red meat": 1,
+    "Soy": 2,
+    "Soy isoflavones": 1,
+    "Vitamin D": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "041ac4d3c40c202bda31e29cb83cb0d7d3639e227c3d8f29aed2580519eb91ab",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9970,
+    "cached_input_tokens": 0,
+    "output_tokens": 6972,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.22415000000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c253752a-2e83-45ff-8751-6da480fff5c4",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.22415000000000002"
+  },
+  "output_sha256": "e3dea4056f9bdbd714e14e679f9e234b2b1a5ad598387082877fd0d75a38f915",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"19912103|Boron|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a minireview summarizing existing studies of boron compounds and cancer rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19914697|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENOTYPE-INTERACTION\",\"reason\":\"Plasma antioxidants are reported only as modifiers of hOGG1/XRCC1 polymorphism effects, with no population-wide antioxidant-prostate cancer estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19914697|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENOTYPE-INTERACTION\",\"reason\":\"Alpha-tocopherol appears only as a stratifying modifier of DNA-repair genotype associations rather than as an independent exposure estimate for prostate cancer risk.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19921446|Alpha-linolenic acid|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The publication is a meta-analysis of prospective studies rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19921446|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The publication is a meta-analysis pooling previously published prospective studies rather than primary data collection.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19939760|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a systematic review and meta-analysis of longitudinal studies of serum 25(OH)D, not an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19951012|Red clover|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of plant-derived isoflavone products with no original human incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19951012|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review summarizing cell, animal, and clinical literature on soy isoflavones rather than reporting original findings.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19952760|Soy isoflavones|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study of Japanese men reporting a population-wide odds ratio for isoflavone intake and prostate cancer risk.\",\"extraction\":{\"effect_size\":0.63,\"effect_type\":\"OR\",\"ci_lower\":0.41,\"ci_upper\":0.96,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":357,\"cases\":180,\"comparison_type\":\"≥60 vs <60 mg/day of isoflavone intake\",\"design\":\"case-control\",\"timing\":\"prediagnostic dietary assessment\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"three geographic areas of Japan\",\"ethnicity\":\"Japanese (Asian)\",\"population\":\"Japanese men with prostate cancer cases and controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"One hundred and eighty cases and 177 controls were selected from three geographic areas of Japan.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract methods\"},\"cases\":{\"excerpt\":\"One hundred and eighty cases and 177 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract methods\"},\"effect_size\":{\"excerpt\":\"The odds ratio for more than or equal to 60 versus less than 60 mg/day of the intake of isoflavones was 0.63\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract results\"},\"confidence_interval\":{\"excerpt\":\"0.63 (95% confidence interval=0.41-0.96)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"more than or equal to 60 versus less than 60 mg/day of the intake of isoflavones\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract results\"},\"design\":{\"excerpt\":\"the findings of this case-control study suggest\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract conclusion\"},\"timing\":{\"excerpt\":\"the intake of isoflavones\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract results\"},\"continent\":{\"excerpt\":\"selected from three geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract methods\"},\"ethnicity\":{\"excerpt\":\"isoflavones against prostate cancer risk in Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"title\"},\"location\":{\"excerpt\":\"three geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract methods\"},\"exposure_measurement\":{\"excerpt\":\"more than or equal to 60 versus less than 60 mg/day of the intake of isoflavones\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19952760/\",\"location\":\"abstract results\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"19952760|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The abstract quantifies only isoflavone intake in mg/day, providing no estimate for soy food intake as a distinct exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19954068|Green tea|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Hospital-based matched case-control study in Guangdong reporting an odds ratio for green tea drinking and prostate cancer risk.\",\"extraction\":{\"effect_size\":0.52,\"effect_type\":\"OR\",\"ci_lower\":0.28,\"ci_upper\":0.96,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":284,\"cases\":142,\"comparison_type\":\"green tea drinking versus no/less drinking\",\"design\":\"case-control\",\"timing\":\"prediagnostic reported habitual intake\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"Guangdong, southern China\",\"ethnicity\":\"NA\",\"population\":\"hospital-based prostate cancer cases and controls with other diseases\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 142 matched pairs of subjects were investigated in this study.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract methods\"},\"cases\":{\"excerpt\":\"142 matched pairs of subjects\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract methods\"},\"effect_size\":{\"excerpt\":\"drinking of green tea by OR value at ... 0.52\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"},\"confidence_interval\":{\"excerpt\":\"0.52 (95% CI: 0.28 -0.96)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Factors in lowing the risks were the fruit intake and drinking of green tea\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"},\"design\":{\"excerpt\":\"A hospital-based and 1:1 matched case-control study was conducted.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract methods\"},\"timing\":{\"excerpt\":\"dietary intake and family cancer history should be related to prostate cancer occurrence\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract conclusion\"},\"continent\":{\"excerpt\":\"etiologic relationship of prostate cancer and environmental and genetic polymorphism in southern China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract objective\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"prostate cancer in Guangdong\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"drinking of green tea\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"19954068|Red meat|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The same matched case-control study reports an odds ratio for higher pork (red meat) intake and prostate cancer risk.\",\"extraction\":{\"effect_size\":2.27,\"effect_type\":\"OR\",\"ci_lower\":1.38,\"ci_upper\":3.7,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":284,\"cases\":142,\"comparison_type\":\"more intake of pork versus less intake\",\"design\":\"case-control\",\"timing\":\"prediagnostic reported habitual intake\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"Guangdong, southern China\",\"ethnicity\":\"NA\",\"population\":\"hospital-based prostate cancer cases and controls with other diseases\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 142 matched pairs of subjects were investigated in this study.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract methods\"},\"cases\":{\"excerpt\":\"142 matched pairs of subjects\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract methods\"},\"effect_size\":{\"excerpt\":\"more intake of pork (OR =2.27, 95% CI: 1.38 - 3.70)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"},\"confidence_interval\":{\"excerpt\":\"(OR =2.27, 95% CI: 1.38 - 3.70)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"more intake of pork\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"},\"design\":{\"excerpt\":\"A hospital-based and 1:1 matched case-control study was conducted.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract methods\"},\"timing\":{\"excerpt\":\"dietary intake and family cancer history should be related to prostate cancer occurrence\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract conclusion\"},\"continent\":{\"excerpt\":\"in southern China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract objective\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"prostate cancer in Guangdong\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"more intake of pork\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19954068/\",\"location\":\"abstract results\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "19912103|Boron|Prostate cancer",
+      "pmid": "19912103",
+      "pmcid": "",
+      "published_date": "2010-05-01",
+      "title": "Boron-containing compounds as preventive and chemotherapeutic agents for cancer.",
+      "authors": [
+        "Scorei RI",
+        "Popa R"
+      ],
+      "journal": "Anti-cancer agents in medicinal chemistry",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19912103/",
+      "exposure": "Boron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a minireview summarizing existing studies of boron compounds and cancer rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19914697|Antioxidants|Prostate cancer",
+      "pmid": "19914697",
+      "pmcid": "PMC2850942",
+      "published_date": "2010-04-01",
+      "title": "Polymorphisms in hOGG1 and XRCC1 and risk of prostate cancer: effects modified by plasma antioxidants.",
+      "authors": [
+        "Zhang J",
+        "Dhakal IB",
+        "Greene G",
+        "Lang NP",
+        "Kadlubar FF"
+      ],
+      "journal": "Urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19914697/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "Plasma antioxidants are reported only as modifiers of hOGG1/XRCC1 polymorphism effects, with no population-wide antioxidant-prostate cancer estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19914697|Vitamin E|Prostate cancer",
+      "pmid": "19914697",
+      "pmcid": "PMC2850942",
+      "published_date": "2010-04-01",
+      "title": "Polymorphisms in hOGG1 and XRCC1 and risk of prostate cancer: effects modified by plasma antioxidants.",
+      "authors": [
+        "Zhang J",
+        "Dhakal IB",
+        "Greene G",
+        "Lang NP",
+        "Kadlubar FF"
+      ],
+      "journal": "Urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19914697/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "Alpha-tocopherol appears only as a stratifying modifier of DNA-repair genotype associations rather than as an independent exposure estimate for prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19921446|Alpha-linolenic acid|Prostate cancer",
+      "pmid": "19921446",
+      "pmcid": "",
+      "published_date": "2010-03-01",
+      "title": "Prospective studies of dietary alpha-linolenic acid intake and prostate cancer risk: a meta-analysis.",
+      "authors": [
+        "Carayol M",
+        "Grosclaude P",
+        "Delpierre C"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19921446/",
+      "exposure": "Alpha-linolenic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The publication is a meta-analysis of prospective studies rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19921446|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "19921446",
+      "pmcid": "",
+      "published_date": "2010-03-01",
+      "title": "Prospective studies of dietary alpha-linolenic acid intake and prostate cancer risk: a meta-analysis.",
+      "authors": [
+        "Carayol M",
+        "Grosclaude P",
+        "Delpierre C"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19921446/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The publication is a meta-analysis pooling previously published prospective studies rather than primary data collection.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19939760|Vitamin D|Prostate cancer",
+      "pmid": "19939760",
+      "pmcid": "",
+      "published_date": "2009-12-01",
+      "title": "Meta-analysis of longitudinal studies: Serum vitamin D and prostate cancer risk.",
+      "authors": [
+        "Yin L",
+        "Raum E",
+        "Haug U",
+        "Arndt V",
+        "Brenner H"
+      ],
+      "journal": "Cancer epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19939760/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a systematic review and meta-analysis of longitudinal studies of serum 25(OH)D, not an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19951012|Red clover|Prostate cancer",
+      "pmid": "19951012",
+      "pmcid": "",
+      "published_date": "2010-06-01",
+      "title": "Plant-derived alternative treatments for the aging male: facts and myths.",
+      "authors": [
+        "Wuttke W",
+        "Jarry H",
+        "Seidlova-Wuttke D"
+      ],
+      "journal": "The aging male : the official journal of the International Society for the Study of the Aging Male",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19951012/",
+      "exposure": "Red clover",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of plant-derived isoflavone products with no original human incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19951012|Soy|Prostate cancer",
+      "pmid": "19951012",
+      "pmcid": "",
+      "published_date": "2010-06-01",
+      "title": "Plant-derived alternative treatments for the aging male: facts and myths.",
+      "authors": [
+        "Wuttke W",
+        "Jarry H",
+        "Seidlova-Wuttke D"
+      ],
+      "journal": "The aging male : the official journal of the International Society for the Study of the Aging Male",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19951012/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review summarizing cell, animal, and clinical literature on soy isoflavones rather than reporting original findings.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19952760|Soy isoflavones|Prostate cancer",
+      "pmid": "19952760",
+      "pmcid": "",
+      "published_date": "2010-03-01",
+      "title": "Polymorphisms in estrogen related genes may modify the protective effect of isoflavones against prostate cancer risk in Japanese men.",
+      "authors": [
+        "Sonoda T",
+        "Suzuki H",
+        "Mori M",
+        "Tsukamoto T",
+        "Yokomizo A",
+        "Naito S",
+        "Fujimoto K",
+        "Hirao Y",
+        "Miyanaga N",
+        "Akaza H"
+      ],
+      "journal": "European journal of cancer prevention : the official journal of the European Cancer Prevention Organisation (ECP)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+      "exposure": "Soy isoflavones",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study of Japanese men reporting a population-wide odds ratio for isoflavone intake and prostate cancer risk.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.63,
+        "effect_type": "OR",
+        "ci_lower": 0.41,
+        "ci_upper": 0.96,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 357,
+        "cases": 180,
+        "comparison_type": "≥60 vs <60 mg/day of isoflavone intake",
+        "design": "case-control",
+        "timing": "prediagnostic dietary assessment",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "three geographic areas of Japan",
+        "ethnicity": "NA",
+        "population": "Japanese men with prostate cancer cases and controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract methods"
+          },
+          "cases": {
+            "excerpt": "One hundred and eighty cases and 177 controls were selected from three geographic areas of Japan.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract methods; cases derived from reported group counts 177 + 3 = 180"
+          },
+          "effect_size": {
+            "excerpt": "The odds ratio for more than or equal to 60 versus less than 60 mg/day of the intake of isoflavones was 0.63 (95% confidence interval=0.41-0.96). The TTTA long repeat was significantly associated with an increased risk (odds ratio=1.76, 95% confidence interval=1.15-5.70).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract results"
+          },
+          "confidence_interval": {
+            "excerpt": "The odds ratio for more than or equal to 60 versus less than 60 mg/day of the intake of isoflavones was 0.63 (95% confidence interval=0.41-0.96).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "more than or equal to 60 versus less than 60 mg/day of the intake of isoflavones",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract results"
+          },
+          "design": {
+            "excerpt": "the findings of this case-control study suggest",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract conclusion"
+          },
+          "timing": {
+            "excerpt": "the intake of isoflavones",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract results"
+          },
+          "continent": {
+            "excerpt": "selected from three geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "three geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "more than or equal to 60 versus less than 60 mg/day of the intake of isoflavones",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+            "location": "abstract results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 20.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19952760|Soy|Prostate cancer",
+      "pmid": "19952760",
+      "pmcid": "",
+      "published_date": "2010-03-01",
+      "title": "Polymorphisms in estrogen related genes may modify the protective effect of isoflavones against prostate cancer risk in Japanese men.",
+      "authors": [
+        "Sonoda T",
+        "Suzuki H",
+        "Mori M",
+        "Tsukamoto T",
+        "Yokomizo A",
+        "Naito S",
+        "Fujimoto K",
+        "Hirao Y",
+        "Miyanaga N",
+        "Akaza H"
+      ],
+      "journal": "European journal of cancer prevention : the official journal of the European Cancer Prevention Organisation (ECP)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19952760/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The abstract quantifies only isoflavone intake in mg/day, providing no estimate for soy food intake as a distinct exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19954068|Green tea|Prostate cancer",
+      "pmid": "19954068",
+      "pmcid": "",
+      "published_date": "2009-07-01",
+      "title": "[A case-control study of environmental and genetic factors and prostate cancer in Guangdong].",
+      "authors": [
+        "Wu YJ",
+        "Liang CH",
+        "Zhou FJ",
+        "Gao X",
+        "Chen LW",
+        "Liu Q"
+      ],
+      "journal": "Zhonghua yu fang yi xue za zhi [Chinese journal of preventive medicine]",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based matched case-control study in Guangdong reporting an odds ratio for green tea drinking and prostate cancer risk.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.52,
+        "effect_type": "OR",
+        "ci_lower": 0.28,
+        "ci_upper": 0.96,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 284,
+        "cases": 142,
+        "comparison_type": "green tea drinking versus no/less drinking",
+        "design": "case-control",
+        "timing": "prediagnostic reported habitual intake",
+        "continent": "Asia",
+        "country": "China",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "hospital-based prostate cancer cases and controls with other diseases",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 142 matched pairs of subjects were investigated in this study. The blood samples were collected from 85 cases of prostate cancer and 82 controls of other diseases after informing consent.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract methods; total_n derived from reported group counts 142 + 142 = 284"
+          },
+          "cases": {
+            "excerpt": "A total of 142 matched pairs of subjects were investigated in this study. The blood samples were collected from 85 cases of prostate cancer and 82 controls of other diseases after informing consent.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract methods"
+          },
+          "effect_size": {
+            "excerpt": "Factors in lowing the risks were the fruit intake and drinking of green tea by OR value at 0.25 (95% CI: 0.08 - 0.75) and 0.52 (95% CI: 0.28 -0.96) respectively. CYP17 A1/A2 and CYP17 A2/A2 genotypes were related with a high risk of prostate cancer and OR values of 1.78 (95% CI: 0.70 - 4.53) and 2.57 (95% CI: 0.91 - 7.25) respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          },
+          "confidence_interval": {
+            "excerpt": "Factors in lowing the risks were the fruit intake and drinking of green tea by OR value at 0.25 (95% CI: 0.08 - 0.75) and 0.52 (95% CI: 0.28 -0.96) respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Factors in lowing the risks were the fruit intake and drinking of green tea",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          },
+          "design": {
+            "excerpt": "A hospital-based and 1:1 matched case-control study was conducted.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract methods"
+          },
+          "timing": {
+            "excerpt": "dietary intake and family cancer history should be related to prostate cancer occurrence",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract conclusion"
+          },
+          "continent": {
+            "excerpt": "etiologic relationship of prostate cancer and environmental and genetic polymorphism in southern China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract objective"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "drinking of green tea",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19954068|Red meat|Prostate cancer",
+      "pmid": "19954068",
+      "pmcid": "",
+      "published_date": "2009-07-01",
+      "title": "[A case-control study of environmental and genetic factors and prostate cancer in Guangdong].",
+      "authors": [
+        "Wu YJ",
+        "Liang CH",
+        "Zhou FJ",
+        "Gao X",
+        "Chen LW",
+        "Liu Q"
+      ],
+      "journal": "Zhonghua yu fang yi xue za zhi [Chinese journal of preventive medicine]",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The same matched case-control study reports an odds ratio for higher pork (red meat) intake and prostate cancer risk.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 2.27,
+        "effect_type": "OR",
+        "ci_lower": 1.38,
+        "ci_upper": 3.7,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 284,
+        "cases": 142,
+        "comparison_type": "more intake of pork versus less intake",
+        "design": "case-control",
+        "timing": "prediagnostic reported habitual intake",
+        "continent": "Asia",
+        "country": "China",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "hospital-based prostate cancer cases and controls with other diseases",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 142 matched pairs of subjects were investigated in this study. The blood samples were collected from 85 cases of prostate cancer and 82 controls of other diseases after informing consent.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract methods; total_n derived from reported group counts 142 + 142 = 284"
+          },
+          "cases": {
+            "excerpt": "A total of 142 matched pairs of subjects were investigated in this study. The blood samples were collected from 85 cases of prostate cancer and 82 controls of other diseases after informing consent.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract methods"
+          },
+          "effect_size": {
+            "excerpt": "An increased risk of prostate cancer development was observed with the early first spermatorrhea (age < 18) (OR = 2.90, 95% CI: 1.76 - 4.80), early first sexual intercourse (age < or = 24) (OR = 2.38, 95% CI: 1.14 - 4.96), frequent sexual intercourse before 35 year old (OR = 1.80, 95% CI: 1.19 - 2.70), family history of cancer (OR = 2.70, 95% CI: 1.31 - 5.58), more intake of pork (OR =2.27, 95% CI: 1.38 - 3.70).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          },
+          "confidence_interval": {
+            "excerpt": "An increased risk of prostate cancer development was observed with the early first spermatorrhea (age < 18) (OR = 2.90, 95% CI: 1.76 - 4.80), early first sexual intercourse (age < or = 24) (OR = 2.38, 95% CI: 1.14 - 4.96), frequent sexual intercourse before 35 year old (OR = 1.80, 95% CI: 1.19 - 2.70), family history of cancer (OR = 2.70, 95% CI: 1.31 - 5.58), more intake of pork (OR =2.27, 95% CI: 1.38 - 3.70).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "more intake of pork",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          },
+          "design": {
+            "excerpt": "A hospital-based and 1:1 matched case-control study was conducted.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract methods"
+          },
+          "timing": {
+            "excerpt": "dietary intake and family cancer history should be related to prostate cancer occurrence",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract conclusion"
+          },
+          "continent": {
+            "excerpt": "in southern China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract objective"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "more intake of pork",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19954068/",
+            "location": "abstract results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

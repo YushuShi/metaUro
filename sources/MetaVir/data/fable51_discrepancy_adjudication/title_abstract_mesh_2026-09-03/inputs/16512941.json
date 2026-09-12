@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:25:35.053643-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "98f2b3d2105570da56fec2a2a699e086cd9df2e8aec35d411e6b34ae5c254bc1",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "16512941",
+      "title": "Dairy products, calcium and phosphorus intake, and the risk of prostate cancer: results of the French prospective SU.VI.MAX (Supplémentation en Vitamines et Minéraux Antioxydants) study.",
+      "abstract": "Although dairy products have been found to be associated with an elevated risk of prostate cancer, studies investigating the potential effect of Ca are limited, and findings are inconsistent. The objective of the present study was to test the relationship between the risk of prostate cancer and consumption of dairy products and Ca. The analysis included 2776 men from the French SU.VI.MAX (Supplementation en Vitamines et Minéraux Antioxydants) prospective study, among whom sixty-nine developed prostate cancer during the follow-up period (median: 7.7 years). Food consumption was assessed at inclusion from repeated 24 h records and nutrient intake was calculated using a food composition table. A higher risk of prostate cancer was observed among subjects with higher dairy product (relative risk (RR; 95 % CI), 4th quartile v. 1st: 1.35 (1.02, 1.78), P = 0.04) and Ca intake (RR (95 % CI), 4th quartile v. 1st: 2.43 (1.05, 5.62), P = 0.04). Nevertheless, we identified a harmful effect of yoghurt consumption upon the risk of prostate cancer (RR (95 % CI), increment 125 g/d: 1.61 (1.07, 2.43), P = 0.02) independently of the Ca content. Our data support the hypothesis that dairy products have a harmful effect with respect to the risk of prostate cancer, largely related to Ca content. The higher risk of prostate cancer with linear increasing yoghurt consumption seems to be independent of Ca and may be related to some other component.",
+      "mesh": [
+        "Animals",
+        "Calcium, Dietary / administration & dosage, adverse effects",
+        "Cheese / adverse effects",
+        "Dairy Products / adverse effects",
+        "Diet / adverse effects",
+        "Double-Blind Method",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Milk / adverse effects",
+        "Phosphorus / administration & dosage, adverse effects",
+        "Prospective Studies",
+        "Prostatic Neoplasms / etiology",
+        "Risk Factors",
+        "Yogurt / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "16512941",
+      "contexts": [
+        {
+          "context_id": "16512941|Phosphorus|Prostate cancer",
+          "exposure": "Phosphorus",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

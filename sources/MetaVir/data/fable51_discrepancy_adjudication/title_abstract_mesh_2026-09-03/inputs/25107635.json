@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:34.210892-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "2ef87e7066ce59a8106fab317f644d45005a33448287bd0a6247f84df456ad52",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25107635",
+      "title": "Urinary melatonin levels, sleep disruption, and risk of prostate cancer in elderly men.",
+      "abstract": "Melatonin has anticarcinogenic properties in experimental models. We undertook a case-cohort study of 928 Icelandic men without prostate cancer (PCa) nested within the Age, Gene/Environment Susceptibility (AGES)-Reykjavik cohort to investigate the prospective association between first morning-void urinary 6-sulfatoxymelatonin (aMT6s) levels and the subsequent risk for PCa, under the hypothesis that men with lower aMT6s levels have an increased risk for advanced PCa. We used weighted Cox proportional hazards models to assess the association between first morning-void aMT6s levels and PCa risk, adjusting for potential confounders. A total of 111 men were diagnosed with incident PCa, including 24 with advanced disease. Men who reported sleep problems at baseline had lower morning aMT6s levels compared with those who reported no sleep problems. Men with morning aMT6s levels below the median had a fourfold statistically significant increased risk for advanced disease compared with men with levels above the median (hazard ratio: 4.04; 95% confidence interval, 1.26-12.98). These results require replication in larger prospective studies with longer follow-up. In this report, we evaluated the prospective association between urinary aMT6s levels and risk of PCa in an Icelandic population. We found that lower levels of aMT6s were associated with an increased risk for advanced PCa.",
+      "mesh": [
+        "Age Factors",
+        "Biomarkers / urine",
+        "Down-Regulation",
+        "Humans",
+        "Iceland / epidemiology",
+        "Incidence",
+        "Male",
+        "Melatonin / analogs & derivatives, urine",
+        "Proportional Hazards Models",
+        "Prostatic Neoplasms / diagnosis, epidemiology",
+        "Risk Assessment",
+        "Risk Factors",
+        "Sleep",
+        "Sleep Wake Disorders / diagnosis, epidemiology, physiopathology",
+        "Time Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25107635",
+      "contexts": [
+        {
+          "context_id": "25107635|Melatonin|Prostate cancer",
+          "exposure": "Melatonin",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "928",
+              "effect_measure_type": "HR",
+              "effect_size": "4.04",
+              "ci_lower": "1.26",
+              "ci_upper": "12.98",
+              "p_value": "0.01894104451936189",
+              "comparison": "below median vs above median"
+            },
+            "Claude+Gemini": {
+              "sample_size": "928",
+              "effect_measure_type": "HR",
+              "effect_size": "1.47",
+              "ci_lower": "0.94",
+              "ci_upper": "2.3",
+              "p_value": "0.09",
+              "comparison": "dichotomous"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,852 @@
+{
+  "schema_version": 1,
+  "receipt_id": "1eaae291fefdc2a8270be7e0d408a3c2441359ee547769fb4244107712796ce1",
+  "requested_at": "2026-09-02T07:52:24.432111+08:00",
+  "received_at": "2026-09-02T07:53:50.645289+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "aaf126d97bbbbc7c18d2668753cb07d1c368a4f42c466181343b014ca6cbd9b1",
+  "attempt": 1,
+  "context_ids": [
+    "20053187|Vitamin D|Prostate cancer",
+    "20054456|Calcium|Prostate cancer",
+    "20054456|Vitamin D|Prostate cancer",
+    "20056632|Glutathione|Prostate cancer",
+    "20064705|Vitamin D|Prostate cancer",
+    "20067218|Melatonin|Prostate cancer",
+    "20073148|Docosapentaenoic acid (omega-3)|Prostate cancer",
+    "20073148|Eicosapentaenoic acid|Prostate cancer",
+    "20073148|Fish oil|Prostate cancer",
+    "20073148|Omega-3 fatty acids|Prostate cancer",
+    "20079573|Antioxidants|Prostate cancer",
+    "20079573|Beta-carotene|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Beta-carotene": 1,
+    "Calcium": 1,
+    "Docosapentaenoic acid (omega-3)": 1,
+    "Eicosapentaenoic acid": 1,
+    "Fish oil": 1,
+    "Glutathione": 1,
+    "Melatonin": 1,
+    "Omega-3 fatty acids": 1,
+    "Vitamin D": 3
+  },
+  "input_digest": "91d53b216e9b4c7cfc680fae59c5ccb4bbfddf589461f1c1e0c965af4866b9fe",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9991,
+    "cached_input_tokens": 0,
+    "output_tokens": 9455,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.28633000000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "eed6559e-68cc-4029-936c-65400813da9e",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.28633000000000003"
+  },
+  "output_sha256": "723f0aa18a3ac55d25205af27f8784491801a3fd496cc69502c606c51a92678b",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"20053187|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative literature review of gene polymorphisms retrieved via PubMed searching, not an original study of vitamin D intake or status and incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"20054456|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review summarizing data from 46 recent studies on vitamin D and calcium insufficiency without original primary prostate cancer incidence analyses.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"20054456|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of published prevalence data on vitamin D and calcium insufficiency rather than an original study reporting prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"20056632|Glutathione|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The studied nutritional exposure is dietary glucosinolate intake with glutathione S-transferase enzyme genotypes/concentrations, so glutathione itself is not the assessed nutritional exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"20064705|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Nested case-control study within a prospective multiethnic cohort reporting plasma 25-hydroxyvitamin D concentrations and risk of incident prostate cancer.\",\"extraction\":{\"effect_size\":1.1,\"effect_type\":\"OR\",\"ci_lower\":0.68,\"ci_upper\":1.78,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":985,\"cases\":329,\"comparison_type\":\"Plasma 25(OH)D <20 ng/ml versus 30-<50 ng/ml (clinically defined cutpoints)\",\"design\":\"nested case-control\",\"timing\":\"prospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Hawaii and California\",\"ethnicity\":\"African American, Native Hawaiian, Japanese, Latino and White\",\"population\":\"Men in the Multiethnic Cohort\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 329 incidents of prostate cancer ... and 656 controls matched on age, race/ethnicity, date/time of blood collection and fasting status.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"The study included 329 incidents of prostate cancer of African American, Native Hawaiian, Japanese, Latino and White ancestry\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"OR for <20 versus 30-<50ng/ml=1.10\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% CI=0.68-1.78\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"When clinically defined cutpoints were used, there was no increased risk for the lowest 25(OH)D concentration (OR for <20 versus 30-<50ng/ml=1.10\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"within a large multiethnic cohort in Hawaii and California using a nested case-control design\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"The findings from this prospective study of men in the Multiethnic Cohort\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"a large multiethnic cohort in Hawaii and California\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"African American, Native Hawaiian, Japanese, Latino and White ancestry\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"a large multiethnic cohort in Hawaii and California\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"the relationship of plasma 25-hydroxyvitamin D (25(OH)D) concentrations to prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20064705/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"20067218|Melatonin|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The paper is a narrative review of studies on circadian disruption and melatonin in carcinogenesis without original prostate cancer incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"20073148|Docosapentaenoic acid (omega-3)|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original case-control analysis in Nigerian men reporting plasma docosapentaenoic acid quartile odds ratios for prostate cancer risk.\",\"extraction\":{\"effect_size\":0.79,\"effect_type\":\"OR\",\"ci_lower\":0.35,\"ci_upper\":1.79,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":292,\"cases\":66,\"comparison_type\":\"Plasma DPA quartile 2 versus quartile 1 (unadjusted)\",\"design\":\"case-control\",\"timing\":null,\"continent\":\"Africa\",\"country\":\"Nigeria\",\"location\":\"University of Benin Teaching Hospital and 2 rural and 2 urban communities\",\"ethnicity\":\"NA\",\"population\":\"Men aged 40 years or older recruited from surgery/urology clinics and rural and urban communities\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"66 (22.6%) cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA) and docosapentaenoic (DPA) were 0.39 (95% CI, 0.18-0.85) and 0.79 (95% CI, 0.35-1.79) respectively.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.79 (95% CI, 0.35-1.79)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Unadjusted ORQ2vs.Q1 for omega-3 FAs ... docosapentaenoic (DPA)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"Odds ratio (OR) of PCa risk was determined by unconditional logistic regression with the plasma FA 1st quartile as reference\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"To investigate the role of fatty acids (FAs) in prostate cancer (PCa) risk in Nigeria\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"recruited from surgery/urology clinics, University of Benin Teaching Hospital and from 2 rural and 2 urban communities\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"30 mLs of fasting blood collected for prostatic specific antigen and fatty acid (FA) analysis\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"No\",\"q2\":\"No\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"20073148|Eicosapentaenoic acid|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original case-control analysis in Nigerian men reporting plasma eicosapentaenoic acid quartile odds ratios for prostate cancer risk.\",\"extraction\":{\"effect_size\":0.39,\"effect_type\":\"OR\",\"ci_lower\":0.18,\"ci_upper\":0.85,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":292,\"cases\":66,\"comparison_type\":\"Plasma EPA quartile 2 versus quartile 1 (unadjusted)\",\"design\":\"case-control\",\"timing\":null,\"continent\":\"Africa\",\"country\":\"Nigeria\",\"location\":\"University of Benin Teaching Hospital and 2 rural and 2 urban communities\",\"ethnicity\":\"NA\",\"population\":\"Men aged 40 years or older recruited from surgery/urology clinics and rural and urban communities\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"66 (22.6%) cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA) and docosapentaenoic (DPA) were 0.39 (95% CI, 0.18-0.85)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.39 (95% CI, 0.18-0.85)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"Odds ratio (OR) of PCa risk was determined by unconditional logistic regression with the plasma FA 1st quartile as reference\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"To investigate the role of fatty acids (FAs) in prostate cancer (PCa) risk in Nigeria\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"recruited from surgery/urology clinics, University of Benin Teaching Hospital and from 2 rural and 2 urban communities\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"30 mLs of fasting blood collected for prostatic specific antigen and fatty acid (FA) analysis\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"No\",\"q2\":\"No\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"20073148|Fish oil|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The study measured plasma fatty acid concentrations and did not assess fish oil intake or supplementation as an exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"20073148|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study of plasma omega-3 fatty acids and prostate cancer risk in Nigerian men, though no total omega-3 risk estimate is reported in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":292,\"cases\":66,\"comparison_type\":\"Plasma fatty acid quartiles with 1st quartile as reference\",\"design\":\"case-control\",\"timing\":null,\"continent\":\"Africa\",\"country\":\"Nigeria\",\"location\":\"University of Benin Teaching Hospital and 2 rural and 2 urban communities\",\"ethnicity\":\"NA\",\"population\":\"Men aged 40 years or older recruited from surgery/urology clinics and rural and urban communities\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"66 (22.6%) cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"with the plasma FA 1st quartile as reference\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"Odds ratio (OR) of PCa risk was determined by unconditional logistic regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"prostate cancer (PCa) risk in Nigeria\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"University of Benin Teaching Hospital and from 2 rural and 2 urban communities\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"In this population with high total plasma omega-3\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/20073148/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"No\",\"q2\":\"No\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"20079573|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a systematic review of antioxidant and selenium evidence during prostate cancer treatment rather than an original incidence study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"20079573|Beta-carotene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Beta-carotene is only mentioned within a systematic review of antioxidants during prostate cancer radiotherapy, with no original incidence analysis.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "20053187|Vitamin D|Prostate cancer",
+      "pmid": "20053187",
+      "pmcid": "",
+      "published_date": "2009-12-01",
+      "title": "Gene polymorphisms and prostate cancer: the evidence.",
+      "authors": [
+        "Dianat SS",
+        "Margreiter M",
+        "Eckersberger E",
+        "Finkelstein J",
+        "Kuehas F",
+        "Herwig R",
+        "Ayati M",
+        "Lepor H",
+        "Djavan B"
+      ],
+      "journal": "BJU international",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20053187/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative literature review of gene polymorphisms retrieved via PubMed searching, not an original study of vitamin D intake or status and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20054456|Calcium|Prostate cancer",
+      "pmid": "20054456",
+      "pmcid": "PMC2790094",
+      "published_date": "2009-10-01",
+      "title": "Vitamin D and calcium insufficiency-related chronic diseases: an emerging world-wide public health problem.",
+      "authors": [
+        "Peterlik M",
+        "Boonen S",
+        "Cross HS",
+        "Lamberg-Allardt C"
+      ],
+      "journal": "International journal of environmental research and public health",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20054456/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review summarizing data from 46 recent studies on vitamin D and calcium insufficiency without original primary prostate cancer incidence analyses.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20054456|Vitamin D|Prostate cancer",
+      "pmid": "20054456",
+      "pmcid": "PMC2790094",
+      "published_date": "2009-10-01",
+      "title": "Vitamin D and calcium insufficiency-related chronic diseases: an emerging world-wide public health problem.",
+      "authors": [
+        "Peterlik M",
+        "Boonen S",
+        "Cross HS",
+        "Lamberg-Allardt C"
+      ],
+      "journal": "International journal of environmental research and public health",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20054456/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of published prevalence data on vitamin D and calcium insufficiency rather than an original study reporting prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20056632|Glutathione|Prostate cancer",
+      "pmid": "20056632",
+      "pmcid": "",
+      "published_date": "2010-01-01",
+      "title": "Dietary glucosinolate intake, polymorphisms in selected biotransformation enzymes, and risk of prostate cancer.",
+      "authors": [
+        "Steinbrecher A",
+        "Rohrmann S",
+        "Timofeeva M",
+        "Risch A",
+        "Jansen E",
+        "Linseisen J"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20056632/",
+      "exposure": "Glutathione",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20064705|Vitamin D|Prostate cancer",
+      "pmid": "20064705",
+      "pmcid": "PMC2834847",
+      "published_date": "2010-03-01",
+      "title": "Plasma 25-hydroxyvitamin D and prostate cancer risk: the multiethnic cohort.",
+      "authors": [
+        "Park SY",
+        "Cooney RV",
+        "Wilkens LR",
+        "Murphy SP",
+        "Henderson BE",
+        "Kolonel LN"
+      ],
+      "journal": "European journal of cancer (Oxford, England : 1990)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Nested case-control study within a prospective multiethnic cohort reporting plasma 25-hydroxyvitamin D concentrations and risk of incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.1,
+        "effect_type": "OR",
+        "ci_lower": 0.68,
+        "ci_upper": 1.78,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 985,
+        "cases": 329,
+        "comparison_type": "Plasma 25(OH)D <20 ng/ml versus 30-<50 ng/ml (clinically defined cutpoints)",
+        "design": "nested case-control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Hawaii and California",
+        "ethnicity": "African American, Native Hawaiian, Japanese, Latino and White",
+        "population": "Men in the Multiethnic Cohort",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The purpose of this study was to examine the relationship of plasma 25-hydroxyvitamin D (25(OH)D) concentrations to prostate cancer within a large multiethnic cohort in Hawaii and California using a nested case-control design. The study included 329 incidents of prostate cancer of African American, Native Hawaiian, Japanese, Latino and White ancestry, and 656 controls matched on age, race/ethnicity, date/time of blood collection and fasting status.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract; total_n derived from reported group counts 329 + 656 = 985"
+          },
+          "cases": {
+            "excerpt": "The study included 329 incidents of prostate cancer of African American, Native Hawaiian, Japanese, Latino and White ancestry, and 656 controls matched on age, race/ethnicity, date/time of blood collection and fasting status.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "When clinically defined cutpoints were used, there was no increased risk for the lowest 25(OH)D concentration (OR for <20 versus 30-<50ng/ml=1.10, 95% CI=0.68-1.78), while there was a suggestive increased risk for higher concentrations (OR for 50ng/ml=1.52, 95% CI=0.92-2.51).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "When clinically defined cutpoints were used, there was no increased risk for the lowest 25(OH)D concentration (OR for <20 versus 30-<50ng/ml=1.10, 95% CI=0.68-1.78), while there was a suggestive increased risk for higher concentrations (OR for 50ng/ml=1.52, 95% CI=0.92-2.51).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "When clinically defined cutpoints were used, there was no increased risk for the lowest 25(OH)D concentration (OR for <20 versus 30-<50ng/ml=1.10",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "within a large multiethnic cohort in Hawaii and California using a nested case-control design",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "The findings from this prospective study of men in the Multiethnic Cohort",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "a large multiethnic cohort in Hawaii and California",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "African American, Native Hawaiian, Japanese, Latino and White ancestry",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "a large multiethnic cohort in Hawaii and California",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "the relationship of plasma 25-hydroxyvitamin D (25(OH)D) concentrations to prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20064705/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20067218|Melatonin|Prostate cancer",
+      "pmid": "20067218",
+      "pmcid": "",
+      "published_date": "2005",
+      "title": "[Shift and night work--is it a cancer risk factor?].",
+      "authors": [
+        "Bilski B"
+      ],
+      "journal": "Medycyna pracy",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20067218/",
+      "exposure": "Melatonin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The paper is a narrative review of studies on circadian disruption and melatonin in carcinogenesis without original prostate cancer incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20073148|Docosapentaenoic acid (omega-3)|Prostate cancer",
+      "pmid": "20073148",
+      "pmcid": "",
+      "published_date": "2009",
+      "title": "The association of plasma fatty acids with prostate cancer risk in Nigerians.",
+      "authors": [
+        "Ukoli FA",
+        "Akumabor PN",
+        "Oguike TC",
+        "Dent LL",
+        "Beech D",
+        "Osime U"
+      ],
+      "journal": "Ethnicity & disease",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+      "exposure": "Docosapentaenoic acid (omega-3)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original case-control analysis in Nigerian men reporting plasma docosapentaenoic acid quartile odds ratios for prostate cancer risk.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.79,
+        "effect_type": "OR",
+        "ci_lower": 0.35,
+        "ci_upper": 1.79,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 292,
+        "cases": 66,
+        "comparison_type": "Plasma DPA quartile 2 versus quartile 1 (unadjusted)",
+        "design": "case-control",
+        "timing": null,
+        "continent": "Africa",
+        "country": "Nigeria",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 40 years or older recruited from surgery/urology clinics and rural and urban communities",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years, P<.001, and median (25th, 75th percentile) fasting plasma FA were 2,447 (2,087, 3,024) and 2,373 (2,014, 2,751) microg/mL, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract; total_n derived from reported group counts 66 + 226 = 292"
+          },
+          "cases": {
+            "excerpt": "Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years, P<.001, and median (25th, 75th percentile) fasting plasma FA were 2,447 (2,087, 3,024) and 2,373 (2,014, 2,751) microg/mL, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA) and docosapentaenoic (DPA) were 0.39 (95% CI, 0.18-0.85) and 0.79 (95% CI, 0.35-1.79) respectively. In this population with high total plasma omega-3, we observed modest positive PCa risk trend with total plasma omega-6 (2.3), inverse risk reduction with EPA (0.4), and strong positive risk associations with behenic (2.8), erucic (4.2), and nervonic (2.4) acids.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA) and docosapentaenoic (DPA) were 0.39 (95% CI, 0.18-0.85) and 0.79 (95% CI, 0.35-1.79) respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "Odds ratio (OR) of PCa risk was determined by unconditional logistic regression with the plasma FA 1st quartile as reference",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "To investigate the role of fatty acids (FAs) in prostate cancer (PCa) risk in Nigeria",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "30 mLs of fasting blood collected for prostatic specific antigen and fatty acid (FA) analysis",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "No",
+          "q2": "No",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 50.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20073148|Eicosapentaenoic acid|Prostate cancer",
+      "pmid": "20073148",
+      "pmcid": "",
+      "published_date": "2009",
+      "title": "The association of plasma fatty acids with prostate cancer risk in Nigerians.",
+      "authors": [
+        "Ukoli FA",
+        "Akumabor PN",
+        "Oguike TC",
+        "Dent LL",
+        "Beech D",
+        "Osime U"
+      ],
+      "journal": "Ethnicity & disease",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+      "exposure": "Eicosapentaenoic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original case-control analysis in Nigerian men reporting plasma eicosapentaenoic acid quartile odds ratios for prostate cancer risk.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.39,
+        "effect_type": "OR",
+        "ci_lower": 0.18,
+        "ci_upper": 0.85,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 292,
+        "cases": 66,
+        "comparison_type": "Plasma EPA quartile 2 versus quartile 1 (unadjusted)",
+        "design": "case-control",
+        "timing": null,
+        "continent": "Africa",
+        "country": "Nigeria",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 40 years or older recruited from surgery/urology clinics and rural and urban communities",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years, P<.001, and median (25th, 75th percentile) fasting plasma FA were 2,447 (2,087, 3,024) and 2,373 (2,014, 2,751) microg/mL, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract; total_n derived from reported group counts 66 + 226 = 292"
+          },
+          "cases": {
+            "excerpt": "Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years, P<.001, and median (25th, 75th percentile) fasting plasma FA were 2,447 (2,087, 3,024) and 2,373 (2,014, 2,751) microg/mL, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA) and docosapentaenoic (DPA) were 0.39 (95% CI, 0.18-0.85) and 0.79 (95% CI, 0.35-1.79) respectively. In this population with high total plasma omega-3, we observed modest positive PCa risk trend with total plasma omega-6 (2.3), inverse risk reduction with EPA (0.4), and strong positive risk associations with behenic (2.8), erucic (4.2), and nervonic (2.4) acids.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA) and docosapentaenoic (DPA) were 0.39 (95% CI, 0.18-0.85) and 0.79 (95% CI, 0.35-1.79) respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "Odds ratio (OR) of PCa risk was determined by unconditional logistic regression with the plasma FA 1st quartile as reference",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "To investigate the role of fatty acids (FAs) in prostate cancer (PCa) risk in Nigeria",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "30 mLs of fasting blood collected for prostatic specific antigen and fatty acid (FA) analysis",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "No",
+          "q2": "No",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 50.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20073148|Fish oil|Prostate cancer",
+      "pmid": "20073148",
+      "pmcid": "",
+      "published_date": "2009",
+      "title": "The association of plasma fatty acids with prostate cancer risk in Nigerians.",
+      "authors": [
+        "Ukoli FA",
+        "Akumabor PN",
+        "Oguike TC",
+        "Dent LL",
+        "Beech D",
+        "Osime U"
+      ],
+      "journal": "Ethnicity & disease",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+      "exposure": "Fish oil",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The study measured plasma fatty acid concentrations and did not assess fish oil intake or supplementation as an exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20073148|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "20073148",
+      "pmcid": "",
+      "published_date": "2009",
+      "title": "The association of plasma fatty acids with prostate cancer risk in Nigerians.",
+      "authors": [
+        "Ukoli FA",
+        "Akumabor PN",
+        "Oguike TC",
+        "Dent LL",
+        "Beech D",
+        "Osime U"
+      ],
+      "journal": "Ethnicity & disease",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study of plasma omega-3 fatty acids and prostate cancer risk in Nigerian men, though no total omega-3 risk estimate is reported in the abstract.",
+      "missing_key_fields": [
+        "effect_size",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 292,
+        "cases": 66,
+        "comparison_type": "Plasma fatty acid quartiles with 1st quartile as reference",
+        "design": "case-control",
+        "timing": null,
+        "continent": "Africa",
+        "country": "Nigeria",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 40 years or older recruited from surgery/urology clinics and rural and urban communities",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years, P<.001, and median (25th, 75th percentile) fasting plasma FA were 2,447 (2,087, 3,024) and 2,373 (2,014, 2,751) microg/mL, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract; total_n derived from reported group counts 66 + 226 = 292"
+          },
+          "cases": {
+            "excerpt": "Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years, P<.001, and median (25th, 75th percentile) fasting plasma FA were 2,447 (2,087, 3,024) and 2,373 (2,014, 2,751) microg/mL, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "with the plasma FA 1st quartile as reference",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "Odds ratio (OR) of PCa risk was determined by unconditional logistic regression",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "prostate cancer (PCa) risk in Nigeria",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "In this population with high total plasma omega-3",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20073148/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "No",
+          "q2": "No",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 50.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20079573|Antioxidants|Prostate cancer",
+      "pmid": "20079573",
+      "pmcid": "",
+      "published_date": "2010-05-01",
+      "title": "Ingestion of selenium and other antioxidants during prostate cancer radiotherapy: a good thing?",
+      "authors": [
+        "Tabassum A",
+        "Bristow RG",
+        "Venkateswaran V"
+      ],
+      "journal": "Cancer treatment reviews",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20079573/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a systematic review of antioxidant and selenium evidence during prostate cancer treatment rather than an original incidence study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "20079573|Beta-carotene|Prostate cancer",
+      "pmid": "20079573",
+      "pmcid": "",
+      "published_date": "2010-05-01",
+      "title": "Ingestion of selenium and other antioxidants during prostate cancer radiotherapy: a good thing?",
+      "authors": [
+        "Tabassum A",
+        "Bristow RG",
+        "Venkateswaran V"
+      ],
+      "journal": "Cancer treatment reviews",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20079573/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Beta-carotene is only mentioned within a systematic review of antioxidants during prostate cancer radiotherapy, with no original incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

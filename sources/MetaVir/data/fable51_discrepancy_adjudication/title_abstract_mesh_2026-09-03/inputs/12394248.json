@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:22:16.718420-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "367e382c717d4429457c961a049c36003d7ef94b0ad38bd388fdd3fe3c065965",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12394248",
+      "title": "Consumption of non-alcoholic beverages and prostate cancer risk.",
+      "abstract": "Our objective was to investigate the relations between the consumption of coffee, tea and carbonated beverages and the development of prostate cancer. The design was a population-based case-control study set in Montreal. The analysis was restricted to the subset of men, aged 45-70 years, who underwent interviews in which aspects of lifelong consumption of non-alcoholic beverages were ascertained. There were 399 incident cases of prostate cancer, 476 population controls and 621 cancer controls. There was no association between the consumption of either coffee or carbonated beverages and the development of prostate cancer. Among daily tea drinkers, the odds ratio associated with the highest tertile of cumulative consumption was 2.0 (95% confidence interval (CI) 1.3-3.0) when using population controls and 1.6 (95% CI 1.0-2.4) when using cancer controls. In conclusion, the consumption of coffee or carbonated beverages does not influence the risk of prostate cancer. Our findings provide no support to the hypothesis that tea consumption may be protective. While tea consumption may increase prostate cancer risk, we were unable to rule out alternative explanations for the positive association that we observed.",
+      "mesh": [
+        "Aged",
+        "Beverages",
+        "Canada / epidemiology",
+        "Carbonated Beverages",
+        "Case-Control Studies",
+        "Coffee",
+        "Evidence-Based Medicine",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors",
+        "Statistics as Topic",
+        "Surveys and Questionnaires",
+        "Tea"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12394248",
+      "contexts": [
+        {
+          "context_id": "12394248|Tea|Prostate cancer",
+          "exposure": "Tea",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "2",
+              "ci_lower": "1.3",
+              "ci_upper": "3",
+              "p_value": "0.0011575443719999425",
+              "comparison": "highest tertile of cumulative tea consumption versus an unspecified reference category, using population controls"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1496",
+              "effect_measure_type": "OR",
+              "effect_size": "2",
+              "ci_lower": "1.3",
+              "ci_upper": "3",
+              "p_value": null,
+              "comparison": "highest versus lowest tertile of cumulative tea consumption (population controls)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

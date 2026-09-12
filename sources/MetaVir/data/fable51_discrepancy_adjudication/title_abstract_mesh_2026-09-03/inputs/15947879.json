@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:25:23.588092-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "803ae7856bed0ea9f60d43ad66132498ecc1b97efbe278b0760a3428fb70b907",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15947879",
+      "title": "Alcohol drinking and risk of localized versus advanced and sporadic versus familial prostate cancer in Sweden.",
+      "abstract": "It is unknown whether the association of alcohol consumption with prostate cancer risk varies between localized and advanced cases, or between sporadic and familial cases. We assessed recent alcohol drinking in a population-based case--control study of Swedish men, including 1499 cases and 1130 controls. Drinking status and average volume, frequency, and type of alcohol consumed were evaluated. Unconditional logistic regression was performed to estimate the odds ratios (ORs) and corresponding 95% confidence intervals (CIs) for associations between alcohol consumption and prostate cancer risk. Prostate cancer cases were more likely than controls to be current or former, rather than never, drinkers. However, there was no association between recent total alcohol, beer, wine, and liquor consumption and risk of overall prostate cancer, nor advanced, sporadic, or familial prostate cancer. The OR for risk of overall disease among men who drank more than 135 g of total alcohol per week versus non-drinkers was 1.2 (95% CI: 0.9, 1.5), p(trend)=0.12. There was a marginal positive association between alcohol intake and risk of localized disease. We detected no association between recent alcohol consumption and risk of advanced, sporadic, or familial prostate cancer, and a borderline positive association with localized disease.",
+      "mesh": [
+        "Aged",
+        "Alcohol Drinking / adverse effects",
+        "Case-Control Studies",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Staging",
+        "Prostatic Neoplasms / epidemiology, etiology, genetics",
+        "Risk Factors",
+        "Sweden / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15947879",
+      "contexts": [
+        {
+          "context_id": "15947879|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "1.2",
+              "ci_lower": "0.9",
+              "ci_upper": "1.5",
+              "p_value": "0.12",
+              "comparison": ">135 g total alcohol per week versus non-drinkers"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2629",
+              "effect_measure_type": "OR",
+              "effect_size": "1.2",
+              "ci_lower": "0.9",
+              "ci_upper": "1.5",
+              "p_value": "0.12",
+              "comparison": "more than 135 g of total alcohol per week versus non-drinkers"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

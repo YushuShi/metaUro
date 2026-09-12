@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:44.212957-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "61dca127d562879afefc4bf825ea7a7391ce0efca8d76908e1d9415ee99efc90",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "23989197",
+      "title": "Blood levels of saturated and monounsaturated fatty acids as markers of de novo lipogenesis and risk of prostate cancer.",
+      "abstract": "De novo lipogenesis has been implicated in prostate carcinogenesis, and blood levels of specific saturated fatty acids (SFAs) and monounsaturated fatty acids (MUFAs) could reflect activity of this pathway. We used gas chromatography to measure blood SFA and MUFA levels in prediagnostic samples from 476 incident prostate cancer cases (1982-1995) in the Physicians' Health Study and an equal number of controls matched on age and smoking status. Five tagging polymorphisms in the fatty acid synthase (FASN) gene (rs1127678, rs6502051, rs4246444, rs12949488, and rs8066956) were related to blood SFA and MUFA levels. Conditional logistic regression was used to estimate the rate ratios, with 95% confidence intervals, of prostate cancer across quintiles of blood fatty acid levels. The polymorphisms rs6502051 and rs4246444 were associated with lower levels of 14:1n-5, 16:1n-7, and 18:1n-9. Blood levels of 16:1n-7 were associated with higher prostate cancer incidence, with rate ratios for men in increasing quintiles of 1.00, 1.40, 1.35, 1.44, and 1.97 (95% confidence interval: 1.27-3.06; Ptrend = 0.003). Furthermore, 16:1n-7 levels were positively related to incidence of high-grade (Gleason score ≥7) tumors (rate ratioQ5-Q1 = 3.92; 95% confidence interval: 1.72-8.94) but not low-grade tumors (rate ratioQ5-Q1 = 1.51; 95% confidence interval: 0.87-2.62) (Pheterogeneity = 0.02). Higher activity of enzymes involved in de novo lipogenesis, as reflected in blood levels of 16:1n-7, could be involved in the development of high-grade prostate cancer.",
+      "mesh": [
+        "Biomarkers / blood",
+        "Fatty Acids / blood",
+        "Fatty Acids, Monounsaturated / blood",
+        "Humans",
+        "Incidence",
+        "Lipogenesis",
+        "Logistic Models",
+        "Male",
+        "Prostatic Neoplasms / blood, epidemiology, metabolism"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "23989197",
+      "contexts": [
+        {
+          "context_id": "23989197|Monounsaturated fat (MUFA)|Prostate cancer",
+          "exposure": "Monounsaturated fat (MUFA)",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_MEASURE_TYPE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "952",
+              "effect_measure_type": "RR",
+              "effect_size": "1.97",
+              "ci_lower": "1.27",
+              "ci_upper": "3.06",
+              "p_value": "0.003",
+              "comparison": "Highest versus lowest quintile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "952",
+              "effect_measure_type": "OR",
+              "effect_size": "1.97",
+              "ci_lower": "1.27",
+              "ci_upper": "3.06",
+              "p_value": "0.003",
+              "comparison": "highest versus lowest quintile of blood 16:1n-7 levels"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:26.701355-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "954a9af7ecc5101767a4261424632cf86ff7070b2d737a3e9f9835469a7eb346",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15208621",
+      "title": "Do preserved foods increase prostate cancer risk?",
+      "abstract": "Preserved foods have been found in some studies to be associated with increased cancer risks. The possible relationship between preserved foods and prostate cancer was investigated in a case-control study in southeast China during 2001-2002 covering 130 histologically confirmed cases and 274 inpatient controls without malignant disease. The total amount of preserved food consumed was positively associated with cancer risk, the adjusted odds ratio being 7.05 (95% CI: 3.12-15.90) for the highest relative to the lowest quartile of intake. In particular, the consumption of pickled vegetables, fermented soy products, salted fish and preserved meats was associated with a significant increase in prostate cancer risk, all with a significant dose-response relationship.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "China",
+        "Diet",
+        "Diet Surveys",
+        "Food Preservatives / adverse effects",
+        "Humans",
+        "Male",
+        "Prostatic Neoplasms / etiology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15208621",
+      "contexts": [
+        {
+          "context_id": "15208621|Fermented foods|Prostate cancer",
+          "exposure": "Fermented foods",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "404",
+              "effect_measure_type": "OR",
+              "effect_size": "7.05",
+              "ci_lower": "3.12",
+              "ci_upper": "15.9",
+              "p_value": "0",
+              "comparison": "Highest quartile of intake (>26.24 g/day) versus lowest quartile (≤6.85 g/day)"
+            },
+            "Claude+Gemini": {
+              "sample_size": "404",
+              "effect_measure_type": "OR",
+              "effect_size": "2.02",
+              "ci_lower": "1.08",
+              "ci_upper": "3.78",
+              "p_value": "0.003",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

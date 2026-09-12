@@ -1,0 +1,861 @@
+{
+  "schema_version": 1,
+  "receipt_id": "f911e52655cf00687a20189880e7c508d1c7a6a2da386949a1494e53d133203f",
+  "requested_at": "2026-09-02T08:15:12.837343+08:00",
+  "received_at": "2026-09-02T08:16:26.108539+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "f80143df44f29a9e64b934231fa96cc50c4c0893edca5c78677d03599beacf49",
+  "attempt": 1,
+  "context_ids": [
+    "32636729|Green tea|Prostate cancer",
+    "32636729|Tea|Prostate cancer",
+    "32648373|Antioxidants|Prostate cancer",
+    "32659681|Vitamin D|Prostate cancer",
+    "32659681|Vitamin E|Prostate cancer",
+    "32681429|Vitamin D|Prostate cancer",
+    "32698845|Glycine|Prostate cancer",
+    "32698845|Pyruvate|Prostate cancer",
+    "32701947|Alcohol|Prostate cancer",
+    "32717903|Alcohol|Prostate cancer",
+    "32743740|Calcium|Prostate cancer",
+    "32743740|Dairy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 2,
+    "Antioxidants": 1,
+    "Calcium": 1,
+    "Dairy": 1,
+    "Glycine": 1,
+    "Green tea": 1,
+    "Pyruvate": 1,
+    "Tea": 1,
+    "Vitamin D": 2,
+    "Vitamin E": 1
+  },
+  "input_digest": "92fc464c140bd5abc80a1377d3791dedcedd6cd444a0f73bfbaa85e9635029d4",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11636,
+    "cached_input_tokens": 0,
+    "output_tokens": 8017,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.25860500000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "5e37a88d-ffb8-456f-8378-3c1e00ff5ac8",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.25860500000000003"
+  },
+  "output_sha256": "11e02034ef21a043c9e30af08c62c18daa8f7e541ccb6aaa4ae2eab7a06dded4",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"32636729|Green tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study exclusively used an N-methyl-N-nitrosourea-induced rat model of prostate cancer with green tea extract and aerobic training, so it is preclinical animal research rather than a human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32636729|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Tea exposure was tested only as a hydroalcoholic green tea extract in rats, making the evidence exclusively animal-based.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32648373|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a narrative review discussing oxidative stress mechanisms and dietary antioxidants rather than reporting original data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32659681|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-MENDELIAN-RANDOMIZATION\",\"reason\":\"Associations between vitamin D and prostate cancer were estimated solely with Mendelian randomization using genetic instruments from GWAS data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32659681|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-MENDELIAN-RANDOMIZATION\",\"reason\":\"Vitamin E and prostate cancer were analyzed only through Mendelian randomization of genome-wide association data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32681429|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of cytochrome P450 expression in prostate tissue, with no original population-level vitamin D exposure analysis of prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32698845|Glycine|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Nested case-control study measuring pre-diagnostic plasma glycine concentrations in relation to incident prostate cancer risk in humans.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":1554,\"cases\":777,\"comparison_type\":null,\"design\":\"Nested case-control study\",\"timing\":\"Pre-diagnostic plasma samples with follow-up of at least 5 years\",\"continent\":\"Europe\",\"country\":\"Sweden\",\"location\":\"Northern Sweden\",\"ethnicity\":\"NA\",\"population\":\"Men in the Northern Sweden Health and Disease Study with prostate cancer cases and matched controls\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"in 777 prostate cancer cases (follow-up ≥ 5 years) and 777 matched controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"cases\":{\"excerpt\":\"777 prostate cancer cases (follow-up ≥ 5 years)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Observed associations with risk of overall prostate cancer in younger subjects were positive for glycine\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract results\"},\"design\":{\"excerpt\":\"In a case-control study nested in the Northern Sweden Health and Disease Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"timing\":{\"excerpt\":\"pre-diagnostic concentrations of 148 plasma metabolites were determined\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"continent\":{\"excerpt\":\"Northern Sweden Health and Disease Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"nested in the Northern Sweden Health and Disease Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"exposure_measurement\":{\"excerpt\":\"pre-diagnostic concentrations of 148 plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32698845|Pyruvate|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Nested case-control study reporting an inverse association between pre-diagnostic plasma pyruvate and incident prostate cancer risk in younger subjects.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":1554,\"cases\":777,\"comparison_type\":null,\"design\":\"Nested case-control study\",\"timing\":\"Pre-diagnostic plasma samples with follow-up of at least 5 years\",\"continent\":\"Europe\",\"country\":\"Sweden\",\"location\":\"Northern Sweden\",\"ethnicity\":\"NA\",\"population\":\"Men in the Northern Sweden Health and Disease Study with prostate cancer cases and matched controls\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"in 777 prostate cancer cases (follow-up ≥ 5 years) and 777 matched controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"cases\":{\"excerpt\":\"777 prostate cancer cases (follow-up ≥ 5 years)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"associations with risk of overall prostate cancer in younger subjects were positive for glycine and inverse for pyruvate\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract results\"},\"design\":{\"excerpt\":\"In a case-control study nested in the Northern Sweden Health and Disease Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"timing\":{\"excerpt\":\"pre-diagnostic concentrations of 148 plasma metabolites were determined\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"continent\":{\"excerpt\":\"Northern Sweden Health and Disease Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"nested in the Northern Sweden Health and Disease Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"},\"exposure_measurement\":{\"excerpt\":\"plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32698845/\",\"location\":\"abstract methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32701947|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-MENDELIAN-RANDOMIZATION\",\"reason\":\"The alcohol-prostate cancer association was estimated exclusively using genetically predicted alcohol consumption in a mendelian randomisation framework.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32717903|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The publication is a linear and non-linear dose-response meta-analysis of published cohort studies rather than an original primary study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"32743740|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort analysis of recalled adolescent dietary calcium intake and incident prostate cancer risk in humans.\",\"extraction\":{\"effect_size\":null,\"effect_type\":\"RR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":162816,\"cases\":17729,\"comparison_type\":\"Trend across adolescent calcium intake levels\",\"design\":\"Prospective cohort study\",\"timing\":\"Recalled dietary intake at ages 12-13 years with 14 years of follow-up\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Participants in the NIH-AARP Diet and Health Study\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"cases\":{\"excerpt\":\"incident total (n = 17,729), advanced (n = 2,348), and fatal PCa (n = 827)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"effect_size\":{\"excerpt\":\"We calculated relative risks (RRs) and 95% confidence intervals (CIs) by Cox proportional hazards regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"suggestive positive trends for milk, dairy, and calcium intake with total and/or advanced PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract results\"},\"design\":{\"excerpt\":\"We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"timing\":{\"excerpt\":\"calcium intake at ages 12-13 years with incident total ... PCa ... over 14 years of follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"recalled dietary data ... to investigate associations for milk, cheese, ice cream, total dairy, and calcium intake at ages 12-13 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"32743740|Dairy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort analysis of recalled adolescent dairy product intake and incident total and advanced prostate cancer.\",\"extraction\":{\"effect_size\":null,\"effect_type\":\"RR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":162816,\"cases\":17729,\"comparison_type\":\"Trend across adolescent dairy product intake levels\",\"design\":\"Prospective cohort study\",\"timing\":\"Recalled dietary intake at ages 12-13 years with 14 years of follow-up\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Participants in the NIH-AARP Diet and Health Study\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"cases\":{\"excerpt\":\"incident total (n = 17,729), advanced (n = 2,348), and fatal PCa (n = 827)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"effect_size\":{\"excerpt\":\"We calculated relative risks (RRs) and 95% confidence intervals (CIs) by Cox proportional hazards regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"suggestive positive trends for milk, dairy, and calcium intake with total and/or advanced PCa (p-trends = 0.016-0.148)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract results\"},\"design\":{\"excerpt\":\"We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"timing\":{\"excerpt\":\"milk, cheese, ice cream, total dairy, and calcium intake at ages 12-13 years ... over 14 years of follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"recalled dietary data ... to investigate associations for milk, cheese, ice cream, total dairy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/32743740/\",\"location\":\"abstract methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "32636729|Green tea|Prostate cancer",
+      "pmid": "32636729",
+      "pmcid": "PMC7332805",
+      "published_date": "2020",
+      "title": "Aerobic training and hydroalcoholic extracts of green tea improve pro-oxidant-antioxidant balance and histopathological score in the N-methyl-N-nitrosourea-induced prostate cancer model of rat.",
+      "authors": [
+        "Vahabzadeh Z",
+        "Molodi M",
+        "Nikkho B",
+        "Saghebjoo M",
+        "Saedmocheshi S",
+        "Zamani F",
+        "Roshani Y",
+        "Babanzadeh S"
+      ],
+      "journal": "EXCLI journal",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32636729/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study exclusively used an N-methyl-N-nitrosourea-induced rat model of prostate cancer with green tea extract and aerobic training, so it is preclinical animal research rather than a human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32636729|Tea|Prostate cancer",
+      "pmid": "32636729",
+      "pmcid": "PMC7332805",
+      "published_date": "2020",
+      "title": "Aerobic training and hydroalcoholic extracts of green tea improve pro-oxidant-antioxidant balance and histopathological score in the N-methyl-N-nitrosourea-induced prostate cancer model of rat.",
+      "authors": [
+        "Vahabzadeh Z",
+        "Molodi M",
+        "Nikkho B",
+        "Saghebjoo M",
+        "Saedmocheshi S",
+        "Zamani F",
+        "Roshani Y",
+        "Babanzadeh S"
+      ],
+      "journal": "EXCLI journal",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32636729/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Tea exposure was tested only as a hydroalcoholic green tea extract in rats, making the evidence exclusively animal-based.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32648373|Antioxidants|Prostate cancer",
+      "pmid": "32648373",
+      "pmcid": "PMC7994655",
+      "published_date": "2021-04-01",
+      "title": "Oxidative Stress, Diet and Prostate Cancer.",
+      "authors": [
+        "Tan BL",
+        "Norhaizan ME"
+      ],
+      "journal": "The world journal of men's health",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32648373/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a narrative review discussing oxidative stress mechanisms and dietary antioxidants rather than reporting original data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32659681|Vitamin D|Prostate cancer",
+      "pmid": "32659681",
+      "pmcid": "",
+      "published_date": "2020-10-01",
+      "title": "Are vitamins relevant to cancer risks? A Mendelian randomization investigation.",
+      "authors": [
+        "Cheng WW",
+        "Wang ZK",
+        "Shangguan HF",
+        "Zhu Q",
+        "Zhang HY"
+      ],
+      "journal": "Nutrition (Burbank, Los Angeles County, Calif.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32659681/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-MENDELIAN-RANDOMIZATION",
+      "reason": "The report uses Mendelian randomization or genetic instruments, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32659681|Vitamin E|Prostate cancer",
+      "pmid": "32659681",
+      "pmcid": "",
+      "published_date": "2020-10-01",
+      "title": "Are vitamins relevant to cancer risks? A Mendelian randomization investigation.",
+      "authors": [
+        "Cheng WW",
+        "Wang ZK",
+        "Shangguan HF",
+        "Zhu Q",
+        "Zhang HY"
+      ],
+      "journal": "Nutrition (Burbank, Los Angeles County, Calif.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32659681/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-MENDELIAN-RANDOMIZATION",
+      "reason": "The report uses Mendelian randomization or genetic instruments, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32681429|Vitamin D|Prostate cancer",
+      "pmid": "32681429",
+      "pmcid": "",
+      "published_date": "2020-10-01",
+      "title": "Altered expression of cytochrome P450 enzymes involved in metabolism of androgens and vitamin D in the prostate as a risk factor for prostate cancer.",
+      "authors": [
+        "Maksymchuk OV",
+        "Kashuba VI"
+      ],
+      "journal": "Pharmacological reports : PR",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32681429/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of cytochrome P450 expression in prostate tissue, with no original population-level vitamin D exposure analysis of prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32698845|Glycine|Prostate cancer",
+      "pmid": "32698845",
+      "pmcid": "PMC7376662",
+      "published_date": "2020-07-23",
+      "title": "Identification of metabolites associated with prostate cancer risk: a nested case-control study with long follow-up in the Northern Sweden Health and Disease Study.",
+      "authors": [
+        "Röhnisch HE",
+        "Kyrø C",
+        "Olsen A",
+        "Thysell E",
+        "Hallmans G",
+        "Moazzami AA"
+      ],
+      "journal": "BMC medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+      "exposure": "Glycine",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Nested case-control study measuring pre-diagnostic plasma glycine concentrations in relation to incident prostate cancer risk in humans.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 1554,
+        "cases": 777,
+        "comparison_type": null,
+        "design": "Nested case-control study",
+        "timing": "Pre-diagnostic plasma samples with follow-up of at least 5 years",
+        "continent": "Europe",
+        "country": "Sweden",
+        "location": "Northern Sweden",
+        "ethnicity": "NA",
+        "population": "Men in the Northern Sweden Health and Disease Study with prostate cancer cases and matched controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In a case-control study nested in the Northern Sweden Health and Disease Study, pre-diagnostic concentrations of 148 plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics in 777 prostate cancer cases (follow-up ≥ 5 years) and 777 matched controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods; total_n derived from reported group counts 777 + 777 = 1554"
+          },
+          "cases": {
+            "excerpt": "In a case-control study nested in the Northern Sweden Health and Disease Study, pre-diagnostic concentrations of 148 plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics in 777 prostate cancer cases (follow-up ≥ 5 years) and 777 matched controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Observed associations with risk of overall prostate cancer in younger subjects were positive for glycine",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract results"
+          },
+          "design": {
+            "excerpt": "In a case-control study nested in the Northern Sweden Health and Disease Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "timing": {
+            "excerpt": "pre-diagnostic concentrations of 148 plasma metabolites were determined",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "continent": {
+            "excerpt": "Northern Sweden Health and Disease Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "nested in the Northern Sweden Health and Disease Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "pre-diagnostic concentrations of 148 plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32698845|Pyruvate|Prostate cancer",
+      "pmid": "32698845",
+      "pmcid": "PMC7376662",
+      "published_date": "2020-07-23",
+      "title": "Identification of metabolites associated with prostate cancer risk: a nested case-control study with long follow-up in the Northern Sweden Health and Disease Study.",
+      "authors": [
+        "Röhnisch HE",
+        "Kyrø C",
+        "Olsen A",
+        "Thysell E",
+        "Hallmans G",
+        "Moazzami AA"
+      ],
+      "journal": "BMC medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+      "exposure": "Pyruvate",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Nested case-control study reporting an inverse association between pre-diagnostic plasma pyruvate and incident prostate cancer risk in younger subjects.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 1554,
+        "cases": 777,
+        "comparison_type": null,
+        "design": "Nested case-control study",
+        "timing": "Pre-diagnostic plasma samples with follow-up of at least 5 years",
+        "continent": "Europe",
+        "country": "Sweden",
+        "location": "Northern Sweden",
+        "ethnicity": "NA",
+        "population": "Men in the Northern Sweden Health and Disease Study with prostate cancer cases and matched controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In a case-control study nested in the Northern Sweden Health and Disease Study, pre-diagnostic concentrations of 148 plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics in 777 prostate cancer cases (follow-up ≥ 5 years) and 777 matched controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods; total_n derived from reported group counts 777 + 777 = 1554"
+          },
+          "cases": {
+            "excerpt": "In a case-control study nested in the Northern Sweden Health and Disease Study, pre-diagnostic concentrations of 148 plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics in 777 prostate cancer cases (follow-up ≥ 5 years) and 777 matched controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "associations with risk of overall prostate cancer in younger subjects were positive for glycine and inverse for pyruvate",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract results"
+          },
+          "design": {
+            "excerpt": "In a case-control study nested in the Northern Sweden Health and Disease Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "timing": {
+            "excerpt": "pre-diagnostic concentrations of 148 plasma metabolites were determined",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "continent": {
+            "excerpt": "Northern Sweden Health and Disease Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "nested in the Northern Sweden Health and Disease Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "plasma metabolites were determined using targeted mass spectrometry- and nuclear magnetic resonance-based metabolomics",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32698845/",
+            "location": "abstract methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32701947|Alcohol|Prostate cancer",
+      "pmid": "32701947",
+      "pmcid": "PMC7377370",
+      "published_date": "2020-07-01",
+      "title": "Smoking, alcohol consumption, and cancer: A mendelian randomisation study in UK Biobank and international genetic consortia participants.",
+      "authors": [
+        "Larsson SC",
+        "Carter P",
+        "Kar S",
+        "Vithayathil M",
+        "Mason AM",
+        "Michaëlsson K",
+        "Burgess S"
+      ],
+      "journal": "PLoS medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32701947/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-MENDELIAN-RANDOMIZATION",
+      "reason": "The report uses Mendelian randomization or genetic instruments, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32717903|Alcohol|Prostate cancer",
+      "pmid": "32717903",
+      "pmcid": "PMC7468718",
+      "published_date": "2020-07-23",
+      "title": "Alcohol Consumption and the Risk of Prostate Cancer: A Dose-Response Meta-Analysis.",
+      "authors": [
+        "Hong S",
+        "Khil H",
+        "Lee DH",
+        "Keum N",
+        "Giovannucci EL"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32717903/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The publication is a linear and non-linear dose-response meta-analysis of published cohort studies rather than an original primary study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32743740|Calcium|Prostate cancer",
+      "pmid": "32743740",
+      "pmcid": "PMC7482419",
+      "published_date": "2020-10-01",
+      "title": "Adolescent dairy product and calcium intake in relation to later prostate cancer risk and mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis of recalled adolescent dietary calcium intake and incident prostate cancer risk in humans.",
+      "missing_key_fields": [
+        "effect_size",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": "RR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 162816,
+        "cases": 17729,
+        "comparison_type": "Trend across adolescent calcium intake levels",
+        "design": "Prospective cohort study",
+        "timing": "Recalled dietary intake at ages 12-13 years with 14 years of follow-up",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants in the NIH-AARP Diet and Health Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study to investigate associations for milk, cheese, ice cream, total dairy, and calcium intake at ages 12-13 years with incident total (n = 17,729), advanced (n = 2,348), and fatal PCa (n = 827) over 14 years of follow-up.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "cases": {
+            "excerpt": "Although a growing body of evidence supports an early-life contribution to prostate cancer (PCa) development, few studies have investigated early-life diet, and only three have examined early-life dairy product intake, a promising candidate risk factor because of its known/suspected influence on insulin-like growth factor levels and height. We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study to investigate associations for milk, cheese, ice cream, total dairy, and calcium intake at ages 12-13 years with incident total (n = 17,729), advanced (n = 2,348), and fatal PCa (n = 827) over 14 years of follow-up.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "effect_size": {
+            "excerpt": "We calculated relative risks (RRs) and 95% confidence intervals (CIs) by Cox proportional hazards regression",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "suggestive positive trends for milk, dairy, and calcium intake with total and/or advanced PCa",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract results"
+          },
+          "design": {
+            "excerpt": "We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "32743740|Dairy|Prostate cancer",
+      "pmid": "32743740",
+      "pmcid": "PMC7482419",
+      "published_date": "2020-10-01",
+      "title": "Adolescent dairy product and calcium intake in relation to later prostate cancer risk and mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis of recalled adolescent dairy product intake and incident total and advanced prostate cancer.",
+      "missing_key_fields": [
+        "effect_size",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": "RR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 162816,
+        "cases": 17729,
+        "comparison_type": "Trend across adolescent dairy product intake levels",
+        "design": "Prospective cohort study",
+        "timing": "Recalled dietary intake at ages 12-13 years with 14 years of follow-up",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants in the NIH-AARP Diet and Health Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study to investigate associations for milk, cheese, ice cream, total dairy, and calcium intake at ages 12-13 years with incident total (n = 17,729), advanced (n = 2,348), and fatal PCa (n = 827) over 14 years of follow-up.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "cases": {
+            "excerpt": "Although a growing body of evidence supports an early-life contribution to prostate cancer (PCa) development, few studies have investigated early-life diet, and only three have examined early-life dairy product intake, a promising candidate risk factor because of its known/suspected influence on insulin-like growth factor levels and height. We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study to investigate associations for milk, cheese, ice cream, total dairy, and calcium intake at ages 12-13 years with incident total (n = 17,729), advanced (n = 2,348), and fatal PCa (n = 827) over 14 years of follow-up.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "effect_size": {
+            "excerpt": "We calculated relative risks (RRs) and 95% confidence intervals (CIs) by Cox proportional hazards regression",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "suggestive positive trends for milk, dairy, and calcium intake with total and/or advanced PCa (p-trends = 0.016-0.148)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract results"
+          },
+          "design": {
+            "excerpt": "We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/32743740/",
+            "location": "abstract methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

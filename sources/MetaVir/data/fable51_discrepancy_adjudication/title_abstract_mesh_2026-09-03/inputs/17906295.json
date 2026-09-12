@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:33.826030-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "6b20df199f1f731edf351a91d2b40074976f77cc3b7ef3228ea606dd6385f2ef",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17906295",
+      "title": "Green tea consumption and prostate cancer risk in Japanese men: a prospective study.",
+      "abstract": "The incidence of prostate cancer is much lower in Asian than Western populations. Given that environmental factors such as dietary habits may play a major role in the causation of prostate cancer and the high consumption of green tea in Asian populations, this low incidence may be partly due to the effects of green tea. The JPHC Study (Japan Public Health Center-based Prospective Study) was established in 1990 for cohort I and in 1993 for cohort II. The subjects were 49,920 men aged 40-69 years who completed a questionnaire that included their green tea consumption habit at baseline and were followed until the end of 2004. During this time, 404 men were newly diagnosed with prostate cancer, of whom 114 had advanced cases, 271 were localized, and 19 were of an undetermined stage. Green tea was not associated with localized prostate cancer. However, consumption was associated with a dose-dependent decrease in the risk of advanced prostate cancer. The multivariate relative risk was 0.52 (95% confidence interval: 0.28, 0.96) for men drinking 5 or more cups/day compared with less than 1 cup/day (p(trend) = 0.01). Green tea may be associated with a decreased risk of advanced prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Camellia sinensis",
+        "Confidence Intervals",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Japan / epidemiology",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Staging",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, pathology, prevention & control",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "Tea"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17906295",
+      "contexts": [
+        {
+          "context_id": "17906295|Tea|Prostate cancer",
+          "exposure": "Tea",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-DUPLICATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

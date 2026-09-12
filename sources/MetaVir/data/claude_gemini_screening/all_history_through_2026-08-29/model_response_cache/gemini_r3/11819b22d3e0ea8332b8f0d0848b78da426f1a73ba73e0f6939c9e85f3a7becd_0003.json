@@ -1,0 +1,493 @@
+{
+  "schema_version": 1,
+  "receipt_id": "8b8382792937a5b250ab534230ca4b044f552e322bb4930bf68461d8d7b4ea42",
+  "requested_at": "2026-09-02T09:21:22.919323+08:00",
+  "received_at": "2026-09-02T09:21:35.408747+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "11819b22d3e0ea8332b8f0d0848b78da426f1a73ba73e0f6939c9e85f3a7becd",
+  "attempt": 3,
+  "context_ids": [
+    "21518693|Docosahexaenoic acid|Prostate cancer",
+    "21518693|Omega-3 fatty acids|Prostate cancer",
+    "21518693|Omega-6 fatty acids|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Docosahexaenoic acid": 1,
+    "Omega-3 fatty acids": 1,
+    "Omega-6 fatty acids": 1
+  },
+  "input_digest": "210fcc7037aa814f2b6583ccf7137c61388528f9d12fb1bd085555a281647fa2",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15854,
+    "cached_input_tokens": 0,
+    "output_tokens": 2074,
+    "reasoning_tokens": 1762
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.019668",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "61d5a9f8-5373-4636-9783-8960df1616b5",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.019668"
+  },
+  "output_sha256": "ecd36664e9517d5b3d2adf1a3a9d829acf77b0a9f3cd1567170bb3b4b92a34af",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"21518693|Docosahexaenoic acid|Prostate cancer\",\n      \"status\": \"EXCLUDE\",\n      \"exclusion_code\": \"S2-WRONG-OUTCOME\",\n      \"reason\": \"The study evaluated 7-year-period prevalence of prostate cancer rather than incident prostate cancer.\",\n      \"extraction\": null,\n      \"jbi\": null\n    },\n    {\n      \"context_id\": \"21518693|Omega-3 fatty acids|Prostate cancer\",\n      \"status\": \"EXCLUDE\",\n      \"exclusion_code\": \"S2-WRONG-OUTCOME\",\n      \"reason\": \"The study evaluated 7-year-period prevalence of prostate cancer rather than incident prostate cancer.\",\n      \"extraction\": null,\n      \"jbi\": null\n    },\n    {\n      \"context_id\": \"21518693|Omega-6 fatty acids|Prostate cancer\",\n      \"status\": \"EXCLUDE\",\n      \"exclusion_code\": \"S2-WRONG-OUTCOME\",\n      \"reason\": \"The study evaluated 7-year-period prevalence of prostate cancer rather than incident prostate cancer.\",\n      \"extraction\": null,\n      \"jbi\": null\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:21:35.501672+08:00",
+      "transition": "new_gateway_attempt_validated",
+      "validation_status": "received",
+      "validation_error": "",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "ecd36664e9517d5b3d2adf1a3a9d829acf77b0a9f3cd1567170bb3b4b92a34af"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [],
+  "validated_results": [
+    {
+      "context_id": "21518693|Docosahexaenoic acid|Prostate cancer",
+      "pmid": "21518693",
+      "pmcid": "PMC3145396",
+      "published_date": "2011-06-15",
+      "title": "Serum phospholipid fatty acids and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "authors": [
+        "Brasky TM",
+        "Till C",
+        "White E",
+        "Neuhouser ML",
+        "Song X",
+        "Goodman P",
+        "Thompson IM",
+        "King IB",
+        "Albanes D",
+        "Kristal AR"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+      "exposure": "Docosahexaenoic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": "S2-WRONG-OUTCOME",
+      "reason": "The study evaluated 7-year-period prevalence of prostate cancer rather than incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.5,
+        "effect_type": "OR",
+        "ci_lower": 1.34,
+        "ci_upper": 4.65,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 3461,
+        "cases": 1658,
+        "comparison_type": "Quartile 4 vs quartile 1 of serum phospholipid docosahexaenoic acid, high-grade prostate cancer",
+        "design": "case_control",
+        "timing": "1994-2003",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants aged 55-84 years in the Prostate Cancer Prevention Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This study examined the associations between inflammation-related phospholipid fatty acids and the 7-year-period prevalence of prostate cancer in a nested case-control analysis of participants, aged 55-84 years, in the Prostate Cancer Prevention Trial during 1994-2003. Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract; total_n derived from reported group counts 1658 + 1803 = 3461"
+          },
+          "cases": {
+            "excerpt": "Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "1: odds ratio (OR) = 2.50, 95% confidence interval (CI): 1.34, 4.65); TFA 18:1 and TFA 18:2 were linearly and inversely associated with risk of high-grade prostate cancer (quartile 4 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "1: odds ratio (OR) = 2.50, 95% confidence interval (CI): 1.34, 4.65); TFA 18:1 and TFA 18:2 were linearly and inversely associated with risk of high-grade prostate cancer (quartile 4 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "quartile 4 vs. 1",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "in a nested case-control analysis of participants",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "in the Prostate Cancer Prevention Trial during 1994-2003",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Phospholipid fatty acids were extracted from serum",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "EXCLUDE",
+      "full_text_status": "EXCLUDE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36928,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "6ffee73c8ba384d0d2297e232913769c9c3922e03d445e950360bd8b1434af53",
+      "pmc_source_receipt_digest": "726ea8839be50bfaf8663609a0f62a0f73e3246917bfd184f6e957a83d493a44",
+      "pmc_source_raw_sha256": "cf283b028d339fba27d7865ba5e39830ebc3b9b79226cbfc9cc35de1763cb947",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "0b073c4d24536489b9262af6a5579d0dabda7408536566187159b082e8dcd2c3"
+    },
+    {
+      "context_id": "21518693|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "21518693",
+      "pmcid": "PMC3145396",
+      "published_date": "2011-06-15",
+      "title": "Serum phospholipid fatty acids and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "authors": [
+        "Brasky TM",
+        "Till C",
+        "White E",
+        "Neuhouser ML",
+        "Song X",
+        "Goodman P",
+        "Thompson IM",
+        "King IB",
+        "Albanes D",
+        "Kristal AR"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": "S2-WRONG-OUTCOME",
+      "reason": "The study evaluated 7-year-period prevalence of prostate cancer rather than incident prostate cancer.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 3461,
+        "cases": 1658,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "1994-2003",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants aged 55-84 years in the Prostate Cancer Prevention Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This study examined the associations between inflammation-related phospholipid fatty acids and the 7-year-period prevalence of prostate cancer in a nested case-control analysis of participants, aged 55-84 years, in the Prostate Cancer Prevention Trial during 1994-2003. Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract; total_n derived from reported group counts 1658 + 1803 = 3461"
+          },
+          "cases": {
+            "excerpt": "Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "in a nested case-control analysis of participants",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "in the Prostate Cancer Prevention Trial during 1994-2003",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "concentrations of ω-3, ω-6, and trans-fatty acids (TFAs) were expressed as proportions of the total",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "EXCLUDE",
+      "full_text_status": "EXCLUDE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36928,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "6ffee73c8ba384d0d2297e232913769c9c3922e03d445e950360bd8b1434af53",
+      "pmc_source_receipt_digest": "726ea8839be50bfaf8663609a0f62a0f73e3246917bfd184f6e957a83d493a44",
+      "pmc_source_raw_sha256": "cf283b028d339fba27d7865ba5e39830ebc3b9b79226cbfc9cc35de1763cb947",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "f82990434c6028448dd25b1cdc278d4d38067b03874710520dbfa18e83250ec7"
+    },
+    {
+      "context_id": "21518693|Omega-6 fatty acids|Prostate cancer",
+      "pmid": "21518693",
+      "pmcid": "PMC3145396",
+      "published_date": "2011-06-15",
+      "title": "Serum phospholipid fatty acids and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "authors": [
+        "Brasky TM",
+        "Till C",
+        "White E",
+        "Neuhouser ML",
+        "Song X",
+        "Goodman P",
+        "Thompson IM",
+        "King IB",
+        "Albanes D",
+        "Kristal AR"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+      "exposure": "Omega-6 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": "S2-WRONG-OUTCOME",
+      "reason": "The study evaluated 7-year-period prevalence of prostate cancer rather than incident prostate cancer.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 3461,
+        "cases": 1658,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "1994-2003",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants aged 55-84 years in the Prostate Cancer Prevention Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This study examined the associations between inflammation-related phospholipid fatty acids and the 7-year-period prevalence of prostate cancer in a nested case-control analysis of participants, aged 55-84 years, in the Prostate Cancer Prevention Trial during 1994-2003. Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract; total_n derived from reported group counts 1658 + 1803 = 3461"
+          },
+          "cases": {
+            "excerpt": "Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "in a nested case-control analysis of participants",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "in the Prostate Cancer Prevention Trial during 1994-2003",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "concentrations of ω-3, ω-6, and trans-fatty acids (TFAs) were expressed as proportions of the total",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "EXCLUDE",
+      "full_text_status": "EXCLUDE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36928,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "6ffee73c8ba384d0d2297e232913769c9c3922e03d445e950360bd8b1434af53",
+      "pmc_source_receipt_digest": "726ea8839be50bfaf8663609a0f62a0f73e3246917bfd184f6e957a83d493a44",
+      "pmc_source_raw_sha256": "cf283b028d339fba27d7865ba5e39830ebc3b9b79226cbfc9cc35de1763cb947",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "238a37ebd6b8fc80eaf063e261cfe0398f5c880323f23a5516a512b3029b9fed"
+    }
+  ]
+}

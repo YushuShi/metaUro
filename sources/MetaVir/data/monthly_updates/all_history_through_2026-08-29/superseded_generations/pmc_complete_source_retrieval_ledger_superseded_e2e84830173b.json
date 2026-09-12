@@ -1,0 +1,1183 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-08-30T08:38:46.979090+08:00",
+  "official_routes_only": true,
+  "complete_jats_required": true,
+  "abstracts_accepted_as_full_text": false,
+  "all_or_none_gate": true,
+  "scope": {
+    "output_dir": "/Users/yushushi/Library/CloudStorage/OneDrive-WeillCornellMedicine/MetaVir/data/monthly_updates/all_history_through_2026-08-29",
+    "required_sources": {
+      "PMC11160038": "14720329",
+      "PMC12034833": "38973750",
+      "PMC12532455": "34383904",
+      "PMC2781742": "19808637",
+      "PMC2950820": "20693267",
+      "PMC3735464": "23843441",
+      "PMC4691666": "26561618",
+      "PMC5241906": "27297429",
+      "PMC8505417": "34135472",
+      "PMC9814153": "36316560"
+    },
+    "required_source_count": 10,
+    "required_context_count": 12,
+    "scope_digest": "67f07f99d3bd542579b5200d8d82197b7ccdbd43541e9bd3ecbf924e846bc428",
+    "artifact_sha256": {
+      "candidates": "a4fb5efd02f56634be58a676996bf5418445601ca1cf76b91caf4f50fd15a508",
+      "second": "44dba8ea4ef720a32ac352937dba0c963f927724d39f7388cbc0d767b638fa6c",
+      "source_status": "f84c42204d60bec59ffac322e271001aef6c4c66c4531496f07c72aa02d61b72",
+      "full_text_progress": "31537b9abb9e05b3c42a787be7db24a20301a4b814f396e18762838818466806"
+    },
+    "source_manifest_digest": "b3246814c06c27daaf71b1fc68d9a41f1a0d0e5803ba324935522f8e2fa9d645",
+    "input_digest": "f52ef4d06e695b1e3467d251f6b208260598842fcac119a11c46b8f412884af4",
+    "context_count": 12,
+    "context_ids": [
+      "14720329|Genistein|Prostate cancer",
+      "19808637|Processed meat intake|Prostate cancer",
+      "20693267|Omega-6 fatty acids|Prostate cancer",
+      "23843441|Linoleic acid|Prostate cancer",
+      "26561618|Vegan diet|Prostate cancer",
+      "27297429|Monounsaturated fat (MUFA)|Prostate cancer",
+      "27297429|Polyunsaturated fat (PUFA)|Prostate cancer",
+      "34135472|Animal protein intake|Prostate cancer",
+      "34383904|Plant protein intake|Prostate cancer",
+      "36316560|Plant-based diet|Prostate cancer",
+      "38973750|Processed meat intake|Prostate cancer",
+      "38973750|Whole-grain intake|Prostate cancer"
+    ]
+  },
+  "validation_contract": {
+    "exactly_one_jats_article": true,
+    "exact_pmcid": true,
+    "exact_pmid": true,
+    "exactly_one_body": true,
+    "minimum_body_characters": 1000,
+    "minimum_body_paragraphs": 3,
+    "minimum_extracted_characters": 2000
+  },
+  "sources": {
+    "PMC11160038": {
+      "pmid": "14720329",
+      "context_ids": [
+        "14720329|Genistein|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC11160038&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 10905,
+                "sha256": "3f0db894dac1cda1125960bfa7189aad8be4fd9aa70f976077acff226723ab49",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 10905,
+            "sha256": "3f0db894dac1cda1125960bfa7189aad8be4fd9aa70f976077acff226723ab49",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "14720329"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A11160038&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "10f3b25d28cc2acda9a69b486d51238a49e5ba67bed9a172f25930e065d33c04",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "10f3b25d28cc2acda9a69b486d51238a49e5ba67bed9a172f25930e065d33c04",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC11160038.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 281,
+                "sha256": "b9335943c5457f2e48ccbb5a9dfb6928b049ce6d8a6396b97a9953e247435208",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC12034833": {
+      "pmid": "38973750",
+      "context_ids": [
+        "38973750|Processed meat intake|Prostate cancer",
+        "38973750|Whole-grain intake|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC12034833&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 11699,
+                "sha256": "091fd857df512e3662def29d9bd2dafc7377411c154b3e89003953a5d5a80daa",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 11699,
+            "sha256": "091fd857df512e3662def29d9bd2dafc7377411c154b3e89003953a5d5a80daa",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "38973750"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A12034833&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "b835994bd3411b70c36ef214278cbed6ed5383c7f3fe6e98311f3ab67c965322",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "b835994bd3411b70c36ef214278cbed6ed5383c7f3fe6e98311f3ab67c965322",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC12034833.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 281,
+                "sha256": "30c2e1e55a7853b2292c19dba6d2044ff09acee85020824fd40ebbdaae4c9dbf",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC12532455": {
+      "pmid": "34383904",
+      "context_ids": [
+        "34383904|Plant protein intake|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC12532455&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 10875,
+                "sha256": "f1d5fec8e0654a9ef8892d4f4111f44e3a7f83f87e1bbc273a881b90d56aee28",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 10875,
+            "sha256": "f1d5fec8e0654a9ef8892d4f4111f44e3a7f83f87e1bbc273a881b90d56aee28",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "34383904"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A12532455&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "aae1cb95c4a33230d9addec657451eb7b46fc6b92c35e702adc852d4259194ca",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "aae1cb95c4a33230d9addec657451eb7b46fc6b92c35e702adc852d4259194ca",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC12532455.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 345,
+                "sha256": "8dbb95da5c4480a488c8da6fd17057cfa7eb673dc202d7a654b01bacb325625d",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [
+              "PMC12532455.1/"
+            ],
+            "versions": [
+              1
+            ],
+            "reason": "versions_found"
+          },
+          "version_attempts": [
+            {
+              "version": 1,
+              "metadata_transport": {
+                "url": "https://pmc-oa-opendata.s3.amazonaws.com/metadata/PMC12532455.1.json",
+                "http_status": 200,
+                "attempts": [
+                  {
+                    "attempt": 1,
+                    "http_status": 200,
+                    "bytes": 652,
+                    "sha256": "e2c78d35aadbee696454db1ae94706f95c01ca09f5ad17615f38929bf583c681",
+                    "error": ""
+                  }
+                ]
+              },
+              "metadata_validation": {
+                "valid": true,
+                "reason": "metadata_identity_and_xml_pointer_valid",
+                "observed_pmcid": "PMC12532455",
+                "observed_pmid": "34383904",
+                "metadata_sha256": "e2c78d35aadbee696454db1ae94706f95c01ca09f5ad17615f38929bf583c681"
+              },
+              "xml_transport": {
+                "url": "https://pmc-oa-opendata.s3.amazonaws.com/PMC12532455.1/PMC12532455.1.xml?md5=bb7a7138bb7ad50b838d8bf5d0cb1172",
+                "http_status": 200,
+                "attempts": [
+                  {
+                    "attempt": 1,
+                    "http_status": 200,
+                    "bytes": 199545,
+                    "sha256": "e150f733976ece6c9142e49aabfc1f50006c19c8adec58583e00ae8345feb8e4",
+                    "error": ""
+                  }
+                ]
+              },
+              "md5_validation": {
+                "expected": "bb7a7138bb7ad50b838d8bf5d0cb1172",
+                "observed": "bb7a7138bb7ad50b838d8bf5d0cb1172",
+                "valid": true
+              },
+              "validation": {
+                "valid": false,
+                "bytes": 199545,
+                "sha256": "e150f733976ece6c9142e49aabfc1f50006c19c8adec58583e00ae8345feb8e4",
+                "xml_well_formed": true,
+                "article_count": 1,
+                "observed_pmcids": [],
+                "observed_pmids": [
+                  "34383904"
+                ],
+                "body_count": 0,
+                "body_characters": 0,
+                "body_paragraphs": 0,
+                "body_sections": 0,
+                "extracted_characters": 0,
+                "reason": "pmcid_identity_mismatch"
+              }
+            }
+          ],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_version_passed_strict_validation"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC2781742": {
+      "pmid": "19808637",
+      "context_ids": [
+        "19808637|Processed meat intake|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC2781742&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 7643,
+                "sha256": "3697665fb17e9357b9acc98cca5624c383ab9237386477cd71d6b72ec48503d4",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 7643,
+            "sha256": "3697665fb17e9357b9acc98cca5624c383ab9237386477cd71d6b72ec48503d4",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "19808637"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A2781742&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "e069e4e11d8636824c587bd873ff99ba1e8fc9ef88b10a502434e30de0f72277",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "e069e4e11d8636824c587bd873ff99ba1e8fc9ef88b10a502434e30de0f72277",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC2781742.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 280,
+                "sha256": "afa20f0a1e545fab0ce1fcf712b37ff8a4f1c7aa03b137a575ace6c2e65fbfe3",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC2950820": {
+      "pmid": "20693267",
+      "context_ids": [
+        "20693267|Omega-6 fatty acids|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC2950820&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 7783,
+                "sha256": "fb6a543a17de1a410e08abe34ff8ee200634e8972fabf63be845c8d5d519620b",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 7783,
+            "sha256": "fb6a543a17de1a410e08abe34ff8ee200634e8972fabf63be845c8d5d519620b",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "20693267"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A2950820&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "f48c6f3e6a17297cd74d725a9c9810f12a1a079b126e7fb056a7a2561829de32",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "f48c6f3e6a17297cd74d725a9c9810f12a1a079b126e7fb056a7a2561829de32",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC2950820.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 280,
+                "sha256": "c3529aa48e9e8a1a3275a61b58eb2a024d56a1528f7c77e95e6568a1acd9838a",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC3735464": {
+      "pmid": "23843441",
+      "context_ids": [
+        "23843441|Linoleic acid|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC3735464&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 10341,
+                "sha256": "d05068e51dab5e5f1fbf25b0fa0928cc7bd41597a1aa015887a13ad1d38f4efc",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 10341,
+            "sha256": "d05068e51dab5e5f1fbf25b0fa0928cc7bd41597a1aa015887a13ad1d38f4efc",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "23843441"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A3735464&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "d2b44196202ad98a18adb1e6f5e0e86b96af0ef9185ba0ef45c266c14b94ca74",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "d2b44196202ad98a18adb1e6f5e0e86b96af0ef9185ba0ef45c266c14b94ca74",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC3735464.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 280,
+                "sha256": "63d5557ae5d95220db79c0b3853881d5fb3b8010fafd0d8615d4c05986ff7431",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC4691666": {
+      "pmid": "26561618",
+      "context_ids": [
+        "26561618|Vegan diet|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC4691666&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 11022,
+                "sha256": "61a9fc45e1d6f0a77616cad78bfa8b977b4edf6c1a55f68770a7bb081258791b",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 11022,
+            "sha256": "61a9fc45e1d6f0a77616cad78bfa8b977b4edf6c1a55f68770a7bb081258791b",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "26561618"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A4691666&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "704337335b4e6938907cc898ebf53395a13a64fedc4fa38e056e31802ff2a398",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "704337335b4e6938907cc898ebf53395a13a64fedc4fa38e056e31802ff2a398",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC4691666.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 280,
+                "sha256": "f09a2bc65cb409446e200ef97e9e9de1b991ccd2fe7c7c584291434a66c0ff5f",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC5241906": {
+      "pmid": "27297429",
+      "context_ids": [
+        "27297429|Monounsaturated fat (MUFA)|Prostate cancer",
+        "27297429|Polyunsaturated fat (PUFA)|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC5241906&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 8252,
+                "sha256": "2ffeed3e76488ce3b98fba58ee1ac7d256faa32bc099a0ce6536d35774b56886",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 8252,
+            "sha256": "2ffeed3e76488ce3b98fba58ee1ac7d256faa32bc099a0ce6536d35774b56886",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "27297429"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A5241906&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "ae33f3311093149d7567cf5adebb0942125ce3ed89fba75f130e11f25dd273c0",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "ae33f3311093149d7567cf5adebb0942125ce3ed89fba75f130e11f25dd273c0",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC5241906.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 280,
+                "sha256": "16c304358abae247ca5d489692f46efb27a8b2a3a948124ff417190315514550",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC8505417": {
+      "pmid": "34135472",
+      "context_ids": [
+        "34135472|Animal protein intake|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC8505417&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 12034,
+                "sha256": "1dbf287a5a4376bd2cb60c48a29a6dd177aa0ac213e1a4a78ac0588d4816b329",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 12034,
+            "sha256": "1dbf287a5a4376bd2cb60c48a29a6dd177aa0ac213e1a4a78ac0588d4816b329",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "34135472"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A8505417&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "df3ff6a7e4b1763fba9b69a0683ce8ea60a720c8a3b19656ef6f1237dd4f4b90",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "df3ff6a7e4b1763fba9b69a0683ce8ea60a720c8a3b19656ef6f1237dd4f4b90",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC8505417.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 280,
+                "sha256": "bee468bcb42e7707d5222e8b921a9b0350cc21057e4ea0e5cffb967d52b411ae",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    },
+    "PMC9814153": {
+      "pmid": "36316560",
+      "context_ids": [
+        "36316560|Plant-based diet|Prostate cancer"
+      ],
+      "routes": [
+        {
+          "route": "ncbi_entrez_efetch_pmc_xml",
+          "transport": {
+            "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pmc&id=PMC9814153&retmode=xml&tool=metavir_complete_pmc_audit&email=REDACTED",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 12401,
+                "sha256": "23fb0189a5e30cb9757395ae8faf270ab702095dae3a1e2495895c2f0065be8b",
+                "error": ""
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 12401,
+            "sha256": "23fb0189a5e30cb9757395ae8faf270ab702095dae3a1e2495895c2f0065be8b",
+            "xml_well_formed": true,
+            "article_count": 1,
+            "observed_pmcids": [],
+            "observed_pmids": [
+              "36316560"
+            ],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "pmcid_identity_mismatch"
+          }
+        },
+        {
+          "route": "pmc_oai_pmh_metadata_prefix_pmc",
+          "transport": {
+            "url": "https://pmc.ncbi.nlm.nih.gov/api/oai/v1/mh/?verb=GetRecord&identifier=oai%3Apubmedcentral.nih.gov%3A9814153&metadataPrefix=pmc",
+            "http_status": 400,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 400,
+                "bytes": 478,
+                "sha256": "851486d31ac10f6c7ede46fd5f6380bbb306af2f0a3baa2fae33d14e46c8be6a",
+                "error": "HTTPError: Bad Request"
+              }
+            ]
+          },
+          "validation": {
+            "valid": false,
+            "bytes": 478,
+            "sha256": "851486d31ac10f6c7ede46fd5f6380bbb306af2f0a3baa2fae33d14e46c8be6a",
+            "xml_well_formed": true,
+            "article_count": 0,
+            "observed_pmcids": [],
+            "observed_pmids": [],
+            "body_count": 0,
+            "body_characters": 0,
+            "body_paragraphs": 0,
+            "body_sections": 0,
+            "extracted_characters": 0,
+            "reason": "protocol_error_without_jats_article",
+            "protocol_error": "cannotDisseminateFormat: The document is unsupported for the given prefix."
+          }
+        },
+        {
+          "route": "pmc_article_datasets_s3",
+          "listing_transport": {
+            "url": "https://pmc-oa-opendata.s3.amazonaws.com/?list-type=2&prefix=PMC9814153.&delimiter=%2F&max-keys=100",
+            "http_status": 200,
+            "attempts": [
+              {
+                "attempt": 1,
+                "http_status": 200,
+                "bytes": 280,
+                "sha256": "c797f4587f878f6e6fbf721b1545bf903f33a4787a4089682e2af62ada8ecf41",
+                "error": ""
+              }
+            ]
+          },
+          "listing_validation": {
+            "xml_well_formed": true,
+            "is_truncated": false,
+            "prefixes": [],
+            "versions": [],
+            "reason": "no_article_dataset_versions"
+          },
+          "version_attempts": [],
+          "validation": {
+            "valid": false,
+            "reason": "no_article_dataset_versions"
+          }
+        }
+      ],
+      "accepted": false,
+      "accepted_route": null,
+      "terminal_reason": "no_official_complete_jats_route_validated"
+    }
+  },
+  "validated_source_count": 0,
+  "validated_source_ids": [],
+  "unresolved_source_ids": [
+    "PMC11160038",
+    "PMC12034833",
+    "PMC12532455",
+    "PMC2781742",
+    "PMC2950820",
+    "PMC3735464",
+    "PMC4691666",
+    "PMC5241906",
+    "PMC8505417",
+    "PMC9814153"
+  ],
+  "all_sources_complete": false,
+  "decision": "preserve_blocked_incomplete_pmc_source",
+  "staging_path": null,
+  "production_artifacts_unchanged": true
+}

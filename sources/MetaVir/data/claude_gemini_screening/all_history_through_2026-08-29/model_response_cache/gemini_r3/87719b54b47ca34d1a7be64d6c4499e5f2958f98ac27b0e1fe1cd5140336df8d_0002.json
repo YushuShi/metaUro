@@ -1,0 +1,514 @@
+{
+  "schema_version": 1,
+  "receipt_id": "516bd035fd3588d4480c3a86c78f0341fac1a834cbf5e35bc72eeb08b4d7e5d9",
+  "requested_at": "2026-09-02T08:55:56.088718+08:00",
+  "received_at": "2026-09-02T08:56:44.206335+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "87719b54b47ca34d1a7be64d6c4499e5f2958f98ac27b0e1fe1cd5140336df8d",
+  "attempt": 2,
+  "context_ids": [
+    "34711629|Betaine|Prostate cancer",
+    "34711629|Carnitine|Prostate cancer",
+    "34711629|Choline|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Betaine": 1,
+    "Carnitine": 1,
+    "Choline": 1
+  },
+  "input_digest": "4c77fde42c0c0f3f705b2781b9fa407ed8cdcb688d4e137ef9d7c0a67cea351c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11610,
+    "cached_input_tokens": 0,
+    "output_tokens": 7661,
+    "reasoning_tokens": 1590
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.037436250000000004",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "2ee2bd81-fef7-45c1-ae0c-65c4d26e4932",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.037436250000000004"
+  },
+  "output_sha256": "101f24ee42cceccc6bac01a5693a4864e5b937b14570086362b10c8233802e46",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"34711629|Betaine|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-control study evaluates prediagnostic baseline serum betaine levels in relation to incident lethal prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.86,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.05,\n        \"ci_upper\": 3.3,\n        \"p_value\": 0.11,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 692,\n        \"cases\": 173,\n        \"comparison_type\": \"highest_vs_lowest_quartile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55 to 74 years enrolled in the PLCO Cancer Screening Trial\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Mass spectrometry was performed on baseline serum samples collected from 173 lethal prostate cancer cases and 519 controls enrolled in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Baseline serum specimens from 173 lethal prostate cancer cases and 519 controls without lethal prostate cancer were analyzed.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"cases with the highest baseline levels of choline (Q4 OR: 2.19; 95% CI, 1.23–3.90; P -trend: 0.005) and betaine (Q4 OR: 1.86; 95% CI, 1.05–3.30; P -trend: 0.11) exhibited increased odds of developing lethal prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"betaine (Q3 OR: 2.13; 95% CI, 1.22–3.70; Q4 OR: 1.86; 95% CI, 1.05–3.30) exhibited increased odds of developing lethal prostate cancer (relative to Q1) in the conditional multivariable logistic regression model adjusted for PSA and BMI.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Lethal prostate cancer risk increased across quartiles of choline in a dose-dependent fashion ( P -trend: 0.005), a trend not observed with increasing quartiles of betaine ( P -trend: 0.11).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The odds ratio (OR) and 95% confidence interval (95% CI) of developing lethal prostate cancer were reported for each quartile of nutrient and metabolite levels, with the first quartile serving as the reference.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We used a nested case–control design.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Serum levels of choline, carnitine, betaine, γ-butyrobetaine, crotonobetaine, TMAO, PAGln, hippuric acid, and p-cresol sulfate levels were quantified from a single baseline measurement of analyte levels from apparently healthy subjects who were then prospectively followed for incident development of prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 3\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Between November 1993 and July 2001, ten screening centers in the United States enrolled 76,685 men, who were randomized to an intervention arm or a control arm.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, PLCO cohort, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 477 (91.9) 159 (91.9); Black 33 (6.4) 11 (6.4); Other 9 (1.7) 3 (1.7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"ten screening centers in the United States enrolled 76,685 men\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, PLCO cohort, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"0.2 μL of supernatant was injected onto silica column (150 × 2 mm, 00F-4274-B0, Phenomenex) at a flow rate of 0.25 mL/min using a Vanquish high-performance liquid chromatography system interfaced with a Thermo Quantiva mass spectrometer (Thermo Scientific) and a TSQ Quantiva Triple Quadrupole mass spectrometer (Thermo Scientific).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Metabolomics analysis, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"34711629|Carnitine|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-control study evaluates baseline serum carnitine levels in relation to risk of incident lethal prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 2.0,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.13,\n        \"ci_upper\": 3.56,\n        \"p_value\": 0.08,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 692,\n        \"cases\": 173,\n        \"comparison_type\": \"highest_vs_lowest_quartile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55 to 74 years enrolled in the PLCO Cancer Screening Trial\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Mass spectrometry was performed on baseline serum samples collected from 173 lethal prostate cancer cases and 519 controls enrolled in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Baseline serum specimens from 173 lethal prostate cancer cases and 519 controls without lethal prostate cancer were analyzed.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Higher baseline serum levels of carnitine were inconsistently associated with lethal prostate cancer in this model, with only Q2 (OR: 1.95; 95% CI, 1.12–3.39) and Q4 (OR: 2.00; 95% CI, 1.13–3.56) achieving statistical significance ( P -trend: 0.08).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Higher baseline serum levels of carnitine were inconsistently associated with lethal prostate cancer in this model, with only Q2 (OR: 1.95; 95% CI, 1.12–3.39) and Q4 (OR: 2.00; 95% CI, 1.13–3.56) achieving statistical significance ( P -trend: 0.08).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Higher baseline serum levels of carnitine were inconsistently associated with lethal prostate cancer in this model, with only Q2 (OR: 1.95; 95% CI, 1.12–3.39) and Q4 (OR: 2.00; 95% CI, 1.13–3.56) achieving statistical significance ( P -trend: 0.08).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The odds ratio (OR) and 95% confidence interval (95% CI) of developing lethal prostate cancer were reported for each quartile of nutrient and metabolite levels, with the first quartile serving as the reference.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We used a nested case–control design.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Serum levels of choline, carnitine, betaine, γ-butyrobetaine, crotonobetaine, TMAO, PAGln, hippuric acid, and p-cresol sulfate levels were quantified from a single baseline measurement of analyte levels from apparently healthy subjects who were then prospectively followed for incident development of prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 3\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Between November 1993 and July 2001, ten screening centers in the United States enrolled 76,685 men, who were randomized to an intervention arm or a control arm.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, PLCO cohort, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 477 (91.9) 159 (91.9); Black 33 (6.4) 11 (6.4); Other 9 (1.7) 3 (1.7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"ten screening centers in the United States enrolled 76,685 men\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, PLCO cohort, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Targeted metabolites and isotope-labeled internal standards were monitored using electrospray ionization in positive-ion mode (except for p-cresol sulfate, which was monitored using negative-ion mode) with multiple reaction monitoring (MRM) as previously reported\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Metabolomics analysis, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"34711629|Choline|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-control study evaluates baseline serum choline levels and odds of incident lethal prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 2.19,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.23,\n        \"ci_upper\": 3.9,\n        \"p_value\": 0.005,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 692,\n        \"cases\": 173,\n        \"comparison_type\": \"highest_vs_lowest_quartile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55 to 74 years enrolled in the PLCO Cancer Screening Trial\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Mass spectrometry was performed on baseline serum samples collected from 173 lethal prostate cancer cases and 519 controls enrolled in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Baseline serum specimens from 173 lethal prostate cancer cases and 519 controls without lethal prostate cancer were analyzed.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Relative to those in the first quartile, cases with the highest baseline levels of choline (Q4 OR: 2.19; 95% CI, 1.23–3.90; P -trend: 0.005) and betaine (Q4 OR: 1.86; 95% CI, 1.05–3.30; P -trend: 0.11) exhibited increased odds of developing lethal prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Notably, participants with higher baseline serum levels of choline (Q3 OR: 2.37; 95% CI, 1.35–4.17; Q4 OR: 2.19; 95% CI, 1.23–3.90) or betaine (Q3 OR: 2.13; 95% CI, 1.22–3.70; Q4 OR: 1.86; 95% CI, 1.05–3.30) exhibited increased odds of developing lethal prostate cancer (relative to Q1) in the conditional multivariable logistic regression model adjusted for PSA and BMI.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Lethal prostate cancer risk increased across quartiles of choline in a dose-dependent fashion ( P -trend: 0.005), a trend not observed with increasing quartiles of betaine ( P -trend: 0.11).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The odds ratio (OR) and 95% confidence interval (95% CI) of developing lethal prostate cancer were reported for each quartile of nutrient and metabolite levels, with the first quartile serving as the reference.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We used a nested case–control design.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Serum levels of choline, carnitine, betaine, γ-butyrobetaine, crotonobetaine, TMAO, PAGln, hippuric acid, and p-cresol sulfate levels were quantified from a single baseline measurement of analyte levels from apparently healthy subjects who were then prospectively followed for incident development of prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Nested case–control study design, paragraph 3\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Between November 1993 and July 2001, ten screening centers in the United States enrolled 76,685 men, who were randomized to an intervention arm or a control arm.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, PLCO cohort, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 477 (91.9) 159 (91.9); Black 33 (6.4) 11 (6.4); Other 9 (1.7) 3 (1.7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"ten screening centers in the United States enrolled 76,685 men\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, PLCO cohort, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"0.2 μL of supernatant was injected onto silica column (150 × 2 mm, 00F-4274-B0, Phenomenex) at a flow rate of 0.25 mL/min using a Vanquish high-performance liquid chromatography system interfaced with a Thermo Quantiva mass spectrometer (Thermo Scientific) and a TSQ Quantiva Triple Quadrupole mass spectrometer (Thermo Scientific).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/\",\n            \"location\": \"Materials and Methods, Metabolomics analysis, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "34711629|Betaine|Prostate cancer",
+      "pmid": "34711629",
+      "pmcid": "PMC8755576",
+      "published_date": "2022-01-01",
+      "title": "Gut Microbiome-Dependent Metabolic Pathways and Risk of Lethal Prostate Cancer: Prospective Analysis of a PLCO Cancer Screening Trial Cohort.",
+      "authors": [
+        "Reichard CA",
+        "Naelitz BD",
+        "Wang Z",
+        "Jia X",
+        "Li J",
+        "Stampfer MJ",
+        "Klein EA",
+        "Hazen SL",
+        "Sharifi N"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34711629/",
+      "exposure": "Betaine",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-control study evaluates prediagnostic baseline serum betaine levels in relation to incident lethal prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.86,
+        "effect_type": "OR",
+        "ci_lower": 1.05,
+        "ci_upper": 3.3,
+        "p_value": 0.11,
+        "ci_confidence_level": 95,
+        "total_n": 692,
+        "cases": 173,
+        "comparison_type": "highest_vs_lowest_quartile",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 55 to 74 years enrolled in the PLCO Cancer Screening Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Baseline serum specimens from 173 lethal prostate cancer cases and 519 controls without lethal prostate cancer were analyzed. Samples were collected from men assigned to the intervention arm of the PLCO trial not previously diagnosed with prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Abstract, Methods; total_n derived from reported group counts 173 + 519 = 692"
+          },
+          "cases": {
+            "excerpt": "A majority of lethal prostate cancers were diagnosed at clinical stage T2, compared with a minority of the nonlethal cancers [54.3% (94/173) vs.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Notably, participants with higher baseline serum levels of choline (Q3 OR: 2.37; 95% CI, 1.35–4.17; Q4 OR: 2.19; 95% CI, 1.23–3.90) or betaine (Q3 OR: 2.13; 95% CI, 1.22–3.70; Q4 OR: 1.86; 95% CI, 1.05–3.30) exhibited increased odds of developing lethal prostate cancer (relative to Q1) in the conditional multivariable logistic regression model adjusted for PSA and BMI. Lethal prostate cancer risk increased across quartiles of choline in a dose-dependent fashion ( P -trend: 0.005), a trend not observed with increasing quartiles of betaine ( P -trend: 0.11).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Abstract, Results"
+          },
+          "confidence_interval": {
+            "excerpt": "Relative to those in the first quartile, cases with the highest baseline levels of choline (Q4 OR: 2.19; 95% CI, 1.23–3.90; P -trend: 0.005) and betaine (Q4 OR: 1.86; 95% CI, 1.05–3.30; P -trend: 0.11) exhibited increased odds of developing lethal prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Results, paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "Lethal prostate cancer risk increased across quartiles of choline in a dose-dependent fashion ( P -trend: 0.005), a trend not observed with increasing quartiles of betaine ( P -trend: 0.11).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Results, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "The odds ratio (OR) and 95% confidence interval (95% CI) of developing lethal prostate cancer were reported for each quartile of nutrient and metabolite levels, with the first quartile serving as the reference.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We used a nested case–control design.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Serum levels of choline, carnitine, betaine, γ-butyrobetaine, crotonobetaine, TMAO, PAGln, hippuric acid, and p-cresol sulfate levels were quantified from a single baseline measurement of analyte levels from apparently healthy subjects who were then prospectively followed for incident development of prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 3"
+          },
+          "continent": {
+            "excerpt": "Between November 1993 and July 2001, ten screening centers in the United States enrolled 76,685 men, who were randomized to an intervention arm or a control arm.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, PLCO cohort, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "0.2 μL of supernatant was injected onto silica column (150 × 2 mm, 00F-4274-B0, Phenomenex) at a flow rate of 0.25 mL/min using a Vanquish high-performance liquid chromatography system interfaced with a Thermo Quantiva mass spectrometer (Thermo Scientific) and a TSQ Quantiva Triple Quadrupole mass spectrometer (Thermo Scientific).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Metabolomics analysis, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.11",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 37158,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "f2fa2cfab37104ca55d42016108e84c3465ad18f048a24ad082a3034f4be96aa",
+      "pmc_source_receipt_digest": "95fc8bdf9e85a2d3a90384a0ff77684b5255e35ccf39fbcf597121fea2dd3f96",
+      "pmc_source_raw_sha256": "1a6ccd202ab1095c2a8f1cc1a69be521ab8499483d7a16992e67180f27153017",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "010487aeb3f6e16beb06c3e6374c63ea27e49f9c7bb94902e77510a6b6d58f88"
+    },
+    {
+      "context_id": "34711629|Carnitine|Prostate cancer",
+      "pmid": "34711629",
+      "pmcid": "PMC8755576",
+      "published_date": "2022-01-01",
+      "title": "Gut Microbiome-Dependent Metabolic Pathways and Risk of Lethal Prostate Cancer: Prospective Analysis of a PLCO Cancer Screening Trial Cohort.",
+      "authors": [
+        "Reichard CA",
+        "Naelitz BD",
+        "Wang Z",
+        "Jia X",
+        "Li J",
+        "Stampfer MJ",
+        "Klein EA",
+        "Hazen SL",
+        "Sharifi N"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34711629/",
+      "exposure": "Carnitine",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-control study evaluates baseline serum carnitine levels in relation to risk of incident lethal prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2,
+        "effect_type": "OR",
+        "ci_lower": 1.13,
+        "ci_upper": 3.56,
+        "p_value": 0.08,
+        "ci_confidence_level": 95,
+        "total_n": 692,
+        "cases": 173,
+        "comparison_type": "highest_vs_lowest_quartile",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 55 to 74 years enrolled in the PLCO Cancer Screening Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Baseline serum specimens from 173 lethal prostate cancer cases and 519 controls without lethal prostate cancer were analyzed. Samples were collected from men assigned to the intervention arm of the PLCO trial not previously diagnosed with prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Abstract, Methods; total_n derived from reported group counts 173 + 519 = 692"
+          },
+          "cases": {
+            "excerpt": "A majority of lethal prostate cancers were diagnosed at clinical stage T2, compared with a minority of the nonlethal cancers [54.3% (94/173) vs.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Lethal prostate cancer risk increased across quartiles of choline in a dose-dependent fashion ( P -trend: 0.005), a trend not observed with increasing quartiles of betaine ( P -trend: 0.11). Higher baseline serum levels of carnitine were inconsistently associated with lethal prostate cancer in this model, with only Q2 (OR: 1.95; 95% CI, 1.12–3.39) and Q4 (OR: 2.00; 95% CI, 1.13–3.56) achieving statistical significance ( P -trend: 0.08).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Results, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "Higher baseline serum levels of carnitine were inconsistently associated with lethal prostate cancer in this model, with only Q2 (OR: 1.95; 95% CI, 1.12–3.39) and Q4 (OR: 2.00; 95% CI, 1.13–3.56) achieving statistical significance ( P -trend: 0.08).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Results, paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "Higher baseline serum levels of carnitine were inconsistently associated with lethal prostate cancer in this model, with only Q2 (OR: 1.95; 95% CI, 1.12–3.39) and Q4 (OR: 2.00; 95% CI, 1.13–3.56) achieving statistical significance ( P -trend: 0.08).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Results, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "The odds ratio (OR) and 95% confidence interval (95% CI) of developing lethal prostate cancer were reported for each quartile of nutrient and metabolite levels, with the first quartile serving as the reference.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We used a nested case–control design.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Serum levels of choline, carnitine, betaine, γ-butyrobetaine, crotonobetaine, TMAO, PAGln, hippuric acid, and p-cresol sulfate levels were quantified from a single baseline measurement of analyte levels from apparently healthy subjects who were then prospectively followed for incident development of prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 3"
+          },
+          "continent": {
+            "excerpt": "Between November 1993 and July 2001, ten screening centers in the United States enrolled 76,685 men, who were randomized to an intervention arm or a control arm.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, PLCO cohort, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Targeted metabolites and isotope-labeled internal standards were monitored using electrospray ionization in positive-ion mode (except for p-cresol sulfate, which was monitored using negative-ion mode) with multiple reaction monitoring (MRM) as previously reported",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Metabolomics analysis, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.08",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 37158,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "f2fa2cfab37104ca55d42016108e84c3465ad18f048a24ad082a3034f4be96aa",
+      "pmc_source_receipt_digest": "95fc8bdf9e85a2d3a90384a0ff77684b5255e35ccf39fbcf597121fea2dd3f96",
+      "pmc_source_raw_sha256": "1a6ccd202ab1095c2a8f1cc1a69be521ab8499483d7a16992e67180f27153017",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "3ef2aca4e00b390d4b0a30cc8551e4ab5d251f6c0ed33aea9299767c9f80fbae"
+    },
+    {
+      "context_id": "34711629|Choline|Prostate cancer",
+      "pmid": "34711629",
+      "pmcid": "PMC8755576",
+      "published_date": "2022-01-01",
+      "title": "Gut Microbiome-Dependent Metabolic Pathways and Risk of Lethal Prostate Cancer: Prospective Analysis of a PLCO Cancer Screening Trial Cohort.",
+      "authors": [
+        "Reichard CA",
+        "Naelitz BD",
+        "Wang Z",
+        "Jia X",
+        "Li J",
+        "Stampfer MJ",
+        "Klein EA",
+        "Hazen SL",
+        "Sharifi N"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34711629/",
+      "exposure": "Choline",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-control study evaluates baseline serum choline levels and odds of incident lethal prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.19,
+        "effect_type": "OR",
+        "ci_lower": 1.23,
+        "ci_upper": 3.9,
+        "p_value": 0.005,
+        "ci_confidence_level": 95,
+        "total_n": 692,
+        "cases": 173,
+        "comparison_type": "highest_vs_lowest_quartile",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 55 to 74 years enrolled in the PLCO Cancer Screening Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Baseline serum specimens from 173 lethal prostate cancer cases and 519 controls without lethal prostate cancer were analyzed. Samples were collected from men assigned to the intervention arm of the PLCO trial not previously diagnosed with prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Abstract, Methods; total_n derived from reported group counts 173 + 519 = 692"
+          },
+          "cases": {
+            "excerpt": "A majority of lethal prostate cancers were diagnosed at clinical stage T2, compared with a minority of the nonlethal cancers [54.3% (94/173) vs.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Notably, participants with higher baseline serum levels of choline (Q3 OR: 2.37; 95% CI, 1.35–4.17; Q4 OR: 2.19; 95% CI, 1.23–3.90) or betaine (Q3 OR: 2.13; 95% CI, 1.22–3.70; Q4 OR: 1.86; 95% CI, 1.05–3.30) exhibited increased odds of developing lethal prostate cancer (relative to Q1) in the conditional multivariable logistic regression model adjusted for PSA and BMI. Lethal prostate cancer risk increased across quartiles of choline in a dose-dependent fashion ( P -trend: 0.005), a trend not observed with increasing quartiles of betaine ( P -trend: 0.11).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Abstract, Results"
+          },
+          "confidence_interval": {
+            "excerpt": "Relative to those in the first quartile, cases with the highest baseline levels of choline (Q4 OR: 2.19; 95% CI, 1.23–3.90; P -trend: 0.005) and betaine (Q4 OR: 1.86; 95% CI, 1.05–3.30; P -trend: 0.11) exhibited increased odds of developing lethal prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Results, paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "Lethal prostate cancer risk increased across quartiles of choline in a dose-dependent fashion ( P -trend: 0.005), a trend not observed with increasing quartiles of betaine ( P -trend: 0.11).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Results, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "The odds ratio (OR) and 95% confidence interval (95% CI) of developing lethal prostate cancer were reported for each quartile of nutrient and metabolite levels, with the first quartile serving as the reference.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We used a nested case–control design.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Serum levels of choline, carnitine, betaine, γ-butyrobetaine, crotonobetaine, TMAO, PAGln, hippuric acid, and p-cresol sulfate levels were quantified from a single baseline measurement of analyte levels from apparently healthy subjects who were then prospectively followed for incident development of prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Nested case–control study design, paragraph 3"
+          },
+          "continent": {
+            "excerpt": "Between November 1993 and July 2001, ten screening centers in the United States enrolled 76,685 men, who were randomized to an intervention arm or a control arm.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, PLCO cohort, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "0.2 μL of supernatant was injected onto silica column (150 × 2 mm, 00F-4274-B0, Phenomenex) at a flow rate of 0.25 mL/min using a Vanquish high-performance liquid chromatography system interfaced with a Thermo Quantiva mass spectrometer (Thermo Scientific) and a TSQ Quantiva Triple Quadrupole mass spectrometer (Thermo Scientific).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8755576/",
+            "location": "Materials and Methods, Metabolomics analysis, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.005",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 37158,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "f2fa2cfab37104ca55d42016108e84c3465ad18f048a24ad082a3034f4be96aa",
+      "pmc_source_receipt_digest": "95fc8bdf9e85a2d3a90384a0ff77684b5255e35ccf39fbcf597121fea2dd3f96",
+      "pmc_source_raw_sha256": "1a6ccd202ab1095c2a8f1cc1a69be521ab8499483d7a16992e67180f27153017",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "98239b5f898ddcf68b8737720f2ac2adb00064209ae50017b3cbc768a70f19b6"
+    }
+  ]
+}

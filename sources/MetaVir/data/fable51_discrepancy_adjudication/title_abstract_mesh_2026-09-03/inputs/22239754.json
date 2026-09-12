@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:53.964390-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "224b5bf488d8cd6b82e0de61520a50d1921747226b1484e2f9bc109b0a92b027",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "22239754",
+      "title": "Dietary calcium and risk for prostate cancer: a case-control study among US veterans.",
+      "abstract": "The objective of this study was to examine the association between calcium intake and prostate cancer risk. We hypothesized that calcium intake would be positively associated with lower risk for prostate cancer. We used data from a case-control study conducted among veterans between 2007 and 2010 at the Durham Veterans Affairs Medical Center. The study consisted of 108 biopsy-positive prostate cancer cases, 161 biopsy-negative controls, and 237 healthy controls. We also determined whether these associations differed for blacks and whites or for low-grade (Gleason score <7) and high-grade prostate cancer (Gleason score ≥7). We administered the Harvard food frequency questionnaire to assess diet and estimate calcium intake. We used logistic regression models to obtain odds ratios (ORs) and 95% confidence intervals (CIs). Intake of calcium from food was inversely related to risk for prostate cancer among all races in a comparison of cases and biopsy-negative controls (P = .05) and cases and healthy controls (P = .02). Total calcium was associated with lower prostate cancer risk among black men but not among white men in analyses of healthy controls. The highest tertile of calcium from food was associated with lower risk for high-grade prostate cancer in a comparison of high-grade cases and biopsy-negative controls (OR, 0.37; 95% CI, 0.15-0.90) and high-grade cases and healthy controls (OR, 0.38; 95% CI, 0.17-0.86). Calcium from food is associated with lower risk for prostate cancer, particularly among black men, and lower risk for high-grade prostate cancer among all men.",
+      "mesh": [
+        "Calcium, Dietary / administration & dosage",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / diet therapy, epidemiology, prevention & control",
+        "Retrospective Studies",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "United States / epidemiology",
+        "Veterans"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "22239754",
+      "contexts": [
+        {
+          "context_id": "22239754|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "285",
+              "effect_measure_type": "OR",
+              "effect_size": "0.38",
+              "ci_lower": "0.17",
+              "ci_upper": "0.86",
+              "p_value": "0.02",
+              "comparison": "High-grade prostate cancer cases versus healthy controls; highest versus lowest tertile of calcium from food"
+            },
+            "Claude+Gemini": {
+              "sample_size": "506",
+              "effect_measure_type": "OR",
+              "effect_size": "0.6",
+              "ci_lower": "0.33",
+              "ci_upper": "1.08",
+              "p_value": "0.11",
+              "comparison": "tertile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

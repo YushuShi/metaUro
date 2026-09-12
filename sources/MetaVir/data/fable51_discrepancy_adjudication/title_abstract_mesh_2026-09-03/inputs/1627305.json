@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:06:57.985091-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d0522637a112bd8eea7b24b1a5146fe6761ccf63e668cc3d7a3756466948130c",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "1627305",
+      "title": "Beta-carotene, vitamin A and prostatic cancer.",
+      "abstract": "",
+      "mesh": [
+        "Aged",
+        "Carotenoids / administration & dosage, adverse effects",
+        "Diet",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / etiology, prevention & control",
+        "Risk Factors",
+        "Vitamin A / administration & dosage, adverse effects",
+        "beta Carotene"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "1627305",
+      "contexts": [
+        {
+          "context_id": "1627305|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NONPRIMARY"
+            }
+          }
+        },
+        {
+          "context_id": "1627305|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NONPRIMARY"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

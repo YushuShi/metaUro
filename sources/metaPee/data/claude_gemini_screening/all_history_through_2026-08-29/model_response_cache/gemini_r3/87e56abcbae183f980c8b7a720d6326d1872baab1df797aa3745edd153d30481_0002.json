@@ -1,0 +1,602 @@
+{
+  "schema_version": 1,
+  "receipt_id": "cff4b66f49fe75858ae66dde935d8ce9af4b1bdc086767f51fea86697b1fd188",
+  "requested_at": "2026-09-03T17:14:14.847431-04:00",
+  "received_at": "2026-09-03T17:14:42.023396-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "87e56abcbae183f980c8b7a720d6326d1872baab1df797aa3745edd153d30481",
+  "dispatch_work_unit_key": "609022251f46b4266774d4775fa1354b9b36d8da782a89dfa138d32796f5237e",
+  "attempt": 2,
+  "context_ids": [
+    "20049159|Eggs|Renal cell carcinoma",
+    "20049159|Yogurt|Renal cell carcinoma"
+  ],
+  "exposure_weights": {
+    "Eggs": 1,
+    "Yogurt": 1
+  },
+  "input_digest": "88861cfa0feab1f2c85e6c1d1ea24ed311c8efa213b86ed3a6b8f88d8cb06a64",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 16452,
+    "cached_input_tokens": 0,
+    "output_tokens": 4935,
+    "reasoning_tokens": 997
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.030845250000000005",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "0021f7eb-8d3e-4c4f-bf06-21892ed5e94f",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.030845250000000005"
+  },
+  "output_sha256": "78005d16b3f4f05d7dbdfe80c61acd97d5d7e76aa92dbe9b6d1d533ac1b9cee7",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"20049159|Eggs|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluated the association between egg consumption frequency and renal cell carcinoma risk in Central and Eastern Europe.\",\n      \"extraction\": {\n        \"effect_size\": 0.64,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.48,\n        \"ci_upper\": 0.86,\n        \"p_value\": 0.02,\n        \"total_n\": 1812,\n        \"cases\": 777,\n        \"comparison_type\": \"tertiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Czech Republic, Poland, Romania, Russia\",\n        \"population\": \"Hospital-based RCC cases and controls from seven centers in four Central and Eastern European countries\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 1097 incident, histologically confirmed RCC cases and 1476 controls were included in this study. Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Egg High (>66%) 110 14.2 236 22.8 0.64 0.48 — 0.86 .02\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Egg High (>66%) 110 14.2 236 22.8 0.64 0.48 — 0.86 .02\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"A statistically significant reduction in RCC risk was observed with increasing consumption frequency of eggs (P-trend = .02).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 3. Results, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"All dietary intake frequencies in this study were assessed in tertiles based on the frequency of dietary intake among controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.2 Dietary Intake, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Briefly, from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"conducted in seven centers in four countries of Central and Eastern Europe (Moscow, Russia; Bucharest, Romania; Lodz, Poland; Prague, Olomouc, Ceske-Budejovice, and Brno, Czech Republic).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"A food frequency questionnaire was comprised of 23 food items, which the study investigators selected by consensus during the planning stage of the study and further validated during the pilot stage\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.2 Dietary Intake, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Males 472 60.7 648 62.6 Females 305 39.3 387 37.4\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Tobacco status Never 359 46.4 420 40.7 Ever 415 53.6 613 59.3\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"20049159|Yogurt|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluated the association between yogurt consumption frequency and renal cell carcinoma risk in Central and Eastern Europe.\",\n      \"extraction\": {\n        \"effect_size\": 1.31,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.03,\n        \"ci_upper\": 1.67,\n        \"p_value\": 0.04,\n        \"total_n\": 1812,\n        \"cases\": 777,\n        \"comparison_type\": \"tertiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Czech Republic, Poland, Romania, Russia\",\n        \"population\": \"Hospital-based RCC cases and controls from seven centers in four Central and Eastern European countries\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 1097 incident, histologically confirmed RCC cases and 1476 controls were included in this study. Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Yogurt High (>66%) 296 38.1 375 36.2 1.31 1.03 — 1.67 .04\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Yogurt High (>66%) 296 38.1 375 36.2 1.31 1.03 — 1.67 .04\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"In contrast, increased RCC risk was observed with increasing consumption frequency of yogurt (P-trend = .04).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 3. Results, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"All dietary intake frequencies in this study were assessed in tertiles based on the frequency of dietary intake among controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.2 Dietary Intake, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Briefly, from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"conducted in seven centers in four countries of Central and Eastern Europe (Moscow, Russia; Bucharest, Romania; Lodz, Poland; Prague, Olomouc, Ceske-Budejovice, and Brno, Czech Republic).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"A food frequency questionnaire was comprised of 23 food items, which the study investigators selected by consensus during the planning stage of the study and further validated during the pilot stage\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Section 2.2 Dietary Intake, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Males 472 60.7 648 62.6 Females 305 39.3 387 37.4\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Tobacco status Never 359 46.4 420 40.7 Ever 415 53.6 613 59.3\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-03T17:46:14.420500-04:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "validated_results_digest": "",
+      "output_sha256": "78005d16b3f4f05d7dbdfe80c61acd97d5d7e76aa92dbe9b6d1d533ac1b9cee7"
+    }
+  ],
+  "validation_contract_version": "metapee-parallel-cache-validation-v2-canonical-pmc-url",
+  "validated_results": [
+    {
+      "context_id": "20049159|Eggs|Renal cell carcinoma",
+      "pmid": "20049159",
+      "pmcid": "PMC2798114",
+      "published_date": "2010",
+      "title": "Vitamin d pathway genes, diet, and risk of renal cell carcinoma.",
+      "authors": [
+        "Karami S",
+        "Brennan P",
+        "Navratilova M",
+        "Mates D",
+        "Zaridze D",
+        "Janout V",
+        "Kollarova H",
+        "Bencko V",
+        "Matveev V",
+        "Szesznia-Dabrowska N",
+        "Holcatova I",
+        "Yeager M",
+        "Chanock S",
+        "Rothman N",
+        "Boffetta P",
+        "Chow WH",
+        "Moore LE"
+      ],
+      "journal": "International journal of endocrinology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20049159/",
+      "exposure": "Eggs",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluated the association between egg consumption frequency and renal cell carcinoma risk in Central and Eastern Europe.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.64,
+        "effect_type": "OR",
+        "ci_lower": 0.48,
+        "ci_upper": 0.86,
+        "p_value": 0.02,
+        "total_n": 1812,
+        "cases": 777,
+        "comparison_type": "tertiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Czech Republic, Poland, Romania, Russia",
+        "population": "Hospital-based RCC cases and controls from seven centers in four Central and Eastern European countries",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.64,
+        "reported_ci_lower": 0.48,
+        "reported_ci_upper": 0.86,
+        "reported_p_value": 0.02,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1; total_n derived from reported group counts 777 + 1035 = 1812"
+          },
+          "cases": {
+            "excerpt": "A total of 1097 incident, histologically confirmed RCC cases and 1476 controls were included in this study. Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.64 0.48",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.86",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": ".02 P - trend",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 3. Results, paragraph 2"
+          },
+          "comparison": {
+            "excerpt": "All dietary intake frequencies in this study were assessed in tertiles based on the frequency of dietary intake among controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.2 Dietary Intake, paragraph 2"
+          },
+          "design": {
+            "excerpt": "Briefly, from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "conducted in seven centers in four countries of Central and Eastern Europe (Moscow, Russia; Bucharest, Romania; Lodz, Poland; Prague, Olomouc, Ceske-Budejovice, and Brno, Czech Republic).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "A food frequency questionnaire was comprised of 23 food items, which the study investigators selected by consensus during the planning stage of the study and further validated during the pilot stage",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.2 Dietary Intake, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "Males 472 60.7 648 62.6 Females 305 39.3 387 37.4",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "Tobacco status Never 359 46.4 420 40.7 Ever 415 53.6 613 59.3",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "White",
+        "ethnicity_basis": "Population imputation: stated White/European population -> White",
+        "ethnicity_supporting_text": "conducted in seven centers in four countries of Central and Eastern Europe (Moscow, Russia; Bucharest, Romania; Lodz, Poland; Prague, Olomouc, Ceske-Budejovice, and Brno, Czech Republic)."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "r3_provider_url_normalization_events": [
+        {
+          "field": "extraction.evidence.sample_size.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.cases.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.effect_size.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.confidence_interval.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.p_value.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.comparison.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.design.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.timing.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.continent.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.ethnicity.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.exposure_measurement.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.gender.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.smoking_status.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        }
+      ],
+      "full_text_characters_reviewed": 40738,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "e252cf2dbab74b2d38b794da4ac2db91ddc6c8a0e506604d40ce318d9e168b69",
+      "pmc_source_receipt_digest": "1dde048255f25652298ad78b541d97b6f6db0d9e014658a09bee075ad1c0395a",
+      "pmc_source_raw_sha256": "7e28a817fcf3c8d01907295b0577eb6c96b8b7d5d45f20136334b3bc8690b7f2",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "7cb0d0ab4e5ceb902861a2a65f82ee7b051ce58eabcdd46c443a590fe3b0ace8"
+    },
+    {
+      "context_id": "20049159|Yogurt|Renal cell carcinoma",
+      "pmid": "20049159",
+      "pmcid": "PMC2798114",
+      "published_date": "2010",
+      "title": "Vitamin d pathway genes, diet, and risk of renal cell carcinoma.",
+      "authors": [
+        "Karami S",
+        "Brennan P",
+        "Navratilova M",
+        "Mates D",
+        "Zaridze D",
+        "Janout V",
+        "Kollarova H",
+        "Bencko V",
+        "Matveev V",
+        "Szesznia-Dabrowska N",
+        "Holcatova I",
+        "Yeager M",
+        "Chanock S",
+        "Rothman N",
+        "Boffetta P",
+        "Chow WH",
+        "Moore LE"
+      ],
+      "journal": "International journal of endocrinology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20049159/",
+      "exposure": "Yogurt",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluated the association between yogurt consumption frequency and renal cell carcinoma risk in Central and Eastern Europe.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 1.31,
+        "effect_type": "OR",
+        "ci_lower": 1.03,
+        "ci_upper": 1.67,
+        "p_value": 0.04,
+        "total_n": 1812,
+        "cases": 777,
+        "comparison_type": "tertiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Czech Republic, Poland, Romania, Russia",
+        "population": "Hospital-based RCC cases and controls from seven centers in four Central and Eastern European countries",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 1.31,
+        "reported_ci_lower": 1.03,
+        "reported_ci_upper": 1.67,
+        "reported_p_value": 0.04,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1; total_n derived from reported group counts 777 + 1035 = 1812"
+          },
+          "cases": {
+            "excerpt": "A total of 1097 incident, histologically confirmed RCC cases and 1476 controls were included in this study. Suitable quantity and quality of genomic DNA was obtained from a subset of 777 (70.8%) eligible RCC cases and 1035 (70.1%) controls enrolled in our study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.31 1.03",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.67",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "In contrast, increased RCC risk was observed with increasing consumption frequency of yogurt ( P -trend = .04).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 3. Results, paragraph 2"
+          },
+          "comparison": {
+            "excerpt": "All dietary intake frequencies in this study were assessed in tertiles based on the frequency of dietary intake among controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.2 Dietary Intake, paragraph 2"
+          },
+          "design": {
+            "excerpt": "Briefly, from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "from 1999 through 2003, a hospital-based case-control study of RCC was conducted in seven centers in four countries of Central and Eastern Europe",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "conducted in seven centers in four countries of Central and Eastern Europe (Moscow, Russia; Bucharest, Romania; Lodz, Poland; Prague, Olomouc, Ceske-Budejovice, and Brno, Czech Republic).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "A food frequency questionnaire was comprised of 23 food items, which the study investigators selected by consensus during the planning stage of the study and further validated during the pilot stage",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Section 2.2 Dietary Intake, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "Males 472 60.7 648 62.6 Females 305 39.3 387 37.4",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "Tobacco status Never 359 46.4 420 40.7 Ever 415 53.6 613 59.3",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "White",
+        "ethnicity_basis": "Population imputation: stated White/European population -> White",
+        "ethnicity_supporting_text": "conducted in seven centers in four countries of Central and Eastern Europe (Moscow, Russia; Bucharest, Romania; Lodz, Poland; Prague, Olomouc, Ceske-Budejovice, and Brno, Czech Republic)."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "r3_provider_url_normalization_events": [
+        {
+          "field": "extraction.evidence.sample_size.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.cases.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.effect_size.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.confidence_interval.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.p_value.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.comparison.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.design.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.timing.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.continent.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.ethnicity.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.exposure_measurement.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.gender.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        },
+        {
+          "field": "extraction.evidence.smoking_status.url",
+          "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2798114/",
+          "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2798114/",
+          "rule": "exact_legacy_official_pmc_url_alias"
+        }
+      ],
+      "full_text_characters_reviewed": 40738,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "e252cf2dbab74b2d38b794da4ac2db91ddc6c8a0e506604d40ce318d9e168b69",
+      "pmc_source_receipt_digest": "1dde048255f25652298ad78b541d97b6f6db0d9e014658a09bee075ad1c0395a",
+      "pmc_source_raw_sha256": "7e28a817fcf3c8d01907295b0577eb6c96b8b7d5d45f20136334b3bc8690b7f2",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "8260774d7cc7362e10a2195874fd8a393ac0fcdd52860a96b924db7ea6caaa77"
+    }
+  ]
+}

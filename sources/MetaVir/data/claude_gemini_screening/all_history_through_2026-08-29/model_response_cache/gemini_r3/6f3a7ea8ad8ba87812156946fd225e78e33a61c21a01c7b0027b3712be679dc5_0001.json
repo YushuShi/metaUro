@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "a23a2e68c52cbb125beedd6ceb3fa3b3a0205f4019b5efab9fb90d47699778bc",
+  "requested_at": "2026-09-02T08:32:04.435083+08:00",
+  "received_at": "2026-09-02T08:32:29.132396+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "6f3a7ea8ad8ba87812156946fd225e78e33a61c21a01c7b0027b3712be679dc5",
+  "attempt": 1,
+  "context_ids": [
+    "39707344|Alcohol|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1
+  },
+  "input_digest": "efc1063597034b8048322b40f7f352570ddea0e084dc07c9d9f735b228acc093",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15979,
+    "cached_input_tokens": 0,
+    "output_tokens": 3049,
+    "reasoning_tokens": 1429
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.023418",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "19435817-a66d-4e54-a29f-e18990600cd4",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.023418"
+  },
+  "output_sha256": "75f75b402a4afdf46fe422882ed410646e1911fac11d4c94016f724aece73bc7",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"39707344|Alcohol|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study reporting multivariable-adjusted hazard ratios for alcohol consumption and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.85,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.98,\n        \"ci_upper\": 3.51,\n        \"p_value\": 0.06,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 13371,\n        \"cases\": 210,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"South Korea\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Cancer Screenee Cohort Study participants undergoing health examination at the National Cancer Center\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"In total, we had 13,371 participants for final analysis (Fig. 1).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 210 incident PCa cases were identified.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Results / Paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Current drinkers 2.16 (1.14–4.07) 0.018 1.85 (0.98–3.51) 0.060\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Results / Table 5\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Current drinkers 2.16 (1.14–4.07) 0.018 1.85 (0.98–3.51) 0.060\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Results / Table 5\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Current drinkers 2.16 (1.14–4.07) 0.018 1.85 (0.98–3.51) 0.060\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Results / Table 5\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Alcohol consumption Nondrinkers 1.00 1.00 Ex-drinkers 1.18 (0.73–1.89) 0.504 1.91 (1.18–3.10) 0.009 Current drinkers 2.16 (1.14–4.07) 0.018 1.85 (0.98–3.51) 0.060\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Results / Table 5\"\n          },\n          \"design\": {\n            \"excerpt\": \"A prospective cohort study was performed with 41,837 participants in South Korea.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Abstract / Methods / Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We followed participants until December 2019 to identify incident cancer cases.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A prospective cohort study was performed with 41,837 participants in South Korea.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Abstract / Methods / Paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Furthermore, we collected information on demographic characteristics and behaviors related to health based on a self-administered questionnaire at baseline.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11662620/\",\n            \"location\": \"Materials and methods / Outcome and risk factor measurement / Paragraph 3\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

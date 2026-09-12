@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "e867d1588de82ae1d98bfe38e8a9160f4458361173335b2e746bd512ba96c230",
+  "requested_at": "2026-09-02T08:47:28.544316+08:00",
+  "received_at": "2026-09-02T08:47:48.396600+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "f0854305d531b4555869c5cdcbd8952b0cc3536ce0c12128ef5a66c69ac9e2e0",
+  "attempt": 1,
+  "context_ids": [
+    "25417840|Total dietary fiber intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Total dietary fiber intake": 1
+  },
+  "input_digest": "8bdc73f2a2ef87ad9b102c24896a2165234413b9192ad49603bf4d47f2d921fb",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11581,
+    "cached_input_tokens": 0,
+    "output_tokens": 3201,
+    "reasoning_tokens": 1340
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0206895",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "40300652-0715-4276-a5dc-3f84affaf521",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0206895"
+  },
+  "output_sha256": "ab20579174dc1f092a82e2dd3667df7788977b5cf828de28ca0cb7e7f572ff01",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"25417840|Total dietary fiber intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"The full text provides multivariable-adjusted odds ratios and 95% confidence intervals evaluating dietary fiber intake in relation to incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.79,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.31,\n        \"ci_upper\": 1.97,\n        \"p_value\": \"0.612\",\n        \"ci_confidence_level\": 95,\n        \"total_n\": 430,\n        \"cases\": 156,\n        \"comparison_type\": \"tertiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Male veterans undergoing prostate needle biopsy or prostate cancer screening at the Durham Veterans Affairs Medical Center\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The present analyses are limited to the 156 cases and 274 controls for whom questionnaire, dietary and Gleason sum data were available.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The present analyses are limited to the 156 cases and 274 controls for whom questionnaire, dietary and Gleason sum data were available.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Fiber intake ... Adjusted ** ... 3rd tertile 0.79 (0.31–1.97)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"Table V\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Fiber intake ... Adjusted ** ... 3rd tertile 0.79 (0.31–1.97)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"Table V\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Fiber intake ... Adjusted ** ... 3rd tertile 0.79 (0.31–1.97) 0.612\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"Table V\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The dietary variables of interest were categorized into tertiles using data from the controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Statistical Analysis, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Men who were screened for PC in the last 12 months with a PSA test were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Men who were screened for PC in the last 12 months with a PSA test were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to June 2012.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Men who were screened for PC in the last 12 months with a PSA test were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to June 2012.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"We analyzed the association between carbohydrate intake, glycemic index (GI), and PC risk in a study of white (N=262) and black (N=168) veterans at the Durham VA Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"METHODS, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Men who were screened for PC in the last 12 months with a PSA test were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to June 2012.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was obtained using the Willett food frequency questionnaire (FFQ) [ 21 ]. This 61-item FFQ assessed the frequency of consumption as well as the portion size for each food and beverage item.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4293225/\",\n            \"location\": \"MATERIALS AND METHODS, Data Collection, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

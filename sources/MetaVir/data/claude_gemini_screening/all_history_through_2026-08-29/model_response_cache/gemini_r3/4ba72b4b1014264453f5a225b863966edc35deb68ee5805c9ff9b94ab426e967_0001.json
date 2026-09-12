@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "fff8e08a9dff95293664cafe510abce3352765ce2778f8fec1d374b6ccb1daee",
+  "requested_at": "2026-09-02T08:49:17.529927+08:00",
+  "received_at": "2026-09-02T08:49:39.528278+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "4ba72b4b1014264453f5a225b863966edc35deb68ee5805c9ff9b94ab426e967",
+  "attempt": 1,
+  "context_ids": [
+    "27824905|Zinc|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Zinc": 1
+  },
+  "input_digest": "4b1dcaa7b6f8541b99761698cf8cc8435b07ad86cb439aa0ce05199d07a5cd12",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13143,
+    "cached_input_tokens": 0,
+    "output_tokens": 3800,
+    "reasoning_tokens": 1930
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02410725",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "42f02fe3-2da1-4d87-92bd-4b00d51241c4",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02410725"
+  },
+  "output_sha256": "411ba1d5a574a9207e48b55e3fd503cb0430274aa0031dd8231c24053689d6f8",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"27824905|Zinc|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study provides multivariable-adjusted odds ratios for the association between dietary zinc intake and incident prostate cancer risk in African American men.\",\n      \"extraction\": {\n        \"effect_size\": 1.3,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.2,\n        \"ci_upper\": 6.5,\n        \"p_value\": 0.6,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 208,\n        \"cases\": 127,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"United States\",\n        \"location\": \"Washington, DC\",\n        \"ethnicity\": \"black\",\n        \"population\": \"hospital_based\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Newly diagnosed African American men with histologically confirmed prostate cancer (n = 127) and controls (n = 81) were recruited from an urban academic urology clinic in Washington, DC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Newly diagnosed African American men with histologically confirmed prostate cancer (n = 127) and controls (n = 81) were recruited from an urban academic urology clinic in Washington, DC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"We observed a non-significant, non-linear increase in prostate cancer when comparing tertiles of zinc intake (OR <6.5 vs 6.5–12.5mg/day 1.8, 95% CI: 0.6,5.6; OR <6.5 vs >12.5mg/day 1.3, 95% CI: 0.2,6.5).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"OR <6.5 vs >12.5mg/day 1.3, 95% CI: 0.2,6.5\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"When we examined tertiles of zinc intake, we observed a non-linear increase in the odds of prostate cancer with increasing zinc intake (p-trend of adjusted model = 0.6).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Results, Case-Control Study, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \">12.5 [vs] ≤6.50 (mg/day) Reference\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"We examined the association between self-reported zinc intake and prostate cancer in a hospital-based case-control study of African Americans.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Usual dietary intake was assessed at the time of recruitment (2000 to 2004) with the use of a block food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Materials and Methods, Zinc assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Washington D.C. area.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Materials and Methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Self-identified African American men aged between 40 and 85 were recruited from the Division of Urology at the Howard University Hospital and Washington D.C. area.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Materials and Methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Self-identified African American men aged between 40 and 85 were recruited from the Division of Urology at the Howard University Hospital and Washington D.C. area.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Materials and Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Usual dietary intake was assessed at the time of recruitment (2000 to 2004) with the use of a block food frequency questionnaire (These self-administered FFQ were adapted from National Health and Nutrition Examination Survey 1999–2001 dietary recall data and validated for use in the African American population to estimate usual zinc intake during the year prior to recruitment into the study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100936/\",\n            \"location\": \"Materials and Methods, Zinc assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

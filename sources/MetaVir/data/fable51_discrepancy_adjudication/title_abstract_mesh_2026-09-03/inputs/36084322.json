@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:12.304975-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "264ccabeffdf1549bf03a140391bdfa6a24f6e3f50e7c0c0ef4c631e03cca087",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "36084322",
+      "title": "Differential Biopsy Patterns Influence Associations between Multivitamin Use and Prostate Cancer Risk in the Selenium and Vitamin E Cancer Prevention Trial.",
+      "abstract": "Multivitamin (MVI) use is a common health behavior but there is conflicting evidence from prospective studies about whether this behavior increases or decreases prostate cancer risk. Associations of MVI use and prostate cancer risk were evaluated using data from the Selenium and Vitamin E Cancer Prevention Trial (SELECT). Cox proportional hazards models estimated associations of MVI use with risk of total, low-, and high-grade prostate cancer. Longitudinal data were used to evaluate screening and biopsy patterns. To account for differential biopsy patterns, the probability of prostate cancer was estimated for men with a positive screening value but no biopsy. Incidence density ratios were used to approximate HRs, and associations of MVI use with predicted prostate cancer risk were compared with observed. Analyses of data from observed biopsies suggest a respective 19% (95% confidence interval, 10%-28%) and 21% (12%-31%) higher risk of high-grade prostate cancer for current and long-term MVI use, compared with no use. Current and long-term MVI use was associated with a shorter time to first on-study biopsy, indicating the potential for detection bias. After accounting for differential acceptance of biopsy, associations of MVI use with prostate cancer were attenuated and not statistically significant. In SELECT, biopsy acceptance patterns differed by MVI use. Estimates of associations of MVI use with prostate cancer risk based on observed biopsy data may be biased by differential acceptance of biopsy. Differential biopsy ascertainment may impact associations of risk factors and prostate cancer. Detailed screening and biopsy data can be used to analytically minimize such bias.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Biopsy",
+        "Prospective Studies",
+        "Prostate-Specific Antigen",
+        "Prostatic Neoplasms / pathology",
+        "Selenium",
+        "Vitamin E",
+        "Vitamins"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "36084322",
+      "contexts": [
+        {
+          "context_id": "36084322|Multivitamin|Prostate cancer",
+          "exposure": "Multivitamin",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "34887",
+              "effect_measure_type": "HR",
+              "effect_size": "1.19",
+              "ci_lower": "1.1",
+              "ci_upper": "1.28",
+              "p_value": "0.000006814378739890175",
+              "comparison": "current multivitamin use versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "34887",
+              "effect_measure_type": "HR",
+              "effect_size": "1.01",
+              "ci_lower": "0.97",
+              "ci_upper": "1.05",
+              "p_value": "0.6225954512788139",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

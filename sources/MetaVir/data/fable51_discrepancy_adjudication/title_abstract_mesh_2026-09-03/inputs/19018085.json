@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:50.058955-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "62e854ae10306bd5deaf8b335eaf447b779b92e97ac1568353bbb94c77fe42b9",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19018085",
+      "title": "Plasma isoflavones and subsequent risk of prostate cancer in a nested case-control study: the Japan Public Health Center.",
+      "abstract": "The incidence of prostate cancer is much lower in Japanese than Western populations. Given the preventive effects of isoflavones on carcinogenesis in the prostate in many nonhuman studies and the high consumption of isoflavones in Japanese, this low incidence may be partly due to the effects of soy. We conducted a nested case-control study within the Japan Public Health Center-based Prospective Study. A total of 14,203 men aged 40 to 69 years who had returned the baseline questionnaire and provided blood samples were observed from 1990 to 2005. During a mean of 12.8 years of follow-up, 201 newly diagnosed prostate cancers were identified. Two matched controls for each case were selected from the cohort. Conditional logistic regression model was used to estimate the odds ratios (ORs) and 95% CIs for prostate cancer in relation to plasma levels of isoflavone. Plasma genistein level tended to be inversely associated with the risk of total prostate cancer. Although plasma daidzein showed no association, the highest tertile for plasma equol, a metabolite of daidzein, was significantly associated with a decreased risk of total prostate cancer (OR = 0.60; 95% CI, 0.36 to 0.99; P(trend) = .04). These inverse associations were strengthened after analysis was confined to localized cases, with ORs in the highest group of plasma genistein and equol compared with the lowest of 0.54 (95% CI, 0.29 to 1.01; P(trend) = .03) and 0.43 (95% CI, 0.22 to 0.82; P(trend) = .02), respectively. Plasma isoflavone levels were not statistically significantly associated with the risk of advanced prostate cancer. Isoflavones may prevent the development of prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Case-Control Studies",
+        "Cohort Studies",
+        "Humans",
+        "Isoflavones / blood",
+        "Japan",
+        "Male",
+        "Middle Aged",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood",
+        "Surveys and Questionnaires"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19018085",
+      "contexts": [
+        {
+          "context_id": "19018085|Soy|Prostate cancer",
+          "exposure": "Soy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

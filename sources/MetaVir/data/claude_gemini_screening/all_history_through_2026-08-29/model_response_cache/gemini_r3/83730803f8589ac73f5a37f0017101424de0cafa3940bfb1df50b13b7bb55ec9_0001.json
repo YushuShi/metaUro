@@ -1,0 +1,339 @@
+{
+  "schema_version": 1,
+  "receipt_id": "6e38334dfb6bd0b73b977e9e47d38d4f448498128be5245e9a39d3c687e68c41",
+  "requested_at": "2026-09-02T08:51:45.713931+08:00",
+  "received_at": "2026-09-02T08:52:02.109319+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "83730803f8589ac73f5a37f0017101424de0cafa3940bfb1df50b13b7bb55ec9",
+  "attempt": 1,
+  "context_ids": [
+    "30577563|Zinc|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Zinc": 1
+  },
+  "input_digest": "087702e5b1e2645c096e2b4427cb89b36137ce7d087512b02a7f35b41cb6c199",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13436,
+    "cached_input_tokens": 0,
+    "output_tokens": 2662,
+    "reasoning_tokens": 897
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0200595",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c5ad6c5c-ba25-444a-b0c8-05c2c3715e1f",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0200595"
+  },
+  "output_sha256": "c498cb0e42b264a2cb886294b2cacacc61ccdaae4fbcee5624c6a60ff97a84ab",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"30577563|Zinc|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Population-based case-control study evaluating the association between dietary zinc intake and incident prostate cancer risk with complete multivariable risk estimates.\",\n      \"extraction\": {\n        \"effect_size\": 1.39,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.0,\n        \"ci_upper\": 1.95,\n        \"p_value\": 0.051,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1961,\n        \"cases\": 733,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Spain\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"hospital-based incident prostate cancer cases and population-based controls from 7 Spanish provinces\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"733 incident cases and 1228 population-based controls were included for this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"As a result, 733 cases and 1228 controls were included in this analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 2.1, paragraph 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"When dietary calcium and grains and legumes intake were also considered, the magnitude of the association increased (OR: 1.39; 95% CI: 1.00–1.95; p -trend = 0.051).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 3.1, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"T3 (>10.53 mg/day) ... 1.39 (1.00;1.95)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"When dietary calcium and grains and legumes intake were also considered, the magnitude of the association increased (OR: 1.39; 95% CI: 1.00–1.95; p -trend = 0.051).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 3.1, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Dietary zinc was categorized in tertiles on the basis of the distribution among controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 2.2, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The subjects in this research were participants from the population-based multicase-control study MCC-Spain ( www.mcc-spain.org ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"From 2008 to 2013, subjects from 12 different provinces of Spain were invited to participate.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer (PC) is the most frequent malignant neoplasm among European men, apart from non-melanoma skin cancer\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"We used Genomebrowser [ 26 ] to identify those genetic variants associated with PC through GWAS in the population with European ancestry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 2.1, paragraph 4\"\n          },\n          \"location\": {\n            \"excerpt\": \"diagnosed during the recruitment period in 14 hospitals from 7 Spanish provinces (Asturias, Barcelona, Cantabria, Granada, Huelva, Madrid and Valencia).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 2.1, paragraph 3\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Diet and alcohol consumption habits were collected by means of a semi-quantitative food frequency questionnaire (FFQ) previously validated in Spain [ 21 ]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:23:36.121881+08:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "c498cb0e42b264a2cb886294b2cacacc61ccdaae4fbcee5624c6a60ff97a84ab"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6356690/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    }
+  ],
+  "validated_results": [
+    {
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "pmid": "30577563",
+      "pmcid": "PMC6356690",
+      "published_date": "2018-12-20",
+      "title": "Dietary Zinc and Risk of Prostate Cancer in Spain: MCC-Spain Study.",
+      "authors": [
+        "Gutiérrez-González E",
+        "Castelló A",
+        "Fernández-Navarro P",
+        "Castaño-Vinyals G",
+        "Llorca J",
+        "Salas D",
+        "Salcedo-Bellido I",
+        "Aragonés N",
+        "Fernández-Tardón G",
+        "Alguacil J",
+        "Gracia-Lavedan E",
+        "García-Esquinas E",
+        "Gómez-Acebo I",
+        "Amiano P",
+        "Romaguera D",
+        "Kogevinas M",
+        "Pollán M",
+        "Pérez-Gómez B"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30577563/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Population-based case-control study evaluating the association between dietary zinc intake and incident prostate cancer risk with complete multivariable risk estimates.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.39,
+        "effect_type": "OR",
+        "ci_lower": 1,
+        "ci_upper": 1.95,
+        "p_value": 0.051,
+        "ci_confidence_level": 95,
+        "total_n": 1961,
+        "cases": 733,
+        "comparison_type": "extreme_quantiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Spain",
+        "location": "Spain",
+        "ethnicity": "NA",
+        "population": "hospital-based incident prostate cancer cases and population-based controls from 7 Spanish provinces",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "As a result, 733 cases and 1228 controls were included in this analysis. The genotyping of the selected participants with available DNA (841 controls and 514 cases) was performed by the Centro Nacional de Genotipado (CEGEN-ISCIII) using the Infinium Human Exome BeadChip (Illumina, San Diego, USA) that includes 200,000 coding markers plus 5000 additional custom single nucleotide polymorphisms (SNP) selected from previous genome-wide association studies (GWAS) studies or in genes of interest.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Abstract; total_n derived from reported group counts 733 + 1228 = 1961"
+          },
+          "cases": {
+            "excerpt": "733 incident cases and 1228 population-based controls were included for this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 2.1, paragraph 3"
+          },
+          "effect_size": {
+            "excerpt": "They showed an increased risk of PC in those with higher intake of zinc (Odds Ratio (OR) tertile 3vs1: 1.39; 95% Confidence interval (CI):1.00–1.95).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 3.1, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "They showed an increased risk of PC in those with higher intake of zinc (Odds Ratio (OR) tertile 3vs1: 1.39; 95% Confidence interval (CI):1.00–1.95).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "When dietary calcium and grains and legumes intake were also considered, the magnitude of the association increased (OR: 1.39; 95% CI: 1.00–1.95; p -trend = 0.051).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 3.1, paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "Dietary zinc was categorized in tertiles on the basis of the distribution among controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 2.2, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The subjects in this research were participants from the population-based multicase-control study MCC-Spain ( www.mcc-spain.org ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "From 2008 to 2013, subjects from 12 different provinces of Spain were invited to participate.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer (PC) is the most frequent malignant neoplasm among European men, apart from non-melanoma skin cancer",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Dietary Zinc and Risk of Prostate Cancer in Spain",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30577563/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Diet and alcohol consumption habits were collected by means of a semi-quantitative food frequency questionnaire (FFQ) previously validated in Spain [ 21 ]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/",
+            "location": "Section 2.1, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.051",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43346,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "d0f4d3e43aa41b735f983e074b5ccdb5f8a10f1e1d28fa013472afda8495e259",
+      "pmc_source_receipt_digest": "7acbbf2d63b09c403c2a0aea87593903cfaf9abda39a3638127a3a2d22154ff5",
+      "pmc_source_raw_sha256": "e7ea6c3b90381284de93d2a4a602c782eabb93bb9441d09e392205c53442ca94",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e26aa809b390867c8f7216e1783db5239b402e7a1990d5545e6973926a83d342"
+    }
+  ]
+}

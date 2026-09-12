@@ -1,0 +1,444 @@
+{
+  "schema_version": 1,
+  "receipt_id": "54bd8baf7db9ac59f4a7f243c05d89b7747ea382b6055eec083d96d813e1c802",
+  "requested_at": "2026-09-03T17:08:11.684362-04:00",
+  "received_at": "2026-09-03T17:08:38.378799-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "2da2b5797fa5ec4168dc8c75c8ac053cfde685f5b9a1c51737a3bc7a9cbe9c80",
+  "dispatch_work_unit_key": "5facd9a481a38a4a2f0e5e3c57213bcd9f214362381202c7949b9997f2d0397e",
+  "attempt": 2,
+  "context_ids": [
+    "40200560|Green tea|Bladder cancer",
+    "40200560|Tea|Bladder cancer"
+  ],
+  "exposure_weights": {
+    "Green tea": 1,
+    "Tea": 1
+  },
+  "input_digest": "d42ce95e729002d912f7da0131235584ae92fd15e845049506414df4d38343d3",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 16877,
+    "cached_input_tokens": 0,
+    "output_tokens": 4865,
+    "reasoning_tokens": 1027
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0309015",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "355fd202-f931-4371-9fe9-549012d54310",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.0309015"
+  },
+  "output_sha256": "c9590e70cba962ade4396828a5d28de96591c5c408d141d6477ae3aebd4d48d2",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"40200560|Green tea|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Pooled case-control study from the BLEND consortium evaluating green tea intake and incident bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": null,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": null,\n        \"total_n\": 926,\n        \"cases\": 465,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe, North America, Asia\",\n        \"country\": \"Belgium, Canada, China, Germany, Italy, Sweden, USA\",\n        \"population\": \"BLEND consortium case-control studies\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"All smoking statuses\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Green tea, ml/day mean (SD) ... No (%) 134(28.82) [cases] 132(28.63) [controls] ... Low 133(28.60) 138(29.93) ... Medium 96(20.65) 84(18.22) ... High 102(21.94) 107(23.21)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Table 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Green tea, ml/day mean (SD) ... No (%) 134(28.82) ... Low <129 ml/day (%) 133(28.60) ... Medium >150 - <600 ml/day (%) 96(20.65) ... High >675 ml/day (%) 102(21.94)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Table 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The association between black or green tea consumption and BC risk in the overall population was statistically non-significant in each adjusted model ( Supplementary Table 2 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Association between tea and BC risk\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"The association between black or green tea consumption and BC risk in the overall population was statistically non-significant in each adjusted model ( Supplementary Table 2 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Association between tea and BC risk\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Stratified analysis showed no significant association between black or green tea consumption and BC risk across models\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"No consumption was used as the reference group and associations were assessed using three models\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Statistical Analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"In the present study, case-control studies from BLEND were included if they provided data on tea consumption and covariates of interest.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Except for three studies 41 – 43 , data on dietary intake were collected at least one year before enrolment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Data collection and coding, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Fifteen case-control studies with a total of 2,347 BC cases and 6,871 controls, originated from seven countries on three continents: Belgium 27 , Canada 28 , China 29 , 30 , Germany 31 , Italy 32 – 34 , Sweden 35 , and the USA\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Most participants were Caucasian (42.4%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Baseline characteristics, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"All the studies collected dietary data by (food frequency) questionnaires or interviews.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Data collection and coding, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"This study included 2,347 cases and 6,871 controls, of which 3,524 (38.2%) were female and 5,694 (61.8%) were male.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Baseline characteristics, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Additionally, the BLEND consortium collected data on study characteristics (design, method of dietary assessment, geographical region), participant demographics (age, gender, and ethnicity), and smoking status (current, former, never).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Data collection and coding, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"40200560|Tea|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Pooled case-control study from the BLEND consortium evaluating total tea intake and incident bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.72,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.65,\n        \"ci_upper\": 0.8,\n        \"p_value\": null,\n        \"total_n\": 9218,\n        \"cases\": 2347,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe, North America, Asia\",\n        \"country\": \"Belgium, Canada, China, Germany, Italy, Sweden, USA\",\n        \"population\": \"BLEND consortium case-control studies\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"All smoking statuses\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Fifteen case-control studies with a total of 2,347 BC cases and 6,871 controls, originated from seven countries on three continents\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This study included 2,347 cases and 6,871 controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Baseline characteristics, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"A statistically significant association between tea consumption and BC risk was observed in the total population (OR = 0.72, 95% CI = 0.65-0.80)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Association between tea and BC risk, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"A statistically significant association between tea consumption and BC risk was observed in the total population (OR = 0.72, 95% CI = 0.65-0.80)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Association between tea and BC risk, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"A statistically significant association between tea consumption and BC risk was observed in the total population (OR = 0.72, 95% CI = 0.65-0.80)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Association between tea and BC risk, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Association between tea consumption and BC risk was observed (odds ratio, OR = 0.72, 95% confidence interval, 95% CI = 0.65-0.80) compared to non-tea drinkers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"design\": {\n            \"excerpt\": \"In the present study, case-control studies from BLEND were included if they provided data on tea consumption and covariates of interest.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Except for three studies 41 – 43 , data on dietary intake were collected at least one year before enrolment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Data collection and coding, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Fifteen case-control studies with a total of 2,347 BC cases and 6,871 controls, originated from seven countries on three continents: Belgium 27 , Canada 28 , China 29 , 30 , Germany 31 , Italy 32 – 34 , Sweden 35 , and the USA\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Most participants were Caucasian (42.4%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Baseline characteristics, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"All the studies collected dietary data by (food frequency) questionnaires or interviews.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Data collection and coding, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"This study included 2,347 cases and 6,871 controls, of which 3,524 (38.2%) were female and 5,694 (61.8%) were male.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Results, Baseline characteristics, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Additionally, the BLEND consortium collected data on study characteristics (design, method of dietary assessment, geographical region), participant demographics (age, gender, and ethnicity), and smoking status (current, former, never).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/\",\n            \"location\": \"Methods, Data collection and coding, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "40200560|Green tea|Bladder cancer",
+      "pmid": "40200560",
+      "pmcid": "PMC12433241",
+      "published_date": "2025",
+      "title": "The Association between Tea Consumption and Bladder Cancer Risk Based on the Bladder Cancer Epidemiology and Nutritional Determinants (BLEND) International Consortium.",
+      "authors": [
+        "Zhang YX",
+        "Albers R",
+        "Chen YT",
+        "Steineck G",
+        "Kellen E",
+        "Johnson KC",
+        "Lu CM",
+        "Pohlabeln H",
+        "Vecchia C",
+        "Porru S",
+        "Carta A",
+        "Polesel J",
+        "Bosetti C",
+        "Jiang X",
+        "Tang L",
+        "Marshall J",
+        "Karagas MR",
+        "Zhang ZF",
+        "Taylor JA",
+        "Zeegers MPA",
+        "Wesselius A",
+        "Yu EY"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40200560/",
+      "exposure": "Green tea",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Pooled case-control study from the BLEND consortium evaluating green tea intake and incident bladder cancer risk.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "effect_size",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": null,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "total_n": 926,
+        "cases": 465,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe, North America, Asia",
+        "country": "Belgium, Canada, China, Germany, Italy, Sweden, USA",
+        "population": "BLEND consortium case-control studies",
+        "gender": "Mixed",
+        "smoking_status": "All smoking statuses",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": null,
+        "reported_ci_lower": null,
+        "reported_ci_upper": null,
+        "reported_p_value": null,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Table 1"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Table 1"
+          },
+          "effect_size": {
+            "excerpt": "The association between black or green tea consumption and BC risk in the overall population was statistically non-significant in each adjusted model ( Supplementary Table 2 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Association between tea and BC risk"
+          },
+          "confidence_interval": {
+            "excerpt": "The association between black or green tea consumption and BC risk in the overall population was statistically non-significant in each adjusted model ( Supplementary Table 2 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Association between tea and BC risk"
+          },
+          "p_value": {
+            "excerpt": "Stratified analysis showed no significant association between black or green tea consumption and BC risk across models",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Abstract, Results"
+          },
+          "comparison": {
+            "excerpt": "No consumption was used as the reference group and associations were assessed using three models",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Statistical Analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "In the present study, case-control studies from BLEND were included if they provided data on tea consumption and covariates of interest.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Except for three studies 41 – 43 , data on dietary intake were collected at least one year before enrolment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Data collection and coding, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Fifteen case-control studies with a total of 2,347 BC cases and 6,871 controls, originated from seven countries on three continents: Belgium 27 , Canada 28 , China 29 , 30 , Germany 31 , Italy 32 – 34 , Sweden 35 , and the USA",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Study design, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "Most participants were Caucasian (42.4%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Baseline characteristics, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "All the studies collected dietary data by (food frequency) questionnaires or interviews.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Data collection and coding, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "This study included 2,347 cases and 6,871 controls, of which 3,524 (38.2%) were female and 5,694 (61.8%) were male.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Baseline characteristics, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "Additionally, the BLEND consortium collected data on study characteristics (design, method of dietary assessment, geographical region), participant demographics (age, gender, and ethnicity), and smoking status (current, former, never).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Data collection and coding, paragraph 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Mixed: the article explicitly indicates multiple mapped populations",
+        "ethnicity_supporting_text": "Most participants were Caucasian (42.4%)."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 45205,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "8a98edae0e1264f1478cd1f1b6954b0fd28e7c883a155af4457c31abe75f098d",
+      "pmc_source_receipt_digest": "5f225473a590dd39177f39b823ca68ad5f9af58d270639f9c9400a69d4c71567",
+      "pmc_source_raw_sha256": "1dde01c3839f8554a823c48c8da403a40a93babca13b453206e2f64937a8238a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "fee0eac1af9ef7a598743b6dd970a835391724495499d57d517d49ab67be3113"
+    },
+    {
+      "context_id": "40200560|Tea|Bladder cancer",
+      "pmid": "40200560",
+      "pmcid": "PMC12433241",
+      "published_date": "2025",
+      "title": "The Association between Tea Consumption and Bladder Cancer Risk Based on the Bladder Cancer Epidemiology and Nutritional Determinants (BLEND) International Consortium.",
+      "authors": [
+        "Zhang YX",
+        "Albers R",
+        "Chen YT",
+        "Steineck G",
+        "Kellen E",
+        "Johnson KC",
+        "Lu CM",
+        "Pohlabeln H",
+        "Vecchia C",
+        "Porru S",
+        "Carta A",
+        "Polesel J",
+        "Bosetti C",
+        "Jiang X",
+        "Tang L",
+        "Marshall J",
+        "Karagas MR",
+        "Zhang ZF",
+        "Taylor JA",
+        "Zeegers MPA",
+        "Wesselius A",
+        "Yu EY"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40200560/",
+      "exposure": "Tea",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Pooled case-control study from the BLEND consortium evaluating total tea intake and incident bladder cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.72,
+        "effect_type": "OR",
+        "ci_lower": 0.65,
+        "ci_upper": 0.8,
+        "p_value": 5.586463042606138e-10,
+        "total_n": 9218,
+        "cases": 2347,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe, North America, Asia",
+        "country": "Belgium, Canada, China, Germany, Italy, Sweden, USA",
+        "population": "BLEND consortium case-control studies",
+        "gender": "Mixed",
+        "smoking_status": "All smoking statuses",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.72,
+        "reported_ci_lower": 0.65,
+        "reported_ci_upper": 0.8,
+        "reported_p_value": null,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This study included 2,347 cases and 6,871 controls, of which 3,524 (38.2%) were female and 5,694 (61.8%) were male.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Study design, paragraph 1; total_n derived from reported group counts 2347 + 6871 = 9218"
+          },
+          "cases": {
+            "excerpt": "This study included 2,347 cases and 6,871 controls, of which 3,524 (38.2%) were female and 5,694 (61.8%) were male.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Baseline characteristics, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Association between tea consumption and BC risk was observed (odds ratio, OR = 0.72, 95% confidence interval, 95% CI = 0.65-0.80) compared to non-tea drinkers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Association between tea and BC risk, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "Association between tea consumption and BC risk was observed (odds ratio, OR = 0.72, 95% confidence interval, 95% CI = 0.65-0.80) compared to non-tea drinkers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Association between tea and BC risk, paragraph 1"
+          },
+          "p_value": {
+            "excerpt": "A statistically significant association between tea consumption and BC risk was observed in the total population (OR = 0.72, 95% CI = 0.65-0.80)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Association between tea and BC risk, paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "Association between tea consumption and BC risk was observed (odds ratio, OR = 0.72, 95% confidence interval, 95% CI = 0.65-0.80) compared to non-tea drinkers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Abstract, Results"
+          },
+          "design": {
+            "excerpt": "In the present study, case-control studies from BLEND were included if they provided data on tea consumption and covariates of interest.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Except for three studies 41 – 43 , data on dietary intake were collected at least one year before enrolment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Data collection and coding, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Fifteen case-control studies with a total of 2,347 BC cases and 6,871 controls, originated from seven countries on three continents: Belgium 27 , Canada 28 , China 29 , 30 , Germany 31 , Italy 32 – 34 , Sweden 35 , and the USA",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Study design, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "Most participants were Caucasian (42.4%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Baseline characteristics, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "All the studies collected dietary data by (food frequency) questionnaires or interviews.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Data collection and coding, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "This study included 2,347 cases and 6,871 controls, of which 3,524 (38.2%) were female and 5,694 (61.8%) were male.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Results, Baseline characteristics, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "Additionally, the BLEND consortium collected data on study characteristics (design, method of dietary assessment, geographical region), participant demographics (age, gender, and ethnicity), and smoking status (current, former, never).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12433241/",
+            "location": "Methods, Data collection and coding, paragraph 1"
+          }
+        },
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Mixed: the article explicitly indicates multiple mapped populations",
+        "ethnicity_supporting_text": "Most participants were Caucasian (42.4%)."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 45205,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "8a98edae0e1264f1478cd1f1b6954b0fd28e7c883a155af4457c31abe75f098d",
+      "pmc_source_receipt_digest": "5f225473a590dd39177f39b823ca68ad5f9af58d270639f9c9400a69d4c71567",
+      "pmc_source_raw_sha256": "1dde01c3839f8554a823c48c8da403a40a93babca13b453206e2f64937a8238a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "877e19e3a87621a908d62e2c0bf37c3bf529cbdd689594bd8a2f901ca7287990"
+    }
+  ]
+}

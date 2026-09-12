@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "f69adf8247e6493c8d133b6f0b9ffac39bd89a36aa7da3a34878693ce0572d10",
+  "requested_at": "2026-09-02T08:50:17.370673+08:00",
+  "received_at": "2026-09-02T08:50:34.625334+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "6f617b6b8679ada795c3e978c618fef1a59387f2d5b3b8d3103a996dbbaee9e3",
+  "attempt": 1,
+  "context_ids": [
+    "27351919|Alcohol|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1
+  },
+  "input_digest": "d409e881d9bab6a296b67c4d23745395f256d39724c0b54b63fce7dba3ef8063",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12369,
+    "cached_input_tokens": 0,
+    "output_tokens": 2244,
+    "reasoning_tokens": 767
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.01769175",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "e609b17d-744a-43a3-abc8-d10edf6b4e1e",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.01769175"
+  },
+  "output_sha256": "e5867f00845144156806a528db7fa5d6e58e7fa13c051be8e2c00e38a0e729dd",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"27351919|Alcohol|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective twin cohort study evaluates the association between alcohol consumption and incident prostate cancer risk with multivariable-adjusted hazard ratios and 95% confidence intervals.\",\n      \"extraction\": {\n        \"effect_size\": 1.46,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.12,\n        \"ci_upper\": 1.91,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 11352,\n        \"cases\": 601,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Finland\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"male twins from the Older Finnish Twin Cohort\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"11,352 men contributed to the regular alcohol consumption analyses\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Over the study period, 601 incident cases of prostate cancer and 110 deaths from prostate cancer occurred.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Compared to light drinkers (≤3 drinks/week; non-abstainers), heavy drinkers (>14 drinks/week) were at a 1.46-fold higher risk (HR 1.46; 95% CI, 1.12, 1.91) of prostate cancer, adjusting for important confounders.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Heavy drinkers ... Fully-adjusted ... HR 1.46, 95% CI 1.12, 1.91\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": null,\n          \"comparison\": {\n            \"excerpt\": \"Compared to light drinkers (≤3 drinks/week; non-abstainers), heavy drinkers (>14 drinks/week) were at a 1.46-fold higher risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"design\": {\n            \"excerpt\": \"We aimed to prospectively investigate the association between midlife alcohol intake and drinking patterns with future prostate cancer risk and mortality in a population-based cohort of Finnish twins.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Abstract, Purpose\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Data were drawn from the Older Finnish Twin Cohort and included 11,372 twins followed from 1981 to 2012.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Linkage of the cancer registry data was provided by the National Institute for Health and Welfare, Helsinki, Finland.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Methods, Study population, paragraph 2\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Information on alcohol intake was obtained on both the 1975 and 1981 questionnaires by asking respondents to report the quantity of beer and wine consumed in an average week and the quantity of spirits consumed in an average month.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5278639/\",\n            \"location\": \"Methods, Exposure assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

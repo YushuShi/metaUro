@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:01.237512-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "0ec80dcd4df66237181c2c13d809411f894bf4f1411399f9a0bbe5c9dbfe97e2",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "18268111",
+      "title": "V89L polymorphism of the 5alpha-reductase Type II gene (SRD5A2), endogenous sex hormones, and prostate cancer risk.",
+      "abstract": "We examined the combined effect of circulating sex hormones and SRD5A2 V89L polymorphism on prostate cancer risk in a case-control study (300 cases and 300 controls) nested within the Carotene and Retinol Efficacy Trial. A moderate increase in risk associated with above-median serum levels of androstenedione and dehydroepiandrosterone sulfate (DHEAS) was present irrespective of V89L genotype. However, in L/L or V/L men, above-median DHEAS levels were associated with an increased risk of aggressive tumors [odds ratios (OR), 3.12; 95% confidence interval (95% CI), 1.28-7.63] but not of nonaggressive ones (OR, 0.56; 95% CI, 0.25-1.25). Above-median serum levels of free estradiol were associated with a lower risk, especially for aggressive cancer. The association with aggressive disease was more pronounced in men with a V/V genotype (OR, 0.34; 95% CI, 0.14-0.81), than in men with an L/L or V/L genotype (OR, 0.77; 95% CI, 0.37-1.60). Above-median levels of 3alpha-diol G were associated with an increased risk, but only in men with the L/L or V/L genotype (OR, 2.16; 95% CI, 1.31-3.56). The increase in risk in L/L and V/L men was restricted to aggressive tumors. Our study observed that only in men with the L/L or V/L genotype were increased serum levels of DHEAS and 3alpha-diol G positively associated with a higher risk of aggressive prostate cancer. Free estradiol levels were negatively associated with risk of aggressive prostate cancer in men with the V/V genotype. However, the absence of an overall association between V89L genotype and aggressive prostate cancer argues for a cautious interpretation of these observations.",
+      "mesh": [
+        "3-Oxo-5-alpha-Steroid 4-Dehydrogenase / genetics",
+        "Aged",
+        "Case-Control Studies",
+        "Genotype",
+        "Gonadal Steroid Hormones / blood",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Polymorphism, Genetic",
+        "Prostatic Neoplasms / blood, genetics",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "18268111",
+      "contexts": [
+        {
+          "context_id": "18268111|Dehydroepiandrosterone|Prostate cancer",
+          "exposure": "Dehydroepiandrosterone",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-GENOTYPE-INTERACTION"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

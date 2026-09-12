@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:37:26.056909-04:00",
+  "pmid": "35672028",
+  "work_key": "be2f8f99b6ebe59280b7a56cd71bc5e9443da1a58ed20c6babbdea8d9a8a7228",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/35672028_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "35672028",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "35672028|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "There was no evidence of an effect of higher (905 mg/d) compared with lower (349 mg/d) intakes of nondairy calcium (HR: 1.16; 95% CI: 0.94, 1.44).",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT CI 0.94-1.44 matches the abstract's nondairy calcium estimate; Claude+Gemini CI 0.92-1.28 and p=0.34 are absent and may derive from a full-text total-calcium estimate; no p value is reported in the abstract.",
+        "one_sentence_explanation": "The abstract supports ChatGPT's CI 0.94-1.44 for nondairy calcium, but Claude+Gemini's CI 0.92-1.28 and p=0.34 are absent and may belong to a full-text total-calcium estimate, so the target estimate cannot be uniquely resolved."
+      },
+      {
+        "context_id": "35672028|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "There was no evidence of an effect of higher (905 mg/d) compared with lower (349 mg/d) intakes of nondairy calcium (HR: 1.16; 95% CI: 0.94, 1.44).",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT HR 1.16 matches the abstract's nondairy calcium estimate, but Claude+Gemini HR 1.08 is absent from the allowed record and may be a total-calcium estimate from full text; target calcium form is unspecified.",
+        "one_sentence_explanation": "The abstract supports ChatGPT's HR 1.16 for nondairy calcium, but Claude+Gemini's HR 1.08 is absent and could be a full-text total-calcium estimate, so the target calcium form cannot be resolved from title, abstract, or MeSH."
+      }
+    ]
+  }
+}

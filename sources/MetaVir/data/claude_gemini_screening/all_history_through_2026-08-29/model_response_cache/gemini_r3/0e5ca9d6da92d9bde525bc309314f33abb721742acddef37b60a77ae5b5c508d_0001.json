@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "83868ae4e4d3dd6df52c882a2152243fb18d3acda195353ad4042a9a83c45190",
+  "requested_at": "2026-09-02T08:38:45.414393+08:00",
+  "received_at": "2026-09-02T08:39:09.876636+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "0e5ca9d6da92d9bde525bc309314f33abb721742acddef37b60a77ae5b5c508d",
+  "attempt": 1,
+  "context_ids": [
+    "18768497|Calcium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1
+  },
+  "input_digest": "1dc71088393c42809ec8048b58917f2125b7c9f423ac6b04155a6d662207b4ce",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5467,
+    "cached_input_tokens": 0,
+    "output_tokens": 4072,
+    "reasoning_tokens": 2423
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.01937025",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "a6330b58-0021-4e48-9837-fe74a3ef4545",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.01937025"
+  },
+  "output_sha256": "b527e98751351d2a5b010750c9c0a75d0e7d49650310ba69a4fbfbaad8bb7b52",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"18768497|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study of serum calcium and incident prostate cancer risk reporting adjusted hazard ratios and sample size.\",\n      \"extraction\": {\n        \"effect_size\": 1.31,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.77,\n        \"ci_upper\": 2.2,\n        \"p_value\": 0.341,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 2814,\n        \"cases\": 85,\n        \"comparison_type\": \"tertile\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"National Health and Nutrition Examination Survey (NHANES) and NHEFS participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The final analytical cohort included 2,814 men for whom baseline serum calcium measurements were available.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"METHODS, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Eighty-five incident cases of prostate cancer, including 25 fatal cases, were observed among 2,814 men over 46,188 person-years of follow-up (1971 – 1993).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"RESULTS, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"For incident prostate cancer, the relative risk for the same comparison was 1.31 (95% C.I. 0.77-2.20; P trend =0.34).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"Abstract\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"For incident prostate cancer, the relative risk for the same comparison was 1.31 (95% C.I. 0.77-2.20; P trend =0.34).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"Abstract\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"+Family history 1.00 (Reference) 0.97 (0.56-1.70) 1.31 (0.77-2.20) 0.341\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Comparing men in the top to men in the bottom tertile of serum calcium, the multivariable adjusted relative hazard for fatal prostate cancers was 2.68 (95% Confidence Interval 1.02-6.99; P trend = 0.04). For incident prostate cancer, the relative risk for the same comparison was 1.31 (95% C.I. 0.77-2.20; P trend =0.34).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"Abstract\"\n          },\n          \"design\": {\n            \"excerpt\": \"We conducted a prospective cohort study of serum calcium and risk for incident and fatal prostate cancer using the first National Health and Nutrition Examination Survey (NHANES) and the NHANES Epidemiologic Follow-up Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"METHODS, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We conducted a prospective cohort study of serum calcium and risk for incident and fatal prostate cancer using the first National Health and Nutrition Examination Survey (NHANES) and the NHANES Epidemiologic Follow-up Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"METHODS, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"National Health and Nutrition Examination Survey (NHANES) and the NHANES Epidemiologic Follow-up Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"METHODS, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"The final analytical cohort included 2,814 men for whom baseline serum calcium measurements were available.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2760313/\",\n            \"location\": \"METHODS, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

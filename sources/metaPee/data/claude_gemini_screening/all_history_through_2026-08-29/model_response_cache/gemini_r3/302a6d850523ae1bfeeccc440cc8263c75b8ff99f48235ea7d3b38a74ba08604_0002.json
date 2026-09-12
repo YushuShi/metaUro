@@ -1,0 +1,403 @@
+{
+  "schema_version": 1,
+  "receipt_id": "9280db120002cc7ea0be1ced71fff3c619c20095509b6a15c127606b6af7f508",
+  "requested_at": "2026-09-03T17:22:43.829974-04:00",
+  "received_at": "2026-09-03T17:23:06.517702-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "302a6d850523ae1bfeeccc440cc8263c75b8ff99f48235ea7d3b38a74ba08604",
+  "dispatch_work_unit_key": "1939608ae661b8d139250f35b4bd2ba7d775b09b07ec317dc9245cf6a629837e",
+  "attempt": 2,
+  "context_ids": [
+    "27877218|Vitamin D|Bladder cancer",
+    "27877218|Vitamin D|Kidney and renal pelvis cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin D": 2
+  },
+  "input_digest": "f2cd0112faa6e9b2b8f6777ee68bd13a78a9a03d55743765273c397015189ae2",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12598,
+    "cached_input_tokens": 0,
+    "output_tokens": 4282,
+    "reasoning_tokens": 818
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.025506",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "683593eb-a7a0-48c7-af16-3bfcc804a7cc",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.025506"
+  },
+  "output_sha256": "b3f322c714470207d24d2ecded5fe6fa377f83c930edb3700400382bdcde3db8",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"27877218|Vitamin D|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study evaluated the association between vitamin D3 prescription use and bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 4.97,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 4.4,\n        \"ci_upper\": 5.6,\n        \"p_value\": \"<0.001\",\n        \"total_n\": 323260,\n        \"cases\": 7683,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Taiwan\",\n        \"population\": \"National Health Insurance Research Database beneficiaries\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"NA\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"According to the inclusion and exclusion criteria, we identified 161805 cancer patients as cases and 161805 non-cancer patients as controls (Figure 1 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Vitamin D nonusers 7349 ... Daily DDD <=15 333 ... >15 1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 4\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Bladder (188, 189.1-189.9) 334 4.35 2719 0.86 5.24 (4.66-5.88)*** 4.97 (4.40-5.60)***\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"4.97 (4.40-5.60)***\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"*** p<0.001\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Odds ratio for site-specific cancers between vitamin D users versus vitamin D non-users.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"This was a population-based retrospective case-control study that analyzed data retrieved from the Catastrophic Illness Patient Databases (CIPD) and longitudinal health insurance database (LHID)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Data source\"\n          },\n          \"timing\": {\n            \"excerpt\": \"This was a population-based retrospective case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Data source\"\n          },\n          \"continent\": {\n            \"excerpt\": \"NHIRD database represents over 99% of the 23 million inhabitants of Taiwan.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Data source\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This study aimed to investigate whether vitamin D is associated with risk of common cancers in Chinese population.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Abstract, Objectives\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Vitamin D3 exposure was defined as all prescriptions for vitamin D3 prescribed at least twice and used continuously for 28 days before the index date (date of first diagnosis of site-specific cancers).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Exposure variables\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Women 72715 44.9 72715 44.9 ... Men 89090 55.1 89090 55.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Second, the database did not contain information on certain risk factors of cancer, like the level of physical activity, alcohol consumption, smoking, socioeconomic status, diet, and information on cancer screening tests\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Discussion, paragraph 7\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"27877218|Vitamin D|Kidney and renal pelvis cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study evaluated the association between vitamin D3 prescription use and kidney cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 2.59,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.81,\n        \"ci_upper\": 3.7,\n        \"p_value\": \"<0.001\",\n        \"total_n\": 323260,\n        \"cases\": 1283,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Taiwan\",\n        \"population\": \"National Health Insurance Research Database beneficiaries\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"NA\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"According to the inclusion and exclusion criteria, we identified 161805 cancer patients as cases and 161805 non-cancer patients as controls (Figure 1 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Kidney ... Vitamin D nonusers 1250 ... Daily DDD <=15 33 ... >15 0\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 4\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Kidney (189.0 and 198.0) 33 2.57 3020 0.94 2.79 (1.97-3.95)*** 2.59 (1.81-3.70)***\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"2.59 (1.81-3.70)***\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"*** p<0.001\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Odds ratio for site-specific cancers between vitamin D users versus vitamin D non-users.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"This was a population-based retrospective case-control study that analyzed data retrieved from the Catastrophic Illness Patient Databases (CIPD) and longitudinal health insurance database (LHID)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Data source\"\n          },\n          \"timing\": {\n            \"excerpt\": \"This was a population-based retrospective case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Data source\"\n          },\n          \"continent\": {\n            \"excerpt\": \"NHIRD database represents over 99% of the 23 million inhabitants of Taiwan.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Data source\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This study aimed to investigate whether vitamin D is associated with risk of common cancers in Chinese population.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Abstract, Objectives\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Vitamin D3 exposure was defined as all prescriptions for vitamin D3 prescribed at least twice and used continuously for 28 days before the index date (date of first diagnosis of site-specific cancers).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Materials and Methods, Exposure variables\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Women 72715 44.9 72715 44.9 ... Men 89090 55.1 89090 55.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Second, the database did not contain information on certain risk factors of cancer, like the level of physical activity, alcohol consumption, smoking, socioeconomic status, diet, and information on cancer screening tests\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/\",\n            \"location\": \"Discussion, paragraph 7\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "27877218|Vitamin D|Bladder cancer",
+      "pmid": "27877218",
+      "pmcid": "PMC5118666",
+      "published_date": "2016",
+      "title": "Vitamin D3 Intake Dose and Common Cancer: A Population-Based Case Control Study in a Chinese Population.",
+      "authors": [
+        "Leung HW",
+        "Muo CH",
+        "Liu CF",
+        "Chan AL"
+      ],
+      "journal": "Journal of Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27877218/",
+      "exposure": "Vitamin D",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study evaluated the association between vitamin D3 prescription use and bladder cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 4.97,
+        "effect_type": "OR",
+        "ci_lower": 4.4,
+        "ci_upper": 5.6,
+        "p_value": 0.001,
+        "total_n": 323260,
+        "cases": 7683,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Taiwan",
+        "population": "National Health Insurance Research Database beneficiaries",
+        "gender": "NA",
+        "smoking_status": null,
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 4.97,
+        "reported_ci_lower": 4.4,
+        "reported_ci_upper": 5.6,
+        "reported_p_value": 0.001,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Results, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 4"
+          },
+          "effect_size": {
+            "excerpt": "The association between vitamin D3 use with the risk of kidney cancer (OR 2.59; 95% CI 1.81-3.70) and bladder cancer (OR 4.97; 95% CI 4.40 -5.60) were statistically significant.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "The association between vitamin D3 use with the risk of kidney cancer (OR 2.59; 95% CI 1.81-3.70) and bladder cancer (OR 4.97; 95% CI 4.40 -5.60) were statistically significant.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "*** p<0.001",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "Odds ratio for site-specific cancers between vitamin D users versus vitamin D non-users.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "This was a population-based retrospective case-control study that analyzed data retrieved from the Catastrophic Illness Patient Databases (CIPD) and longitudinal health insurance database (LHID)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Data source"
+          },
+          "timing": {
+            "excerpt": "This was a population-based retrospective case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Data source"
+          },
+          "continent": {
+            "excerpt": "NHIRD database represents over 99% of the 23 million inhabitants of Taiwan.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Data source"
+          },
+          "ethnicity": {
+            "excerpt": "This study aimed to investigate whether vitamin D is associated with risk of common cancers in Chinese population.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Abstract, Objectives"
+          },
+          "exposure_measurement": {
+            "excerpt": "Vitamin D3 exposure was defined as all prescriptions for vitamin D3 prescribed at least twice and used continuously for 28 days before the index date (date of first diagnosis of site-specific cancers).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Exposure variables"
+          },
+          "gender": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "Second, the database did not contain information on certain risk factors of cancer, like the level of physical activity, alcohol consumption, smoking, socioeconomic status, diet, and information on cancer screening tests",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Discussion, paragraph 7"
+          }
+        },
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+        "ethnicity": "Asian",
+        "ethnicity_basis": "Population imputation: stated Asian country/population -> Asian",
+        "ethnicity_supporting_text": "This study aimed to investigate whether vitamin D is associated with risk of common cancers in Chinese population."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 25861,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "15797a3f2786e49c60870753ff4c413938adcb612b9692e00d4298ef4b568e61",
+      "pmc_source_receipt_digest": "67337e575f41da67551ad6cefd89190f562bd08bbddfeb03c46bffd79b40e489",
+      "pmc_source_raw_sha256": "90227538741e8e34c3996bc80e3a48037402ac32400278639863b84dfbc78cf9",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "bc6acefb60055f9b6c5ebe06cae60aef120a0fd95ed6907380efabafbb654641"
+    },
+    {
+      "context_id": "27877218|Vitamin D|Kidney and renal pelvis cancer",
+      "pmid": "27877218",
+      "pmcid": "PMC5118666",
+      "published_date": "2016",
+      "title": "Vitamin D3 Intake Dose and Common Cancer: A Population-Based Case Control Study in a Chinese Population.",
+      "authors": [
+        "Leung HW",
+        "Muo CH",
+        "Liu CF",
+        "Chan AL"
+      ],
+      "journal": "Journal of Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/27877218/",
+      "exposure": "Vitamin D",
+      "cancer": "Kidney and renal pelvis cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study evaluated the association between vitamin D3 prescription use and kidney cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 2.59,
+        "effect_type": "OR",
+        "ci_lower": 1.81,
+        "ci_upper": 3.7,
+        "p_value": 0.001,
+        "total_n": 323260,
+        "cases": 1283,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Taiwan",
+        "population": "National Health Insurance Research Database beneficiaries",
+        "gender": "NA",
+        "smoking_status": null,
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 2.59,
+        "reported_ci_lower": 1.81,
+        "reported_ci_upper": 3.7,
+        "reported_p_value": 0.001,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Results, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 4"
+          },
+          "effect_size": {
+            "excerpt": "The association between vitamin D3 use with the risk of kidney cancer (OR 2.59; 95% CI 1.81-3.70) and bladder cancer (OR 4.97; 95% CI 4.40 -5.60) were statistically significant.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "The association between vitamin D3 use with the risk of kidney cancer (OR 2.59; 95% CI 1.81-3.70) and bladder cancer (OR 4.97; 95% CI 4.40 -5.60) were statistically significant.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "*** p<0.001",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "Odds ratio for site-specific cancers between vitamin D users versus vitamin D non-users.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "This was a population-based retrospective case-control study that analyzed data retrieved from the Catastrophic Illness Patient Databases (CIPD) and longitudinal health insurance database (LHID)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Data source"
+          },
+          "timing": {
+            "excerpt": "This was a population-based retrospective case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Data source"
+          },
+          "continent": {
+            "excerpt": "NHIRD database represents over 99% of the 23 million inhabitants of Taiwan.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Data source"
+          },
+          "ethnicity": {
+            "excerpt": "This study aimed to investigate whether vitamin D is associated with risk of common cancers in Chinese population.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Abstract, Objectives"
+          },
+          "exposure_measurement": {
+            "excerpt": "Vitamin D3 exposure was defined as all prescriptions for vitamin D3 prescribed at least twice and used continuously for 28 days before the index date (date of first diagnosis of site-specific cancers).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Materials and Methods, Exposure variables"
+          },
+          "gender": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "Second, the database did not contain information on certain risk factors of cancer, like the level of physical activity, alcohol consumption, smoking, socioeconomic status, diet, and information on cancer screening tests",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5118666/",
+            "location": "Discussion, paragraph 7"
+          }
+        },
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+        "ethnicity": "Asian",
+        "ethnicity_basis": "Population imputation: stated Asian country/population -> Asian",
+        "ethnicity_supporting_text": "This study aimed to investigate whether vitamin D is associated with risk of common cancers in Chinese population."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 25861,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "15797a3f2786e49c60870753ff4c413938adcb612b9692e00d4298ef4b568e61",
+      "pmc_source_receipt_digest": "67337e575f41da67551ad6cefd89190f562bd08bbddfeb03c46bffd79b40e489",
+      "pmc_source_raw_sha256": "90227538741e8e34c3996bc80e3a48037402ac32400278639863b84dfbc78cf9",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "73e56a7a2c15db1e68b9433a779b306f63fdd45ab37846e8217bfb7fd8e5e8e1"
+    }
+  ]
+}

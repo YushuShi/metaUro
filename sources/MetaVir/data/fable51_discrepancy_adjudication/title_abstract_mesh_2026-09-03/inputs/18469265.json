@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:18.402582-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "3d769a8c5af04a8aa4ad4805d54f5253b15fbf9824b1d4be4a16f990017615cb",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "18469265",
+      "title": "Dietary fat intake and risk of prostate cancer in the European Prospective Investigation into Cancer and Nutrition.",
+      "abstract": "Findings from early observational studies have suggested that the intake of dietary fat might be a contributing factor in the etiology of prostate cancer. However, the results from more recent prospective studies do not support this hypothesis, and the possible association between different food sources of fat and prostate cancer risk also remains unclear. The objectives were to assess whether intakes of dietary fat, subtypes of fat, and fat from animal products were associated with prostate cancer risk. This was a multicenter prospective study of 142,520 men in the European Prospective Investigation into Cancer and Nutrition (EPIC). Dietary fat intake was estimated with the use of country-specific validated food questionnaires. The association between dietary fat and risk of prostate cancer was assessed by using Cox regression, stratified by recruitment center and adjusted for height, weight, smoking, education, marital status, and energy intake. After a median follow-up time of 8.7 y, prostate cancer was diagnosed in 2727 men. There was no significant association between dietary fat (total, saturated, monounsaturated, and polyunsaturated fat and the ratio of polyunsaturated to saturated fat) and risk of prostate cancer. The hazard ratio for prostate cancer for the highest versus the lowest quintile of total fat intake was 0.96 (95% CI: 0.84, 1.09; P for trend = 0.155). There were no significant associations between prostate cancer risk and fat from red meat, dairy products, and fish. The results from this large multicenter study suggest that there is no association between dietary fat and prostate cancer risk.",
+      "mesh": [
+        "Aged",
+        "Dairy Products",
+        "Dietary Fats / administration & dosage, adverse effects",
+        "Dietary Fats, Unsaturated / administration & dosage, adverse effects",
+        "Europe / epidemiology",
+        "Feeding Behavior",
+        "Humans",
+        "Male",
+        "Meat / adverse effects",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors",
+        "Seafood",
+        "Surveys and Questionnaires"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "18469265",
+      "contexts": [
+        {
+          "context_id": "18469265|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "18469265|Red meat|Prostate cancer",
+          "exposure": "Red meat",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

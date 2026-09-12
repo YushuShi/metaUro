@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:46.495703-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c32d84eb77889eb160f034ce240d54c43ab1ba30ea2aeb44a178cc71dd8097e1",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "22132129",
+      "title": "Impact of meat consumption, preparation, and mutagens on aggressive prostate cancer.",
+      "abstract": "The association between meat consumption and prostate cancer remains unclear, perhaps reflecting heterogeneity in the types of tumors studied and the method of meat preparation--which can impact the production of carcinogens. We address both issues in this case-control study focused on aggressive prostate cancer (470 cases and 512 controls), where men reported not only their meat intake but also their meat preparation and doneness level on a semi-quantitative food-frequency questionnaire. Associations between overall and grilled meat consumption, doneness level, ensuing carcinogens and aggressive prostate cancer were assessed using multivariate logistic regression. Higher consumption of any ground beef or processed meats were positively associated with aggressive prostate cancer, with ground beef showing the strongest association (OR = 2.30, 95% CI:1.39-3.81; P-trend = 0.002). This association primarily reflected intake of grilled or barbequed meat, with more well-done meat conferring a higher risk of aggressive prostate cancer. Comparing high and low consumptions of well/very well cooked ground beef to no consumption gave OR's of 2.04 (95% CI:1.41-2.96) and 1.51 (95% CI:1.06-2.14), respectively. In contrast, consumption of rare/medium cooked ground beef was not associated with aggressive prostate cancer. Looking at meat mutagens produced by cooking at high temperatures, we detected an increased risk with 2-amino-3,8-Dimethylimidazo-[4,5-f]Quinolaxine (MelQx) and 2-amino-3,4,8-trimethylimidazo(4,5-f)qunioxaline (DiMelQx), when comparing the highest to lowest quartiles of intake: OR = 1.69 (95% CI:1.08-2.64;P-trend = 0.02) and OR = 1.53 (95% CI:1.00-2.35; P-trend = 0.005), respectively. Higher intake of well-done grilled or barbequed red meat and ensuing carcinogens could increase the risk of aggressive prostate cancer.",
+      "mesh": [
+        "Case-Control Studies",
+        "Cooking / methods",
+        "Demography",
+        "Energy Intake / drug effects",
+        "Feeding Behavior",
+        "Humans",
+        "Male",
+        "Meat / adverse effects",
+        "Mutagens / toxicity",
+        "Neoplasm Invasiveness",
+        "Prostatic Neoplasms / chemically induced, etiology, pathology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "22132129",
+      "contexts": [
+        {
+          "context_id": "22132129|Red meat|Prostate cancer",
+          "exposure": "Red meat",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "982",
+              "effect_measure_type": "OR",
+              "effect_size": "2.3",
+              "ci_lower": "1.39",
+              "ci_upper": "3.81",
+              "p_value": "0.002",
+              "comparison": "Highest versus lowest category of ground-beef intake; no consumption versus high consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "982",
+              "effect_measure_type": "OR",
+              "effect_size": "1.25",
+              "ci_lower": "0.74",
+              "ci_upper": "2.11",
+              "p_value": "0.43",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

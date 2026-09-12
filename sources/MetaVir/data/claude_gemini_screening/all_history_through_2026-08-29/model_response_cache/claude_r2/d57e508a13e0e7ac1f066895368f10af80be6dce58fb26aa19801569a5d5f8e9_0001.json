@@ -1,0 +1,917 @@
+{
+  "schema_version": 1,
+  "receipt_id": "cc64e2f841045bd3de6e65fb024dd875b6f4b7f91e3420e033da94f6c1f93c88",
+  "requested_at": "2026-09-02T07:26:38.633207+08:00",
+  "received_at": "2026-09-02T07:27:56.277628+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "d57e508a13e0e7ac1f066895368f10af80be6dce58fb26aa19801569a5d5f8e9",
+  "attempt": 1,
+  "context_ids": [
+    "9067262|Leucine|Prostate cancer",
+    "9071908|Calcium|Prostate cancer",
+    "9071908|Iron|Prostate cancer",
+    "9071908|Vitamin A|Prostate cancer",
+    "9071908|Vitamin B12|Prostate cancer",
+    "9071908|Vitamin E|Prostate cancer",
+    "9103275|Genistein|Prostate cancer",
+    "9103275|Soy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Genistein": 1,
+    "Iron": 1,
+    "Leucine": 1,
+    "Soy": 1,
+    "Vitamin A": 1,
+    "Vitamin B12": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "77aaaaa6be8a88d1097d7ffb5e02d644c07be3dc32d968d7275cf9ef0ee3ddfe",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 6289,
+    "cached_input_tokens": 0,
+    "output_tokens": 9164,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.260545",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "59c00de6-3e3e-4f4a-8e57-83d769cfbf88",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.260545"
+  },
+  "output_sha256": "529f469afe9af5028fdd27b56fb4c39026fea031c0f3746a10140a0a45b497ad",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"9067262|Leucine|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The \\\"leucine\\\" reference is the V89L germline amino-acid substitution in SRD5A2, a genetic polymorphism rather than any nutritional leucine exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9071908|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Hospital-based case-control study reporting an adjusted odds ratio for highest-tertile dietary calcium intake and histologically confirmed incident prostate cancer.\",\"extraction\":{\"effect_size\":0.37,\"effect_type\":\"OR\",\"ci_lower\":0.14,\"ci_upper\":0.99,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":303,\"cases\":101,\"comparison_type\":\"highest vs lowest tertile of dietary calcium intake\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Europe\",\"country\":\"Serbia (Yugoslavia)\",\"location\":\"two towns of Serbia (Yugoslavia)\",\"ethnicity\":\"NA\",\"population\":\"patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"101 patients with histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"calcium (OR = 0.37, 95% CI = 0.14-0.99)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"the highest tertile of ... calcium (OR = 0.37, 95% CI = 0.14-0.99)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary information was obtained by using a standard questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9071908|Iron|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting adjusted odds ratios for dietary iron intake and histologically confirmed incident prostate cancer.\",\"extraction\":{\"effect_size\":0.34,\"effect_type\":\"OR\",\"ci_lower\":0.12,\"ci_upper\":0.95,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":303,\"cases\":101,\"comparison_type\":\"highest vs lowest tertile of dietary iron intake\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Europe\",\"country\":\"Serbia (Yugoslavia)\",\"location\":\"two towns of Serbia (Yugoslavia)\",\"ethnicity\":\"NA\",\"population\":\"patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"101 patients with histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"a protective effect was found for the highest tertile of ... iron intake (OR = 0.34, 95% CI = 0.12-0.95)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"iron intake (OR = 0.34, 95% CI = 0.12-0.95)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"the highest tertile of ... iron intake (OR = 0.34, 95% CI = 0.12-0.95)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary information was obtained by using a standard questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9071908|Vitamin A|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting an adjusted odds ratio for dietary retinol equivalent (vitamin A) intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":1.64,\"effect_type\":\"OR\",\"ci_lower\":1.01,\"ci_upper\":2.67,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":303,\"cases\":101,\"comparison_type\":\"dietary intake of retinol equivalent in stepwise logistic regression\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Europe\",\"country\":\"Serbia (Yugoslavia)\",\"location\":\"two towns of Serbia (Yugoslavia)\",\"ethnicity\":\"NA\",\"population\":\"patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"101 patients with histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"risk factors for prostate cancer were dietary intake of retinol equivalent (OR = 1.64, 95% CI = 1.01-2.67)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"retinol equivalent (OR = 1.64, 95% CI = 1.01-2.67)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"According to logistic regression step by step analysis, risk factors for prostate cancer were dietary intake of retinol equivalent\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary information was obtained by using a standard questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9071908|Vitamin B12|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting an adjusted odds ratio for highest-tertile dietary vitamin B12 intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":2.07,\"effect_type\":\"OR\",\"ci_lower\":1.08,\"ci_upper\":3.97,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":303,\"cases\":101,\"comparison_type\":\"highest vs lowest tertile of dietary vitamin B12 intake\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Europe\",\"country\":\"Serbia (Yugoslavia)\",\"location\":\"two towns of Serbia (Yugoslavia)\",\"ethnicity\":\"NA\",\"population\":\"patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"101 patients with histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"risk factors for prostate cancer appeared to be the highest tertile of ... vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"the highest tertile of ... vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary information was obtained by using a standard questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9071908|Vitamin E|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting an adjusted odds ratio for highest-tertile dietary alpha-tocopherol (vitamin E) intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":0.15,\"effect_type\":\"OR\",\"ci_lower\":0.05,\"ci_upper\":0.53,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":303,\"cases\":101,\"comparison_type\":\"highest vs lowest tertile of dietary alpha-tocopherol intake\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Europe\",\"country\":\"Serbia (Yugoslavia)\",\"location\":\"two towns of Serbia (Yugoslavia)\",\"ethnicity\":\"NA\",\"population\":\"patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"101 patients with histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia) from 1990 to 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"performed in two towns of Serbia (Yugoslavia)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary information was obtained by using a standard questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9071908/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9103275|Genistein|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-DIAGNOSTIC-MECHANISTIC\",\"reason\":\"The study only measures isoflavonoid concentrations in prostatic fluid and their metabolism after supplementation, providing no evidence on developing prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9103275|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-DIAGNOSTIC-MECHANISTIC\",\"reason\":\"Soya-based diet is discussed only as background for a biochemical measurement and metabolism study of prostatic fluid phyto-oestrogens, with no prostate cancer incidence outcome.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "9067262|Leucine|Prostate cancer",
+      "pmid": "9067262",
+      "pmcid": "",
+      "published_date": "1997-03-15",
+      "title": "A prevalent missense substitution that modulates activity of prostatic steroid 5alpha-reductase.",
+      "authors": [
+        "Makridakis N",
+        "Ross RK",
+        "Pike MC",
+        "Chang L",
+        "Stanczyk FZ",
+        "Kolonel LN",
+        "Shi CY",
+        "Yu MC",
+        "Henderson BE",
+        "Reichardt JK"
+      ],
+      "journal": "Cancer research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9067262/",
+      "exposure": "Leucine",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The \"leucine\" reference is the V89L germline amino-acid substitution in SRD5A2, a genetic polymorphism rather than any nutritional leucine exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9071908|Calcium|Prostate cancer",
+      "pmid": "9071908",
+      "pmcid": "",
+      "published_date": "1997-01-01",
+      "title": "Diet and prostate cancer: a case-control study.",
+      "authors": [
+        "Vlajinac HD",
+        "Marinković JM",
+        "Ilić MD",
+        "Kocev NI"
+      ],
+      "journal": "European journal of cancer (Oxford, England : 1990)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study reporting an adjusted odds ratio for highest-tertile dietary calcium intake and histologically confirmed incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.37,
+        "effect_type": "OR",
+        "ci_lower": 0.14,
+        "ci_upper": 0.99,
+        "p_value": 0.04631943490648402,
+        "ci_confidence_level": 95,
+        "total_n": 303,
+        "cases": 101,
+        "comparison_type": "highest vs lowest tertile of dietary calcium intake",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Serbia (Yugoslavia)",
+        "location": "two towns of Serbia (Yugoslavia)",
+        "ethnicity": "NA",
+        "population": "patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract; total_n derived from reported group counts 101 + 202 = 303"
+          },
+          "cases": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was obtained by using a standard questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.37,
+            "effect_type": "OR",
+            "ci_lower": 0.14,
+            "ci_upper": 0.99,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9071908|Iron|Prostate cancer",
+      "pmid": "9071908",
+      "pmcid": "",
+      "published_date": "1997-01-01",
+      "title": "Diet and prostate cancer: a case-control study.",
+      "authors": [
+        "Vlajinac HD",
+        "Marinković JM",
+        "Ilić MD",
+        "Kocev NI"
+      ],
+      "journal": "European journal of cancer (Oxford, England : 1990)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+      "exposure": "Iron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting adjusted odds ratios for dietary iron intake and histologically confirmed incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.34,
+        "effect_type": "OR",
+        "ci_lower": 0.12,
+        "ci_upper": 0.95,
+        "p_value": 0.040959229984667625,
+        "ci_confidence_level": 95,
+        "total_n": 303,
+        "cases": 101,
+        "comparison_type": "highest vs lowest tertile of dietary iron intake",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Serbia (Yugoslavia)",
+        "location": "two towns of Serbia (Yugoslavia)",
+        "ethnicity": "NA",
+        "population": "patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract; total_n derived from reported group counts 101 + 202 = 303"
+          },
+          "cases": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was obtained by using a standard questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.34,
+            "effect_type": "OR",
+            "ci_lower": 0.12,
+            "ci_upper": 0.95,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9071908|Vitamin A|Prostate cancer",
+      "pmid": "9071908",
+      "pmcid": "",
+      "published_date": "1997-01-01",
+      "title": "Diet and prostate cancer: a case-control study.",
+      "authors": [
+        "Vlajinac HD",
+        "Marinković JM",
+        "Ilić MD",
+        "Kocev NI"
+      ],
+      "journal": "European journal of cancer (Oxford, England : 1990)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting an adjusted odds ratio for dietary retinol equivalent (vitamin A) intake and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.64,
+        "effect_type": "OR",
+        "ci_lower": 1.01,
+        "ci_upper": 2.67,
+        "p_value": 0.04606779322632907,
+        "ci_confidence_level": 95,
+        "total_n": 303,
+        "cases": 101,
+        "comparison_type": "dietary intake of retinol equivalent in stepwise logistic regression",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Serbia (Yugoslavia)",
+        "location": "two towns of Serbia (Yugoslavia)",
+        "ethnicity": "NA",
+        "population": "patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract; total_n derived from reported group counts 101 + 202 = 303"
+          },
+          "cases": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "According to logistic regression step by step analysis, risk factors for prostate cancer were dietary intake of retinol equivalent (OR = 1.64, 95% CI = 1.01-2.67) and vitamin B12 (OR = 1.87, 95% CI = 1.15-3.05), and a protective effect was found for dietary intake of iron (OR = 0.40, 95% CI = 0.27-0.58).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "According to logistic regression step by step analysis, risk factors for prostate cancer were dietary intake of retinol equivalent (OR = 1.64, 95% CI = 1.01-2.67) and vitamin B12 (OR = 1.87, 95% CI = 1.15-3.05), and a protective effect was found for dietary intake of iron (OR = 0.40, 95% CI = 0.27-0.58).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "According to logistic regression step by step analysis, risk factors for prostate cancer were dietary intake of retinol equivalent",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was obtained by using a standard questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.64,
+            "effect_type": "OR",
+            "ci_lower": 1.01,
+            "ci_upper": 2.67,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9071908|Vitamin B12|Prostate cancer",
+      "pmid": "9071908",
+      "pmcid": "",
+      "published_date": "1997-01-01",
+      "title": "Diet and prostate cancer: a case-control study.",
+      "authors": [
+        "Vlajinac HD",
+        "Marinković JM",
+        "Ilić MD",
+        "Kocev NI"
+      ],
+      "journal": "European journal of cancer (Oxford, England : 1990)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+      "exposure": "Vitamin B12",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting an adjusted odds ratio for highest-tertile dietary vitamin B12 intake and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 2.07,
+        "effect_type": "OR",
+        "ci_lower": 1.08,
+        "ci_upper": 3.97,
+        "p_value": 0.028469404042218434,
+        "ci_confidence_level": 95,
+        "total_n": 303,
+        "cases": 101,
+        "comparison_type": "highest vs lowest tertile of dietary vitamin B12 intake",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Serbia (Yugoslavia)",
+        "location": "two towns of Serbia (Yugoslavia)",
+        "ethnicity": "NA",
+        "population": "patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract; total_n derived from reported group counts 101 + 202 = 303"
+          },
+          "cases": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was obtained by using a standard questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 2.07,
+            "effect_type": "OR",
+            "ci_lower": 1.08,
+            "ci_upper": 3.97,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9071908|Vitamin E|Prostate cancer",
+      "pmid": "9071908",
+      "pmcid": "",
+      "published_date": "1997-01-01",
+      "title": "Diet and prostate cancer: a case-control study.",
+      "authors": [
+        "Vlajinac HD",
+        "Marinković JM",
+        "Ilić MD",
+        "Kocev NI"
+      ],
+      "journal": "European journal of cancer (Oxford, England : 1990)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting an adjusted odds ratio for highest-tertile dietary alpha-tocopherol (vitamin E) intake and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.15,
+        "effect_type": "OR",
+        "ci_lower": 0.05,
+        "ci_upper": 0.53,
+        "p_value": 0.0016329802176674227,
+        "ci_confidence_level": 95,
+        "total_n": 303,
+        "cases": 101,
+        "comparison_type": "highest vs lowest tertile of dietary alpha-tocopherol intake",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Serbia (Yugoslavia)",
+        "location": "two towns of Serbia (Yugoslavia)",
+        "ethnicity": "NA",
+        "population": "patients with histologically confirmed prostate cancer and hospital controls matched by age, hospital admittance and place of residence",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract; total_n derived from reported group counts 101 + 202 = 303"
+          },
+          "cases": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994, comprised 101 patients with histologically confirmed prostate cancer and 202 hospital controls individually matched by age (+/-2 years), hospital admittance and place of residence.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "After adjustment for possible confounders, risk factors for prostate cancer appeared to be the highest tertile of protein (odds ratio (OR) = 13.54, 95% confidence interval (CI) = 2.38-77.13), saturated fatty acid (OR = 3.63, 95% CI = 1.03-12.79), fibre (OR = 4.02, 95% CI = 1.38-11.73), and vitamin B12 intake (OR = 2.07, 95% CI = 1.08-3.97); a protective effect was found for the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53), calcium (OR = 0.37, 95% CI = 0.14-0.99) and iron intake (OR = 0.34, 95% CI = 0.12-0.95).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "the highest tertile of alpha-tocopherol (OR = 0.15, 95% CI = 0.05-0.53)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study, performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia) from 1990 to 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "performed in two towns of Serbia (Yugoslavia)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was obtained by using a standard questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9071908/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.15,
+            "effect_type": "OR",
+            "ci_lower": 0.05,
+            "ci_upper": 0.53,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9103275|Genistein|Prostate cancer",
+      "pmid": "9103275",
+      "pmcid": "",
+      "published_date": "1997-03-19",
+      "title": "Measurement and metabolism of isoflavonoids and lignans in the human male.",
+      "authors": [
+        "Morton MS",
+        "Matos-Ferreira A",
+        "Abranches-Monteiro L",
+        "Correia R",
+        "Blacklock N",
+        "Chan PS",
+        "Cheng C",
+        "Lloyd S",
+        "Chieh-ping W",
+        "Griffiths K"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9103275/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-DIAGNOSTIC-MECHANISTIC",
+      "reason": "The study only measures isoflavonoid concentrations in prostatic fluid and their metabolism after supplementation, providing no evidence on developing prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9103275|Soy|Prostate cancer",
+      "pmid": "9103275",
+      "pmcid": "",
+      "published_date": "1997-03-19",
+      "title": "Measurement and metabolism of isoflavonoids and lignans in the human male.",
+      "authors": [
+        "Morton MS",
+        "Matos-Ferreira A",
+        "Abranches-Monteiro L",
+        "Correia R",
+        "Blacklock N",
+        "Chan PS",
+        "Cheng C",
+        "Lloyd S",
+        "Chieh-ping W",
+        "Griffiths K"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9103275/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-DIAGNOSTIC-MECHANISTIC",
+      "reason": "Soya-based diet is discussed only as background for a biochemical measurement and metabolism study of prostatic fluid phyto-oestrogens, with no prostate cancer incidence outcome.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

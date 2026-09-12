@@ -1,0 +1,835 @@
+{
+  "schema_version": 1,
+  "receipt_id": "14bab0825018895b7aa65b730eecdc2a68f22c8f773d16e70a682c3df44d9d98",
+  "requested_at": "2026-09-03T15:40:43.425807-04:00",
+  "received_at": "2026-09-03T15:41:58.953770-04:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "f2e32242546d0bb44aae4e558afbe2fc11476c81832d78748bba4d4b98f38129",
+  "dispatch_work_unit_key": "f2e32242546d0bb44aae4e558afbe2fc11476c81832d78748bba4d4b98f38129",
+  "attempt": 1,
+  "context_ids": [
+    "12448354|Alcohol|Renal cell carcinoma",
+    "12457106|Alcohol|Renal cell carcinoma",
+    "12496060|Soy isoflavones|Bladder cancer",
+    "12496060|Soy|Bladder cancer",
+    "12500666|Glutathione|Bladder cancer",
+    "12552997|Glutathione|Bladder cancer",
+    "12570884|Red meat|Renal cell carcinoma",
+    "12572669|Iron|Kidney and renal pelvis cancer",
+    "12606884|Vitamin C|Bladder cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 2,
+    "Glutathione": 2,
+    "Iron": 1,
+    "Red meat": 1,
+    "Soy": 1,
+    "Soy isoflavones": 1,
+    "Vitamin C": 1
+  },
+  "input_digest": "3d9c583adad0d28f8b5e14bc8213e36122af02031fb6a9c4557f003cac7d3727",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12780,
+    "cached_input_tokens": 0,
+    "output_tokens": 8235,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.269775",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "936ec145-0ad3-40b1-834b-a2500e284755",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.269775"
+  },
+  "output_sha256": "9a217ef3408f8f6c13eb8823ed8aa40c0727e26dcb2387fc9e1a5774a443198b",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"12448354|Alcohol|Renal cell carcinoma\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Alcohol intake appears only as a covariate adjusted for in models of occupational and BMI risk factors, with no alcohol-renal cell carcinoma risk estimate reported.\",\"extraction\":null,\"additional_extractions\":[],\"jbi\":null},{\"context_id\":\"12457106|Alcohol|Renal cell carcinoma\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Hospital-based case-control study reporting sex-specific odds ratios for alcohol drinking and incident histologically confirmed renal cell carcinoma.\",\"extraction\":{\"effect_size\":1.2,\"effect_type\":\"OR\",\"ci_lower\":0.6,\"ci_upper\":2.4,\"p_value\":null,\"total_n\":1396,\"cases\":348,\"comparison_type\":\"Highest tertile of alcohol intake (>=3 drinks per day) vs lowest in women\",\"design\":\"case_control\",\"timing\":null,\"continent\":\"Europe\",\"country\":\"Italy\",\"population\":\"Incident renal cell cancer cases and hospital controls in northern Italy\",\"gender\":\"Female\",\"smoking_status\":null,\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"348 people with incident histologically confirmed cancer and 1048 hospital controls from northern Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"348 people with incident histologically confirmed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"The odds ratios were 1.2 (95% confidence interval, 0.6-2.4) for the highest tertile of intake in women\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"1.2 (95% confidence interval, 0.6-2.4)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"the highest tertile of intake in women (>or=3 drinks per day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"in a case-control study of 348 people with incident histologically confirmed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"1048 hospital controls from northern Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"ethnicity\":null,\"exposure_measurement\":{\"excerpt\":\"The role of alcohol consumption on the risk of renal cell cancer was investigated\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"gender\":{\"excerpt\":\"for the highest tertile of intake in women (>or=3 drinks per day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"smoking_status\":null}},\"additional_extractions\":[{\"effect_size\":0.8,\"effect_type\":\"OR\",\"ci_lower\":0.4,\"ci_upper\":1.3,\"p_value\":null,\"total_n\":1396,\"cases\":348,\"comparison_type\":\"Highest quartile of alcohol intake (>=6 drinks per day) vs lowest in men\",\"design\":\"case_control\",\"timing\":null,\"continent\":\"Europe\",\"country\":\"Italy\",\"population\":\"Incident renal cell cancer cases and hospital controls in northern Italy\",\"gender\":\"Male\",\"smoking_status\":null,\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"348 people with incident histologically confirmed cancer and 1048 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"348 people with incident histologically confirmed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"0.8 (0.4-1.3) for the highest quartile of intake in men (>or=6 drinks per day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.8 (0.4-1.3)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"the highest quartile of intake in men (>or=6 drinks per day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"in a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"1048 hospital controls from northern Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"ethnicity\":null,\"exposure_measurement\":{\"excerpt\":\"The role of alcohol consumption on the risk of renal cell cancer was investigated\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"gender\":{\"excerpt\":\"in men (>or=6 drinks per day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12457106/\",\"location\":\"abstract\"},\"smoking_status\":null}}],\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"12496060|Soy isoflavones|Bladder cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting that soy isoflavone intake showed similar associations with incident bladder cancer risk, though no isoflavone-specific estimate is given in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"total_n\":null,\"cases\":61,\"comparison_type\":\"Quartiles of energy-adjusted soy isoflavone intake (highest vs lowest)\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Asia\",\"country\":\"Singapore\",\"population\":\"Singapore Chinese Health Study cohort\",\"gender\":\"Mixed\",\"smoking_status\":null,\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"As of December 31, 2000, 329,848 person-years of follow-up were accrued.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Sixty-one histologically confirmed incident bladder cancer cases were identified.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Similar results were obtained for intakes of soy protein and soy isoflavones.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"investigated in a population-based cohort study, the Singapore Chinese Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"329,848 person-years of follow-up were accrued\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"the Singapore Chinese Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"the Singapore Chinese Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Information on soyfood consumption at baseline was obtained through in-person interviews using a validated dietary questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"gender\":{\"excerpt\":\"The soyfood-bladder cancer risk association did not differ significantly between men and women\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"smoking_status\":null}},\"additional_extractions\":[],\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"12496060|Soy|Bladder cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting a relative risk for highest versus lowest quartile of total soyfood intake and incident bladder cancer.\",\"extraction\":{\"effect_size\":2.3,\"effect_type\":\"RR\",\"ci_lower\":1.1,\"ci_upper\":5.1,\"p_value\":null,\"total_n\":null,\"cases\":61,\"comparison_type\":\"Highest quartile of energy-adjusted total soy intake (>=92.5 g/1000 Kcal) vs lowest quartile (<36.9 g/1000 Kcal)\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Asia\",\"country\":\"Singapore\",\"population\":\"Singapore Chinese Health Study cohort\",\"gender\":\"Mixed\",\"smoking_status\":null,\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"As of December 31, 2000, 329,848 person-years of follow-up were accrued.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Sixty-one histologically confirmed incident bladder cancer cases were identified.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"the highest quartile of total soy intake (> or =92.5 g/1000 Kcal) was associated with a 2.3-fold increase in bladder cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"(95% confidence interval = 1.1-5.1)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Relative to the lowest quartile of energy-adjusted total soy intake (<36.9 g/1000 Kcal), the highest quartile of total soy intake (> or =92.5 g/1000 Kcal)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"investigated in a population-based cohort study, the Singapore Chinese Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Information on soyfood consumption at baseline was obtained through in-person interviews\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"the Singapore Chinese Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"Singapore Chinese Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Information on soyfood consumption at baseline was obtained through in-person interviews using a validated dietary questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"gender\":{\"excerpt\":\"The soyfood-bladder cancer risk association did not differ significantly between men and women\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/12496060/\",\"location\":\"abstract\"},\"smoking_status\":null}},\"additional_extractions\":[],\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"12500666|Glutathione|Bladder cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"Study examines glutathione S-transferase gene polymorphism frequencies rather than any nutritional glutathione exposure with a population-wide exposure estimate.\",\"extraction\":null,\"additional_extractions\":[],\"jbi\":null},{\"context_id\":\"12552997|Glutathione|Bladder cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"Analysis concerns NAT-2 and GST genotype effects on bladder cancer risk, not a nutritional glutathione exposure.\",\"extraction\":null,\"additional_extractions\":[],\"jbi\":null},{\"context_id\":\"12570884|Red meat|Renal cell carcinoma\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"Red meat is captured only within a factor-analysis derived 'beef' dietary pattern, so no red-meat-specific estimate is separable from the multi-food index.\",\"extraction\":null,\"additional_extractions\":[],\"jbi\":null},{\"context_id\":\"12572669|Iron|Kidney and renal pelvis cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Summary of rat model studies of iron-nitrilotriacetate induced renal carcinogenesis with no human data.\",\"extraction\":null,\"additional_extractions\":[],\"jbi\":null},{\"context_id\":\"12606884|Vitamin C|Bladder cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"Vitamin C intake is reported only in joint categories combined with drinking-water nitrate exposure, providing no vitamin C-specific bladder cancer estimate.\",\"extraction\":null,\"additional_extractions\":[],\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "12448354|Alcohol|Renal cell carcinoma",
+      "pmid": "12448354",
+      "pmcid": "",
+      "published_date": "2002-11-01",
+      "title": "Occupational risk factors for renal cell cancer: a case--control study in northern Italy.",
+      "authors": [
+        "Mattioli S",
+        "Truffelli D",
+        "Baldasseroni A",
+        "Risi A",
+        "Marchesini B",
+        "Giacomini C",
+        "Bacchini P",
+        "Violante FS",
+        "Buiatti E"
+      ],
+      "journal": "Journal of occupational and environmental medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12448354/",
+      "exposure": "Alcohol",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Alcohol intake appears only as a covariate adjusted for in models of occupational and BMI risk factors, with no alcohol-renal cell carcinoma risk estimate reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "additional_extractions": [],
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12457106|Alcohol|Renal cell carcinoma",
+      "pmid": "12457106",
+      "pmcid": "",
+      "published_date": "2002-12-01",
+      "title": "Alcohol drinking and renal cell carcinoma in women and men.",
+      "authors": [
+        "Pelucchi C",
+        "La Vecchia C",
+        "Negri E",
+        "Talamini R",
+        "Franceschi S"
+      ],
+      "journal": "European journal of cancer prevention : the official journal of the European Cancer Prevention Organisation (ECP)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+      "exposure": "Alcohol",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study reporting sex-specific odds ratios for alcohol drinking and incident histologically confirmed renal cell carcinoma.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 1.2,
+        "effect_type": "OR",
+        "ci_lower": 0.6,
+        "ci_upper": 2.4,
+        "p_value": 0.6061771491007326,
+        "total_n": 1396,
+        "cases": 348,
+        "comparison_type": "Highest tertile of alcohol intake (>=3 drinks per day) vs lowest in women",
+        "design": "case_control",
+        "timing": null,
+        "continent": "Europe",
+        "country": "Italy",
+        "population": "Incident renal cell cancer cases and hospital controls in northern Italy",
+        "gender": "Female",
+        "smoking_status": null,
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 1.2,
+        "reported_ci_lower": 0.6,
+        "reported_ci_upper": 2.4,
+        "reported_p_value": null,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The role of alcohol consumption on the risk of renal cell cancer was investigated separately for women and men, in a case-control study of 348 people with incident histologically confirmed cancer and 1048 hospital controls from northern Italy.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract; total_n derived from reported group counts 348 + 1048 = 1396"
+          },
+          "cases": {
+            "excerpt": "The role of alcohol consumption on the risk of renal cell cancer was investigated separately for women and men, in a case-control study of 348 people with incident histologically confirmed cancer and 1048 hospital controls from northern Italy.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "The odds ratios were 1.2 (95% confidence interval, 0.6-2.4) for the highest tertile of intake in women (>or=3 drinks per day) and 0.8 (0.4-1.3) for the highest quartile of intake in men (>or=6 drinks per day).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The odds ratios were 1.2 (95% confidence interval, 0.6-2.4) for the highest tertile of intake in women (>or=3 drinks per day) and 0.8 (0.4-1.3) for the highest quartile of intake in men (>or=6 drinks per day).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "the highest tertile of intake in women (>or=3 drinks per day)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "in a case-control study of 348 people with incident histologically confirmed cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "1048 hospital controls from northern Italy",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "exposure_measurement": {
+            "excerpt": "The role of alcohol consumption on the risk of renal cell cancer was investigated",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "gender": {
+            "excerpt": "for the highest tertile of intake in women (>or=3 drinks per day)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+            "location": "abstract"
+          },
+          "smoking_status": null
+        },
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+        "ethnicity": "NA",
+        "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
+        "ethnicity_supporting_text": "NA"
+      },
+      "additional_extractions": [
+        {
+          "p_value_relation": null,
+          "effect_size": 0.8,
+          "effect_type": "OR",
+          "ci_lower": 0.4,
+          "ci_upper": 1.3,
+          "p_value": null,
+          "total_n": 1396,
+          "cases": 348,
+          "comparison_type": "Highest quartile of alcohol intake (>=6 drinks per day) vs lowest in men",
+          "design": "case_control",
+          "timing": null,
+          "continent": "Europe",
+          "country": "Italy",
+          "population": "Incident renal cell cancer cases and hospital controls in northern Italy",
+          "gender": "Male",
+          "smoking_status": null,
+          "exposure_subtype": "dietary_component",
+          "exposure_measurement_type": "dietary_intake",
+          "needs_inversion": false,
+          "reported_effect_type": "OR",
+          "reported_effect_type_label": "OR",
+          "reported_effect_size": 0.8,
+          "reported_ci_lower": 0.4,
+          "reported_ci_upper": 1.3,
+          "reported_p_value": null,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "The role of alcohol consumption on the risk of renal cell cancer was investigated separately for women and men, in a case-control study of 348 people with incident histologically confirmed cancer and 1048 hospital controls from northern Italy.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract; total_n derived from reported group counts 348 + 1048 = 1396"
+            },
+            "cases": {
+              "excerpt": "The role of alcohol consumption on the risk of renal cell cancer was investigated separately for women and men, in a case-control study of 348 people with incident histologically confirmed cancer and 1048 hospital controls from northern Italy.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "effect_size": {
+              "excerpt": "The odds ratios were 1.2 (95% confidence interval, 0.6-2.4) for the highest tertile of intake in women (>or=3 drinks per day) and 0.8 (0.4-1.3) for the highest quartile of intake in men (>or=6 drinks per day).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "confidence_interval": {
+              "excerpt": "The odds ratios were 1.2 (95% confidence interval, 0.6-2.4) for the highest tertile of intake in women (>or=3 drinks per day) and 0.8 (0.4-1.3) for the highest quartile of intake in men (>or=6 drinks per day).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "p_value": null,
+            "comparison": {
+              "excerpt": "the highest quartile of intake in men (>or=6 drinks per day)",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "design": {
+              "excerpt": "in a case-control study",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "timing": null,
+            "continent": {
+              "excerpt": "1048 hospital controls from northern Italy",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "ethnicity": null,
+            "exposure_measurement": {
+              "excerpt": "The role of alcohol consumption on the risk of renal cell cancer was investigated",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "gender": {
+              "excerpt": "in men (>or=6 drinks per day)",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/12457106/",
+              "location": "abstract"
+            },
+            "smoking_status": null
+          },
+          "ethnicity": "NA",
+          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
+          "ethnicity_supporting_text": "NA"
+        }
+      ],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12496060|Soy isoflavones|Bladder cancer",
+      "pmid": "12496060",
+      "pmcid": "",
+      "published_date": "2002-12-01",
+      "title": "Dietary soy and increased risk of bladder cancer: the Singapore Chinese Health Study.",
+      "authors": [
+        "Sun CL",
+        "Yuan JM",
+        "Arakawa K",
+        "Low SH",
+        "Lee HP",
+        "Yu MC"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+      "exposure": "Soy isoflavones",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting that soy isoflavone intake showed similar associations with incident bladder cancer risk, though no isoflavone-specific estimate is given in the abstract.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "effect_size",
+        "effect_type",
+        "p_value",
+        "total_n"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "total_n": null,
+        "cases": 61,
+        "comparison_type": "Quartiles of energy-adjusted soy isoflavone intake (highest vs lowest)",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "population": "Singapore Chinese Health Study cohort",
+        "gender": "Mixed",
+        "smoking_status": null,
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": null,
+        "reported_effect_type_label": null,
+        "reported_effect_size": null,
+        "reported_ci_lower": null,
+        "reported_ci_upper": null,
+        "reported_p_value": null,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "As of December 31, 2000, 329,848 person-years of follow-up were accrued.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Sixty-one histologically confirmed incident bladder cancer cases were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Similar results were obtained for intakes of soy protein and soy isoflavones.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "investigated in a population-based cohort study, the Singapore Chinese Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "329,848 person-years of follow-up were accrued",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "the Singapore Chinese Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "the Singapore Chinese Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Information on soyfood consumption at baseline was obtained through in-person interviews using a validated dietary questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "gender": {
+            "excerpt": "The soyfood-bladder cancer risk association did not differ significantly between men and women",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "smoking_status": null
+        },
+        "ethnicity": "Asian",
+        "ethnicity_basis": "Country imputation: China -> Asian",
+        "ethnicity_supporting_text": "the Singapore Chinese Health Study"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12496060|Soy|Bladder cancer",
+      "pmid": "12496060",
+      "pmcid": "",
+      "published_date": "2002-12-01",
+      "title": "Dietary soy and increased risk of bladder cancer: the Singapore Chinese Health Study.",
+      "authors": [
+        "Sun CL",
+        "Yuan JM",
+        "Arakawa K",
+        "Low SH",
+        "Lee HP",
+        "Yu MC"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+      "exposure": "Soy",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting a relative risk for highest versus lowest quartile of total soyfood intake and incident bladder cancer.",
+      "missing_key_fields": [
+        "total_n"
+      ],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 2.3,
+        "effect_type": "RR",
+        "ci_lower": 1.1,
+        "ci_upper": 5.1,
+        "p_value": 0.03329710806050895,
+        "total_n": null,
+        "cases": 61,
+        "comparison_type": "Highest quartile of energy-adjusted total soy intake (>=92.5 g/1000 Kcal) vs lowest quartile (<36.9 g/1000 Kcal)",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "population": "Singapore Chinese Health Study cohort",
+        "gender": "Mixed",
+        "smoking_status": null,
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "RR",
+        "reported_effect_type_label": "RR",
+        "reported_effect_size": 2.3,
+        "reported_ci_lower": 1.1,
+        "reported_ci_upper": 5.1,
+        "reported_p_value": null,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "As of December 31, 2000, 329,848 person-years of follow-up were accrued.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Sixty-one histologically confirmed incident bladder cancer cases were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Relative to the lowest quartile of energy-adjusted total soy intake (<36.9 g/1000 Kcal), the highest quartile of total soy intake (> or =92.5 g/1000 Kcal) was associated with a 2.3-fold increase in bladder cancer risk (95% confidence interval = 1.1-5.1) after adjustment for cigarette smoking and level of education.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Relative to the lowest quartile of energy-adjusted total soy intake (<36.9 g/1000 Kcal), the highest quartile of total soy intake (> or =92.5 g/1000 Kcal) was associated with a 2.3-fold increase in bladder cancer risk (95% confidence interval = 1.1-5.1) after adjustment for cigarette smoking and level of education.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Relative to the lowest quartile of energy-adjusted total soy intake (<36.9 g/1000 Kcal), the highest quartile of total soy intake (> or =92.5 g/1000 Kcal)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "investigated in a population-based cohort study, the Singapore Chinese Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Information on soyfood consumption at baseline was obtained through in-person interviews",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "the Singapore Chinese Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "Singapore Chinese Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Information on soyfood consumption at baseline was obtained through in-person interviews using a validated dietary questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "gender": {
+            "excerpt": "The soyfood-bladder cancer risk association did not differ significantly between men and women",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/12496060/",
+            "location": "abstract"
+          },
+          "smoking_status": null
+        },
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+        "ethnicity": "Asian",
+        "ethnicity_basis": "Country imputation: China -> Asian",
+        "ethnicity_supporting_text": "Singapore Chinese Health Study"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12500666|Glutathione|Bladder cancer",
+      "pmid": "12500666",
+      "pmcid": "",
+      "published_date": "2002-09-01",
+      "title": "Polymorphism of glutathione S-transferase T1, M1 and P1 genes in a Shanghai population: patients with occupational or non-occupational bladder cancer.",
+      "authors": [
+        "Ma QW",
+        "Lin GF",
+        "Chen JG",
+        "Shen JH"
+      ],
+      "journal": "Biomedical and environmental sciences : BES",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12500666/",
+      "exposure": "Glutathione",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "Study examines glutathione S-transferase gene polymorphism frequencies rather than any nutritional glutathione exposure with a population-wide exposure estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "additional_extractions": [],
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12552997|Glutathione|Bladder cancer",
+      "pmid": "12552997",
+      "pmcid": "",
+      "published_date": "2002",
+      "title": "The role of N-acetyltransferase-2 and glutathione S-transferase on the risk and aggressiveness of bladder cancer.",
+      "authors": [
+        "Giannakopoulos X",
+        "Charalabopoulos K",
+        "Baltogiannis D",
+        "Chatzikiriakidou A",
+        "Alamanos Y",
+        "Georgiou I",
+        "Evangelou A",
+        "Agnantis N",
+        "Sofikitis N"
+      ],
+      "journal": "Anticancer research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12552997/",
+      "exposure": "Glutathione",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "Analysis concerns NAT-2 and GST genotype effects on bladder cancer risk, not a nutritional glutathione exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "additional_extractions": [],
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12570884|Red meat|Renal cell carcinoma",
+      "pmid": "12570884",
+      "pmcid": "",
+      "published_date": "2002-12-01",
+      "title": "Diet patterns and the risk of renal cell carcinoma.",
+      "authors": [
+        "Handa K",
+        "Kreiger N"
+      ],
+      "journal": "Public health nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12570884/",
+      "exposure": "Red meat",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "Red meat is captured only within a factor-analysis derived 'beef' dietary pattern, so no red-meat-specific estimate is separable from the multi-food index.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "additional_extractions": [],
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12572669|Iron|Kidney and renal pelvis cancer",
+      "pmid": "12572669",
+      "pmcid": "",
+      "published_date": "2003-03-01",
+      "title": "Prevention of free-radical mediated tissue damage and carcinogenesis induced by low-molecular-weight iron.",
+      "authors": [
+        "Okada S"
+      ],
+      "journal": "Biometals : an international journal on the role of metal ions in biology, biochemistry, and medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12572669/",
+      "exposure": "Iron",
+      "cancer": "Kidney and renal pelvis cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Summary of rat model studies of iron-nitrilotriacetate induced renal carcinogenesis with no human data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "additional_extractions": [],
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12606884|Vitamin C|Bladder cancer",
+      "pmid": "12606884",
+      "pmcid": "",
+      "published_date": "2003-03-01",
+      "title": "Nitrate in public water supplies and risk of bladder cancer.",
+      "authors": [
+        "Ward MH",
+        "Cantor KP",
+        "Riley D",
+        "Merkle S",
+        "Lynch CF"
+      ],
+      "journal": "Epidemiology (Cambridge, Mass.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12606884/",
+      "exposure": "Vitamin C",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "Vitamin C intake is reported only in joint categories combined with drinking-water nitrate exposure, providing no vitamin C-specific bladder cancer estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "additional_extractions": [],
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

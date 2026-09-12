@@ -1,0 +1,409 @@
+{
+  "schema_version": 1,
+  "receipt_id": "66cc7ec05cb052f987303670b6de1d957f0227c7ffda9e33a5b32fb6af73974a",
+  "requested_at": "2026-09-03T17:30:50.733967-04:00",
+  "received_at": "2026-09-03T17:31:16.352516-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "60b4e24589bfdf3f4c6313e0513dffed65d36b394d11a35cea07ff64c44fb57a",
+  "dispatch_work_unit_key": "f8c53396147eb4f3f935defc9c87137e2eaa6b15ff1d17f4d5929657450a94b0",
+  "attempt": 2,
+  "context_ids": [
+    "36557227|Carnitine|Kidney and renal pelvis cancer",
+    "36557227|Carnitine|Renal cell carcinoma"
+  ],
+  "exposure_weights": {
+    "Carnitine": 2
+  },
+  "input_digest": "78b62489b9ca797796f2ade43bed72fa3146f72e7d8b573c180de9c2077de49b",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12616,
+    "cached_input_tokens": 0,
+    "output_tokens": 4731,
+    "reasoning_tokens": 996
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02720325",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "a513cf47-66f2-4ae1-9cdf-0cf81fc0a1e1",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.02720325"
+  },
+  "output_sha256": "a6bf43344d3da9a92be55d3a710457cc0b7819276215a16788a545e518dbdf2d",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"36557227|Carnitine|Kidney and renal pelvis cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-control study reported risk estimates for circulating carnitine metabolites and renal cell carcinoma risk.\",\n      \"extraction\": {\n        \"effect_size\": 2.39,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.39,\n        \"ci_upper\": 4.13,\n        \"p_value\": 0.002,\n        \"total_n\": 534,\n        \"cases\": 267,\n        \"comparison_type\": \"90th vs 10th percentile\",\n        \"design\": \"nested case-control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Participants in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"Mixed (never, former, current)\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 267 RCC cases and 267 controls were identified for our analyses.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 267 RCC cases and 267 controls were identified for our analyses.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"C3-DC-CH3 Carnitine | Fatty acyls (acylcarnitine) | 2 | 0.002 | 2.39 (1.39–4.13) | 0.002\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"C3-DC-CH3 Carnitine | Fatty acyls (acylcarnitine) | 2 | 0.002 | 2.39 (1.39–4.13) | 0.002\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"C3-DC-CH3 Carnitine | Fatty acyls (acylcarnitine) | 2 | 0.002 | 2.39 (1.39–4.13) | 0.002\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"ORs correspond to RCC risk at the 90th percentile compared to the 10th of log metabolite intensity\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3 footnote\"\n          },\n          \"design\": {\n            \"excerpt\": \"To identify RCC-associated metabolites, we conducted a 1:1 matched case–control study nested within the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Abstract, Background\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We, therefore, conducted metabolic profiling of pre-diagnostic sera from a nested case–control study of 267 RCC cases and 267 controls in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 1. Introduction, paragraph 5\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The PLCO Cancer Screening Trial is a population-based, multi-center, randomized screening trial of >150,000 US men and women aged 55–74\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White, non-Hispanic 89.1; Black, non-Hispanic 6.4; Other 4.5\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"A total of 531 metabolites were measured in non-fasting serum samples collected at the first PLCO screening arm follow-up visit.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.2 Metabolomic Profiling, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Sex, % | Male 65.9 | Female 34.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Cigarette smoking status, % | Never 46.1 | Former 43.8 | Current 10.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"36557227|Carnitine|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-control study reported risk estimates for circulating carnitine metabolites and renal cell carcinoma risk.\",\n      \"extraction\": {\n        \"effect_size\": 2.39,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.39,\n        \"ci_upper\": 4.13,\n        \"p_value\": 0.002,\n        \"total_n\": 534,\n        \"cases\": 267,\n        \"comparison_type\": \"90th vs 10th percentile\",\n        \"design\": \"nested case-control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Participants in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"Mixed (never, former, current)\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 267 RCC cases and 267 controls were identified for our analyses.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 267 RCC cases and 267 controls were identified for our analyses.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"C3-DC-CH3 Carnitine | Fatty acyls (acylcarnitine) | 2 | 0.002 | 2.39 (1.39–4.13) | 0.002\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"C3-DC-CH3 Carnitine | Fatty acyls (acylcarnitine) | 2 | 0.002 | 2.39 (1.39–4.13) | 0.002\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"C3-DC-CH3 Carnitine | Fatty acyls (acylcarnitine) | 2 | 0.002 | 2.39 (1.39–4.13) | 0.002\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"ORs correspond to RCC risk at the 90th percentile compared to the 10th of log metabolite intensity\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 3 footnote\"\n          },\n          \"design\": {\n            \"excerpt\": \"To identify RCC-associated metabolites, we conducted a 1:1 matched case–control study nested within the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Abstract, Background\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We, therefore, conducted metabolic profiling of pre-diagnostic sera from a nested case–control study of 267 RCC cases and 267 controls in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 1. Introduction, paragraph 5\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The PLCO Cancer Screening Trial is a population-based, multi-center, randomized screening trial of >150,000 US men and women aged 55–74\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.1 Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White, non-Hispanic 89.1; Black, non-Hispanic 6.4; Other 4.5\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"A total of 531 metabolites were measured in non-fasting serum samples collected at the first PLCO screening arm follow-up visit.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Section 2.2 Metabolomic Profiling, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Sex, % | Male 65.9 | Female 34.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Cigarette smoking status, % | Never 46.1 | Former 43.8 | Current 10.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "36557227|Carnitine|Kidney and renal pelvis cancer",
+      "pmid": "36557227",
+      "pmcid": "PMC9785244",
+      "published_date": "2022-11-29",
+      "title": "Metabolomic Analysis of Renal Cell Carcinoma in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.",
+      "authors": [
+        "McClain KM",
+        "Sampson JN",
+        "Petrick JL",
+        "Mazzilli KM",
+        "Gerszten RE",
+        "Clish CB",
+        "Purdue MP",
+        "Lipworth L",
+        "Moore SC"
+      ],
+      "journal": "Metabolites",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36557227/",
+      "exposure": "Carnitine",
+      "cancer": "Kidney and renal pelvis cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-control study reported risk estimates for circulating carnitine metabolites and renal cell carcinoma risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 2.39,
+        "effect_type": "OR",
+        "ci_lower": 1.39,
+        "ci_upper": 4.13,
+        "p_value": 0.002,
+        "total_n": 534,
+        "cases": 267,
+        "comparison_type": "90th vs 10th percentile",
+        "design": "nested case-control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Participants in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial",
+        "gender": "NA",
+        "smoking_status": "Mixed (never, former, current)",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 2.39,
+        "reported_ci_lower": 1.39,
+        "reported_ci_upper": 4.13,
+        "reported_p_value": 0.002,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The Sociodemographic, lifestyle, and medical history characteristics of the 534 participants are presented by case–control status in Table 1 .",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.1 Study Population, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 267)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.1 Study Population, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "2.39 (1.39–4.13)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "2.39 (1.39–4.13)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.002",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "ORs correspond to RCC risk at the 90th percentile compared to the 10th of log metabolite intensity",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3 footnote"
+          },
+          "design": {
+            "excerpt": "To identify RCC-associated metabolites, we conducted a 1:1 matched case–control study nested within the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Abstract, Background"
+          },
+          "timing": {
+            "excerpt": "We, therefore, conducted metabolic profiling of pre-diagnostic sera from a nested case–control study of 267 RCC cases and 267 controls in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 1. Introduction, paragraph 5"
+          },
+          "continent": {
+            "excerpt": "The PLCO Cancer Screening Trial is a population-based, multi-center, randomized screening trial of >150,000 US men and women aged 55–74",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "A total of 531 metabolites were measured in non-fasting serum samples collected at the first PLCO screening arm follow-up visit.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.2 Metabolomic Profiling, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "United States"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36094,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "20bb03f6b5ebd5ff126312a3d19b0cd2fb0ba257a2b842d0b00e69b53e776b03",
+      "pmc_source_receipt_digest": "4b947b8e57315c99a6bbbac1f0ebe662da1ba5f7ae4e56431a5c6f48ee0240c5",
+      "pmc_source_raw_sha256": "38f037da95a9b8c4cc4da8764fc0201e10195b89d7d824ea038c7f95b84c47de",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b7cd1a2835248255e6b2d2fe7458089322baf993b9f8354c30be179ec5d3afa4"
+    },
+    {
+      "context_id": "36557227|Carnitine|Renal cell carcinoma",
+      "pmid": "36557227",
+      "pmcid": "PMC9785244",
+      "published_date": "2022-11-29",
+      "title": "Metabolomic Analysis of Renal Cell Carcinoma in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.",
+      "authors": [
+        "McClain KM",
+        "Sampson JN",
+        "Petrick JL",
+        "Mazzilli KM",
+        "Gerszten RE",
+        "Clish CB",
+        "Purdue MP",
+        "Lipworth L",
+        "Moore SC"
+      ],
+      "journal": "Metabolites",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36557227/",
+      "exposure": "Carnitine",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-control study reported risk estimates for circulating carnitine metabolites and renal cell carcinoma risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 2.39,
+        "effect_type": "OR",
+        "ci_lower": 1.39,
+        "ci_upper": 4.13,
+        "p_value": 0.002,
+        "total_n": 534,
+        "cases": 267,
+        "comparison_type": "90th vs 10th percentile",
+        "design": "nested case-control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Participants in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial",
+        "gender": "Mixed",
+        "smoking_status": "Mixed (never, former, current)",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 2.39,
+        "reported_ci_lower": 1.39,
+        "reported_ci_upper": 4.13,
+        "reported_p_value": 0.002,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The Sociodemographic, lifestyle, and medical history characteristics of the 534 participants are presented by case–control status in Table 1 .",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.1 Study Population, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 267)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.1 Study Population, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "2.39 (1.39–4.13)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "2.39 (1.39–4.13)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.002",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "ORs correspond to RCC risk at the 90th percentile compared to the 10th of log metabolite intensity",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 3 footnote"
+          },
+          "design": {
+            "excerpt": "To identify RCC-associated metabolites, we conducted a 1:1 matched case–control study nested within the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Abstract, Background"
+          },
+          "timing": {
+            "excerpt": "We, therefore, conducted metabolic profiling of pre-diagnostic sera from a nested case–control study of 267 RCC cases and 267 controls in the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 1. Introduction, paragraph 5"
+          },
+          "continent": {
+            "excerpt": "The PLCO Cancer Screening Trial is a population-based, multi-center, randomized screening trial of >150,000 US men and women aged 55–74",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.1 Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "A total of 531 metabolites were measured in non-fasting serum samples collected at the first PLCO screening arm follow-up visit.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Section 2.2 Metabolomic Profiling, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9785244/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "United States"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36094,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "20bb03f6b5ebd5ff126312a3d19b0cd2fb0ba257a2b842d0b00e69b53e776b03",
+      "pmc_source_receipt_digest": "4b947b8e57315c99a6bbbac1f0ebe662da1ba5f7ae4e56431a5c6f48ee0240c5",
+      "pmc_source_raw_sha256": "38f037da95a9b8c4cc4da8764fc0201e10195b89d7d824ea038c7f95b84c47de",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e05404c5e9d68834b471a0d8c2439de0640ab36e659df71d15a8c2b3cc8c6427"
+    }
+  ]
+}

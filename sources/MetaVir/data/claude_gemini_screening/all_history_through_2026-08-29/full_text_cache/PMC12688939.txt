@@ -1,0 +1,333 @@
+Exploration between caffeine intake, physical activity, and prostate cancer using data from the large-scale NHANES survey: A cross-sectional study
+This study aimed to explore the association between caffeine intake, physical activity (PA), and prostate cancer, machine learning algorithms to build predictive models of prostate cancer. A total of 1789 subjects from the National Health and Nutrition Examination Survey 2009 to 2018 waves were enrolled in this study. Multivariable-adjusted logistic regression was applied to evaluate the association. Then, we conducted 4 machine learning models, including extreme gradient boosting, AdaBoost, Catboos, and Boost tree to predict the occurrence of prostate cancer. In the fully adjusted model, compared to those reporting little caffeine consumption, those who reported large intake had a multivariate adjusted odd ratio (OR) with 95% confidence interval (CI) of 1.25 (2.21–15.52). Participants with large PA were more likely to develop prostate cancer (OR = 1.68, 95% CI: 1.47–3.80), whereas a significant inverse association between medium PA and prostate cancer was observed (OR = 0.66, 95% CI: 0.48–0.81). Extreme gradient boosting, Catboost, and Boost tree all have good prediction effects, with an AUC of up to 0.90 (95% CI: 0.87–0.93). No significant association was observed between small to medium caffeine intake and prostate cancer, large caffeine intake and PA was associated with increased prostate cancer. Moderate PA has the potential to favorably influence prostate cancer.
+1. Introduction
+The prostate, men’s supplementary reproductive organ, is situated beneath the bladder. Its main purpose is to supplement the vital secretions of semen and maintain the viability of the sperm. Prostate cancer is the 2nd most common solid-organ cancer in men to be diagnosed, and it is also a serious health concern with 375,000 deaths worldwide and almost 1.4 million newly diagnosed cases in 2020, with the age-standardized incidence of 31 per 100, 000 (lifetime cumulative risk: 3.9%). [ 1 ] Approximately 10 million men are affected by the condition worldwide, and 700,000 of them have the disease in a metastatic form. [ 2 ] Adenocarcinomas make up more than 95% of cases of prostate cancer, the majority of which have acinar origins while very few do. Prostate cancer is usually detected at an early stage, up to 99% of localized prostate cancer have a life expectancy for more than 10 years. [ 2 ] Additionally, it is predicted that a comparable fraction of males would experience treatment-related morbidity for longer than 10 years after diagnosis. [ 3 ] Older men are disproportionately affected by prostate cancer, and there are few effective preventative strategies. Thus, prostate cancer’s 1st somatic changes can reveal vital information about the development of tumors and help to differentiate high-risk from low-risk disease.
+The biggest well-established risk factors for prostate cancer are race, inherited disorders, family history, and so on. [ 4 ] Modifiable risk factors may impact the risk of developing prostate cancer and that of dying from the disease, such as smoking, alcohol consumption, diet, physical activity (PA), metabolic disease. Caffeine, one of the most often used psychoactive substances worldwide, is another potentially modifiable risk for bladder cancer, has received particular attention recently, with its trade exceeded 10 billion dollars a few years ago. [ 5 ] Previous studies have investigated the relationship between caffeine consumption and prostate cancer, but their findings have been contradicted. [ 6 ] Coffee contains a variety of biologically active substances, such as caffeine and phenolic acids, which have strong antioxidant properties and can alter the levels of sex hormones and glucose metabolism. Coffee may lower the risk of prostate cancer as a result of several biological processes. Coffee drinking was linked to a lower incidence of prostate cancer and fatal diseases in the Health Professionals Follow-Up Study. [ 7 ] Consuming coffee, whether it be caffeinated or decaffeinated, did not appear to increase the risk of developing prostate cancer overall, cancer by stage, grade, or death in a large European prospective cohort. [ 8 ] PA is an activity aimed at promoting health, enhancing physical fitness, and enriching life through various sports according to the needs of the body. Estimates of the population burden associated with modifiable risk factors and cancer incidence have evaluated that 30% to 40% of cancer cases may be avoidable and PA are linked to cancer. [ 9 , 10 ] Strong and consistent evidence shows that increased PA lowers the risk of cancer, whereas limited evidence shows an inverse relationship between PA and prostate cancer. A systematic review and meta-analysis about PA and quality of life in patients with prostate cancer showed that the quality of life of prostate cancer patients who received the aerobic training regimen was protective compared to other regimens. [ 11 ] But so far, limited research has investigated whether PA play a role on the prostate cancer. Thus, it is necessary to further explore the relationship between caffeine intake, PA, and prostate cancer.
+The National Health and Nutrition Examination Survey (NHANES) is a comprehensive survey of American population that collects data on many facets of health and nutrition on a national level. [ 12 , 13 ] At present, machine learning, which is a data-driven application in which systems automatically learn and develop without explicit programming, has been widely used in medical studies and health care, such as random forest, extreme gradient boosting (XGBoost), Boost tree, and so on. [ 14 , 15 ] The performance of current models is constrained by their reliance on predetermined variables. Compared with traditional statistical methods, when there are more independent variables and complex relationships, the machine learning model can get more accurate prediction results. Herein, we explore the relationship between caffeine intake, PA and prostate cancer using the nationally representative NHANES (2009–2010, 2011–2012, 2013–2014, 2015–2016, and 2017–2018). In addition, we used 4 machine learning algorithms to predict the development of prostate cancer.
+2. Methods
+2.1. Study population
+We used publicly available data from NHANES conducted by the Centers for Disease Control and Prevention in the United States. The NHANES is a unique 2-year-cycle cross-sectional survey on the health and nutritional status for the US population, collecting data on demographic, socioeconomic, and health-related issues through interviews, standard exams, and biospecimen collection. [ 16 , 17 ] The health examination was conducted in a mobile examination center (MEC) after the participants had already participated in a home interview. The methodology and process used by NHANES for data collecting are detailed elsewhere. NHANES employs the method of “stratified multistage probability sampling” based on the selection of counties, households, blocks and persons within households to ensure the representative of the non-institutional U.S. civilian population. To maintain a cost-efficient workload within each location while considering the time and the cost involved in moving a MEC between study locations, the maximum number of NHANES study locations in each annual sample is 15. Based on this parameter, the number of sampled participants selected in each study location should be between 300 and 600, with an average of approximately 450, to yield approximately 333 examined persons in each of the 15 locations for that year. [ 18 – 21 ]
+In the medical condition section, individuals were asked questions: “What kind of cancer?.” Patients with prostate cancer were selected as included subjects in the present study. After including selected covariates and removing incomplete values, 1789 subjects were included in final analysis. All the data could be accessed from the website of the American Centers for Disease Control and Prevention ( https://www.cdc.gov/nchs/nhanes ).
+2.2. Ethics
+The National Center for Health Statistics Ethics Review Board of the U.S. Centers for Disease Control and Prevention authorized the NHANES methods, and all participants provided written informed consent. [ 22 ]
+2.3. Assessment of caffeine and PA
+Coffee and caffeine intake from coffee were obtained from 24-hour dietary recall interviews. During the MEC assessment, dietary recall interviews were conducted by trained interviewers using an automated data collection system. [ 23 ] Participants were asked the question “Did you drink coffee?,” If the participants choose “yes,” then they are asked to report how much coffee they consumed each day? We used day 1 and day 2 caffeine intake and averaged it. In the final data analysis, caffeine intake was categorized as: little (<2.5 mg/day), small (2.5–33.5 mg/day), medium (33.5–90.8 mg/day) and large (≥90.8 mg/day). PA was calculated according to the metabolic equivalent, weekly frequency, and duration of each activity. From the physical exercise part, we obtained the days of high intensity exercise in a week, the minutes of high intensity exercise in a day, the days of moderate intensity exercise in a week, the minutes of moderate intensity exercise in a day and the minutes of sitting in a day, respectively. The exercise/sitting ratio is calculated as: (days of high intensity exercise in a week × minutes of high intensity exercise in a day × 2 + days of moderate intensity exercise in a week × minutes of moderate intensity exercise in a day)/minutes of sitting in a day × 7. We divided PA into 4 group: little, small, medium, and large.
+2.4. Covariates
+Age was calculated from the interview date to the birth date. Race was categorized to 5 group: Mexican American, Other Hispanic, Non-Hispanic White, Non-Hispanic Black, and other race. Education was grouped according to the following categories: less than grade 9, 9 to 11th grade, high school, some college and college graduate or above. Marital status was categorized as married, widowed, divorced, separated, never married, living with partner, and refused. PIR refers to family poverty income ratio, where a PIR value <1 indicates an income below the poverty level and a PIR value larger than 1 indicates an income over the poverty threshold.
+Both smoking and alcohol drinking was separated into 2 categories: yes or no. Blood pressure was measured using a mercury sphygmomanometer, 3 consecutively reading of systolic blood pressure and diastolic blood pressure were taken 5 minutes intervals. The mean of the 3 readings was calculated in the analysis. Hypertension was defined as a resting systolic blood pressure ≥ 140 mm Hg and/or a diastolic blood pressure ≥ 90 mm Hg. Diabetes was defined a documented history in the medical record. Body mass index (BMI) was calculated as weight in kilograms divided by height in meters squared (kg/m 2 ). Three BMI classifications were used < 25, 25 to 30, and ≥ 30 kg/m 2 , reflecting underweight or normal weight, overweight, and obesity, respectively.
+2.5. Statistical analysis
+We calculated means and standard deviations for continuous variables with normally distributed distribution, medians, and interquartile ranges for continuous variables with non-normally distributed distribution, and proportions for binary or categorical variables. Differences in continuous variables between groups were tested with Student t test, while differences in categoric variables between groups were assessed by χ 2 tests. Multivariate logistic regression model was performed to estimate the association between caffeine intake, PA, and prostate cancer. Covariates were adjusted for the following 4 models: Model 1 = unadjusted; Model 2 = PA/caffeine intake; Model 3 = Model 2 + age (continuous), PIR, education, race, marital status, BMI, and hypertension; Model 4 = Model 3 + smoking and alcohol drinking. We selected 4 highly recognized machine learning algorithms: extreme gradient boosting (XGBoost), AdaBoost, Catboos, and Boost tree. The comparison between the 4 algorithms was based on the accuracy of the predictions and the Kappa value. All the analyses were conducted in R software 4.1.2 (The R Foundation for Statistical Computing, USA). Two-sided P < .05 was considered statistically significant.
+3. Results
+The basic characteristics of participants grouped according to whether they had prostate cancer are summarized in Table 1 . The mean age of prostate cancer group was older than that of the non-bladder cancer (71.6 ± 8.06 years vs 64.8 ± 14.2 years, P < .001). Overweight and obese men are more likely to develop prostate cancer than normal men ( P = .035). Caffeine intake and PA were not statistically different between the 2 groups.
+Characteristics of included samples by prostate cancer.
+Characteristics
+No (N = 1525)
+Yes (N = 264)
+F or χ 2
+Age (yr)
+64.8 ± 14.2
+71.6 ± 8.06
+<.001
+PIR
+2.66 ± 1.62
+2.78 ± 1.54
+.250
+BMI (kg/m 2 )
+.035
+Normal
+355 (25.6%)
+63 (26.0%)
+Overweight
+563 (40.6%)
+79 (32.6%)
+Obesity
+468 (33.8%)
+100 (41.3%)
+Race
+<.001
+Mexican American
+104 (6.82%)
+9 (3.41%)
+Other Hispanic
+95 (6.23%)
+23 (8.71%)
+Non-Hispanic White
+1027 (67.3%)
+132 (50.0%)
+Non-Hispanic Black
+195 (12.8%)
+81 (30.7%)
+Other Race
+104 (6.82%)
+19 (7.20%)
+Education
+.520
+<9th Grade
+142 (9.31%)
+24 (9.09%)
+9–11th Grade
+196 (12.9%)
+22 (8.33%)
+High School
+325 (21.3%)
+62 (23.5%)
+Some College
+480 (31.5%)
+71 (26.9%)
+College Graduate or above
+382 (25.1%)
+85 (32.2%)
+Marital status
+.680
+Married
+770 (50.5%)
+168 (63.6%)
+Widowed
+299 (19.6%)
+37 (14.0%)
+Divorced
+225 (14.8%)
+31 (11.7%)
+Separated
+53 (3.48%)
+7 (2.65%)
+Never married
+116 (7.61%)
+13 (4.92%)
+Living with partner
+57 (3.74%)
+6 (2.27%)
+Refused
+5 (0.33%)
+2 (0.76%)
+Alcohol consumption
+.402
+Yes
+27 (14.2%)
+6 (20.7%)
+No
+163 (85.8%)
+23 (79.3%)
+Smoking
+.043
+Yes
+830 (54.4%)
+162 (61.4%)
+No
+695 (45.6%)
+102 (38.6%)
+Hypertension
+.751
+Yes
+42 (3.77%)
+6 (3.02%)
+No
+1072 (96.2%)
+193 (97.0%)
+Caffein intake (mg/day)
+161 (170)
+146 (135)
+.140
+Physical activity
+.936
+Little
+50 (29.1%)
+10 (28.6%)
+Small
+56 (32.6%)
+13 (37.1%)
+Medium
+35 (20.3%)
+7 (20.0%)
+Large
+31 (18.0%)
+5 (14.3%)
+Categorical variables are presented as numbers (percentages).
+Normally distributed continuous variables are displayed as means ± SD.
+PIR = family income-to-poverty ratio, SDs = standard deviations.
+Results from multivariable logistic regression indicated that there was no significant relationship between small to medium coffee intake and prostate cancer. In the fully adjusted model, compared to those reporting little caffeine consumption, those who reported large intake had a multivariate adjusted odd ratio (OR) with 95% confidence interval (CI) of 1.25 (2.21–15.52). Participants with large PA were more likely to develop prostate cancer (OR = 1.68, 95%CI: 1.47–3.80), whereas a significant inverse association between medium PA and prostate cancer was observed (OR = 0.66, 95%CI: 0.48–0.81) (Table 2 ).
+Logistic risk analysis for caffeine intake, PA, and prostate cancer.
+Model 1
+Model 2
+Model 3
+Model 4
+Caffeine intake
+Little
+1.00
+Small
+1.29 (0.56–2.95)
+8.62 (0.66–11.33)
+2.04 (0.54–4.18)
+9.63 (0.41–2.98)
+Medium
+1.31 (0.60–2.90)
+3.88 (0.27–5.52)
+1.03 (0.39–3.82)
+4.07 (0.25–7.58)
+Large
+1.62 (0.77–3.39)
+5.84 (0.50–6.84)
+9.63 (3.18–14.17) *
+1.25 (2.21–15.52) *
+PA
+Little
+1.00
+Small
+0.54 (0.15–1.28)
+0.69 (0.31–1.70)
+0.61 (0.25–2.21)
+0.51 (0.32–2.54)
+Moderate
+0.64 (0.21–0.81) *
+0.79 (0.36–1.76)
+0.75 (0.51–2.74)
+0.66 (0.48–0.81) *
+Large
+1.74 (1.30–10.18) *
+1.71 (1.13–3.72) *
+1.67 (1.66–3.86) *
+1.68 (1.47–3.80) *
+Data are presented as OR (95% CI).
+Model 1 = No adjust.
+Model 2 = PA (when studying caffeine intake and prostate cancer)/caffeine intake (when studying PA and prostate cancer).
+Model 3 = Model 2 plus adjusted for age (years, continuous), education (<9th grade, 9 to 11th grade, high school, some college, college graduate or above), race (Non-Hispanic White, Non-Hispanic Black, Mexican American, other), PIR (continuous), BMI (<25, 25 to 30, and ≥ 30 kg/m 2 ), marital status (married, widowed, divorced, separated, never married, living with partner, refused), and hypertension (yes or no).
+Model 4 = Model 3 plus adjusted for smoking (yes or no) and alcohol consumption (yes or no).
+OR = odds ratio; CI = confidence interval.
+P < .05.
+Pearson correlation matrix analysis was conducted for the correlation of covariables (Fig. 1 ). It can be seen that the included covariables all have good independence, and the correlation between variables is small. Figure 2 compares the fit plots after placing all covariables into 4 machine learning algorithms. The comparison between the 4 algorithms was based on the accuracy of the prediction and the Kappa value, and the XGBoost model was found to fit best.
+Correlation matrix among included covariates.
+Comparison of accuracy and kappa value among 4 machine learning algorithms.
+In order to better predict prostate cancer, we 1st carried out random forest interpolation on all data to ensure sufficient sample size and variables. After interpolation, the sample size for machine learning reached 36,148, with sufficient data to achieve the best prediction effect. As shown in supplementary Figure S1, Supplemental Digital Content, https://links.lww.com/MD/Q889 , we drew the band plot after interpolating the severely missing variables, and found that the inserted value was consistent with the true value, and the interpolation effect was good. We also produced receiver operating characteristic curve to evaluate the prediction effect of these 4 machine learning algorithms (Fig. 3 ). The AUC values were calculated for 4 models (XGBoost AUC = 0.90; Catboost AUC = 0.90; Boost tree AUC = 0.90; Adaboost AUC = 0.89, respectively), which demonstrated that machine learning algorithms predicted well. In order to further check the evaluation results, we also show the evaluation parameters of 4 machine learning algorithms in Table 3 .
+Detailed comparison of ROC curve related indicators of 4 machine learning algorithms.
+Item
+Boost tree
+XGBoost
+Catboost
+Adaboost
+Sensitivity
+0.934 (95% CI: 0.89–0.96)
+0.887 (95% CI: 0.84–0.92)
+0.972 (95% CI: 0.94–0.99)
+0.867 (95% CI: 0.82–0.90)
+Specificity
+0.729 (95% CI: 0.70–0.75)
+0.751 (95% CI: 0.73–0.77)
+0.675 (95% CI: 0.65–0.7)
+0.765 (95% CI: 0.74–0.79)
+Prediction
+0.374 (95% CI: 0.33–0.42)
+0.382 (95% CI: 0.34–0.43)
+0.342 (95% CI: 0.3–0.38)
+0.390 (95% CI: 0.35–0.43)
+Negative prediction
+0.984 (95% CI: 0.97–0.99)
+0.974 (95% CI: 0.96–0.98)
+0.993 (95% CI: 0.98–1.00)
+0.971 (95% CI: 0.96–0.98)
+AUC
+0.900 (95% CI: 0.87–0.93)
+0.890 (95% CI: 0.86–0.92)
+Matthews correlation coefficient
+0.488
+0.477
+0.465
+0.478
+False positive rate
+0.271
+0.249
+0.325
+0.235
+F1 value
+0.534
+0.506
+0.538
+True positive
+198
+188
+206
+229
+False positive
+331
+304
+397
+358
+True negative
+889
+916
+823
+1167
+False negative
+14
+24
+6
+35
+AUC = area under the curve.
+Receiver operating characteristic (ROC) curve of caffeine intake, PA, and prostate cancer by using 4 machine learning algorithms.
+4. Discussion
+In the current study, data from the NHANES (2009–2010, 2011–2012, 2013–2014, 2015–2016, and 2017–2018) were pooled and 1789 subjects were included in the final analysis. The association between small to medium caffeine intake and prostate cancer were not significant, whereas positive association was observed between large caffeine intake in the fully adjusted model (OR = 1.25, 95%CI: 2.21–15.52). Previous clinical trials have revealed the anticancer effects of coffee, which is composed of caffeine, chlorogenic acid, and more than 1000 other bioactive substances, many of which have been found to have anticancer potential. [ 24 ] However, there was debate regarding whether coffee could lower the risk of prostate cancer. Justin R Gregg et al found that high coffee consumption was linked to a longer prostate cancer-specific survival (HR = 0.66, 95% CI: 0.44–0.98; P = .040). [ 25 ] A cohort study demonstrated that over the course of an average follow-up of 4.24 years, of the 6989 men, 100 developed prostate cancer and drinking more than 3 cups of Italian-style coffee per day could lower the incidence of prostate cancer compared to drinking 0 to 2 cups per day after controlling for cofounders. [ 26 ] Mendelian randomization analyses and the NHANES 1999 to 2010 found no correlation between coffee consumption and prostate cancer, and using primary genetic instruments also failed to support a causal relationship. [ 27 ] There are a number of theories as to how caffeine consumption affects prostate cancer, but the exact mechanisms are yet unknown. Coffee phytochemicals may have chemo preventive effects by inhibiting oxidative stress and damage, regulating DNA repair, inflammation and having antiproliferative and antimetastatic effects. [ 28 – 31 ] Therefore, it is necessary to further explore and clarify the relationship between coffee and prostate cancer in order to adjust the dose of coffee to prevent the occurrence of prostate cancer.
+We also found that large PA were associated with increased prostate cancer and moderate PA has the favorably potential influence (OR = 1.68, 95% CI: 1.47–3.80), which were consistent with previous studies. A number of recent observational studies reported PA is effective in reducing disease recurrence and enhancing survival after prostate cancer diagnosis and treatment. [ 32 ] PA of ≥ 150 min/week was correlated with higher odds for prostate cancer (1.61 (95% CI: 1.13–2.28)) compared to no exercise. [ 33 ] Despite ongoing research, concrete evidence linking routine PA to a low risk of prostate cancer is still elusive. [ 34 ] The detailed biological mechanisms behind the advantageous effects of PA on prostate cancer biology are not well understood, but a number of plausible biological routes have been proposed. For example, PA can directly or indirectly affect all stages of prostate cancer through potential molecular pathways including circulating level insulin-like growth factor-1 reduction, oxidative stress, systemic inflammation, sex hormones, and muscle factors. [ 35 , 36 ] The current results filled a prior knowledge gap by demonstrating relations of physical exercise with the occurrence of prostate cancer.
+In this study, we used 4 machine learning models to predict prostate cancer after identifying the risk factors using multivariate logistic regression. XGBoost, Catboost, and Boost tree all have good prediction effects, with an AUC of up to 0.90. Computer-based decision-support systems based on machine learning have the potential to revolutionize medicine by performing complex tasks currently carried out by specialists in order to increase diagnostic accuracy, lower costs associated with human resources and improve treatment options. Recent improvements in the interpretability of machine learning algorithms when used to solve biomedical problems may enable clinical cancer genomics discovery and prediction. [ 37 – 39 ]
+The strength of this study is that in addition to observational study from the nationally representative NHANES to explore the association between caffeine intake, PA and prostate cancer, we also conducted machine learning algorithms to predict prostate cancer. The results of our study should be evaluated with care due to some limitation. First, a cross-sectional study does not always infer causation. Therefore, it is impossible to rule out the potential of reverse-causation or bidirectionality. Second, the caffeine intake was obtained from 2 24-hour dietary recall interviews, which did not accurately reflect individuals’ intake, recall bias and random measurement mistakes might not be preventable. Third, due to the lack of information on the stages of prostate cancer, such as localized, progressed, or fatal, we did not undertake subgroup analysis. Finally, stress, diet and genetic factors are known confounders for prostate cancer, these variables were not accounted for in the analysis. Further research is needed in prospective cohort studies with larger sample sizes to examine the relationship between caffeine intake, PA, and prostate cancer.
+5. Conclusions
+In a nationally representative sample of US adults with prostate cancer, we found that large caffeine intake and PA were positively associated with prostate cancer, but inverse association between medium PA and prostate cancer was observed. Further studies with a larger sample size are needed confirm these findings.
+Acknowledgments
+We acknowledge the NHANES database for providing platforms and contributors for uploading their meaningful datasets.
+Author contributions
+Conceptualization : Qiaomei Liu, Siying Xu.
+Data curation : Siying Xu.
+Formal analysis : Siying Xu.
+Writing – original draft : Qiaomei Liu, Siying Xu.
+Supplementary Material
+Abbreviations: 95% CI 95% confidence interval BMI body mass index MEC mobile examination center NHANES National Health and Nutrition Examination Survey OR odd ratio PA physical activity XGBoost extreme gradient boosting
+Abbreviations:
+95% confidence interval
+body mass index
+mobile examination center
+National Health and Nutrition Examination Survey
+odd ratio
+physical activity
+extreme gradient boosting
+The authors have no funding and conflicts of interest to disclose.
+The datasets generated during and/or analyzed during the current study are publicly available.
+Supplemental Digital Content is available for this article.
+How to cite this article: Liu Q, Xu S. Exploration between caffeine intake, physical activity, and prostate cancer using data from the large-scale NHANES survey: A cross-sectional study. Medicine 2025;104:49(e44281).
+References
+Global cancer statistics 2020: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries.
+Prostate cancer.
+Complexities of prostate cancer.
+Epidemiology and prevention of prostate Cancer.
+Coffee and its consumption: benefits and risks.
+Coffee, caffeine metabolism genotype and disease progression in patients with localized prostate cancer managed with active surveillance.
+Coffee consumption and prostate cancer risk and progression in the Health Professionals Follow-up Study.
+Coffee and tea consumption and risk of prostate cancer in the European prospective investigation into cancer and nutrition.
+Proportion of cancers attributable to major lifestyle and environmental risk factors in the Eastern Mediterranean region.
+The current and future burden of cancer attributable to modifiable risk factors in Canada: Summary of results.
+Physical exercise and quality of life in patients with prostate cancer: systematic review and meta-analysis.
+Association of polycyclic aromatic hydrocarbons with systemic inflammation and metabolic syndrome and its components.
+MiRNA-92a-3p mediated the association between occupational noise exposure and blood pressure among Chinese adults.
+eDoctor: machine learning and the future of medicine.
+A deep-learning system predicts glaucoma incidence and progression using retinal photographs.
+Analysis of factors and corresponding interactions influencing clinical management assistant ability using competency model in China.
+Association of polycyclic aromatic hydrocarbons exposure, systemic inflammation with hearing loss among adults and adolescents.
+Association of shift work with oxidative stress and alteration of fasting plasma glucose level in Chinese adults.
+The associations of weekend warrior activity patterns with the visceral adiposity index in US adults: repeated cross-sectional Study.
+The association of blood metals with latent tuberculosis infection among adults and adolescents.
+Association between serum 25-hydroxyvitamin D level and myopia in children and adolescents: a cross-sectional study.
+Association between triglyceride–glucose index and carotid atherosclerosis detected by ultrasonography.
+Association of coffee, decaffeinated coffee and caffeine intake from coffee with cognitive performance in older adults: national health and nutrition examination survey (NHANES) 2011–2014.
+Coffee consumption and health: umbrella review of meta-analyses of multiple health outcomes.
+Coffee intake, caffeine metabolism genotype, and survival among men with prostate cancer.
+Reduction by coffee consumption of prostate cancer risk: evidence from the Moli-sani cohort and cellular models.
+Coffee consumption and prostate cancer risk: results from national health and nutrition examination survey 1999–2010 and mendelian randomization analyses.
+Coffee and cancer risk, epidemiological evidence, and molecular mechanisms.
+Increased genetic diversity of the Mycobacterium tuberculosis W-Beijing genotype that predominates in eastern China.
+Association of obesity with the risk of hyperhomocysteinemia among the Chinese community residents: a prospective cohort study in Shanghai, China.
+Prediction of 10-year atherosclerotic cardiovascular disease risk among community residents in Shanghai, China – a comparative analysis of risk algorithms.
+Physical activity and prostate cancer: an updated review.
+Association between Coffee consumption/physical exercise and gastric, hepatic, colon, breast, uterine cervix, lung, thyroid, prostate, and bladder cancer.
+A network suspected infectious disease model for the development of syphilis transmission from 2015 to 2021 in Hubei province, China.
+Physical activity and its mechanistic effects on prostate cancer.
+The inflammatory microenvironment and microbiome in prostate cancer development.
+Biologically informed deep neural network for prostate cancer discovery.
+Soy isoflavones intake and obesity in Chinese adults: a cross-sectional study in Shanghai, China.
+Global, regional, and national mortality of tuberculosis attributable to alcohol and tobacco from 1990 to 2019: a modelling study based on the Global Burden of Disease study 2019.

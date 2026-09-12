@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:19:54.928293-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "3559970e9842a8fadb26e09862642d0b75ce2f37e3bd66f6c877b9792d97e7c8",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "10325617",
+      "title": "[Relationship between dietary nutrients intakes and human prostate cancer].",
+      "abstract": "In order to study the relationship between dietary nutrients intakes and prostate cancer, 1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls. Total calories and 11 nutrients including protein, lipid and carbohydrates were calculated based on the mean food intakes in the latest 3 days. Analyzed by matched t-test and conditional logistic regression method, the results showed that high intakes of lipid, carbohydrates, and retinol increased the risk of prostate cancer, but vitamin C and vitamin B1 decreased the risk of prostate cancer. The multivariable adjusted ORs were 1.65 (95% confident interval (CI) 1.39-1.96) for lipid, 1.22 (95% CI 1.13-1.31) for carbohydrates, 3.21 (95% CI 2.18-4.75) for retinol, 0.61 (95% CI 0.6-0.80) for vitamin C, and 0.029 (95% CI 0.009-0.09) for vitamin B1. The authors discussed the possible mechanism of dietary nutrients contributing to the risk of prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Ascorbic Acid / pharmacology",
+        "Case-Control Studies",
+        "China / epidemiology",
+        "Dietary Fats / adverse effects",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Nutrition Surveys",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Regression Analysis",
+        "Risk Factors",
+        "Thiamine / pharmacology",
+        "Vitamin A / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "10325617",
+      "contexts": [
+        {
+          "context_id": "10325617|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "10325617|Vitamin B1|Prostate cancer",
+          "exposure": "Vitamin B1",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "10325617|Vitamin C|Prostate cancer",
+          "exposure": "Vitamin C",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

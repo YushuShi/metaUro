@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:07:48.389547-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "5f1bbb455b95817d8708e46b8e31f2b643b13a5a8c410e8355d85d06b701ae12",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "4038555",
+      "title": "Nutrition and prostate cancer: a case-control study.",
+      "abstract": "This one-to-one, age- and race-matched case-control study involved 181 histologically confirmed black prostate cancer patients and 181 controls seen at three major hospitals in Washington, DC, during the period 1979-1982. Personal interviews were conducted to obtain the number of times food items of specified serving size were consumed per week by cases and controls during the age periods 30-49 and 50 years and older. Then the average daily consumption of each of 18 nutrients per 1,000 calories was calculated. There was risk enhancement associated with increased intake of proteins, total fat, saturated fat, oleic acid, and vitamin A during the age period 30-49 years. The association was highly significant for vitamin A and approached statistical significance for the other four nutrients. A hypothesis based on disturbance of the zinc-retinol binding protein-vitamin A axis was put forward to explain the relative risk enhancement effect of vitamin A on prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Black or African American",
+        "Age Factors",
+        "Ascorbic Acid / pharmacology",
+        "Diet / adverse effects",
+        "Dietary Fats / adverse effects",
+        "Dietary Proteins / adverse effects",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Nutritional Physiological Phenomena",
+        "Oleic Acids / adverse effects",
+        "Prostate / metabolism",
+        "Prostatic Neoplasms / etiology, metabolism",
+        "Retinol-Binding Proteins / metabolism",
+        "Risk",
+        "Vitamin A / adverse effects, metabolism",
+        "Zinc / metabolism"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "4038555",
+      "contexts": [
+        {
+          "context_id": "4038555|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "increased intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "362",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "increased versus lower daily nutrient intake per 1,000 calories"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

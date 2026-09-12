@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:31:40.700095-04:00",
+  "pmid": "22239754",
+  "work_key": "224b5bf488d8cd6b82e0de61520a50d1921747226b1484e2f9bc109b0a92b027",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/22239754_0002.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "22239754",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "22239754|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT's CI matches a subgroup estimate in the allowed metadata but its p value belongs to a different comparison; Claude+Gemini's CI and p value are absent from the allowed metadata.",
+        "one_sentence_explanation": "The allowed metadata supports ChatGPT's CI for a high-grade subgroup comparison but not its paired p value, and Claude+Gemini's values are absent, so the target estimate cannot be mapped uniquely."
+      },
+      {
+        "context_id": "22239754|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT's value matches a subgroup estimate in the allowed metadata, while Claude+Gemini's value is absent and may reflect a different overall comparison from full text; the target estimate cannot be assigned uniquely.",
+        "one_sentence_explanation": "The allowed metadata supports ChatGPT's value for a high-grade subgroup comparison, but Claude+Gemini's value is not present and may belong to a different overall comparison, so the target estimate cannot be resolved uniquely."
+      },
+      {
+        "context_id": "22239754|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Pipelines reference different comparison groups; the allowed metadata reports group counts but does not uniquely identify which analyzed subset corresponds to the target estimate.",
+        "one_sentence_explanation": "The allowed metadata gives overall group counts consistent with the Claude+Gemini total but the pipelines target different comparison strata, so the analyzed sample for the target estimate cannot be mapped uniquely."
+      }
+    ]
+  }
+}

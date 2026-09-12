@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:06.685918-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "8b9a47d3526bd7851ad1fec5c401c45476ce8ef94ae581e06d880996851d17cc",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "23408548",
+      "title": "Index-based dietary patterns and the risk of prostate cancer in the NIH-AARP diet and health study.",
+      "abstract": "Few studies have investigated the relationship between overall diet and the risk of prostate cancer. We examined the association between 3 diet quality indices-the Healthy Eating Index-2005 (HEI-2005), Alternate Healthy Eating Index-2010 (AHEI-2010), and alternate Mediterranean diet score (aMED)-and prostate cancer risk. At baseline, dietary intake was assessed in a cohort of 293,464 US men in the National Institutes of Health (NIH)-AARP Diet and Health Study. Cox proportional hazards regression was used to estimate hazard ratios. Between 1995 and 2006, we ascertained 23,453 incident cases of prostate cancer, including 2,251 advanced cases and 428 fatal cases. Among men who reported a history of prostate-specific antigen testing, high HEI-2005 and AHEI-2010 scores were associated with lower risk of total prostate cancer (for the highest quintile compared with the lowest, hazard ratio (HR) = 0.92, 95% confidence interval (CI): 0.86, 0.98, P for trend = 0.01; and HR = 0.93, 95% CI: 0.88, 0.99, P for trend = 0.05, respectively). No significant association was observed between aMED score and total prostate cancer or between any of the indices and advanced or fatal prostate cancer, regardless of prostate-specific antigen testing status. In individual component analyses, the fish component of aMED and ω-3 fatty acids component of AHEI-2010 were inversely associated with fatal prostate cancer (HR = 0.79, 95% CI: 0.65, 0.96, and HR = 0.94, 95% CI: 0.90, 0.98, respectively).",
+      "mesh": [
+        "Aged",
+        "Diet",
+        "Diet Surveys",
+        "Diet, Mediterranean",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Proportional Hazards Models",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / diagnosis, epidemiology",
+        "Registries",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "United States"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "23408548",
+      "contexts": [
+        {
+          "context_id": "23408548|Mediterranean diet|Prostate cancer",
+          "exposure": "Mediterranean diet",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "293464",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "293464",
+              "effect_measure_type": "HR",
+              "effect_size": "0.97",
+              "ci_lower": "0.91",
+              "ci_upper": "1.03",
+              "p_value": "0.09",
+              "comparison": "quintiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:20:20.629006-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "6bdd531c5b40efaf95d4ddad3d842d3af5c2de420006f181a34bc7f0f8ccbc8a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "10548317",
+      "title": "Vitamin and mineral supplement use is associated with reduced risk of prostate cancer.",
+      "abstract": "This population-based, case-control study in King County, Washington examined supplement use in 697 incident prostate cancer cases (ages 40-64) identified from the Puget Sound Surveillance, Epidemiology and End Results program registry and 666 controls recruited from the same overall population using random-digit dialing sampling. Participants reported their frequency of use of three types of multivitamins and single supplements of vitamins A, C, and E, calcium, iron, and zinc over the 2 years before diagnosis. Logistic regression analyses controlled for age, race, education, family history of prostate cancer, body mass index, number of prostate-specific antigen tests in the previous 5 years, and dietary fat intake. Adjusted odds ratios (95% confidence limits) for the contrast of > or =7/week versus no use were as follows: multivitamins, 0.96 (0.73, 1.26); vitamin A, 0.59 (0.32, 1.06); vitamin C, 0.77 (0.57, 1.04); vitamin E, 0.76 (0.54, 1.08); calcium, 1.04 (0.61, 1.78); iron, 0.50 (0.13, 1.76); and zinc, 0.55 (0.30, 1.00). Odds ratios differed little when cases were stratified by stage of disease at diagnosis or by histopathological grade. There were significant dose-response effects for zinc and ordered dose-response trends for vitamins C and E. Overall, these results suggest that multivitamin use is not associated with prostate cancer risk, but use of individual supplements of zinc, vitamin C, and vitamin E may be protective. Further study is needed to investigate the direct role of these dietary supplements, as well as the role of lifestyle variables associated with supplement use, on prostate cancer risk.",
+      "mesh": [
+        "Adult",
+        "Case-Control Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Minerals / administration & dosage",
+        "Neoplasm Staging",
+        "Population Surveillance",
+        "Prostatic Neoplasms / epidemiology, pathology, prevention & control",
+        "Risk",
+        "Vitamins / administration & dosage",
+        "Washington"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "10548317",
+      "contexts": [
+        {
+          "context_id": "10548317|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "1.04",
+              "ci_lower": "0.61",
+              "ci_upper": "1.78",
+              "p_value": "0.8858460292382144",
+              "comparison": ">=7 uses/week versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1363",
+              "effect_measure_type": "OR",
+              "effect_size": "1.04",
+              "ci_lower": "0.61",
+              "ci_upper": "1.78",
+              "p_value": null,
+              "comparison": ">=7/week versus no use"
+            }
+          }
+        },
+        {
+          "context_id": "10548317|Iron|Prostate cancer",
+          "exposure": "Iron",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.5",
+              "ci_lower": "0.13",
+              "ci_upper": "1.76",
+              "p_value": "0.29703461985974494",
+              "comparison": ">=7 uses/week versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1363",
+              "effect_measure_type": "OR",
+              "effect_size": "0.5",
+              "ci_lower": "0.13",
+              "ci_upper": "1.76",
+              "p_value": null,
+              "comparison": ">=7/week versus no use"
+            }
+          }
+        },
+        {
+          "context_id": "10548317|Multivitamin|Prostate cancer",
+          "exposure": "Multivitamin",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.96",
+              "ci_lower": "0.73",
+              "ci_upper": "1.26",
+              "p_value": "0.7693915054163165",
+              "comparison": ">=7 uses/week versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1363",
+              "effect_measure_type": "OR",
+              "effect_size": "0.96",
+              "ci_lower": "0.73",
+              "ci_upper": "1.26",
+              "p_value": null,
+              "comparison": ">=7/week versus no use"
+            }
+          }
+        },
+        {
+          "context_id": "10548317|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.59",
+              "ci_lower": "0.32",
+              "ci_upper": "1.06",
+              "p_value": "0.08419031845339787",
+              "comparison": ">=7 uses/week versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1363",
+              "effect_measure_type": "OR",
+              "effect_size": "0.59",
+              "ci_lower": "0.32",
+              "ci_upper": "1.06",
+              "p_value": null,
+              "comparison": ">=7/week versus no use"
+            }
+          }
+        },
+        {
+          "context_id": "10548317|Vitamin C|Prostate cancer",
+          "exposure": "Vitamin C",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.77",
+              "ci_lower": "0.57",
+              "ci_upper": "1.04",
+              "p_value": "0.0884282215740025",
+              "comparison": ">=7 uses/week versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1363",
+              "effect_measure_type": "OR",
+              "effect_size": "0.77",
+              "ci_lower": "0.57",
+              "ci_upper": "1.04",
+              "p_value": null,
+              "comparison": ">=7/week versus no use"
+            }
+          }
+        },
+        {
+          "context_id": "10548317|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.76",
+              "ci_lower": "0.54",
+              "ci_upper": "1.08",
+              "p_value": "0.12065937815401034",
+              "comparison": ">=7 uses/week versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1363",
+              "effect_measure_type": "OR",
+              "effect_size": "0.76",
+              "ci_lower": "0.54",
+              "ci_upper": "1.08",
+              "p_value": null,
+              "comparison": ">=7/week versus no use"
+            }
+          }
+        },
+        {
+          "context_id": "10548317|Zinc|Prostate cancer",
+          "exposure": "Zinc",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.55",
+              "ci_lower": "0.3",
+              "ci_upper": "1",
+              "p_value": "0.051600198576902546",
+              "comparison": ">=7 uses/week versus no use"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1363",
+              "effect_measure_type": "OR",
+              "effect_size": "0.55",
+              "ci_lower": "0.3",
+              "ci_upper": "1",
+              "p_value": null,
+              "comparison": ">=7/week versus no use"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

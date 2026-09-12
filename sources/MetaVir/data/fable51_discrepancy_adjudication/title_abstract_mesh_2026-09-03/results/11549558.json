@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:21:45.006962-04:00",
+  "pmid": "11549558",
+  "work_key": "39bd163e0621abb79f67812198e18266eab9149af13fa6c9bd92ec217fd24000",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/11549558_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "11549558",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "11549558|Calorie-restricted diet|Prostate cancer",
+        "exposure": "Calorie-restricted diet",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "The prostate cancer rate ratio for men who had lived in a western Netherlands city in 1944-1945 was 1.15 (95% confidence interval (CI): 0.80, 1.31), and the rate ratio for men who had lived in a western rural area in 1944-1945 was 1.30 (95% CI: 0.97, 1.73).",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Both CIs (0.80-1.31 and 0.97-1.73) appear in the abstract for different residence strata; no primary stratum is designated, so the target CI cannot be uniquely selected.",
+        "one_sentence_explanation": "ChatGPT's CI 0.80-1.31 matches the western city stratum and Claude+Gemini's CI 0.97-1.73 matches the western rural stratum, both verbatim in the abstract, but the record does not indicate which stratum is the target estimate."
+      },
+      {
+        "context_id": "11549558|Calorie-restricted diet|Prostate cancer",
+        "exposure": "Calorie-restricted diet",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "The prostate cancer rate ratio for men who had lived in a western Netherlands city in 1944-1945 was 1.15 (95% confidence interval (CI): 0.80, 1.31), and the rate ratio for men who had lived in a western rural area in 1944-1945 was 1.30 (95% CI: 0.97, 1.73).",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports two distinct Hunger Winter residence strata (western city RR 1.15; western rural RR 1.30) with no designated primary estimate, so the pipelines' differing values cannot be mapped to a single target estimate.",
+        "one_sentence_explanation": "The abstract verbatim supports ChatGPT's 1.15 for western city residence and Claude+Gemini's 1.30 for western rural residence, but these are different strata and the record does not identify which is the target estimate."
+      }
+    ]
+  }
+}

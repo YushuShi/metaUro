@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:29:26.535167-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "97f61488fec8f077ee71d1f191366346f81f6e14097388473a03f69d30daaa32",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "20813803",
+      "title": "Alcoholic beverages and prostate cancer in a prospective US cohort study.",
+      "abstract": "Despite numerous investigations, the correlation between alcohol consumption and prostate cancer risk remains uncertain. This report investigated the association between alcohol use and prostate cancer risk in a prospective cohort study of 294,707 US men aged 50-71 years in 1995-1996. Cox proportional hazards regression models with hazard ratios and 95% confidence intervals were adjusted for characteristics including age, race, body mass index, physical activity, and family history of prostate cancer, as well as testing for prostate-specific antigen and a digital rectal examination. There were 15,327 nonadvanced and 1,900 advanced prostate cancers identified through 2003 and 514 fatal cases through 2005. Risk of nonadvanced prostate cancer was 25% higher for men consuming ≥6 drinks daily (hazard ratio = 1.25, 95% confidence interval: 1.13, 1.37), 19% higher for men consuming 3-<6 drinks daily, and 6% higher for men consuming up to 3 drinks daily, compared with nondrinkers. The association between alcohol consumption and nonadvanced prostate cancer risk did not differ appreciably by age, family history of prostate cancer, smoking status, body mass index, or self-reported prostate-specific antigen testing and digital rectal examination (the latter available for >60% of respondents). The authors observed no association between alcohol intake and advanced prostate cancer and an inverse association with fatal prostate cancer among heavy drinkers. These findings suggest that higher alcohol consumption modestly increases nonadvanced prostate cancer risk.",
+      "mesh": [
+        "Age Distribution",
+        "Aged",
+        "Alcohol Drinking / adverse effects, epidemiology",
+        "Alcoholic Beverages / adverse effects",
+        "Confidence Intervals",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Prognosis",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / diagnosis, epidemiology, etiology",
+        "Risk Factors",
+        "Survival Rate / trends",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "20813803",
+      "contexts": [
+        {
+          "context_id": "20813803|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "294707",
+              "effect_measure_type": "HR",
+              "effect_size": "1.25",
+              "ci_lower": "1.13",
+              "ci_upper": "1.37",
+              "p_value": "0.000005579343159128306",
+              "comparison": "≥6 drinks daily versus nondrinkers"
+            },
+            "Claude+Gemini": {
+              "sample_size": "294707",
+              "effect_measure_type": "HR",
+              "effect_size": "1.21",
+              "ci_lower": "1.11",
+              "ci_upper": "1.33",
+              "p_value": "0.001",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

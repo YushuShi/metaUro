@@ -1,0 +1,479 @@
+{
+  "schema_version": 1,
+  "receipt_id": "f3ea44a9f807ce1796f44ad3aa2dc4add9287ad96c93d1ce6a6853e32d950cb9",
+  "requested_at": "2026-09-02T07:37:44.922036+08:00",
+  "received_at": "2026-09-02T07:38:41.086218+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "681e47451ff394c1228ce652c5053cc9b0c116b27572ede07d4bc5ae27e760ea",
+  "attempt": 1,
+  "context_ids": [
+    "15069304|Vitamin D|Prostate cancer",
+    "15069304|Vitamin E|Prostate cancer",
+    "15075172|Western pattern diet|Prostate cancer",
+    "15083213|Vitamin D|Prostate cancer",
+    "15090720|Vitamin D|Prostate cancer",
+    "15095309|Dairy|Prostate cancer",
+    "15101126|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Dairy": 1,
+    "Vitamin D": 4,
+    "Vitamin E": 1,
+    "Western pattern diet": 1
+  },
+  "input_digest": "90de28da9d40d15daa2300786c634b5da13276889bc445502410fc97641e647a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9004,
+    "cached_input_tokens": 0,
+    "output_tokens": 5760,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.18902000000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3ccd072e-41ee-4245-a758-8449be2c4f5f",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.18902000000000002"
+  },
+  "output_sha256": "8a89692edee526f3c348fea550e118e85105c649991a2f003c76ed2fc8ed9e47",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"15069304|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative overview summarizing chemoprevention trial results and molecular evidence rather than an original study of vitamin D and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"15069304|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of prostate cancer chemoprevention agents, including vitamin E, without original incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"15075172|Western pattern diet|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"The exposure is a composite C-peptide score derived from body mass, physical activity, and diet, and no Western dietary pattern estimate specific to prostate cancer incidence is separable from the combined \\\"Western-related cancers\\\" grouping.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"15083213|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"The study evaluates vitamin D receptor and HER-2 polymorphisms rather than a population-wide vitamin D nutritional exposure estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"15090720|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective nested case-control study reporting odds ratios for incident prostate cancer by quartiles of circulating 25-hydroxyvitamin D and 1,25-dihydroxyvitamin D.\",\"extraction\":{\"effect_size\":1.19,\"effect_type\":\"OR\",\"ci_lower\":0.79,\"ci_upper\":1.79,\"p_value\":0.59,\"ci_confidence_level\":95,\"total_n\":920,\"cases\":460,\"comparison_type\":\"top vs bottom quartile of plasma 25(OH)D\",\"design\":\"case_control\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men in the Health Professionals Follow-up Study who provided a blood specimen in 1993/95\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Prostate cancer cases were 460 men in the Health Professionals Follow-up Study ... An equal number of controls who had had a screening PSA test after blood draw were individually matched to cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Prostate cancer cases were 460 men in the Health Professionals Follow-up Study who were diagnosed through 1998\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"For 25(OH)D the OR of prostate cancer comparing the top and bottom quartiles was 1.19\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"(95% CI: 0.79-1.79, p-trend = 0.59)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"p_value\":{\"excerpt\":\"p-trend = 0.59\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"comparison\":{\"excerpt\":\"comparing the top and bottom quartiles\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"In this prospective study, we did not observe an inverse association between plasma concentrations of 1,25(OH)2D or 25(OH)D and incident prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"diagnosed through 1998 after providing a blood specimen in 1993/95\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Plasma 1,25(OH)2D and 25(OH)D concentrations were determined by radio-immunosorbant assay blindly to case-control status\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15090720/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"15095309|Dairy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study of food groups reporting an odds ratio for milk and dairy product consumption and incident, histologically confirmed prostate cancer.\",\"extraction\":{\"effect_size\":1.2,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.03,\"ci_confidence_level\":null,\"total_n\":2745,\"cases\":1294,\"comparison_type\":\"highest vs lowest quintile of milk and dairy product consumption\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Europe\",\"country\":\"Italy\",\"location\":\"Italy\",\"ethnicity\":\"NA\",\"population\":\"Men below age 75 years with incident histologically confirmed prostate carcinoma and hospital controls admitted for acute non-neoplastic conditions\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Cases were 1,294 patients below age 75 years with incident, histologically confirmed carcinoma of the prostate; controls were 1,451 subjects below age 75 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Cases were 1,294 patients below age 75 years with incident, histologically confirmed carcinoma of the prostate\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"milk and dairy products (OR = 1.2 for highest vs. lowest quintile, p = 0.03)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"p = 0.03\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"comparison\":{\"excerpt\":\"OR = 1.2 for highest vs. lowest quintile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a case-control study conducted in Italy between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"conducted in Italy between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"case-control study conducted in Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Food groups and risk of prostate cancer in Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"The role of a wide range of foods on the risk of prostate cancer has thus been analyzed\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15095309/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"15101126|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The record is a short non-primary commentary-type item with no abstract or original comparative results on vitamin D and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "15069304|Vitamin D|Prostate cancer",
+      "pmid": "15069304",
+      "pmcid": "",
+      "published_date": "2004-05-01",
+      "title": "Update on chemoprevention of prostate cancer.",
+      "authors": [
+        "Klein EA",
+        "Thompson IM"
+      ],
+      "journal": "Current opinion in urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15069304/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative overview summarizing chemoprevention trial results and molecular evidence rather than an original study of vitamin D and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15069304|Vitamin E|Prostate cancer",
+      "pmid": "15069304",
+      "pmcid": "",
+      "published_date": "2004-05-01",
+      "title": "Update on chemoprevention of prostate cancer.",
+      "authors": [
+        "Klein EA",
+        "Thompson IM"
+      ],
+      "journal": "Current opinion in urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15069304/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of prostate cancer chemoprevention agents, including vitamin E, without original incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15075172|Western pattern diet|Prostate cancer",
+      "pmid": "15075172",
+      "pmcid": "",
+      "published_date": "2004-02-01",
+      "title": "Height, predictors of C-peptide and cancer risk in men.",
+      "authors": [
+        "Giovannucci E",
+        "Rimm EB",
+        "Liu Y",
+        "Willett WC"
+      ],
+      "journal": "International journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15075172/",
+      "exposure": "Western pattern diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "The exposure is a composite C-peptide score derived from body mass, physical activity, and diet, and no Western dietary pattern estimate specific to prostate cancer incidence is separable from the combined \"Western-related cancers\" grouping.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15083213|Vitamin D|Prostate cancer",
+      "pmid": "15083213",
+      "pmcid": "",
+      "published_date": "2004-04-01",
+      "title": "Vitamin D receptor, HER-2 polymorphisms and risk of prostate cancer in men with benign prostate hyperplasia.",
+      "authors": [
+        "Tayeb MT",
+        "Clark C",
+        "Haites NE",
+        "Sharp L",
+        "Murray GI",
+        "McLeod HL"
+      ],
+      "journal": "Saudi medical journal",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15083213/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "The study evaluates vitamin D receptor and HER-2 polymorphisms rather than a population-wide vitamin D nutritional exposure estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15090720|Vitamin D|Prostate cancer",
+      "pmid": "15090720",
+      "pmcid": "",
+      "published_date": "2004-04-01",
+      "title": "Plasma 1,25-dihydroxy- and 25-hydroxyvitamin D and subsequent risk of prostate cancer.",
+      "authors": [
+        "Platz EA",
+        "Leitzmann MF",
+        "Hollis BW",
+        "Willett WC",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective nested case-control study reporting odds ratios for incident prostate cancer by quartiles of circulating 25-hydroxyvitamin D and 1,25-dihydroxyvitamin D.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.19,
+        "effect_type": "OR",
+        "ci_lower": 0.79,
+        "ci_upper": 1.79,
+        "p_value": 0.59,
+        "ci_confidence_level": 95,
+        "total_n": 920,
+        "cases": 460,
+        "comparison_type": "top vs bottom quartile of plasma 25(OH)D",
+        "design": "case_control",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men in the Health Professionals Follow-up Study who provided a blood specimen in 1993/95",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Prostate cancer cases were 460 men in the Health Professionals Follow-up Study who were diagnosed through 1998 after providing a blood specimen in 1993/95.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "For 25(OH)D the OR of prostate cancer comparing the top and bottom quartiles was 1.19 (95% CI: 0.79-1.79, p-trend = 0.59).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "For 25(OH)D the OR of prostate cancer comparing the top and bottom quartiles was 1.19 (95% CI: 0.79-1.79, p-trend = 0.59).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "p_value": {
+            "excerpt": "p-trend = 0.59",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "comparison": {
+            "excerpt": "comparing the top and bottom quartiles",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "In this prospective study, we did not observe an inverse association between plasma concentrations of 1,25(OH)2D or 25(OH)D and incident prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "diagnosed through 1998 after providing a blood specimen in 1993/95",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Plasma 1,25(OH)2D and 25(OH)D concentrations were determined by radio-immunosorbant assay blindly to case-control status",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15090720/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "0.59",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15095309|Dairy|Prostate cancer",
+      "pmid": "15095309",
+      "pmcid": "",
+      "published_date": "2004-06-20",
+      "title": "Food groups and risk of prostate cancer in Italy.",
+      "authors": [
+        "Bosetti C",
+        "Micelotta S",
+        "Dal Maso L",
+        "Talamini R",
+        "Montella M",
+        "Negri E",
+        "Conti E",
+        "Franceschi S",
+        "La Vecchia C"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study of food groups reporting an odds ratio for milk and dairy product consumption and incident, histologically confirmed prostate cancer.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.2,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.03,
+        "ci_confidence_level": null,
+        "total_n": 2745,
+        "cases": 1294,
+        "comparison_type": "highest vs lowest quintile of milk and dairy product consumption",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "Italy",
+        "location": "Italy",
+        "ethnicity": "NA",
+        "population": "Men below age 75 years with incident histologically confirmed prostate carcinoma and hospital controls admitted for acute non-neoplastic conditions",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases were 1,294 patients below age 75 years with incident, histologically confirmed carcinoma of the prostate; controls were 1,451 subjects below age 75 years admitted to the same hospitals as cases for a wide spectrum of acute, non-neoplastic conditions.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract; total_n derived from reported group counts 1294 + 1451 = 2745"
+          },
+          "cases": {
+            "excerpt": "Cases were 1,294 patients below age 75 years with incident, histologically confirmed carcinoma of the prostate; controls were 1,451 subjects below age 75 years admitted to the same hospitals as cases for a wide spectrum of acute, non-neoplastic conditions.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "A significant trend of increasing risk with more frequent consumption was found for milk and dairy products (OR = 1.2 for highest vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          },
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "p = 0.03",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          },
+          "comparison": {
+            "excerpt": "OR = 1.2 for highest vs. lowest quintile",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a case-control study conducted in Italy between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "conducted in Italy between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "case-control study conducted in Italy",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Food groups and risk of prostate cancer in Italy",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "The role of a wide range of foods on the risk of prostate cancer has thus been analyzed",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15095309/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15101126|Vitamin D|Prostate cancer",
+      "pmid": "15101126",
+      "pmcid": "",
+      "published_date": "2004-03-29",
+      "title": "[Vitamin D and prostatic cancer].",
+      "authors": [
+        "Favrbo K"
+      ],
+      "journal": "Ugeskrift for laeger",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15101126/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The record is a short non-primary commentary-type item with no abstract or original comparative results on vitamin D and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

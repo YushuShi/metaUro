@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "receipt_id": "4b8cae9d2a73d5b77fc8a8cbed185496986aec0af7d06c1f0643ff9cbbde2577",
+  "requested_at": "2026-09-02T07:51:00.331275+08:00",
+  "received_at": "2026-09-02T07:51:04.811597+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "178fc2b29c37a214e0c0f588e3c429d9f959340de84ece5be613c58db7400a31",
+  "attempt": 1,
+  "context_ids": [
+    "19444937|Calcium|Prostate cancer",
+    "19444937|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "759e86c9c3d248ed946804e91309db516534a1ed16f7de55d899a22790145213",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5532,
+    "cached_input_tokens": 0,
+    "output_tokens": 285,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.034785",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c2481123-ac63-4105-9109-7ad081ddc504",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.034785"
+  },
+  "output_sha256": "9a9dca5182c3431c583b69c96f83e25038fe8b3f7a24468a25d7c9bcbd2b23df",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"19444937|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of vitamin D and aging summarizing prior mouse and human studies, with calcium mentioned only as part of a rescue diet and no original calcium-prostate cancer incidence analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19444937|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of vitamin D and aging that cites a U-shaped calcidiol-prostate cancer risk relationship from earlier work rather than presenting an original primary study.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "19444937|Calcium|Prostate cancer",
+      "pmid": "19444937",
+      "pmcid": "",
+      "published_date": "2009-03-01",
+      "title": "Vitamin D and aging.",
+      "authors": [
+        "Tuohimaa P"
+      ],
+      "journal": "The Journal of steroid biochemistry and molecular biology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19444937/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of vitamin D and aging summarizing prior mouse and human studies, with calcium mentioned only as part of a rescue diet and no original calcium-prostate cancer incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19444937|Vitamin D|Prostate cancer",
+      "pmid": "19444937",
+      "pmcid": "",
+      "published_date": "2009-03-01",
+      "title": "Vitamin D and aging.",
+      "authors": [
+        "Tuohimaa P"
+      ],
+      "journal": "The Journal of steroid biochemistry and molecular biology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19444937/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of vitamin D and aging that cites a U-shaped calcidiol-prostate cancer risk relationship from earlier work rather than presenting an original primary study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

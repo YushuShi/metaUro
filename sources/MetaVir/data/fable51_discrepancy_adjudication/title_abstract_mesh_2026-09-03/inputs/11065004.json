@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:21:09.898625-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "30e95953611b85a03e9ccd6707e2d42fcbab7c510187ddcd280f040240afa9ef",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11065004",
+      "title": "Dietary fat intake and prostate cancer risk: a case-control study in Spain.",
+      "abstract": "Epidemiological evidence suggests that dietary factors can play a role in the etiology of prostate cancer. Results from several case-control and cohort studies on nutrient intake and prostate cancer have been unclear. The authors examined the effect of lipid intake on the risk of prostate cancer. In order to assess associations between lipid intake and prostate cancer risk, a case-control study was conducted between May 1994 and March 1998 in the Barcelona metropolitan area, Spain. Two hundred seventeen incident cases with histologically confirmed diagnosis of prostate cancer were matched to 434 hospital and community controls by age and residence. Information about food intake was gathered by a semiquantitative food-frequency questionnaire. Unconditional logistic regression was used for the analysis. Animal fat intake was associated with prostate cancer with an estimated OR for highest quartile of 2.0 (95% CI 1.2-3.2). Vitamin C intake was inversely associated with prostate cancer (OR = 0.6; 95% CI 0.3-0.9). The prostate cancer risk increased in proportion to alpha-linolenic acid intake. In the analysis adjusting for energy and major covariables the estimated OR for upper quartile of alpha-linolenic acid was 3.1 (95% CI 1.1-3.8). In conclusion, the association between fat intake and prostate cancer may be correlated with alpha-linolenic acid, although the specific mechanism has to be determined.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "Dietary Fats / adverse effects",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors",
+        "Spain"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11065004",
+      "contexts": [
+        {
+          "context_id": "11065004|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        },
+        {
+          "context_id": "11065004|Vitamin C|Prostate cancer",
+          "exposure": "Vitamin C",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.6",
+              "ci_lower": "0.3",
+              "ci_upper": "0.9",
+              "p_value": "0.06835449160268764",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "651",
+              "effect_measure_type": "OR",
+              "effect_size": "0.6",
+              "ci_lower": "0.3",
+              "ci_upper": "0.9",
+              "p_value": "0.06835449160268764",
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

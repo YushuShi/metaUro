@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:18:44.388796-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "ea9f29da46c7d3b3d15f5fa4bf2652464112299b130f3b42b54ae58cbd470536",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "3567915",
+      "title": "Vitamin A and prostate cancer in elderly men: enhancement of risk.",
+      "abstract": "Vitamin A intake was assessed from dietary histories on 452 men with prostate cancer and 899 population controls in Hawaii during the period 1977-1983. In the group of men less than 70 years of age, there were no significant associations of this nutrient with risk for prostate cancer. In the men greater than or equal to 70 years, however, risk increased directly with the amount of vitamin A consumed (relative risk of 2.0 for the highest relative to the lowest intake quartile, and a significant linear trend, P less than 0.01). The findings were similar for the various components of vitamin A but were somewhat stronger for total carotenes than for total retinol. These results were generally consistent across the five ethnic groups and were not affected by statistical adjustment for dietary fat. Possible mechanisms for this risk enhancement by vitamin A in elderly men are proposed.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Aging",
+        "Diet / adverse effects",
+        "Ethnicity",
+        "Hawaii",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Vitamin A / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "3567915",
+      "contexts": [
+        {
+          "context_id": "3567915|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "RR",
+              "effect_size": "2",
+              "ci_lower": "1.1802512371180205",
+              "ci_upper": "3.3891089237638434",
+              "p_value": "0.01",
+              "comparison": "Highest versus lowest vitamin A intake quartile among men aged 70 years or older"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1351",
+              "effect_measure_type": "RR",
+              "effect_size": "2",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.01",
+              "comparison": "Highest versus lowest quartile of vitamin A intake in men aged 70 years or older"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

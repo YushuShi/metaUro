@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "receipt_id": "cf37c3e35582976f524938745e6d6c0e8357f2bf3fd90fad3490b97f1b62ddef",
+  "requested_at": "2026-09-02T08:02:34.219736+08:00",
+  "received_at": "2026-09-02T08:02:38.682067+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "73911c04de41718cb4546210f4f98a74b11b2dff2f11e994ee0ff4cb6b93ae8b",
+  "attempt": 1,
+  "context_ids": [
+    "24130513|Processed meat intake|Prostate cancer",
+    "24132909|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Processed meat intake": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "175f642a81f5d61e5bb6077855efee8b77c9cb3c11067148c3f8da1fa90e1d82",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5537,
+    "cached_input_tokens": 0,
+    "output_tokens": 271,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.034460000000000005",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "7d25f877-1f0e-4902-a97f-47e00ba64ba9",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.034460000000000005"
+  },
+  "output_sha256": "45b184a4bd8e4a2e49094fe015c2084c89ddb1e9a917608a4b53efa31012804e",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"24130513|Processed meat intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a systematic literature review of Nordic diet foods rather than an original human study of processed meat intake and incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"24132909|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a methodological simulation study of inverse probability weighting that only uses a prostate cancer and vitamin D study as a simulation basis, providing no original vitamin D–prostate cancer incidence results.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "24130513|Processed meat intake|Prostate cancer",
+      "pmid": "24130513",
+      "pmcid": "PMC3795297",
+      "published_date": "2013-10-09",
+      "title": "Health effects associated with foods characteristic of the Nordic diet: a systematic literature review.",
+      "authors": [
+        "Akesson A",
+        "Andersen LF",
+        "Kristjánsdóttir AG",
+        "Roos E",
+        "Trolle E",
+        "Voutilainen E",
+        "Wirfält E"
+      ],
+      "journal": "Food & nutrition research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24130513/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a systematic literature review of Nordic diet foods rather than an original human study of processed meat intake and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "24132909|Vitamin D|Prostate cancer",
+      "pmid": "24132909",
+      "pmcid": "",
+      "published_date": "2013-12-30",
+      "title": "Inverse probability weighting in nested case-control studies with additional matching--a simulation study.",
+      "authors": [
+        "Støer NC",
+        "Samuelsen SO"
+      ],
+      "journal": "Statistics in medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24132909/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a methodological simulation study of inverse probability weighting that only uses a prostate cancer and vitamin D study as a simulation basis, providing no original vitamin D–prostate cancer incidence results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

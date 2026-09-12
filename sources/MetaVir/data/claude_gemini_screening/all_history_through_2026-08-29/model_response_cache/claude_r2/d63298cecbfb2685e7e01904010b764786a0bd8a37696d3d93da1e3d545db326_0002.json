@@ -1,0 +1,784 @@
+{
+  "schema_version": 1,
+  "receipt_id": "b6daff9dbc647a3aa44fafa63ae7bda46526417938c46f4ab753b2fd4dcd1e4b",
+  "requested_at": "2026-09-02T07:45:13.596435+08:00",
+  "received_at": "2026-09-02T07:46:36.565736+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "d63298cecbfb2685e7e01904010b764786a0bd8a37696d3d93da1e3d545db326",
+  "attempt": 2,
+  "context_ids": [
+    "17212848|Monounsaturated fat (MUFA)|Prostate cancer",
+    "17219775|Calorie-restricted diet|Prostate cancer",
+    "17219775|Soy|Prostate cancer",
+    "17222649|Antioxidants|Prostate cancer",
+    "17222649|Beta-carotene|Prostate cancer",
+    "17222649|Vitamin C|Prostate cancer",
+    "17222649|Vitamin E|Prostate cancer",
+    "17222649|Zinc|Prostate cancer",
+    "17278090|Calcium|Prostate cancer",
+    "17278090|Dairy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Beta-carotene": 1,
+    "Calcium": 1,
+    "Calorie-restricted diet": 1,
+    "Dairy": 1,
+    "Monounsaturated fat (MUFA)": 1,
+    "Soy": 1,
+    "Vitamin C": 1,
+    "Vitamin E": 1,
+    "Zinc": 1
+  },
+  "input_digest": "fee61724ffd046c90cab33fb9dd0902d6dea216f2d50521254c847f234865929",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 8048,
+    "cached_input_tokens": 0,
+    "output_tokens": 8817,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.26066500000000004",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "732dac10-fae4-4b28-838c-d6ec05b8c734",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.26066500000000004"
+  },
+  "output_sha256": "ac22dc242907757e4ffd087f54bf62cbe0df2970200328f0767c8ed729cf4b33",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"17212848|Monounsaturated fat (MUFA)|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"The cross-sectional analysis reports only associations of monounsaturated fat intake with plasma IGF-I/IGFBP-3 levels, with no prostate cancer incidence outcome.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17219775|Calorie-restricted diet|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"This is a review of dietary caloric restriction experiments exclusively in Lobund-Wistar rats, providing no human data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17219775|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Soy protein/isoflavone effects on prostate tumorigenesis were assessed only in Lobund-Wistar rat models, so the evidence is entirely preclinical.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17222649|Antioxidants|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"This secondary analysis of the randomized Age-Related Eye Disease Study reports a prostate cancer diagnosis estimate for the antioxidant supplement arm versus placebo.\",\"extraction\":{\"effect_size\":0.6,\"effect_type\":\"RR\",\"ci_lower\":0.49,\"ci_upper\":0.86,\"p_value\":0.049,\"ci_confidence_level\":95,\"total_n\":3640,\"cases\":null,\"comparison_type\":\"antioxidant supplement arm versus placebo\",\"design\":\"rct\",\"timing\":\"prediagnostic (randomized supplementation before cancer diagnoses)\",\"continent\":null,\"country\":null,\"location\":null,\"ethnicity\":\"NA\",\"population\":\"Patients with age-related macular degeneration randomized in the Age-Related Eye Disease Study\",\"exposure_subtype\":\"supplement\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The Age-Related Eye Disease Study randomized 3,640 patients with age related macular degeneration to 1 of 4 study arms\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"A significant decrease in prostate cancer diagnoses was seen in patients receiving antioxidants vs placebo (RR = 0.6, 95% CI 0.49-0.86, p = 0.049)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"(RR = 0.6, 95% CI 0.49-0.86, p = 0.049)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"p = 0.049\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"in patients receiving antioxidants vs placebo\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"we analyzed a recent randomized trial comparing zinc, antioxidants and their combination to placebo\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"randomized 3,640 patients with age related macular degeneration to 1 of 4 study arms, including placebo, antioxidants (500 mg vitamin C, 400 IU vitamin E and 15 mg beta-carotene)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"antioxidants (500 mg vitamin C, 400 IU vitamin E and 15 mg beta-carotene)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"rct\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"Unclear\",\"q12\":\"Yes\",\"q13\":\"Yes\"}}},{\"context_id\":\"17222649|Beta-carotene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"Beta-carotene was given only within a fixed multi-nutrient antioxidant formulation, and no beta-carotene-specific prostate cancer estimate is reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17222649|Vitamin C|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"Vitamin C was administered only as part of the combined antioxidant supplement, with no vitamin C-specific prostate cancer incidence result.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17222649|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"Vitamin E was inseparable from the combined antioxidant arm, so no vitamin E-specific prostate cancer estimate is available.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17222649|Zinc|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The randomized 80 mg zinc arm is separately reported with a qualitative statement about prostate cancer occurrence, satisfying the exposure and incidence requirements.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":3640,\"cases\":null,\"comparison_type\":\"80 mg zinc supplementation versus nonzinc/placebo formulations\",\"design\":\"rct\",\"timing\":\"prediagnostic (randomized supplementation before cancer diagnoses)\",\"continent\":null,\"country\":null,\"location\":null,\"ethnicity\":\"NA\",\"population\":\"Patients with age-related macular degeneration randomized in the Age-Related Eye Disease Study\",\"exposure_subtype\":\"supplement\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The Age-Related Eye Disease Study randomized 3,640 patients with age related macular degeneration to 1 of 4 study arms\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"},\"cases\":null,\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"There was no increase in prostate or other cancers with zinc supplementation.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"we analyzed a recent randomized trial comparing zinc, antioxidants and their combination to placebo\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"randomized 3,640 patients ... including placebo, antioxidants ..., 80 mg zinc and antioxidant plus zinc\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"80 mg zinc\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17222649/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"rct\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"Unclear\",\"q12\":\"Yes\",\"q13\":\"Yes\"}}},{\"context_id\":\"17278090|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort study reporting dietary calcium intake and incident prostate cancer risk with a multivariate relative risk estimate.\",\"extraction\":{\"effect_size\":1.63,\"effect_type\":\"RR\",\"ci_lower\":1.27,\"ci_upper\":2.1,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":29133,\"cases\":1267,\"comparison_type\":\"dietary calcium >=2,000 mg/day versus <1,000 mg/day\",\"design\":\"cohort\",\"timing\":\"prediagnostic (baseline dietary assessment, 17-year follow-up)\",\"continent\":\"Europe\",\"country\":\"Finland\",\"location\":\"Finland\",\"ethnicity\":\"NA\",\"population\":\"29,133 male smokers aged 50-69 years in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 29,133 male smokers aged 50-69 years at study entry\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"During 17 years of follow-up, we ascertained 1,267 incident cases of prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"The multivariate relative risk (RR) of prostate cancer for > or =2,000 mg/day compared to <1,000 mg/day of calcium intake was 1.63\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"(95% confidence interval (CI), 1.27-2.10; p trend < 0.0001)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"for > or =2,000 mg/day compared to <1,000 mg/day of calcium intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We examined dietary intakes of calcium and dairy products in relation to risk of prostate cancer in the Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Dietary intake was assessed at baseline using a validated 276-item food use questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"A prospective study of dietary calcium, dairy products and prostate cancer risk (Finland)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"(Finland)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Dietary intake was assessed at baseline using a validated 276-item food use questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17278090|Dairy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The cohort reports total dairy intake in relation to incident prostate cancer risk with a quintile-contrast relative risk.\",\"extraction\":{\"effect_size\":1.26,\"effect_type\":\"RR\",\"ci_lower\":1.04,\"ci_upper\":1.51,\"p_value\":0.03,\"ci_confidence_level\":95,\"total_n\":29133,\"cases\":1267,\"comparison_type\":\"extreme quintiles of total dairy intake (highest vs lowest)\",\"design\":\"cohort\",\"timing\":\"prediagnostic (baseline dietary assessment, 17-year follow-up)\",\"continent\":\"Europe\",\"country\":\"Finland\",\"location\":\"Finland\",\"ethnicity\":\"NA\",\"population\":\"29,133 male smokers aged 50-69 years in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 29,133 male smokers aged 50-69 years at study entry\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"During 17 years of follow-up, we ascertained 1,267 incident cases of prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"The multivariate RR of prostate cancer comparing extreme quintiles of intake was 1.26\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"(95% CI, 1.04-1.51; p trend = 0.03)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"p trend = 0.03\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"comparing extreme quintiles of intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"The results from this large prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, conclusion\"},\"timing\":{\"excerpt\":\"Dietary intake was assessed at baseline using a validated 276-item food use questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"A prospective study of dietary calcium, dairy products and prostate cancer risk (Finland)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"(Finland)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Total dairy intake was also positively associated with risk of prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17278090/\",\"location\":\"abstract, results\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "17212848|Monounsaturated fat (MUFA)|Prostate cancer",
+      "pmid": "17212848",
+      "pmcid": "",
+      "published_date": "2007-01-01",
+      "title": "Impact of nutrients on insulin-like growth factor-I, insulin-like growth factor binding protein-3 and their ratio in African American and white males.",
+      "authors": [
+        "McGreevy KM",
+        "Hoel BD",
+        "Lipsitz SR",
+        "Hoel DG"
+      ],
+      "journal": "Public health nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17212848/",
+      "exposure": "Monounsaturated fat (MUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "The cross-sectional analysis reports only associations of monounsaturated fat intake with plasma IGF-I/IGFBP-3 levels, with no prostate cancer incidence outcome.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17219775|Calorie-restricted diet|Prostate cancer",
+      "pmid": "17219775",
+      "pmcid": "",
+      "published_date": "2006-12-01",
+      "title": "Dietary prevention of hormone refractory prostate cancer in Lobund-Wistar rats: a review of studies in a relevant animal model.",
+      "authors": [
+        "Pollard M",
+        "Suckow MA"
+      ],
+      "journal": "Comparative medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17219775/",
+      "exposure": "Calorie-restricted diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "This is a review of dietary caloric restriction experiments exclusively in Lobund-Wistar rats, providing no human data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17219775|Soy|Prostate cancer",
+      "pmid": "17219775",
+      "pmcid": "",
+      "published_date": "2006-12-01",
+      "title": "Dietary prevention of hormone refractory prostate cancer in Lobund-Wistar rats: a review of studies in a relevant animal model.",
+      "authors": [
+        "Pollard M",
+        "Suckow MA"
+      ],
+      "journal": "Comparative medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17219775/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Soy protein/isoflavone effects on prostate tumorigenesis were assessed only in Lobund-Wistar rat models, so the evidence is entirely preclinical.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17222649|Antioxidants|Prostate cancer",
+      "pmid": "17222649",
+      "pmcid": "",
+      "published_date": "2007-02-01",
+      "title": "High dose zinc increases hospital admissions due to genitourinary complications.",
+      "authors": [
+        "Johnson AR",
+        "Munoz A",
+        "Gottlieb JL",
+        "Jarrard DF"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This secondary analysis of the randomized Age-Related Eye Disease Study reports a prostate cancer diagnosis estimate for the antioxidant supplement arm versus placebo.",
+      "missing_key_fields": [
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.6,
+        "effect_type": "RR",
+        "ci_lower": 0.49,
+        "ci_upper": 0.86,
+        "p_value": 0.049,
+        "ci_confidence_level": 95,
+        "total_n": 3640,
+        "cases": null,
+        "comparison_type": "antioxidant supplement arm versus placebo",
+        "design": "rct",
+        "timing": "prediagnostic (randomized supplementation before cancer diagnoses)",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Patients with age-related macular degeneration randomized in the Age-Related Eye Disease Study",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The Age-Related Eye Disease Study randomized 3,640 patients with age related macular degeneration to 1 of 4 study arms, including placebo, antioxidants (500 mg vitamin C, 400 IU vitamin E and 15 mg beta-carotene), 80 mg zinc and antioxidant plus zinc.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "There was no increase in prostate or other cancers with zinc supplementation. A significant decrease in prostate cancer diagnoses was seen in patients receiving antioxidants vs placebo (RR = 0.6, 95% CI 0.49-0.86, p = 0.049).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "A significant decrease in prostate cancer diagnoses was seen in patients receiving antioxidants vs placebo (RR = 0.6, 95% CI 0.49-0.86, p = 0.049).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "p = 0.049",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "in patients receiving antioxidants vs placebo",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "we analyzed a recent randomized trial comparing zinc, antioxidants and their combination to placebo",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "randomized 3,640 patients with age related macular degeneration to 1 of 4 study arms, including placebo, antioxidants (500 mg vitamin C, 400 IU vitamin E and 15 mg beta-carotene)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "antioxidants (500 mg vitamin C, 400 IU vitamin E and 15 mg beta-carotene)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.049",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "rct",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "Unclear",
+          "q12": "Yes",
+          "q13": "Yes"
+        },
+        "score_percent": 23.1,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17222649|Beta-carotene|Prostate cancer",
+      "pmid": "17222649",
+      "pmcid": "",
+      "published_date": "2007-02-01",
+      "title": "High dose zinc increases hospital admissions due to genitourinary complications.",
+      "authors": [
+        "Johnson AR",
+        "Munoz A",
+        "Gottlieb JL",
+        "Jarrard DF"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "Beta-carotene was given only within a fixed multi-nutrient antioxidant formulation, and no beta-carotene-specific prostate cancer estimate is reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17222649|Vitamin C|Prostate cancer",
+      "pmid": "17222649",
+      "pmcid": "",
+      "published_date": "2007-02-01",
+      "title": "High dose zinc increases hospital admissions due to genitourinary complications.",
+      "authors": [
+        "Johnson AR",
+        "Munoz A",
+        "Gottlieb JL",
+        "Jarrard DF"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+      "exposure": "Vitamin C",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "Vitamin C was administered only as part of the combined antioxidant supplement, with no vitamin C-specific prostate cancer incidence result.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17222649|Vitamin E|Prostate cancer",
+      "pmid": "17222649",
+      "pmcid": "",
+      "published_date": "2007-02-01",
+      "title": "High dose zinc increases hospital admissions due to genitourinary complications.",
+      "authors": [
+        "Johnson AR",
+        "Munoz A",
+        "Gottlieb JL",
+        "Jarrard DF"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "Vitamin E was inseparable from the combined antioxidant arm, so no vitamin E-specific prostate cancer estimate is available.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17222649|Zinc|Prostate cancer",
+      "pmid": "17222649",
+      "pmcid": "",
+      "published_date": "2007-02-01",
+      "title": "High dose zinc increases hospital admissions due to genitourinary complications.",
+      "authors": [
+        "Johnson AR",
+        "Munoz A",
+        "Gottlieb JL",
+        "Jarrard DF"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The randomized 80 mg zinc arm is separately reported with a qualitative statement about prostate cancer occurrence, satisfying the exposure and incidence requirements.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 3640,
+        "cases": null,
+        "comparison_type": "80 mg zinc supplementation versus nonzinc/placebo formulations",
+        "design": "rct",
+        "timing": "prediagnostic (randomized supplementation before cancer diagnoses)",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Patients with age-related macular degeneration randomized in the Age-Related Eye Disease Study",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The Age-Related Eye Disease Study randomized 3,640 patients with age related macular degeneration to 1 of 4 study arms, including placebo, antioxidants (500 mg vitamin C, 400 IU vitamin E and 15 mg beta-carotene), 80 mg zinc and antioxidant plus zinc.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          },
+          "cases": null,
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "There was no increase in prostate or other cancers with zinc supplementation.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "we analyzed a recent randomized trial comparing zinc, antioxidants and their combination to placebo",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "80 mg zinc",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17222649/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "rct",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "Unclear",
+          "q12": "Yes",
+          "q13": "Yes"
+        },
+        "score_percent": 23.1,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17278090|Calcium|Prostate cancer",
+      "pmid": "17278090",
+      "pmcid": "",
+      "published_date": "2007-06-01",
+      "title": "A prospective study of dietary calcium, dairy products and prostate cancer risk (Finland).",
+      "authors": [
+        "Mitrou PN",
+        "Albanes D",
+        "Weinstein SJ",
+        "Pietinen P",
+        "Taylor PR",
+        "Virtamo J",
+        "Leitzmann MF"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study reporting dietary calcium intake and incident prostate cancer risk with a multivariate relative risk estimate.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.63,
+        "effect_type": "RR",
+        "ci_lower": 1.27,
+        "ci_upper": 2.1,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 29133,
+        "cases": 1267,
+        "comparison_type": "dietary calcium >=2,000 mg/day versus <1,000 mg/day",
+        "design": "cohort",
+        "timing": "prediagnostic (baseline dietary assessment, 17-year follow-up)",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "Finland",
+        "ethnicity": "NA",
+        "population": "29,133 male smokers aged 50-69 years in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We examined dietary intakes of calcium and dairy products in relation to risk of prostate cancer in the Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study, a cohort of 29,133 male smokers aged 50-69 years at study entry.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During 17 years of follow-up, we ascertained 1,267 incident cases of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "The multivariate relative risk (RR) of prostate cancer for > or =2,000 mg/day compared to <1,000 mg/day of calcium intake was 1.63 (95% confidence interval (CI), 1.27-2.10; p trend < 0.0001).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "The multivariate relative risk (RR) of prostate cancer for > or =2,000 mg/day compared to <1,000 mg/day of calcium intake was 1.63 (95% confidence interval (CI), 1.27-2.10; p trend < 0.0001).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for > or =2,000 mg/day compared to <1,000 mg/day of calcium intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We examined dietary intakes of calcium and dairy products in relation to risk of prostate cancer in the Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "Dietary intake was assessed at baseline using a validated 276-item food use questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "A prospective study of dietary calcium, dairy products and prostate cancer risk (Finland)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "(Finland)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed at baseline using a validated 276-item food use questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17278090|Dairy|Prostate cancer",
+      "pmid": "17278090",
+      "pmcid": "",
+      "published_date": "2007-06-01",
+      "title": "A prospective study of dietary calcium, dairy products and prostate cancer risk (Finland).",
+      "authors": [
+        "Mitrou PN",
+        "Albanes D",
+        "Weinstein SJ",
+        "Pietinen P",
+        "Taylor PR",
+        "Virtamo J",
+        "Leitzmann MF"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The cohort reports total dairy intake in relation to incident prostate cancer risk with a quintile-contrast relative risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.26,
+        "effect_type": "RR",
+        "ci_lower": 1.04,
+        "ci_upper": 1.51,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": 29133,
+        "cases": 1267,
+        "comparison_type": "extreme quintiles of total dairy intake (highest vs lowest)",
+        "design": "cohort",
+        "timing": "prediagnostic (baseline dietary assessment, 17-year follow-up)",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "Finland",
+        "ethnicity": "NA",
+        "population": "29,133 male smokers aged 50-69 years in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We examined dietary intakes of calcium and dairy products in relation to risk of prostate cancer in the Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study, a cohort of 29,133 male smokers aged 50-69 years at study entry.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During 17 years of follow-up, we ascertained 1,267 incident cases of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Total dairy intake was also positively associated with risk of prostate cancer. The multivariate RR of prostate cancer comparing extreme quintiles of intake was 1.26 (95% CI, 1.04-1.51; p trend = 0.03).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "The multivariate RR of prostate cancer comparing extreme quintiles of intake was 1.26 (95% CI, 1.04-1.51; p trend = 0.03).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "p trend = 0.03",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "comparing extreme quintiles of intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "The results from this large prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, conclusion"
+          },
+          "timing": {
+            "excerpt": "Dietary intake was assessed at baseline using a validated 276-item food use questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "A prospective study of dietary calcium, dairy products and prostate cancer risk (Finland)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "(Finland)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Total dairy intake was also positively associated with risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17278090/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

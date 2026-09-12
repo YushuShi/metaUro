@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:38:50.348697-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d9d7b44c0a2a13940813cdb26b8be205c6914b189cb107bf50566f461d7f00d9",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "40254848",
+      "title": "Association between periodontitis and prostate cancer: A case-control study.",
+      "abstract": "Recent evidence suggests that chronic inflammation may play a role in the development and clinical course of cancer. In this context, periodontitis (PE) has been associated with prostate cancer (PC), but the results are still inconsistent. Therefore, the aim of this study was to evaluate the potential association between PE and PC, and their shared risk factors. This case-control study comprised 152 cases with PC and 220 controls. All participants underwent a complete periodontal examination, and sociodemographic and medical variables of interest were collected. The association between occurrence and severity of PC and covariates was assessed by binary and multinomial multivariate logistic regression, respectively. The cases had a higher prevalence (p = 0.012) and severity (p = 0.007) of PE. The occurrence of PC was associated with an educational level <9 years (adjusted odds ratio [OR] = 1.93), smoking (adjusted OR = 2.62), alcohol consumption (adjusted OR = 3.45), diabetes (adjusted OR = 0.32), chronic hypertension (adjusted OR = 2.03), and PE (adjusted OR = 1.80). Regarding the severity of PC, Gleason grades 1 and 2 were associated with PE (adjusted OR = 1.96), but Gleason grades 3-5 were not. PE was associated with the occurrence of PC. Males diagnosed with PE would potentially benefit from being screened for prostate alterations. Periodontitis is an infectious disease that affects the supporting structures of the teeth. It has been characterized as a chronic inflammatory stimulus with potential risk for the occurrence or worsening of the clinical course of cancer. We evaluated the potential relationship between periodontitis and prostate cancer, as well as their shared risk factors, in a case-control study comprising 372 male individuals. The participants were recruited in a urology outpatient clinic and underwent a complete periodontal examination. The results showed that individuals with prostate cancer presented a worse periodontal status and a higher prevalence and severity of periodontitis. Prostate cancer was mainly associated with educational level, smoking, alcohol consumption, and periodontitis. Individuals with periodontitis were 1.8 times more likely to have prostate cancer. Prostate-specific antigen levels in individuals with periodontitis were also significantly higher. We concluded that periodontitis was associated with the occurrence of prostate cancer. Therefore, males diagnosed with periodontitis would potentially benefit from being screened for prostate alterations.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Prostatic Neoplasms / epidemiology, complications",
+        "Case-Control Studies",
+        "Middle Aged",
+        "Risk Factors",
+        "Periodontitis / epidemiology, complications",
+        "Aged",
+        "Alcohol Drinking / epidemiology",
+        "Smoking / epidemiology",
+        "Educational Status",
+        "Neoplasm Grading",
+        "Hypertension / epidemiology, complications",
+        "Prevalence",
+        "Diabetes Mellitus / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "40254848",
+      "contexts": [
+        {
+          "context_id": "40254848|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

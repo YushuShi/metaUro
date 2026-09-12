@@ -1,0 +1,385 @@
+{
+  "schema_version": 1,
+  "receipt_id": "d38e7f6ae9a5c01edcd4c7e9a916afac9972ef133b13bfe8f6eddd2e7a989b48",
+  "requested_at": "2026-09-02T08:44:29.178240+08:00",
+  "received_at": "2026-09-02T08:44:58.198759+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "af7e70462fd4f33820b4851accd7b65d22616a44737f1232160df3139e2cb38b",
+  "attempt": 2,
+  "context_ids": [
+    "22527172|Oats|Prostate cancer",
+    "22527172|Whole-grain intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Oats": 1,
+    "Whole-grain intake": 1
+  },
+  "input_digest": "aecfe8c5c70c5c3b35df5a2fe6a64077dc32af29498acf0e994c3ffd99905508",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 14167,
+    "cached_input_tokens": 0,
+    "output_tokens": 4236,
+    "reasoning_tokens": 1493
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02651025",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "14fcd0c6-3230-4b53-b5d3-568b1f44fc3d",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02651025"
+  },
+  "output_sha256": "a0b137d7d722e07914fb9f557d15640dff753e5ea6e0a600035e40e1f1a91692",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22527172|Oats|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluates adolescent oatmeal intake in relation to total prostate cancer risk using multivariable logistic regression.\",\n      \"extraction\": {\n        \"effect_size\": 0.99,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.77,\n        \"ci_upper\": 1.27,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 2255,\n        \"cases\": 342,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Iceland\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"AGES-Reykjavik cohort of older Icelandic men\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Total (n=342) Non-PCa (n) PCa (n) n = 2,255 Low intake 1,183 203 High intake 730 139\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Table 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Total (n=342)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Table 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"High intake of oatmeal in adolescence (≥5 vs. ≤4 times/ week) was not significantly associated with risk of PCa diagnosis (OR = 0.99, 95% CI: 0.77-1.27)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Results\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"OR = 0.99, 95% CI: 0.77-1.27\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Results\"\n          },\n          \"p_value\": null,\n          \"comparison\": {\n            \"excerpt\": \"High intake of oatmeal in adolescence (≥5 vs. ≤4 times/ week)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Results\"\n          },\n          \"design\": {\n            \"excerpt\": \"In 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this study we investigated whether whole-grain consumption in different periods of life is associated with risk of prostate cancer in adult life in a prospective cohort study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Introduction\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In Iceland, rye and oatmeal were the main types of whole-grain in the diet during the first half of the 20 th century.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Introduction\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary habits were assessed for early-, mid- , and current life using a validated food frequency questionnaire (FFQ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Methods\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Unclear\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"22527172|Whole-grain intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study assesses early life rye bread whole-grain intake and total prostate cancer risk in Icelandic men.\",\n      \"extraction\": {\n        \"effect_size\": 0.76,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.59,\n        \"ci_upper\": 0.98,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 2258,\n        \"cases\": 342,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Iceland\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"AGES-Reykjavik cohort of older Icelandic men\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Total (n=342) Non-PCa (n) PCa (n) n = 2,258 Low intake 1,025 187 High intake 891 155\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Table 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Total (n=342)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Table 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Daily rye bread consumption in adolescence (vs. less than daily) was associated with a decreased risk of PCa diagnosis (OR = 0.76, 95% Confidence interval (CI): 0.59-0.98)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Results\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"OR = 0.76, 95% CI: 0.59-0.98\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Results\"\n          },\n          \"p_value\": null,\n          \"comparison\": {\n            \"excerpt\": \"Daily rye bread consumption in adolescence (vs. less than daily)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Results\"\n          },\n          \"design\": {\n            \"excerpt\": \"In 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this study we investigated whether whole-grain consumption in different periods of life is associated with risk of prostate cancer in adult life in a prospective cohort study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Introduction\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In Iceland, rye and oatmeal were the main types of whole-grain in the diet during the first half of the 20 th century.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Introduction\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary habits were assessed for early-, mid- , and current life using a validated food frequency questionnaire (FFQ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/\",\n            \"location\": \"Methods\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Unclear\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "22527172|Oats|Prostate cancer",
+      "pmid": "22527172",
+      "pmcid": "PMC3568695",
+      "published_date": "2012-06-01",
+      "title": "Rye bread consumption in early life and reduced risk of advanced prostate cancer.",
+      "authors": [
+        "Torfadottir JE",
+        "Valdimarsdottir UA",
+        "Mucci L",
+        "Stampfer M",
+        "Kasperzyk JL",
+        "Fall K",
+        "Tryggvadottir L",
+        "Aspelund T",
+        "Olafsson O",
+        "Harris TB",
+        "Jonsson E",
+        "Tulinius H",
+        "Adami HO",
+        "Gudnason V",
+        "Steingrimsdottir L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+      "exposure": "Oats",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluates adolescent oatmeal intake in relation to total prostate cancer risk using multivariable logistic regression.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.99,
+        "effect_type": "OR",
+        "ci_lower": 0.77,
+        "ci_upper": 1.27,
+        "p_value": 0.9372449283678691,
+        "ci_confidence_level": 95,
+        "total_n": 2255,
+        "cases": 342,
+        "comparison_type": "categorical",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Iceland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "AGES-Reykjavik cohort of older Icelandic men",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The current analysis is based on those men responding to questions on early life rye bread consumption (n = 2,258), midlife rye bread consumption (n = 2,260), early life oatmeal consumption (n = 2,255), midlife oatmeal consumption (n = 2,259) and midlife whole wheat bread consumption (n =2,255).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Table 3"
+          },
+          "cases": {
+            "excerpt": "Total (n=342)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Table 3"
+          },
+          "effect_size": {
+            "excerpt": "≤4 times/ week) was not associated with risk of prostate cancer diagnosis (OR = 0.99, 95% CI: 0.77-1.27), nor statistically significant with advanced prostate cancer (OR = 0.67, 95% CI: 0.37-1.20). High intake of oatmeal in midlife was not associated with prostate cancer risk and neither was current intake for either total prostate cancer (HR = 1.06, 95% CI: 0.74-1.52) nor advanced disease (HR = 0.99, 95% CI: 0.44-2.23).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Results"
+          },
+          "confidence_interval": {
+            "excerpt": "≤4 times/ week) was not significantly associated with risk of PCa diagnosis (OR = 0.99, 95% CI: 0.77-1.27) nor advanced PCa (OR = 0.67, 95% CI: 0.37-1.20).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "High intake of oatmeal in adolescence (≥5 vs. ≤4 times/ week)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "In 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "In this study we investigated whether whole-grain consumption in different periods of life is associated with risk of prostate cancer in adult life in a prospective cohort study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Introduction"
+          },
+          "continent": {
+            "excerpt": "In Iceland, rye and oatmeal were the main types of whole-grain in the diet during the first half of the 20 th century.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Introduction"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary habits were assessed for early-, mid- , and current life using a validated food frequency questionnaire (FFQ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.99,
+            "effect_type": "OR",
+            "ci_lower": 0.77,
+            "ci_upper": 1.27,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 40899,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "910782a83720e67dd1f67306db0070c3d5dd28acceecda13a539ab110ea053ac",
+      "pmc_source_receipt_digest": "2b1cecbc4b42a0577b1c30d0a5b37725ec71ba0d78630b8ccb710ab744c547f8",
+      "pmc_source_raw_sha256": "6aed9eb5f82745fe45b7ce22f86bdc3421dcce3f89b8630e2b1640ba3eea6dcf",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e46e52003f57877850816eeba672f0a9f1f4feec02cf90da46f27e948ca7d583"
+    },
+    {
+      "context_id": "22527172|Whole-grain intake|Prostate cancer",
+      "pmid": "22527172",
+      "pmcid": "PMC3568695",
+      "published_date": "2012-06-01",
+      "title": "Rye bread consumption in early life and reduced risk of advanced prostate cancer.",
+      "authors": [
+        "Torfadottir JE",
+        "Valdimarsdottir UA",
+        "Mucci L",
+        "Stampfer M",
+        "Kasperzyk JL",
+        "Fall K",
+        "Tryggvadottir L",
+        "Aspelund T",
+        "Olafsson O",
+        "Harris TB",
+        "Jonsson E",
+        "Tulinius H",
+        "Adami HO",
+        "Gudnason V",
+        "Steingrimsdottir L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+      "exposure": "Whole-grain intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study assesses early life rye bread whole-grain intake and total prostate cancer risk in Icelandic men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.76,
+        "effect_type": "OR",
+        "ci_lower": 0.59,
+        "ci_upper": 0.98,
+        "p_value": 0.03400255643671027,
+        "ci_confidence_level": 95,
+        "total_n": 2258,
+        "cases": 342,
+        "comparison_type": "categorical",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Iceland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "AGES-Reykjavik cohort of older Icelandic men",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The current analysis is based on those men responding to questions on early life rye bread consumption (n = 2,258), midlife rye bread consumption (n = 2,260), early life oatmeal consumption (n = 2,255), midlife oatmeal consumption (n = 2,259) and midlife whole wheat bread consumption (n =2,255).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Table 2"
+          },
+          "cases": {
+            "excerpt": "Total (n=342)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Table 2"
+          },
+          "effect_size": {
+            "excerpt": "less than daily) was associated with a decreased risk of PCa diagnosis (OR = 0.76, 95% Confidence interval (CI): 0.59-0.98), and of advanced PCa (OR = 0.47, 95% CI: 0.27-0.84).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Results"
+          },
+          "confidence_interval": {
+            "excerpt": "less than daily) was associated with a decreased risk of PCa diagnosis (OR = 0.76, 95% Confidence interval (CI): 0.59-0.98), and of advanced PCa (OR = 0.47, 95% CI: 0.27-0.84).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Daily rye bread consumption in adolescence (vs. less than daily)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "In 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "In this study we investigated whether whole-grain consumption in different periods of life is associated with risk of prostate cancer in adult life in a prospective cohort study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Introduction"
+          },
+          "continent": {
+            "excerpt": "In Iceland, rye and oatmeal were the main types of whole-grain in the diet during the first half of the 20 th century.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Introduction"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary habits were assessed for early-, mid- , and current life using a validated food frequency questionnaire (FFQ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3568695/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.76,
+            "effect_type": "OR",
+            "ci_lower": 0.59,
+            "ci_upper": 0.98,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 40899,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "910782a83720e67dd1f67306db0070c3d5dd28acceecda13a539ab110ea053ac",
+      "pmc_source_receipt_digest": "2b1cecbc4b42a0577b1c30d0a5b37725ec71ba0d78630b8ccb710ab744c547f8",
+      "pmc_source_raw_sha256": "6aed9eb5f82745fe45b7ce22f86bdc3421dcce3f89b8630e2b1640ba3eea6dcf",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "158d557cb6705f553c07dde15de7a8ae685aea0d7498f5e88fc7b4061de9ea32"
+    }
+  ]
+}

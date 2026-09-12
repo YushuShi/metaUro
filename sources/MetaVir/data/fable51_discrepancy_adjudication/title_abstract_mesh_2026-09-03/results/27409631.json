@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:35:19.226909-04:00",
+  "pmid": "27409631",
+  "work_key": "1182c2079533948fc7aa6887e2cb39efd0c90ca97adadb120f32e17e66d7db70",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/27409631_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "27409631",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "27409631|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Additional lifestyle aspects significantly predominant in cases included a reduced quality of sleep, emotional stress, low physical activity, tobacco smoking, alcohol consumption",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports alcohol as predominant in 'cases'; whether a prostate-specific (vs pooled cancer) comparison exists is not explicit.",
+        "one_sentence_explanation": "The Claude+Gemini INCLUDE is supported because this prostate cancer case-control study evaluates alcohol consumption versus controls and the abstract does not clearly establish that the prostate-specific estimate is inseparable."
+      },
+      {
+        "context_id": "27409631|Legumes|Prostate cancer",
+        "exposure": "Legumes",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Before diagnosis, both cases reported a greater mean consumption of meats and fats and lower intakes of fruits, green vegetables, cruciferous vegetables, legumes, nuts, seeds, and whole grains than the controls (all p < 0.001).",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": false,
+        "manual_review_reason": null,
+        "one_sentence_explanation": "The Claude+Gemini INCLUDE is supported because pre-diagnosis legume intake is compared between prostate cancer cases and controls in this case-control study, and no exclusion code is clearly established."
+      },
+      {
+        "context_id": "27409631|Whole-grain intake|Prostate cancer",
+        "exposure": "Whole-grain intake",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": "p < 0.001",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "whole grains than the controls (all p < 0.001)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives p < 0.001 for mean whole-grain intake (cases vs controls); ChatGPT's 0.001 approximates this but Claude+Gemini's 0.006 'categorical' value may be a different full-text estimate.",
+        "one_sentence_explanation": "The abstract reports p < 0.001 for lower pre-diagnosis whole-grain intake in cases versus controls, approximating ChatGPT's value, but the Claude+Gemini p = 0.006 categorical estimate cannot be verified or excluded from title, abstract, or MeSH."
+      }
+    ]
+  }
+}

@@ -1,0 +1,378 @@
+{
+  "schema_version": 1,
+  "receipt_id": "3565afaf1b194b1241079d5683919c599f88494cb48e4447dae0a08fc3c85872",
+  "requested_at": "2026-09-02T08:46:22.254854+08:00",
+  "received_at": "2026-09-02T08:47:03.189767+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "f542f593cb0b57387271824f265ca3d88d419ff39c4e9cfce4820b0434fcb223",
+  "attempt": 2,
+  "context_ids": [
+    "24563519|Selenium|Prostate cancer",
+    "24563519|Vitamin E|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Selenium": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "c308335c8ab2e1a7fc9d6b7735fb01889c6c3c5608253af3ab9db137a63572da",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12659,
+    "cached_input_tokens": 0,
+    "output_tokens": 5119,
+    "reasoning_tokens": 1391
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0286905",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c169b87a-0eb3-4860-b74a-0614e9355f99",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0286905"
+  },
+  "output_sha256": "1624a6a02d2d6b322f887db23fbd838d7000c6789487b5d79117c3084b565e6c",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"24563519|Selenium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-cohort study evaluated baseline toenail selenium concentration and selenium supplementation in relation to incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.76,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.44,\n        \"ci_upper\": 1.31,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4661,\n        \"cases\": 879,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"United States, Canada, Puerto Rico\",\n        \"ethnicity\": \"multiethnic\",\n        \"population\": \"SELECT trial participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Table 1. Distribution of baseline demographic and health-related characteristics in subcohort and prostate cancer case (PCa) patients: All men (n = 4661)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Table 3. Association of baseline toenail selenium concentration with risk of total, low-grade, and high-grade prostate cancer: placebo arm only... No. (subcohort, case patients) (1567, 879)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Table 3. Association of baseline toenail selenium concentration with risk of total, low-grade, and high-grade prostate cancer: placebo arm only... Q5 0.76 (0.44 to 1.31)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Table 3. Association of baseline toenail selenium concentration with risk of total, low-grade, and high-grade prostate cancer: placebo arm only... Q5 0.76 (0.44 to 1.31)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"There were no statistically significant differences in risk contrasting the lowest quintile with higher quintiles of toenail Se concentration, nor was there a statistically significant trend across quintiles (P ≥ .30 for all tests).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Table 3. Association of baseline toenail selenium concentration with risk of total, low-grade, and high-grade prostate cancer: placebo arm only... Q1 1.00 (referent)... Q5 0.76 (0.44 to 1.31)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"In this case–cohort study, case patients (n = 1739; high grade = 489) were men with baseline toenail samples available for analysis who were diagnosed with PCa before July 31, 2009.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico, black men aged 50 years or older or all other men aged 55 years or older, who had no history of PCa... were eligible to participate. Between July 2001 and May 2004, 35533 men were block-randomized... active follow-up continued through each participant’s final clinic visit\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Table 1. Distribution of baseline demographic and health-related characteristics in subcohort and prostate cancer case (PCa) patients: Race/ethnicity Black... Hispanic... White... Other\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Toenail Se concentration was measured by neutron activation analysis at the University of Missouri Research Reactor Center using previously described methods\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 4\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"24563519|Vitamin E|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-cohort study evaluated the effect of vitamin E supplementation on incident prostate cancer risk stratified by baseline selenium status.\",\n      \"extraction\": {\n        \"effect_size\": 1.63,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.11,\n        \"ci_upper\": 2.4,\n        \"p_value\": 0.02,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4661,\n        \"cases\": 879,\n        \"comparison_type\": \"supplement_vs_placebo\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"United States, Canada, Puerto Rico\",\n        \"ethnicity\": \"multiethnic\",\n        \"population\": \"SELECT trial participants\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Table 1. Distribution of baseline demographic and health-related characteristics in subcohort and prostate cancer case (PCa) patients: All men (n = 4661)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Table 5. Effect of vitamin E supplementation on risk of total, low-grade, and high-grade prostate cancer within quintiles of baseline toenail selenium concentration... No. (subcohort, case patients) (1569, 879)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 5\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Table 5. Effect of vitamin E supplementation on risk of total, low-grade, and high-grade prostate cancer within quintiles of baseline toenail selenium concentration... Q1–Q2 1.63 (1.11 to 2.40)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 5\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Table 5. Effect of vitamin E supplementation on risk of total, low-grade, and high-grade prostate cancer within quintiles of baseline toenail selenium concentration... Q1–Q2 1.63 (1.11 to 2.40)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 5\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"In the a posteriori tests, supplementation of men with toenail Se less than the 40th percentile increased the risks of total, low-grade, and high-grade disease by 63% (P = .02), 46% (P = .09), and 111% (P = .008), respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Results, paragraph 5\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Table 5. Effect of vitamin E supplementation on risk of total, low-grade, and high-grade prostate cancer within quintiles of baseline toenail selenium concentration: Vitamin E vs placebo\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 5\"\n          },\n          \"design\": {\n            \"excerpt\": \"In this case–cohort study, case patients (n = 1739; high grade = 489) were men with baseline toenail samples available for analysis who were diagnosed with PCa before July 31, 2009.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Between July 2001 and May 2004, 35533 men were block-randomized by study site to one of four groups: Se plus vitamin E; vitamin E plus placebo; Se plus placebo; or placebo plus placebo.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Table 1. Distribution of baseline demographic and health-related characteristics in subcohort and prostate cancer case (PCa) patients: Race/ethnicity Black... Hispanic... White... Other\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"In 2001, the US National Cancer Institute initiated the Selenium and Vitamin E Cancer Prevention Trial (SELECT), which tested whether selenium (Se; 200 μg/d from L-selenomethionine), vitamin E (400 IU/d of all rac-α- tocopheryl acetate) or both could reduce prostate cancer (PCa) risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/\",\n            \"location\": \"Introduction, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "24563519|Selenium|Prostate cancer",
+      "pmid": "24563519",
+      "pmcid": "PMC3975165",
+      "published_date": "2014-03-01",
+      "title": "Baseline selenium status and effects of selenium and vitamin e supplementation on prostate cancer risk.",
+      "authors": [
+        "Kristal AR",
+        "Darke AK",
+        "Morris JS",
+        "Tangen CM",
+        "Goodman PJ",
+        "Thompson IM",
+        "Meyskens FL",
+        "Goodman GE",
+        "Minasian LM",
+        "Parnes HL",
+        "Lippman SM",
+        "Klein EA"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24563519/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-cohort study evaluated baseline toenail selenium concentration and selenium supplementation in relation to incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.76,
+        "effect_type": "HR",
+        "ci_lower": 0.44,
+        "ci_upper": 1.31,
+        "p_value": 0.3241155331580288,
+        "ci_confidence_level": 95,
+        "total_n": 4661,
+        "cases": 879,
+        "comparison_type": "quintiles",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "SELECT trial participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "All men (n = 4661)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 1"
+          },
+          "cases": {
+            "excerpt": "(subcohort, case patients)† (1569, 879)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 3"
+          },
+          "effect_size": {
+            "excerpt": "0.76 (0.44 to 1.31)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "0.76 (0.44 to 1.31)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Results, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "In this case–cohort study, case patients (n = 1739; high grade = 489) were men with baseline toenail samples available for analysis who were diagnosed with PCa before July 31, 2009.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Methods, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Toenail Se concentration was measured by neutron activation analysis at the University of Missouri Research Reactor Center using previously described methods",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Methods, paragraph 4"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.76,
+            "effect_type": "HR",
+            "ci_lower": 0.44,
+            "ci_upper": 1.31,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 32154,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "7f56ea78de9572c46e5a47ab944bb60ae2e6a0f1c4f97e6ff120071dea5e9699",
+      "pmc_source_receipt_digest": "d90538b5d64e7bd3f601db55144b3f0aa603b1e4e053391b061eb6ef4b426310",
+      "pmc_source_raw_sha256": "515fd4349fe725878c75ab31eb3f75602ee92b28ddac807cd46d03a672a1e534",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e412490dcd932d10b635161bd2c6b03c40af5e9144eb934236c97ccb72f73cf4"
+    },
+    {
+      "context_id": "24563519|Vitamin E|Prostate cancer",
+      "pmid": "24563519",
+      "pmcid": "PMC3975165",
+      "published_date": "2014-03-01",
+      "title": "Baseline selenium status and effects of selenium and vitamin e supplementation on prostate cancer risk.",
+      "authors": [
+        "Kristal AR",
+        "Darke AK",
+        "Morris JS",
+        "Tangen CM",
+        "Goodman PJ",
+        "Thompson IM",
+        "Meyskens FL",
+        "Goodman GE",
+        "Minasian LM",
+        "Parnes HL",
+        "Lippman SM",
+        "Klein EA"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24563519/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-cohort study evaluated the effect of vitamin E supplementation on incident prostate cancer risk stratified by baseline selenium status.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.63,
+        "effect_type": "HR",
+        "ci_lower": 1.11,
+        "ci_upper": 2.4,
+        "p_value": 0.02,
+        "ci_confidence_level": 95,
+        "total_n": 4661,
+        "cases": 879,
+        "comparison_type": "supplement_vs_placebo",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "SELECT trial participants",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "All men (n = 4661)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 1"
+          },
+          "cases": {
+            "excerpt": "(subcohort, case patients)† (1569, 879)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 5"
+          },
+          "effect_size": {
+            "excerpt": "1.63 (1.11 to 2.40)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 5"
+          },
+          "confidence_interval": {
+            "excerpt": "1.63 (1.11 to 2.40)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 5"
+          },
+          "p_value": {
+            "excerpt": "In quintile 2, risks for total, low-grade, and high-grade cancer were increased by 92% ( P = .02), 77% ( P = .07), and 179% ( P = .007), respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Results, paragraph 5"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Table 5"
+          },
+          "design": {
+            "excerpt": "In this case–cohort study, case patients (n = 1739; high grade = 489) were men with baseline toenail samples available for analysis who were diagnosed with PCa before July 31, 2009.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Methods, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "Between July 2001 and May 2004, 35533 men were block-randomized by study site to one of four groups: Se plus vitamin E; vitamin E plus placebo; Se plus placebo; or placebo plus placebo.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "In 2001, the US National Cancer Institute initiated the Selenium and Vitamin E Cancer Prevention Trial (SELECT), which tested whether selenium (Se; 200 μg/d from L-selenomethionine), vitamin E (400 IU/d of all rac-α- tocopheryl acetate) or both could reduce prostate cancer (PCa) risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3975165/",
+            "location": "Introduction, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 32154,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "7f56ea78de9572c46e5a47ab944bb60ae2e6a0f1c4f97e6ff120071dea5e9699",
+      "pmc_source_receipt_digest": "d90538b5d64e7bd3f601db55144b3f0aa603b1e4e053391b061eb6ef4b426310",
+      "pmc_source_raw_sha256": "515fd4349fe725878c75ab31eb3f75602ee92b28ddac807cd46d03a672a1e534",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "9bd174841c2a786fde7a9fdf94a97f522165be47a23126ecf5a167e104efcf8e"
+    }
+  ]
+}

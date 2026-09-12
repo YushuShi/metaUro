@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:25:48.963195-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "3e0f5dbb864602a92a33ccf6c41e93152789b026c04965db653d4bd824e43ef0",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "16804523",
+      "title": "No association between green tea and prostate cancer risk in Japanese men: the Ohsaki Cohort Study.",
+      "abstract": "In a prospective study of 19,561 Japanese men, green-tea intake was not associated with a lower risk of prostate cancer (110 cases), the multivariate hazard ratio for men drinking > or =5 cups compared with <1 cup per day being 0.85 (95% confidence interval 0.50-1.43, trend P = 0.81).",
+      "mesh": [
+        "Cohort Studies",
+        "Humans",
+        "Japan / epidemiology",
+        "Male",
+        "Multivariate Analysis",
+        "Prospective Studies",
+        "Prostatic Neoplasms / diagnosis, diet therapy, prevention & control",
+        "Risk",
+        "Risk Factors",
+        "Tea"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "16804523",
+      "contexts": [
+        {
+          "context_id": "16804523|Tea|Prostate cancer",
+          "exposure": "Tea",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "19561",
+              "effect_measure_type": "HR",
+              "effect_size": "0.85",
+              "ci_lower": "0.5",
+              "ci_upper": "1.43",
+              "p_value": "0.81",
+              "comparison": "≥5 cups/day versus <1 cup/day of green tea"
+            },
+            "Claude+Gemini": {
+              "sample_size": "19561",
+              "effect_measure_type": "HR",
+              "effect_size": "0.6",
+              "ci_lower": "0.13",
+              "ci_upper": "2.68",
+              "p_value": "0.78",
+              "comparison": "extreme_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

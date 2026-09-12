@@ -1,0 +1,706 @@
+{
+  "schema_version": 1,
+  "receipt_id": "8b01e3f6b28f80e11ddf47d9574afb95b8df728bd8709c36de4b134657e21937",
+  "requested_at": "2026-09-02T08:38:24.079641+08:00",
+  "received_at": "2026-09-02T08:39:51.954140+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "2e43cc38c34a07825cd56203d38837956082ec25028c520ab25f2ec0431768e1",
+  "attempt": 2,
+  "context_ids": [
+    "17450530|Alpha-linolenic acid|Prostate cancer",
+    "17450530|Calcium|Prostate cancer",
+    "17450530|Omega-3 fatty acids|Prostate cancer",
+    "17450530|Tomato|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alpha-linolenic acid": 1,
+    "Calcium": 1,
+    "Omega-3 fatty acids": 1,
+    "Tomato": 1
+  },
+  "input_digest": "5b3747c5253e3cb74464d53d5e0ea8e71df32c248516950a1032e68e329dc7fd",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12576,
+    "cached_input_tokens": 0,
+    "output_tokens": 13400,
+    "reasoning_tokens": 8018
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.059682",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "ff47c241-b3b5-4248-9fda-72d42ca0a104",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.059682"
+  },
+  "output_sha256": "da1bf258bc8b08511bdd27dae86ba4cc2f6fcd53b27113e5d7879fc28dda0e8b",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"17450530|Alpha-linolenic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study reporting multivariable relative risks for alpha-linolenic acid intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.13,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.99,\n        \"ci_upper\": 1.28,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 47750,\n        \"cases\": 3544,\n        \"comparison_type\": \"high_vs_low\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"USA\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Health Professionals Follow-up Study (HPFS) male health professionals aged 40-75 years\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"These exclusions left 47,750 men, each of whom accrued follow-up time beginning on the month of return of the baseline questionnaire and ending on the month of diagnosis of prostate cancer, month of death from other causes, or January 31, 2002, whichever came first.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / Statistical analysis / paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"From 1986 to the end of the study period, January 31, 2002, in 673,706 person years, we documented 3,544 incident prostate adenocarcinoma cases after excluding 71 cases (about 2% of total) of stage T1a cancers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Results / paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"α-linolenic acid ... PSA Era (n = 2650) ... 1.13\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"α-linolenic acid ... PSA Era (n = 2650) ... (0.99–1.28)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"0.06 < p ≤ 0.10, for test for trend.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II / footnote 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Multivariable RR based on the high versus low category for each specified item (see Fig. 1 for cutpoints for the categories).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II / footnote 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Using data from the Health Professionals Follow-Up Study, we re-examined 10 factors ... using multivariable Cox regression in relation to multiple subcategories for prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This cohort is predominantly Caucasian (>91%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"We evaluated the validity of nutrient and food consumption measured by the questionnaire among a sample of 127 cohort members from the Boston area.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The food-frequency questionnaire / paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Diet was assessed through a semiquantitative food-frequency questionnaire; the methodology and validation of the questionnaire was previously described in detail.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The food-frequency questionnaire / paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"17450530|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study assessing dietary and supplement calcium intake in relation to incident prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.01,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.74,\n        \"ci_upper\": 1.39,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 47750,\n        \"cases\": 3544,\n        \"comparison_type\": \"high_vs_low\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"USA\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Health Professionals Follow-up Study (HPFS) male health professionals aged 40-75 years\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"These exclusions left 47,750 men, each of whom accrued follow-up time beginning on the month of return of the baseline questionnaire and ending on the month of diagnosis of prostate cancer, month of death from other causes, or January 31, 2002, whichever came first.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / Statistical analysis / paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"From 1986 to the end of the study period, January 31, 2002, in 673,706 person years, we documented 3,544 incident prostate adenocarcinoma cases after excluding 71 cases (about 2% of total) of stage T1a cancers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Results / paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Calcium intake ... PSA Era (n = 2650) ... 1.01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Calcium intake ... PSA Era (n = 2650) ... (0.74–1.39)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"calcium intake was associated with increased risk of total prostate cancer in the earlier era but not in the PSA era\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Results / Effect modification by time period as a surrogate of PSA era / paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Multivariable RR based on the high versus low category for each specified item (see Fig. 1 for cutpoints for the categories).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II / footnote 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Using data from the Health Professionals Follow-Up Study, we re-examined 10 factors ... using multivariable Cox regression in relation to multiple subcategories for prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This cohort is predominantly Caucasian (>91%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"We evaluated the validity of nutrient and food consumption measured by the questionnaire among a sample of 127 cohort members from the Boston area.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The food-frequency questionnaire / paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"In addition, we assessed current use, brand, dose and duration of use of supplements, including calcium supplements.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The food-frequency questionnaire / paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"17450530|Omega-3 fatty acids|Prostate cancer\",\n      \"status\": \"EXCLUDE\",\n      \"exclusion_code\": \"EXCLUDE_EXPOSURE\",\n      \"reason\": \"The study evaluated alpha-linolenic acid specifically rather than total omega-3 fatty acid intake.\",\n      \"extraction\": null,\n      \"jbi\": null\n    },\n    {\n      \"context_id\": \"17450530|Tomato|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study reporting multivariable relative risks for tomato sauce intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.86,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.7,\n        \"ci_upper\": 1.04,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 47750,\n        \"cases\": 3544,\n        \"comparison_type\": \"high_vs_low\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"USA\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Health Professionals Follow-up Study (HPFS) male health professionals aged 40-75 years\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"These exclusions left 47,750 men, each of whom accrued follow-up time beginning on the month of return of the baseline questionnaire and ending on the month of diagnosis of prostate cancer, month of death from other causes, or January 31, 2002, whichever came first.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / Statistical analysis / paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"From 1986 to the end of the study period, January 31, 2002, in 673,706 person years, we documented 3,544 incident prostate adenocarcinoma cases after excluding 71 cases (about 2% of total) of stage T1a cancers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Results / paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Tomato sauce intake ... PSA Era (n = 2650) ... 0.86\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Tomato sauce intake ... PSA Era (n = 2650) ... (0.70–1.04)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"0.06 < p ≤ 0.10, for test for trend.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II / footnote 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Multivariable RR based on the high versus low category for each specified item (see Fig. 1 for cutpoints for the categories).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Table II / footnote 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Using data from the Health Professionals Follow-Up Study, we re-examined 10 factors ... using multivariable Cox regression in relation to multiple subcategories for prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This cohort is predominantly Caucasian (>91%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The study population / paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"We evaluated the validity of nutrient and food consumption measured by the questionnaire among a sample of 127 cohort members from the Boston area.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The food-frequency questionnaire / paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Diet was assessed through a semiquantitative food-frequency questionnaire; the methodology and validation of the questionnaire was previously described in detail.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/\",\n            \"location\": \"Methods / The food-frequency questionnaire / paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:19:13.980578+08:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Invalid full-text exclusion code for 17450530|Omega-3 fatty acids|Prostate cancer: 'EXCLUDE_EXPOSURE'",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "da1bf258bc8b08511bdd27dae86ba4cc2f6fcd53b27113e5d7879fc28dda0e8b"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "exclusion_code_alias",
+      "context_id": "17450530|Omega-3 fatty acids|Prostate cancer",
+      "field": "results[2].exclusion_code",
+      "before": "EXCLUDE_EXPOSURE",
+      "after": "S2-EXPOSURE-MISMATCH",
+      "rule": "exact_exposure_mismatch_alias"
+    }
+  ],
+  "validated_results": [
+    {
+      "context_id": "17450530|Alpha-linolenic acid|Prostate cancer",
+      "pmid": "17450530",
+      "pmcid": "PMC2430098",
+      "published_date": "2007-10-01",
+      "title": "Risk factors for prostate cancer incidence and progression in the health professionals follow-up study.",
+      "authors": [
+        "Giovannucci E",
+        "Liu Y",
+        "Platz EA",
+        "Stampfer MJ",
+        "Willett WC"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+      "exposure": "Alpha-linolenic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study reporting multivariable relative risks for alpha-linolenic acid intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.13,
+        "effect_type": "RR",
+        "ci_lower": 0.99,
+        "ci_upper": 1.28,
+        "p_value": 0.062210656521328664,
+        "ci_confidence_level": 95,
+        "total_n": 47750,
+        "cases": 3544,
+        "comparison_type": "high_vs_low",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "north_america",
+        "country": "USA",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Health Professionals Follow-up Study (HPFS) male health professionals aged 40-75 years",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "These exclusions left 47,750 men, each of whom accrued follow-up time beginning on the month of return of the baseline questionnaire and ending on the month of diagnosis of prostate cancer, month of death from other causes, or January 31, 2002, whichever came first.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / Statistical analysis / paragraph 1"
+          },
+          "cases": {
+            "excerpt": "From 1986 to the end of the study period, January 31, 2002, in 673,706 person years, we documented 3,544 incident prostate adenocarcinoma cases after excluding 71 cases (about 2% of total) of stage T1a cancers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Results / paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.13 3 (0.99–1.28)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II"
+          },
+          "confidence_interval": {
+            "excerpt": "1.13 3 (0.99–1.28)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II"
+          },
+          "p_value": {
+            "excerpt": "0.06 < p ≤ 0.10, for test for trend.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II / footnote 3"
+          },
+          "comparison": {
+            "excerpt": "Multivariable RR based on the high versus low category for each specified item (see Fig. 1 for cutpoints for the categories).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II / footnote 2"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The study population / paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The study population / paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Diet was assessed through a semiquantitative food-frequency questionnaire; the methodology and validation of the questionnaire was previously described in detail.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The food-frequency questionnaire / paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.13,
+            "effect_type": "RR",
+            "ci_lower": 0.99,
+            "ci_upper": 1.28,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 41232,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "651f5856968df6672381ca5f4b315544ede4323e9bbe6cd1c0d689b007e7d95f",
+      "pmc_source_receipt_digest": "94b0660753a579eb681c75f81a4302251bbaea4eaab14f4ad04040393fcf88f0",
+      "pmc_source_raw_sha256": "9c5df262ac6377baa05cf4a4768cf39418ac6a47764eb6d0563828ce26bf7579",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "74388645fa8302ce688c4654cac12406000df5cb8aad06f6b6b51727dddb5157"
+    },
+    {
+      "context_id": "17450530|Calcium|Prostate cancer",
+      "pmid": "17450530",
+      "pmcid": "PMC2430098",
+      "published_date": "2007-10-01",
+      "title": "Risk factors for prostate cancer incidence and progression in the health professionals follow-up study.",
+      "authors": [
+        "Giovannucci E",
+        "Liu Y",
+        "Platz EA",
+        "Stampfer MJ",
+        "Willett WC"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study assessing dietary and supplement calcium intake in relation to incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.01,
+        "effect_type": "RR",
+        "ci_lower": 0.74,
+        "ci_upper": 1.39,
+        "p_value": 0.950664860941019,
+        "ci_confidence_level": 95,
+        "total_n": 47750,
+        "cases": 3544,
+        "comparison_type": "high_vs_low",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "north_america",
+        "country": "USA",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Health Professionals Follow-up Study (HPFS) male health professionals aged 40-75 years",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "These exclusions left 47,750 men, each of whom accrued follow-up time beginning on the month of return of the baseline questionnaire and ending on the month of diagnosis of prostate cancer, month of death from other causes, or January 31, 2002, whichever came first.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / Statistical analysis / paragraph 1"
+          },
+          "cases": {
+            "excerpt": "From 1986 to the end of the study period, January 31, 2002, in 673,706 person years, we documented 3,544 incident prostate adenocarcinoma cases after excluding 71 cases (about 2% of total) of stage T1a cancers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Results / paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.01 (0.74–1.39)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II"
+          },
+          "confidence_interval": {
+            "excerpt": "1.01 (0.74–1.39)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II"
+          },
+          "p_value": {
+            "excerpt": "calcium intake was associated with increased risk of total prostate cancer in the earlier era but not in the PSA era",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Results / Effect modification by time period as a surrogate of PSA era / paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "Multivariable RR based on the high versus low category for each specified item (see Fig. 1 for cutpoints for the categories).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II / footnote 2"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The study population / paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The study population / paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "In addition, we assessed current use, brand, dose and duration of use of supplements, including calcium supplements.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The food-frequency questionnaire / paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.01,
+            "effect_type": "RR",
+            "ci_lower": 0.74,
+            "ci_upper": 1.39,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 41232,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "651f5856968df6672381ca5f4b315544ede4323e9bbe6cd1c0d689b007e7d95f",
+      "pmc_source_receipt_digest": "94b0660753a579eb681c75f81a4302251bbaea4eaab14f4ad04040393fcf88f0",
+      "pmc_source_raw_sha256": "9c5df262ac6377baa05cf4a4768cf39418ac6a47764eb6d0563828ce26bf7579",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e719b86f47bc89450d745d1d67ffb33fec5889622a279293eabce52ca81babb5"
+    },
+    {
+      "context_id": "17450530|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "17450530",
+      "pmcid": "PMC2430098",
+      "published_date": "2007-10-01",
+      "title": "Risk factors for prostate cancer incidence and progression in the health professionals follow-up study.",
+      "authors": [
+        "Giovannucci E",
+        "Liu Y",
+        "Platz EA",
+        "Stampfer MJ",
+        "Willett WC"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The study evaluated alpha-linolenic acid specifically rather than total omega-3 fatty acid intake.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "total_n",
+        "cases",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": null,
+        "cases": null,
+        "comparison_type": null,
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men in the Health Professionals Follow-Up Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": null,
+          "cases": null,
+          "effect_size": {
+            "excerpt": "only 4 factors had a clear statistically significant association with overall incident prostate cancer: African-American race, positive family history, higher tomato sauce intake (inversely) and alpha-linolenic acid intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "high intakes of total energy, calcium and alpha-linolenic acid were associated with a statistically significant increased risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "predictors of prostate cancer incidence or advanced prostate cancer in this cohort",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "intakes of calcium, tomato sauce and alpha-linolenic acid",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "EXCLUDE",
+      "full_text_status": "EXCLUDE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 41232,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "651f5856968df6672381ca5f4b315544ede4323e9bbe6cd1c0d689b007e7d95f",
+      "pmc_source_receipt_digest": "94b0660753a579eb681c75f81a4302251bbaea4eaab14f4ad04040393fcf88f0",
+      "pmc_source_raw_sha256": "9c5df262ac6377baa05cf4a4768cf39418ac6a47764eb6d0563828ce26bf7579",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "461c86d1330fdda20a2f92905c2f464892dbf9abc1cc6337e1788737d9b941cd"
+    },
+    {
+      "context_id": "17450530|Tomato|Prostate cancer",
+      "pmid": "17450530",
+      "pmcid": "PMC2430098",
+      "published_date": "2007-10-01",
+      "title": "Risk factors for prostate cancer incidence and progression in the health professionals follow-up study.",
+      "authors": [
+        "Giovannucci E",
+        "Liu Y",
+        "Platz EA",
+        "Stampfer MJ",
+        "Willett WC"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17450530/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study reporting multivariable relative risks for tomato sauce intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.86,
+        "effect_type": "RR",
+        "ci_lower": 0.7,
+        "ci_upper": 1.04,
+        "p_value": 0.1353428947004629,
+        "ci_confidence_level": 95,
+        "total_n": 47750,
+        "cases": 3544,
+        "comparison_type": "high_vs_low",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "north_america",
+        "country": "USA",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Health Professionals Follow-up Study (HPFS) male health professionals aged 40-75 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "These exclusions left 47,750 men, each of whom accrued follow-up time beginning on the month of return of the baseline questionnaire and ending on the month of diagnosis of prostate cancer, month of death from other causes, or January 31, 2002, whichever came first.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / Statistical analysis / paragraph 1"
+          },
+          "cases": {
+            "excerpt": "From 1986 to the end of the study period, January 31, 2002, in 673,706 person years, we documented 3,544 incident prostate adenocarcinoma cases after excluding 71 cases (about 2% of total) of stage T1a cancers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Results / paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.86 3 (0.70–1.04)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II"
+          },
+          "confidence_interval": {
+            "excerpt": "0.86 3 (0.70–1.04)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II"
+          },
+          "p_value": {
+            "excerpt": "0.06 < p ≤ 0.10, for test for trend.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II / footnote 3"
+          },
+          "comparison": {
+            "excerpt": "Multivariable RR based on the high versus low category for each specified item (see Fig. 1 for cutpoints for the categories).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Table II / footnote 2"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The study population / paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Health Professionals Follow-up Study cohort was initiated in 1986, when 51,529 U.S. male health professionals, ages 40–75, completed a mailed questionnaire",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The study population / paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Diet was assessed through a semiquantitative food-frequency questionnaire; the methodology and validation of the questionnaire was previously described in detail.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2430098/",
+            "location": "Methods / The food-frequency questionnaire / paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.86,
+            "effect_type": "RR",
+            "ci_lower": 0.7,
+            "ci_upper": 1.04,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 41232,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "651f5856968df6672381ca5f4b315544ede4323e9bbe6cd1c0d689b007e7d95f",
+      "pmc_source_receipt_digest": "94b0660753a579eb681c75f81a4302251bbaea4eaab14f4ad04040393fcf88f0",
+      "pmc_source_raw_sha256": "9c5df262ac6377baa05cf4a4768cf39418ac6a47764eb6d0563828ce26bf7579",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "f7ef770459857d45f553cee0d3aa0f15ae2ae863b25d7879aef3771df3992053"
+    }
+  ]
+}

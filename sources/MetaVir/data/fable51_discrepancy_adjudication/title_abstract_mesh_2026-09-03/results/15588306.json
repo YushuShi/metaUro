@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:25:17.807506-04:00",
+  "pmid": "15588306",
+  "work_key": "cc6ff31ac9978c6b2d8a733cce4e5149f028169993ca92d5f4e61699171d1b67",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/15588306_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "15588306",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "15588306|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": "95% CI 0.98-4.78 (lowest vs highest tertile of total drinking years; only CI in abstract)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "OR 2.16, 95% CI 0.98-4.78, p for trend <0.05",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives only the drinking-years CI (0.98-4.78) matching ChatGPT; Claude+Gemini's 0.43-1.6 is absent and may belong to a different full-text estimate; neither pipeline's exact p value appears in the abstract.",
+        "one_sentence_explanation": "The abstract's only CI (0.98-4.78) matches ChatGPT's drinking-years estimate, whereas Claude+Gemini's 0.43-1.6 is absent and may belong to a different full-text alcohol estimate, so the target CI cannot be uniquely mapped."
+      },
+      {
+        "context_id": "15588306|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": "2.16 (lowest vs highest tertile of total drinking years; only numeric estimate in abstract)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Men in the lowest tertile of total drinking years had a two-fold prostate cancer risk than men in the highest tertile (OR 2.16, 95% CI 0.98-4.78, p for trend <0.05).",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports only the drinking-years OR (2.16) matching ChatGPT; Claude+Gemini's 0.83 is absent and may be the full-text total lifetime ethanol estimate, so the target 'Alcohol' estimate cannot be uniquely mapped.",
+        "one_sentence_explanation": "The abstract verbatim supports ChatGPT's OR 2.16 for drinking years, but Claude+Gemini's 0.83 may reflect the null total-ethanol estimate available only in full text, so the target alcohol estimate cannot be uniquely mapped."
+      }
+    ]
+  }
+}

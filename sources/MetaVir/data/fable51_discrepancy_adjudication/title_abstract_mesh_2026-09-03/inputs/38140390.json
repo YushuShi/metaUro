@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:38:07.579446-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "ce1dd5c67ed9c5f110885cf6d5ff59bdc31ef3d132c8effcbfa5368ae11ab870",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "38140390",
+      "title": "The Impact of Nutrient Supply on Prostate Cancer Risk Worldwide.",
+      "abstract": "We aim to explore the association between nutrient supply and the incidence of prostate cancer globally. We utilized national nutrient supply data from the Food and Agriculture Organization of the United Nations for 150 countries, including the average supply of total protein (APS), animal protein (AAPS), fat (AFS), animal protein/total protein ratio (ATR), and share of dietary energy supply derived from cereals, roots, and tubers (CR). Prostate cancer incidence data were sourced from the Global Burden Disease 2019 (GBD2019). Correlation, regression analyses, and subgroup analysis were conducted. Our findings imply that incidence of prostate cancer is significantly correlated to APS (ρ = 0.394, <i>p</i> < 0.01), AAPS (ρ = 0.560, <i>p</i> < 0.01), AFS (ρ = 0.522, <i>p</i> < 0.01), ATR (ρ = 0.592, <i>p</i> < 0.01), and CR (ρ = -0.667, <i>p</i> < 0.01). After adjusting for confounders, regression analysis showed linear relationships between the AAPS (β = 0.605, <i>p</i> = 0.006), ATR (β = 70.76, <i>p</i> = 0.005), CR (β = -1.4451, <i>p</i> < 0.01), and age-standardized incidence rates (ASIRs) of prostate cancer, while no association was observed with APS (β = 0.030, <i>p</i> = 0.483) or AFS (β = 0.237, <i>p</i> = 0.405). Subgroup analysis suggested that dietary supply indicators were associated with ASIR in middle, middle-high, and high SDI, but not in countries with low and middle-low SDI. In summary, prostate cancer rates globally correlate significantly with AAPS, ATR, and CR, but not with APS and AFS. When considering the SDI of countries, the relationship is generally more pronounced in economically advanced nations, but not evident in low and middle-low SDI countries.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Nutrients",
+        "Diet",
+        "Prostatic Neoplasms / epidemiology",
+        "Incidence",
+        "Global Health"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "38140390",
+      "contexts": [
+        {
+          "context_id": "38140390|Animal protein intake|Prostate cancer",
+          "exposure": "Animal protein intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

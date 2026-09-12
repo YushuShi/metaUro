@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>metaUro · Settings</title>
+<link rel="stylesheet" href="/static/analysis-settings.css"><link rel="stylesheet" href="/static/metauro.css">
+<script>window.MetaUro={{ {'source': source, 'prefix': prefix, 'current': current, 'scopes': scopes, 'page': page, 'track': track}|tojson }};</script>
+<script src="/static/metauro.js"></script><script src="/static/analysis-settings.js"></script>
+</head><body>{% include '_header.html' %}
+<main class="uro-settings" id="settings-page">
+  <div class="uro-page-heading"><div><p class="uro-eyebrow">Analysis preferences</p><h1>Settings</h1><p>Choose the reference risk and how to display your analysis.</p></div><a class="uro-button" data-uro-nav="evidence" href="{{ prefix }}/?scope={{ current.id }}">Return to evidence</a></div>
+  <div class="uro-settings-layout">
+    <aside class="uro-settings-aside"><a href="#reference">Reference risk</a><a href="#display">Effect display</a><a href="#planning">Sample size</a><a href="#hierarchy">Exposure hierarchy</a><p id="settings-save-status" role="status">Preferences are saved in this browser. Saved evidence stays unchanged.</p><button class="uro-secondary" id="reset-settings" type="button">Reset this source’s settings</button></aside>
+    <div class="uro-settings-sections">
+      <section class="settings-section" id="reference"><div class="uro-section-title"><span>01</span><h2>Reference risk</h2></div>
+        <label class="settings-field uro-scope-field" for="disease">Disease scope<select id="disease">{% for group in scopes|groupby('group') %}<optgroup label="{{ group.grouper }}">{% for item in group.list %}<option value="{{ item.label }}" data-source="{{ item.source }}" data-scope-key="{{ item.id }}" data-disease="{{ item.label }}" {% if item.id == current.id %}selected{% endif %}>{{ item.label }}</option>{% endfor %}</optgroup>{% endfor %}</select></label>
+        <p id="settings-disease-name" class="settings-disease-name"></p><p id="settings-disease-definition"></p>
+        <div class="settings-grid">
+          <label class="settings-field" for="settings-baseline-source">Risk source<select id="settings-baseline-source"><option value="seer">Published SEER risk</option><option value="manual">Manual reference risk</option></select></label>
+          <label class="settings-field" for="settings-age">Starting age<select id="settings-age"></select></label>
+          <label class="settings-field" for="settings-years">Observation interval (years)<select id="settings-years"></select></label>
+          <label class="settings-field" for="settings-sex">Sex<select id="settings-sex"></select></label>
+          <label class="settings-field" for="settings-race">Race / ethnicity<select id="settings-race"></select></label>
+          <label class="settings-field settings-hidden" id="settings-manual-field" for="settings-manual-risk">Manual reference risk (%)<input type="number" id="settings-manual-risk" min="0.000001" max="99.999999" step="any" placeholder="e.g. 1.2" aria-describedby="settings-baseline-note"></label>
+        </div>
+        <div class="settings-risk-preview" aria-live="polite"><output id="settings-risk-value">Loading…</output><p id="settings-risk-context"></p></div>
+        <p id="settings-baseline-note"></p><p id="settings-source-citation"></p>
+        <p class="uro-footnote">Manual risk is saved separately for each disease. A subtype never inherits its parent cancer’s baseline.</p>
+      </section>
+      <section class="settings-section" id="display"><div class="uro-section-title"><span>02</span><h2>Effect display</h2></div>
+        <div class="settings-grid"><label class="settings-field" for="settings-effect-measure">Effect measure<select id="settings-effect-measure"><option value="RR">Risk ratio (RR)</option><option value="OR">Odds ratio (OR)</option><option value="HR">Hazard ratio (HR)</option></select></label><label class="settings-field" for="settings-forest-scale">Forest plot labels<select id="settings-forest-scale"><option value="both">Original &amp; natural log</option><option value="original">Original values</option><option value="log">Natural log values</option></select></label></div>
+        <p>The forest plot keeps a logarithmic axis. These settings change the displayed estimates and labels for your current analysis.</p>
+      </section>
+      <section class="settings-section" id="planning"><div class="uro-section-title"><span>03</span><h2>Sample size planning</h2></div>
+        <div class="settings-grid"><label class="settings-field" for="settings-study-design">Study design<select id="settings-study-design"><option value="prospective">Prospective</option><option value="retrospective">Case-control</option></select></label><label class="settings-field settings-hidden" id="settings-exposure-rate-field" for="settings-exposure-rate">Exposure among controls (%)<input type="number" id="settings-exposure-rate" min="0.000001" max="99.999999" step="any"></label><label class="settings-field" id="power-allocation-field" for="power-controls-per-case">Controls per case<input type="number" id="power-controls-per-case" min="0.000001" step="any" value="1"></label></div>
+        <p>Prospective planning uses RR and the selected reference risk. Case-control planning uses OR, exposure among controls, and the controls-to-cases ratio.</p>
+      </section>
+      <section class="settings-section" id="hierarchy"><div class="uro-section-title"><span>04</span><h2>Exposure hierarchy</h2></div><p>Inspect which related exposures are included under a broader category.</p><label class="settings-field" for="settings-hierarchy-search">Find an exposure<input type="search" id="settings-hierarchy-search" placeholder="Search exposures"></label><div class="settings-hierarchy" id="settings-exposure-hierarchy">Loading hierarchy…</div></section>
+    </div>
+  </div>
+</main><footer class="uro-footer">metaUro · metaPee + MetaVir · Saved evidence preserved</footer></body></html>

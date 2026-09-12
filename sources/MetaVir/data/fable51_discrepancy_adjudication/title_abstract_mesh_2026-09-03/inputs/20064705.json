@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:48.527421-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "308925d9bcff86bd76d0925e1d7084174b270cb0536a90ab84c793ec838b3062",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "20064705",
+      "title": "Plasma 25-hydroxyvitamin D and prostate cancer risk: the multiethnic cohort.",
+      "abstract": "The purpose of this study was to examine the relationship of plasma 25-hydroxyvitamin D (25(OH)D) concentrations to prostate cancer within a large multiethnic cohort in Hawaii and California using a nested case-control design. The study included 329 incidents of prostate cancer of African American, Native Hawaiian, Japanese, Latino and White ancestry, and 656 controls matched on age, race/ethnicity, date/time of blood collection and fasting status. Conditional logistic regression was used to estimate odds ratios (ORs) and 95% confidence intervals (95% CI). No association with prostate cancer risk was found in an analysis based on quartiles of 25(OH)D. When clinically defined cutpoints were used, there was no increased risk for the lowest 25(OH)D concentration (OR for <20 versus 30-<50ng/ml=1.10, 95% CI=0.68-1.78), while there was a suggestive increased risk for higher concentrations (OR for 50ng/ml=1.52, 95% CI=0.92-2.51). The findings from this prospective study of men in the Multiethnic Cohort do not support the hypothesis that vitamin D lowers the risk of prostate cancer. Further follow-up is warranted to determine whether the findings are consistent across ethnic groups.",
+      "mesh": [
+        "Aged",
+        "California / epidemiology",
+        "Case-Control Studies",
+        "Hawaii / epidemiology",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, epidemiology, ethnology",
+        "Risk Factors",
+        "Vitamin D / analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "20064705",
+      "contexts": [
+        {
+          "context_id": "20064705|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "985",
+              "effect_measure_type": "OR",
+              "effect_size": "1.1",
+              "ci_lower": "0.68",
+              "ci_upper": "1.78",
+              "p_value": "0.6978268496096117",
+              "comparison": "<20 versus 30-<50 ng/ml"
+            },
+            "Claude+Gemini": {
+              "sample_size": "985",
+              "effect_measure_type": "OR",
+              "effect_size": "1.17",
+              "ci_lower": "0.72",
+              "ci_upper": "1.89",
+              "p_value": "0.6",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

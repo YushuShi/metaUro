@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:13.221129-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d5a2a19eda0f886acabf7ad38cfe91530bbf671bac9b65ab27f9b1d965c99358",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12034581",
+      "title": "Serum lycopene, other serum carotenoids, and risk of prostate cancer in US Blacks and Whites.",
+      "abstract": "Epidemiologic studies investigating the relation between individual carotenoids and risk of prostate cancer have produced inconsistent results. To further explore these associations and to search for reasons prostate cancer incidence is over 50% higher in US Blacks than Whites, the authors analyzed the serum levels of individual carotenoids in 209 cases and 228 controls in a US multicenter, population-based case-control study (1986-1989) that included comparable numbers of Black men and White men aged 40-79 years. Lycopene was inversely associated with prostate cancer risk (comparing highest with lowest quartiles, odds ratio (OR) = 0.65, 95% confidence interval (CI): 0.36, 1.15; test for trend, p = 0.09), particularly for aggressive disease (comparing extreme quartiles, OR = 0.37, 95% CI: 0.15, 0.94; test for trend, p = 0.04). Other carotenoids were positively associated with risk. For all carotenoids, patterns were similar for Blacks and Whites. However, in both the controls and the Third National Health and Nutrition Examination Survey, serum lycopene concentrations were significantly lower in Blacks than in Whites, raising the possibility that differences in lycopene exposure may contribute to the racial disparity in incidence. In conclusion, the results, though not statistically significant, suggest that serum lycopene is inversely related to prostate cancer risk in US Blacks and Whites.",
+      "mesh": [
+        "Adult",
+        "Black or African American / statistics & numerical data",
+        "Aged",
+        "Carotenoids / blood",
+        "Case-Control Studies",
+        "Chi-Square Distribution",
+        "Confounding Factors, Epidemiologic",
+        "Humans",
+        "Incidence",
+        "Logistic Models",
+        "Lycopene",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Risk Factors",
+        "Statistics, Nonparametric",
+        "United States / epidemiology",
+        "White People / statistics & numerical data"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12034581",
+      "contexts": [
+        {
+          "context_id": "12034581|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.65",
+              "ci_lower": "0.36",
+              "ci_upper": "1.15",
+              "p_value": "0.09",
+              "comparison": "highest versus lowest serum lycopene quartiles"
+            },
+            "Claude+Gemini": {
+              "sample_size": "437",
+              "effect_measure_type": "OR",
+              "effect_size": "0.65",
+              "ci_lower": "0.36",
+              "ci_upper": "1.15",
+              "p_value": "0.09",
+              "comparison": "highest versus lowest quartile of serum lycopene"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

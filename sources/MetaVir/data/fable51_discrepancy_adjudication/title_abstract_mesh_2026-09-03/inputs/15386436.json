@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:44.868384-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "3824130693f4fd15990dc34b724c166304bf7c0e5bf7eede6f47d7e4234d4c1f",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15386436",
+      "title": "Alcohol consumption and risk of prostate cancer in middle-aged men.",
+      "abstract": "Alcohol consumption is a modifiable lifestyle factor that may affect prostate cancer risk. Alcohol alters the hormonal milieu and contains chemical substances such as flavonoids (red wine), which may alter tumor cell growth. Data from a population-based case-control study in King County, WA, were utilized to evaluate the association of alcohol consumption with prostate cancer in middle-aged men. A total of 753 newly diagnosed prostate cancer cases, 40-64 years of age, participated in the study. Seven hundred three control subjects, frequency matched to cases by age, were selected through random digit dialing. All participants completed an in-person interview on lifetime alcohol consumption and other risk factors for prostate cancer. Logistic regression models were used to estimate odds ratios (OR) and assess significance (95% confidence intervals [CI]). All tests of statistical significance were two-sided. No clear association with prostate cancer risk was seen for overall alcohol consumption. Each additional glass of red wine consumed per week showed a statistically significant 6% decrease in relative risk (OR = 0.94; 95% CI = 0.90-0.98), and there was evidence for a decline in risk estimates across increasing categories of red wine intake (trend p = 0.02). No clear associations were seen for consumption of beer or liquor. Our present study suggests that consumption of beer or liquor is not associated with prostate cancer. There may be, however, a reduced relative risk associated with increasing level of red wine consumption. Further research is needed to evaluate the potential negative association between red wine intake and prostate cancer risk.",
+      "mesh": [
+        "Adult",
+        "Black or African American / statistics & numerical data",
+        "Alcohol Drinking",
+        "Beer",
+        "Case-Control Studies",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / epidemiology, prevention & control",
+        "Risk Assessment",
+        "SEER Program",
+        "Washington",
+        "White People / statistics & numerical data",
+        "Wine"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15386436",
+      "contexts": [
+        {
+          "context_id": "15386436|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.94",
+              "ci_lower": "0.9",
+              "ci_upper": "0.98",
+              "p_value": "0.004396622011783204",
+              "comparison": "Per additional glass of red wine consumed per week"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1456",
+              "effect_measure_type": "OR",
+              "effect_size": "0.94",
+              "ci_lower": "0.9",
+              "ci_upper": "0.98",
+              "p_value": null,
+              "comparison": "Each additional glass of red wine consumed per week (continuous)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

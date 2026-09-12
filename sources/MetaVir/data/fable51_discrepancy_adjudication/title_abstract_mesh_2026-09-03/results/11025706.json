@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:21:26.283847-04:00",
+  "pmid": "11025706",
+  "work_key": "60da4d0ac6e2d1c49d26313ee3000f0ce47b17baf19e3aed5b3ad54a3634f444",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/11025706_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "11025706",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "11025706|Polyunsaturated fat (PUFA)|Prostate cancer",
+        "exposure": "Polyunsaturated fat (PUFA)",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE (ELIGIBLE_NOT_POOLABLE)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "amount of saturated and polyunsaturated fat consumption of patients with prostatic carcinoma and controls",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract states PUFA was assessed in cases vs controls but reports only a total-fat null result; PUFA-specific estimate may exist only in full text, and cancer ascertainment was screen-based.",
+        "one_sentence_explanation": "The abstract states polyunsaturated fat consumption was separately assessed in prostatic carcinoma cases versus controls in a prospective incidence study, so no exclusion code is clearly established and Claude+Gemini's ELIGIBLE_NOT_POOLABLE (INCLUDE) is supported over ChatGPT's S2-NO-TARGET-ESTIMATE."
+      }
+    ]
+  }
+}

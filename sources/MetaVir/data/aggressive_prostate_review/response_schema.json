@@ -1,0 +1,219 @@
+{
+  "type": "object",
+  "properties": {
+    "reviews": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pmid": {
+            "type": "string"
+          },
+          "article_classification": {
+            "type": "string",
+            "enum": [
+              "general_only",
+              "aggressive_only",
+              "both",
+              "uncertain"
+            ]
+          },
+          "aggressive_definition": {
+            "type": "string"
+          },
+          "aggressive_definition_excerpt": {
+            "type": "string"
+          },
+          "study_design": {
+            "type": "string"
+          },
+          "prospective_cohort": {
+            "type": [
+              "boolean",
+              "null"
+            ]
+          },
+          "cohort_total_n": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "cohort_total_n_excerpt": {
+            "type": "string"
+          },
+          "general_case_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "aggressive_case_count": {
+            "type": [
+              "number",
+              "null"
+            ]
+          },
+          "reason": {
+            "type": "string"
+          },
+          "estimate_classifications": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "row_id": {
+                  "type": "string"
+                },
+                "endpoint": {
+                  "type": "string",
+                  "enum": [
+                    "general",
+                    "aggressive",
+                    "nonaggressive",
+                    "survival",
+                    "uncertain"
+                  ]
+                },
+                "supported_by_abstract": {
+                  "type": "boolean"
+                },
+                "endpoint_support_source": {
+                  "type": "string",
+                  "enum": [
+                    "abstract",
+                    "existing_evidence",
+                    "none"
+                  ]
+                },
+                "endpoint_excerpt": {
+                  "type": "string"
+                },
+                "reason": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "row_id",
+                "endpoint",
+                "supported_by_abstract",
+                "endpoint_support_source",
+                "endpoint_excerpt",
+                "reason"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "additional_estimates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "exposure_key": {
+                  "type": "string"
+                },
+                "endpoint": {
+                  "type": "string",
+                  "enum": [
+                    "general",
+                    "aggressive"
+                  ]
+                },
+                "effect_size": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "lower_ci": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "upper_ci": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "effect_type": {
+                  "type": [
+                    "string",
+                    "null"
+                  ],
+                  "enum": [
+                    "RR",
+                    "HR",
+                    "OR",
+                    "IRR",
+                    null
+                  ]
+                },
+                "comparison": {
+                  "type": "string"
+                },
+                "cases": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "sample_size": {
+                  "type": [
+                    "number",
+                    "null"
+                  ]
+                },
+                "effect_excerpt": {
+                  "type": "string"
+                },
+                "count_excerpt": {
+                  "type": "string"
+                },
+                "endpoint_definition": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "exposure_key",
+                "endpoint",
+                "effect_size",
+                "lower_ci",
+                "upper_ci",
+                "effect_type",
+                "comparison",
+                "cases",
+                "sample_size",
+                "effect_excerpt",
+                "count_excerpt",
+                "endpoint_definition"
+              ],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": [
+          "pmid",
+          "article_classification",
+          "aggressive_definition",
+          "aggressive_definition_excerpt",
+          "study_design",
+          "prospective_cohort",
+          "cohort_total_n",
+          "cohort_total_n_excerpt",
+          "general_case_count",
+          "aggressive_case_count",
+          "reason",
+          "estimate_classifications",
+          "additional_estimates"
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": [
+    "reviews"
+  ],
+  "additionalProperties": false
+}

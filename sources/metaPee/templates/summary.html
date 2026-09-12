@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evidence Summary | MetaPee</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="{{ url_for('static', filename='i18n.js') }}?v=2.0" defer></script>
+<script src="/static/subexposures.js" defer></script>
+</head>
+
+<body>
+    <header class="summary-header">
+        <div class="logo">MetaPee</div>
+        <p>Evidence Summary</p>
+        <nav class="header-actions" aria-label="Site navigation">
+            {% include '_language_picker.html' %}
+            {% include '_subexposure_toggle.html' %}
+            <a href="/summary?include_subexposures={{ include_subexposures }}" class="header-action" aria-current="page">Summary</a>
+            <a href="/about" class="header-action header-action--primary">
+                <svg class="header-action-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </a>
+        </nav>
+    </header>
+
+    <main class="summary-main">
+        <a href="/?include_subexposures={{ include_subexposures }}" class="summary-back-link">← Back to evidence tool</a>
+
+        <section class="summary-intro" aria-labelledby="summary-title">
+            <p class="summary-eyebrow">Cross-exposure overview</p>
+            <h1 id="summary-title">Urinary System Cancers Evidence Summary</h1>
+            <p>Compare pooled incidence estimates across nutritional exposure categories.</p>
+        </section>
+
+        {% if summary_scopes %}
+        <form class="summary-scope-picker" action="{{ url_for('summary') }}" method="get">
+            <input type="hidden" name="include_subexposures" value="{{ include_subexposures }}">
+            <label for="summary-scope">Disease Scope</label>
+            <select id="summary-scope" name="scope" onchange="this.form.submit()">
+                {% for scope in summary_scopes %}
+                <option value="{{ scope.key }}" data-parent-key="{{ scope.parent_key or '' }}" data-hierarchy-depth="{{ scope.hierarchy_depth }}"{% if scope.key == selected_scope_key %} selected{% endif %}>{{ ('\u00a0\u00a0' * scope.hierarchy_depth) }}{{ scope.label }}</option>
+                {% endfor %}
+            </select>
+        </form>
+        {% endif %}
+
+        {% if summary_scope %}
+        <div class="summary-results">
+            <div class="summary-results-heading">
+                <div>
+                    <p class="summary-eyebrow">Current scope</p>
+                    <h2>{{ selected_scope_label }}</h2>
+                </div>
+                <div class="summary-counts">
+                    <span>{{ summary_scope.workbooks.combined.exposure_count }} combined exposure estimates</span>
+                    <span>{{ summary_scope.workbooks.dietary.exposure_count }} dietary-only estimates</span>
+                </div>
+            </div>
+
+            <section class="summary-section" aria-labelledby="combined-heading">
+                <div class="summary-section-heading">
+                    <div>
+                        <h2 id="combined-heading">All eligible nutritional evidence</h2>
+                        <p>Random-effects estimates grouped by nutritional exposure category.</p>
+                    </div>
+                    {% if summary_scope.workbooks.combined.available %}
+                    <a class="summary-download" href="{{ url_for('summary_workbook', scope_key=selected_scope_key, dataset='combined', include_subexposures=include_subexposures) }}">Download workbook</a>
+                    {% endif %}
+                </div>
+                <div class="summary-plot-grid summary-plot-grid--forest">
+                    {% for plot_name, plot_title in [('forest-protective', 'Protective associations'), ('forest-harmful', 'Harmful associations')] %}
+                    {% set plot = summary_scope.plots[plot_name] %}
+                    <article class="summary-plot-card">
+                        <h3>{{ plot_title }}</h3>
+                        {% if plot.available %}
+                        <object class="summary-pdf summary-pdf--forest" data-localized-plot
+                            data="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, v=plot_version, include_subexposures=include_subexposures) }}#view=FitH"
+                            type="application/pdf" aria-label="{{ plot_title }} for {{ selected_scope_label }}">
+                            <p>PDF preview is unavailable. <a data-localized-plot href="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, include_subexposures=include_subexposures) }}">Open the plot</a>.</p>
+                        </object>
+                        <a class="plot-open-link" data-localized-plot href="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, include_subexposures=include_subexposures) }}" target="_blank" rel="noopener">Open full-size plot ↗</a>
+                        {% else %}
+                        <p class="summary-plot-unavailable">At least two eligible effect estimates per exposure are required for this panel.</p>
+                        {% endif %}
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="summary-section" aria-labelledby="dietary-heading">
+                <div class="summary-section-heading">
+                    <div>
+                        <h2 id="dietary-heading">Dietary-intake evidence</h2>
+                        <p>Estimates restricted to studies measuring dietary intake.</p>
+                    </div>
+                    {% if summary_scope.workbooks.dietary.available %}
+                    <a class="summary-download" href="{{ url_for('summary_workbook', scope_key=selected_scope_key, dataset='dietary', include_subexposures=include_subexposures) }}">Download workbook</a>
+                    {% endif %}
+                </div>
+                <div class="summary-plot-grid summary-plot-grid--forest">
+                    {% for plot_name, plot_title in [('forest-protective-dietary', 'Protective associations'), ('forest-harmful-dietary', 'Harmful associations')] %}
+                    {% set plot = summary_scope.plots[plot_name] %}
+                    <article class="summary-plot-card">
+                        <h3>{{ plot_title }}</h3>
+                        {% if plot.available %}
+                        <object class="summary-pdf summary-pdf--forest" data-localized-plot
+                            data="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, v=plot_version, include_subexposures=include_subexposures) }}#view=FitH"
+                            type="application/pdf" aria-label="Dietary {{ plot_title|lower }} for {{ selected_scope_label }}">
+                            <p>PDF preview is unavailable. <a data-localized-plot href="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, include_subexposures=include_subexposures) }}">Open the plot</a>.</p>
+                        </object>
+                        <a class="plot-open-link" data-localized-plot href="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, include_subexposures=include_subexposures) }}" target="_blank" rel="noopener">Open full-size plot ↗</a>
+                        {% else %}
+                        <p class="summary-plot-unavailable">Insufficient dietary-intake evidence is available for this panel.</p>
+                        {% endif %}
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            <section class="summary-section" aria-labelledby="heterogeneity-heading">
+                <div class="summary-section-heading">
+                    <div>
+                        <h2 id="heterogeneity-heading">Heterogeneity assessment</h2>
+                        <p>Cross-exposure comparisons of pooled effects, Egger's test, and I².</p>
+                    </div>
+                </div>
+                <div class="summary-plot-grid">
+                    {% for plot_name, plot_title in [('effect-heterogeneity', 'Effect size vs heterogeneity'), ('egger-heterogeneity', "Egger's test vs heterogeneity")] %}
+                    {% set plot = summary_scope.plots[plot_name] %}
+                    <article class="summary-plot-card">
+                        <h3>{{ plot_title }}</h3>
+                        {% if plot.available %}
+                        <object class="summary-pdf" data-localized-plot
+                            data="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, v=plot_version, include_subexposures=include_subexposures) }}#view=FitH"
+                            type="application/pdf" aria-label="{{ plot_title }} for {{ selected_scope_label }}">
+                            <p>PDF preview is unavailable. <a data-localized-plot href="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, include_subexposures=include_subexposures) }}">Open the plot</a>.</p>
+                        </object>
+                        <a class="plot-open-link" data-localized-plot href="{{ url_for('summary_plot', scope_key=selected_scope_key, plot_name=plot_name, include_subexposures=include_subexposures) }}" target="_blank" rel="noopener">Open full-size plot ↗</a>
+                        {% else %}
+                        <p class="summary-plot-unavailable">Insufficient multi-study exposure estimates are available for this diagnostic.</p>
+                        {% endif %}
+                    </article>
+                    {% endfor %}
+                </div>
+            </section>
+
+            {% if eligibility_note %}
+            <p class="summary-method-note"><strong>Summary eligibility:</strong> {{ eligibility_note }}</p>
+            {% endif %}
+        </div>
+        {% else %}
+        <section class="summary-empty-state">
+            <h2>Summary plots are not available yet</h2>
+            <p>Run the audited summary-plot build after the evidence caches are populated.</p>
+        </section>
+        {% endif %}
+    </main>
+</body>
+
+</html>

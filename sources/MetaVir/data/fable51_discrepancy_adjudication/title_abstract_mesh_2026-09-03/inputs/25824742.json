@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:50.104153-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "144948af21ebaee76fbbfada1711ca703f421f330f63ab2196c35295dbecf3d4",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25824742",
+      "title": "The Fok1 vitamin D receptor gene polymorphism and 25(OH) D serum levels and prostate cancer among Jordanian men.",
+      "abstract": "Prostate cancer (PCa) is one of the most commonly diagnosed neoplasms and the second leading cause of cancer death in men in the Western world. Vitamin D (1,25dihydroxy vitamin D) is linked to many biological processes that influence oncogenesis but data on relations between its genetic variants and cancer risk have been inconsistent. The aim of this study was to determine associations between a vitamin D genetic polymorphism and 25-hydroxyvitamin D [25(OH)D] levels and prostate cancer. Genomic DNA was extracted from 124 Jordanian prostate cancer patients and 100 healthy volunteers. Ethical approval was granted from the ethical committee at Hashemite University and written consent was given by all patients. PCR was used to amplify the vitamin D receptor Fok1 polymorphism fragment. 25(OH)D serum levels were measured by competitive immunoassay. All genotypes were in Hardy-Weinberg equilibrium. Genotype frequency for Fok1 genotypes FF, Ff and ff was 30.7%, 61.3% and 8.06%, for prostate cancer patients, while frequencies for the control group was 28.0%, 66.0% and 6.0%, respectively, with no significant differences. Vitamin D serum level was significantly lower in prostate cancer patients (mean 7.7 ng/ml) compared to the control group (21.8 ng/ml). No significant association was noted between 25(OH)D and VDR Fok1 gene polymorphism among Jordanians overall, but significant associations were evident among prostate cancer patients (FF, Ff and ff : 25(OH)D levels of 6.2, 8.2 and 9.9) and controls (19.0, 22.5 and 26.3, respectively). An inverse association was noted between 25(OH)D serum level less than 10 ng/ml and prostate cancer risk (OR 35.5 and 95% CI 14.3- 88.0). There is strong inverse association between 25(OH)D serum level less than 10 ng/ml level and prostate cancer risk.",
+      "mesh": [
+        "Biomarkers, Tumor / analysis",
+        "Case-Control Studies",
+        "Deoxyribonucleases, Type II Site-Specific / genetics",
+        "Follow-Up Studies",
+        "Genotype",
+        "Humans",
+        "Jordan",
+        "Male",
+        "Neoplasm Staging",
+        "Polymorphism, Genetic / genetics",
+        "Prognosis",
+        "Prostatic Neoplasms / blood, genetics",
+        "Receptors, Calcitriol / genetics",
+        "Risk Factors",
+        "Vitamin D / analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25824742",
+      "contexts": [
+        {
+          "context_id": "25824742|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "35.5",
+              "ci_lower": "14.3",
+              "ci_upper": "88",
+              "p_value": "1.3558885950948714e-14",
+              "comparison": "25(OH)D serum level <10 ng/ml versus an unspecified reference group"
+            },
+            "Claude+Gemini": {
+              "sample_size": "224",
+              "effect_measure_type": "OR",
+              "effect_size": "35.5",
+              "ci_lower": "14.3",
+              "ci_upper": "88",
+              "p_value": null,
+              "comparison": "25(OH)D serum level less than 10 ng/ml versus higher levels"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

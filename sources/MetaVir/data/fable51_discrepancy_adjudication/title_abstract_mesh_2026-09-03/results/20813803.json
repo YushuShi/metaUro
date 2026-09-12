@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:29:50.013064-04:00",
+  "pmid": "20813803",
+  "work_key": "97f61488fec8f077ee71d1f191366346f81f6e14097388473a03f69d30daaa32",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/20813803_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "20813803",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "20813803|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CHATGPT_CORRECT",
+        "adjudicated_value": "95% CI 1.13, 1.37",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "hazard ratio = 1.25, 95% confidence interval: 1.13, 1.37",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Claude+Gemini CI 1.11-1.33 and p=0.001 are absent from title/abstract/MeSH and may belong to a different full-text estimate; ChatGPT's p value is also not in the abstract.",
+        "one_sentence_explanation": "The abstract reports 95% CI 1.13–1.37 for the ≥6 drinks daily estimate, matching ChatGPT's CI, while the Claude+Gemini CI 1.11–1.33 and p=0.001 are not present in the allowed evidence."
+      },
+      {
+        "context_id": "20813803|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CHATGPT_CORRECT",
+        "adjudicated_value": "HR 1.25 (≥6 drinks daily vs nondrinkers; nonadvanced prostate cancer)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Risk of nonadvanced prostate cancer was 25% higher for men consuming ≥6 drinks daily (hazard ratio = 1.25, 95% confidence interval: 1.13, 1.37)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Claude+Gemini HR 1.21 is absent from title/abstract/MeSH and may be a different full-text estimate (e.g., total prostate cancer); comparison labeled only 'categorical'.",
+        "one_sentence_explanation": "The abstract explicitly reports HR 1.25 for ≥6 drinks daily versus nondrinkers, supporting ChatGPT, whereas the Claude+Gemini value 1.21 does not appear in the allowed evidence."
+      }
+    ]
+  }
+}

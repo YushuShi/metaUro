@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:57.088360-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "07ca4fd101a6b4ede4141a2be80e41e4eeb732dede9897e82bd3655bd7ab3af1",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25858172",
+      "title": "Both serum 25-hydroxyvitamin D and calcium levels may increase the risk of incident prostate cancer in Caribbean men of African ancestry.",
+      "abstract": "Circulating 25-hydroxyvitamin D [25(OH)D] concentrations have been associated with both higher and lower risk of prostate cancer (PCa), whereas elevated levels of circulating calcium has been related to higher risks. However, there are few studies that account for effects of both calcium and 25(OH)D concentrations on incident PCa in a black population. We examined these relationships in a case-control study of men 40-80 years old with newly diagnosed, histologically confirmed PCa in Jamaica, a tropical country. Mean serum calcium concentrations was higher among cases (2.32 ± 0.19 mmol/L) than controls, (2.27 ± 0.30 mmol/L) (P = 0.023) however, there were no differences in 25(OH)D by cancer status (cases, 33.67 ± 12.71 ng/mL; controls (32.25 ± 12.59 ng/mL). Serum calcium was not correlated with 25(OH)D (partial correlation: r, 0.06; P = 0.287). Multivariable-adjusted models showed a positive linear relationship between PCa and serum calcium (OR, 1.12; CI, 1.00-1.25 per 0.1 nmol/L). Serum 25(OH)D concentration also showed a positive association with PCa (OR, 1.23; CI, 1.01-1.49 per 10 ng/mL). The odds of PCa in men with serum 25(OH)D tertile 2 was OR, 2.18; CI, 1.04-4.43 and OR, 2.47 CI, 1.20-4.90 for tertile 3 (P(trend) = 0.013). Dietary intakes of calcium showed no relationship with PCa. Despite the strong relationship between serum calcium and vitamin D the mechanism by which each affects prostate cancer risk in men of African ancestry needs additional investigation.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Black People / ethnology",
+        "Calcium / metabolism",
+        "Calcium, Dietary / administration & dosage",
+        "Case-Control Studies",
+        "Humans",
+        "Jamaica / ethnology",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / blood, ethnology",
+        "Risk Factors",
+        "Vitamin D / analogs & derivatives, metabolism"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25858172",
+      "contexts": [
+        {
+          "context_id": "25858172|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "472",
+              "effect_measure_type": "OR",
+              "effect_size": "1.12",
+              "ci_lower": "1",
+              "ci_upper": "1.25",
+              "p_value": "0.04649987227386298",
+              "comparison": "Per 0.1 mmol/L increase in serum calcium"
+            },
+            "Claude+Gemini": {
+              "sample_size": "476",
+              "effect_measure_type": "OR",
+              "effect_size": "1.12",
+              "ci_lower": "1",
+              "ci_upper": "1.25",
+              "p_value": "0.269",
+              "comparison": "continuous"
+            }
+          }
+        },
+        {
+          "context_id": "25858172|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "337",
+              "effect_measure_type": "OR",
+              "effect_size": "1.23",
+              "ci_lower": "1.01",
+              "ci_upper": "1.49",
+              "p_value": "0.013",
+              "comparison": "Per 10 ng/mL increase in serum 25-hydroxyvitamin D; multivariable-adjusted tertile estimates were also reported"
+            },
+            "Claude+Gemini": {
+              "sample_size": "348",
+              "effect_measure_type": "OR",
+              "effect_size": "2.47",
+              "ci_lower": "1.2",
+              "ci_upper": "4.9",
+              "p_value": "0.013",
+              "comparison": "tertiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

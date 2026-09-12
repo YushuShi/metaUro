@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:24:44.867518-04:00",
+  "pmid": "15208621",
+  "work_key": "954a9af7ecc5101767a4261424632cf86ff7070b2d737a3e9f9835469a7eb346",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/15208621_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "15208621",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "15208621|Fermented foods|Prostate cancer",
+        "exposure": "Fermented foods",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "the adjusted odds ratio being 7.05 (95% CI: 3.12-15.90) for the highest relative to the lowest quartile of intake",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "The CI 3.12-15.90 in the abstract is for total preserved food; no CI or p value for fermented soy products appears in title/abstract/MeSH.",
+        "one_sentence_explanation": "The only CI in the abstract (3.12-15.90) attaches to total preserved food, not fermented foods, and the record lacks any CI or p value for the fermented-food-specific estimate, so neither pipeline claim can be confirmed."
+      },
+      {
+        "context_id": "15208621|Fermented foods|Prostate cancer",
+        "exposure": "Fermented foods",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "The total amount of preserved food consumed was positively associated with cancer risk, the adjusted odds ratio being 7.05 (95% CI: 3.12-15.90)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract's OR 7.05 refers to total preserved food, not fermented soy products; the fermented-food-specific estimate (Claude+Gemini 2.02) is not reported in title/abstract/MeSH and may come from full text.",
+        "one_sentence_explanation": "The abstract's OR 7.05 belongs to total preserved food intake rather than fermented foods, and no numeric estimate for fermented soy products is given, so the Claude+Gemini value 2.02 cannot be verified from allowed evidence."
+      }
+    ]
+  }
+}

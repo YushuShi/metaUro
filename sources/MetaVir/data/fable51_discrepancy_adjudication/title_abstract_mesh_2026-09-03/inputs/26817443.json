@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:21.663785-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d568d3540ee7948e2a80cd09311ab5e0a2bee085233d70b3cff9cd316dd77009",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "26817443",
+      "title": "Higher plasma levels of lysophosphatidylcholine 18:0 are related to a lower risk of common cancers in a prospective metabolomics study.",
+      "abstract": "First metabolomics studies have indicated that metabolic fingerprints from accessible tissues might be useful to better understand the etiological links between metabolism and cancer. However, there is still a lack of prospective metabolomics studies on pre-diagnostic metabolic alterations and cancer risk. Associations between pre-diagnostic levels of 120 circulating metabolites (acylcarnitines, amino acids, biogenic amines, phosphatidylcholines, sphingolipids, and hexoses) and the risks of breast, prostate, and colorectal cancer were evaluated by Cox regression analyses using data of a prospective case-cohort study including 835 incident cancer cases. The median follow-up duration was 8.3 years among non-cases and 6.5 years among incident cases of cancer. Higher levels of lysophosphatidylcholines (lysoPCs), and especially lysoPC a C18:0, were consistently related to lower risks of breast, prostate, and colorectal cancer, independent of background factors. In contrast, higher levels of phosphatidylcholine PC ae C30:0 were associated with increased cancer risk. There was no heterogeneity in the observed associations by lag time between blood draw and cancer diagnosis. Changes in blood lipid composition precede the diagnosis of common malignancies by several years. Considering the consistency of the present results across three cancer types the observed alterations point to a global metabolic shift in phosphatidylcholine metabolism that may drive tumorigenesis.",
+      "mesh": [
+        "Biomarkers, Tumor / metabolism",
+        "Breast Neoplasms / metabolism",
+        "Carnitine / analogs & derivatives, metabolism",
+        "Cohort Studies",
+        "Colorectal Neoplasms / metabolism",
+        "Female",
+        "Humans",
+        "Lipid Metabolism",
+        "Lipids / blood",
+        "Lysophosphatidylcholines / metabolism",
+        "Male",
+        "Middle Aged",
+        "Neoplasms / metabolism",
+        "Prospective Studies",
+        "Prostatic Neoplasms / metabolism"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "26817443",
+      "contexts": [
+        {
+          "context_id": "26817443|Phosphatidylcholine|Prostate cancer",
+          "exposure": "Phosphatidylcholine",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "774",
+              "effect_measure_type": "HR",
+              "effect_size": "0.57",
+              "ci_lower": "0.33",
+              "ci_upper": "0.98",
+              "p_value": "0.01388",
+              "comparison": "Highest versus lowest quartile of plasma lysoPC a C18:0"
+            },
+            "Claude+Gemini": {
+              "sample_size": "25540",
+              "effect_measure_type": "HR",
+              "effect_size": "1.89",
+              "ci_lower": "1.06",
+              "ci_upper": "3.36",
+              "p_value": "0.00194",
+              "comparison": "highest_vs_lowest_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

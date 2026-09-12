@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "receipt_id": "dec5d8df78634d718071fc57c44c60c3556761e214ca2e43a75e65f03e74b24b",
+  "requested_at": "2026-09-02T07:22:07.593327+08:00",
+  "received_at": "2026-09-02T07:22:17.872861+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "328744dcd4c44e2fc4c0362bd1d7c98d0845f301007ca4783b4b817a96ba8cf5",
+  "attempt": 1,
+  "context_ids": [
+    "1451068|Vitamin D|Prostate cancer",
+    "1460479|Alcohol|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "d74a8a5516f5d633badba3a9e6a9cd84bfd89443f50008b49f9e0f8cc15f173f",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5270,
+    "cached_input_tokens": 0,
+    "output_tokens": 641,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.042375",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3c67b1c1-a616-4a39-81a3-b641df040055",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.042375"
+  },
+  "output_sha256": "cbe6253f896c2fb281cf741588cbfa25f85574a7563aa1b65f5977ae4ae0c61c",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"1451068|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The exposure analyzed is county-level ultraviolet radiation rather than dietary or circulating vitamin D, with vitamin D invoked only as a hypothesized mechanism, and the endpoint is prostate cancer mortality.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1460479|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"The study reports only associations of alcohol intake and other characteristics with serum sex hormone levels, providing no prostate cancer incidence results.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "1451068|Vitamin D|Prostate cancer",
+      "pmid": "1451068",
+      "pmcid": "",
+      "published_date": "1992-12-15",
+      "title": "Geographic patterns of prostate cancer mortality. Evidence for a protective effect of ultraviolet radiation.",
+      "authors": [
+        "Hanchette CL",
+        "Schwartz GG"
+      ],
+      "journal": "Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1451068/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The exposure analyzed is county-level ultraviolet radiation rather than dietary or circulating vitamin D, with vitamin D invoked only as a hypothesized mechanism, and the endpoint is prostate cancer mortality.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1460479|Alcohol|Prostate cancer",
+      "pmid": "1460479",
+      "pmcid": "",
+      "published_date": "1992-12-01",
+      "title": "Determinants of sex hormone levels in men as useful indices in hormone-related disorders.",
+      "authors": [
+        "Kato I",
+        "Nomura A",
+        "Stemmermann GN",
+        "Chyou PH"
+      ],
+      "journal": "Journal of clinical epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1460479/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "The study reports only associations of alcohol intake and other characteristics with serum sex hormone levels, providing no prostate cancer incidence results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

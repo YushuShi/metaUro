@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "receipt_id": "70a76b9436abcddd0a3f5eb1c84450998ffc5bdd0f3504ab42a0f4cd88dee7b5",
+  "requested_at": "2026-09-02T09:21:40.882942+08:00",
+  "received_at": "2026-09-02T09:22:03.380438+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "1db6a2163083debaef461f4d36c77638d8acad7ce04b15f1eb6736b89607b755",
+  "attempt": 1,
+  "context_ids": [
+    "18505967|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin D": 1
+  },
+  "input_digest": "cac1de4bf7df9d9b99ecf3e4cfd43b24fe9debed96ef262688f4f260a6a91b7b",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13456,
+    "cached_input_tokens": 0,
+    "output_tokens": 3802,
+    "reasoning_tokens": 2276
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.024349500000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "d747e68f-c24e-4afa-899a-76803b8c0e6e",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.024349500000000003"
+  },
+  "output_sha256": "c9f2ff8f7b238fd09935133d0d868c53ff8adc2358faa591752f43c34e343185",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"18505967|Vitamin D|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-control study examined serum 25(OH)D concentration in relation to incident prostate cancer risk within the PLCO Cancer Screening Trial.\",\n      \"extraction\": {\n        \"effect_size\": 1.18,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.83,\n        \"ci_upper\": 1.68,\n        \"p_value\": 0.20,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 1530,\n        \"cases\": 749,\n        \"comparison_type\": \"highest vs lowest quintile\",\n        \"design\": \"nested case-control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Screening arm participants of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"which left 749 case patients and 781 control subjects.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: SUBJECTS AND METHODS / Study Population, paragraph 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The study included 749 case patients with incident prostate cancer who were diagnosed 1 to 8 years after blood draw\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: Abstract / Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Multivariable model 2 OR (95% CI) ... 1.18 (0.83 to 1.68)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: Table 3, row Multivariable model 2 OR (95% CI)\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.18 (0.83 to 1.68)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: Table 3, row Multivariable model 2 OR (95% CI)\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Multivariable model 2 OR (95% CI) ... P trend .20\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: Table 3, row Multivariable model 2 OR (95% CI)\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Quintile of serum 25-hydroxy vitamin D ... 1 ... 5\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: Table 3, header row\"\n          },\n          \"design\": {\n            \"excerpt\": \"case–control study nested within the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: Abstract / Background, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The findings of this large prospective study do not support the hypothesis that vitamin D is associated with decreased risk of prostate cancer\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: Abstract / Conclusion, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The PLCO Cancer Screening Trial is a large randomized controlled multicenter trial in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: SUBJECTS AND METHODS / Study Setting, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Baseline serum 25(OH)D concentration was determined by radioimmunoassay in a single lab (Heartland Assays, Ames, IA)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/\",\n            \"location\": \"Section: SUBJECTS AND METHODS / Vitamin D Assay, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:22:03.678495+08:00",
+      "transition": "new_gateway_attempt_validated",
+      "validation_status": "received",
+      "validation_error": "",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "c9f2ff8f7b238fd09935133d0d868c53ff8adc2358faa591752f43c34e343185"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [],
+  "validated_results": [
+    {
+      "context_id": "18505967|Vitamin D|Prostate cancer",
+      "pmid": "18505967",
+      "pmcid": "PMC3703748",
+      "published_date": "2008-06-04",
+      "title": "Serum vitamin D concentration and prostate cancer risk: a nested case-control study.",
+      "authors": [
+        "Ahn J",
+        "Peters U",
+        "Albanes D",
+        "Purdue MP",
+        "Abnet CC",
+        "Chatterjee N",
+        "Horst RL",
+        "Hollis BW",
+        "Huang WY",
+        "Shikany JM",
+        "Hayes RB",
+        "Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial Project Team"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18505967/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-control study examined serum 25(OH)D concentration in relation to incident prostate cancer risk within the PLCO Cancer Screening Trial.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.18,
+        "effect_type": "OR",
+        "ci_lower": 0.83,
+        "ci_upper": 1.68,
+        "p_value": 0.2,
+        "ci_confidence_level": 95,
+        "total_n": 1530,
+        "cases": 749,
+        "comparison_type": "highest vs lowest quintile",
+        "design": "nested case-control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Screening arm participants of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 749 case patients with incident prostate cancer who were diagnosed 1 to 8 years after blood draw and 781 control subjects who were frequency-matched by age at cohort entry, time since initial screening, and calendar year of cohort entry.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: SUBJECTS AND METHODS / Study Population, paragraph 3; total_n derived from reported group counts 749 + 781 = 1530"
+          },
+          "cases": {
+            "excerpt": "The study included 749 case patients with incident prostate cancer who were diagnosed 1 to 8 years after blood draw and 781 control subjects who were frequency-matched by age at cohort entry, time since initial screening, and calendar year of cohort entry.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: Abstract / Methods, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.18 (0.83 to 1.68)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: Table 3, row Multivariable model 2 OR (95% CI)"
+          },
+          "confidence_interval": {
+            "excerpt": "1.18 (0.83 to 1.68)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: Table 3, row Multivariable model 2 OR (95% CI)"
+          },
+          "p_value": {
+            "excerpt": ".20",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: Table 3, row Multivariable model 2 OR (95% CI)"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: Table 3, header row"
+          },
+          "design": {
+            "excerpt": "case–control study nested within the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: Abstract / Background, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The findings of this large prospective study do not support the hypothesis that vitamin D is associated with decreased risk of prostate cancer",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: Abstract / Conclusion, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The PLCO Cancer Screening Trial is a large randomized controlled multicenter trial in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: SUBJECTS AND METHODS / Study Setting, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Baseline serum 25(OH)D concentration was determined by radioimmunoassay in a single lab (Heartland Assays, Ames, IA)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3703748/",
+            "location": "Section: SUBJECTS AND METHODS / Vitamin D Assay, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.2",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 35470,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "281266718972bc3dcbec97d11fe59213204b1713298bf64cb272e9247f5e3a8b",
+      "pmc_source_receipt_digest": "20dd423a84b13d8d883bee2466201e6748d913c30da651efeb3bd4b225952bf0",
+      "pmc_source_raw_sha256": "82d06e36ab6d149c0c378f3d489f3d914444391d81b0243b12baf96988225604",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "856c242f446d2fb07f72379c6145e13f08bab5601bb97be78a9bb0ad89613e65"
+    }
+  ]
+}

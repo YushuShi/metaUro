@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "receipt_id": "03a23840a0680877fb6214483650138ac1101743d565c95ef843b2abaf2dab3d",
+  "requested_at": "2026-09-02T07:33:36.853659+08:00",
+  "received_at": "2026-09-02T07:33:41.007748+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "83cf45ce91e0d15a38bbd3e7116af643c016cdb57ebf02348f0cb362f9da6661",
+  "attempt": 1,
+  "context_ids": [
+    "12069675|Vitamin E|Prostate cancer",
+    "12069693|Vitamin A|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin A": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "89ce1147ab94c0b68b5d2638e89ebacc0acf98f903425b0540f410c38290b78c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 6250,
+    "cached_input_tokens": 0,
+    "output_tokens": 246,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0374",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "10452a4b-64c8-493a-b117-2cbdbe7318aa",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0374"
+  },
+  "output_sha256": "941d3f040a70c36130f6db1409eb7cba82c3b62918c6d1c253c082b936bfabf8",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"12069675|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative scientific review of vitamins searching MEDLINE for articles on vitamins and chronic disease, not an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"12069693|Vitamin A|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study is exclusively an in vitro experiment in LNCaP human prostate carcinoma cell lines with no human incidence data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "12069675|Vitamin E|Prostate cancer",
+      "pmid": "12069675",
+      "pmcid": "",
+      "published_date": "2002-06-19",
+      "title": "Vitamins for chronic disease prevention in adults: scientific review.",
+      "authors": [
+        "Fairfield KM",
+        "Fletcher RH"
+      ],
+      "journal": "JAMA",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12069675/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative scientific review of vitamins searching MEDLINE for articles on vitamins and chronic disease, not an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "12069693|Vitamin A|Prostate cancer",
+      "pmid": "12069693",
+      "pmcid": "PMC116677",
+      "published_date": "2002-06-10",
+      "title": "Androgen and retinoic acid interaction in LNCaP cells, effects on cell proliferation and expression of retinoic acid receptors and epidermal growth factor receptor.",
+      "authors": [
+        "Li MT",
+        "Richter F",
+        "Chang C",
+        "Irwin RJ",
+        "Huang H"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/12069693/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

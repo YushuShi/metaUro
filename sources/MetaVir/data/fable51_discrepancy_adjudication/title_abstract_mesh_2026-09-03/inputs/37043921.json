@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:36.601709-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "2d15003e65c401c207db5f18651cb6d420d357ec9cd8ab8bbfc77fd9ea577c9d",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "37043921",
+      "title": "Cadmium exposure and the risk of prostate cancer among Nigerian men: Effect modification by zinc status.",
+      "abstract": "Prostate cancer (PCa) may result from an interplay between many factors including exposure to trace elements. This study examined the association between cadmium exposure and PCa among Nigerian men and evaluated possible modification of this effect by zinc status. This case-control study involved men with histologically confirmed PCa (n = 82), benign prostatic hyperplasia (BPH; n = 93) and controls (n = 98), aged between 40 and 80 years. Study participants were recruited from the main teaching hospital that draws clients from the entire Anambra State in South-Eastern Nigeria. Blood and urine samples were collected from these participants and were analyzed for trace elements using ICP-MS. Statistical models were used to assess the exposure risk for cadmium exposure as well as the mediating effect of zinc status. Among men with prostatic disorders (case-case analysis), every 10-fold increase in urinary cadmium was associated with increased risk of PCa (adjusted odds ratios: 2.526; 95% CI: 1.096-5.821). Men in the highest blood zinc quartile had lower odds of PCa compared to the lowest quartile (AOR: 0.19; 95% CI, 0.06-0.54; p-for trend = 0.001). Zinc-specific effect was observed in this group: every 10-fold increase in urinary cadmium was associated with increased risk of PCa among men with creatinine-adjusted urinary zinc levels below the median value (AOR: 8.46; 95% CI: 1.97 -36.39) but not in those above the median value (AOR: 1.55; 95% CI: 0.45 - 5.39). Higher exposure to cadmium may be associated with increased risk of PCa in Nigeria and probably other countries with high prevalence of Zn deficiency. These results point to the need to consider co-occurring trace metals in any effort to mitigate the toxicity of Cd in the environment.",
+      "mesh": [
+        "Male",
+        "Humans",
+        "Adult",
+        "Middle Aged",
+        "Aged",
+        "Aged, 80 and over",
+        "Zinc",
+        "Cadmium / analysis",
+        "Case-Control Studies",
+        "Prostatic Neoplasms / epidemiology",
+        "Trace Elements",
+        "Prostatic Hyperplasia"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "37043921",
+      "contexts": [
+        {
+          "context_id": "37043921|Zinc|Prostate cancer",
+          "exposure": "Zinc",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

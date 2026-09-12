@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "24935a0b876bae90d9b9e15b3e5bf03cfaa3638b3c4723ed38d0d0fbb1f10ff6",
+  "requested_at": "2026-09-02T08:41:23.973962+08:00",
+  "received_at": "2026-09-02T08:41:43.117067+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "cd4ab87832d0ebd9c6d51c8524b32f892d852b465854c3cb4ea6ad1aaed9e79c",
+  "attempt": 1,
+  "context_ids": [
+    "21896650|Selenium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Selenium": 1
+  },
+  "input_digest": "5911789cf421412aff03c248bd6072dafae1decb92bddf43cb034c02843b13fa",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11596,
+    "cached_input_tokens": 0,
+    "output_tokens": 3183,
+    "reasoning_tokens": 1238
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02063325",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c1bf61cf-886f-4f92-8763-508874c91011",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02063325"
+  },
+  "output_sha256": "6658789f2ba94cb1e87ce0d28ace8e10d639fbfcdf967dfc1a6919440d25f341",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"21896650|Selenium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This randomized controlled trial evaluated the effect of daily selenium supplementation versus placebo on prostate cancer incidence in men with high-grade prostatic intraepithelial neoplasia.\",\n      \"extraction\": {\n        \"effect_size\": 0.97,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.68,\n        \"ci_upper\": 1.39,\n        \"p_value\": 0.73,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 269,\n        \"cases\": 97,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"rct\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 40 years or older with biopsy-confirmed high-grade prostatic intraepithelial neoplasia (HGPIN) and baseline PSA <= 10 ng/mL\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Our primary analysis involved the 135 men (63.7%) of the selenium arm and 134 men (63.5%) of the placebo arm with an endpoint status known through an interim biopsy or a biopsy taken at ± 90 days of the end of study ( Table 3 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Results, paragraph 5\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Among these patients, prostate cancer was diagnosed in 48 (35.6%) on selenium versus 49 (36.6%) on placebo\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Results, paragraph 5\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total 125 [Selenium N] 130 [Placebo N] 45 (36.0) [Selenium N (%)] 47 (36.2) [Placebo N (%)] 0.97 (0.68, 1.39) [RR (95% CI)]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Table 4\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total 125 [Selenium N] 130 [Placebo N] 45 (36.0) [Selenium N (%)] 47 (36.2) [Placebo N (%)] 0.97 (0.68, 1.39) [RR (95% CI)]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Table 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Three-year cancer rates were 36.6% (placebo) versus 35.6% (selenium; P = 0.73, adjusted).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Abstract\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"After registration and central pathology review, subjects were randomized in a double-blind fashion to placebo or 200 mcg/day of selenium, with daily treatment scheduled for three years or until a PC diagnosis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Materials and Methods, Patient selection and clinical methods, paragraph 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"A double-blind, randomized, placebo-controlled trial of selenium 200 (mcg/day) as selenomethionine in men with HGPIN.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The primary endpoint was progression of HGPIN to PC over a three-year period.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"This NCI Intergroup trial was coordinated by the Southwest Oncology Group (SWOG).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 177 (83.5) 162 (76.8); Black 26 (12.3) 26 (12.3); Non-black Hispanic 4 (1.9) 13 (6.2); Other 5 (2.4) 6 (2.8); Unknown -- 4 (1.9)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"It was coordinated by the Southwest Oncology Group (SWOG), with participation by the Eastern Cooperative Oncology Group, Cancer and Leukemia Group B, and, under the Veterans Affairs (VA) Massachusetts Veterans Epidemiology Research and Information Center (MAVERIC) program, several VA hospitals\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Materials and Methods, Patient selection and clinical methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"After registration and central pathology review, subjects were randomized in a double-blind fashion to placebo or 200 mcg/day of selenium, with daily treatment scheduled for three years or until a PC diagnosis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3208719/\",\n            \"location\": \"Materials and Methods, Patient selection and clinical methods, paragraph 4\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"rct\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"Yes\",\n          \"q13\": \"Yes\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "64c247e43e001f565806d3dceff3b2a37790a0ddfb14731c345c23960cc16c8d",
+  "requested_at": "2026-09-02T08:42:50.464534+08:00",
+  "received_at": "2026-09-02T08:43:15.268258+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "aab87afe20879201282cf1fab4bcd446721f2afda4f2796933ca08be41588a66",
+  "attempt": 1,
+  "context_ids": [
+    "22033893|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin D": 1
+  },
+  "input_digest": "94f79cf9421de0af3052fe9618ece487763c1b1f6a21dee425ebec4966e1f60e",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 14209,
+    "cached_input_tokens": 0,
+    "output_tokens": 3668,
+    "reasoning_tokens": 1720
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02441175",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "b08c9bdd-d21d-4ae8-bced-fe9a1190f4b0",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02441175"
+  },
+  "output_sha256": "e79627e7b1c94adce56f6e4d7477503d9f92ee3ac394b695cd974c4e2addaa2c",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22033893|Vitamin D|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study evaluated the association between circulating total 25-hydroxyvitamin D concentrations and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.08,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.79,\n        \"ci_upper\": 1.5,\n        \"p_value\": 0.62,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 2896,\n        \"cases\": 1447,\n        \"comparison_type\": \"Deficient (<12 ng/mL) vs adequate (20-<30 ng/mL)\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 50-69 years participating in the UK ProtecT trial prostate check clinics\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"We therefore included 1,447 prostate cancer cases and 1,449 controls that had a total 25(OH)D measurement available.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Results, Baseline Characteristics of Study Participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We therefore included 1,447 prostate cancer cases and 1,449 controls that had a total 25(OH)D measurement available.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Results, Baseline Characteristics of Study Participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Deficient (<12ng/ml) 126 (8.7) 118 (8.1) 1.08 (0.79, 1.50) 0.62\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Deficient (<12ng/ml) 126 (8.7) 118 (8.1) 1.08 (0.79, 1.50) 0.62\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Deficient (<12ng/ml) 126 (8.7) 118 (8.1) 1.08 (0.79, 1.50) 0.62\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Pre-determined categories of total 25(OH)D were defined as: high: ≥30ng/mL; adequate: 20-<30ng/mL; insufficient: 12-<20ng/mL; deficient: <12ng/mL.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Abstract\"\n          },\n          \"design\": {\n            \"excerpt\": \"We investigated associations of circulating total 25-hydroxyvitamin D (25(OH)D) with PSA-detected prostate cancer in a case-control study nested within the Prostate Testing for Cancer and Treatment (ProtecT) trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The study is nested within the prostate cancer detection phase for a multi-centre randomized controlled trial of treatments for localized disease: the Prostate Testing for cancer and Treatment (ProtecT) study (ISRCTN20141297)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Materials and Methods, Participants, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"over 100,000 men aged 50-69 years at 337 general practices in nine UK centres (Birmingham, Bristol, Cambridge, Cardiff, Edinburgh, Leeds, Leicester, Newcastle, Sheffield) were offered a PSA test\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Materials and Methods, Participants, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Of the 99.3% of subjects who had recorded ethnicity, 98.9% self-identified as white.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Results, Baseline Characteristics of Study Participants, paragraph 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"over 100,000 men aged 50-69 years at 337 general practices in nine UK centres (Birmingham, Bristol, Cambridge, Cardiff, Edinburgh, Leeds, Leicester, Newcastle, Sheffield) were offered a PSA test\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Materials and Methods, Participants, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Samples were measured on a Tandem MS system utilizing chromatographic separation on a Waters Sunfire C18 column (Waters, Manchester UK) using methanol, ammonium acetate and formic acid mobile phase.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378478/\",\n            \"location\": \"Materials and Methods, Vitamin D Assay, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

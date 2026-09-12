@@ -1,0 +1,1195 @@
+{
+  "schema_version": 1,
+  "receipt_id": "b384e63c0a45aba6a83b196750ab71b3ca2263c9d170359274173cd3e1fb2b3e",
+  "requested_at": "2026-09-02T08:31:02.988080+08:00",
+  "received_at": "2026-09-02T08:32:02.755654+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "a66d07c58fd334f94969c011eebaf2cbb78a601f7f4221720fa76da1e50b36c4",
+  "attempt": 2,
+  "context_ids": [
+    "37375581|Beta-carotene|Prostate cancer",
+    "37375581|Coenzyme Q10|Prostate cancer",
+    "37375581|Lutein|Prostate cancer",
+    "37375581|Lycopene|Prostate cancer",
+    "37375581|Vitamin A|Prostate cancer",
+    "37375581|Vitamin E|Prostate cancer",
+    "37375581|Zeaxanthin|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Beta-carotene": 1,
+    "Coenzyme Q10": 1,
+    "Lutein": 1,
+    "Lycopene": 1,
+    "Vitamin A": 1,
+    "Vitamin E": 1,
+    "Zeaxanthin": 1
+  },
+  "input_digest": "6feb7202c0fe29fe7efb53b70c81c660242c023b6d70f126e343a663935474e3",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 18554,
+    "cached_input_tokens": 0,
+    "output_tokens": 13435,
+    "reasoning_tokens": 1366
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.06429675",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "39e02943-03f7-4527-a8a2-9b62e6e499da",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.06429675"
+  },
+  "output_sha256": "1693c332a7e45bc31365aafad61647046e97b5367ae72b961f6c9724bced6fb5",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"37375581|Beta-carotene|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study assessed the association between serum beta-carotene levels and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 3.04,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.53,\n        \"ci_upper\": 6.02,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 274,\n        \"cases\": 156,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Singapore Prostate Cancer Study participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"β-Carotene ... >Median of 4.2 µg/dL ... 3.04 (1.53–6.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"β-Carotene ... >Median of 4.2 µg/dL ... 3.04 (1.53–6.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"β-Carotene ... >Median of 4.2 µg/dL ... 3.04 (1.53–6.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"β-Carotene: ≤Median of 4.2 µg/dL 1.00 (Ref); >Median of 4.2 µg/dL\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The controls were frequency-matched to cases based on 5-year age groups and ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.3, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37375581|Coenzyme Q10|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluated the association between serum ubiquinone (coenzyme Q10) levels and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 2.44,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.13,\n        \"ci_upper\": 5.28,\n        \"p_value\": 0.02,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 274,\n        \"cases\": 156,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Singapore Prostate Cancer Study participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Ubiquinone ... Tertile 3 (>41.2 µg/dL) ... 2.44 (1.13–5.28)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Ubiquinone ... Tertile 3 (>41.2 µg/dL) ... 2.44 (1.13–5.28)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Ubiquinone ... P for trend ... 0.020\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Ubiquinone: Tertile 1 ≤ (29.3 µg/dL) 1.00 (Ref); Tertile 2 (29.3–41.2 µg/dL); Tertile 3 (>41.2 µg/dL)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The controls were frequency-matched to cases based on 5-year age groups and ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E: ... ubiquinone\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.3, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37375581|Lutein|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study assessed the association between serum lutein levels and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 2.07,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.07,\n        \"ci_upper\": 4.02,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 274,\n        \"cases\": 156,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Singapore Prostate Cancer Study participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Lutein ... >Median of 11.8 µg/dL ... 2.07 (1.07–4.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Lutein ... >Median of 11.8 µg/dL ... 2.07 (1.07–4.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Lutein ... >Median of 11.8 µg/dL ... 2.07 (1.07–4.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Lutein: ≤Median of 11.8 µg/dL 1.00 (Ref); >Median of 11.8 µg/dL\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The controls were frequency-matched to cases based on 5-year age groups and ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E: ... lutein\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.3, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37375581|Lycopene|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluated the association between serum lycopene levels and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.92,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.43,\n        \"ci_upper\": 1.97,\n        \"p_value\": 0.83,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 274,\n        \"cases\": 156,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Singapore Prostate Cancer Study participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Lycopene ... Tertile 3 (>7.5 µg/dL) ... 0.92 (0.43–1.97)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Lycopene ... Tertile 3 (>7.5 µg/dL) ... 0.92 (0.43–1.97)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Lycopene ... P for trend ... 0.83\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Lycopene: Tertile 1 (≤3.9 µg/dL) 1.00 (Ref); Tertile 2 (3.9–7.5 µg/dL); Tertile 3 (>7.5 µg/dL)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The controls were frequency-matched to cases based on 5-year age groups and ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E: ... lycopene\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.3, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37375581|Vitamin A|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study analyzed the association between serum vitamin A (retinol) concentrations and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 6.08,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 2.8,\n        \"ci_upper\": 13.2,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 274,\n        \"cases\": 156,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Singapore Prostate Cancer Study participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Retinol ... >Median of 60.9 µg/dL ... 6.08 (2.80–13.20)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Retinol ... >Median of 60.9 µg/dL ... 6.08 (2.80–13.20)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Retinol ... >Median of 60.9 µg/dL ... 6.08 (2.80–13.20)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Retinol: ≤Median of 60.9 µg/dL 1.00 (Ref); >Median of 60.9 µg/dL\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The controls were frequency-matched to cases based on 5-year age groups and ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E: all-trans-retinol\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.3, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37375581|Vitamin E|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluated the association between serum alpha-tocopherol (vitamin E) concentrations and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 2.4,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.08,\n        \"ci_upper\": 5.35,\n        \"p_value\": 0.034,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 274,\n        \"cases\": 156,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Singapore Prostate Cancer Study participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"α-Tocopherol ... Tertile 3 (>1560 µg/dL) ... 2.40 (1.08–5.35)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"α-Tocopherol ... Tertile 3 (>1560 µg/dL) ... 2.40 (1.08–5.35)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"α-Tocopherol ... P for trend ... 0.034\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"α-Tocopherol: Tertile 1 (≤1240 µg/dL) 1.00 (Ref); Tertile 2 (1240–1560 µg/dL); Tertile 3 (>1560 µg/dL)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The controls were frequency-matched to cases based on 5-year age groups and ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E: ... α-tocopherol\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.3, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37375581|Zeaxanthin|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study assessed the association between serum zeaxanthin levels and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.32,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.59,\n        \"ci_upper\": 2.96,\n        \"p_value\": 0.52,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 274,\n        \"cases\": 156,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Singapore Prostate Cancer Study participants\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"This resulted in a final study population of 156 cases and 118 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Zeaxanthin ... Tertile 3 (>4.9 µg/dL) ... 1.32 (0.59–2.96)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Zeaxanthin ... Tertile 3 (>4.9 µg/dL) ... 1.32 (0.59–2.96)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Zeaxanthin ... P for trend ... 0.52\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Zeaxanthin: Tertile 1 (≤3.3 µg/dL) 1.00 (Ref); Tertile 2 (3.3–4.9 µg/dL); Tertile 3 (>4.9 µg/dL)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The controls were frequency-matched to cases based on 5-year age groups and ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.1, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E: ... zeaxanthin\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/\",\n            \"location\": \"Section 2.3, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "37375581|Beta-carotene|Prostate cancer",
+      "pmid": "37375581",
+      "pmcid": "PMC10301520",
+      "published_date": "2023-06-08",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "authors": [
+        "Loh WQ",
+        "Yin X",
+        "Kishida R",
+        "Chia SE",
+        "Ong CN",
+        "Seow WJ"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study assessed the association between serum beta-carotene levels and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 3.04,
+        "effect_type": "OR",
+        "ci_lower": 1.53,
+        "ci_upper": 6.02,
+        "p_value": 0.0014639620008901199,
+        "ci_confidence_level": 95,
+        "total_n": 274,
+        "cases": 156,
+        "comparison_type": "extreme_quantile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "NA",
+        "population": "Singapore Prostate Cancer Study participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Total ( n = 274) Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "The highest category of serum concentrations for several forms of vitamin A and E were significantly and positively associated with prostate cancer risk, including retinol (OR = 6.08), lutein (OR = 2.07), α-carotene (OR = 3.27), β-carotene (OR = 3.04), ubiquinone (OR = 2.44), α-tocopherol (OR = 2.40), δ-tocotrienol (OR = 3.70), γ-tocotrienol (OR = 3.02), and α-tocotrienol (OR = 2.76), compared with the lowest category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "3.04 (1.53–6.02)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Singapore Prostate Cancer Study, a hospital-based case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.3, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 3.04,
+            "effect_type": "OR",
+            "ci_lower": 1.53,
+            "ci_upper": 6.02,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52012,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "aa6de23351a14b5a86a481866b3bb9960fbf1bcd78d2b8e5e99331c5e2824bbd",
+      "pmc_source_receipt_digest": "68abc0cf6e783d0ac8841903752aa1137f85c73dce0cf0dbba0df6477b0e4dc4",
+      "pmc_source_raw_sha256": "8bff945ac5d5ace06dd033dc4d32ad8376b55e1d4e03b140b67758e2d6e9be57",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "ed6e8910f1ea957623b41ca9a2565d16d7cef104a74df384484d1c16287668b4"
+    },
+    {
+      "context_id": "37375581|Coenzyme Q10|Prostate cancer",
+      "pmid": "37375581",
+      "pmcid": "PMC10301520",
+      "published_date": "2023-06-08",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "authors": [
+        "Loh WQ",
+        "Yin X",
+        "Kishida R",
+        "Chia SE",
+        "Ong CN",
+        "Seow WJ"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+      "exposure": "Coenzyme Q10",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluated the association between serum ubiquinone (coenzyme Q10) levels and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.44,
+        "effect_type": "OR",
+        "ci_lower": 1.13,
+        "ci_upper": 5.28,
+        "p_value": 0.02,
+        "ci_confidence_level": 95,
+        "total_n": 274,
+        "cases": 156,
+        "comparison_type": "extreme_quantile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "NA",
+        "population": "Singapore Prostate Cancer Study participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Total ( n = 274) Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "The highest category of serum concentrations for several forms of vitamin A and E were significantly and positively associated with prostate cancer risk, including retinol (OR = 6.08), lutein (OR = 2.07), α-carotene (OR = 3.27), β-carotene (OR = 3.04), ubiquinone (OR = 2.44), α-tocopherol (OR = 2.40), δ-tocotrienol (OR = 3.70), γ-tocotrienol (OR = 3.02), and α-tocotrienol (OR = 2.76), compared with the lowest category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "2.44 (1.13–5.28)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.020",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Singapore Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.3, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52012,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "aa6de23351a14b5a86a481866b3bb9960fbf1bcd78d2b8e5e99331c5e2824bbd",
+      "pmc_source_receipt_digest": "68abc0cf6e783d0ac8841903752aa1137f85c73dce0cf0dbba0df6477b0e4dc4",
+      "pmc_source_raw_sha256": "8bff945ac5d5ace06dd033dc4d32ad8376b55e1d4e03b140b67758e2d6e9be57",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "96146003c3ab6ea48e625d43270bd07fb99103bd230afa13eb7bbaa01a2323b5"
+    },
+    {
+      "context_id": "37375581|Lutein|Prostate cancer",
+      "pmid": "37375581",
+      "pmcid": "PMC10301520",
+      "published_date": "2023-06-08",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "authors": [
+        "Loh WQ",
+        "Yin X",
+        "Kishida R",
+        "Chia SE",
+        "Ong CN",
+        "Seow WJ"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+      "exposure": "Lutein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study assessed the association between serum lutein levels and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.07,
+        "effect_type": "OR",
+        "ci_lower": 1.07,
+        "ci_upper": 4.02,
+        "p_value": 0.031189630218874446,
+        "ci_confidence_level": 95,
+        "total_n": 274,
+        "cases": 156,
+        "comparison_type": "extreme_quantile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "NA",
+        "population": "Singapore Prostate Cancer Study participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Total ( n = 274) Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "The highest category of serum concentrations for several forms of vitamin A and E were significantly and positively associated with prostate cancer risk, including retinol (OR = 6.08), lutein (OR = 2.07), α-carotene (OR = 3.27), β-carotene (OR = 3.04), ubiquinone (OR = 2.44), α-tocopherol (OR = 2.40), δ-tocotrienol (OR = 3.70), γ-tocotrienol (OR = 3.02), and α-tocotrienol (OR = 2.76), compared with the lowest category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "2.07 (1.07–4.02)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Singapore Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.3, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 2.07,
+            "effect_type": "OR",
+            "ci_lower": 1.07,
+            "ci_upper": 4.02,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52012,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "aa6de23351a14b5a86a481866b3bb9960fbf1bcd78d2b8e5e99331c5e2824bbd",
+      "pmc_source_receipt_digest": "68abc0cf6e783d0ac8841903752aa1137f85c73dce0cf0dbba0df6477b0e4dc4",
+      "pmc_source_raw_sha256": "8bff945ac5d5ace06dd033dc4d32ad8376b55e1d4e03b140b67758e2d6e9be57",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "f62a7409ccb2600e86ff0d21abfd335e14a4c680ea9ebf83d36b9f86ed97a210"
+    },
+    {
+      "context_id": "37375581|Lycopene|Prostate cancer",
+      "pmid": "37375581",
+      "pmcid": "PMC10301520",
+      "published_date": "2023-06-08",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "authors": [
+        "Loh WQ",
+        "Yin X",
+        "Kishida R",
+        "Chia SE",
+        "Ong CN",
+        "Seow WJ"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluated the association between serum lycopene levels and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.92,
+        "effect_type": "OR",
+        "ci_lower": 0.43,
+        "ci_upper": 1.97,
+        "p_value": 0.83,
+        "ci_confidence_level": 95,
+        "total_n": 274,
+        "cases": 156,
+        "comparison_type": "extreme_quantile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "NA",
+        "population": "Singapore Prostate Cancer Study participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Total ( n = 274) Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "Although serum lycopene (OR = 0.92) and γ-tocopherol (OR = 0.60) in the highest tertile were inversely associated with prostate cancer risk, these were not statistically significant.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "0.92 (0.43–1.97)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.83",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Singapore Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.3, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.83",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52012,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "aa6de23351a14b5a86a481866b3bb9960fbf1bcd78d2b8e5e99331c5e2824bbd",
+      "pmc_source_receipt_digest": "68abc0cf6e783d0ac8841903752aa1137f85c73dce0cf0dbba0df6477b0e4dc4",
+      "pmc_source_raw_sha256": "8bff945ac5d5ace06dd033dc4d32ad8376b55e1d4e03b140b67758e2d6e9be57",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "9772cf1eaf408763ff10548c69c1ad370310b7ba03034cc7ff753d58b6b7a7a3"
+    },
+    {
+      "context_id": "37375581|Vitamin A|Prostate cancer",
+      "pmid": "37375581",
+      "pmcid": "PMC10301520",
+      "published_date": "2023-06-08",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "authors": [
+        "Loh WQ",
+        "Yin X",
+        "Kishida R",
+        "Chia SE",
+        "Ong CN",
+        "Seow WJ"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study analyzed the association between serum vitamin A (retinol) concentrations and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 6.08,
+        "effect_type": "OR",
+        "ci_lower": 2.8,
+        "ci_upper": 13.2,
+        "p_value": 5.041039997028969e-06,
+        "ci_confidence_level": 95,
+        "total_n": 274,
+        "cases": 156,
+        "comparison_type": "extreme_quantile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "NA",
+        "population": "Singapore Prostate Cancer Study participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Total ( n = 274) Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "The highest category of serum concentrations for several forms of vitamin A and E were significantly and positively associated with prostate cancer risk, including retinol (OR = 6.08), lutein (OR = 2.07), α-carotene (OR = 3.27), β-carotene (OR = 3.04), ubiquinone (OR = 2.44), α-tocopherol (OR = 2.40), δ-tocotrienol (OR = 3.70), γ-tocotrienol (OR = 3.02), and α-tocotrienol (OR = 2.76), compared with the lowest category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "6.08 (2.80–13.20)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Singapore Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Using a high-performance liquid chromatographic method, we measured the concentrations of 15 vitamin A and E: all-trans-retinol",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.3, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 6.08,
+            "effect_type": "OR",
+            "ci_lower": 2.8,
+            "ci_upper": 13.2,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52012,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "aa6de23351a14b5a86a481866b3bb9960fbf1bcd78d2b8e5e99331c5e2824bbd",
+      "pmc_source_receipt_digest": "68abc0cf6e783d0ac8841903752aa1137f85c73dce0cf0dbba0df6477b0e4dc4",
+      "pmc_source_raw_sha256": "8bff945ac5d5ace06dd033dc4d32ad8376b55e1d4e03b140b67758e2d6e9be57",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "bac5fba2760bb67b6494f4f288273c71984c8486c30cf93d38fd264ed1f2aaff"
+    },
+    {
+      "context_id": "37375581|Vitamin E|Prostate cancer",
+      "pmid": "37375581",
+      "pmcid": "PMC10301520",
+      "published_date": "2023-06-08",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "authors": [
+        "Loh WQ",
+        "Yin X",
+        "Kishida R",
+        "Chia SE",
+        "Ong CN",
+        "Seow WJ"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluated the association between serum alpha-tocopherol (vitamin E) concentrations and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.4,
+        "effect_type": "OR",
+        "ci_lower": 1.08,
+        "ci_upper": 5.35,
+        "p_value": 0.034,
+        "ci_confidence_level": 95,
+        "total_n": 274,
+        "cases": 156,
+        "comparison_type": "extreme_quantile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "NA",
+        "population": "Singapore Prostate Cancer Study participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Total ( n = 274) Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "The highest category of serum concentrations for several forms of vitamin A and E were significantly and positively associated with prostate cancer risk, including retinol (OR = 6.08), lutein (OR = 2.07), α-carotene (OR = 3.27), β-carotene (OR = 3.04), ubiquinone (OR = 2.44), α-tocopherol (OR = 2.40), δ-tocotrienol (OR = 3.70), γ-tocotrienol (OR = 3.02), and α-tocotrienol (OR = 2.76), compared with the lowest category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "2.40 (1.08–5.35)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.034",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Singapore Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.3, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.034",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52012,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "aa6de23351a14b5a86a481866b3bb9960fbf1bcd78d2b8e5e99331c5e2824bbd",
+      "pmc_source_receipt_digest": "68abc0cf6e783d0ac8841903752aa1137f85c73dce0cf0dbba0df6477b0e4dc4",
+      "pmc_source_raw_sha256": "8bff945ac5d5ace06dd033dc4d32ad8376b55e1d4e03b140b67758e2d6e9be57",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e40d6912c25c6c86703bcdc629d71e88a1dd248ed0eaa2da6f0cd8be87be5dd0"
+    },
+    {
+      "context_id": "37375581|Zeaxanthin|Prostate cancer",
+      "pmid": "37375581",
+      "pmcid": "PMC10301520",
+      "published_date": "2023-06-08",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "authors": [
+        "Loh WQ",
+        "Yin X",
+        "Kishida R",
+        "Chia SE",
+        "Ong CN",
+        "Seow WJ"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+      "exposure": "Zeaxanthin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study assessed the association between serum zeaxanthin levels and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.32,
+        "effect_type": "OR",
+        "ci_lower": 0.59,
+        "ci_upper": 2.96,
+        "p_value": 0.52,
+        "ci_confidence_level": 95,
+        "total_n": 274,
+        "cases": 156,
+        "comparison_type": "extreme_quantile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "NA",
+        "population": "Singapore Prostate Cancer Study participants",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Total ( n = 274) Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 156)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "1.32 (0.59–2.96)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "1.32 (0.59–2.96)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.52",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The SPCS was a retrospective hospital-based case-control study consisting of 508 participants (240 cases and 268 controls) recruited in 2007–2009 from Singapore General Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.1, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Singapore Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/37375581/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10301520/",
+            "location": "Section 2.3, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.52",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52012,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "aa6de23351a14b5a86a481866b3bb9960fbf1bcd78d2b8e5e99331c5e2824bbd",
+      "pmc_source_receipt_digest": "68abc0cf6e783d0ac8841903752aa1137f85c73dce0cf0dbba0df6477b0e4dc4",
+      "pmc_source_raw_sha256": "8bff945ac5d5ace06dd033dc4d32ad8376b55e1d4e03b140b67758e2d6e9be57",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "974a543a1576a9180ffc00e980b6e14f3abb9f52a8f8388c44a2bf86355ed4ec"
+    }
+  ]
+}

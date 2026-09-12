@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:36:50.999852-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "fc91d20e2b24c7eb6c272c2da2c0bb137bf9a95c78367a80ebfc1d570e761139",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "34606688",
+      "title": "Dairy products and the risk of developing prostate cancer: A large-scale cohort study (JACC Study) in Japan.",
+      "abstract": "Dairy products have been indicated as a risk factor for prostate cancer. However, only a few epidemiological studies have reported dairy products as being a risk factor for prostate cancer in Japan, reporting contradictory results. We therefore investigated the association between the intake of dairy products and the occurrence of prostate cancer through a large-scale cohort study. The Japan Collaborative Cohort study analyzed approximately 110,000 residents from various Japanese districts who participated in our questionnaire survey during 1988-1990. The subjects of the present study were 26,464 men (age range: 40-79 years) from 24 districts wherein cancer incidence was reported. Their clinical course was followed up until 2009. Hazard ratios (HRs) were calculated using Cox's proportional hazards model, adjusted for age, survey area, family history of prostate cancer, body mass index, and total energy intake. For diet, we calculated the HRs associated with intermediate and high consumption of dairy products and compared them with those associated with low consumption. There were 412 cases of prostate cancer in the survey population. As dairy products, milk, yogurt, cheese, and butter were evaluated. Among them, milk consumption was associated with a significant risk (HR = 1.37, p = 0.009) and a dose-dependent response (p for trend = 0.009) adjusted for age and family history of prostate cancer, stratified by area. Milk and yogurt consumption showed a significantly positive risk and a dose-response relationship adjusted for age, family history of prostate cancer, body mass index, and total energy intake, stratified by area. In summary, a high intake of dairy products such as milk increased the risk of developing prostate cancer in Japanese men.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Cohort Studies",
+        "Dairy Products / adverse effects",
+        "Humans",
+        "Japan",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / etiology, pathology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "34606688",
+      "contexts": [
+        {
+          "context_id": "34606688|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "26464",
+              "effect_measure_type": "HR",
+              "effect_size": "1.43",
+              "ci_lower": "1.02",
+              "ci_upper": "1.99",
+              "p_value": "0.036",
+              "comparison": "High dairy/milk consumption versus low consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "26464",
+              "effect_measure_type": "HR",
+              "effect_size": "1.37",
+              "ci_lower": "1.0817622207437219",
+              "ci_upper": "1.7350393312031305",
+              "p_value": "0.009",
+              "comparison": "high versus low consumption of dairy products"
+            }
+          }
+        },
+        {
+          "context_id": "34606688|Fermented foods|Prostate cancer",
+          "exposure": "Fermented foods",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        },
+        {
+          "context_id": "34606688|Yogurt|Prostate cancer",
+          "exposure": "Yogurt",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "26464",
+              "effect_measure_type": "HR",
+              "effect_size": "1.43",
+              "ci_lower": "0.82",
+              "ci_upper": "2.49",
+              "p_value": "0.206",
+              "comparison": "High yogurt consumption versus low consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "20518",
+              "effect_measure_type": "HR",
+              "effect_size": "1.43",
+              "ci_lower": "0.82",
+              "ci_upper": "2.49",
+              "p_value": "0.206",
+              "comparison": "high_vs_low"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

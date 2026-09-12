@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:36:16.163740-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "eb87924a02e2fcfdeae45329a4684543eb05ccc7caf0a6422744edad9dcdb85f",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "32121075",
+      "title": "Extent of Food Processing and Risk of Prostate Cancer: The PROtEuS Study in Montreal, Canada.",
+      "abstract": "We studied the association between food intake, based on the extent of processing, and prostate cancer risk in a population-based case-control study conducted in Montreal, Canada in 2005-2012. Incident prostate cancer cases (<i>n</i> = 1919) aged ≤75 years were histologically confirmed. Population controls (<i>n</i> = 1991) were randomly selected from the electoral list and frequency-matched to cases by age (±5 years). A 63-item food frequency questionnaire focusing on the two years prior to diagnosis/interview was administered by interviewers. The NOVA classification was used to categorize foods based on processing level. Unconditional logistic regression estimated the association between food intake and prostate cancer risk, adjusting for age, education, ethnicity, family history, and timing of last prostate cancer screening. Consumption of unprocessed or minimally processed foods showed a slight, inverse association (Odd ratio [OR] 0.86, 95% confidence interval [CI] 0.70-1.07; highest vs. lowest quartile) with prostate cancer. An increased risk was observed with higher intake of processed foods (OR 1.29, 95%CI 1.05-1.59; highest vs. lowest quartile), but not with consumption of ultra-processed food and drinks. The associations with unprocessed/minimally processed foods and processed foods were slightly more pronounced for high-grade cancers (ORs 0.80 and 1.33, respectively). Findings suggest that food processing may influence prostate cancer risk.",
+      "mesh": [
+        "Aged",
+        "Canada",
+        "Case-Control Studies",
+        "Food",
+        "Food Handling",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / etiology",
+        "Risk Factors",
+        "Surveys and Questionnaires"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "32121075",
+      "contexts": [
+        {
+          "context_id": "32121075|Ultra-processed food intake|Prostate cancer",
+          "exposure": "Ultra-processed food intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "3908",
+              "effect_measure_type": "OR",
+              "effect_size": "0.92",
+              "ci_lower": "0.72",
+              "ci_upper": "1.17",
+              "p_value": "0.5008121484996432",
+              "comparison": "Highest quartile (Q4) versus lowest quartile (Q1) of ultra-processed food consumption score"
+            },
+            "Claude+Gemini": {
+              "sample_size": "3910",
+              "effect_measure_type": "OR",
+              "effect_size": "0.92",
+              "ci_lower": "0.72",
+              "ci_upper": "1.17",
+              "p_value": "0.5008121484996432",
+              "comparison": "highest_vs_lowest"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

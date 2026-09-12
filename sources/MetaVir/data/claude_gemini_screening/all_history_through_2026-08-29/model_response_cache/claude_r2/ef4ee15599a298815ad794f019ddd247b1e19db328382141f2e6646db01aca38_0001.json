@@ -1,0 +1,431 @@
+{
+  "schema_version": 1,
+  "receipt_id": "faed098ac90a1ac7cb6de0d94ccc73ae270c2eb103b296db811436ebcbcff0ce",
+  "requested_at": "2026-09-02T08:09:42.615401+08:00",
+  "received_at": "2026-09-02T08:10:29.547021+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "ef4ee15599a298815ad794f019ddd247b1e19db328382141f2e6646db01aca38",
+  "attempt": 1,
+  "context_ids": [
+    "28102015|Lycopene|Prostate cancer",
+    "28102015|Selenium|Prostate cancer",
+    "28102015|Vitamin A|Prostate cancer",
+    "28103838|Calcium|Prostate cancer",
+    "28103838|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Lycopene": 1,
+    "Selenium": 1,
+    "Vitamin A": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "0ff0bee5c4c5d0c562bd53666fb139fd7dea770d4dd2b88f2362ea1c6ad4a077",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 6352,
+    "cached_input_tokens": 0,
+    "output_tokens": 4811,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.152035",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "6ecfa3ec-eb0f-4b05-b064-730928f8b527",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.152035"
+  },
+  "output_sha256": "9b14701d8889fff80a94361ede67a2c27ac1721a49a5e613ba8e14baeda1ceaf",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"28102015|Lycopene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"Associations of circulating lycopene with prostate cancer are reported only according to ERG protein expression (TMPRSS2:ERG fusion) molecular subtype, so no population-wide exposure estimate for prostate cancer incidence is separable.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"28102015|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"Selenium results are presented exclusively by TMPRSS2:ERG (ERG protein expression) status rather than as an overall population-wide prostate cancer incidence estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"28102015|Vitamin A|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"Retinol (vitamin A) associations are analyzed only within gene-fusion-defined subtypes by ERG protein expression status, leaving no population-wide prostate cancer incidence estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"28103838|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Multiethnic case-control study reporting an odds ratio for dietary calcium intake assessed by food frequency questionnaire and aggressive prostate cancer case status.\",\"extraction\":{\"effect_size\":1.98,\"effect_type\":\"OR\",\"ci_lower\":1.01,\"ci_upper\":3.91,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":1657,\"cases\":null,\"comparison_type\":\"Quartile 1 vs Quartile 4 of calcium intake (aggressive prostate cancer)\",\"design\":\"case_control\",\"timing\":null,\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Chicago, IL and Washington, D.C.\",\"ethnicity\":\"African Americans, European Americans, Hispanic Americans\",\"population\":\"Prostate cancer patients who underwent screening and healthy controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 1,657 prostate cancer patients who underwent screening and healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"high calcium intake was significantly associated with higher odds for aggressive prostate cancer (OR<sub>Quartile 1 vs. Quartile 4</sub> = 1.98\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% C.I.: 1.01-3.91\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"OR<sub>Quartile 1 vs. Quartile 4</sub>\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"prostate cancer patients who underwent screening and healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"from Chicago, IL and Washington, D.C.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"(888 African Americans, 620 European Americans, 111 Hispanic Americans, and 38 others)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"from Chicago, IL and Washington, D.C.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Calcium and vitamin D intake were evaluated using food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"28103838|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Multiethnic case-control study reporting an odds ratio for vitamin D intake and aggressive prostate cancer case status.\",\"extraction\":{\"effect_size\":0.38,\"effect_type\":\"OR\",\"ci_lower\":0.18,\"ci_upper\":0.79,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":1657,\"cases\":null,\"comparison_type\":\"Quartile 1 vs Quartile 4 of vitamin D intake (aggressive prostate cancer)\",\"design\":\"case_control\",\"timing\":null,\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Chicago, IL and Washington, D.C.\",\"ethnicity\":\"African Americans, European Americans, Hispanic Americans\",\"population\":\"Prostate cancer patients who underwent screening and healthy controls\",\"exposure_subtype\":\"mixed_or_unclear\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 1,657 prostate cancer patients who underwent screening and healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"high vitamin D intake was associated with lower odds of aggressive prostate cancer (OR<sub>Quartile 1 vs. Quartile 4</sub> = 0.38\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% C.I.: 0.18-0.79\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"OR<sub>Quartile 1 vs. Quartile 4</sub>\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"prostate cancer patients who underwent screening and healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"from Chicago, IL and Washington, D.C.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"(888 African Americans, 620 European Americans, 111 Hispanic Americans, and 38 others)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"from Chicago, IL and Washington, D.C.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"a strong inverse association between total vitamin D intake and prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/28103838/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "28102015|Lycopene|Prostate cancer",
+      "pmid": "28102015",
+      "pmcid": "PMC5354965",
+      "published_date": "2017-05-01",
+      "title": "Circulating Antioxidant Levels and Risk of Prostate Cancer by TMPRSS2:ERG.",
+      "authors": [
+        "Graff RE",
+        "Judson G",
+        "Ahearn TU",
+        "Fiorentino M",
+        "Loda M",
+        "Giovannucci EL",
+        "Mucci LA",
+        "Pettersson A"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28102015/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "Associations of circulating lycopene with prostate cancer are reported only according to ERG protein expression (TMPRSS2:ERG fusion) molecular subtype, so no population-wide exposure estimate for prostate cancer incidence is separable.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "28102015|Selenium|Prostate cancer",
+      "pmid": "28102015",
+      "pmcid": "PMC5354965",
+      "published_date": "2017-05-01",
+      "title": "Circulating Antioxidant Levels and Risk of Prostate Cancer by TMPRSS2:ERG.",
+      "authors": [
+        "Graff RE",
+        "Judson G",
+        "Ahearn TU",
+        "Fiorentino M",
+        "Loda M",
+        "Giovannucci EL",
+        "Mucci LA",
+        "Pettersson A"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28102015/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "Selenium results are presented exclusively by TMPRSS2:ERG (ERG protein expression) status rather than as an overall population-wide prostate cancer incidence estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "28102015|Vitamin A|Prostate cancer",
+      "pmid": "28102015",
+      "pmcid": "PMC5354965",
+      "published_date": "2017-05-01",
+      "title": "Circulating Antioxidant Levels and Risk of Prostate Cancer by TMPRSS2:ERG.",
+      "authors": [
+        "Graff RE",
+        "Judson G",
+        "Ahearn TU",
+        "Fiorentino M",
+        "Loda M",
+        "Giovannucci EL",
+        "Mucci LA",
+        "Pettersson A"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28102015/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "Retinol (vitamin A) associations are analyzed only within gene-fusion-defined subtypes by ERG protein expression status, leaving no population-wide prostate cancer incidence estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "28103838|Calcium|Prostate cancer",
+      "pmid": "28103838",
+      "pmcid": "PMC5248493",
+      "published_date": "2017-01-19",
+      "title": "Race and BMI modify associations of calcium and vitamin D intake with prostate cancer.",
+      "authors": [
+        "Batai K",
+        "Murphy AB",
+        "Ruden M",
+        "Newsome J",
+        "Shah E",
+        "Dixon MA",
+        "Jacobs ET",
+        "Hollowell CM",
+        "Ahaghotu C",
+        "Kittles RA"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Multiethnic case-control study reporting an odds ratio for dietary calcium intake assessed by food frequency questionnaire and aggressive prostate cancer case status.",
+      "missing_key_fields": [
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.98,
+        "effect_type": "OR",
+        "ci_lower": 1.01,
+        "ci_upper": 3.91,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 1657,
+        "cases": null,
+        "comparison_type": "Quartile 1 vs Quartile 4 of calcium intake (aggressive prostate cancer)",
+        "design": "case_control",
+        "timing": null,
+        "continent": "North America",
+        "country": "United States",
+        "location": "Chicago, IL and Washington, D.C.",
+        "ethnicity": "NA",
+        "population": "Prostate cancer patients who underwent screening and healthy controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 1,657 prostate cancer patients who underwent screening and healthy controls (888 African Americans, 620 European Americans, 111 Hispanic Americans, and 38 others) from Chicago, IL and Washington, D.C. were included in this study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "Quartile 4</sub> = 1.98, 95% C.I.: 1.01-3.91), while high vitamin D intake was associated with lower odds of aggressive prostate cancer (OR<sub>Quartile 1 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Quartile 4</sub> = 1.98, 95% C.I.: 1.01-3.91), while high vitamin D intake was associated with lower odds of aggressive prostate cancer (OR<sub>Quartile 1 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "OR<sub>Quartile 1 vs. Quartile 4</sub>",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "prostate cancer patients who underwent screening and healthy controls",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "from Chicago, IL and Washington, D.C.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "from Chicago, IL and Washington, D.C.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Calcium and vitamin D intake were evaluated using food frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "28103838|Vitamin D|Prostate cancer",
+      "pmid": "28103838",
+      "pmcid": "PMC5248493",
+      "published_date": "2017-01-19",
+      "title": "Race and BMI modify associations of calcium and vitamin D intake with prostate cancer.",
+      "authors": [
+        "Batai K",
+        "Murphy AB",
+        "Ruden M",
+        "Newsome J",
+        "Shah E",
+        "Dixon MA",
+        "Jacobs ET",
+        "Hollowell CM",
+        "Ahaghotu C",
+        "Kittles RA"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Multiethnic case-control study reporting an odds ratio for vitamin D intake and aggressive prostate cancer case status.",
+      "missing_key_fields": [
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.38,
+        "effect_type": "OR",
+        "ci_lower": 0.18,
+        "ci_upper": 0.79,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 1657,
+        "cases": null,
+        "comparison_type": "Quartile 1 vs Quartile 4 of vitamin D intake (aggressive prostate cancer)",
+        "design": "case_control",
+        "timing": null,
+        "continent": "North America",
+        "country": "United States",
+        "location": "Chicago, IL and Washington, D.C.",
+        "ethnicity": "NA",
+        "population": "Prostate cancer patients who underwent screening and healthy controls",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 1,657 prostate cancer patients who underwent screening and healthy controls (888 African Americans, 620 European Americans, 111 Hispanic Americans, and 38 others) from Chicago, IL and Washington, D.C. were included in this study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "Quartile 4</sub> = 0.38, 95% C.I.: 0.18-0.79). In African Americans, the association between high calcium intake and aggressive prostate cancer was statistically significant (OR<sub>Quartile 1 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Quartile 4</sub> = 0.38, 95% C.I.: 0.18-0.79).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "OR<sub>Quartile 1 vs. Quartile 4</sub>",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "prostate cancer patients who underwent screening and healthy controls",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "from Chicago, IL and Washington, D.C.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "from Chicago, IL and Washington, D.C.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "a strong inverse association between total vitamin D intake and prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

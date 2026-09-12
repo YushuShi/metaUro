@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:57.806701-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c18c937099a53804c1dd338e89c9bcfaf919ba132d85d219913cabb166e6f48f",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "37898724",
+      "title": "Modifiable risk factors for subsequent lethal prostate cancer among men with an initially negative prostate biopsy.",
+      "abstract": "Previously suggested modifiable risk factors for prostate cancer could have resulted from detection bias because diagnosis requires a biopsy. We investigated modifiable risk factors for a subsequent cancer diagnosis among men with an initially negative prostate biopsy. In total, 10,396 participants of the Health Professionals Follow-up Study with an initial negative prostate biopsy after 1994 were followed for incident prostate cancer until 2017. Potential risk factors were based on previous studies in the general population. Outcomes included localised, advanced, and lethal prostate cancer. With 1851 prostate cancer cases (168 lethal) diagnosed over 23 years of follow-up, the 20-year risk of any prostate cancer diagnosis was 18.5% (95% CI: 17.7-19.3). Higher BMI and lower alcohol intake tended to be associated with lower rates of localised disease. Coffee, lycopene intake and statin use tended to be associated with lower rates of lethal prostate cancer. Results for other risk factors were less precise but compatible with and of similar direction as for men in the overall cohort. Risk factors for future prostate cancer among men with a negative biopsy were generally consistent with those for the general population, supporting their validity given reduced detection bias, and could be actionable, if confirmed.",
+      "mesh": [
+        "Male",
+        "Humans",
+        "Prostate / pathology",
+        "Follow-Up Studies",
+        "Prostatic Neoplasms / diagnosis, epidemiology, pathology",
+        "Risk Factors",
+        "Biopsy"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "37898724",
+      "contexts": [
+        {
+          "context_id": "37898724|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "10396",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Lower alcohol intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "10396",
+              "effect_measure_type": "HR",
+              "effect_size": "1.16",
+              "ci_lower": "0.95",
+              "ci_upper": "1.43",
+              "p_value": "0.15485340346043527",
+              "comparison": "top_vs_bottom_category"
+            }
+          }
+        },
+        {
+          "context_id": "37898724|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "10396",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "10396",
+              "effect_measure_type": "HR",
+              "effect_size": "1.01",
+              "ci_lower": "0.87",
+              "ci_upper": "1.18",
+              "p_value": "0.8981666623125971",
+              "comparison": "top_vs_bottom_category"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

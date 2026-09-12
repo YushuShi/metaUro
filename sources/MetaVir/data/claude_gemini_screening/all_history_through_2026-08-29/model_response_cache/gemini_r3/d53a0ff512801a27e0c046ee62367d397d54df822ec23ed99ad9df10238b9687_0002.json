@@ -1,0 +1,214 @@
+{
+  "schema_version": 1,
+  "receipt_id": "9e00127471881a75f4ef32b504292a1fce3787e170fa0b412618034abd088762",
+  "requested_at": "2026-09-02T08:42:35.814627+08:00",
+  "received_at": "2026-09-02T08:43:04.448538+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "d53a0ff512801a27e0c046ee62367d397d54df822ec23ed99ad9df10238b9687",
+  "attempt": 2,
+  "context_ids": [
+    "22239754|Calcium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1
+  },
+  "input_digest": "7b3e61390c949e18b9bee053679b75ec6c2b31edaa67ef4decb095b2b4f2e35d",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10026,
+    "cached_input_tokens": 0,
+    "output_tokens": 3746,
+    "reasoning_tokens": 2065
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.021567000000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "9990e309-5d78-419a-9bfd-6772c042c670",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.021567000000000003"
+  },
+  "output_sha256": "bf3947984d8724d38ca9e7de9552029262829a8b44a145700ad64783c89a1711",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22239754|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluates dietary calcium intake and incident prostate cancer risk among US veterans.\",\n      \"extraction\": {\n        \"effect_size\": 0.6,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.33,\n        \"ci_upper\": 1.08,\n        \"p_value\": 0.11,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 506,\n        \"cases\": 108,\n        \"comparison_type\": \"tertile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"veterans screened for prostate cancer\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Thus, the final sample consisted of 108 biopsy-positive cases, 161 biopsy-negative controls, and 237 healthy controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Among participants who received the biopsy (n = 533), 216 were biopsy-positive and considered cases for this study... final sample consisted of 108 biopsy-positive cases\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Tertile 3: 1,245.9 ... 0.60 (0.33-1.08)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Tertile 3: 1,245.9 ... 0.60 (0.33-1.08)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P value for linear trend ... .11\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Calcium intake was adjusted for total calories using the nutrient residual method ( 14 ) and categorized into tertiles based on the distribution in the respective control population.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We used data from an ongoing case-control study of veterans screened for prostate cancer at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"This study includes participants enrolled between January 2007 and September 2010 who were aged at least 18 years, had a prostate-specific antigen (PSA) screening test done within 12 months prior to enrollment\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Of cases, 56% of were black; of healthy controls, 35% were black.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Study design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"We used the Harvard food frequency questionnaire (FFQ) for data on diet ( 13 ). Participants recalled their usual consumption of 61 foods and beverages in the previous 12 months.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/\",\n            \"location\": \"Methods/Data collection, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "22239754|Calcium|Prostate cancer",
+      "pmid": "22239754",
+      "pmcid": "PMC3310142",
+      "published_date": "2012",
+      "title": "Dietary calcium and risk for prostate cancer: a case-control study among US veterans.",
+      "authors": [
+        "Williams CD",
+        "Whitley BM",
+        "Hoyo C",
+        "Grant DJ",
+        "Schwartz GG",
+        "Presti JC",
+        "Iraggi JD",
+        "Newman KA",
+        "Gerber L",
+        "Taylor LA",
+        "McKeever MG",
+        "Freedland SJ"
+      ],
+      "journal": "Preventing chronic disease",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22239754/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluates dietary calcium intake and incident prostate cancer risk among US veterans.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.6,
+        "effect_type": "OR",
+        "ci_lower": 0.33,
+        "ci_upper": 1.08,
+        "p_value": 0.11,
+        "ci_confidence_level": 95,
+        "total_n": 506,
+        "cases": 108,
+        "comparison_type": "tertile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Durham Veterans Affairs Medical Center",
+        "ethnicity": "blacks and whites",
+        "population": "veterans screened for prostate cancer",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Thus, the final sample consisted of 108 biopsy-positive cases, 161 biopsy-negative controls, and 237 healthy controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Methods/Study participants, paragraph 1; total_n derived from reported group counts 108 + 161 + 237 = 506"
+          },
+          "cases": {
+            "excerpt": "Cases (n = 108)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.60 (0.33-1.08)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "0.60 (0.33-1.08)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "P value for linear trend d .11",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "Calcium intake was adjusted for total calories using the nutrient residual method ( 14 ) and categorized into tertiles based on the distribution in the respective control population.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Methods/Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We used data from an ongoing case-control study of veterans screened for prostate cancer at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Methods/Study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "This study includes participants enrolled between January 2007 and September 2010 who were aged at least 18 years, had a prostate-specific antigen (PSA) screening test done within 12 months prior to enrollment",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Methods/Study design, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "whether these associations differed for blacks and whites",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22239754/",
+            "location": "abstract, methods"
+          },
+          "location": {
+            "excerpt": "at the Durham Veterans Affairs Medical Center",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22239754/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "We used the Harvard food frequency questionnaire (FFQ) for data on diet ( 13 ). Participants recalled their usual consumption of 61 foods and beverages in the previous 12 months.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3310142/",
+            "location": "Methods/Data collection, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.11",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 30497,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "9e117ea7a5aba5ad70ccc6ad3ef31c2b00b5e5966be35a28eb4a453410baf385",
+      "pmc_source_receipt_digest": "eb9e148b413f4b5234625aded9efcd561894e528925695a437ac7419258c0746",
+      "pmc_source_raw_sha256": "198b688c1dae3d0ee866dc7cacf50b5573e2bff4c4567497ec2b56aeaf0b05d8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "953458e69496229768a3dfe5a30ff589fa5451a9ca59f7c9d47e1a545a43433c"
+    }
+  ]
+}

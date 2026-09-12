@@ -1,0 +1,792 @@
+{
+  "schema_version": 1,
+  "receipt_id": "6a6ae5621478b7754f718915d83673c4659e76f204a196560531cb517d794bc6",
+  "requested_at": "2026-09-02T07:37:04.431648+08:00",
+  "received_at": "2026-09-02T07:38:27.598824+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "9a100334acaac2a666aa630e2062a495518f8025771581190b918954ddbcd45f",
+  "attempt": 1,
+  "context_ids": [
+    "14970730|Olive|Prostate cancer",
+    "14970730|Palmitoleic acid|Prostate cancer",
+    "14970730|Tomato|Prostate cancer",
+    "14973107|Beta-carotene|Prostate cancer",
+    "14973107|Lycopene|Prostate cancer",
+    "14973107|Tomato|Prostate cancer",
+    "14977640|Alcohol|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Beta-carotene": 1,
+    "Lycopene": 1,
+    "Olive": 1,
+    "Palmitoleic acid": 1,
+    "Tomato": 2
+  },
+  "input_digest": "cfd518c97ac531624e0677dc46dd698bf490398e0c2f564a73e0ffbf239f2ca9",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 6859,
+    "cached_input_tokens": 0,
+    "output_tokens": 9290,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.26654500000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "f7ede5fd-1f51-4cef-8483-8b070569f41b",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.26654500000000003"
+  },
+  "output_sha256": "8e9b650dc55ac076eac2673735741445a342c6aec4c33254cbc924c9122d3b50",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"14970730|Olive|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Olive oil is mentioned only incidentally in the interpretation as a source of oleic acid, with no olive/olive oil intake exposure or estimate reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"14970730|Palmitoleic acid|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Population-based case-control study reporting a dietary palmitoleic acid association with incident histologically confirmed prostate cancer.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.04,\"ci_confidence_level\":null,\"total_n\":1763,\"cases\":858,\"comparison_type\":\"trend across intake tertiles\",\"design\":\"case_control\",\"timing\":null,\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men aged <70 years at diagnosis with histologically confirmed prostate cancer and age-frequency-matched men selected from the electoral rolls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"858 men aged <70 years at diagnosis with histologically confirmed prostate cancer ... and 905 age-frequency-matched men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"858 men aged <70 years at diagnosis with histologically confirmed prostate cancer of Gleason Grade 5 or greater\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"weak inverse associations for palmitoleic acid ( p trend 0.04)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, results sentence\"},\"comparison\":{\"excerpt\":\"(Odds ratio, OR, 95% confidence intervals, 95% CI for tertile III compared with tertile I)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"Population-based case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"},\"timing\":null,\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Dietary intakes were assessed with a 121-item food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"14970730|Tomato|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting tomato-based food intake and incident prostate cancer with an odds ratio and confidence interval.\",\"extraction\":{\"effect_size\":0.8,\"effect_type\":\"OR\",\"ci_lower\":0.6,\"ci_upper\":1.0,\"p_value\":0.03,\"ci_confidence_level\":95,\"total_n\":1763,\"cases\":858,\"comparison_type\":\"tertile III compared with tertile I of tomato-based food intake\",\"design\":\"case_control\",\"timing\":null,\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men aged <70 years at diagnosis with histologically confirmed prostate cancer and age-frequency-matched men selected from the electoral rolls\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"858 men aged <70 years at diagnosis with histologically confirmed prostate cancer ... and 905 age-frequency-matched men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"858 men aged <70 years at diagnosis with histologically confirmed prostate cancer of Gleason Grade 5 or greater\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":{\"excerpt\":\"tomato-based foods 0.8, 0.6-1.0; p trend 0.03\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, results sentence\"},\"confidence_interval\":{\"excerpt\":\"tomato-based foods 0.8, 0.6-1.0\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, results sentence\"},\"p_value\":{\"excerpt\":\"tomato-based foods 0.8, 0.6-1.0; p trend 0.03\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, results sentence\"},\"comparison\":{\"excerpt\":\"(Odds ratio, OR, 95% confidence intervals, 95% CI for tertile III compared with tertile I)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"Population-based case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"},\"timing\":null,\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Dietary intakes were assessed with a 121-item food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14970730/\",\"location\":\"abstract, methods sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"14973107|Beta-carotene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Nested case-control study reporting plasma beta-carotene concentrations and risk of incident prostate cancer.\",\"extraction\":{\"effect_size\":0.78,\"effect_type\":\"OR\",\"ci_lower\":0.48,\"ci_upper\":1.25,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":900,\"cases\":450,\"comparison_type\":\"highest versus lowest quintile of plasma beta-carotene\",\"design\":\"case_control\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men in the prospective Health Professionals Follow-up Study; 450 incident prostate cancer cases diagnosed 1993-1998 matched to 450 controls\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We matched 450 incident prostate cancer cases diagnosed from 1993-1998 to 450 controls by age, time, month, and year of blood donation.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"450 incident prostate cancer cases diagnosed from 1993-1998\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":{\"excerpt\":\"beta-carotene: OR, 0.78 (95% CI, 0.48-1.25)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, results sentence\"},\"confidence_interval\":{\"excerpt\":\"beta-carotene: OR, 0.78 (95% CI, 0.48-1.25)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, results sentence\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"odds ratio (highest versus lowest quintile; OR)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"case-control study nested within the prospective Health Professionals Follow-up Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, first sentence\"},\"timing\":{\"excerpt\":\"nested within the prospective Health Professionals Follow-up Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, first sentence\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"The association between plasma carotenoids and prostate cancer risk was investigated\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, first sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"14973107|Lycopene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Nested case-control study reporting plasma lycopene concentrations and risk of incident prostate cancer.\",\"extraction\":{\"effect_size\":0.66,\"effect_type\":\"OR\",\"ci_lower\":0.38,\"ci_upper\":1.13,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":900,\"cases\":450,\"comparison_type\":\"highest versus lowest quintile of plasma lycopene\",\"design\":\"case_control\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men in the prospective Health Professionals Follow-up Study; 450 incident prostate cancer cases diagnosed 1993-1998 matched to 450 controls\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We matched 450 incident prostate cancer cases diagnosed from 1993-1998 to 450 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"450 incident prostate cancer cases diagnosed from 1993-1998\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":{\"excerpt\":\"lycopene: OR, 0.66 (95% CI, 0.38-1.13)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, results sentence\"},\"confidence_interval\":{\"excerpt\":\"lycopene: OR, 0.66 (95% CI, 0.38-1.13)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, results sentence\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"odds ratio (highest versus lowest quintile; OR)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"case-control study nested within the prospective Health Professionals Follow-up Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, first sentence\"},\"timing\":{\"excerpt\":\"nested within the prospective Health Professionals Follow-up Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, first sentence\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"The association between plasma carotenoids and prostate cancer risk was investigated\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14973107/\",\"location\":\"abstract, first sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"14973107|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Tomato products are mentioned only speculatively in the interpretation of plasma lycopene findings, with no tomato food intake exposure or estimate reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"14977640|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Large prospective cohort study reporting alcohol intake and risk of incident prostate cancer with hazard ratios.\",\"extraction\":{\"effect_size\":1.0,\"effect_type\":\"HR\",\"ci_lower\":0.77,\"ci_upper\":1.31,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":47843,\"cases\":2479,\"comparison_type\":\"average alcohol intake >=50 g/day versus nondrinking\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"47,843 US men followed 1986-1998 who completed a baseline questionnaire on alcohol consumption\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort study of 47,843 US men (1986-1998)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"risk of incident prostate cancer (n = 2,479)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":{\"excerpt\":\"it was not increased at > or = 50 g/day (HR = 1.00, 95% CI: 0.77, 1.31)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, results sentence\"},\"confidence_interval\":{\"excerpt\":\"(HR = 1.00, 95% CI: 0.77, 1.31)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, results sentence\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Compared with nondrinking ... it was not increased at > or = 50 g/day\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"prospectively evaluated the associations between these factors and risk of incident prostate cancer ... in a cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, methods sentence\"},\"timing\":{\"excerpt\":\"the authors prospectively evaluated the associations\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, methods sentence\"},\"continent\":{\"excerpt\":\"a cohort study of 47,843 US men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, methods sentence\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"47,843 US men (1986-1998)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, methods sentence\"},\"exposure_measurement\":{\"excerpt\":\"The men completed a questionnaire at baseline that included information on consumption of specific types of alcohol and frequency of use.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/14977640/\",\"location\":\"abstract, methods sentence\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "14970730|Olive|Prostate cancer",
+      "pmid": "14970730",
+      "pmcid": "",
+      "published_date": "2004-02-01",
+      "title": "Foods, nutrients and prostate cancer.",
+      "authors": [
+        "Hodge AM",
+        "English DR",
+        "McCredie MR",
+        "Severi G",
+        "Boyle P",
+        "Hopper JL",
+        "Giles GG"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+      "exposure": "Olive",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Olive oil is mentioned only incidentally in the interpretation as a source of oleic acid, with no olive/olive oil intake exposure or estimate reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "14970730|Palmitoleic acid|Prostate cancer",
+      "pmid": "14970730",
+      "pmcid": "",
+      "published_date": "2004-02-01",
+      "title": "Foods, nutrients and prostate cancer.",
+      "authors": [
+        "Hodge AM",
+        "English DR",
+        "McCredie MR",
+        "Severi G",
+        "Boyle P",
+        "Hopper JL",
+        "Giles GG"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+      "exposure": "Palmitoleic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Population-based case-control study reporting a dietary palmitoleic acid association with incident histologically confirmed prostate cancer.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.04,
+        "ci_confidence_level": null,
+        "total_n": 1763,
+        "cases": 858,
+        "comparison_type": "trend across intake tertiles",
+        "design": "case_control",
+        "timing": null,
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged <70 years at diagnosis with histologically confirmed prostate cancer and age-frequency-matched men selected from the electoral rolls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Population-based case-control study of 858 men aged <70 years at diagnosis with histologically confirmed prostate cancer of Gleason Grade 5 or greater, and 905 age-frequency-matched men, selected at random from the electoral rolls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence; total_n derived from reported group counts 858 + 905 = 1763"
+          },
+          "cases": {
+            "excerpt": "Population-based case-control study of 858 men aged <70 years at diagnosis with histologically confirmed prostate cancer of Gleason Grade 5 or greater, and 905 age-frequency-matched men, selected at random from the electoral rolls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "weak inverse associations for palmitoleic acid ( p trend 0.04)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, results sentence"
+          },
+          "comparison": {
+            "excerpt": "(Odds ratio, OR, 95% confidence intervals, 95% CI for tertile III compared with tertile I)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "Population-based case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence"
+          },
+          "timing": null,
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intakes were assessed with a 121-item food frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence"
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "14970730|Tomato|Prostate cancer",
+      "pmid": "14970730",
+      "pmcid": "",
+      "published_date": "2004-02-01",
+      "title": "Foods, nutrients and prostate cancer.",
+      "authors": [
+        "Hodge AM",
+        "English DR",
+        "McCredie MR",
+        "Severi G",
+        "Boyle P",
+        "Hopper JL",
+        "Giles GG"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting tomato-based food intake and incident prostate cancer with an odds ratio and confidence interval.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.8,
+        "effect_type": "OR",
+        "ci_lower": 0.6,
+        "ci_upper": 1,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": 1763,
+        "cases": 858,
+        "comparison_type": "tertile III compared with tertile I of tomato-based food intake",
+        "design": "case_control",
+        "timing": null,
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged <70 years at diagnosis with histologically confirmed prostate cancer and age-frequency-matched men selected from the electoral rolls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Population-based case-control study of 858 men aged <70 years at diagnosis with histologically confirmed prostate cancer of Gleason Grade 5 or greater, and 905 age-frequency-matched men, selected at random from the electoral rolls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence; total_n derived from reported group counts 858 + 905 = 1763"
+          },
+          "cases": {
+            "excerpt": "Population-based case-control study of 858 men aged <70 years at diagnosis with histologically confirmed prostate cancer of Gleason Grade 5 or greater, and 905 age-frequency-matched men, selected at random from the electoral rolls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": {
+            "excerpt": "Inverse associations with prostate cancer were observed for (Odds ratio, OR, 95% confidence intervals, 95% CI for tertile III compared with tertile I) allium vegetables 0.7, 0.5-0.9; p trend 0.01, tomato-based foods 0.8, 0.6-1.0; p trend 0.03 and total vegetables 0.7, 0.5-1.0; p trend 0.04.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, results sentence"
+          },
+          "confidence_interval": {
+            "excerpt": "Inverse associations with prostate cancer were observed for (Odds ratio, OR, 95% confidence intervals, 95% CI for tertile III compared with tertile I) allium vegetables 0.7, 0.5-0.9; p trend 0.01, tomato-based foods 0.8, 0.6-1.0; p trend 0.03 and total vegetables 0.7, 0.5-1.0; p trend 0.04.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, results sentence"
+          },
+          "p_value": {
+            "excerpt": "tomato-based foods 0.8, 0.6-1.0; p trend 0.03",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, results sentence"
+          },
+          "comparison": {
+            "excerpt": "(Odds ratio, OR, 95% confidence intervals, 95% CI for tertile III compared with tertile I)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "Population-based case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence"
+          },
+          "timing": null,
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intakes were assessed with a 121-item food frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14970730/",
+            "location": "abstract, methods sentence"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "14973107|Beta-carotene|Prostate cancer",
+      "pmid": "14973107",
+      "pmcid": "",
+      "published_date": "2004-02-01",
+      "title": "Plasma and dietary carotenoids, and the risk of prostate cancer: a nested case-control study.",
+      "authors": [
+        "Wu K",
+        "Erdman JW",
+        "Schwartz SJ",
+        "Platz EA",
+        "Leitzmann M",
+        "Clinton SK",
+        "DeGroff V",
+        "Willett WC",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Nested case-control study reporting plasma beta-carotene concentrations and risk of incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.78,
+        "effect_type": "OR",
+        "ci_lower": 0.48,
+        "ci_upper": 1.25,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 900,
+        "cases": 450,
+        "comparison_type": "highest versus lowest quintile of plasma beta-carotene",
+        "design": "case_control",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men in the prospective Health Professionals Follow-up Study; 450 incident prostate cancer cases diagnosed 1993-1998 matched to 450 controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We matched 450 incident prostate cancer cases diagnosed from 1993-1998 to 450 controls by age, time, month, and year of blood donation.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, methods sentence; total_n derived from reported group counts 450 + 450 = 900"
+          },
+          "cases": {
+            "excerpt": "We matched 450 incident prostate cancer cases diagnosed from 1993-1998 to 450 controls by age, time, month, and year of blood donation.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": {
+            "excerpt": "Modest inverse, but not statistically significant, associations were observed among plasma alpha-carotene, beta-carotene, and lycopene concentrations, and overall risk of prostate cancer diagnosis [odds ratio (highest versus lowest quintile; OR), alpha-carotene: OR, 0.67 [95% confidence interval (CI), -0.40-1.09]; beta-carotene: OR, 0.78 (95% CI, 0.48-1.25); lycopene: OR, 0.66 (95% CI, 0.38-1.13)].",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, results sentence"
+          },
+          "confidence_interval": {
+            "excerpt": "Modest inverse, but not statistically significant, associations were observed among plasma alpha-carotene, beta-carotene, and lycopene concentrations, and overall risk of prostate cancer diagnosis [odds ratio (highest versus lowest quintile; OR), alpha-carotene: OR, 0.67 [95% confidence interval (CI), -0.40-1.09]; beta-carotene: OR, 0.78 (95% CI, 0.48-1.25); lycopene: OR, 0.66 (95% CI, 0.38-1.13)].",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, results sentence"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "odds ratio (highest versus lowest quintile; OR)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "case-control study nested within the prospective Health Professionals Follow-up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, first sentence"
+          },
+          "timing": {
+            "excerpt": "nested within the prospective Health Professionals Follow-up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, first sentence"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The association between plasma carotenoids and prostate cancer risk was investigated",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, first sentence"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "14973107|Lycopene|Prostate cancer",
+      "pmid": "14973107",
+      "pmcid": "",
+      "published_date": "2004-02-01",
+      "title": "Plasma and dietary carotenoids, and the risk of prostate cancer: a nested case-control study.",
+      "authors": [
+        "Wu K",
+        "Erdman JW",
+        "Schwartz SJ",
+        "Platz EA",
+        "Leitzmann M",
+        "Clinton SK",
+        "DeGroff V",
+        "Willett WC",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Nested case-control study reporting plasma lycopene concentrations and risk of incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.66,
+        "effect_type": "OR",
+        "ci_lower": 0.38,
+        "ci_upper": 1.13,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 900,
+        "cases": 450,
+        "comparison_type": "highest versus lowest quintile of plasma lycopene",
+        "design": "case_control",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men in the prospective Health Professionals Follow-up Study; 450 incident prostate cancer cases diagnosed 1993-1998 matched to 450 controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We matched 450 incident prostate cancer cases diagnosed from 1993-1998 to 450 controls by age, time, month, and year of blood donation.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, methods sentence; total_n derived from reported group counts 450 + 450 = 900"
+          },
+          "cases": {
+            "excerpt": "We matched 450 incident prostate cancer cases diagnosed from 1993-1998 to 450 controls by age, time, month, and year of blood donation.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": {
+            "excerpt": "Modest inverse, but not statistically significant, associations were observed among plasma alpha-carotene, beta-carotene, and lycopene concentrations, and overall risk of prostate cancer diagnosis [odds ratio (highest versus lowest quintile; OR), alpha-carotene: OR, 0.67 [95% confidence interval (CI), -0.40-1.09]; beta-carotene: OR, 0.78 (95% CI, 0.48-1.25); lycopene: OR, 0.66 (95% CI, 0.38-1.13)].",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, results sentence"
+          },
+          "confidence_interval": {
+            "excerpt": "Modest inverse, but not statistically significant, associations were observed among plasma alpha-carotene, beta-carotene, and lycopene concentrations, and overall risk of prostate cancer diagnosis [odds ratio (highest versus lowest quintile; OR), alpha-carotene: OR, 0.67 [95% confidence interval (CI), -0.40-1.09]; beta-carotene: OR, 0.78 (95% CI, 0.48-1.25); lycopene: OR, 0.66 (95% CI, 0.38-1.13)].",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, results sentence"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "odds ratio (highest versus lowest quintile; OR)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "case-control study nested within the prospective Health Professionals Follow-up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, first sentence"
+          },
+          "timing": {
+            "excerpt": "nested within the prospective Health Professionals Follow-up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, first sentence"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The association between plasma carotenoids and prostate cancer risk was investigated",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+            "location": "abstract, first sentence"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "14973107|Tomato|Prostate cancer",
+      "pmid": "14973107",
+      "pmcid": "",
+      "published_date": "2004-02-01",
+      "title": "Plasma and dietary carotenoids, and the risk of prostate cancer: a nested case-control study.",
+      "authors": [
+        "Wu K",
+        "Erdman JW",
+        "Schwartz SJ",
+        "Platz EA",
+        "Leitzmann M",
+        "Clinton SK",
+        "DeGroff V",
+        "Willett WC",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14973107/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Tomato products are mentioned only speculatively in the interpretation of plasma lycopene findings, with no tomato food intake exposure or estimate reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "14977640|Alcohol|Prostate cancer",
+      "pmid": "14977640",
+      "pmcid": "",
+      "published_date": "2004-03-01",
+      "title": "Alcohol intake, drinking patterns, and risk of prostate cancer in a large prospective cohort study.",
+      "authors": [
+        "Platz EA",
+        "Leitzmann MF",
+        "Rimm EB",
+        "Willett WC",
+        "Giovannucci E"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Large prospective cohort study reporting alcohol intake and risk of incident prostate cancer with hazard ratios.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1,
+        "effect_type": "HR",
+        "ci_lower": 0.77,
+        "ci_upper": 1.31,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 47843,
+        "cases": 2479,
+        "comparison_type": "average alcohol intake >=50 g/day versus nondrinking",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "47,843 US men followed 1986-1998 who completed a baseline questionnaire on alcohol consumption",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Thus, the authors prospectively evaluated the associations between these factors and risk of incident prostate cancer (n = 2,479) in a cohort study of 47,843 US men (1986-1998). The men completed a questionnaire at baseline that included information on consumption of specific types of alcohol and frequency of use.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, methods sentence"
+          },
+          "cases": {
+            "excerpt": "Thus, the authors prospectively evaluated the associations between these factors and risk of incident prostate cancer (n = 2,479) in a cohort study of 47,843 US men (1986-1998).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": {
+            "excerpt": "Compared with nondrinking, the hazard ratio for consumption increased slightly from an average of 5.0-14.9 g/day (hazard ratio (HR) = 1.05, 95% confidence interval (CI): 0.94, 1.18) to 30.0-49.9 g/day (HR = 1.13, 95% CI: 0.96, 1.33), but it was not increased at > or = 50 g/day (HR = 1.00, 95% CI: 0.77, 1.31) after adjustment for recent smoking and other factors. Compared with abstainers, risk was greatest among men who consumed an average of > or = 105 g/week but who drank on only 1-2 days per week (HR = 1.64, 95% CI: 1.13, 2.38).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, results sentence"
+          },
+          "confidence_interval": {
+            "excerpt": "Compared with nondrinking, the hazard ratio for consumption increased slightly from an average of 5.0-14.9 g/day (hazard ratio (HR) = 1.05, 95% confidence interval (CI): 0.94, 1.18) to 30.0-49.9 g/day (HR = 1.13, 95% CI: 0.96, 1.33), but it was not increased at > or = 50 g/day (HR = 1.00, 95% CI: 0.77, 1.31) after adjustment for recent smoking and other factors.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, results sentence"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, methods sentence"
+          },
+          "timing": {
+            "excerpt": "the authors prospectively evaluated the associations",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, methods sentence"
+          },
+          "continent": {
+            "excerpt": "a cohort study of 47,843 US men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, methods sentence"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The men completed a questionnaire at baseline that included information on consumption of specific types of alcohol and frequency of use.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/14977640/",
+            "location": "abstract, methods sentence"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

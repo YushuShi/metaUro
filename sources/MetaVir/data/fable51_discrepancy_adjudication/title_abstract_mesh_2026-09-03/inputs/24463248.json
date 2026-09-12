@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:01.399137-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "21b3d518cb9234cc1ac144048bd8b81d406e9ecfc7c096da7f3575317541cf83",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "24463248",
+      "title": "Dietary lycopene, angiogenesis, and prostate cancer: a prospective study in the prostate-specific antigen era.",
+      "abstract": "The role of lycopene in prostate cancer prevention remains controversial. We examined the associations between dietary lycopene intake and prostate cancer, paying particular attention to the influence of prostate-specific antigen screening, and evaluated tissue biomarkers in prostate cancers in relation to lycopene intake. Among 49898 male health professionals, we obtained dietary information through questionnaires and ascertained total and lethal prostate cancer cases from 1986 through January 31, 2010. Cox regression was used to estimate multivariable hazard ratios (HRs) and 95% confidence intervals (CIs). Tissue microarrays and immunohistochemistry were used to assess tumor biomarker expression in a subset of men. Two-sided χ(2) tests were used to calculate the P values. Higher lycopene intake was inversely associated with total prostate cancer and more strongly with lethal prostate cancer (top vs bottom quintile: HR = 0.72; 95% CI = 0.56 to 0.94; P(trend) = .04). In a restricted population of screened participants, the inverse associations became markedly stronger (for lethal prostate cancer: HR = 0.47; 95% CI = 0.29 to 0.75; P trend = .009). Comparing different measures of dietary lycopene, early intake, but not recent intake, was inversely associated with prostate cancer. Higher lycopene intake was associated with biomarkers in the cancer indicative of less angiogenic potential. Dietary intake of lycopene was associated with reduced risk of lethal prostate cancer and with a lesser degree of angiogenesis in the tumor. Because angiogenesis is a strong progression factor, an endpoint of lethal prostate cancer may be more relevant than an endpoint of indolent prostate cancer for lycopene in the era of highly prevalent prostate-specific antigen screening.",
+      "mesh": [
+        "Aged",
+        "Anticarcinogenic Agents / administration & dosage",
+        "Apoptosis",
+        "Biomarkers, Tumor / analysis, blood",
+        "Carotenoids / administration & dosage",
+        "Cell Proliferation",
+        "Disease Progression",
+        "Feeding Behavior",
+        "Humans",
+        "Immunohistochemistry",
+        "Incidence",
+        "Lycopene",
+        "Male",
+        "Middle Aged",
+        "Neovascularization, Pathologic / diagnosis",
+        "Odds Ratio",
+        "Predictive Value of Tests",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostate-Specific Antigen / blood",
+        "Prostatectomy",
+        "Prostatic Neoplasms / blood supply, epidemiology, immunology, prevention & control, surgery",
+        "Surveys and Questionnaires",
+        "Tissue Array Analysis",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "24463248",
+      "contexts": [
+        {
+          "context_id": "24463248|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "49898",
+              "effect_measure_type": "HR",
+              "effect_size": "0.72",
+              "ci_lower": "0.56",
+              "ci_upper": "0.94",
+              "p_value": "0.04",
+              "comparison": "top vs bottom quintile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "49898",
+              "effect_measure_type": "HR",
+              "effect_size": "0.91",
+              "ci_lower": "0.84",
+              "ci_upper": "1",
+              "p_value": "0.009",
+              "comparison": "extreme_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

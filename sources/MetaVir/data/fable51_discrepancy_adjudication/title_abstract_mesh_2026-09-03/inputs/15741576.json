@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:25:17.808289-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "73a71d59c79f5ec54dcecfb5334b3d7e0cf8365b829cb4746857e0770c57ba7f",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15741576",
+      "title": "Serum alpha-tocopherol and gamma-tocopherol in relation to prostate cancer risk in a prospective study.",
+      "abstract": "The Alpha-Tocopherol, Beta-Carotene Cancer Prevention (ATBC) Study demonstrated a 32% reduction in prostate cancer incidence in response to daily alpha-tocopherol supplementation. We examined baseline serum concentrations of alpha-tocopherol and gamma-tocopherol to compare their respective associations with prostate cancer risk. From the ATBC Study cohort of 29 133 Finnish men, 50-69 years old, we randomly selected 100 incident prostate cancer case patients and matched 200 control subjects. Odds ratios and 95% confidence intervals (CIs) were estimated for the serum tocopherols (measured by high-performance liquid chromatography) using logistic regression models. All P values were two-sided. Odds ratios for the highest versus the lowest tertiles were 0.49 (95% CI = 0.24 to 1.01, P(trend) = .05) for alpha-tocopherol and 0.57 (95% CI = 0.31 to 1.06, P(trend) = .08) for gamma-tocopherol. Further analyses indicated that the association of high serum tocopherols with low prostate cancer risk was stronger in the alpha-tocopherol-supplemented group than in those not receiving alpha-tocopherol. Participants with higher circulating concentrations of the major vitamin E fractions, alpha-tocopherol and gamma-tocopherol, had similarly lower prostate cancer risk.",
+      "mesh": [
+        "Aged",
+        "Antioxidants / administration & dosage",
+        "Case-Control Studies",
+        "Chromatography, High Pressure Liquid",
+        "Confidence Intervals",
+        "Finland / epidemiology",
+        "Humans",
+        "Incidence",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, epidemiology, prevention & control",
+        "Risk Assessment",
+        "Risk Factors",
+        "Vitamin E / administration & dosage",
+        "alpha-Tocopherol / blood",
+        "gamma-Tocopherol / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15741576",
+      "contexts": [
+        {
+          "context_id": "15741576|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.49",
+              "ci_lower": "0.24",
+              "ci_upper": "1.01",
+              "p_value": "0.05",
+              "comparison": "Highest versus lowest tertile of serum alpha-tocopherol"
+            },
+            "Claude+Gemini": {
+              "sample_size": "300",
+              "effect_measure_type": "OR",
+              "effect_size": "0.49",
+              "ci_lower": "0.24",
+              "ci_upper": "1.01",
+              "p_value": "0.05",
+              "comparison": "highest versus lowest tertile of serum alpha-tocopherol"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:36:08.992225-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c05d5828bc9d204a6699a0726e5f938333121f6365b18b593f1f555eca62393b",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "31124766",
+      "title": "Temporal trends in food group availability and cancer incidence in Africa: an ecological analysis.",
+      "abstract": "We evaluated the relationship between food availability, as the only dietary exposure data available across Africa, and age-standardised cancer incidence rates (ASR) in eighteen countries. Ecological study. Availability of food groups and dietary energy was considered for five hypothetical time points: years of collection of ASR (T0) and 5, 10, 15 and 20 preceding years (T-5, T-10, T-15, T-20). Ecological correlations adjusted for human development index, smoking and obesity rates were calculated to evaluate the relationship between food availability and ASR of breast, prostate, colorectal, oesophageal, pancreatic, stomach and thyroid cancer. Red meat was positively correlated with pancreatic cancer in men (T-20: r-20 = 0·61, P < 0·05), stomach cancer in women (T0: r0 = 0·58, P < 0·05), and colorectal cancer in men (T0: r0 = 0·53, P < 0·05) and women (T-20: r-20 = 0·58, P < 0·05). Animal products including meat, animal fats and higher animal-sourced energy supply tended to be positively correlated with breast, colorectal, pancreatic, stomach and thyroid cancer. Alcoholic beverages were positively correlated to oesophageal cancer in men (r0 = 0·69, P < 0·001) and women (r-20 = 0·72, P < 0·001). The present analysis provides initial insights into the impact of alcoholic beverages, and increasing use of animal over plant products, on the incidence of specific cancers in Africa. The findings support the need for epidemiological studies to investigate the role of diet in cancer development in Africa.",
+      "mesh": [
+        "Adult",
+        "Africa / epidemiology",
+        "Aged",
+        "Breast Neoplasms / epidemiology, etiology",
+        "Colorectal Neoplasms / epidemiology, etiology",
+        "Diet / adverse effects, trends",
+        "Ecological and Environmental Phenomena",
+        "Esophageal Neoplasms / epidemiology, etiology",
+        "Female",
+        "Food Supply / statistics & numerical data",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Neoplasms / epidemiology, etiology",
+        "Pancreatic Neoplasms / epidemiology, etiology",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Stomach Neoplasms / epidemiology, etiology",
+        "Thyroid Neoplasms / epidemiology, etiology",
+        "Time Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "31124766",
+      "contexts": [
+        {
+          "context_id": "31124766|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        },
+        {
+          "context_id": "31124766|Red meat|Prostate cancer",
+          "exposure": "Red meat",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

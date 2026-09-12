@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:53.859577-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d7d7d342c2674f1707ee028ddd8c48104fd13a4fe27c1bf68562f82fb22e26ce",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "37407836",
+      "title": "Associations of intakes of total protein, protein from dairy sources, and dietary calcium with risks of colorectal, breast, and prostate cancer: a prospective analysis in UK Biobank.",
+      "abstract": "Evidence concerning intakes of protein or sources of dairy protein and risks of colorectal, breast, and prostate cancers is inconclusive. Using a subsample of UK Biobank participants who completed ≥2 (maximum of 5) 24-h dietary assessments, we estimated intakes of total protein, protein from total dairy products, milk, and cheese, and dietary calcium in 114,217 participants. Hazard ratios (HRs) and 95% confidence intervals (CI) were estimated using multivariable-adjusted Cox regression. After a median of 9.4 years of follow-up, 1193 colorectal, 2024 female breast, and 2422 prostate cancer cases were identified. There were inverse associations of total dairy protein, protein from milk, and dietary calcium intakes with colorectal cancer incidence (HR<sub>Q4 vs Q1</sub>:0.80, 95% CI: 0.67-0.94; 0.79, 0.67-0.94; 0.71, 0.58-0.86, respectively). We also observed positive associations of milk protein and dietary calcium with prostate cancer risk (HR<sub>Q4 vs Q1</sub>:1.12, 1.00-1.26 and 1.16, 1.01-1.33, respectively). No significant associations were observed between intake of dairy protein and breast cancer risk. When insulin-like growth factor-I concentrations measured at recruitment were added to the multivariable-adjusted models, associations remained largely unchanged. Analyses were also similar when looking at total grams of dairy products, milk, and cheese. Further research is needed to understand the mechanisms underlying the relationships of dairy products with cancer risk and the potential roles of dietary protein and calcium.",
+      "mesh": [
+        "Male",
+        "Humans",
+        "Calcium, Dietary",
+        "Biological Specimen Banks",
+        "Prospective Studies",
+        "Dairy Products / adverse effects",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Colorectal Neoplasms / epidemiology, complications",
+        "United Kingdom / epidemiology",
+        "Risk Factors",
+        "Diet / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "37407836",
+      "contexts": [
+        {
+          "context_id": "37407836|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "51278",
+              "effect_measure_type": "HR",
+              "effect_size": "1.16",
+              "ci_lower": "1.01",
+              "ci_upper": "1.33",
+              "p_value": "0.15",
+              "comparison": "Highest quartile (Q4) versus lowest quartile (Q1) of dietary calcium intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "114217",
+              "effect_measure_type": "HR",
+              "effect_size": "1.16",
+              "ci_lower": "1.01",
+              "ci_upper": "1.33",
+              "p_value": "0.03452692331371332",
+              "comparison": "Quartile 4 vs Quartile 1 of dietary calcium intake"
+            }
+          }
+        },
+        {
+          "context_id": "37407836|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "51278",
+              "effect_measure_type": "HR",
+              "effect_size": "1.04",
+              "ci_lower": "0.96",
+              "ci_upper": "1.12",
+              "p_value": "0.36",
+              "comparison": "Highest quartile (Q4) versus lowest quartile (Q1) of protein from all dairy products"
+            },
+            "Claude+Gemini": {
+              "sample_size": "114217",
+              "effect_measure_type": "HR",
+              "effect_size": "1.12",
+              "ci_lower": "1",
+              "ci_upper": "1.26",
+              "p_value": "0.05458204823472018",
+              "comparison": "Quartile 4 vs Quartile 1 of milk protein intake"
+            }
+          }
+        },
+        {
+          "context_id": "37407836|Dietary protein intake|Prostate cancer",
+          "exposure": "Dietary protein intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "114217",
+              "effect_measure_type": "HR",
+              "effect_size": "1.12",
+              "ci_lower": "1",
+              "ci_upper": "1.26",
+              "p_value": "0.1",
+              "comparison": "Highest quartile (Q4) versus lowest quartile (Q1) of protein from milk intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "51278",
+              "effect_measure_type": "HR",
+              "effect_size": "0.98",
+              "ci_lower": "0.87",
+              "ci_upper": "1.11",
+              "p_value": "0.68",
+              "comparison": "highest_vs_lowest"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:37:34.875810-04:00",
+  "pmid": "34606688",
+  "work_key": "fc91d20e2b24c7eb6c272c2da2c0bb137bf9a95c78367a80ebfc1d570e761139",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/34606688_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "34606688",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "34606688|Dairy|Prostate cancer",
+        "exposure": "Dairy",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "milk consumption was associated with a significant risk (HR = 1.37, p = 0.009)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Claude+Gemini p=0.009 matches the abstract milk estimate but their CI appears derived and is not reported; ChatGPT's CI 1.02-1.99/p=0.036 is absent and may come from full text.",
+        "one_sentence_explanation": "The abstract gives p=0.009 for milk (supporting Claude+Gemini's p value) but no CI, while ChatGPT's 1.02-1.99 and p=0.036 are absent and may belong to a different model, so the field cannot be uniquely resolved."
+      },
+      {
+        "context_id": "34606688|Dairy|Prostate cancer",
+        "exposure": "Dairy",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "milk consumption was associated with a significant risk (HR = 1.37, p = 0.009) and a dose-dependent response (p for trend = 0.009) adjusted for age and family history of prostate cancer, stratified by area",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract HR 1.37 is for milk in a minimally adjusted model; ChatGPT's 1.43 is absent and may be the fully adjusted model from full text; the 'Dairy' exposure is not uniquely mapped.",
+        "one_sentence_explanation": "The abstract reports HR 1.37 (p=0.009) for milk under minimal adjustment, matching Claude+Gemini, but ChatGPT's 1.43 may reflect the fully adjusted model described without numbers, so the target estimate cannot be uniquely mapped."
+      },
+      {
+        "context_id": "34606688|Fermented foods|Prostate cancer",
+        "exposure": "Fermented foods",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "As dairy products, milk, yogurt, cheese, and butter were evaluated.",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Yogurt and cheese are evaluated as dairy products, not framed as fermented foods; whether this satisfies the fermented-foods exposure concept requires reviewer judgment.",
+        "one_sentence_explanation": "The study evaluates yogurt and cheese as dairy products with incident prostate cancer, but never frames them as fermented foods, so whether the fermented-foods exposure concept is met versus an exposure mismatch cannot be settled from the allowed evidence."
+      },
+      {
+        "context_id": "34606688|Yogurt|Prostate cancer",
+        "exposure": "Yogurt",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "The subjects of the present study were 26,464 men (age range: 40-79 years) from 24 districts wherein cancer incidence was reported.",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives overall cohort of 26,464 but no yogurt-specific analytic N; Claude+Gemini's 20,518 is absent and may be a full-text analytic count after exclusions.",
+        "one_sentence_explanation": "The abstract states 26,464 men as the overall study subjects (consistent with ChatGPT) but does not report the number analyzed for the yogurt estimate, so Claude+Gemini's 20,518 cannot be confirmed or rejected."
+      }
+    ]
+  }
+}

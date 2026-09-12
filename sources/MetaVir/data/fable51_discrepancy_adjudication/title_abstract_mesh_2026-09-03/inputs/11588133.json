@@ -1,0 +1,85 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:21:36.691705-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d0695e3bb9be82456c78caa7a807255299ef91af8f98b88d2d99e0f598bd63a1",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11588133",
+      "title": "Predictors of serum selenium in cigarette smokers and the lack of association with lung and prostate cancer risk.",
+      "abstract": "Epidemiological studies have suggested that low levels of selenium are associated with a higher incidence of both lung and prostate cancer. We analyzed the selenium serum concentration in 356 Carotene and Retinol Efficacy Trial (CARET) participants who later developed lung cancer and 356 matched controls and in 235 prostate cancer cases and 456 matched controls. Serum samples were obtained a mean of 4.7 years before diagnosis for both tumor types. Controls were matched to cases by year of randomization, age, smoking status, treatment arm, exposure population (asbestos workers or cigarette smokers), and year of blood draw. In the control population (n = 820), significant predictors of low serum selenium concentration were current smoking status and East Coast locations of the study center. Overall, there was no significant difference in mean serum selenium in lung cancer cases versus controls (11.91 microg/dl versus 11.77 microg/dl) or prostate cancer cases versus controls (11.48 microg/dl versus 11.43 microg/dl). No statistically significant trend in odds ratio was seen across quartiles of serum selenium for lung cancer (P = 0.49) or prostate cancer (P = 0.69). In a subpopulation of 174 prostate cancer patients who had clinical and pathological staging material reviewed, there was no association between serum selenium and Gleason score or clinical or pathological stage. In the CARET population of current and former smokers consuming an ad libitum diet, the serum concentration of selenium was not a risk factor for either lung cancer or prostate cancer.",
+      "mesh": [
+        "Age Distribution",
+        "Aged",
+        "Analysis of Variance",
+        "Biomarkers, Tumor / analysis",
+        "Case-Control Studies",
+        "Cohort Studies",
+        "Female",
+        "Humans",
+        "Incidence",
+        "Logistic Models",
+        "Lung Neoplasms / blood, epidemiology",
+        "Male",
+        "Middle Aged",
+        "Predictive Value of Tests",
+        "Probability",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Reference Values",
+        "Risk Factors",
+        "Selenium / blood, metabolism",
+        "Sensitivity and Specificity",
+        "Sex Distribution",
+        "Smoking / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11588133",
+      "contexts": [
+        {
+          "context_id": "11588133|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.69",
+              "comparison": "across quartiles of serum selenium"
+            },
+            "Claude+Gemini": {
+              "sample_size": "691",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.69",
+              "comparison": "Quartiles of serum selenium concentration (highest vs lowest, trend across quartiles)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

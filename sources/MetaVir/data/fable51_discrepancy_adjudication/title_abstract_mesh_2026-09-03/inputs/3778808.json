@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:18:44.390189-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c07d2ea0e8baf82216fe6efbf96fb25e161b2107ec1227cc28fdf6f89d8ec2e5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "3778808",
+      "title": "Black tea consumption and cancer risk: a prospective study.",
+      "abstract": "In a prospective cohort study, men of Japanese ancestry were clinically examined from 1965 to 1968. For 7,833 of these men, data on black tea consumption habits were recorded. Since 1965, newly diagnosed cancer incidence cases have been identified: 152 colon, 151 lung, 149 prostate, 136 stomach, 76 rectum, 57 bladder, 30 pancreas, 25 liver, 12 kidney and 163 at other (miscellaneous) sites. Compared to almost-never drinkers, men habitually drinking black tea more than once/day had an increased relative risk (RR) for rectal cancer (RR = 4.2). This positive association (P = 0.0007) could not be accounted for by age or alcohol intake. We also observed a weaker but significant negative association of black tea intake and prostate cancer incidence (P = 0.020). There were no significant associations between black tea consumption and cancer at any other site.",
+      "mesh": [
+        "Age Factors",
+        "Humans",
+        "Japan",
+        "Male",
+        "Neoplasms / etiology",
+        "Prospective Studies",
+        "Prostatic Neoplasms / etiology",
+        "Rectal Neoplasms / etiology",
+        "Risk",
+        "Tea / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "3778808",
+      "contexts": [
+        {
+          "context_id": "3778808|Tea|Prostate cancer",
+          "exposure": "Tea",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "7833",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.02",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "7833",
+              "effect_measure_type": "RR",
+              "effect_size": "0.6",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.02",
+              "comparison": "extreme_categories"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

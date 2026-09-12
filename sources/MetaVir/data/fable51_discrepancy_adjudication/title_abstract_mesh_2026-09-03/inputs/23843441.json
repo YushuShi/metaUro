@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:20.816285-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d4b640a6a94ab64674ad4eec9f5b1fb6346aa5af88a1ec64007284ef30f07a3d",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "23843441",
+      "title": "Plasma phospholipid fatty acids and prostate cancer risk in the SELECT trial.",
+      "abstract": "Studies of dietary ω-3 fatty acid intake and prostate cancer risk are inconsistent; however, recent large prospective studies have found increased risk of prostate cancer among men with high blood concentrations of long-chain ω-3 polyunsaturated fatty acids ([LCω-3PUFA] 20:5ω3; 22:5ω3; 22:6ω3]. This case-cohort study examines associations between plasma phospholipid fatty acids and prostate cancer risk among participants in the Selenium and Vitamin E Cancer Prevention Trial. Case subjects were 834 men diagnosed with prostate cancer, of which 156 had high-grade cancer. The subcohort consisted of 1393 men selected randomly at baseline and from within strata frequency matched to case subjects on age and race. Proportional hazards models estimated hazard ratios (HR) and 95% confidence intervals (CI) for associations between fatty acids and prostate cancer risk overall and by grade. All statistical tests were two-sided. Compared with men in the lowest quartiles of LCω-3PUFA, men in the highest quartile had increased risks for low-grade (HR = 1.44, 95% CI = 1.08 to 1.93), high-grade (HR = 1.71, 95% CI = 1.00 to 2.94), and total prostate cancer (HR = 1.43, 95% CI = 1.09 to 1.88). Associations were similar for individual long-chain ω-3 fatty acids. Higher linoleic acid (ω-6) was associated with reduced risks of low-grade (HR = 0.75, 95% CI = 0.56 to 0.99) and total prostate cancer (HR = 0.77, 95% CI = 0.59 to 1.01); however, there was no dose response. This study confirms previous reports of increased prostate cancer risk among men with high blood concentrations of LCω-3PUFA. The consistency of these findings suggests that these fatty acids are involved in prostate tumorigenesis. Recommendations to increase LCω-3PUFA intake should consider its potential risks.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "Dietary Supplements / adverse effects",
+        "Fatty Acids, Omega-3 / adverse effects, blood",
+        "Fatty Acids, Omega-6 / blood",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Grading",
+        "Odds Ratio",
+        "Phospholipids",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, diagnosis, epidemiology, pathology, prevention & control",
+        "Risk Assessment",
+        "Risk Factors",
+        "Selenium / administration & dosage",
+        "Treatment Failure",
+        "United States / epidemiology",
+        "Vitamin E / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "23843441",
+      "contexts": [
+        {
+          "context_id": "23843441|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "HR",
+              "effect_size": "1.43",
+              "ci_lower": "1.09",
+              "ci_upper": "1.88",
+              "p_value": "0.010107213428327494",
+              "comparison": "highest versus lowest quartile of plasma long-chain omega-3 polyunsaturated fatty acids"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2273",
+              "effect_measure_type": "HR",
+              "effect_size": "1.43",
+              "ci_lower": "1.09",
+              "ci_upper": "1.88",
+              "p_value": "0.007",
+              "comparison": "quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

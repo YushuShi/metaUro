@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:26.038942-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9875ed988410b81356ff60155151c66493f8bea25c9ab56fe041ac625c20546c",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25008853",
+      "title": "Vitamin E and C supplementation and risk of cancer in men: posttrial follow-up in the Physicians' Health Study II randomized trial.",
+      "abstract": "Recent posttrial analysis of a completed randomized trial found an increased risk of prostate cancer among healthy men taking high-dose vitamin E supplements. Trials that examined the effect of vitamin C supplements on cancer risk are few. We examined whether vitamin E or vitamin C supplementation affects the risk of cancer events during posttrial follow-up of the Physicians' Health Study II. Beginning in 1997, a total of 14,641 US male physicians aged ≥50 y were randomly assigned to receive 400 IU of vitamin E every other day, 500 mg of vitamin C daily, or their respective placebos. The vitamin E and vitamin C treatment ended in 2007, and observational follow-up continued through June 2011. This study included an additional 356 cases of incident prostate cancer and 771 total cancers that developed during a mean (maximum) of 2.8 (3.8) y of posttrial observation. During an overall mean of 10.3 (13.8) y, there were a total of 1373 incident prostate cancers and 2669 total cancers documented. In comparison with placebo, vitamin E supplementation had no effect on the incidence of prostate cancer (HR: 0.99; 95% CI: 0.89, 1.10) or total cancers (HR: 1.02; 95% CI: 0.95, 1.10). There was also no effect of vitamin C supplementation on total cancers (HR: 1.02; 95% CI: 0.94, 1.10) or incident prostate cancer (HR: 1.03; 95% CI: 0.93, 1.15). Neither vitamin E nor vitamin C supplementation had effects on other site-specific cancers overall. Stratification by known cancer risk factors, history of cancer, other randomized treatment, and follow-up time showed no significant interactions. In this large-scale randomized trial in men, vitamin E and C supplementation had no immediate or long-term effects on the risk of total cancers, prostate cancer, or other site-specific cancers.",
+      "mesh": [
+        "Aged",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Antioxidants / adverse effects, therapeutic use",
+        "Ascorbic Acid / adverse effects, therapeutic use",
+        "Cohort Studies",
+        "Dietary Supplements / adverse effects",
+        "Double-Blind Method",
+        "Follow-Up Studies",
+        "Incidence",
+        "Neoplasms / chemically induced, epidemiology, prevention & control",
+        "Physicians",
+        "Prostatic Neoplasms / chemically induced, epidemiology, prevention & control",
+        "Risk Factors",
+        "United States / epidemiology",
+        "Vitamin E / adverse effects, therapeutic use"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25008853",
+      "contexts": [
+        {
+          "context_id": "25008853|Vitamin C|Prostate cancer",
+          "exposure": "Vitamin C",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "14641",
+              "effect_measure_type": "HR",
+              "effect_size": "1.03",
+              "ci_lower": "0.93",
+              "ci_upper": "1.15",
+              "p_value": "0.5852771692650796",
+              "comparison": "Vitamin C supplementation versus placebo"
+            },
+            "Claude+Gemini": {
+              "sample_size": "13980",
+              "effect_measure_type": "HR",
+              "effect_size": "1.03",
+              "ci_lower": "0.93",
+              "ci_upper": "1.15",
+              "p_value": "0.05",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        },
+        {
+          "context_id": "25008853|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "14641",
+              "effect_measure_type": "HR",
+              "effect_size": "0.99",
+              "ci_lower": "0.89",
+              "ci_upper": "1.1",
+              "p_value": "0.8524684182464786",
+              "comparison": "Vitamin E supplementation versus placebo"
+            },
+            "Claude+Gemini": {
+              "sample_size": "13980",
+              "effect_measure_type": "HR",
+              "effect_size": "0.99",
+              "ci_lower": "0.89",
+              "ci_upper": "1.1",
+              "p_value": "0.77",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

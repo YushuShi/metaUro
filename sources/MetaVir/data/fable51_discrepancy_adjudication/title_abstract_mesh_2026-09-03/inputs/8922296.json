@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:18:54.485058-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9a3b8b0e449556a4ed427f46ea9f5e7e17990e3aca337bb3098df6cb2c273aa0",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "8922296",
+      "title": "Biomarkers of essential fatty acid consumption and risk of prostatic carcinoma.",
+      "abstract": "Animal studies have suggested that omega-6 fatty acids found in vegetable oils may promote prostate cancer. Our goal was to use erythrocyte membrane and adipose tissue fatty acid composition as biomarkers to investigate whether essential fatty acids modulated prostate cancer risk. An outpatient clinic-based study of 89 cases and 38 controls was conducted in North Carolina between July 1989 and December 1991. Cases were recruited from a university-based urology outpatient clinic. Eligible cases were more than 45 years of age and had histological confirmation of a prostate cancer diagnosis within 1 year of entry into the study. Controls were histologically confirmed free of prostate cancer. Erythrocyte membranes from venous blood and adipose tissue fatty acids from s.c. fat samples were analyzed in batches using capillary gas chromatography. Unconditional logistic regression analysis was used to calculate odds ratios for the association of each fatty acid with prostate cancer while controlling for potential confounders. Linoleic acid consumption was positively associated with prostate cancer risk. The odds ratios comparing the first and fourth quartiles of linoleic acid consumption were 3.54 (95% confidence interval, 1.0-12.53) with P trend < 0.04 for erythrocyte membranes, and 2.47 (95% confidence interval, 0.66-9.26) with P trend < 0.08 for adipose tissue. These data suggest that linoleic acid consumption may increase prostate cancer risk, which is consistent with results from animal experiments. Linoleic acid is found in vegetable oils used in cooking and in cereals, snack foods, and baked goods. Our data failed to demonstrate consistently a protective effect of marine omega-3 fatty acids on prostate cancer.",
+      "mesh": [
+        "Adipose Tissue / metabolism",
+        "Aged",
+        "Biomarkers / analysis",
+        "Chromatography, Gas",
+        "Dietary Fats, Unsaturated / metabolism",
+        "Erythrocyte Membrane / metabolism",
+        "Fatty Acids, Essential / metabolism",
+        "Fatty Acids, Omega-3 / metabolism",
+        "Fatty Acids, Omega-6",
+        "Fatty Acids, Unsaturated / metabolism",
+        "Humans",
+        "Linoleic Acid",
+        "Linoleic Acids / metabolism",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, metabolism",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "8922296",
+      "contexts": [
+        {
+          "context_id": "8922296|Linoleic acid|Prostate cancer",
+          "exposure": "Linoleic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "8922296|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

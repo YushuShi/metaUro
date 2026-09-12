@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:14.154115-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "12a4540e1434fa30809d82b14d06c0e41b591654a117c607f34fd9d3a841946a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12475694",
+      "title": "Calcium intake and prostate cancer risk in a long-term aging study: the Baltimore Longitudinal Study of Aging.",
+      "abstract": "To investigate the association between prostate cancer and calcium and other nutrients thought to influence the synthesis of 1,25-dihydroxyvitamin D [1,25(OH)2D]. We included in the analysis 454 male participants in the Baltimore Longitudinal Study of Aging who were 46 to 92 years old at the time of completion of a food frequency questionnaire. Among them, 69 men were diagnosed with prostate cancer during their lifetime. In 68% of the cases, the food frequency questionnaire was completed after the diagnosis of cancer. Multiple logistic regression analysis was used to calculate the odds ratio and 95% confidence interval of prostate cancer. The median calcium intake was 788 mg/day. The adjusted odds ratio of prostate cancer for the highest tertile compared with the lowest tertile of calcium intake was 0.92 (95% confidence interval 0.48 to 1.77; P(trend) = 0.89). Likewise, no significant trends were found for phosphorus, vitamin D, fructose, or animal protein intake. Dairy products, including milk, were not associated with an increased risk of prostate cancer. The adjusted odds ratio of prostate cancer was 1.26 (95% confidence interval 0.57 to 2.79; P(trend) = 0.73) for men with high dairy intakes compared with those with low dairy intakes. The results of this study suggest that calcium intake within moderate limits is not associated with a notably increased risk of prostate cancer.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Aging / blood",
+        "Animals",
+        "Calcium, Dietary / administration & dosage",
+        "Confidence Intervals",
+        "Dairy Products",
+        "Feeding Behavior",
+        "Humans",
+        "Longitudinal Studies",
+        "Male",
+        "Middle Aged",
+        "Milk",
+        "Odds Ratio",
+        "Phosphorus / administration & dosage",
+        "Prostatic Neoplasms / blood, etiology",
+        "Risk",
+        "Vitamin D / analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12475694",
+      "contexts": [
+        {
+          "context_id": "12475694|Dietary protein intake|Prostate cancer",
+          "exposure": "Dietary protein intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

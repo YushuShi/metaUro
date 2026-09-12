@@ -1,0 +1,877 @@
+{
+  "schema_version": 1,
+  "receipt_id": "a18dd19e6b42ed6245aba25171338300137de27f55ca368f5ef9fcb7e1e19f90",
+  "requested_at": "2026-09-02T07:31:45.834770+08:00",
+  "received_at": "2026-09-02T07:33:07.368750+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "6185c4684f09b6675d2fdcf707dcfc424b95a61fe453fc1e48a223728405e409",
+  "attempt": 1,
+  "context_ids": [
+    "11074524|Folic acid|Prostate cancer",
+    "11075874|Vitamin D|Prostate cancer",
+    "11075876|Animal protein intake|Prostate cancer",
+    "11075876|Beta-carotene|Prostate cancer",
+    "11075876|Calcium|Prostate cancer",
+    "11075876|Phosphorus|Prostate cancer",
+    "11075876|Vitamin E|Prostate cancer",
+    "11097238|Glutathione|Prostate cancer",
+    "11103227|Genistein|Prostate cancer",
+    "11103227|Soy|Prostate cancer",
+    "11121247|Calcium|Prostate cancer",
+    "11121247|Selenium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Animal protein intake": 1,
+    "Beta-carotene": 1,
+    "Calcium": 2,
+    "Folic acid": 1,
+    "Genistein": 1,
+    "Glutathione": 1,
+    "Phosphorus": 1,
+    "Selenium": 1,
+    "Soy": 1,
+    "Vitamin D": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "6a77ad98e63af69817424ae3367a7c35f23f7014380052ab1a3b892ecbbd1a70",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 8990,
+    "cached_input_tokens": 0,
+    "output_tokens": 8800,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.26495",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "d1692af1-f18f-4d89-830c-3ce84970fd28",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.26495"
+  },
+  "output_sha256": "bc55b18a0eb8174c0ac327c5893efa0e7643e81a0adcf3b315b49cd31069b10f",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"11074524|Folic acid|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"The study compares MTHFR, MS, and CBS allele distributions between prostate carcinoma patients and controls without any population-wide folate/folic acid intake or biomarker exposure estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11075874|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Nested case-control study within a Finnish cohort relating prediagnostic serum 25-hydroxyvitamin D to subsequent incident prostate cancer, with a reported relative risk estimate.\",\"extraction\":{\"effect_size\":1.7,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":19000,\"cases\":149,\"comparison_type\":\"serum 25-hydroxyvitamin D below median vs above median\",\"design\":\"case_control\",\"timing\":\"prospective\",\"continent\":\"Europe\",\"country\":\"Finland\",\"location\":\"Helsinki, Finland\",\"ethnicity\":null,\"population\":\"Middle-aged men attending the first screening visit of the Helsinki Heart Study, free of clinically verified prostate cancer at baseline\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":true,\"evidence\":{\"sample_size\":{\"excerpt\":\"a 13-year follow-up of about 19,000 middle-aged men who attended the first screening visit within the Helsinki Heart Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"149 prostate cancer cases were identified in the cohort\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Men with 25-VD concentration below the median had an adjusted relative risk (OR) of 1.7 compared to men with 25-VD level above the median.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"abstract\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"below the median ... compared to men with 25-VD level above the median\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"The nested case-control study was based on a 13-year follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"prediagnostic serum 25-hydroxyvitamin D levels\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"title\"},\"continent\":{\"excerpt\":\"Prostate cancer risk and prediagnostic serum 25-hydroxyvitamin D levels (Finland)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"the first screening visit within the Helsinki Heart Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Serum levels of 25-hydroxyvitamin D (25-VD) at entry were measured for cases and controls.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075874/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11075876|Animal protein intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort analysis of dietary intakes, including animal protein, and incident clinical prostate cancer, reporting that none of the other nutrients examined was significantly associated with risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":27062,\"cases\":184,\"comparison_type\":null,\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Europe\",\"country\":\"Finland\",\"location\":\"Finland\",\"ethnicity\":null,\"population\":\"Finnish male smokers in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study who completed a food-use questionnaire\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"27,062 of the men completed a food-use questionnaire at baseline, and comprise the current study population\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Of the other foods and nutrients examined, none was significantly associated with risk.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We examined these nutrients and overall diet and prostate cancer risk in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"We used Cox proportional hazards models to examine associations between dietary intakes and prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted among Finnish male smokers\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"27,062 of the men completed a food-use questionnaire at baseline\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11075876|Beta-carotene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Beta-carotene appears only incidentally as the parent trial's supplementation group used as an adjustment variable, with no beta-carotene exposure estimate for prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11075876|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort analysis explicitly examining dietary calcium intake and incident clinical prostate cancer risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":27062,\"cases\":184,\"comparison_type\":null,\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Europe\",\"country\":\"Finland\",\"location\":\"Finland\",\"ethnicity\":null,\"population\":\"Finnish male smokers in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study who completed a food-use questionnaire\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"27,062 of the men completed a food-use questionnaire at baseline, and comprise the current study population\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"We did not observe significant independent associations for calcium and phosphorus and prostate cancer risk.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We examined these nutrients and overall diet and prostate cancer risk in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"We used Cox proportional hazards models to examine associations between dietary intakes and prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted among Finnish male smokers\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"27,062 of the men completed a food-use questionnaire at baseline\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11075876|Phosphorus|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort analysis explicitly examining dietary phosphorus intake and incident clinical prostate cancer risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":27062,\"cases\":184,\"comparison_type\":null,\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Europe\",\"country\":\"Finland\",\"location\":\"Finland\",\"ethnicity\":null,\"population\":\"Finnish male smokers in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study who completed a food-use questionnaire\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"27,062 of the men completed a food-use questionnaire at baseline, and comprise the current study population\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"We did not observe significant independent associations for calcium and phosphorus and prostate cancer risk.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We examined these nutrients and overall diet and prostate cancer risk in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"We used Cox proportional hazards models to examine associations between dietary intakes and prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted among Finnish male smokers\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"27,062 of the men completed a food-use questionnaire at baseline\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11075876/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11075876|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Vitamin E (alpha-tocopherol) is mentioned only as the parent trial's supplementation arm used for adjustment, and no vitamin E exposure–prostate cancer estimate is reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11097238|Glutathione|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"The report concerns the GSTP1 I105V polymorphism and prostate cancer risk, with no population-wide glutathione nutritional exposure estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11103227|Genistein|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"The crossover trial reports only sex hormone and isoflavone excretion outcomes in healthy men, with no prostate cancer incidence results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11103227|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"Replacing meat with tofu was assessed against blood sex hormone concentrations only, so no prostate cancer incidence outcome is available.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11121247|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative literature review of nutritional aspects of prostate cancer rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11121247|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a review summarizing published selenium and other nutrient literature without original primary data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "11074524|Folic acid|Prostate cancer",
+      "pmid": "11074524",
+      "pmcid": "",
+      "published_date": "2000-11-01",
+      "title": "Methyl group metabolism gene polymorphisms and susceptibility to prostatic carcinoma.",
+      "authors": [
+        "Kimura F",
+        "Franke KH",
+        "Steinhoff C",
+        "Golka K",
+        "Roemer HC",
+        "Anastasiadis AG",
+        "Schulz WA"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11074524/",
+      "exposure": "Folic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "The study compares MTHFR, MS, and CBS allele distributions between prostate carcinoma patients and controls without any population-wide folate/folic acid intake or biomarker exposure estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11075874|Vitamin D|Prostate cancer",
+      "pmid": "11075874",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Prostate cancer risk and prediagnostic serum 25-hydroxyvitamin D levels (Finland).",
+      "authors": [
+        "Ahonen MH",
+        "Tenkanen L",
+        "Teppo L",
+        "Hakama M",
+        "Tuohimaa P"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Nested case-control study within a Finnish cohort relating prediagnostic serum 25-hydroxyvitamin D to subsequent incident prostate cancer, with a reported relative risk estimate.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.7,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 19000,
+        "cases": 149,
+        "comparison_type": "serum 25-hydroxyvitamin D below median vs above median",
+        "design": "case_control",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Middle-aged men attending the first screening visit of the Helsinki Heart Study, free of clinically verified prostate cancer at baseline",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": true,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The nested case-control study was based on a 13-year follow-up of about 19,000 middle-aged men who attended the first screening visit within the Helsinki Heart Study and were free of clinically verified prostate cancer at baseline. Through record linkage with the files of the Finnish Cancer Registry, 149 prostate cancer cases were identified in the cohort.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Through record linkage with the files of the Finnish Cancer Registry, 149 prostate cancer cases were identified in the cohort.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Men with 25-VD concentration below the median had an adjusted relative risk (OR) of 1.7 compared to men with 25-VD level above the median.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "abstract"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "The nested case-control study was based on a 13-year follow-up",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "prediagnostic serum 25-hydroxyvitamin D levels",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "title"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer risk and prediagnostic serum 25-hydroxyvitamin D levels (Finland)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum levels of 25-hydroxyvitamin D (25-VD) at entry were measured for cases and controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075874/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11075876|Animal protein intake|Prostate cancer",
+      "pmid": "11075876",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+      "authors": [
+        "Chan JM",
+        "Pietinen P",
+        "Virtanen M",
+        "Malila N",
+        "Tangrea J",
+        "Albanes D",
+        "Virtamo J"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+      "exposure": "Animal protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis of dietary intakes, including animal protein, and incident clinical prostate cancer, reporting that none of the other nutrients examined was significantly associated with risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 27062,
+        "cases": 184,
+        "comparison_type": null,
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "Finland",
+        "ethnicity": "NA",
+        "population": "Finnish male smokers in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study who completed a food-use questionnaire",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The ATBC Study was a randomized 2 x 2 trial of alpha-tocopherol and beta-carotene on lung cancer incidence conducted among Finnish male smokers; 27,062 of the men completed a food-use questionnaire at baseline, and comprise the current study population. There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Of the other foods and nutrients examined, none was significantly associated with risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "We examined these nutrients and overall diet and prostate cancer risk in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "We used Cox proportional hazards models to examine associations between dietary intakes and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted among Finnish male smokers",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "27,062 of the men completed a food-use questionnaire at baseline",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11075876|Beta-carotene|Prostate cancer",
+      "pmid": "11075876",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+      "authors": [
+        "Chan JM",
+        "Pietinen P",
+        "Virtanen M",
+        "Malila N",
+        "Tangrea J",
+        "Albanes D",
+        "Virtamo J"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Beta-carotene appears only incidentally as the parent trial's supplementation group used as an adjustment variable, with no beta-carotene exposure estimate for prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11075876|Calcium|Prostate cancer",
+      "pmid": "11075876",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+      "authors": [
+        "Chan JM",
+        "Pietinen P",
+        "Virtanen M",
+        "Malila N",
+        "Tangrea J",
+        "Albanes D",
+        "Virtamo J"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis explicitly examining dietary calcium intake and incident clinical prostate cancer risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 27062,
+        "cases": 184,
+        "comparison_type": null,
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "Finland",
+        "ethnicity": "NA",
+        "population": "Finnish male smokers in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study who completed a food-use questionnaire",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The ATBC Study was a randomized 2 x 2 trial of alpha-tocopherol and beta-carotene on lung cancer incidence conducted among Finnish male smokers; 27,062 of the men completed a food-use questionnaire at baseline, and comprise the current study population. There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "We did not observe significant independent associations for calcium and phosphorus and prostate cancer risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "We examined these nutrients and overall diet and prostate cancer risk in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "We used Cox proportional hazards models to examine associations between dietary intakes and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted among Finnish male smokers",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "27,062 of the men completed a food-use questionnaire at baseline",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11075876|Phosphorus|Prostate cancer",
+      "pmid": "11075876",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+      "authors": [
+        "Chan JM",
+        "Pietinen P",
+        "Virtanen M",
+        "Malila N",
+        "Tangrea J",
+        "Albanes D",
+        "Virtamo J"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+      "exposure": "Phosphorus",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis explicitly examining dietary phosphorus intake and incident clinical prostate cancer risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 27062,
+        "cases": 184,
+        "comparison_type": null,
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "Finland",
+        "ethnicity": "NA",
+        "population": "Finnish male smokers in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study who completed a food-use questionnaire",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The ATBC Study was a randomized 2 x 2 trial of alpha-tocopherol and beta-carotene on lung cancer incidence conducted among Finnish male smokers; 27,062 of the men completed a food-use questionnaire at baseline, and comprise the current study population. There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "There were 184 incident clinical (stage 2-4) prostate cancer cases diagnosed between 1985 and 1993.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "We did not observe significant independent associations for calcium and phosphorus and prostate cancer risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "We examined these nutrients and overall diet and prostate cancer risk in the Alpha-Tocopherol Beta-Carotene Cancer Prevention Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "We used Cox proportional hazards models to examine associations between dietary intakes and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted among Finnish male smokers",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "27,062 of the men completed a food-use questionnaire at baseline",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11075876|Vitamin E|Prostate cancer",
+      "pmid": "11075876",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Diet and prostate cancer risk in a cohort of smokers, with a specific focus on calcium and phosphorus (Finland).",
+      "authors": [
+        "Chan JM",
+        "Pietinen P",
+        "Virtanen M",
+        "Malila N",
+        "Tangrea J",
+        "Albanes D",
+        "Virtamo J"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11075876/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Vitamin E (alpha-tocopherol) is mentioned only as the parent trial's supplementation arm used for adjustment, and no vitamin E exposure–prostate cancer estimate is reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11097238|Glutathione|Prostate cancer",
+      "pmid": "11097238",
+      "pmcid": "",
+      "published_date": "2000-11-01",
+      "title": "No association between the I105V polymorphism of the glutathione S-transferase P1 gene (GSTP1) and prostate cancer risk: a prospective study.",
+      "authors": [
+        "Shepard TF",
+        "Platz EA",
+        "Kantoff PW",
+        "Nelson WG",
+        "Isaacs WB",
+        "Freije D",
+        "Febbo PG",
+        "Stampfer MJ",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11097238/",
+      "exposure": "Glutathione",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "The report concerns the GSTP1 I105V polymorphism and prostate cancer risk, with no population-wide glutathione nutritional exposure estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11103227|Genistein|Prostate cancer",
+      "pmid": "11103227",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Effects of replacing meat with soyabean in the diet on sex hormone concentrations in healthy adult males.",
+      "authors": [
+        "Habito RC",
+        "Montalto J",
+        "Leslie E",
+        "Ball MJ"
+      ],
+      "journal": "The British journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11103227/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "The crossover trial reports only sex hormone and isoflavone excretion outcomes in healthy men, with no prostate cancer incidence results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11103227|Soy|Prostate cancer",
+      "pmid": "11103227",
+      "pmcid": "",
+      "published_date": "2000-10-01",
+      "title": "Effects of replacing meat with soyabean in the diet on sex hormone concentrations in healthy adult males.",
+      "authors": [
+        "Habito RC",
+        "Montalto J",
+        "Leslie E",
+        "Ball MJ"
+      ],
+      "journal": "The British journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11103227/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "Replacing meat with tofu was assessed against blood sex hormone concentrations only, so no prostate cancer incidence outcome is available.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11121247|Calcium|Prostate cancer",
+      "pmid": "11121247",
+      "pmcid": "",
+      "published_date": "2000-02-01",
+      "title": "Nutritional aspects of prostate cancer: a review.",
+      "authors": [
+        "Blumenfeld AJ",
+        "Fleshner N",
+        "Casselman B",
+        "Trachtenberg J"
+      ],
+      "journal": "The Canadian journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11121247/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative literature review of nutritional aspects of prostate cancer rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11121247|Selenium|Prostate cancer",
+      "pmid": "11121247",
+      "pmcid": "",
+      "published_date": "2000-02-01",
+      "title": "Nutritional aspects of prostate cancer: a review.",
+      "authors": [
+        "Blumenfeld AJ",
+        "Fleshner N",
+        "Casselman B",
+        "Trachtenberg J"
+      ],
+      "journal": "The Canadian journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11121247/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a review summarizing published selenium and other nutrient literature without original primary data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:20:41.120827-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "6e0a7e98b13d0677c100cad820756fb283dde03d33d06ceb8ce710839e4c1978",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "10750674",
+      "title": "Alpha-linolenic acid and risk of prostate cancer: a case-control study in Uruguay.",
+      "abstract": "In the time period of 1994-1998, a case-control study on diet and prostate cancer was carried out in Uruguay to examine the risk associated with fat intake. Two hundred and seventeen (217) incident cases afflicted with advanced prostate cancer were frequency-matched with 431 controls on age, residence, and urban/rural status. The analysis was carried out using unconditional multiple logistic regression. Alpha-linolenic acid was associated with a strong positive association (fourth quartile of intake odds ratio, 3.91; 95% confidence interval, 1.50-10.1) after controlling for total calorie intake and for the other types of fat. The effect was similar when alpha-linolenic acid was analyzed by its sources of origin (odds ratio for vegetable linolenic acid, 2.03; 95% confidence interval, 1.01-4.07). Including this report, five of six studies that have examined the relationship between alpha-linolenic acid and prostate cancer yielded a positive association, which was significant in four studies. Thus, there appears to be evidence of a role of alpha-linolenic acid in prostate carcinogenesis.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Case-Control Studies",
+        "Cell Transformation, Neoplastic",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Assessment",
+        "Uruguay / epidemiology",
+        "alpha-Linolenic Acid / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "10750674",
+      "contexts": [
+        {
+          "context_id": "10750674|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

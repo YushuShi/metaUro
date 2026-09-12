@@ -1,0 +1,828 @@
+{
+  "schema_version": 1,
+  "receipt_id": "5c368764518019305b612158b001a71787288dccd10e34ee2cbd3ee2d3ad2351",
+  "requested_at": "2026-09-02T08:36:50.789434+08:00",
+  "received_at": "2026-09-02T08:37:44.949209+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "61aa910902397d980e02850271040b84962b9b599fb758ffaa6177684b23c78d",
+  "attempt": 2,
+  "context_ids": [
+    "10362125|Calcium|Prostate cancer",
+    "10362125|Dairy|Prostate cancer",
+    "10362125|Dietary protein intake|Prostate cancer",
+    "10362125|Eggs|Prostate cancer",
+    "10362125|Processed meat intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Dairy": 1,
+    "Dietary protein intake": 1,
+    "Eggs": 1,
+    "Processed meat intake": 1
+  },
+  "input_digest": "59d33015a2deb8a93968d9dfb576335dd39d733ff758e69286f6d663ad8f35cf",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 18965,
+    "cached_input_tokens": 0,
+    "output_tokens": 10422,
+    "reasoning_tokens": 1640
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.053306250000000006",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "e761054a-ba58-4d56-8667-8998b70fc4cc",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.053306250000000006"
+  },
+  "output_sha256": "38a8539bfc5ac11d9fce4b9e44756412ba9c099362192750d615491f8fc83935",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"10362125|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective case-cohort study investigating energy-adjusted calcium intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.09,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.79,\n        \"ci_upper\": 1.5,\n        \"p_value\": 0.34,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 58279,\n        \"cases\": 642,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Netherlands\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55-69 years participating in the Netherlands Cohort Study\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.10 (0.80-1.51) 1.04 (0.76-1.42) 1.21 (0.89-1.66) 1.09 (0.79-1.50)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.10 (0.80-1.51) 1.04 (0.76-1.42) 1.21 (0.89-1.66) 1.09 (0.79-1.50)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.34\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Median intake (mg per day)b 602 780 911 1064 1329\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"location\": {\n            \"excerpt\": \"incident prostate cancer cases were detected by computerized record linkage with all nine cancer registries in The Netherlands, and with the Dutch national data base of pathology reports (PALGA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Usual consumption of food and beverages during the year preceding the start of the study was assessed with a 150-item semi-quantitative food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The questionnaire, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"10362125|Dairy|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective case-cohort study evaluating milk and milk products intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.12,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.81,\n        \"ci_upper\": 1.56,\n        \"p_value\": 0.02,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 58279,\n        \"cases\": 642,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Netherlands\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55-69 years participating in the Netherlands Cohort Study\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Positive trends in risk were found for consumption of cured meat and milk products ( P -values 0.04 and 0.02 respectively).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Median intakeb 74 179 271 376 566\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"location\": {\n            \"excerpt\": \"incident prostate cancer cases were detected by computerized record linkage with all nine cancer registries in The Netherlands, and with the Dutch national data base of pathology reports (PALGA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Usual consumption of food and beverages during the year preceding the start of the study was assessed with a 150-item semi-quantitative food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The questionnaire, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"10362125|Dietary protein intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective case-cohort study evaluating dietary total protein intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.1,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.81,\n        \"ci_upper\": 1.51,\n        \"p_value\": 0.11,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 58279,\n        \"cases\": 642,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Netherlands\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55-69 years participating in the Netherlands Cohort Study\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.04 (0.76-1.43) 1.12 (0.82-1.53) 1.35 (0.98-1.84) 1.10 (0.81-1.51)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.04 (0.76-1.43) 1.12 (0.82-1.53) 1.35 (0.98-1.84) 1.10 (0.81-1.51)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.11\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Median intake (g per day)b 62 69 75 81 90\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"location\": {\n            \"excerpt\": \"incident prostate cancer cases were detected by computerized record linkage with all nine cancer registries in The Netherlands, and with the Dutch national data base of pathology reports (PALGA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Usual consumption of food and beverages during the year preceding the start of the study was assessed with a 150-item semi-quantitative food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The questionnaire, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"10362125|Eggs|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective case-cohort study evaluating egg intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.96,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.75,\n        \"ci_upper\": 1.22,\n        \"p_value\": 0.71,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 58279,\n        \"cases\": 642,\n        \"comparison_type\": \"categories\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Netherlands\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55-69 years participating in the Netherlands Cohort Study\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.71\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Median intakeb,e 5 14 29\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"location\": {\n            \"excerpt\": \"incident prostate cancer cases were detected by computerized record linkage with all nine cancer registries in The Netherlands, and with the Dutch national data base of pathology reports (PALGA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Usual consumption of food and beverages during the year preceding the start of the study was assessed with a 150-item semi-quantitative food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The questionnaire, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"10362125|Processed meat intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective case-cohort study evaluating cured meat consumption and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.37,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 1.0,\n        \"ci_upper\": 1.89,\n        \"p_value\": 0.04,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 58279,\n        \"cases\": 642,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Netherlands\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 55-69 years participating in the Netherlands Cohort Study\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Positive trends in risk were found for consumption of cured meat and milk products ( P -values 0.04 and 0.02 respectively).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Median intakeb 0 5 11 19 36\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"Abstract\"\n          },\n          \"location\": {\n            \"excerpt\": \"incident prostate cancer cases were detected by computerized record linkage with all nine cancer registries in The Netherlands, and with the Dutch national data base of pathology reports (PALGA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The cohort, paragraph 2\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Usual consumption of food and beverages during the year preceding the start of the study was assessed with a 150-item semi-quantitative food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/\",\n            \"location\": \"MATERIALS AND METHODS, The questionnaire, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "10362125|Calcium|Prostate cancer",
+      "pmid": "10362125",
+      "pmcid": "PMC2363036",
+      "published_date": "1999-06-01",
+      "title": "Animal products, calcium and protein and prostate cancer risk in The Netherlands Cohort Study.",
+      "authors": [
+        "Schuurman AG",
+        "van den Brandt PA",
+        "Dorant E",
+        "Goldbohm RA"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective case-cohort study investigating energy-adjusted calcium intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.09,
+        "effect_type": "RR",
+        "ci_lower": 0.79,
+        "ci_upper": 1.5,
+        "p_value": 0.34,
+        "ci_confidence_level": 95,
+        "total_n": 58279,
+        "cases": 642,
+        "comparison_type": "quintiles",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "Netherlands",
+        "ethnicity": "NA",
+        "population": "Men aged 55-69 years participating in the Netherlands Cohort Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer. After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "effect_size": {
+            "excerpt": "The RR (95% CI) per 5 g for consumption of Animal products and prostate cancer risk 1109 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 2 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles or categories of consumption of meat, fish, processed meat, milk and dairy, cheese and eggs, Netherlands Cohort Study (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Fresh meat and poultry Median intakeb 56 85 102 123 158 Cases/Person years 128/1820 138/1919 144/1787 121/1766 111/1830 RR (95% CI)c 1.00 1.08 (0.80-1.46) 1.23 (0.91-1.67) 1.05 (0.77-1.43) 1.01 (0.73-1.39) 0.98 RR (95% CI)d 1.00 1.08 (0.79-1.47) 1.27 (0.93-1.73) 1.12 (0.82-1.53) 1.07 (0.77-1.47) 0.52 Fish Median intakeb,e 0 5 14 32 Cases/Person years 162/2238 135/2115 119/1874 226/2895 RR (95% CI)c 1.00 0.85 (0.64-1.13) 0.95 (0.70-1.28) 1.06 (0.82-1.37) 0.32 RR (95% CI)d 1.00 0.83 (0.62-1.11) 0.95 (0.70-1.29) 1.03 (0.80-1.34) 0.41 Cured meat Median intakeb 0 5 11 19 36 Cases/Person years 118/1849 137/1907 140/1703 124/1880 123/1783 RR (95% CI)c 1.00 1.18 (0.87-1.61) 1.46 (1.07-1.99) 1.14 (0.84-1.57) 1.32 (0.96-1.81) 0.07 RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89) 0.04 Milk and milk products Median intakeb 74 179 271 376 566 Cases/Person years 114/1860 112/1835 132/1803 172/1824 112/1800 RR (95% CI)c 1.00 1.08 (0.79-1.49) 1.22 (0.89-1.67) 1.60 (1.19-2.17) 1.09 (0.79-1.50) 0.03 RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56) 0.02 Cheese Median intakeb 2 13 19 27 43 Cases/Person years 140/2261 121/1620 119/1607 175/2371 87/1264 RR (95% CI)c 1.00 1.29 (0.95-1.74) 1.16 (0.86-1.58) 1.34 (1.01-1.77) 1.26 (0.90-1.76) 0.04 RR (95% CI)d 1.00 1.27 (0.94-1.73) 1.15 (0.84-1.56) 1.28 (0.97-1.70) 1.21 (0.87-1.70) 0.09 Eggs Median intakeb,e 5 14 29 Cases/Person years 197/2530 208/3243 237/3349 RR (95% CI)c 1.00 0.90 (0.70-1.15) 0.96 (0.76-1.22) 0.72 RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22) 0.71 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "confidence_interval": {
+            "excerpt": "The RR (95% CI) per 5 g for consumption of Animal products and prostate cancer risk 1109 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 2 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles or categories of consumption of meat, fish, processed meat, milk and dairy, cheese and eggs, Netherlands Cohort Study (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Fresh meat and poultry Median intakeb 56 85 102 123 158 Cases/Person years 128/1820 138/1919 144/1787 121/1766 111/1830 RR (95% CI)c 1.00 1.08 (0.80-1.46) 1.23 (0.91-1.67) 1.05 (0.77-1.43) 1.01 (0.73-1.39) 0.98 RR (95% CI)d 1.00 1.08 (0.79-1.47) 1.27 (0.93-1.73) 1.12 (0.82-1.53) 1.07 (0.77-1.47) 0.52 Fish Median intakeb,e 0 5 14 32 Cases/Person years 162/2238 135/2115 119/1874 226/2895 RR (95% CI)c 1.00 0.85 (0.64-1.13) 0.95 (0.70-1.28) 1.06 (0.82-1.37) 0.32 RR (95% CI)d 1.00 0.83 (0.62-1.11) 0.95 (0.70-1.29) 1.03 (0.80-1.34) 0.41 Cured meat Median intakeb 0 5 11 19 36 Cases/Person years 118/1849 137/1907 140/1703 124/1880 123/1783 RR (95% CI)c 1.00 1.18 (0.87-1.61) 1.46 (1.07-1.99) 1.14 (0.84-1.57) 1.32 (0.96-1.81) 0.07 RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89) 0.04 Milk and milk products Median intakeb 74 179 271 376 566 Cases/Person years 114/1860 112/1835 132/1803 172/1824 112/1800 RR (95% CI)c 1.00 1.08 (0.79-1.49) 1.22 (0.89-1.67) 1.60 (1.19-2.17) 1.09 (0.79-1.50) 0.03 RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56) 0.02 Cheese Median intakeb 2 13 19 27 43 Cases/Person years 140/2261 121/1620 119/1607 175/2371 87/1264 RR (95% CI)c 1.00 1.29 (0.95-1.74) 1.16 (0.86-1.58) 1.34 (1.01-1.77) 1.26 (0.90-1.76) 0.04 RR (95% CI)d 1.00 1.27 (0.94-1.73) 1.15 (0.84-1.56) 1.28 (0.97-1.70) 1.21 (0.87-1.70) 0.09 Eggs Median intakeb,e 5 14 29 Cases/Person years 197/2530 208/3243 237/3349 RR (95% CI)c 1.00 0.90 (0.70-1.15) 0.96 (0.76-1.22) 0.72 RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22) 0.71 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "p_value": {
+            "excerpt": "Only a minority of previous cohort (Snowdon et al, 1984; Giovannucci et al, 1993, 1995) and case-control studies (Mettlin et al, 1989; Talamini et al, 1992; Andersson et al, 1995) had a fairly Animal products and prostate cancer risk 1111 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 4 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles of intake of energy-adjusted calcium and energy- adjusted protein, for all cases and separately for localized (T0-2, M0) and advanced (T3-4, M0; T0-4, M1) prostate tumours, Netherlands Cohort Study, 6.3 years of follow-up (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Calcium Median intake (mg per day)b 602 780 911 1064 1329 Cases/Person years 120/1821 126/1845 127/1840 140/1817 129/1800 RR (95% CI)c 1.00 1.07 (0.79-1.47) 1.03 (0.75-1.41) 1.20 (0.88-1.64) 1.07 (0.79-1.47) 0.36 RR (95% CI)d 1.00 1.10 (0.80-1.51) 1.04 (0.76-1.42) 1.21 (0.89-1.66) 1.09 (0.79-1.50) 0.34 Localized tumours (n) 47 30 45 46 56 RR (95% CI)d 1.00 0.69 (0.42-1.13) 0.96 (0.61-1.50) 1.04 (0.67-1.63) 1.21 (0.79-1.86) 0.10 Advanced tumours (n) 44 46 37 46 37 RR (95% CI)d 1.00 1.08 (0.69-1.70) 0.79 (0.49-1.27) 1.06 (0.67-1.66) 0.83 (0.52-1.34) 0.45 Total protein Median intake (g per day)b 62 69 75 81 90 Cases/Person years 128/1839 121/1836 134/1821 135/1792 124/1834 RR (95% CI)c 1.00 1.03 (0.75-1.41) 1.10 (0.81-1.50) 1.31 (0.96-1.79) 1.09 (0.80-1.48) 0.15 RR (95% CI)d 1.00 1.04 (0.76-1.43) 1.12 (0.82-1.53) 1.35 (0.98-1.84) 1.10 (0.81-1.51) 0.11 Localized tumours (n) 51 34 40 49 50 RR (95% CI)d 1.00 0.76 (0.47-1.22) 0.87 (0.55-1.38) 1.27 (0.82-1.96) 1.13 (0.73-1.74) 0.13 Advanced tumours (n) 46 43 48 38 35 RR (95% CI)d 1.00 1.04 (0.66-1.64) 1.08 (0.69-1.69) 1.02 (0.64-1.64) 0.83 (0.51-1.33) 0.49 Vegetable protein Median intake (g per day)b 22 25 27 30 35 Cases/Person years 143/1827 129/1833 139/1813 110/1812 121/1839 RR (95% CI)c 1.00 0.87 (0.64-1.18) 0.99 (0.74-1.34) 0.83 (0.61-1.13) 0.92 (0.67-1.24) 0.43 RR (95% CI)e 1.00 0.86 (0.63-1.17) 1.00 (0.74-1.36) 0.83 (0.61-1.14) 0.90 (0.66-1.23) 0.37 Localized tumours (n) 53 46 42 35 48 RR (95% CI)e 1.00 0.86 (0.55-1.33) 0.85 (0.54-1.33) 0.73 (0.46-1.17) 0.96 (0.62-1.48) 0.63 Advanced tumours (n) 38 43 57 30 42 RR (95% CI)e 1.00 1.08 (0.67-1.74) 1.55 (0.98-2.44) 0.85 (0.51-1.43) 1.19 (0.74-1.92) 0.81 Animal protein Median intake (g per day)b 34 42 47 53 64 Cases/Person years 112/1825 137/1843 121/1819 150/1812 122/1823 RR (95% CI)c 1.00 1.21 (0.88-1.65) 1.11 (0.81-1.53) 1.42 (1.04-1.93) 1.16 (0.84-1.59) 0.11 RR (95% CI)e 1.00 1.29 (0.92-1.81) 1.16 (0.80-1.68) 1.52 (1.01-2.30) 1.32 (0.76-2.29) 0.09 Localized tumours (n) 44 40 44 45 51 RR (95% CI)e 1.00 0.94 (0.57-1.55) 1.08 (0.64-1.83) 1.13 (0.62-2.05) 1.26 (0.58-2.75) 0.44 Advanced tumours (n) 43 49 41 47 30 RR (95% CI)e 1.00 1.21 (0.75-1.95) 0.96 (0.56-1.65) 1.11 (0.61-2.04) 0.71 (0.31-1.63) 0.61 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "comparison": {
+            "excerpt": "Median intake (mg per day)b 602 780 911 1064 1329",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "design": {
+            "excerpt": "The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "was investigated in the Netherlands Cohort Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The questionnaire, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.34",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50142,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "2417ff6e055b71361084d61ab9d0a40c89f06f3a979edc4f5186730322b72fa2",
+      "pmc_source_receipt_digest": "62dca987dc775cf58eabaec9dad041da005d19b08b3f851c1a9b5c3bb4d067de",
+      "pmc_source_raw_sha256": "b37d131bda15f686ca614902d2a7317944d6650cc399beee0ae3ede672e1a76b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "375bb739277e079fc1cc77947a73c0a73a88541e2a0cd746a69cc05bf994bf0a"
+    },
+    {
+      "context_id": "10362125|Dairy|Prostate cancer",
+      "pmid": "10362125",
+      "pmcid": "PMC2363036",
+      "published_date": "1999-06-01",
+      "title": "Animal products, calcium and protein and prostate cancer risk in The Netherlands Cohort Study.",
+      "authors": [
+        "Schuurman AG",
+        "van den Brandt PA",
+        "Dorant E",
+        "Goldbohm RA"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective case-cohort study evaluating milk and milk products intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.12,
+        "effect_type": "RR",
+        "ci_lower": 0.81,
+        "ci_upper": 1.56,
+        "p_value": 0.02,
+        "ci_confidence_level": 95,
+        "total_n": 58279,
+        "cases": 642,
+        "comparison_type": "quintiles",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "Netherlands",
+        "ethnicity": "NA",
+        "population": "Men aged 55-69 years participating in the Netherlands Cohort Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer. After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "effect_size": {
+            "excerpt": "The RR (95% CI) per 5 g for consumption of Animal products and prostate cancer risk 1109 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 2 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles or categories of consumption of meat, fish, processed meat, milk and dairy, cheese and eggs, Netherlands Cohort Study (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Fresh meat and poultry Median intakeb 56 85 102 123 158 Cases/Person years 128/1820 138/1919 144/1787 121/1766 111/1830 RR (95% CI)c 1.00 1.08 (0.80-1.46) 1.23 (0.91-1.67) 1.05 (0.77-1.43) 1.01 (0.73-1.39) 0.98 RR (95% CI)d 1.00 1.08 (0.79-1.47) 1.27 (0.93-1.73) 1.12 (0.82-1.53) 1.07 (0.77-1.47) 0.52 Fish Median intakeb,e 0 5 14 32 Cases/Person years 162/2238 135/2115 119/1874 226/2895 RR (95% CI)c 1.00 0.85 (0.64-1.13) 0.95 (0.70-1.28) 1.06 (0.82-1.37) 0.32 RR (95% CI)d 1.00 0.83 (0.62-1.11) 0.95 (0.70-1.29) 1.03 (0.80-1.34) 0.41 Cured meat Median intakeb 0 5 11 19 36 Cases/Person years 118/1849 137/1907 140/1703 124/1880 123/1783 RR (95% CI)c 1.00 1.18 (0.87-1.61) 1.46 (1.07-1.99) 1.14 (0.84-1.57) 1.32 (0.96-1.81) 0.07 RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89) 0.04 Milk and milk products Median intakeb 74 179 271 376 566 Cases/Person years 114/1860 112/1835 132/1803 172/1824 112/1800 RR (95% CI)c 1.00 1.08 (0.79-1.49) 1.22 (0.89-1.67) 1.60 (1.19-2.17) 1.09 (0.79-1.50) 0.03 RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56) 0.02 Cheese Median intakeb 2 13 19 27 43 Cases/Person years 140/2261 121/1620 119/1607 175/2371 87/1264 RR (95% CI)c 1.00 1.29 (0.95-1.74) 1.16 (0.86-1.58) 1.34 (1.01-1.77) 1.26 (0.90-1.76) 0.04 RR (95% CI)d 1.00 1.27 (0.94-1.73) 1.15 (0.84-1.56) 1.28 (0.97-1.70) 1.21 (0.87-1.70) 0.09 Eggs Median intakeb,e 5 14 29 Cases/Person years 197/2530 208/3243 237/3349 RR (95% CI)c 1.00 0.90 (0.70-1.15) 0.96 (0.76-1.22) 0.72 RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22) 0.71 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "The RRs (95% CI) were 1.37 (1.00-1.89) for cured meat and 1.12 (0.81-1.56) for milk and milk products for the highest versus lowest quintile of consumption.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Positive trends in risk were found for consumption of cured meat and milk products ( P -values 0.04 and 0.02 respectively).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "comparison": {
+            "excerpt": "Median intakeb 74 179 271 376 566",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "was investigated in the Netherlands Cohort Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The questionnaire, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50142,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "2417ff6e055b71361084d61ab9d0a40c89f06f3a979edc4f5186730322b72fa2",
+      "pmc_source_receipt_digest": "62dca987dc775cf58eabaec9dad041da005d19b08b3f851c1a9b5c3bb4d067de",
+      "pmc_source_raw_sha256": "b37d131bda15f686ca614902d2a7317944d6650cc399beee0ae3ede672e1a76b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "1daaa722bb4f2f1979976662063de92f8848a00d9d66ae7ff428ba2ce05a25ea"
+    },
+    {
+      "context_id": "10362125|Dietary protein intake|Prostate cancer",
+      "pmid": "10362125",
+      "pmcid": "PMC2363036",
+      "published_date": "1999-06-01",
+      "title": "Animal products, calcium and protein and prostate cancer risk in The Netherlands Cohort Study.",
+      "authors": [
+        "Schuurman AG",
+        "van den Brandt PA",
+        "Dorant E",
+        "Goldbohm RA"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+      "exposure": "Dietary protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective case-cohort study evaluating dietary total protein intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.1,
+        "effect_type": "RR",
+        "ci_lower": 0.81,
+        "ci_upper": 1.51,
+        "p_value": 0.11,
+        "ci_confidence_level": 95,
+        "total_n": 58279,
+        "cases": 642,
+        "comparison_type": "quintiles",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "Netherlands",
+        "ethnicity": "NA",
+        "population": "Men aged 55-69 years participating in the Netherlands Cohort Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer. After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "effect_size": {
+            "excerpt": "Only a minority of previous cohort (Snowdon et al, 1984; Giovannucci et al, 1993, 1995) and case-control studies (Mettlin et al, 1989; Talamini et al, 1992; Andersson et al, 1995) had a fairly Animal products and prostate cancer risk 1111 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 4 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles of intake of energy-adjusted calcium and energy- adjusted protein, for all cases and separately for localized (T0-2, M0) and advanced (T3-4, M0; T0-4, M1) prostate tumours, Netherlands Cohort Study, 6.3 years of follow-up (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Calcium Median intake (mg per day)b 602 780 911 1064 1329 Cases/Person years 120/1821 126/1845 127/1840 140/1817 129/1800 RR (95% CI)c 1.00 1.07 (0.79-1.47) 1.03 (0.75-1.41) 1.20 (0.88-1.64) 1.07 (0.79-1.47) 0.36 RR (95% CI)d 1.00 1.10 (0.80-1.51) 1.04 (0.76-1.42) 1.21 (0.89-1.66) 1.09 (0.79-1.50) 0.34 Localized tumours (n) 47 30 45 46 56 RR (95% CI)d 1.00 0.69 (0.42-1.13) 0.96 (0.61-1.50) 1.04 (0.67-1.63) 1.21 (0.79-1.86) 0.10 Advanced tumours (n) 44 46 37 46 37 RR (95% CI)d 1.00 1.08 (0.69-1.70) 0.79 (0.49-1.27) 1.06 (0.67-1.66) 0.83 (0.52-1.34) 0.45 Total protein Median intake (g per day)b 62 69 75 81 90 Cases/Person years 128/1839 121/1836 134/1821 135/1792 124/1834 RR (95% CI)c 1.00 1.03 (0.75-1.41) 1.10 (0.81-1.50) 1.31 (0.96-1.79) 1.09 (0.80-1.48) 0.15 RR (95% CI)d 1.00 1.04 (0.76-1.43) 1.12 (0.82-1.53) 1.35 (0.98-1.84) 1.10 (0.81-1.51) 0.11 Localized tumours (n) 51 34 40 49 50 RR (95% CI)d 1.00 0.76 (0.47-1.22) 0.87 (0.55-1.38) 1.27 (0.82-1.96) 1.13 (0.73-1.74) 0.13 Advanced tumours (n) 46 43 48 38 35 RR (95% CI)d 1.00 1.04 (0.66-1.64) 1.08 (0.69-1.69) 1.02 (0.64-1.64) 0.83 (0.51-1.33) 0.49 Vegetable protein Median intake (g per day)b 22 25 27 30 35 Cases/Person years 143/1827 129/1833 139/1813 110/1812 121/1839 RR (95% CI)c 1.00 0.87 (0.64-1.18) 0.99 (0.74-1.34) 0.83 (0.61-1.13) 0.92 (0.67-1.24) 0.43 RR (95% CI)e 1.00 0.86 (0.63-1.17) 1.00 (0.74-1.36) 0.83 (0.61-1.14) 0.90 (0.66-1.23) 0.37 Localized tumours (n) 53 46 42 35 48 RR (95% CI)e 1.00 0.86 (0.55-1.33) 0.85 (0.54-1.33) 0.73 (0.46-1.17) 0.96 (0.62-1.48) 0.63 Advanced tumours (n) 38 43 57 30 42 RR (95% CI)e 1.00 1.08 (0.67-1.74) 1.55 (0.98-2.44) 0.85 (0.51-1.43) 1.19 (0.74-1.92) 0.81 Animal protein Median intake (g per day)b 34 42 47 53 64 Cases/Person years 112/1825 137/1843 121/1819 150/1812 122/1823 RR (95% CI)c 1.00 1.21 (0.88-1.65) 1.11 (0.81-1.53) 1.42 (1.04-1.93) 1.16 (0.84-1.59) 0.11 RR (95% CI)e 1.00 1.29 (0.92-1.81) 1.16 (0.80-1.68) 1.52 (1.01-2.30) 1.32 (0.76-2.29) 0.09 Localized tumours (n) 44 40 44 45 51 RR (95% CI)e 1.00 0.94 (0.57-1.55) 1.08 (0.64-1.83) 1.13 (0.62-2.05) 1.26 (0.58-2.75) 0.44 Advanced tumours (n) 43 49 41 47 30 RR (95% CI)e 1.00 1.21 (0.75-1.95) 0.96 (0.56-1.65) 1.11 (0.61-2.04) 0.71 (0.31-1.63) 0.61 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "confidence_interval": {
+            "excerpt": "Only a minority of previous cohort (Snowdon et al, 1984; Giovannucci et al, 1993, 1995) and case-control studies (Mettlin et al, 1989; Talamini et al, 1992; Andersson et al, 1995) had a fairly Animal products and prostate cancer risk 1111 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 4 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles of intake of energy-adjusted calcium and energy- adjusted protein, for all cases and separately for localized (T0-2, M0) and advanced (T3-4, M0; T0-4, M1) prostate tumours, Netherlands Cohort Study, 6.3 years of follow-up (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Calcium Median intake (mg per day)b 602 780 911 1064 1329 Cases/Person years 120/1821 126/1845 127/1840 140/1817 129/1800 RR (95% CI)c 1.00 1.07 (0.79-1.47) 1.03 (0.75-1.41) 1.20 (0.88-1.64) 1.07 (0.79-1.47) 0.36 RR (95% CI)d 1.00 1.10 (0.80-1.51) 1.04 (0.76-1.42) 1.21 (0.89-1.66) 1.09 (0.79-1.50) 0.34 Localized tumours (n) 47 30 45 46 56 RR (95% CI)d 1.00 0.69 (0.42-1.13) 0.96 (0.61-1.50) 1.04 (0.67-1.63) 1.21 (0.79-1.86) 0.10 Advanced tumours (n) 44 46 37 46 37 RR (95% CI)d 1.00 1.08 (0.69-1.70) 0.79 (0.49-1.27) 1.06 (0.67-1.66) 0.83 (0.52-1.34) 0.45 Total protein Median intake (g per day)b 62 69 75 81 90 Cases/Person years 128/1839 121/1836 134/1821 135/1792 124/1834 RR (95% CI)c 1.00 1.03 (0.75-1.41) 1.10 (0.81-1.50) 1.31 (0.96-1.79) 1.09 (0.80-1.48) 0.15 RR (95% CI)d 1.00 1.04 (0.76-1.43) 1.12 (0.82-1.53) 1.35 (0.98-1.84) 1.10 (0.81-1.51) 0.11 Localized tumours (n) 51 34 40 49 50 RR (95% CI)d 1.00 0.76 (0.47-1.22) 0.87 (0.55-1.38) 1.27 (0.82-1.96) 1.13 (0.73-1.74) 0.13 Advanced tumours (n) 46 43 48 38 35 RR (95% CI)d 1.00 1.04 (0.66-1.64) 1.08 (0.69-1.69) 1.02 (0.64-1.64) 0.83 (0.51-1.33) 0.49 Vegetable protein Median intake (g per day)b 22 25 27 30 35 Cases/Person years 143/1827 129/1833 139/1813 110/1812 121/1839 RR (95% CI)c 1.00 0.87 (0.64-1.18) 0.99 (0.74-1.34) 0.83 (0.61-1.13) 0.92 (0.67-1.24) 0.43 RR (95% CI)e 1.00 0.86 (0.63-1.17) 1.00 (0.74-1.36) 0.83 (0.61-1.14) 0.90 (0.66-1.23) 0.37 Localized tumours (n) 53 46 42 35 48 RR (95% CI)e 1.00 0.86 (0.55-1.33) 0.85 (0.54-1.33) 0.73 (0.46-1.17) 0.96 (0.62-1.48) 0.63 Advanced tumours (n) 38 43 57 30 42 RR (95% CI)e 1.00 1.08 (0.67-1.74) 1.55 (0.98-2.44) 0.85 (0.51-1.43) 1.19 (0.74-1.92) 0.81 Animal protein Median intake (g per day)b 34 42 47 53 64 Cases/Person years 112/1825 137/1843 121/1819 150/1812 122/1823 RR (95% CI)c 1.00 1.21 (0.88-1.65) 1.11 (0.81-1.53) 1.42 (1.04-1.93) 1.16 (0.84-1.59) 0.11 RR (95% CI)e 1.00 1.29 (0.92-1.81) 1.16 (0.80-1.68) 1.52 (1.01-2.30) 1.32 (0.76-2.29) 0.09 Localized tumours (n) 44 40 44 45 51 RR (95% CI)e 1.00 0.94 (0.57-1.55) 1.08 (0.64-1.83) 1.13 (0.62-2.05) 1.26 (0.58-2.75) 0.44 Advanced tumours (n) 43 49 41 47 30 RR (95% CI)e 1.00 1.21 (0.75-1.95) 0.96 (0.56-1.65) 1.11 (0.61-2.04) 0.71 (0.31-1.63) 0.61 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "p_value": {
+            "excerpt": "Only a minority of previous cohort (Snowdon et al, 1984; Giovannucci et al, 1993, 1995) and case-control studies (Mettlin et al, 1989; Talamini et al, 1992; Andersson et al, 1995) had a fairly Animal products and prostate cancer risk 1111 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 4 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles of intake of energy-adjusted calcium and energy- adjusted protein, for all cases and separately for localized (T0-2, M0) and advanced (T3-4, M0; T0-4, M1) prostate tumours, Netherlands Cohort Study, 6.3 years of follow-up (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Calcium Median intake (mg per day)b 602 780 911 1064 1329 Cases/Person years 120/1821 126/1845 127/1840 140/1817 129/1800 RR (95% CI)c 1.00 1.07 (0.79-1.47) 1.03 (0.75-1.41) 1.20 (0.88-1.64) 1.07 (0.79-1.47) 0.36 RR (95% CI)d 1.00 1.10 (0.80-1.51) 1.04 (0.76-1.42) 1.21 (0.89-1.66) 1.09 (0.79-1.50) 0.34 Localized tumours (n) 47 30 45 46 56 RR (95% CI)d 1.00 0.69 (0.42-1.13) 0.96 (0.61-1.50) 1.04 (0.67-1.63) 1.21 (0.79-1.86) 0.10 Advanced tumours (n) 44 46 37 46 37 RR (95% CI)d 1.00 1.08 (0.69-1.70) 0.79 (0.49-1.27) 1.06 (0.67-1.66) 0.83 (0.52-1.34) 0.45 Total protein Median intake (g per day)b 62 69 75 81 90 Cases/Person years 128/1839 121/1836 134/1821 135/1792 124/1834 RR (95% CI)c 1.00 1.03 (0.75-1.41) 1.10 (0.81-1.50) 1.31 (0.96-1.79) 1.09 (0.80-1.48) 0.15 RR (95% CI)d 1.00 1.04 (0.76-1.43) 1.12 (0.82-1.53) 1.35 (0.98-1.84) 1.10 (0.81-1.51) 0.11 Localized tumours (n) 51 34 40 49 50 RR (95% CI)d 1.00 0.76 (0.47-1.22) 0.87 (0.55-1.38) 1.27 (0.82-1.96) 1.13 (0.73-1.74) 0.13 Advanced tumours (n) 46 43 48 38 35 RR (95% CI)d 1.00 1.04 (0.66-1.64) 1.08 (0.69-1.69) 1.02 (0.64-1.64) 0.83 (0.51-1.33) 0.49 Vegetable protein Median intake (g per day)b 22 25 27 30 35 Cases/Person years 143/1827 129/1833 139/1813 110/1812 121/1839 RR (95% CI)c 1.00 0.87 (0.64-1.18) 0.99 (0.74-1.34) 0.83 (0.61-1.13) 0.92 (0.67-1.24) 0.43 RR (95% CI)e 1.00 0.86 (0.63-1.17) 1.00 (0.74-1.36) 0.83 (0.61-1.14) 0.90 (0.66-1.23) 0.37 Localized tumours (n) 53 46 42 35 48 RR (95% CI)e 1.00 0.86 (0.55-1.33) 0.85 (0.54-1.33) 0.73 (0.46-1.17) 0.96 (0.62-1.48) 0.63 Advanced tumours (n) 38 43 57 30 42 RR (95% CI)e 1.00 1.08 (0.67-1.74) 1.55 (0.98-2.44) 0.85 (0.51-1.43) 1.19 (0.74-1.92) 0.81 Animal protein Median intake (g per day)b 34 42 47 53 64 Cases/Person years 112/1825 137/1843 121/1819 150/1812 122/1823 RR (95% CI)c 1.00 1.21 (0.88-1.65) 1.11 (0.81-1.53) 1.42 (1.04-1.93) 1.16 (0.84-1.59) 0.11 RR (95% CI)e 1.00 1.29 (0.92-1.81) 1.16 (0.80-1.68) 1.52 (1.01-2.30) 1.32 (0.76-2.29) 0.09 Localized tumours (n) 44 40 44 45 51 RR (95% CI)e 1.00 0.94 (0.57-1.55) 1.08 (0.64-1.83) 1.13 (0.62-2.05) 1.26 (0.58-2.75) 0.44 Advanced tumours (n) 43 49 41 47 30 RR (95% CI)e 1.00 1.21 (0.75-1.95) 0.96 (0.56-1.65) 1.11 (0.61-2.04) 0.71 (0.31-1.63) 0.61 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "comparison": {
+            "excerpt": "Median intake (g per day)b 62 69 75 81 90",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 4"
+          },
+          "design": {
+            "excerpt": "The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "was investigated in the Netherlands Cohort Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The questionnaire, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.11",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50142,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "2417ff6e055b71361084d61ab9d0a40c89f06f3a979edc4f5186730322b72fa2",
+      "pmc_source_receipt_digest": "62dca987dc775cf58eabaec9dad041da005d19b08b3f851c1a9b5c3bb4d067de",
+      "pmc_source_raw_sha256": "b37d131bda15f686ca614902d2a7317944d6650cc399beee0ae3ede672e1a76b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "22e57aef699adb912179dcbcc0f469949485d0c556d77d904e89c85d9f184a31"
+    },
+    {
+      "context_id": "10362125|Eggs|Prostate cancer",
+      "pmid": "10362125",
+      "pmcid": "PMC2363036",
+      "published_date": "1999-06-01",
+      "title": "Animal products, calcium and protein and prostate cancer risk in The Netherlands Cohort Study.",
+      "authors": [
+        "Schuurman AG",
+        "van den Brandt PA",
+        "Dorant E",
+        "Goldbohm RA"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+      "exposure": "Eggs",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective case-cohort study evaluating egg intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.96,
+        "effect_type": "RR",
+        "ci_lower": 0.75,
+        "ci_upper": 1.22,
+        "p_value": 0.71,
+        "ci_confidence_level": 95,
+        "total_n": 58279,
+        "cases": 642,
+        "comparison_type": "categories",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "Netherlands",
+        "ethnicity": "NA",
+        "population": "Men aged 55-69 years participating in the Netherlands Cohort Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer. After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "effect_size": {
+            "excerpt": "The RR (95% CI) per 5 g for consumption of Animal products and prostate cancer risk 1109 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 2 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles or categories of consumption of meat, fish, processed meat, milk and dairy, cheese and eggs, Netherlands Cohort Study (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Fresh meat and poultry Median intakeb 56 85 102 123 158 Cases/Person years 128/1820 138/1919 144/1787 121/1766 111/1830 RR (95% CI)c 1.00 1.08 (0.80-1.46) 1.23 (0.91-1.67) 1.05 (0.77-1.43) 1.01 (0.73-1.39) 0.98 RR (95% CI)d 1.00 1.08 (0.79-1.47) 1.27 (0.93-1.73) 1.12 (0.82-1.53) 1.07 (0.77-1.47) 0.52 Fish Median intakeb,e 0 5 14 32 Cases/Person years 162/2238 135/2115 119/1874 226/2895 RR (95% CI)c 1.00 0.85 (0.64-1.13) 0.95 (0.70-1.28) 1.06 (0.82-1.37) 0.32 RR (95% CI)d 1.00 0.83 (0.62-1.11) 0.95 (0.70-1.29) 1.03 (0.80-1.34) 0.41 Cured meat Median intakeb 0 5 11 19 36 Cases/Person years 118/1849 137/1907 140/1703 124/1880 123/1783 RR (95% CI)c 1.00 1.18 (0.87-1.61) 1.46 (1.07-1.99) 1.14 (0.84-1.57) 1.32 (0.96-1.81) 0.07 RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89) 0.04 Milk and milk products Median intakeb 74 179 271 376 566 Cases/Person years 114/1860 112/1835 132/1803 172/1824 112/1800 RR (95% CI)c 1.00 1.08 (0.79-1.49) 1.22 (0.89-1.67) 1.60 (1.19-2.17) 1.09 (0.79-1.50) 0.03 RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56) 0.02 Cheese Median intakeb 2 13 19 27 43 Cases/Person years 140/2261 121/1620 119/1607 175/2371 87/1264 RR (95% CI)c 1.00 1.29 (0.95-1.74) 1.16 (0.86-1.58) 1.34 (1.01-1.77) 1.26 (0.90-1.76) 0.04 RR (95% CI)d 1.00 1.27 (0.94-1.73) 1.15 (0.84-1.56) 1.28 (0.97-1.70) 1.21 (0.87-1.70) 0.09 Eggs Median intakeb,e 5 14 29 Cases/Person years 197/2530 208/3243 237/3349 RR (95% CI)c 1.00 0.90 (0.70-1.15) 0.96 (0.76-1.22) 0.72 RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22) 0.71 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "The RR (95% CI) per 5 g for consumption of Animal products and prostate cancer risk 1109 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 2 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles or categories of consumption of meat, fish, processed meat, milk and dairy, cheese and eggs, Netherlands Cohort Study (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Fresh meat and poultry Median intakeb 56 85 102 123 158 Cases/Person years 128/1820 138/1919 144/1787 121/1766 111/1830 RR (95% CI)c 1.00 1.08 (0.80-1.46) 1.23 (0.91-1.67) 1.05 (0.77-1.43) 1.01 (0.73-1.39) 0.98 RR (95% CI)d 1.00 1.08 (0.79-1.47) 1.27 (0.93-1.73) 1.12 (0.82-1.53) 1.07 (0.77-1.47) 0.52 Fish Median intakeb,e 0 5 14 32 Cases/Person years 162/2238 135/2115 119/1874 226/2895 RR (95% CI)c 1.00 0.85 (0.64-1.13) 0.95 (0.70-1.28) 1.06 (0.82-1.37) 0.32 RR (95% CI)d 1.00 0.83 (0.62-1.11) 0.95 (0.70-1.29) 1.03 (0.80-1.34) 0.41 Cured meat Median intakeb 0 5 11 19 36 Cases/Person years 118/1849 137/1907 140/1703 124/1880 123/1783 RR (95% CI)c 1.00 1.18 (0.87-1.61) 1.46 (1.07-1.99) 1.14 (0.84-1.57) 1.32 (0.96-1.81) 0.07 RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89) 0.04 Milk and milk products Median intakeb 74 179 271 376 566 Cases/Person years 114/1860 112/1835 132/1803 172/1824 112/1800 RR (95% CI)c 1.00 1.08 (0.79-1.49) 1.22 (0.89-1.67) 1.60 (1.19-2.17) 1.09 (0.79-1.50) 0.03 RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56) 0.02 Cheese Median intakeb 2 13 19 27 43 Cases/Person years 140/2261 121/1620 119/1607 175/2371 87/1264 RR (95% CI)c 1.00 1.29 (0.95-1.74) 1.16 (0.86-1.58) 1.34 (1.01-1.77) 1.26 (0.90-1.76) 0.04 RR (95% CI)d 1.00 1.27 (0.94-1.73) 1.15 (0.84-1.56) 1.28 (0.97-1.70) 1.21 (0.87-1.70) 0.09 Eggs Median intakeb,e 5 14 29 Cases/Person years 197/2530 208/3243 237/3349 RR (95% CI)c 1.00 0.90 (0.70-1.15) 0.96 (0.76-1.22) 0.72 RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22) 0.71 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "The RR (95% CI) per 5 g for consumption of Animal products and prostate cancer risk 1109 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 2 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles or categories of consumption of meat, fish, processed meat, milk and dairy, cheese and eggs, Netherlands Cohort Study (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Fresh meat and poultry Median intakeb 56 85 102 123 158 Cases/Person years 128/1820 138/1919 144/1787 121/1766 111/1830 RR (95% CI)c 1.00 1.08 (0.80-1.46) 1.23 (0.91-1.67) 1.05 (0.77-1.43) 1.01 (0.73-1.39) 0.98 RR (95% CI)d 1.00 1.08 (0.79-1.47) 1.27 (0.93-1.73) 1.12 (0.82-1.53) 1.07 (0.77-1.47) 0.52 Fish Median intakeb,e 0 5 14 32 Cases/Person years 162/2238 135/2115 119/1874 226/2895 RR (95% CI)c 1.00 0.85 (0.64-1.13) 0.95 (0.70-1.28) 1.06 (0.82-1.37) 0.32 RR (95% CI)d 1.00 0.83 (0.62-1.11) 0.95 (0.70-1.29) 1.03 (0.80-1.34) 0.41 Cured meat Median intakeb 0 5 11 19 36 Cases/Person years 118/1849 137/1907 140/1703 124/1880 123/1783 RR (95% CI)c 1.00 1.18 (0.87-1.61) 1.46 (1.07-1.99) 1.14 (0.84-1.57) 1.32 (0.96-1.81) 0.07 RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89) 0.04 Milk and milk products Median intakeb 74 179 271 376 566 Cases/Person years 114/1860 112/1835 132/1803 172/1824 112/1800 RR (95% CI)c 1.00 1.08 (0.79-1.49) 1.22 (0.89-1.67) 1.60 (1.19-2.17) 1.09 (0.79-1.50) 0.03 RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56) 0.02 Cheese Median intakeb 2 13 19 27 43 Cases/Person years 140/2261 121/1620 119/1607 175/2371 87/1264 RR (95% CI)c 1.00 1.29 (0.95-1.74) 1.16 (0.86-1.58) 1.34 (1.01-1.77) 1.26 (0.90-1.76) 0.04 RR (95% CI)d 1.00 1.27 (0.94-1.73) 1.15 (0.84-1.56) 1.28 (0.97-1.70) 1.21 (0.87-1.70) 0.09 Eggs Median intakeb,e 5 14 29 Cases/Person years 197/2530 208/3243 237/3349 RR (95% CI)c 1.00 0.90 (0.70-1.15) 0.96 (0.76-1.22) 0.72 RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22) 0.71 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "Median intakeb,e 5 14 29",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "was investigated in the Netherlands Cohort Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The questionnaire, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.71",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50142,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "2417ff6e055b71361084d61ab9d0a40c89f06f3a979edc4f5186730322b72fa2",
+      "pmc_source_receipt_digest": "62dca987dc775cf58eabaec9dad041da005d19b08b3f851c1a9b5c3bb4d067de",
+      "pmc_source_raw_sha256": "b37d131bda15f686ca614902d2a7317944d6650cc399beee0ae3ede672e1a76b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "46b6bed6de0f351a9c47742bcaa44034928918643e80769a4db009110e2f6527"
+    },
+    {
+      "context_id": "10362125|Processed meat intake|Prostate cancer",
+      "pmid": "10362125",
+      "pmcid": "PMC2363036",
+      "published_date": "1999-06-01",
+      "title": "Animal products, calcium and protein and prostate cancer risk in The Netherlands Cohort Study.",
+      "authors": [
+        "Schuurman AG",
+        "van den Brandt PA",
+        "Dorant E",
+        "Goldbohm RA"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective case-cohort study evaluating cured meat consumption and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.37,
+        "effect_type": "RR",
+        "ci_lower": 1,
+        "ci_upper": 1.89,
+        "p_value": 0.04,
+        "ci_confidence_level": 95,
+        "total_n": 58279,
+        "cases": 642,
+        "comparison_type": "quintiles",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "Netherlands",
+        "ethnicity": "NA",
+        "population": "Men aged 55-69 years participating in the Netherlands Cohort Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "At baseline in 1986, 58 279 men aged 55–69 years completed a self-administered 150-item food frequency questionnaire and a questionnaire on other risk factors for cancer. After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 642 prostate cancer cases were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "effect_size": {
+            "excerpt": "The RR (95% CI) per 5 g for consumption of Animal products and prostate cancer risk 1109 British Journal of Cancer (1999) 80(7), 1107-1113 (c) 1999Cancer Research Campaign Table 2 Rate ratios (RRs) and 95% confidence intervals (95% CI) for prostate cancer according to quintiles or categories of consumption of meat, fish, processed meat, milk and dairy, cheese and eggs, Netherlands Cohort Study (1986-1992) Exposure Q1a Q2 Q3 Q4 Q5 P for trend Fresh meat and poultry Median intakeb 56 85 102 123 158 Cases/Person years 128/1820 138/1919 144/1787 121/1766 111/1830 RR (95% CI)c 1.00 1.08 (0.80-1.46) 1.23 (0.91-1.67) 1.05 (0.77-1.43) 1.01 (0.73-1.39) 0.98 RR (95% CI)d 1.00 1.08 (0.79-1.47) 1.27 (0.93-1.73) 1.12 (0.82-1.53) 1.07 (0.77-1.47) 0.52 Fish Median intakeb,e 0 5 14 32 Cases/Person years 162/2238 135/2115 119/1874 226/2895 RR (95% CI)c 1.00 0.85 (0.64-1.13) 0.95 (0.70-1.28) 1.06 (0.82-1.37) 0.32 RR (95% CI)d 1.00 0.83 (0.62-1.11) 0.95 (0.70-1.29) 1.03 (0.80-1.34) 0.41 Cured meat Median intakeb 0 5 11 19 36 Cases/Person years 118/1849 137/1907 140/1703 124/1880 123/1783 RR (95% CI)c 1.00 1.18 (0.87-1.61) 1.46 (1.07-1.99) 1.14 (0.84-1.57) 1.32 (0.96-1.81) 0.07 RR (95% CI)d 1.00 1.22 (0.90-1.67) 1.50 (1.09-2.06) 1.18 (0.86-1.62) 1.37 (1.00-1.89) 0.04 Milk and milk products Median intakeb 74 179 271 376 566 Cases/Person years 114/1860 112/1835 132/1803 172/1824 112/1800 RR (95% CI)c 1.00 1.08 (0.79-1.49) 1.22 (0.89-1.67) 1.60 (1.19-2.17) 1.09 (0.79-1.50) 0.03 RR (95% CI)d 1.00 1.11 (0.80-1.53) 1.25 (0.91-1.71) 1.63 (1.20-2.20) 1.12 (0.81-1.56) 0.02 Cheese Median intakeb 2 13 19 27 43 Cases/Person years 140/2261 121/1620 119/1607 175/2371 87/1264 RR (95% CI)c 1.00 1.29 (0.95-1.74) 1.16 (0.86-1.58) 1.34 (1.01-1.77) 1.26 (0.90-1.76) 0.04 RR (95% CI)d 1.00 1.27 (0.94-1.73) 1.15 (0.84-1.56) 1.28 (0.97-1.70) 1.21 (0.87-1.70) 0.09 Eggs Median intakeb,e 5 14 29 Cases/Person years 197/2530 208/3243 237/3349 RR (95% CI)c 1.00 0.90 (0.70-1.15) 0.96 (0.76-1.22) 0.72 RR (95% CI)d 1.00 0.89 (0.69-1.14) 0.96 (0.75-1.22) 0.71 a Reference category.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "The RRs (95% CI) were 1.37 (1.00-1.89) for cured meat and 1.12 (0.81-1.56) for milk and milk products for the highest versus lowest quintile of consumption.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Positive trends in risk were found for consumption of cured meat and milk products ( P -values 0.04 and 0.02 respectively).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "comparison": {
+            "excerpt": "Median intakeb 0 5 11 19 36",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The case-cohort approach (Prentice, 1986) was used in which cases are derived from the entire cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After a follow-up period of 6.3 years (September 1986-December 1992), 704 incident, microscopically confirmed, primary prostate cancer cases were detected.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The cohort, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "prostate cancer risk in relation to consumption of animal products, and intake of calcium and protein was investigated in the Netherlands Cohort Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "Abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "was investigated in the Netherlands Cohort Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10362125/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2363036/",
+            "location": "MATERIALS AND METHODS, The questionnaire, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50142,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "2417ff6e055b71361084d61ab9d0a40c89f06f3a979edc4f5186730322b72fa2",
+      "pmc_source_receipt_digest": "62dca987dc775cf58eabaec9dad041da005d19b08b3f851c1a9b5c3bb4d067de",
+      "pmc_source_raw_sha256": "b37d131bda15f686ca614902d2a7317944d6650cc399beee0ae3ede672e1a76b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "cec11940284a37731d6a2440c580697da24318afa47d62a66256d11b35dafe24"
+    }
+  ]
+}

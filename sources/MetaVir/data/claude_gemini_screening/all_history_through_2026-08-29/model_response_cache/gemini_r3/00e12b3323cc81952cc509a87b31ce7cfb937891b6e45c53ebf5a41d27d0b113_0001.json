@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "d2bec0a719c2a4d8765719242016df4d1635605cd42967cbf11ecb194f47921d",
+  "requested_at": "2026-09-02T08:45:02.983188+08:00",
+  "received_at": "2026-09-02T08:45:20.726584+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "00e12b3323cc81952cc509a87b31ce7cfb937891b6e45c53ebf5a41d27d0b113",
+  "attempt": 1,
+  "context_ids": [
+    "20501771|Folic acid|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Folic acid": 1
+  },
+  "input_digest": "34a0572ee706227ed10eef16f305b718c1b9bff39b24a6b79100d68446239938",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13594,
+    "cached_input_tokens": 0,
+    "output_tokens": 2600,
+    "reasoning_tokens": 814
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.019945499999999998",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "47362d87-7282-422a-addb-f346704d36d2",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.019945499999999998"
+  },
+  "output_sha256": "e62eee47121893bb9b3fda34e4c2a58aa8b5e37d2507774d67b1dd4acc2253e3",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"20501771|Folic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study reports adjusted odds ratios for the association between circulating plasma folate concentrations and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.01,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.82,\n        \"ci_upper\": 1.24,\n        \"p_value\": 0.7,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 2968,\n        \"cases\": 1461,\n        \"comparison_type\": \"highest_vs_lowest_quantile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 50–69 years in the UK ProtecT study undergoing PSA-based prostate cancer screening\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"hence the final analysis was based on 1,461 cases (1,298 (89%) localized, 163 (11%) advanced) and 1,507 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Results, Baseline characteristics, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"hence the final analysis was based on 1,461 cases (1,298 (89%) localized, 163 (11%) advanced) and 1,507 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Results, Baseline characteristics, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \">26.2 | 1.01 (0.82 – 1.24)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \">26.2 | 1.01 (0.82 – 1.24)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend ** | 0.7\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Folate (nmol/L) | <10.8 | 1.00 (reference) ... >26.2 | 1.01 (0.82 – 1.24)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Matched case-control study nested within the UK population-based ProtecT study of PSA-detected prostate cancer in men aged 50–69 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Blood was drawn from non-fasting participants at the time of their initial PSA test.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Methods, Blood sample handling, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Matched case-control study nested within the UK population-based ProtecT study of PSA-detected prostate cancer in men aged 50–69 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Ethnicity (white) | 98.5% | 98.7%\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Between 2001 and 2009, all (approximately 227,300) men aged 50–69 years in 300 general practices located around nine UK cities (centres) were invited to have a PSA test at a prostate check clinic appointment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Plasma concentrations of folate, B 12 , holo- and total-transcobalamin were measured by automated (Perkin Elmer MultiProbe 11 liquid handling system, Perkin Elmer Life and Analytical Sciences (LAS), Buckinghamshire, UK) microbiological assay using Lactobacillus casei for folate\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3759018/\",\n            \"location\": \"Methods, Biochemical analyses, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

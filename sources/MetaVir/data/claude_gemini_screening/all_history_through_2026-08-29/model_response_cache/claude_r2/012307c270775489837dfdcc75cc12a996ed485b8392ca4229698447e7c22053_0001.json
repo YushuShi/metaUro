@@ -1,0 +1,1046 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ceb850ae9159bffecb9dd16cbcc4db49f09522c205a04450e6e57532aab2891f",
+  "requested_at": "2026-09-02T08:22:40.172155+08:00",
+  "received_at": "2026-09-02T08:24:32.015413+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "012307c270775489837dfdcc75cc12a996ed485b8392ca4229698447e7c22053",
+  "attempt": 1,
+  "context_ids": [
+    "40542303|Dairy|Prostate cancer",
+    "40548677|Whole-grain intake|Prostate cancer",
+    "40553361|Calcium|Prostate cancer",
+    "40553361|Dairy|Prostate cancer",
+    "40584099|Vitamin A|Prostate cancer",
+    "40584099|Vitamin B12|Prostate cancer",
+    "40584099|Vitamin B1|Prostate cancer",
+    "40584099|Vitamin B2|Prostate cancer",
+    "40630116|Vitamin D|Prostate cancer",
+    "40684909|Soluble dietary fiber intake|Prostate cancer",
+    "40684909|Total dietary fiber intake|Prostate cancer",
+    "40690881|Antioxidants|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Calcium": 1,
+    "Dairy": 2,
+    "Soluble dietary fiber intake": 1,
+    "Total dietary fiber intake": 1,
+    "Vitamin A": 1,
+    "Vitamin B1": 1,
+    "Vitamin B12": 1,
+    "Vitamin B2": 1,
+    "Vitamin D": 1,
+    "Whole-grain intake": 1
+  },
+  "input_digest": "c23ba14a56bf923f86ae9513151ac9b4a264bebaa903c71e4588c24802c01814",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10672,
+    "cached_input_tokens": 0,
+    "output_tokens": 12184,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.35796000000000006",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "cc64e14f-0466-429c-80bf-11e1832f6656",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.35796000000000006"
+  },
+  "output_sha256": "e3d4001ede5af8a61fadd4b9df92b002f5d4c82fdd4808f5addd16db19d5728a",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"40542303|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a narrative review synthesizing existing literature on dietary saturated fatty acids and prostate cancer rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"40548677|Whole-grain intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The study is a comprehensive review of existing literature and case studies on integrative prostate disease management, not original human data on whole-grain intake and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"40553361|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NO-TARGET-ESTIMATE\",\"reason\":\"This Global Burden of Disease modeling analysis reports only the percentage of DALYs attributable to low calcium intake, so no separable calcium–prostate cancer incidence estimate is available.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"40553361|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NO-TARGET-ESTIMATE\",\"reason\":\"Milk intake is presented only as an attributable fraction of DALYs in an aggregate burden-of-disease projection, leaving no extractable dairy-specific prostate cancer incidence estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"40584099|Vitamin A|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original human cross-sectional NHANES analysis reporting an association between dietary retinol (vitamin A) intake and prostate cancer risk.\",\"extraction\":{\"effect_size\":1.76,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.027,\"ci_confidence_level\":null,\"total_n\":14977,\"cases\":null,\"comparison_type\":\"highest quartile vs lowest quartile of dietary retinol intake\",\"design\":\"cross_sectional\",\"timing\":\"exposure and outcome assessed concurrently in NHANES 2007-2018\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"adult men\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, p = 0.027)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"(OR = 1.76, p = 0.027)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"comparison\":{\"excerpt\":\"the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Background\"},\"timing\":{\"excerpt\":\"data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Dietary intake was assessed using 24-h dietary recall interviews.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"cross_sectional\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"NA\",\"q10\":\"NA\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"40584099|Vitamin B12|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original human cross-sectional NHANES analysis reporting an inverse association between vitamin B12 supplement intake and prostate cancer risk.\",\"extraction\":{\"effect_size\":0.83,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.03,\"ci_confidence_level\":null,\"total_n\":14977,\"cases\":null,\"comparison_type\":\"continuous increase in vitamin B12 supplement intake\",\"design\":\"cross_sectional\",\"timing\":\"exposure and outcome assessed concurrently in NHANES 2007-2018\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"adult men\",\"exposure_subtype\":\"supplement\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"supplement intake of vitamin B9 (OR = 0.65, p = 0.049), vitamin B12 (OR = 0.83, p = 0.030), and total vitamin B12 (OR = 0.82, p = 0.037) were inversely associated with PCa risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"vitamin B12 (OR = 0.83, p = 0.030)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"comparison\":{\"excerpt\":\"In the continuous variable analysis, supplement intake of ... vitamin B12 (OR = 0.83, p = 0.030)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Background\"},\"timing\":{\"excerpt\":\"data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"The study encompassed 10 vitamins with three ways of intake: diet, supplement, and total (diet plus supplement).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"cross_sectional\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"NA\",\"q10\":\"NA\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"40584099|Vitamin B1|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original human cross-sectional NHANES analysis reporting an inverse association between vitamin B1 supplement intake and prostate cancer risk.\",\"extraction\":{\"effect_size\":0.38,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.036,\"ci_confidence_level\":null,\"total_n\":14977,\"cases\":null,\"comparison_type\":\"highest quartile vs lowest quartile of vitamin B1 supplement intake\",\"design\":\"cross_sectional\",\"timing\":\"exposure and outcome assessed concurrently in NHANES 2007-2018\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"adult men\",\"exposure_subtype\":\"supplement\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"higher supplement intake of vitamin B1 (OR = 0.38, p = 0.036)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"vitamin B1 (OR = 0.38, p = 0.036)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"comparison\":{\"excerpt\":\"the quartile-based analysis showed ... higher supplement intake of vitamin B1 (OR = 0.38, p = 0.036) ... was associated with a lower risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Background\"},\"timing\":{\"excerpt\":\"data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"The study encompassed 10 vitamins with three ways of intake: diet, supplement, and total (diet plus supplement).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"cross_sectional\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"NA\",\"q10\":\"NA\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"40584099|Vitamin B2|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original human cross-sectional NHANES analysis reporting an inverse association between vitamin B2 supplement intake and prostate cancer risk.\",\"extraction\":{\"effect_size\":0.35,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.016,\"ci_confidence_level\":null,\"total_n\":14977,\"cases\":null,\"comparison_type\":\"highest quartile vs lowest quartile of vitamin B2 supplement intake\",\"design\":\"cross_sectional\",\"timing\":\"exposure and outcome assessed concurrently in NHANES 2007-2018\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"adult men\",\"exposure_subtype\":\"supplement\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"vitamin B2 (OR = 0.35, p = 0.016) was associated with a lower risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"vitamin B2 (OR = 0.35, p = 0.016)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"comparison\":{\"excerpt\":\"the quartile-based analysis showed ... higher supplement intake of vitamin B1 (OR = 0.38, p = 0.036) and vitamin B2 (OR = 0.35, p = 0.016) was associated with a lower risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Background\"},\"timing\":{\"excerpt\":\"data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"The study encompassed 10 vitamins with three ways of intake: diet, supplement, and total (diet plus supplement).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40584099/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"cross_sectional\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"NA\",\"q10\":\"NA\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"40630116|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review summarizing vitamin D metabolic pathways and gene polymorphisms in cancer rather than reporting original human data on vitamin D and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"40684909|Soluble dietary fiber intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original prospective analysis within the PLCO screening trial reporting an adjusted hazard ratio for prostate cancer risk with high soluble fiber intake.\",\"extraction\":{\"effect_size\":0.86,\"effect_type\":\"HR\",\"ci_lower\":0.75,\"ci_upper\":0.98,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":23807,\"cases\":null,\"comparison_type\":\"high tertile vs low tertile soluble fiber intake (usual care arm)\",\"design\":\"cohort\",\"timing\":\"prospective follow-up after enrollment 1993-2001\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"men aged 55 to 74 years in the usual care arm of the PLCO screening study\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 49 476 participants (annual screening arm: 25 669 men; usual care arm: 23 807 men) aged 55 to 74 years were enrolled\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"high-soluble fiber intake in the usual care arm had a similar association (adjusted hazard ratio 0.86; 95% CI, 0.75 to 0.98)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Results\"},\"confidence_interval\":{\"excerpt\":\"(adjusted hazard ratio 0.86; 95% CI, 0.75 to 0.98)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk ... and high-soluble fiber intake in the usual care arm had a similar association\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"This study was a secondary analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study, a multicenter randomized trial\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"timing\":{\"excerpt\":\"were enrolled from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study between the years 1993 and 2001\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"continent\":{\"excerpt\":\"a multicenter randomized trial conducted in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"a multicenter randomized trial conducted in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"exposure_measurement\":{\"excerpt\":\"Cox proportional hazard and competing risk regressions were used within each arm to examine the associations of dietary fiber intake with prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"40684909|Total dietary fiber intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original prospective analysis within the PLCO screening trial reporting an adjusted hazard ratio for prostate cancer risk with high total fiber intake.\",\"extraction\":{\"effect_size\":0.87,\"effect_type\":\"HR\",\"ci_lower\":0.76,\"ci_upper\":0.99,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":25669,\"cases\":null,\"comparison_type\":\"high tertile vs low tertile total fiber intake (annual screening arm)\",\"design\":\"cohort\",\"timing\":\"prospective follow-up after enrollment 1993-2001\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"men aged 55 to 74 years in the annual screening arm of the PLCO screening study\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 49 476 participants (annual screening arm: 25 669 men; usual care arm: 23 807 men) aged 55 to 74 years were enrolled\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk (adjusted hazard ratio 0.87; 95% CI, 0.76 to 0.99)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Results\"},\"confidence_interval\":{\"excerpt\":\"(adjusted hazard ratio 0.87; 95% CI, 0.76 to 0.99)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Results\"},\"design\":{\"excerpt\":\"This study was a secondary analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study, a multicenter randomized trial\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"timing\":{\"excerpt\":\"were enrolled from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study between the years 1993 and 2001\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"continent\":{\"excerpt\":\"a multicenter randomized trial conducted in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"a multicenter randomized trial conducted in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"},\"exposure_measurement\":{\"excerpt\":\"Cox proportional hazard and competing risk regressions were used within each arm to examine the associations of dietary fiber intake with prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/40684909/\",\"location\":\"Methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"40690881|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study is entirely preclinical, testing antioxidants in PNT-2, PC3, and MCF-7 cell lines with in silico network pharmacology and docking, with no human incidence data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "40542303|Dairy|Prostate cancer",
+      "pmid": "40542303",
+      "pmcid": "PMC12181547",
+      "published_date": "2025-06-20",
+      "title": "Dietary saturated fatty acids and prostate cancer: insights into NF-κB pathway and lipid metabolism mechanisms.",
+      "authors": [
+        "He JW",
+        "Huang ZX",
+        "Su YF",
+        "Mo YQ"
+      ],
+      "journal": "Discover oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40542303/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a narrative review synthesizing existing literature on dietary saturated fatty acids and prostate cancer rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40548677|Whole-grain intake|Prostate cancer",
+      "pmid": "40548677",
+      "pmcid": "PMC12185962",
+      "published_date": "2025",
+      "title": "Integrative Approaches to Prostate Disease Management: Nutrition, Exercise, and Lifestyle Modifications.",
+      "authors": [
+        "Aja PM",
+        "Agu PC",
+        "Musyoka AM",
+        "Ngwueche W",
+        "Odo JU",
+        "Alum EU",
+        "Fasogbon IV",
+        "Herbert M",
+        "Daniel Eze E"
+      ],
+      "journal": "American journal of men's health",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40548677/",
+      "exposure": "Whole-grain intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The study is a comprehensive review of existing literature and case studies on integrative prostate disease management, not original human data on whole-grain intake and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40553361|Calcium|Prostate cancer",
+      "pmid": "40553361",
+      "pmcid": "",
+      "published_date": "2025-06-24",
+      "title": "Epidemiology of Early Onset Prostate Cancer: Global Patterns, Risk Factors, and Projections Through 2040.",
+      "authors": [
+        "Lin W",
+        "Ou Y",
+        "Huang H",
+        "Xie R",
+        "Huang H"
+      ],
+      "journal": "Annals of surgical oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40553361/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "This Global Burden of Disease modeling analysis reports only the percentage of DALYs attributable to low calcium intake, so no separable calcium–prostate cancer incidence estimate is available.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40553361|Dairy|Prostate cancer",
+      "pmid": "40553361",
+      "pmcid": "",
+      "published_date": "2025-06-24",
+      "title": "Epidemiology of Early Onset Prostate Cancer: Global Patterns, Risk Factors, and Projections Through 2040.",
+      "authors": [
+        "Lin W",
+        "Ou Y",
+        "Huang H",
+        "Xie R",
+        "Huang H"
+      ],
+      "journal": "Annals of surgical oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40553361/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "Milk intake is presented only as an attributable fraction of DALYs in an aggregate burden-of-disease projection, leaving no extractable dairy-specific prostate cancer incidence estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40584099|Vitamin A|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original human cross-sectional NHANES analysis reporting an association between dietary retinol (vitamin A) intake and prostate cancer risk.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.76,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.027,
+        "ci_confidence_level": null,
+        "total_n": 14977,
+        "cases": null,
+        "comparison_type": "highest quartile vs lowest quartile of dietary retinol intake",
+        "design": "cross_sectional",
+        "timing": "exposure and outcome assessed concurrently in NHANES 2007-2018",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "adult men",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, <i>p</i> = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, <i>p</i> = 0.036) and vitamin B2 (OR = 0.35, <i>p</i> = 0.016) was associated with a lower risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, <i>p</i> = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, <i>p</i> = 0.036) and vitamin B2 (OR = 0.35, <i>p</i> = 0.016) was associated with a lower risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "comparison": {
+            "excerpt": "the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Background"
+          },
+          "timing": {
+            "excerpt": "data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed using 24-h dietary recall interviews.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "0.027",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40584099|Vitamin B12|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin B12",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original human cross-sectional NHANES analysis reporting an inverse association between vitamin B12 supplement intake and prostate cancer risk.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.83,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.03,
+        "ci_confidence_level": null,
+        "total_n": 14977,
+        "cases": null,
+        "comparison_type": "continuous increase in vitamin B12 supplement intake",
+        "design": "cross_sectional",
+        "timing": "exposure and outcome assessed concurrently in NHANES 2007-2018",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "adult men",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "In the continuous variable analysis, supplement intake of vitamin B9 (OR = 0.65, <i>p</i> = 0.049), vitamin B12 (OR = 0.83, <i>p</i> = 0.030), and total vitamin B12 (OR = 0.82, <i>p</i> = 0.037) were inversely associated with PCa risk after full adjustment.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "In the continuous variable analysis, supplement intake of vitamin B9 (OR = 0.65, <i>p</i> = 0.049), vitamin B12 (OR = 0.83, <i>p</i> = 0.030), and total vitamin B12 (OR = 0.82, <i>p</i> = 0.037) were inversely associated with PCa risk after full adjustment.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Background"
+          },
+          "timing": {
+            "excerpt": "data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The study encompassed 10 vitamins with three ways of intake: diet, supplement, and total (diet plus supplement).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40584099|Vitamin B1|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin B1",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original human cross-sectional NHANES analysis reporting an inverse association between vitamin B1 supplement intake and prostate cancer risk.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.38,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.036,
+        "ci_confidence_level": null,
+        "total_n": 14977,
+        "cases": null,
+        "comparison_type": "highest quartile vs lowest quartile of vitamin B1 supplement intake",
+        "design": "cross_sectional",
+        "timing": "exposure and outcome assessed concurrently in NHANES 2007-2018",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "adult men",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, <i>p</i> = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, <i>p</i> = 0.036) and vitamin B2 (OR = 0.35, <i>p</i> = 0.016) was associated with a lower risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, <i>p</i> = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, <i>p</i> = 0.036) and vitamin B2 (OR = 0.35, <i>p</i> = 0.016) was associated with a lower risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Background"
+          },
+          "timing": {
+            "excerpt": "data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The study encompassed 10 vitamins with three ways of intake: diet, supplement, and total (diet plus supplement).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "0.036",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40584099|Vitamin B2|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin B2",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original human cross-sectional NHANES analysis reporting an inverse association between vitamin B2 supplement intake and prostate cancer risk.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.35,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.016,
+        "ci_confidence_level": null,
+        "total_n": 14977,
+        "cases": null,
+        "comparison_type": "highest quartile vs lowest quartile of vitamin B2 supplement intake",
+        "design": "cross_sectional",
+        "timing": "exposure and outcome assessed concurrently in NHANES 2007-2018",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "adult men",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We conducted a cross-sectional analysis of 14,977 adult men using data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, <i>p</i> = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, <i>p</i> = 0.036) and vitamin B2 (OR = 0.35, <i>p</i> = 0.016) was associated with a lower risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, <i>p</i> = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, <i>p</i> = 0.036) and vitamin B2 (OR = 0.35, <i>p</i> = 0.016) was associated with a lower risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "This study aimed to investigate the association between vitamin intake and PCa using a cross-sectional design.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Background"
+          },
+          "timing": {
+            "excerpt": "data from the National Health and Nutrition Examination Survey (NHANES) collected between 2007 and 2018",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The study encompassed 10 vitamins with three ways of intake: diet, supplement, and total (diet plus supplement).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "0.016",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40630116|Vitamin D|Prostate cancer",
+      "pmid": "40630116",
+      "pmcid": "PMC12234307",
+      "published_date": "2025",
+      "title": "Key genes of vitamin D metabolism and their roles in the risk and prognosis of cancer.",
+      "authors": [
+        "Zheng S",
+        "Zhu L",
+        "Wang Y",
+        "Hua Y",
+        "Ying J",
+        "Chen J"
+      ],
+      "journal": "Frontiers in genetics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40630116/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review summarizing vitamin D metabolic pathways and gene polymorphisms in cancer rather than reporting original human data on vitamin D and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40684909|Soluble dietary fiber intake|Prostate cancer",
+      "pmid": "40684909",
+      "pmcid": "",
+      "published_date": "2025-11-01",
+      "title": "Dietary Fiber Intake and Prostate Cancer Outcomes and All-Cause Mortality: Findings From a Secondary Analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study.",
+      "authors": [
+        "Yang Y",
+        "Wang Y",
+        "Wu H",
+        "Geyer NR",
+        "McDonald AC",
+        "Wang M"
+      ],
+      "journal": "Journal of the Academy of Nutrition and Dietetics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+      "exposure": "Soluble dietary fiber intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original prospective analysis within the PLCO screening trial reporting an adjusted hazard ratio for prostate cancer risk with high soluble fiber intake.",
+      "missing_key_fields": [
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.86,
+        "effect_type": "HR",
+        "ci_lower": 0.75,
+        "ci_upper": 0.98,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 23807,
+        "cases": null,
+        "comparison_type": "high tertile vs low tertile soluble fiber intake (usual care arm)",
+        "design": "cohort",
+        "timing": "prospective follow-up after enrollment 1993-2001",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "men aged 55 to 74 years in the usual care arm of the PLCO screening study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 49 476 participants (annual screening arm: 25 669 men; usual care arm: 23 807 men) aged 55 to 74 years were enrolled from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study between the years 1993 and 2001.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk (adjusted hazard ratio 0.87; 95% CI, 0.76 to 0.99), and high-soluble fiber intake in the usual care arm had a similar association (adjusted hazard ratio 0.86; 95% CI, 0.75 to 0.98) after adjusting for confounders.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Results"
+          },
+          "confidence_interval": {
+            "excerpt": "Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk (adjusted hazard ratio 0.87; 95% CI, 0.76 to 0.99), and high-soluble fiber intake in the usual care arm had a similar association (adjusted hazard ratio 0.86; 95% CI, 0.75 to 0.98) after adjusting for confounders.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "This study was a secondary analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study, a multicenter randomized trial",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "were enrolled from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study between the years 1993 and 2001",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "continent": {
+            "excerpt": "a multicenter randomized trial conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a multicenter randomized trial conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Cox proportional hazard and competing risk regressions were used within each arm to examine the associations of dietary fiber intake with prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40684909|Total dietary fiber intake|Prostate cancer",
+      "pmid": "40684909",
+      "pmcid": "",
+      "published_date": "2025-11-01",
+      "title": "Dietary Fiber Intake and Prostate Cancer Outcomes and All-Cause Mortality: Findings From a Secondary Analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study.",
+      "authors": [
+        "Yang Y",
+        "Wang Y",
+        "Wu H",
+        "Geyer NR",
+        "McDonald AC",
+        "Wang M"
+      ],
+      "journal": "Journal of the Academy of Nutrition and Dietetics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+      "exposure": "Total dietary fiber intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original prospective analysis within the PLCO screening trial reporting an adjusted hazard ratio for prostate cancer risk with high total fiber intake.",
+      "missing_key_fields": [
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.87,
+        "effect_type": "HR",
+        "ci_lower": 0.76,
+        "ci_upper": 0.99,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 25669,
+        "cases": null,
+        "comparison_type": "high tertile vs low tertile total fiber intake (annual screening arm)",
+        "design": "cohort",
+        "timing": "prospective follow-up after enrollment 1993-2001",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "men aged 55 to 74 years in the annual screening arm of the PLCO screening study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 49 476 participants (annual screening arm: 25 669 men; usual care arm: 23 807 men) aged 55 to 74 years were enrolled from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study between the years 1993 and 2001.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk (adjusted hazard ratio 0.87; 95% CI, 0.76 to 0.99), and high-soluble fiber intake in the usual care arm had a similar association (adjusted hazard ratio 0.86; 95% CI, 0.75 to 0.98) after adjusting for confounders.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Results"
+          },
+          "confidence_interval": {
+            "excerpt": "Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk (adjusted hazard ratio 0.87; 95% CI, 0.76 to 0.99), and high-soluble fiber intake in the usual care arm had a similar association (adjusted hazard ratio 0.86; 95% CI, 0.75 to 0.98) after adjusting for confounders.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Results"
+          },
+          "design": {
+            "excerpt": "This study was a secondary analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study, a multicenter randomized trial",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "timing": {
+            "excerpt": "were enrolled from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study between the years 1993 and 2001",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "continent": {
+            "excerpt": "a multicenter randomized trial conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a multicenter randomized trial conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Cox proportional hazard and competing risk regressions were used within each arm to examine the associations of dietary fiber intake with prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/40684909/",
+            "location": "Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "40690881|Antioxidants|Prostate cancer",
+      "pmid": "40690881",
+      "pmcid": "",
+      "published_date": "2025-09-01",
+      "title": "Riboceine and N-acetylcysteine protect normal prostate cells from chemotherapy-induced oxidative stress while selectively modulating the cytotoxicity of methotrexate and docetaxel in prostate (PC-3) and breast cancer (MCF-7) cells.",
+      "authors": [
+        "Philips TJ",
+        "N'guessan BB",
+        "Dotse E",
+        "Abankwah JK",
+        "Appiah-Opong R"
+      ],
+      "journal": "Biomedicine & pharmacotherapy = Biomedecine & pharmacotherapie",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40690881/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

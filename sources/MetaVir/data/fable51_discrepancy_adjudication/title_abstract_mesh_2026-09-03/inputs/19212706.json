@@ -1,0 +1,156 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:01.163367-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "0aa96e2d6ddea230ef8cc0ebbbcae19b93894af856f65d22131d79b0c5dce4af",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19212706",
+      "title": "Association of selenium, tocopherols, carotenoids, retinol, and 15-isoprostane F(2t) in serum or urine with prostate cancer risk: the multiethnic cohort.",
+      "abstract": "We examine the association of antioxidants and 15-isoprostane F(2t) with risk of prostate cancer. We conducted a nested case-control study of serum antioxidant biomarkers (selenium, tocopherols, carotenoids, and retinol) and a urinary oxidation biomarker (15-isoprostane F(2t)) with risk of prostate cancer within the Multiethnic Cohort. Demographic, dietary, and other exposure information was collected by self-administered questionnaire in 1993-1996. We compared prediagnostic biomarker levels from 467 prostate cancer cases and 936 cancer free controls that were matched on several variables. Multivariate conditional logistic regression models were used to compute adjusted odds ratios (ORs) and 95% confidence intervals (CIs). We observed that there was no overall association of serum concentrations of antioxidants and urinary concentrations of 15-isoprostane F(2t) with risk of prostate cancer or risk of advanced prostate cancer. However, we did observe an inverse association for serum selenium only among African-American men (p trend = 0.02); men in the third tertile of selenium concentrations had a 41% lower risk (95% CI: 0.38-0.93) of prostate cancer when compared to men in the first tertile. Overall, our study found no association of serum antioxidants or 15-isoprostane F(2t) with the risk of prostate cancer. The observed inverse association of selenium with prostate cancer in African-Americans needs to be validated in other studies.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Antioxidants / metabolism",
+        "Biomarkers / blood, urine",
+        "Carotenoids / blood",
+        "Cohort Studies",
+        "Demography",
+        "F2-Isoprostanes / urine",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, ethnology, metabolism",
+        "Selenium / blood",
+        "Tocopherols / blood",
+        "Vitamin A / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19212706",
+      "contexts": [
+        {
+          "context_id": "19212706|Antioxidants|Prostate cancer",
+          "exposure": "Antioxidants",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-COMPOUND"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "19212706|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "1403",
+              "effect_measure_type": "OR",
+              "effect_size": "0.82",
+              "ci_lower": "0.59",
+              "ci_upper": "1.14",
+              "p_value": "0.25",
+              "comparison": "Fourth versus first quartile of serum selenium concentration"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1403",
+              "effect_measure_type": "OR",
+              "effect_size": "0.59",
+              "ci_lower": "0.38",
+              "ci_upper": "0.93",
+              "p_value": "0.02",
+              "comparison": "third versus first tertile of serum selenium (African-American men)"
+            }
+          }
+        },
+        {
+          "context_id": "19212706|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "1403",
+              "effect_measure_type": "OR",
+              "effect_size": "1.05",
+              "ci_lower": "0.7",
+              "ci_upper": "1.58",
+              "p_value": "0.66",
+              "comparison": "Fourth versus first quartile of serum retinol concentration"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1147",
+              "effect_measure_type": "OR",
+              "effect_size": "1.05",
+              "ci_lower": "0.7",
+              "ci_upper": "1.58",
+              "p_value": "0.66",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        },
+        {
+          "context_id": "19212706|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "1403",
+              "effect_measure_type": "OR",
+              "effect_size": "0.95",
+              "ci_lower": "0.65",
+              "ci_upper": "1.41",
+              "p_value": "0.89",
+              "comparison": "Fourth versus first quartile of serum alpha-tocopherol concentration"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1147",
+              "effect_measure_type": "OR",
+              "effect_size": "0.95",
+              "ci_lower": "0.65",
+              "ci_upper": "1.41",
+              "p_value": "0.89",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

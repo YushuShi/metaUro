@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:33.380837-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9fe4dcf72bf0a48a5875f056b6d245f8c71c0b289f588afaef219c45bce156bf",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25040978",
+      "title": "Fruit and vegetable intake in relation to prostate cancer in Iranian men: a case-control study.",
+      "abstract": "Findings of epidemiologic studies on the relationship between fruit and vegetable consumption and prostate cancer (PCa) risk have been inconclusive. We therefore examined the association between intake of fruits and vegetables and PCa risk in Iran. In this hospital based, case-control study, a total of 50 patients with PCa and 100 controls underwent face-to-face interviews. Regression analysis was used to examine the relation between fruit and vegetable intake and PCa risk. A protective independent effect was observed for the highest tertile of total fruit and vegetable (OR: 0.33, CI: 0.04-0.30, p value<0.001), total fruit (OR: 0.30, CI: 0.06-0.4, p value=0.03) and total vegetable (OR: 0.31, CI: 0.02-0.21, p value<0.001) consumption. Within the group of fruits, a significant inverse association was observed for apple and pomegranate (p trends were 0.01 and 0.016, respectively). In the vegetable group, a significant inverse association was observed for tomatoes (p trend<0.001) and cabbage (p trend=0.021). The results of the present study suggested that fruits and vegetable intake might be negatively associated with PCa risk.",
+      "mesh": [
+        "Brassica",
+        "Case-Control Studies",
+        "Diet",
+        "Disease Susceptibility / etiology",
+        "Feeding Behavior",
+        "Fruit",
+        "Humans",
+        "Iran",
+        "Solanum lycopersicum",
+        "Lythraceae",
+        "Male",
+        "Malus",
+        "Middle Aged",
+        "Prostatic Neoplasms / etiology",
+        "Risk",
+        "Risk Factors",
+        "Vegetables"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25040978",
+      "contexts": [
+        {
+          "context_id": "25040978|Pomegranate|Prostate cancer",
+          "exposure": "Pomegranate",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.016",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "150",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.016",
+              "comparison": "Trend test across intake categories"
+            }
+          }
+        },
+        {
+          "context_id": "25040978|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.001",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "150",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.001",
+              "comparison": "Trend test across intake categories"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

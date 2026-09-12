@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:20:24.972308-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "8a3f6f63731327a828e51a282f78f5a5a74fbd26ad0eacc7935da6db8d7b4482",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "10616828",
+      "title": "A prospective cohort study on consumption of alcoholic beverages in relation to prostate cancer incidence (The Netherlands).",
+      "abstract": "To examine alcohol consumption in relation to prostate cancer incidence in the Netherlands Cohort Study. At baseline in 1986, 58,279 men aged 55-69 years completed a self-administered questionnaire on diet, consumption of alcoholic beverages and other risk factors for cancer. For data processing and analyses the case-cohort approach was used. After 6.3 years of follow-up, 680 incident primary prostate cancer cases were available for analysis. In multivariate analyses adjusted for age, socioeconomic status and family history of prostate cancer, no association between total alcohol consumption, alcohol intake from beer and liquor and prostate cancer risk was found. Increased associations were found for alcohol from white wine and fortified wines compared to nondrinkers, but not for red wine. The RRs (95% CI) in the intake category of > or = 15 g/day were 3.3 (1.2-9.2) and 2.3 (1.2-4.7), respectively, after additional adjustment for total alcohol intake. There was, however, no significant trend in risk. Alcohol intake was more strongly related with localized than with advanced prostate tumors. Our results do not support an important role for alcohol in prostate cancer etiology. Nevertheless, for specific types of alcoholic beverages, particularly wines, a positive association was suggested which needs examination in further studies.",
+      "mesh": [
+        "Age Distribution",
+        "Aged",
+        "Alcohol Drinking / adverse effects",
+        "Cohort Studies",
+        "Confidence Intervals",
+        "Diet",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Netherlands / epidemiology",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Socioeconomic Factors",
+        "Surveys and Questionnaires"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "10616828",
+      "contexts": [
+        {
+          "context_id": "10616828|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "58279",
+              "effect_measure_type": "RR",
+              "effect_size": "3.3",
+              "ci_lower": "1.2",
+              "ci_upper": "9.2",
+              "p_value": "0.021580366314740678",
+              "comparison": "≥15 g/day of alcohol from white wine versus nondrinkers"
+            },
+            "Claude+Gemini": {
+              "sample_size": "58279",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

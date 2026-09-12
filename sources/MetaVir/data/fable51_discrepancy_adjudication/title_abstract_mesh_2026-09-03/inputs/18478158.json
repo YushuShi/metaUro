@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:24.733579-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "6b1372edb6e38d63a54992900fc697ad2fa48c3e9f12d7ad617618e4379973d5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "18478158",
+      "title": "Mass screening-based case-control study of diet and prostate cancer in Changchun, China.",
+      "abstract": "To investigate possible correlation factors for prostate cancer by a population-based case-control study in China. We carried out a mass screening of prostate cancer in Changchun, China, using a prostate-specific antigen assisted by Japan International Cooperation Agency. From June 1998 to December 2000, 3 940 men over 50 years old were screened. Of these, 29 men were diagnosed with prostate cancer. We selected 28 cases and matched them with controls of low prostate-specific antigen value (< 4.1 ng/mL) by 1:10 according to age and place of employment. A case-control study of diet and prostate cancer was then carried out. After adjustment for education, body mass index (BMI), smoking, alcohol consumption, marriage and diet, intake of soybean product was discovered to be inversely related to prostate cancer. Men who consumed soybean product more than twice per week on different days had a multivariate odds ratio (OR) of 0.38 (95% confidence interval [CI], 0.13-1.12). In addition, men who consumed soybean products more than once per day had a multivariate OR of 0.29 (95% CI, 0.11-0.79) compared with men who consumed soybean products less than once per week. The P for trend was 0.02, which showed significant difference. There was no significant difference in P trend for any dairy food. Even when we matched the cases and controls by other criteria, we found that soybean food was the only preventive factor associated with prostate cancer. Our study suggests that consumption of soybeans, one of the most popular foods in Asia, would decrease the risk of prostate cancer.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Case-Control Studies",
+        "China / epidemiology",
+        "Diet",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Mass Screening / methods",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / diagnosis, epidemiology, prevention & control",
+        "Glycine max"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "18478158",
+      "contexts": [
+        {
+          "context_id": "18478158|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "308",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "trend across dairy food intake categories"
+            }
+          }
+        },
+        {
+          "context_id": "18478158|Legumes|Prostate cancer",
+          "exposure": "Legumes",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.29",
+              "ci_lower": "0.11",
+              "ci_upper": "0.79",
+              "p_value": "0.02",
+              "comparison": "more than once per day versus less than once per week"
+            },
+            "Claude+Gemini": {
+              "sample_size": "308",
+              "effect_measure_type": "OR",
+              "effect_size": "0.29",
+              "ci_lower": "0.11",
+              "ci_upper": "0.79",
+              "p_value": "0.02",
+              "comparison": "more than once per day versus less than once per week soybean product consumption"
+            }
+          }
+        },
+        {
+          "context_id": "18478158|Soy|Prostate cancer",
+          "exposure": "Soy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.29",
+              "ci_lower": "0.11",
+              "ci_upper": "0.79",
+              "p_value": "0.02",
+              "comparison": "more than once per day versus less than once per week"
+            },
+            "Claude+Gemini": {
+              "sample_size": "308",
+              "effect_measure_type": "OR",
+              "effect_size": "0.29",
+              "ci_lower": "0.11",
+              "ci_upper": "0.79",
+              "p_value": "0.02",
+              "comparison": "more than once per day versus less than once per week soybean product consumption"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

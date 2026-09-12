@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:20:22.790603-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "5ae7390e55f15a48223c63a706cfd7fff888c012240ed0ab2bc3f2739b4009a8",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "10578485",
+      "title": "Plant foods, antioxidants, and prostate cancer risk: findings from case-control studies in Canada.",
+      "abstract": "Epidemiological data on most cancer sites suggest that consumption of plant foods, which contain high levels of antioxidants, might slow or prevent the appearance of cancer. We used data from three case-control studies to test this hypothesis. The total study population consisted of 617 incident cases of prostate cancer and 636 population controls from Ontario, Quebec, and British Columbia. Dietary information was collected by an in-person interview with a detailed quantitative dietary history. Unconditional logistic regression analyses were performed to estimate odds ratios (ORs) and 95% confidence intervals (CIs). A decreasing, statistically significant association was found with increasing intakes of green vegetables (OR = 0.54, 95% CI = 0.40-0.71 for 4th quartile), tomatoes (OR = 0.64, 95% CI = 0.45-0.91), beans/lentils/nuts (OR = 0.69, 95% CI = 0.53-0.91), and cruciferous vegetables (OR = 0.69, 95% CI = 0.52-0.91 for 3rd quartile). Higher intakes of fruit were associated with higher ORs (OR = 1.51, 95% CI = 1.14-2.01 for 4th quartile), an effect that was seen for total fruit and citrus fruit, as well as for all other noncitrus fruits. Among the grains, refined-grain bread intake was associated with a decrease in risk (OR = 0.65 for 4th quartile), whereas whole-grain breakfast cereals were associated with a higher risk for prostate cancer. Of all the antioxidant nutrients studied, the ORs were higher with higher intakes of cryptoxanthin (OR = 1.44, 95% CI = 1.09-1.89 for 4th quartile). Exposure to certain dietary components of plant origin, which are potentially modifiable, indicates the theoretical scope for reducing the risk from prostate cancer. Future experimental studies or trials are warranted for further understanding.",
+      "mesh": [
+        "Adenocarcinoma / prevention & control",
+        "Aged",
+        "Antioxidants / therapeutic use",
+        "Canada",
+        "Diet",
+        "Humans",
+        "Male",
+        "Odds Ratio",
+        "Plants, Edible",
+        "Prostatic Neoplasms / prevention & control",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "10578485",
+      "contexts": [
+        {
+          "context_id": "10578485|Antioxidants|Prostate cancer",
+          "exposure": "Antioxidants",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-COMPOUND"
+            }
+          }
+        },
+        {
+          "context_id": "10578485|Legumes|Prostate cancer",
+          "exposure": "Legumes",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-COMPOUND"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

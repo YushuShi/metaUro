@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "revision_date": "2026-08-29",
+  "additional_catalog_files": [
+    "data/additionalExposure.json",
+    "data/additionalExposureV2.json"
+  ],
+  "exposure_hierarchy_sha256": "937a557a97201c4bffba8754b19068d421a2c14170bea3fa37a93e6717f75f65",
+  "sets": {
+    "alias_expanded_existing": [
+      "Flaxseed",
+      "Mushrooms",
+      "Omega-6 fatty acids",
+      "Omega-7 fatty acids",
+      "St. John wort",
+      "Vitamin B2",
+      "Vitamin B3",
+      "Vitamin B5",
+      "Vitamin B6",
+      "Vitamin B7"
+    ],
+    "alias_narrowed_or_reclassified": [
+      "Fish oil",
+      "Omega-3 fatty acids",
+      "Tomato"
+    ],
+    "new_in_modified_synonyms": [
+      "Pyridoxal 5′-phosphate (PLP)",
+      "Vitamin K1",
+      "Vitamin K2",
+      "Vitamin K3"
+    ]
+  },
+  "actions": {
+    "alias_expanded_existing": "ncbi_all_history_then_luna_sol_wald_conditional_luna",
+    "alias_narrowed_or_reclassified": "review_existing_included_records_only_and_reclassify_without_ncbi_search",
+    "new_in_modified_synonyms": "ncbi_all_history_then_luna_sol_wald_conditional_luna",
+    "additional_atomic_exposures": "ncbi_all_history_then_luna_sol_wald_conditional_luna",
+    "unchanged_existing": "skip"
+  },
+  "reclassification_targets": {
+    "Fish oil": [
+      "Eicosapentaenoic acid",
+      "Docosahexaenoic acid",
+      "Omega-3 fatty acids"
+    ],
+    "Omega-3 fatty acids": [
+      "Alpha-linolenic acid",
+      "Stearidonic acid",
+      "Eicosatetraenoic acid (omega-3)",
+      "Eicosapentaenoic acid",
+      "Docosapentaenoic acid (omega-3)",
+      "Docosahexaenoic acid"
+    ],
+    "Tomato": [
+      "Lycopene"
+    ]
+  },
+  "reclassification_apply_rule": "Never delete an included source record: move it only after the same PMID/effect has an accepted target-category record; otherwise retain it for adjudication.",
+  "parent_rule": "Search each parent as its own exposure; add screened child membership after direct screening without creating child-derived parent model contexts.",
+  "non_inheriting_relationships": [
+    {
+      "exposure": "Nicotinamide riboside",
+      "related_to": [
+        "Vitamin B3",
+        "NAD+ precursors"
+      ],
+      "relationship": "metabolically_related_but_distinct_exposure",
+      "evidence_rollup": false,
+      "reason": "Nicotinamide riboside participates in vitamin B3/NAD+ metabolism but its evidence must remain separate from Vitamin B3, NAD+, NADH, NMN, and NMNH exposures."
+    }
+  ],
+  "additional_catalog_rule": "Search every entry in the collision-checked union of additionalExposure.json and additionalExposureV2.json once using its canonical search vocabulary; guarded terms remain guarded.",
+  "third_round_gate": "INCLUDE and PMCID and (JBI Fair or required quantitative field missing/invalid after Wald or exposure classification ambiguous)"
+}

@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:37:25.445759-04:00",
+  "pmid": "34791008",
+  "work_key": "d68c636f68ade4496031420e2309ec8bb972cdf9ff8ac50983707fa95a4a45c6",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/34791008_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "34791008",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "34791008|Plant-based diet|Prostate cancer",
+        "exposure": "Plant-based diet",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "95% CI 0.73-0.98; P-trend = 0.046",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "greater consumption of a healthful plant-based diet was associated with lower risks of total (HR: 0.84; 95% CI: 0.73, 0.98; P-trend = 0.046)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Only incident (total) prostate cancer estimate in abstract is the healthful index among men <65 y; full-cohort overall-index incidence estimate not reported in abstract.",
+        "one_sentence_explanation": "Claude+Gemini's CI 0.73-0.98 and P-trend 0.046 belong to the total incident prostate cancer estimate (men <65 y), while ChatGPT's CI 0.64-1.01 and P 0.04 belong to fatal prostate cancer, a non-incidence outcome."
+      },
+      {
+        "context_id": "34791008|Plant-based diet|Prostate cancer",
+        "exposure": "Plant-based diet",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "0.84",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "greater consumption of a healthful plant-based diet was associated with lower risks of total (HR: 0.84; 95% CI: 0.73, 0.98; P-trend = 0.046)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Only incident (total) prostate cancer estimate in abstract is the healthful index among men <65 y; full-cohort overall-index incidence estimate not reported in abstract.",
+        "one_sentence_explanation": "Claude+Gemini's HR 0.84 corresponds to total incident prostate cancer (healthful plant-based index, men <65 y), whereas ChatGPT's HR 0.81 is for fatal prostate cancer, a mortality outcome rather than incidence."
+      }
+    ]
+  }
+}

@@ -1,0 +1,983 @@
+{
+  "schema_version": 1,
+  "receipt_id": "0075c6c99af1c5085c664464156fa5a0953e2994c594c7c7af4f9fa007ec1494",
+  "requested_at": "2026-09-02T08:23:17.546071+08:00",
+  "received_at": "2026-09-02T08:24:56.907902+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "1710e93a987e56421c66560894eeeaeeb5e9227b1175851debcac543c1ff85a6",
+  "attempt": 1,
+  "context_ids": [
+    "41209499|Alcohol|Prostate cancer",
+    "41209499|Tea|Prostate cancer",
+    "41214650|Lycopene|Prostate cancer",
+    "41214650|Tomato|Prostate cancer",
+    "41220350|Alcohol|Prostate cancer",
+    "41220350|Calcium|Prostate cancer",
+    "41220350|Red meat|Prostate cancer",
+    "41220350|Vitamin D|Prostate cancer",
+    "41231716|DASH diet|Prostate cancer",
+    "41258098|Zinc|Prostate cancer",
+    "41258591|Calcium|Prostate cancer",
+    "41258591|Dairy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 2,
+    "Calcium": 2,
+    "Dairy": 1,
+    "DASH diet": 1,
+    "Lycopene": 1,
+    "Red meat": 1,
+    "Tea": 1,
+    "Tomato": 1,
+    "Vitamin D": 1,
+    "Zinc": 1
+  },
+  "input_digest": "03cfca6ee0fbe9290eab0062012a5d520314e6f4fb15e4fe23b106466b31e8a8",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9355,
+    "cached_input_tokens": 0,
+    "output_tokens": 10502,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.309325",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "ee32c8c6-0238-44c9-bb74-d7db192f0bc6",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.309325"
+  },
+  "output_sha256": "90c2fc3ba9cad0d34377a2c21c48afa7071abf8fe199b4340a8ca006042aaf74",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"41209499|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-MENDELIAN-RANDOMIZATION\",\"reason\":\"The analysis is a bidirectional two-sample and multivariable Mendelian randomization study using GWAS summary data, with alcohol intake only as a genetic adjustment covariate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41209499|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-MENDELIAN-RANDOMIZATION\",\"reason\":\"Tea intake appears only as a genetically instrumented covariate in a Mendelian randomization/multivariable MR framework rather than as an observed dietary exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41214650|Lycopene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort of 2970 men assessing dietary lycopene intake by repeated food frequency questionnaires with incident prostate cancer as the outcome and quartile hazard ratios reported.\",\"extraction\":{\"effect_size\":0.46,\"effect_type\":\"HR\",\"ci_lower\":0.23,\"ci_upper\":0.95,\"p_value\":0.035,\"ci_confidence_level\":95,\"total_n\":2970,\"cases\":104,\"comparison_type\":\"highest vs lowest quartile of lycopene intake\",\"design\":\"prospective cohort\",\"timing\":\"mean follow-up of 5.8 years\",\"continent\":\"Europe\",\"country\":\"Spain\",\"location\":\"multicenter study in Spain (PREDIMED trial)\",\"ethnicity\":\"NA\",\"population\":\"men aged 55-80 years at high cardiovascular risk\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A prospective cohort analysis was conducted among 2970 men aged 55-80 years at high cardiovascular risk from the PREDIMED trial\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"Over a mean follow-up of 5.8 years, 104 prostate cancer cases were identified.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"Participants in the highest quartile of lycopene intake had a significantly lower risk of prostate cancer than those in the lowest quartile (HR: 0.46\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI: 0.23-0.95\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"p-trend = 0.035\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"Participants in the highest quartile of lycopene intake ... than those in the lowest quartile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"A prospective cohort analysis was conducted\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Over a mean follow-up of 5.8 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, results\"},\"continent\":{\"excerpt\":\"a multicenter study in Spain\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"the PREDIMED trial, a multicenter study in Spain\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, methods\"},\"exposure_measurement\":{\"excerpt\":\"Lycopene intake was assessed using repeated food frequency questionnaires.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41214650/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41214650|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The abstract reports only dietary lycopene intake and never quantifies tomato or tomato-product food intake as an exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41220350|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study of 496 prostate cancer cases and 496 controls reporting that alcohol consumption was more prevalent among cases.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":\"<0.05\",\"ci_confidence_level\":null,\"total_n\":992,\"cases\":496,\"comparison_type\":\"prostate cancer cases versus controls (prevalence of alcohol consumption)\",\"design\":\"case-control\",\"timing\":null,\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"men aged 35 and above (496 PCa cases and 496 controls)\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The case-control design was employed, involving 496 PCa cases and 496 controls aged 35 and above.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"involving 496 PCa cases and 496 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"alcohol consumption ... were more prevalent in the PCa group (p < 0.05)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"were more prevalent in the PCa group\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"The case-control design was employed\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"timing\":null,\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Data collection included sociodemographic details, radiological findings, clinical history, and biochemical markers.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41220350|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study measuring serum calcium levels in 496 prostate cancer cases and 496 controls, with hypocalcemia identified as a risk factor.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":\"<0.001\",\"ci_confidence_level\":null,\"total_n\":992,\"cases\":496,\"comparison_type\":\"serum calcium (hypocalcemia) in cases versus controls\",\"design\":\"case-control\",\"timing\":null,\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"men aged 35 and above (496 PCa cases and 496 controls)\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"involving 496 PCa cases and 496 controls aged 35 and above\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"496 PCa cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"Hypocalcemia (p < 0.001)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"Hypocalcemia (p < 0.001) ... were identified as key risk factors\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"The case-control design was employed\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"timing\":null,\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"title\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41220350|Red meat|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Red meat is mentioned only incidentally in background framing of known risk factors and is not measured or analyzed as an exposure in this study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41220350|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study measuring serum vitamin D levels in 496 prostate cancer cases and 496 controls, with vitamin D deficiency identified as a risk factor.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":\"<0.001\",\"ci_confidence_level\":null,\"total_n\":992,\"cases\":496,\"comparison_type\":\"serum vitamin D deficiency in cases versus controls\",\"design\":\"case-control\",\"timing\":null,\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"men aged 35 and above (496 PCa cases and 496 controls)\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"involving 496 PCa cases and 496 controls aged 35 and above\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"496 PCa cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"vitamin D deficiency (p < 0.001)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"vitamin D deficiency (p < 0.001) ... were identified as key risk factors\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"The case-control design was employed\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"abstract, methods\"},\"timing\":null,\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41220350/\",\"location\":\"title\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41231716|DASH diet|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Large multiethnic prospective cohort reporting hazard ratios per 1 SD increase in DASH diet score for incident prostate cancer, including a specific DASH estimate among African Americans.\",\"extraction\":{\"effect_size\":0.86,\"effect_type\":\"HR\",\"ci_lower\":0.77,\"ci_upper\":0.98,\"p_value\":0.02,\"ci_confidence_level\":95,\"total_n\":79930,\"cases\":9759,\"comparison_type\":\"per 1 SD increase in DASH score, advanced prostate cancer among African Americans\",\"design\":\"prospective cohort\",\"timing\":\"mean follow-up of 18.8 years\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"White, African American, Japanese American, Latino, or Native Hawaiian\",\"population\":\"79,930 men in the Multiethnic Cohort study\",\"exposure_subtype\":\"mixed_or_unclear\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"we examined associations between 11 diet scores and prostate cancer risk among 79,930 men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"Over a mean follow-up of 18.8 years, 9,759 prostate cancer cases were identified.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"higher Dietary Approaches to Stop Hypertension scores were suggestively associated with a 14% lower risk of advanced prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"(95% CI, 0.77-0.98; P = 0.02)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P = 0.02\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"HRs and 95% confidence intervals (CI) per 1 SD increase in each score\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, methods\"},\"design\":{\"excerpt\":\"In the Multiethnic Cohort study, we examined associations between 11 diet scores and prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Over a mean follow-up of 18.8 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, results\"},\"continent\":null,\"ethnicity\":{\"excerpt\":\"79,930 men (White, African American, Japanese American, Latino, or Native Hawaiian)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, methods\"},\"location\":null,\"exposure_measurement\":{\"excerpt\":\"we examined associations between 11 diet scores and prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41231716/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41258098|Zinc|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-DIAGNOSTIC-MECHANISTIC\",\"reason\":\"Zinc appears only as a tumor-tissue metabolite in spatial multi-omics signature discovery, providing no evidence on nutritional zinc exposure and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41258591|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a secondary Global Burden of Disease modeling analysis of aggregate incidence trends rather than an original human study with a calcium exposure estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41258591|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The dairy/milk statement derives from aggregated GBD risk-factor attribution modeling, not from original individual-level exposure data on prostate cancer incidence.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "41209499|Alcohol|Prostate cancer",
+      "pmid": "41209499",
+      "pmcid": "PMC12593758",
+      "published_date": "2025-10-01",
+      "title": "Insomnia Proven to be Associated With Prostate Cancer: A Genetic Correlation Study Incorporating Lifestyle Factors.",
+      "authors": [
+        "Chen X",
+        "Xie L",
+        "Liu X"
+      ],
+      "journal": "Alpha psychiatry",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41209499/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-MENDELIAN-RANDOMIZATION",
+      "reason": "The report uses Mendelian randomization or genetic instruments, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41209499|Tea|Prostate cancer",
+      "pmid": "41209499",
+      "pmcid": "PMC12593758",
+      "published_date": "2025-10-01",
+      "title": "Insomnia Proven to be Associated With Prostate Cancer: A Genetic Correlation Study Incorporating Lifestyle Factors.",
+      "authors": [
+        "Chen X",
+        "Xie L",
+        "Liu X"
+      ],
+      "journal": "Alpha psychiatry",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41209499/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-MENDELIAN-RANDOMIZATION",
+      "reason": "The report uses Mendelian randomization or genetic instruments, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41214650|Lycopene|Prostate cancer",
+      "pmid": "41214650",
+      "pmcid": "PMC12604356",
+      "published_date": "2025-11-10",
+      "title": "Lycopene intake and prostate cancer risk in men at high cardiovascular risk: a prospective cohort study.",
+      "authors": [
+        "López-Solís R",
+        "Castro-Barquero S",
+        "Donat-Vargas C",
+        "Corrado M",
+        "Arancibia-Riveros C",
+        "Martínez-González MÁ",
+        "Salas-Salvadó J",
+        "Sorlí JV",
+        "Serra-Majem L",
+        "Fitó M",
+        "Pintó X",
+        "Fiol M",
+        "Lapetra J",
+        "Gómez-Gracia E",
+        "Toledo E",
+        "Ramírez-Sabio JB",
+        "Babio N",
+        "Estruch R",
+        "Ros E",
+        "Lamuela-Raventós RM"
+      ],
+      "journal": "BMC medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort of 2970 men assessing dietary lycopene intake by repeated food frequency questionnaires with incident prostate cancer as the outcome and quartile hazard ratios reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.46,
+        "effect_type": "HR",
+        "ci_lower": 0.23,
+        "ci_upper": 0.95,
+        "p_value": 0.035,
+        "ci_confidence_level": 95,
+        "total_n": 2970,
+        "cases": 104,
+        "comparison_type": "highest vs lowest quartile of lycopene intake",
+        "design": "prospective cohort",
+        "timing": "mean follow-up of 5.8 years",
+        "continent": "Europe",
+        "country": "Spain",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "men aged 55-80 years at high cardiovascular risk",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A prospective cohort analysis was conducted among 2970 men aged 55-80 years at high cardiovascular risk from the PREDIMED trial, a multicenter study in Spain.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Over a mean follow-up of 5.8 years, 104 prostate cancer cases were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Participants in the highest quartile of lycopene intake had a significantly lower risk of prostate cancer than those in the lowest quartile (HR: 0.46; 95% CI: 0.23-0.95; p-trend = 0.035).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "Participants in the highest quartile of lycopene intake had a significantly lower risk of prostate cancer than those in the lowest quartile (HR: 0.46; 95% CI: 0.23-0.95; p-trend = 0.035).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "p-trend = 0.035",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "A prospective cohort analysis was conducted",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "Over a mean follow-up of 5.8 years",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, results"
+          },
+          "continent": {
+            "excerpt": "a multicenter study in Spain",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Lycopene intake was assessed using repeated food frequency questionnaires.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.035",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41214650|Tomato|Prostate cancer",
+      "pmid": "41214650",
+      "pmcid": "PMC12604356",
+      "published_date": "2025-11-10",
+      "title": "Lycopene intake and prostate cancer risk in men at high cardiovascular risk: a prospective cohort study.",
+      "authors": [
+        "López-Solís R",
+        "Castro-Barquero S",
+        "Donat-Vargas C",
+        "Corrado M",
+        "Arancibia-Riveros C",
+        "Martínez-González MÁ",
+        "Salas-Salvadó J",
+        "Sorlí JV",
+        "Serra-Majem L",
+        "Fitó M",
+        "Pintó X",
+        "Fiol M",
+        "Lapetra J",
+        "Gómez-Gracia E",
+        "Toledo E",
+        "Ramírez-Sabio JB",
+        "Babio N",
+        "Estruch R",
+        "Ros E",
+        "Lamuela-Raventós RM"
+      ],
+      "journal": "BMC medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41214650/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The abstract reports only dietary lycopene intake and never quantifies tomato or tomato-product food intake as an exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41220350|Alcohol|Prostate cancer",
+      "pmid": "41220350",
+      "pmcid": "",
+      "published_date": "2025-10-30",
+      "title": "Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk.",
+      "authors": [
+        "Bener A",
+        "Veli Üstündağ Ü",
+        "Barışık E",
+        "Cahit Barışık C"
+      ],
+      "journal": "The Canadian journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study of 496 prostate cancer cases and 496 controls reporting that alcohol consumption was more prevalent among cases.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.05,
+        "ci_confidence_level": null,
+        "total_n": 992,
+        "cases": 496,
+        "comparison_type": "prostate cancer cases versus controls (prevalence of alcohol consumption)",
+        "design": "case-control",
+        "timing": null,
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "men aged 35 and above (496 PCa cases and 496 controls)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The case-control design was employed, involving 496 PCa cases and 496 controls aged 35 and above. Data collection included sociodemographic details, radiological findings, clinical history, and biochemical markers.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods; total_n derived from reported group counts 496 + 496 = 992"
+          },
+          "cases": {
+            "excerpt": "The case-control design was employed, involving 496 PCa cases and 496 controls aged 35 and above.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Advanced age, cigarette and hookah use, alcohol consumption, processed food intake, chemical exposure, obesity, poor dietary habits, stress, and reduced sleep duration were more prevalent in the PCa group (p < 0.05).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "were more prevalent in the PCa group",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "The case-control design was employed",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods"
+          },
+          "timing": null,
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Data collection included sociodemographic details, radiological findings, clinical history, and biochemical markers.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "<0.05",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 10.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41220350|Calcium|Prostate cancer",
+      "pmid": "41220350",
+      "pmcid": "",
+      "published_date": "2025-10-30",
+      "title": "Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk.",
+      "authors": [
+        "Bener A",
+        "Veli Üstündağ Ü",
+        "Barışık E",
+        "Cahit Barışık C"
+      ],
+      "journal": "The Canadian journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study measuring serum calcium levels in 496 prostate cancer cases and 496 controls, with hypocalcemia identified as a risk factor.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.001,
+        "ci_confidence_level": null,
+        "total_n": 992,
+        "cases": 496,
+        "comparison_type": "serum calcium (hypocalcemia) in cases versus controls",
+        "design": "case-control",
+        "timing": null,
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "men aged 35 and above (496 PCa cases and 496 controls)",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The case-control design was employed, involving 496 PCa cases and 496 controls aged 35 and above. Data collection included sociodemographic details, radiological findings, clinical history, and biochemical markers.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods; total_n derived from reported group counts 496 + 496 = 992"
+          },
+          "cases": {
+            "excerpt": "The case-control design was employed, involving 496 PCa cases and 496 controls aged 35 and above.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Hypocalcemia (p < 0.001)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "The case-control design was employed",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods"
+          },
+          "timing": null,
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "title"
+          }
+        },
+        "p_value_reported_as": "<0.001",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 30.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41220350|Red meat|Prostate cancer",
+      "pmid": "41220350",
+      "pmcid": "",
+      "published_date": "2025-10-30",
+      "title": "Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk.",
+      "authors": [
+        "Bener A",
+        "Veli Üstündağ Ü",
+        "Barışık E",
+        "Cahit Barışık C"
+      ],
+      "journal": "The Canadian journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Red meat is mentioned only incidentally in background framing of known risk factors and is not measured or analyzed as an exposure in this study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41220350|Vitamin D|Prostate cancer",
+      "pmid": "41220350",
+      "pmcid": "",
+      "published_date": "2025-10-30",
+      "title": "Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk.",
+      "authors": [
+        "Bener A",
+        "Veli Üstündağ Ü",
+        "Barışık E",
+        "Cahit Barışık C"
+      ],
+      "journal": "The Canadian journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study measuring serum vitamin D levels in 496 prostate cancer cases and 496 controls, with vitamin D deficiency identified as a risk factor.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.001,
+        "ci_confidence_level": null,
+        "total_n": 992,
+        "cases": 496,
+        "comparison_type": "serum vitamin D deficiency in cases versus controls",
+        "design": "case-control",
+        "timing": null,
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "men aged 35 and above (496 PCa cases and 496 controls)",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The case-control design was employed, involving 496 PCa cases and 496 controls aged 35 and above. Data collection included sociodemographic details, radiological findings, clinical history, and biochemical markers.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods; total_n derived from reported group counts 496 + 496 = 992"
+          },
+          "cases": {
+            "excerpt": "The case-control design was employed, involving 496 PCa cases and 496 controls aged 35 and above.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "vitamin D deficiency (p < 0.001)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "The case-control design was employed",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "abstract, methods"
+          },
+          "timing": null,
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Determination and assessing the role of serum calcium, vitamin D, ferritin, and uric acid levels on prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41220350/",
+            "location": "title"
+          }
+        },
+        "p_value_reported_as": "<0.001",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 30.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41231716|DASH diet|Prostate cancer",
+      "pmid": "41231716",
+      "pmcid": "PMC12767499",
+      "published_date": "2026-02-03",
+      "title": "Dietary Patterns and Prostate Cancer Risk in the Multiethnic Cohort Study.",
+      "authors": [
+        "Xiong W",
+        "Park SY",
+        "Wan P",
+        "Wang A",
+        "Hughley RW",
+        "Le Marchand L",
+        "Wilkens LR",
+        "Conti DV",
+        "Haiman CA",
+        "Chen F"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+      "exposure": "DASH diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Large multiethnic prospective cohort reporting hazard ratios per 1 SD increase in DASH diet score for incident prostate cancer, including a specific DASH estimate among African Americans.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.86,
+        "effect_type": "HR",
+        "ci_lower": 0.77,
+        "ci_upper": 0.98,
+        "p_value": 0.02,
+        "ci_confidence_level": 95,
+        "total_n": 79930,
+        "cases": 9759,
+        "comparison_type": "per 1 SD increase in DASH score, advanced prostate cancer among African Americans",
+        "design": "prospective cohort",
+        "timing": "mean follow-up of 18.8 years",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "White, African American, Japanese American, Latino, or Native Hawaiian",
+        "population": "79,930 men in the Multiethnic Cohort study",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In the Multiethnic Cohort study, we examined associations between 11 diet scores and prostate cancer risk among 79,930 men (White, African American, Japanese American, Latino, or Native Hawaiian).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Over a mean follow-up of 18.8 years, 9,759 prostate cancer cases were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "However, among African Americans, higher Dietary Approaches to Stop Hypertension scores were suggestively associated with a 14% lower risk of advanced prostate cancer (95% CI, 0.77-0.98; P = 0.02). Among Japanese Americans, higher Empirical Dietary Index for Insulin Resistance scores were linked to an increased risk of low-grade (HR = 1.09; 95% CI, 1.02-1.17; P = 0.01) and nonaggressive prostate cancer (HR = 1.10; 95% CI, 1.02-1.19; P = 0.02).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "However, among African Americans, higher Dietary Approaches to Stop Hypertension scores were suggestively associated with a 14% lower risk of advanced prostate cancer (95% CI, 0.77-0.98; P = 0.02).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P = 0.02",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "HRs and 95% confidence intervals (CI) per 1 SD increase in each score",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, methods"
+          },
+          "design": {
+            "excerpt": "In the Multiethnic Cohort study, we examined associations between 11 diet scores and prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "Over a mean follow-up of 18.8 years",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, results"
+          },
+          "continent": null,
+          "ethnicity": {
+            "excerpt": "79,930 men (White, African American, Japanese American, Latino, or Native Hawaiian)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, methods"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "we examined associations between 11 diet scores and prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41231716/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41258098|Zinc|Prostate cancer",
+      "pmid": "41258098",
+      "pmcid": "PMC12630738",
+      "published_date": "2025-11-19",
+      "title": "Spatial multi-omics identifies aggressive prostate cancer signatures highlighting pro-inflammatory chemokine activity in the tumor microenvironment.",
+      "authors": [
+        "Krossa S",
+        "Andersen MK",
+        "Sandholm EM",
+        "Wess M",
+        "Kiviaho A",
+        "Sharma A",
+        "Hakkola S",
+        "Hao Y",
+        "Alshalalfa M",
+        "Davicioni E",
+        "Viset T",
+        "Størkersen Ø",
+        "Karnes RJ",
+        "Spratt DE",
+        "Giskeødegård GF",
+        "Nykter M",
+        "Rye MB",
+        "Urbanucci A",
+        "Tessem MB"
+      ],
+      "journal": "Nature communications",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41258098/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-DIAGNOSTIC-MECHANISTIC",
+      "reason": "Zinc appears only as a tumor-tissue metabolite in spatial multi-omics signature discovery, providing no evidence on nutritional zinc exposure and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41258591|Calcium|Prostate cancer",
+      "pmid": "41258591",
+      "pmcid": "PMC12717312",
+      "published_date": "2025-11-12",
+      "title": "Global trends in prostate cancer burden among adults aged 80 years and older from 1990 to 2021 based on the global burden of disease 2021.",
+      "authors": [
+        "Zhu X",
+        "Zhou Y",
+        "Yang X",
+        "Zhou K",
+        "Zhou M"
+      ],
+      "journal": "Discover oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41258591/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a secondary Global Burden of Disease modeling analysis of aggregate incidence trends rather than an original human study with a calcium exposure estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41258591|Dairy|Prostate cancer",
+      "pmid": "41258591",
+      "pmcid": "PMC12717312",
+      "published_date": "2025-11-12",
+      "title": "Global trends in prostate cancer burden among adults aged 80 years and older from 1990 to 2021 based on the global burden of disease 2021.",
+      "authors": [
+        "Zhu X",
+        "Zhou Y",
+        "Yang X",
+        "Zhou K",
+        "Zhou M"
+      ],
+      "journal": "Discover oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41258591/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The dairy/milk statement derives from aggregated GBD risk-factor attribution modeling, not from original individual-level exposure data on prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

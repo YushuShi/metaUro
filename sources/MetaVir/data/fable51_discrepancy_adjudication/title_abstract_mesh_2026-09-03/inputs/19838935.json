@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:38.797279-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "75e389f764eb7c0cf5d13e4ac76630047ff85341c86785d778abe69eb0194b71",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19838935",
+      "title": "Folate intake and prostate cancer risk: a case-control study.",
+      "abstract": "Folate deficiency has been implicated in the carcinogenesis of several tumor types. The role of folate in prostate cancer remains indeterminate. We investigated folate as a risk factor for prostate cancer among 140 biopsy-confirmed prostate cancer patients, 230 age-matched clinic controls, and 250 negative prostate biopsy controls. Dietary folate intake was inversely associated with overall risk of prostate cancer as compared to clinic controls (P for a linear trend = 0.003). When stratified by disease severity, dietary folate and folate from natural sources were associated with reduced risk of high-grade cancer as compared to both clinic controls (P for a linear trend = 0.0009 and 0.02, respectively) and biopsy negative controls (P for a linear trend = 0.03 and 0.05, respectively). There was no interaction between alcohol consumption and folate intake. These analyses support an inverse association between dietary folate intake and prostate cancer risk and primarily risk of high-grade prostate cancer.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Alcohol Drinking",
+        "Biopsy",
+        "Body Mass Index",
+        "Case-Control Studies",
+        "Confidence Intervals",
+        "Diet",
+        "Diet Surveys",
+        "Folic Acid / administration & dosage, classification",
+        "Humans",
+        "Male",
+        "Matched-Pair Analysis",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / epidemiology, pathology",
+        "Risk Factors",
+        "United States / epidemiology",
+        "Veterans / statistics & numerical data"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19838935",
+      "contexts": [
+        {
+          "context_id": "19838935|Folic acid|Prostate cancer",
+          "exposure": "Folic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.003",
+              "comparison": "higher versus lower dietary folate intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "620",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.003",
+              "comparison": "Linear trend across increasing dietary folate intake categories, cases versus clinic controls"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

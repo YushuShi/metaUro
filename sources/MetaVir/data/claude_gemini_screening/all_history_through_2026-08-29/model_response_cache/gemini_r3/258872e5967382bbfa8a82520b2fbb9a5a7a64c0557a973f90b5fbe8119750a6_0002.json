@@ -1,0 +1,855 @@
+{
+  "schema_version": 1,
+  "receipt_id": "2d05b29d7e7acbd56a9d442bbed4d35feefe7ba71bcc327ebd964f35ceeec78e",
+  "requested_at": "2026-09-02T08:31:18.608670+08:00",
+  "received_at": "2026-09-02T08:31:59.845106+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "258872e5967382bbfa8a82520b2fbb9a5a7a64c0557a973f90b5fbe8119750a6",
+  "attempt": 2,
+  "context_ids": [
+    "38243202|Insoluble dietary fiber intake|Prostate cancer",
+    "38243202|Soluble dietary fiber intake|Prostate cancer",
+    "38243202|Total dietary fiber intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Insoluble dietary fiber intake": 1,
+    "Soluble dietary fiber intake": 1,
+    "Total dietary fiber intake": 1
+  },
+  "input_digest": "d98abcd9a643315234233fbdefd12f6a32a7ce307a5a5f07381bd5cd60b4ea47",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 22247,
+    "cached_input_tokens": 0,
+    "output_tokens": 6017,
+    "reasoning_tokens": 677
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.039249",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "2e633629-ba62-48ed-94e0-6e98063c02ee",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.039249"
+  },
+  "output_sha256": "25d579d84534976d628ca2564795f7eec97d25dfbaa782a9ff1c2d0763462d11",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"38243202|Insoluble dietary fiber intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort analysis of the PLCO trial evaluates the association between insoluble dietary fiber intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.87,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.78,\n        \"ci_upper\": 0.98,\n        \"p_value\": 0.016,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 54336,\n        \"cases\": 6414,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"general_population\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Insoluble fiber (g/day) Q4 (15.70–65.67) ... aHR 0.87\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Insoluble fiber (g/day) Q4 (15.70–65.67) ... 95% CI 0.78–0.98\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Insoluble fiber (g/day) Q4 (15.70–65.67) ... P 0.016\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Compared with individuals in the lowest quartile, individuals in the highest quartile of insoluble fiber intake had a significantly lower risk of PCa (aHR, 0.87; 95% CI, 0.78–0.98).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"This study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The median follow-up times for the PCa and control groups were 5.9 years and 11.5 years, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Most of the men were white, and the race distributions were markedly different between the PCa and control groups ( P = 2.66E-16).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Between November 1993 and July 2001, nearly 155,000 participants aged 55–74 years were registered at ten clinical centers throughout the U.S.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Materials and methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Then, two food-frequency questionnaires (DHQ and DQX) were used to collect dietary information.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Materials and methods, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"38243202|Soluble dietary fiber intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort analysis of the PLCO trial evaluates the association between soluble dietary fiber intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.9,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.8,\n        \"ci_upper\": 1.02,\n        \"p_value\": 0.086,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 54336,\n        \"cases\": 6414,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"general_population\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Soluble fiber (g/day) Q4 (7.92–36.66) ... aHR 0.90\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Soluble fiber (g/day) Q4 (7.92–36.66) ... 95% CI 0.80–1.02\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Soluble fiber (g/day) Q4 (7.92–36.66) ... P 0.086\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"By contrast, no significant associations were detected between total fiber intake (aHR, 0.90; 95% CI, 0.80–1.01) or soluble fiber intake (aHR, 0.90; 95% CI, 0.80–1.02).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"This study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The median follow-up times for the PCa and control groups were 5.9 years and 11.5 years, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Most of the men were white, and the race distributions were markedly different between the PCa and control groups ( P = 2.66E-16).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Between November 1993 and July 2001, nearly 155,000 participants aged 55–74 years were registered at ten clinical centers throughout the U.S.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Materials and methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Then, two food-frequency questionnaires (DHQ and DQX) were used to collect dietary information.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Materials and methods, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"38243202|Total dietary fiber intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort analysis of the PLCO trial evaluates the association between total dietary fiber intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.9,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.8,\n        \"ci_upper\": 1.01,\n        \"p_value\": 0.073,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 54336,\n        \"cases\": 6414,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"general_population\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total fiber (g/day) Q4 (23.75–97.82) ... aHR 0.90\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total fiber (g/day) Q4 (23.75–97.82) ... 95% CI 0.80–1.01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total fiber (g/day) Q4 (23.75–97.82) ... P 0.073\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"By contrast, no significant associations were detected between total fiber intake (aHR, 0.90; 95% CI, 0.80–1.01) or soluble fiber intake (aHR, 0.90; 95% CI, 0.80–1.02).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"This study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The median follow-up times for the PCa and control groups were 5.9 years and 11.5 years, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Most of the men were white, and the race distributions were markedly different between the PCa and control groups ( P = 2.66E-16).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Between November 1993 and July 2001, nearly 155,000 participants aged 55–74 years were registered at ten clinical centers throughout the U.S.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Materials and methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Then, two food-frequency questionnaires (DHQ and DQX) were used to collect dietary information.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/\",\n            \"location\": \"Materials and methods, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:17:04.420173+08:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "25d579d84534976d628ca2564795f7eec97d25dfbaa782a9ff1c2d0763462d11"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "field": "results[0].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "field": "results[1].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "field": "results[2].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10799495/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    }
+  ],
+  "validated_results": [
+    {
+      "context_id": "38243202|Insoluble dietary fiber intake|Prostate cancer",
+      "pmid": "38243202",
+      "pmcid": "PMC10799495",
+      "published_date": "2024-01-19",
+      "title": "Higher insoluble fiber intake is associated with a lower risk of prostate cancer: results from the PLCO cohort.",
+      "authors": [
+        "Shen Y",
+        "Yuan Q",
+        "Shi M",
+        "Luo B"
+      ],
+      "journal": "BMC public health",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38243202/",
+      "exposure": "Insoluble dietary fiber intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort analysis of the PLCO trial evaluates the association between insoluble dietary fiber intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.87,
+        "effect_type": "HR",
+        "ci_lower": 0.78,
+        "ci_upper": 0.98,
+        "p_value": 0.016,
+        "ci_confidence_level": 95,
+        "total_n": 54336,
+        "cases": 6414,
+        "comparison_type": "extreme_quantiles",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "general_population",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 54,336 men were recruited, including 6,414 PCa patients. The average age of participants in the PCa and control groups was 63.4±5.1 and 62.5±5.3, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Therefore, this study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial. A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Compared with individuals in the lowest quartile, individuals in the highest quartile of insoluble fiber intake had a significantly lower risk of PCa (aHR, 0.87; 95% CI, 0.78–0.98). By contrast, no significant associations were detected between total fiber intake (aHR, 0.90; 95% CI, 0.80–1.01) or soluble fiber intake (aHR, 0.90; 95% CI, 0.80–1.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Compared with individuals in the lowest quartile, individuals in the highest quartile of insoluble fiber intake had a significantly lower risk of PCa (aHR, 0.87; 95% CI, 0.78–0.98).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "As shown in Table 2 , compared with those of subjects in the lowest quartile of insoluble fiber (Q1), the aHRs of PCa risk were 0.97 (95% CI, 0.90–1.05; P = 0.453), 0.97 (95% CI, 0.90–1.06; P = 0.526), and 0.87 (95% CI, 0.78–0.98; P = 0.016) for groups Q2, Q3, and Q4, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "Compared with individuals in the lowest quartile, individuals in the highest quartile of insoluble fiber intake had a significantly lower risk of PCa (aHR, 0.87; 95% CI, 0.78–0.98).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "design": {
+            "excerpt": "This study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The median follow-up times for the PCa and control groups were 5.9 years and 11.5 years, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Results, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "participants in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38243202/",
+            "location": "abstract methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Then, two food-frequency questionnaires (DHQ and DQX) were used to collect dietary information.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Materials and methods, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.016",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 46915,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "0aac74c474e4eedfe6b149bb39a98d819f67f447895cdf4b93bbbcbf87d8024a",
+      "pmc_source_receipt_digest": "991597a99d65832b4e17df94fd92323f7382358d94d538153d338334656d55c4",
+      "pmc_source_raw_sha256": "21ce6c89d8c7c2524273d8b0fd1b5acef576d3a8ab5e7befe9c85d6ff92749b5",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "ff5c76b8c0eb359613588ae7ec22d20f6dc5ee029e1056a41f43bd25192e9041"
+    },
+    {
+      "context_id": "38243202|Soluble dietary fiber intake|Prostate cancer",
+      "pmid": "38243202",
+      "pmcid": "PMC10799495",
+      "published_date": "2024-01-19",
+      "title": "Higher insoluble fiber intake is associated with a lower risk of prostate cancer: results from the PLCO cohort.",
+      "authors": [
+        "Shen Y",
+        "Yuan Q",
+        "Shi M",
+        "Luo B"
+      ],
+      "journal": "BMC public health",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38243202/",
+      "exposure": "Soluble dietary fiber intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort analysis of the PLCO trial evaluates the association between soluble dietary fiber intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.9,
+        "effect_type": "HR",
+        "ci_lower": 0.8,
+        "ci_upper": 1.02,
+        "p_value": 0.086,
+        "ci_confidence_level": 95,
+        "total_n": 54336,
+        "cases": 6414,
+        "comparison_type": "extreme_quantiles",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "general_population",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 54,336 men were recruited, including 6,414 PCa patients. The average age of participants in the PCa and control groups was 63.4±5.1 and 62.5±5.3, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Therefore, this study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial. A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Compared with individuals in the lowest quartile, individuals in the highest quartile of insoluble fiber intake had a significantly lower risk of PCa (aHR, 0.87; 95% CI, 0.78–0.98). By contrast, no significant associations were detected between total fiber intake (aHR, 0.90; 95% CI, 0.80–1.01) or soluble fiber intake (aHR, 0.90; 95% CI, 0.80–1.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Q1: aHR, 0.90; 95% CI, 0.80–1.02; P = 0.086) were slightly lower but not significantly associated with the risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Q1: aHR, 0.90; 95% CI, 0.80–1.02; P = 0.086) were slightly lower but not significantly associated with the risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "By contrast, no significant associations were detected between total fiber intake (aHR, 0.90; 95% CI, 0.80–1.01) or soluble fiber intake (aHR, 0.90; 95% CI, 0.80–1.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "design": {
+            "excerpt": "This study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The median follow-up times for the PCa and control groups were 5.9 years and 11.5 years, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Results, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "participants in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38243202/",
+            "location": "abstract methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Then, two food-frequency questionnaires (DHQ and DQX) were used to collect dietary information.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Materials and methods, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.086",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 46915,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "0aac74c474e4eedfe6b149bb39a98d819f67f447895cdf4b93bbbcbf87d8024a",
+      "pmc_source_receipt_digest": "991597a99d65832b4e17df94fd92323f7382358d94d538153d338334656d55c4",
+      "pmc_source_raw_sha256": "21ce6c89d8c7c2524273d8b0fd1b5acef576d3a8ab5e7befe9c85d6ff92749b5",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "1bb9074bd1ec2cd64fa174f207a6b122cb0f09c56d63f0a0a45e958975a3b10c"
+    },
+    {
+      "context_id": "38243202|Total dietary fiber intake|Prostate cancer",
+      "pmid": "38243202",
+      "pmcid": "PMC10799495",
+      "published_date": "2024-01-19",
+      "title": "Higher insoluble fiber intake is associated with a lower risk of prostate cancer: results from the PLCO cohort.",
+      "authors": [
+        "Shen Y",
+        "Yuan Q",
+        "Shi M",
+        "Luo B"
+      ],
+      "journal": "BMC public health",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38243202/",
+      "exposure": "Total dietary fiber intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort analysis of the PLCO trial evaluates the association between total dietary fiber intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.9,
+        "effect_type": "HR",
+        "ci_lower": 0.8,
+        "ci_upper": 1.01,
+        "p_value": 0.073,
+        "ci_confidence_level": 95,
+        "total_n": 54336,
+        "cases": 6414,
+        "comparison_type": "extreme_quantiles",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "general_population",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 54,336 men were recruited, including 6,414 PCa patients. The average age of participants in the PCa and control groups was 63.4±5.1 and 62.5±5.3, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Therefore, this study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial. A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Compared with individuals in the lowest quartile, individuals in the highest quartile of insoluble fiber intake had a significantly lower risk of PCa (aHR, 0.87; 95% CI, 0.78–0.98). By contrast, no significant associations were detected between total fiber intake (aHR, 0.90; 95% CI, 0.80–1.01) or soluble fiber intake (aHR, 0.90; 95% CI, 0.80–1.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Q1: aHR, 0.90; 95% CI, 0.80–1.01; P = 0.073) and soluble fiber intake (Q4 vs.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Q1: aHR, 0.90; 95% CI, 0.80–1.01; P = 0.073) and soluble fiber intake (Q4 vs.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "By contrast, no significant associations were detected between total fiber intake (aHR, 0.90; 95% CI, 0.80–1.01) or soluble fiber intake (aHR, 0.90; 95% CI, 0.80–1.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "design": {
+            "excerpt": "This study examined the relationship between fiber intake and the risk of PCa by using data from Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The median follow-up times for the PCa and control groups were 5.9 years and 11.5 years, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Results, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "A total of 54,336 participants in the United States, consisting of 6,414 patients with PCa, were included in this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Abstract, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "participants in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38243202/",
+            "location": "abstract methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Then, two food-frequency questionnaires (DHQ and DQX) were used to collect dietary information.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10799495/",
+            "location": "Materials and methods, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.073",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 46915,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "0aac74c474e4eedfe6b149bb39a98d819f67f447895cdf4b93bbbcbf87d8024a",
+      "pmc_source_receipt_digest": "991597a99d65832b4e17df94fd92323f7382358d94d538153d338334656d55c4",
+      "pmc_source_raw_sha256": "21ce6c89d8c7c2524273d8b0fd1b5acef576d3a8ab5e7befe9c85d6ff92749b5",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "c2d57eb04aef344a3eafa5b2408f51acbe139933b7780f015bbc1bb1656e6aaf"
+    }
+  ]
+}

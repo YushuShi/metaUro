@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:06:57.987074-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "802f03f989775a05aaf40e00042438ffe63dbddfbf25d5057865844283daf876",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "2053225",
+      "title": "Dietary factors and prostatic cancer.",
+      "abstract": "In order to learn about the influence of dietary factors and obesity on prostatic cancer in our environment, a case-control study was performed. The group of cases consisted of 90 men histologically diagnosed with prostatic cancer in the 'La Paz' hospital (Madrid) during the 4-year period of 1983-1987. The controls were 180 men selected to obtain a random sample of males from the same hospital, stratified according to age and date of admission as compared with the prostatic cancer patients. The results of the study revealed that a diet rich in animal fats as well as high in meat consumption increased the risk of prostatic cancer. Low ingestion of vitamin A or vitamin C and obesity were unassociated to the disease.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Ascorbic Acid / administration & dosage",
+        "Case-Control Studies",
+        "Diet / adverse effects",
+        "Dietary Fats / adverse effects",
+        "Humans",
+        "Male",
+        "Meat / adverse effects",
+        "Middle Aged",
+        "Obesity / complications",
+        "Prostatic Neoplasms / etiology",
+        "Vitamin A / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "2053225",
+      "contexts": [
+        {
+          "context_id": "2053225|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "low versus higher vitamin A ingestion"
+            },
+            "Claude+Gemini": {
+              "sample_size": "270",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        },
+        {
+          "context_id": "2053225|Vitamin C|Prostate cancer",
+          "exposure": "Vitamin C",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "low versus higher vitamin C ingestion"
+            },
+            "Claude+Gemini": {
+              "sample_size": "270",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

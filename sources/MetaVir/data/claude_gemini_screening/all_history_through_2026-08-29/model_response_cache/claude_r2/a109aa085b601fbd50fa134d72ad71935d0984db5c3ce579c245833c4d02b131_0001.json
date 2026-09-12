@@ -1,0 +1,767 @@
+{
+  "schema_version": 1,
+  "receipt_id": "421a751389e7228a9966bd10fe6cb74e3a6c7f46df1b9dce44bb4e7c31413c0f",
+  "requested_at": "2026-09-02T07:44:43.219483+08:00",
+  "received_at": "2026-09-02T07:46:06.038205+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "a109aa085b601fbd50fa134d72ad71935d0984db5c3ce579c245833c4d02b131",
+  "attempt": 1,
+  "context_ids": [
+    "17363541|Garlic|Prostate cancer",
+    "17367528|Genistein|Prostate cancer",
+    "17367528|Soy|Prostate cancer",
+    "17388027|Green tea|Prostate cancer",
+    "17388027|Tea|Prostate cancer",
+    "17388667|Vitamin D|Prostate cancer",
+    "17390473|Selenium|Prostate cancer",
+    "17392149|Green tea|Prostate cancer",
+    "17392149|Lycopene|Prostate cancer",
+    "17392149|Tea|Prostate cancer",
+    "17392149|Tomato|Prostate cancer",
+    "17394699|Selenium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Garlic": 1,
+    "Genistein": 1,
+    "Green tea": 2,
+    "Lycopene": 1,
+    "Selenium": 2,
+    "Soy": 1,
+    "Tea": 2,
+    "Tomato": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "f99ede7f6abec450e1db8f8fb009c4d5991e0392ddbc2da4d34751d58c2b7bc8",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10523,
+    "cached_input_tokens": 0,
+    "output_tokens": 9075,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.27949",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "28188227-6c54-4a3d-a70d-af19e28d5273",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.27949"
+  },
+  "output_sha256": "96720065a6e5ca42ae17b1c775a3d31461c6e88986fc9b305b447d0b8e6a02dd",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"17363541|Garlic|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"This is a preclinical in vivo mouse xenograft/orthotopic model study of S-allylmercaptocysteine with no human incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17367528|Genistein|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Genistein chemoprevention was evaluated exclusively in TRAMP and C57BL/6 mice, not in humans.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17367528|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Soy is only cited as epidemiologic background while the original data are entirely from transgenic mouse experiments.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17388027|Green tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative \\\"integrated view\\\" summarizing prior laboratory, animal, and pilot trial findings rather than reporting an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17388027|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The publication is a narrative review integrating previously reported green tea catechin and molecular profiling results without new primary human incidence analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17388667|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective nested case-control analysis within the Physicians' Health Study reporting prediagnostic plasma vitamin D metabolites and risk of incident prostate cancer.\",\"extraction\":{\"effect_size\":2.1,\"effect_type\":\"OR\",\"ci_lower\":1.2,\"ci_upper\":3.4,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":14916,\"cases\":1066,\"comparison_type\":\"Both 25(OH)D and 1,25(OH)2D below median versus above median\",\"design\":\"nested case-control within prospective cohort\",\"timing\":\"prediagnostic plasma measured with 18 years of follow-up\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"European-descent\",\"population\":\"US male physicians initially free of diagnosed cancer\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"During 18 y of follow-up of 14,916 men initially free of diagnosed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"we identified 1,066 men with incident prostate cancer (including 496 with aggressive disease\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"had a significantly increased risk of aggressive prostate cancer (odds ratio [OR] = 2.1\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% confidence interval [CI] 1.2-3.4\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Men whose levels for both 25(OH)D and 1,25(OH)2D were below (versus above) the median\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"1,618 cancer-free, age- and smoking-matched control participants in the Physicians' Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"We examined the associations of prediagnostic plasma levels of 25(OH)D and 1,25(OH)2D\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"Among these US physicians, the median plasma 25(OH)D levels were 25 ng/ml\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"the less functional FokI ff genotype (14% in the European-descent population of this cohort)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"Among these US physicians\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"prediagnostic plasma levels of 25(OH)D and 1,25(OH)2D\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17388667/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17390473|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The record supplies only a title with no abstract and appears to be a non-primary commentary/overview on selenium rather than an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17392149|Green tea|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Hospital-based case-control study in China reporting reduced prostate cancer risk with higher green tea consumption.\",\"extraction\":{\"effect_size\":0.14,\"effect_type\":\"OR\",\"ci_lower\":0.06,\"ci_upper\":0.35,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":404,\"cases\":130,\"comparison_type\":\"highest quartile of green tea consumption relative to the lowest\",\"design\":\"case-control\",\"timing\":\"retrospective dietary questionnaire assessment relative to diagnosis\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"Hangzhou, China\",\"ethnicity\":\"Chinese\",\"population\":\"130 prostate cancer patients and 274 hospital controls\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"130 prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"The protective effect of green tea was significant (odds ratio 0.14\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% CI: 0.06-0.35\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"for the highest quartile relative to the lowest after adjusting for total vegetables and fruits intakes and other potential confounding factors\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a case-control study was conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"a reduced risk of prostate cancer in Chinese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Prostate cancer risk was reduced with increased consumption of green tea\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17392149|Lycopene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The case-control study reports an inverse association between intake of lycopene-rich vegetables and fruits and prostate cancer risk.\",\"extraction\":{\"effect_size\":0.18,\"effect_type\":\"OR\",\"ci_lower\":0.08,\"ci_upper\":0.39,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":404,\"cases\":130,\"comparison_type\":\"higher versus lower intake of vegetables and fruits rich in lycopene\",\"design\":\"case-control\",\"timing\":\"retrospective dietary questionnaire assessment relative to diagnosis\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"Hangzhou, China\",\"ethnicity\":\"Chinese\",\"population\":\"130 prostate cancer patients and 274 hospital controls\",\"exposure_subtype\":\"mixed_or_unclear\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"with 130 prostate cancer patients and 274 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"130 prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk (odds ratio 0.18\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% CI 0.08-0.39\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a case-control study was conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"a reduced risk of prostate cancer in Chinese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Intakes of vegetables and fruits rich in lycopene\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17392149|Tea|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The study assessed habitual tea drinking (green tea) and prostate cancer risk in a hospital-based case-control design.\",\"extraction\":{\"effect_size\":0.14,\"effect_type\":\"OR\",\"ci_lower\":0.06,\"ci_upper\":0.35,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":404,\"cases\":130,\"comparison_type\":\"highest quartile of tea consumption relative to the lowest\",\"design\":\"case-control\",\"timing\":\"retrospective dietary questionnaire assessment relative to diagnosis\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"Hangzhou, China\",\"ethnicity\":\"Chinese\",\"population\":\"130 prostate cancer patients and 274 hospital controls\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"with 130 prostate cancer patients and 274 hospital controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"130 prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"The protective effect of green tea was significant (odds ratio 0.14\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% CI: 0.06-0.35\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"for the highest quartile relative to the lowest\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a case-control study was conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"a reduced risk of prostate cancer in Chinese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"conducted in Hangzhou, China\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"habitual drinking tea and intakes of vegetables and fruits rich in lycopene\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17392149/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17392149|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The abstract reports intake of lycopene-rich vegetables and fruits generally, with no tomato-specific exposure or estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17394699|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a review of completed and ongoing phase III prostate cancer chemoprevention trials rather than an original study.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "17363541|Garlic|Prostate cancer",
+      "pmid": "17363541",
+      "pmcid": "",
+      "published_date": "2007-03-15",
+      "title": "Garlic-derived S-allylmercaptocysteine is a novel in vivo antimetastatic agent for androgen-independent prostate cancer.",
+      "authors": [
+        "Howard EW",
+        "Ling MT",
+        "Chua CW",
+        "Cheung HW",
+        "Wang X",
+        "Wong YC"
+      ],
+      "journal": "Clinical cancer research : an official journal of the American Association for Cancer Research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17363541/",
+      "exposure": "Garlic",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "This is a preclinical in vivo mouse xenograft/orthotopic model study of S-allylmercaptocysteine with no human incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17367528|Genistein|Prostate cancer",
+      "pmid": "17367528",
+      "pmcid": "PMC1832183",
+      "published_date": "2007-03-16",
+      "title": "Genistein chemoprevention of prostate cancer in TRAMP mice.",
+      "authors": [
+        "Wang J",
+        "Eltoum IE",
+        "Lamartiniere CA"
+      ],
+      "journal": "Journal of carcinogenesis",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17367528/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Genistein chemoprevention was evaluated exclusively in TRAMP and C57BL/6 mice, not in humans.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17367528|Soy|Prostate cancer",
+      "pmid": "17367528",
+      "pmcid": "PMC1832183",
+      "published_date": "2007-03-16",
+      "title": "Genistein chemoprevention of prostate cancer in TRAMP mice.",
+      "authors": [
+        "Wang J",
+        "Eltoum IE",
+        "Lamartiniere CA"
+      ],
+      "journal": "Journal of carcinogenesis",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17367528/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Soy is only cited as epidemiologic background while the original data are entirely from transgenic mouse experiments.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17388027|Green tea|Prostate cancer",
+      "pmid": "17388027",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "Clinical relevance of the inhibitory effect of green tea catechins (GtCs) on prostate cancer progression in combination with molecular profiling of catechin-resistant tumors: an integrated view.",
+      "authors": [
+        "Bettuzzi S",
+        "Rizzi F",
+        "Belloni L"
+      ],
+      "journal": "Polish journal of veterinary sciences",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17388027/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative \"integrated view\" summarizing prior laboratory, animal, and pilot trial findings rather than reporting an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17388027|Tea|Prostate cancer",
+      "pmid": "17388027",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "Clinical relevance of the inhibitory effect of green tea catechins (GtCs) on prostate cancer progression in combination with molecular profiling of catechin-resistant tumors: an integrated view.",
+      "authors": [
+        "Bettuzzi S",
+        "Rizzi F",
+        "Belloni L"
+      ],
+      "journal": "Polish journal of veterinary sciences",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17388027/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The publication is a narrative review integrating previously reported green tea catechin and molecular profiling results without new primary human incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17388667|Vitamin D|Prostate cancer",
+      "pmid": "17388667",
+      "pmcid": "PMC1831738",
+      "published_date": "2007-03-01",
+      "title": "A prospective study of plasma vitamin D metabolites, vitamin D receptor polymorphisms, and prostate cancer.",
+      "authors": [
+        "Li H",
+        "Stampfer MJ",
+        "Hollis JB",
+        "Mucci LA",
+        "Gaziano JM",
+        "Hunter D",
+        "Giovannucci EL",
+        "Ma J"
+      ],
+      "journal": "PLoS medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17388667/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17390473|Selenium|Prostate cancer",
+      "pmid": "17390473",
+      "pmcid": "",
+      "published_date": "2007-03-01",
+      "title": "Selenium and prostate cancer.",
+      "authors": [],
+      "journal": "Harvard men's health watch",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17390473/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The record supplies only a title with no abstract and appears to be a non-primary commentary/overview on selenium rather than an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17392149|Green tea|Prostate cancer",
+      "pmid": "17392149",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "Tea and lycopene protect against prostate cancer.",
+      "authors": [
+        "Jian L",
+        "Lee AH",
+        "Binns CW"
+      ],
+      "journal": "Asia Pacific journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study in China reporting reduced prostate cancer risk with higher green tea consumption.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.14,
+        "effect_type": "OR",
+        "ci_lower": 0.06,
+        "ci_upper": 0.35,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 404,
+        "cases": 130,
+        "comparison_type": "highest quartile of green tea consumption relative to the lowest",
+        "design": "case-control",
+        "timing": "retrospective dietary questionnaire assessment relative to diagnosis",
+        "continent": "Asia",
+        "country": "China",
+        "location": "Hangzhou, China",
+        "ethnicity": "Chinese",
+        "population": "130 prostate cancer patients and 274 hospital controls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract; total_n derived from reported group counts 130 + 274 = 404"
+          },
+          "cases": {
+            "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Prostate cancer risk was reduced with increased consumption of green tea. The protective effect of green tea was significant (odds ratio 0.14, 95% CI: 0.06-0.35) for the highest quartile relative to the lowest after adjusting for total vegetables and fruits intakes and other potential confounding factors.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The protective effect of green tea was significant (odds ratio 0.14, 95% CI: 0.06-0.35) for the highest quartile relative to the lowest after adjusting for total vegetables and fruits intakes and other potential confounding factors.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for the highest quartile relative to the lowest after adjusting for total vegetables and fruits intakes and other potential confounding factors",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a case-control study was conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "a reduced risk of prostate cancer in Chinese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Prostate cancer risk was reduced with increased consumption of green tea",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17392149|Lycopene|Prostate cancer",
+      "pmid": "17392149",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "Tea and lycopene protect against prostate cancer.",
+      "authors": [
+        "Jian L",
+        "Lee AH",
+        "Binns CW"
+      ],
+      "journal": "Asia Pacific journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The case-control study reports an inverse association between intake of lycopene-rich vegetables and fruits and prostate cancer risk.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.18,
+        "effect_type": "OR",
+        "ci_lower": 0.08,
+        "ci_upper": 0.39,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 404,
+        "cases": 130,
+        "comparison_type": "higher versus lower intake of vegetables and fruits rich in lycopene",
+        "design": "case-control",
+        "timing": "retrospective dietary questionnaire assessment relative to diagnosis",
+        "continent": "Asia",
+        "country": "China",
+        "location": "Hangzhou, China",
+        "ethnicity": "Chinese",
+        "population": "130 prostate cancer patients and 274 hospital controls",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract; total_n derived from reported group counts 130 + 274 = 404"
+          },
+          "cases": {
+            "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk (odds ratio 0.18, 95% CI 0.08-0.39).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk (odds ratio 0.18, 95% CI 0.08-0.39).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a case-control study was conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "a reduced risk of prostate cancer in Chinese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Intakes of vegetables and fruits rich in lycopene",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17392149|Tea|Prostate cancer",
+      "pmid": "17392149",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "Tea and lycopene protect against prostate cancer.",
+      "authors": [
+        "Jian L",
+        "Lee AH",
+        "Binns CW"
+      ],
+      "journal": "Asia Pacific journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The study assessed habitual tea drinking (green tea) and prostate cancer risk in a hospital-based case-control design.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.14,
+        "effect_type": "OR",
+        "ci_lower": 0.06,
+        "ci_upper": 0.35,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 404,
+        "cases": 130,
+        "comparison_type": "highest quartile of tea consumption relative to the lowest",
+        "design": "case-control",
+        "timing": "retrospective dietary questionnaire assessment relative to diagnosis",
+        "continent": "Asia",
+        "country": "China",
+        "location": "Hangzhou, China",
+        "ethnicity": "Chinese",
+        "population": "130 prostate cancer patients and 274 hospital controls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract; total_n derived from reported group counts 130 + 274 = 404"
+          },
+          "cases": {
+            "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Prostate cancer risk was reduced with increased consumption of green tea. The protective effect of green tea was significant (odds ratio 0.14, 95% CI: 0.06-0.35) for the highest quartile relative to the lowest after adjusting for total vegetables and fruits intakes and other potential confounding factors.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The protective effect of green tea was significant (odds ratio 0.14, 95% CI: 0.06-0.35) for the highest quartile relative to the lowest after adjusting for total vegetables and fruits intakes and other potential confounding factors.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for the highest quartile relative to the lowest",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a case-control study was conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "a reduced risk of prostate cancer in Chinese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "conducted in Hangzhou, China",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "habitual drinking tea and intakes of vegetables and fruits rich in lycopene",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17392149|Tomato|Prostate cancer",
+      "pmid": "17392149",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "Tea and lycopene protect against prostate cancer.",
+      "authors": [
+        "Jian L",
+        "Lee AH",
+        "Binns CW"
+      ],
+      "journal": "Asia Pacific journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The abstract reports intake of lycopene-rich vegetables and fruits generally, with no tomato-specific exposure or estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17394699|Selenium|Prostate cancer",
+      "pmid": "17394699",
+      "pmcid": "PMC1964727",
+      "published_date": "2007-04-01",
+      "title": "A review of phase III clinical trials of prostate cancer chemoprevention.",
+      "authors": [
+        "Thorpe JF",
+        "Jain S",
+        "Marczylo TH",
+        "Gescher AJ",
+        "Steward WP",
+        "Mellon JK"
+      ],
+      "journal": "Annals of the Royal College of Surgeons of England",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17394699/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a review of completed and ongoing phase III prostate cancer chemoprevention trials rather than an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

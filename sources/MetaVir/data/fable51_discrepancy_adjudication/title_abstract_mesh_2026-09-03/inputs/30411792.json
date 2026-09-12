@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:35:43.990445-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "8027c824edfb04d4a59e4b3df5e545fca611cdb6f8b1c9a9ea78dfc5b1bd47d6",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "30411792",
+      "title": "Circulating 25-hydroxyvitamin D, vitamin D binding protein and risk of advanced and lethal prostate cancer.",
+      "abstract": "We previously found that higher total 25-hydroxyvitamin D [25(OH)D] levels were associated with lower risk of lethal prostate cancer. However, the relationships of bioavailable 25(OH)D and vitamin D binding protein (VDBP) with risk of advanced and lethal prostate cancer are unclear. In a prospective case-control study of 156 pairs of advanced prostate cancer cases and controls, we directly measured prediagnostic circulating 25(OH)D and VDBP and calculated bioavailable 25(OH)D using a validated formula. We examined the association of bioavailable 25(OH)D and VDBP levels with risk of advanced and lethal prostate cancer and whether total 25(OH)D levels interacted with VDBP levels to affect the risk. Conditional logistic models were used to calculate odds ratios (ORs) and 95% confidence intervals (CIs). Compared to total 25(OH)D (p<sub>trend</sub> = 0.02), bioavailable 25(OH)D levels were not more strongly associated with risk of advanced prostate cancer (p<sub>trend</sub> = 0.14). Although VDBP levels were not associated with risk of advanced prostate cancer (p<sub>trend</sub> = 0.16), we observed an interaction between total 25(OH)D levels and VDBP levels in relation to risk of advanced prostate cancer (p<sub>interaction</sub> = 0.03). Compared to those with total 25(OH)D levels below the median and VDBP levels above the median (at highest risk), men with both levels above the median had a multivariable-adjusted OR of 0.31 (95% CI, 0.15-0.65) for advanced prostate cancer. We observed similar results when we restricted the analyses to 116 lethal prostate cancer cases and their controls. Our data suggest that VDBP levels may modify the association between total 25(OH)D levels and risk of advanced and lethal prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Biological Availability",
+        "Case-Control Studies",
+        "Follow-Up Studies",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prospective Studies",
+        "Prostate / metabolism",
+        "Prostatic Neoplasms / blood, etiology, metabolism",
+        "Risk Factors",
+        "Vitamin D / analogs & derivatives, blood",
+        "Vitamin D-Binding Protein / metabolism"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "30411792",
+      "contexts": [
+        {
+          "context_id": "30411792|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "310",
+              "effect_measure_type": "OR",
+              "effect_size": "0.31",
+              "ci_lower": "0.15",
+              "ci_upper": "0.65",
+              "p_value": "0.03",
+              "comparison": "High total 25(OH)D and high VDBP versus low total 25(OH)D and high VDBP"
+            },
+            "Claude+Gemini": {
+              "sample_size": "310",
+              "effect_measure_type": "OR",
+              "effect_size": "0.5",
+              "ci_lower": "0.24",
+              "ci_upper": "1.03",
+              "p_value": "0.02",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

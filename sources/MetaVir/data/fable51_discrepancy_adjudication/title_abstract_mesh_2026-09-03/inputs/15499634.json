@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:57.459004-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "fdbf14e18291c646e27565cf67a0c2561bae13a18fab1a33b69cca09f2b32fa4",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15499634",
+      "title": "Plasma folate, vitamin B12, and homocysteine and prostate cancer risk: a prospective study.",
+      "abstract": "The role of folate metabolism in cancer development is a topic of much current interest, with maintenance of adequate folate status tending to show a protective effect. Aberrant methylation, primarily hypermethylation of certain genes including tumor suppressors, has been implicated in prostate cancer development. Folate, vitamin B12 and homocysteine are essential for methyl group metabolism and thus also for DNA methylation. We related plasma levels of these factors to prostate cancer risk in a prospective study of 254 case subjects and 514 matched control subjects. Increasing plasma levels of folate and vitamin B12 were statistically significantly associated with increased prostate cancer risk, with an odds ratio of 1.60 (95% CI = 1.03-2.49; p(trend) = 0.02) for folate and 2.63 (95% CI = 1.61-4.29; p(trend) < 0.001) for vitamin B12 for highest vs. lowest quartile. Increasing plasma homocysteine levels were associated with a reduced risk of borderline significance (OR = 0.67; 95% CI = 0.43-1.04; p(trend) = 0.08). After adjustment for the other 2 plasma variables, body mass index and smoking, a statistically significant increased risk remained only for vitamin B12 (OR = 2.96; 95% CI = 1.58-5.55; p(trend) = 0.001). Adjusted OR for folate and homocysteine were 1.30 (95% CI = 0.74-2.24; p(trend) = 0.17) and 0.91 (95% CI = 0.51-1.58; p(trend) = 0.60), respectively. Our results suggest that factors contributing to folate status are not protective against prostate cancer. On the contrary, vitamin B12, associated with an up to 3-fold increase in risk, and possibly also folate, may even stimulate prostate cancer development. These findings are novel and should be explored further in future studies.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Bone Neoplasms / blood, etiology, secondary",
+        "Case-Control Studies",
+        "Folic Acid / blood",
+        "Homocysteine / blood",
+        "Humans",
+        "Lymphatic Metastasis",
+        "Male",
+        "Middle Aged",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, epidemiology, etiology",
+        "Risk Factors",
+        "Sweden / epidemiology",
+        "Vitamin B 12 / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15499634",
+      "contexts": [
+        {
+          "context_id": "15499634|Folic acid|Prostate cancer",
+          "exposure": "Folic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "768",
+              "effect_measure_type": "OR",
+              "effect_size": "1.3",
+              "ci_lower": "0.74",
+              "ci_upper": "2.24",
+              "p_value": "0.17",
+              "comparison": "highest vs. lowest quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "768",
+              "effect_measure_type": "OR",
+              "effect_size": "1.6",
+              "ci_lower": "1.03",
+              "ci_upper": "2.49",
+              "p_value": null,
+              "comparison": "highest vs lowest quartile of plasma folate"
+            }
+          }
+        },
+        {
+          "context_id": "15499634|Vitamin B12|Prostate cancer",
+          "exposure": "Vitamin B12",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "768",
+              "effect_measure_type": "OR",
+              "effect_size": "2.96",
+              "ci_lower": "1.58",
+              "ci_upper": "5.55",
+              "p_value": "0.001",
+              "comparison": "highest vs. lowest quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "768",
+              "effect_measure_type": "OR",
+              "effect_size": "2.63",
+              "ci_lower": "1.61",
+              "ci_upper": "4.29",
+              "p_value": null,
+              "comparison": "highest vs lowest quartile of plasma vitamin B12"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

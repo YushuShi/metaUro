@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:38:51.984544-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "2ce88879ccbf6ef0bd259090d6014ab6d82553e613cc7a23e45267c91925938a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "40437739",
+      "title": "Association of Cigarette Smoking and Alcohol Drinking With Risk of 12 Common Cancers Among Low-Income American Adults in the Southeastern United States.",
+      "abstract": "IntroductionCigarette smoking and alcohol drinking are well-known risk factors for various cancers. We aimed to determine a comprehensive profile of cancer risk associated with these lifestyle factors in predominantly low-income Americans.MethodsWe prospectively investigated the associations between cigarette smoking, alcohol drinking, and the risk of twelve cancer types among over 74 000 low-income Black and White adults from the Southern Community Cohort Study in the United States. We used the Cox proportional hazards models to estimate the hazard ratios (HRs) and corresponding 95% confidence intervals (CIs) for these associations.ResultsCompared to never smokers, current smokers had an increased HR for cancers of lung (HR: 14.14, 95% CI: 11.47-17.42), liver and bile duct (HR: 3.19, 95% CI: 2.40-4.25), kidney (HR: 1.47, 95% CI: 1.10-1.96), pancreas (HR: 1.88, 95% CI: 1.41-2.50), oral and pharynx (HR: 3.83, 95% CI: 2.70-5.42), and bladder (HR: 2.81, 95% CI: 1.92-4.11), and a reduced risk of prostate cancer (HR: 0.78, 95% CI: 0.68-0.89) and uterine cancer (HR: 0.45, 95% CI: 0.32-0.63); former smokers also exhibited elevated risks for cancers of lung, liver and bile duct, kidney, and bladder; however, a decreased risk for the lung, liver and bile duct, and bladder cancers was observed with longer durations of smoking cessation, with HRs from 9.71, 2.26, and 2.28 for a duration of <10 years down to 4.28, 1.58, and 1.42 for a duration of 10-19 years, respectively. Compared to never-drinkers, participants who consumed more than 2 drinks per day had increased risks of liver and bile duct cancer (HR: 1.66, 95% CI: 1.29-2.13) and oral and pharynx cancer (HR: 2.15, 95% CI: 1.58-2.91).ConclusionCigarette smoking and alcohol drinking were associated with an increased risk of multiple cancers. Our findings support efforts to control cigarette and alcohol consumption for cancer prevention in low-income U.S. populations.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Female",
+        "Neoplasms / epidemiology, etiology",
+        "Middle Aged",
+        "Alcohol Drinking / adverse effects, epidemiology",
+        "Risk Factors",
+        "Cigarette Smoking / adverse effects, epidemiology",
+        "Prospective Studies",
+        "Adult",
+        "Poverty / statistics & numerical data",
+        "Southeastern United States / epidemiology",
+        "Aged",
+        "Proportional Hazards Models",
+        "Black or African American / statistics & numerical data",
+        "White"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "40437739",
+      "contexts": [
+        {
+          "context_id": "40437739|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,542 @@
+{
+  "schema_version": 1,
+  "receipt_id": "037f56cd0d6cb2259d18461adb3deb5f019ddc768af9cafa2ccdbb54c667e567",
+  "requested_at": "2026-09-02T09:19:18.033119+08:00",
+  "received_at": "2026-09-02T09:19:51.356505+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "316ce7537577648b50550274e505aa6d8a7a07503438196b0f8d1951369ee0b2",
+  "attempt": 1,
+  "context_ids": [
+    "19808637|Iron|Prostate cancer",
+    "19808637|Processed meat intake|Prostate cancer",
+    "19808637|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Iron": 1,
+    "Processed meat intake": 1,
+    "Red meat": 1
+  },
+  "input_digest": "9915b2a54e42372aa14c9abd88c5564926f1809ec3041fc1b830f89e371a1c1a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 21206,
+    "cached_input_tokens": 0,
+    "output_tokens": 6236,
+    "reasoning_tokens": 1749
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.039289500000000005",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "b07ddfca-d5c5-4c4e-95c6-4a7daf2233cb",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.039289500000000005"
+  },
+  "output_sha256": "a044c67a3eef26c5930fa8fa25ee88e7299d9ffd3a7932273334053b9f401be4",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\"results\":[{\"context_id\":\"19808637|Iron|Prostate cancer\",\"status\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"This prospective cohort study evaluated the association between dietary heme iron intake and incident prostate cancer risk in US men.\",\"extraction\":{\"effect_size\":1.09,\"effect_type\":\"HR\",\"ci_lower\":1.02,\"ci_upper\":1.17,\"p_value\":0.003,\"ci_confidence_level\":0.95,\"total_n\":175343,\"cases\":10313,\"comparison_type\":\"highest_vs_lowest_quintile\",\"design\":\"prospective cohort\",\"timing\":\"prospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"California, Florida, Louisiana, New Jersey, North Carolina, Pennsylvania, Atlanta, and Detroit\",\"ethnicity\":\"Multiethnic\",\"population\":\"NIH-AARP Diet and Health Study male participants aged 50–71 years\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"After these exclusions, our analytic cohort consisted of 175,343 men.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"cases\":{\"excerpt\":\"We identified 10,313 incident cases of prostate cancer ( International Classification of Diseases for Oncology , Third Edition, code C619) with information on cancer stage and histology during follow-up through December 31, 2003.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Cancer ascertainment, paragraph 2\"},\"effect_size\":{\"excerpt\":\"Heme iron, μg/1,000 kcal ... Total prostate cancer ... Multivariate ... Quintile 5 HR 1.09\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 3\"},\"confidence_interval\":{\"excerpt\":\"Heme iron, μg/1,000 kcal ... Total prostate cancer ... Multivariate ... Quintile 5 ... 95% CI: 1.02, 1.17\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 3\"},\"p_value\":{\"excerpt\":\"Heme iron, μg/1,000 kcal ... Total prostate cancer ... Multivariate ... P -Trend 0.003\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 3\"},\"comparison\":{\"excerpt\":\"Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total... Heme iron, barbecued/grilled meat, and benzo[ a ]pyrene were all positively associated with total (HR = 1.09 (95% CI: 1.02, 1.17)...\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Abstract\"},\"design\":{\"excerpt\":\"We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Introduction, paragraph 4\"},\"timing\":{\"excerpt\":\"We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Introduction, paragraph 4\"},\"continent\":{\"excerpt\":\"residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"ethnicity\":{\"excerpt\":\"Race, % Non-Hispanic white ... Non-Hispanic black ... Hispanic ... Asian/Pacific Islander, American Indian/Alaskan Native, or unknown\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 1\"},\"location\":{\"excerpt\":\"residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"exposure_measurement\":{\"excerpt\":\"To estimate heme iron intake, we used a database based on measured values from meat samples cooked by different methods and to varying doneness levels (unpublished data).\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Dietary assessment, paragraph 5\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"19808637|Processed meat intake|Prostate cancer\",\"status\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"This prospective cohort study assessed the association between processed meat intake and incident prostate cancer risk in US men.\",\"extraction\":{\"effect_size\":1.07,\"effect_type\":\"HR\",\"ci_lower\":1.0,\"ci_upper\":1.14,\"p_value\":0.04,\"ci_confidence_level\":0.95,\"total_n\":175343,\"cases\":10313,\"comparison_type\":\"highest_vs_lowest_quintile\",\"design\":\"prospective cohort\",\"timing\":\"prospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"California, Florida, Louisiana, New Jersey, North Carolina, Pennsylvania, Atlanta, and Detroit\",\"ethnicity\":\"Multiethnic\",\"population\":\"NIH-AARP Diet and Health Study male participants aged 50–71 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"After these exclusions, our analytic cohort consisted of 175,343 men.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"cases\":{\"excerpt\":\"We identified 10,313 incident cases of prostate cancer ( International Classification of Diseases for Oncology , Third Edition, code C619) with information on cancer stage and histology during follow-up through December 31, 2003.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Cancer ascertainment, paragraph 2\"},\"effect_size\":{\"excerpt\":\"Processed meat, g/1,000 kcal ... Total prostate cancer ... Multivariate ... Quintile 5 HR 1.07\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 2\"},\"confidence_interval\":{\"excerpt\":\"Processed meat, g/1,000 kcal ... Total prostate cancer ... Multivariate ... Quintile 5 ... 95% CI: 1.00, 1.14\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 2\"},\"p_value\":{\"excerpt\":\"Processed meat, g/1,000 kcal ... Total prostate cancer ... Multivariate ... P -Trend 0.04\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 2\"},\"comparison\":{\"excerpt\":\"Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14)\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Abstract\"},\"design\":{\"excerpt\":\"We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Introduction, paragraph 4\"},\"timing\":{\"excerpt\":\"We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Introduction, paragraph 4\"},\"continent\":{\"excerpt\":\"residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"ethnicity\":{\"excerpt\":\"Race, % Non-Hispanic white ... Non-Hispanic black ... Hispanic ... Asian/Pacific Islander, American Indian/Alaskan Native, or unknown\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 1\"},\"location\":{\"excerpt\":\"residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"exposure_measurement\":{\"excerpt\":\"“Processed meat” included bacon, red-meat sausage, poultry sausage, luncheon meats (red and white meat), cold cuts (red and white meat), ham, regular hot dogs, and low-fat hot dogs made from poultry.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Dietary assessment, paragraph 2\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"19808637|Red meat|Prostate cancer\",\"status\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"This prospective cohort study evaluated the association between red meat intake and incident prostate cancer risk in US men.\",\"extraction\":{\"effect_size\":1.12,\"effect_type\":\"HR\",\"ci_lower\":1.04,\"ci_upper\":1.21,\"p_value\":0.002,\"ci_confidence_level\":0.95,\"total_n\":175343,\"cases\":10313,\"comparison_type\":\"highest_vs_lowest_quintile\",\"design\":\"prospective cohort\",\"timing\":\"prospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"California, Florida, Louisiana, New Jersey, North Carolina, Pennsylvania, Atlanta, and Detroit\",\"ethnicity\":\"Multiethnic\",\"population\":\"NIH-AARP Diet and Health Study male participants aged 50–71 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"After these exclusions, our analytic cohort consisted of 175,343 men.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"cases\":{\"excerpt\":\"We identified 10,313 incident cases of prostate cancer ( International Classification of Diseases for Oncology , Third Edition, code C619) with information on cancer stage and histology during follow-up through December 31, 2003.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Cancer ascertainment, paragraph 2\"},\"effect_size\":{\"excerpt\":\"Red meat, g/1,000 kcal ... Total prostate cancer ... Multivariate ... Quintile 5 HR 1.12\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 2\"},\"confidence_interval\":{\"excerpt\":\"Red meat, g/1,000 kcal ... Total prostate cancer ... Multivariate ... Quintile 5 ... 95% CI: 1.04, 1.21\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 2\"},\"p_value\":{\"excerpt\":\"Red meat, g/1,000 kcal ... Total prostate cancer ... Multivariate ... P -Trend 0.002\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 2\"},\"comparison\":{\"excerpt\":\"Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14)\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Abstract\"},\"design\":{\"excerpt\":\"We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Introduction, paragraph 4\"},\"timing\":{\"excerpt\":\"We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Introduction, paragraph 4\"},\"continent\":{\"excerpt\":\"residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"ethnicity\":{\"excerpt\":\"Race, % Non-Hispanic white ... Non-Hispanic black ... Hispanic ... Asian/Pacific Islander, American Indian/Alaskan Native, or unknown\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"Table 1\"},\"location\":{\"excerpt\":\"residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Study population, paragraph 1\"},\"exposure_measurement\":{\"excerpt\":\"“Red meat” included all types of beef and pork (bacon, beef, cold cuts, ham, hamburger, hot dogs, liver, pork, sausage, steak, and meats in foods such as pizza, chili, lasagna, and stew)\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/\",\"location\":\"MATERIALS AND METHODS, Dietary assessment, paragraph 2\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:19:52.432443+08:00",
+      "transition": "new_gateway_attempt_validated",
+      "validation_status": "received",
+      "validation_error": "",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "a044c67a3eef26c5930fa8fa25ee88e7299d9ffd3a7932273334053b9f401be4"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [],
+  "validated_results": [
+    {
+      "context_id": "19808637|Iron|Prostate cancer",
+      "pmid": "19808637",
+      "pmcid": "PMC2781742",
+      "published_date": "2009-11-01",
+      "title": "Meat and meat-related compounds and risk of prostate cancer in a large prospective cohort study in the United States.",
+      "authors": [
+        "Sinha R",
+        "Park Y",
+        "Graubard BI",
+        "Leitzmann MF",
+        "Hollenbeck A",
+        "Schatzkin A",
+        "Cross AJ"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+      "exposure": "Iron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between dietary heme iron intake and incident prostate cancer risk in US men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.09,
+        "effect_type": "HR",
+        "ci_lower": 1.02,
+        "ci_upper": 1.17,
+        "p_value": 0.003,
+        "ci_confidence_level": 0.95,
+        "total_n": 175343,
+        "cases": 10313,
+        "comparison_type": "highest_vs_lowest_quintile",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50–71 years",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer in a cohort of 175,343 US men aged 50–71 years. During 9 years of follow-up (1995–2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "We identified 10,313 incident cases of prostate cancer ( International Classification of Diseases for Oncology , Third Edition, code C619) with information on cancer stage and histology during follow-up through December 31, 2003.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Cancer ascertainment, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "Heme iron, barbecued/grilled meat, and benzo[ a ]pyrene were all positively associated with total (HR = 1.09 (95% CI: 1.02, 1.17), HR = 1.11 (95% CI: 1.03, 1.19), and HR = 1.09 (95% CI: 1.00, 1.18), respectively) and advanced (HR = 1.28 (95% CI: 1.03, 1.58), HR = 1.36 (95% CI: 1.10, 1.69), and HR = 1.28 (95% CI: 1.00, 1.65), respectively) disease.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "Heme iron, barbecued/grilled meat, and benzo[ a ]pyrene were all positively associated with total (HR = 1.09 (95% CI: 1.02, 1.17), HR = 1.11 (95% CI: 1.03, 1.19), and HR = 1.09 (95% CI: 1.00, 1.18), respectively) and advanced (HR = 1.28 (95% CI: 1.03, 1.58), HR = 1.36 (95% CI: 1.10, 1.69), and HR = 1.28 (95% CI: 1.00, 1.65), respectively) disease.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "Furthermore, in the continuous data, we observed an increased risk of 10% per 10-g increase in red processed meat intake (95% CI: 1.03, 1.17; P -trend = 0.003).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Abstract"
+          },
+          "design": {
+            "excerpt": "We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Introduction, paragraph 4"
+          },
+          "continent": {
+            "excerpt": "residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "To estimate heme iron intake, we used a database based on measured values from meat samples cooked by different methods and to varying doneness levels (unpublished data).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Dietary assessment, paragraph 5"
+          }
+        },
+        "p_value_reported_as": "0.003",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 47777,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "d6755c87db93b12a611c42e767b4c85ee2066047f44bd427c6b5548bc25ba33e",
+      "pmc_source_receipt_digest": "5c45b219b875b3a99a7ad48f5b32bbb07ef3c9276586ecbc45fb995f8d96f233",
+      "pmc_source_raw_sha256": "5a986a4743479325ff03fdb71370a9430c9f557a3392580220947f1bb1af9b45",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "3af642435b7a7658829d419df98e6a029660a5650202f7c6d60a435f32314966"
+    },
+    {
+      "context_id": "19808637|Processed meat intake|Prostate cancer",
+      "pmid": "19808637",
+      "pmcid": "PMC2781742",
+      "published_date": "2009-11-01",
+      "title": "Meat and meat-related compounds and risk of prostate cancer in a large prospective cohort study in the United States.",
+      "authors": [
+        "Sinha R",
+        "Park Y",
+        "Graubard BI",
+        "Leitzmann MF",
+        "Hollenbeck A",
+        "Schatzkin A",
+        "Cross AJ"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study assessed the association between processed meat intake and incident prostate cancer risk in US men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.07,
+        "effect_type": "HR",
+        "ci_lower": 1,
+        "ci_upper": 1.14,
+        "p_value": 0.04,
+        "ci_confidence_level": 0.95,
+        "total_n": 175343,
+        "cases": 10313,
+        "comparison_type": "highest_vs_lowest_quintile",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50–71 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer in a cohort of 175,343 US men aged 50–71 years. During 9 years of follow-up (1995–2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "We identified 10,313 incident cases of prostate cancer ( International Classification of Diseases for Oncology , Third Edition, code C619) with information on cancer stage and histology during follow-up through December 31, 2003.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Cancer ascertainment, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "0.04",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Abstract"
+          },
+          "design": {
+            "excerpt": "We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Introduction, paragraph 4"
+          },
+          "continent": {
+            "excerpt": "residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "“Processed meat” included bacon, red-meat sausage, poultry sausage, luncheon meats (red and white meat), cold cuts (red and white meat), ham, regular hot dogs, and low-fat hot dogs made from poultry.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Dietary assessment, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 47777,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "d6755c87db93b12a611c42e767b4c85ee2066047f44bd427c6b5548bc25ba33e",
+      "pmc_source_receipt_digest": "5c45b219b875b3a99a7ad48f5b32bbb07ef3c9276586ecbc45fb995f8d96f233",
+      "pmc_source_raw_sha256": "5a986a4743479325ff03fdb71370a9430c9f557a3392580220947f1bb1af9b45",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "d05235682815643b79c633a2be0d3f88ed7c20e3f23708c27287fddd4bac23e9"
+    },
+    {
+      "context_id": "19808637|Red meat|Prostate cancer",
+      "pmid": "19808637",
+      "pmcid": "PMC2781742",
+      "published_date": "2009-11-01",
+      "title": "Meat and meat-related compounds and risk of prostate cancer in a large prospective cohort study in the United States.",
+      "authors": [
+        "Sinha R",
+        "Park Y",
+        "Graubard BI",
+        "Leitzmann MF",
+        "Hollenbeck A",
+        "Schatzkin A",
+        "Cross AJ"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between red meat intake and incident prostate cancer risk in US men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.12,
+        "effect_type": "HR",
+        "ci_lower": 1.04,
+        "ci_upper": 1.21,
+        "p_value": 0.002,
+        "ci_confidence_level": 0.95,
+        "total_n": 175343,
+        "cases": 10313,
+        "comparison_type": "highest_vs_lowest_quintile",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50–71 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer in a cohort of 175,343 US men aged 50–71 years. During 9 years of follow-up (1995–2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "We identified 10,313 incident cases of prostate cancer ( International Classification of Diseases for Oncology , Third Edition, code C619) with information on cancer stage and histology during follow-up through December 31, 2003.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Cancer ascertainment, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "0.002",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Abstract"
+          },
+          "design": {
+            "excerpt": "We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "We prospectively investigated whether types of meat (red, white, or processed) and possible mechanisms related to meat (heme iron, nitrite/nitrate, and meat cooking carcinogens) were associated with prostate cancer in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "Introduction, paragraph 4"
+          },
+          "continent": {
+            "excerpt": "residing in one of 6 US states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) or 2 metropolitan areas (Atlanta, Georgia, and Detroit, Michigan) in 1995–1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "“Red meat” included all types of beef and pork (bacon, beef, cold cuts, ham, hamburger, hot dogs, liver, pork, sausage, steak, and meats in foods such as pizza, chili, lasagna, and stew)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2781742/",
+            "location": "MATERIALS AND METHODS, Dietary assessment, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.002",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 47777,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "d6755c87db93b12a611c42e767b4c85ee2066047f44bd427c6b5548bc25ba33e",
+      "pmc_source_receipt_digest": "5c45b219b875b3a99a7ad48f5b32bbb07ef3c9276586ecbc45fb995f8d96f233",
+      "pmc_source_raw_sha256": "5a986a4743479325ff03fdb71370a9430c9f557a3392580220947f1bb1af9b45",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "eacccef7f995c1008b1d158016a305a69410e52bf0600fa9ecf2c665f753a008"
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:29:17.325916-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c769cf4f5ce74aa393094ac8d060ea6f16cb077b7f7d49a048bd2210c3ae514a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "20564317",
+      "title": "Relationship between three polymorphisms of methylenetetrahydrofolate reductase (MTHFR C677T, A1298C, and G1793A) gene and risk of prostate cancer: a case-control study.",
+      "abstract": "We hypothesized that genetic polymorphisms in methylenetetrahydrofolate reductase (MTHFR) gene are associated with prostate cancer risk. We genotyped three MTHFR polymorphisms (C677T, A1298C, and G1793A) and measured serum total homocysteine (tHcy), folate, and vitamin B12 levels in a case-control study of 174 cases and 348 normal healthy controls. The cancer-free controls were frequency matched to the cases by age (±2 years), educational level, occupational status, ethnicity, and smoking status. We found that the MTHFR 677TT and 1298CC genotypes were associated with an about 40% reduction in risk of prostate cancer (adjusted OR = 0.59, 95% CI = 0.41-0.94, and adjusted OR = 0.58, 95% CI = 0.32-0.91, respectively) compared to the 677CC, and 1298AA genotypes. The combined variant genotypes of 1298AC + 677CC were associated with a 30% reduction in risk of prostate cancer (OR = 0.70; 95% CI = 0.53-0.79). In contrast, the variant genotypes of 1793GA + 677CT were associated with slightly increased risk for prostate cancer (OR = 1.64; 95% CI = 0.86-2.15). Regarding prostate cancer aggressiveness, the 677TT genotype was associated with more than 50% decreased risk of high-grade prostate cancer (Gleason score >7) compared with the 677CC and 677CT genotypes (OR = 0.35, 95% CI = 0.24-0.64; P = 0.001). There was no significant difference in plasma levels of tHcy, folate, and vitamin B12 between the two groups with any genotypes. These data suggest that all three MTHFR polymorphisms may play a pivotal role in the developing prostate cancer. Larger studies in different ethnic populations and incorporating dietary folate intake are needed to replicate our findings.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Case-Control Studies",
+        "Cystamine / analogs & derivatives, metabolism",
+        "DNA / chemistry, genetics",
+        "Folic Acid / metabolism",
+        "Genetic Predisposition to Disease",
+        "Genetic Variation",
+        "Genotype",
+        "Humans",
+        "Male",
+        "Methylenetetrahydrofolate Reductase (NADPH2) / genetics, metabolism",
+        "Middle Aged",
+        "Polymerase Chain Reaction",
+        "Polymorphism, Restriction Fragment Length",
+        "Polymorphism, Single Nucleotide",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / blood, enzymology, genetics",
+        "Vitamin B 12 / metabolism"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "20564317",
+      "contexts": [
+        {
+          "context_id": "20564317|Folic acid|Prostate cancer",
+          "exposure": "Folic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-GENETIC-FOCUS"
+            }
+          }
+        },
+        {
+          "context_id": "20564317|Vitamin B12|Prostate cancer",
+          "exposure": "Vitamin B12",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-GENETIC-FOCUS"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

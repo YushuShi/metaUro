@@ -1,0 +1,824 @@
+{
+  "schema_version": 1,
+  "receipt_id": "41a2180a5477b54318519ae0f651005525f3e22fbec1b703af00aaa2e22794b8",
+  "requested_at": "2026-09-02T07:40:56.620821+08:00",
+  "received_at": "2026-09-02T07:42:28.793906+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "e1c50e44b1677c3d11195392428f2e0f64abab4c8552315e8c72b16a91456c49",
+  "attempt": 2,
+  "context_ids": [
+    "15586022|Fish oil|Prostate cancer",
+    "15586024|Soy|Prostate cancer",
+    "15588306|Alcohol|Prostate cancer",
+    "15592035|Vitamin E|Prostate cancer",
+    "15598793|Soy|Prostate cancer",
+    "15598953|Linoleic acid|Prostate cancer",
+    "15598953|Monounsaturated fat (MUFA)|Prostate cancer",
+    "15599941|Glutamine|Prostate cancer",
+    "15605915|Alcohol|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 2,
+    "Fish oil": 1,
+    "Glutamine": 1,
+    "Linoleic acid": 1,
+    "Monounsaturated fat (MUFA)": 1,
+    "Soy": 2,
+    "Vitamin E": 1
+  },
+  "input_digest": "91809f38256b2804b595b8bd8688811d9caf7a6b7f676f07f004487a304bc061",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 8404,
+    "cached_input_tokens": 0,
+    "output_tokens": 9620,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.28252",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "562540a7-5f8f-40d1-9c1e-aa2376fb6d53",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.28252"
+  },
+  "output_sha256": "9d76d1b6ca8feb96a69f22aaadbf2f027edf40d302b564acfd5838260beba965",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"15586022|Fish oil|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review essay (Part II) discussing potential chemoprevention agents such as statins, aspirin and fish oil supplements, presenting no original human study data on fish oil and incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"15586024|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article explicitly states \\\"The purpose of this paper is to review the effects of soy at the molecular level as well as to review the in-vivo effects\\\", making it a narrative review rather than an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"15588306|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original case-control study of lifetime alcohol intake and incident, histologically confirmed prostate cancer reporting an odds ratio with confidence interval.\",\"extraction\":{\"effect_size\":2.16,\"effect_type\":\"OR\",\"ci_lower\":0.98,\"ci_upper\":4.78,\"p_value\":\"<0.05\",\"ci_confidence_level\":95,\"total_n\":360,\"cases\":88,\"comparison_type\":\"lowest versus highest tertile of total drinking years\",\"design\":\"case-control\",\"timing\":null,\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Buffalo, NY\",\"ethnicity\":\"NA\",\"population\":\"men aged 45 to 85 years with incident, histologically-confirmed prostate cancer and controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":true,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 88 men, aged 45 to 85 years with incident, histologically-confirmed prostate cancer and 272 controls.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"88 men, aged 45 to 85 years with incident, histologically-confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"Men in the lowest tertile of total drinking years had a two-fold prostate cancer risk than men in the highest tertile (OR 2.16\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI 0.98-4.78\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"p for trend <0.05\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"Men in the lowest tertile of total drinking years had a two-fold prostate cancer risk than men in the highest tertile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We investigated lifetime alcohol consumption and prostate cancer risk in a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, first sentence\"},\"timing\":null,\"continent\":{\"excerpt\":\"a case-control study conducted in Buffalo, NY (1998-2001)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, first sentence\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"conducted in Buffalo, NY (1998-2001)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, first sentence\"},\"exposure_measurement\":{\"excerpt\":\"We conducted extensive in-person interviews regarding lifetime alcohol consumption and other epidemiologic data.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15588306/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"15592035|Vitamin E|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Title indicates an original human study of vitamin E supplement use and risk of prostate cancer in U.S. men; no abstract data are supplied but missing quantitative information is not grounds for exclusion.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":null,\"cases\":null,\"comparison_type\":null,\"design\":null,\"timing\":null,\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"U.S. men\",\"exposure_subtype\":\"supplement\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":null,\"cases\":null,\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":null,\"design\":null,\"timing\":null,\"continent\":{\"excerpt\":\"Vitamin E supplements and risk of prostate cancer in U.S. men.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15592035/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Vitamin E supplements and risk of prostate cancer in U.S. men.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15592035/\",\"location\":\"title\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Unclear\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"15598793|Soy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original cohort study of tofu intake and prostate cancer incidence in Hawaii, addressing the requested soy food exposure and incident prostate cancer.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":null,\"cases\":null,\"comparison_type\":null,\"design\":\"cohort\",\"timing\":null,\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Hawaii\",\"ethnicity\":\"Asian\",\"population\":\"NA\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":null,\"cases\":null,\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"Cohort study of tofu intake and prostate cancer: no apparent association.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598793/\",\"location\":\"title\"},\"timing\":null,\"continent\":{\"excerpt\":\"Hawaii / epidemiology\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598793/\",\"location\":\"MeSH terms\"},\"ethnicity\":{\"excerpt\":\"Asian\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598793/\",\"location\":\"MeSH terms\"},\"location\":{\"excerpt\":\"Hawaii / epidemiology\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598793/\",\"location\":\"MeSH terms\"},\"exposure_measurement\":{\"excerpt\":\"Cohort study of tofu intake and prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598793/\",\"location\":\"title\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Unclear\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"15598953|Linoleic acid|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Italian case-control study of incident, histologically confirmed prostate cancer reporting a linoleic acid-specific odds ratio from dietary intake data.\",\"extraction\":{\"effect_size\":0.8,\"effect_type\":\"OR\",\"ci_lower\":0.6,\"ci_upper\":1.0,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":2745,\"cases\":1294,\"comparison_type\":\"highest versus lowest quintile of intake\",\"design\":\"case-control\",\"timing\":null,\"continent\":\"Europe\",\"country\":\"Italy\",\"location\":\"five Italian areas\",\"ethnicity\":\"NA\",\"population\":\"men with incident, histologically confirmed prostate cancer and hospital controls admitted for acute, non-neoplastic conditions\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Cases were 1294 men with incident, histologically confirmed prostate cancer... Controls were 1451 men admitted for acute, non-neoplastic conditions\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"Cases were 1294 men with incident, histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"linoleic acid (OR = 0.8; 95% CI: 0.6-1.0) were inversely related to prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI: 0.6-1.0\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Odds ratios (OR) and 95% confidence intervals (CI) were estimated for increasing levels of nutrient intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"},\"design\":{\"excerpt\":\"analyzed using data from a case-control study carried out in five Italian areas between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, first sentence\"},\"timing\":null,\"continent\":{\"excerpt\":\"a case-control study carried out in five Italian areas between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, first sentence\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"carried out in five Italian areas between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, first sentence\"},\"exposure_measurement\":{\"excerpt\":\"Information on dietary habits was elicited using a validated food frequency questionnaire including 78 food groups and recipes.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"15598953|Monounsaturated fat (MUFA)|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The same case-control study reports a monounsaturated fatty acid-specific direct association with incident prostate cancer, although no MUFA-specific numeric estimate is given in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":2745,\"cases\":1294,\"comparison_type\":\"increasing levels of nutrient intake (highest versus lowest quintile)\",\"design\":\"case-control\",\"timing\":null,\"continent\":\"Europe\",\"country\":\"Italy\",\"location\":\"five Italian areas\",\"ethnicity\":\"NA\",\"population\":\"men with incident, histologically confirmed prostate cancer and hospital controls admitted for acute, non-neoplastic conditions\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Cases were 1294 men with incident, histologically confirmed prostate cancer... Controls were 1451 men admitted for acute, non-neoplastic conditions\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"Cases were 1294 men with incident, histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"Starch and monounsaturated fatty acids were directly associated with prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, conclusions\"},\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"the adverse effect of high intake of starch and monounsaturated fatty acids was statistically significant\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"Odds ratios (OR) and 95% confidence intervals (CI) were estimated for increasing levels of nutrient intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"},\"design\":{\"excerpt\":\"analyzed using data from a case-control study carried out in five Italian areas between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, first sentence\"},\"timing\":null,\"continent\":{\"excerpt\":\"a case-control study carried out in five Italian areas between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, first sentence\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"carried out in five Italian areas between 1991 and 2002\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, first sentence\"},\"exposure_measurement\":{\"excerpt\":\"Information on dietary habits was elicited using a validated food frequency questionnaire including 78 food groups and recipes.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/15598953/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"15599941|Glutamine|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"\\\"Glutamine\\\" appears only as androgen receptor CAG glutamine trinucleotide repeat length, a genetic polymorphism rather than a nutritional glutamine exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"15605915|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a short non-primary commentary piece (\\\"A glass of red wine a day may keep prostate cancer away\\\") without original comparative study results on alcohol and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "15586022|Fish oil|Prostate cancer",
+      "pmid": "15586022",
+      "pmcid": "",
+      "published_date": "2005-01-01",
+      "title": "Heart healthy equals prostate healthy equals statins: the next cancer chemoprevention trial. Part II.",
+      "authors": [
+        "Moyad MA"
+      ],
+      "journal": "Current opinion in urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15586022/",
+      "exposure": "Fish oil",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review essay (Part II) discussing potential chemoprevention agents such as statins, aspirin and fish oil supplements, presenting no original human study data on fish oil and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15586024|Soy|Prostate cancer",
+      "pmid": "15586024",
+      "pmcid": "",
+      "published_date": "2005-01-01",
+      "title": "The role of soy phytoestrogens in prostate cancer.",
+      "authors": [
+        "Holzbeierlein JM",
+        "McIntosh J",
+        "Thrasher JB"
+      ],
+      "journal": "Current opinion in urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15586024/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article explicitly states \"The purpose of this paper is to review the effects of soy at the molecular level as well as to review the in-vivo effects\", making it a narrative review rather than an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15588306|Alcohol|Prostate cancer",
+      "pmid": "15588306",
+      "pmcid": "PMC543574",
+      "published_date": "2004-12-09",
+      "title": "Lifetime total and beverage specific--alcohol intake and prostate cancer risk: a case-control study.",
+      "authors": [
+        "Barba M",
+        "McCann SE",
+        "Schünemann HJ",
+        "Stranges S",
+        "Fuhrman B",
+        "De Placido S",
+        "Carruba G",
+        "Freudenheim JL",
+        "Trevisan M",
+        "Russell M",
+        "Nochajski T",
+        "Muti P"
+      ],
+      "journal": "Nutrition journal",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original case-control study of lifetime alcohol intake and incident, histologically confirmed prostate cancer reporting an odds ratio with confidence interval.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.16,
+        "effect_type": "OR",
+        "ci_lower": 0.98,
+        "ci_upper": 4.78,
+        "p_value": 0.05,
+        "ci_confidence_level": 95,
+        "total_n": 360,
+        "cases": 88,
+        "comparison_type": "lowest versus highest tertile of total drinking years",
+        "design": "case-control",
+        "timing": null,
+        "continent": "North America",
+        "country": "United States",
+        "location": "Buffalo, NY",
+        "ethnicity": "NA",
+        "population": "men aged 45 to 85 years with incident, histologically-confirmed prostate cancer and controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": true,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 88 men, aged 45 to 85 years with incident, histologically-confirmed prostate cancer and 272 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, methods; total_n derived from reported group counts 88 + 272 = 360"
+          },
+          "cases": {
+            "excerpt": "The study included 88 men, aged 45 to 85 years with incident, histologically-confirmed prostate cancer and 272 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "Men in the lowest tertile of total drinking years had a two-fold prostate cancer risk than men in the highest tertile (OR 2.16, 95% CI 0.98-4.78, p for trend <0.05).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "Men in the lowest tertile of total drinking years had a two-fold prostate cancer risk than men in the highest tertile (OR 2.16, 95% CI 0.98-4.78, p for trend <0.05).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "p for trend <0.05",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "Men in the lowest tertile of total drinking years had a two-fold prostate cancer risk than men in the highest tertile",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We investigated lifetime alcohol consumption and prostate cancer risk in a case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, first sentence"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "a case-control study conducted in Buffalo, NY (1998-2001)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, first sentence"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in Buffalo, NY (1998-2001)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, first sentence"
+          },
+          "exposure_measurement": {
+            "excerpt": "We conducted extensive in-person interviews regarding lifetime alcohol consumption and other epidemiologic data.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15588306/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "<0.05",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 50.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15592035|Vitamin E|Prostate cancer",
+      "pmid": "15592035",
+      "pmcid": "",
+      "published_date": "2005-01-01",
+      "title": "Vitamin E supplements and risk of prostate cancer in U.S. men.",
+      "authors": [
+        "Walsh PC"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15592035/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Title indicates an original human study of vitamin E supplement use and risk of prostate cancer in U.S. men; no abstract data are supplied but missing quantitative information is not grounds for exclusion.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "total_n",
+        "cases",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": null,
+        "cases": null,
+        "comparison_type": null,
+        "design": null,
+        "timing": null,
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "U.S. men",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": null,
+          "cases": null,
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": null,
+          "timing": null,
+          "continent": {
+            "excerpt": "Vitamin E supplements and risk of prostate cancer in U.S. men.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15592035/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Vitamin E supplements and risk of prostate cancer in U.S. men.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15592035/",
+            "location": "title"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Unclear",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 0.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15598793|Soy|Prostate cancer",
+      "pmid": "15598793",
+      "pmcid": "",
+      "published_date": "2004-12-01",
+      "title": "Cohort study of tofu intake and prostate cancer: no apparent association.",
+      "authors": [
+        "Nomura AM",
+        "Hankin JH",
+        "Lee J",
+        "Stemmermann GN"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15598793/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original cohort study of tofu intake and prostate cancer incidence in Hawaii, addressing the requested soy food exposure and incident prostate cancer.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "total_n",
+        "cases",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": null,
+        "cases": null,
+        "comparison_type": null,
+        "design": "cohort",
+        "timing": null,
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": null,
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": null,
+          "cases": null,
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "Cohort study of tofu intake and prostate cancer: no apparent association.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598793/",
+            "location": "title"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598793/",
+            "location": "MeSH terms"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Cohort study of tofu intake and prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598793/",
+            "location": "title"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Unclear",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 0.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15598953|Linoleic acid|Prostate cancer",
+      "pmid": "15598953",
+      "pmcid": "",
+      "published_date": "2005-01-01",
+      "title": "Macronutrients, fatty acids, cholesterol and prostate cancer risk.",
+      "authors": [
+        "Bidoli E",
+        "Talamini R",
+        "Bosetti C",
+        "Negri E",
+        "Maruzzi D",
+        "Montella M",
+        "Franceschi S",
+        "La Vecchia C"
+      ],
+      "journal": "Annals of oncology : official journal of the European Society for Medical Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+      "exposure": "Linoleic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Italian case-control study of incident, histologically confirmed prostate cancer reporting a linoleic acid-specific odds ratio from dietary intake data.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.8,
+        "effect_type": "OR",
+        "ci_lower": 0.6,
+        "ci_upper": 1,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 2745,
+        "cases": 1294,
+        "comparison_type": "highest versus lowest quintile of intake",
+        "design": "case-control",
+        "timing": null,
+        "continent": "Europe",
+        "country": "Italy",
+        "location": "five Italian areas",
+        "ethnicity": "NA",
+        "population": "men with incident, histologically confirmed prostate cancer and hospital controls admitted for acute, non-neoplastic conditions",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases were 1294 men with incident, histologically confirmed prostate cancer, and admitted to the major teaching and general hospitals of study areas. Controls were 1451 men admitted for acute, non-neoplastic conditions to the same hospital network.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods; total_n derived from reported group counts 1294 + 1451 = 2745"
+          },
+          "cases": {
+            "excerpt": "Cases were 1294 men with incident, histologically confirmed prostate cancer, and admitted to the major teaching and general hospitals of study areas.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "A direct association with prostate cancer was found for starch intake (OR = 1.4 in the highest versus the lowest quintile of intake; 95% CI: 1.1-1.8), whereas an inverse association emerged for polyunsaturated fatty acids (OR = 0.8; 95% CI: 0.6-1.0).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "Among polyunsaturated fatty acids, linolenic acid (OR = 0.7; 95% CI: 0.6-0.9) and linoleic acid (OR = 0.8; 95% CI: 0.6-1.0) were inversely related to prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Odds ratios (OR) and 95% confidence intervals (CI) were estimated for increasing levels of nutrient intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods"
+          },
+          "design": {
+            "excerpt": "analyzed using data from a case-control study carried out in five Italian areas between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, first sentence"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "a case-control study carried out in five Italian areas between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, first sentence"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "carried out in five Italian areas between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, first sentence"
+          },
+          "exposure_measurement": {
+            "excerpt": "Information on dietary habits was elicited using a validated food frequency questionnaire including 78 food groups and recipes.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15598953|Monounsaturated fat (MUFA)|Prostate cancer",
+      "pmid": "15598953",
+      "pmcid": "",
+      "published_date": "2005-01-01",
+      "title": "Macronutrients, fatty acids, cholesterol and prostate cancer risk.",
+      "authors": [
+        "Bidoli E",
+        "Talamini R",
+        "Bosetti C",
+        "Negri E",
+        "Maruzzi D",
+        "Montella M",
+        "Franceschi S",
+        "La Vecchia C"
+      ],
+      "journal": "Annals of oncology : official journal of the European Society for Medical Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+      "exposure": "Monounsaturated fat (MUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The same case-control study reports a monounsaturated fatty acid-specific direct association with incident prostate cancer, although no MUFA-specific numeric estimate is given in the abstract.",
+      "missing_key_fields": [
+        "effect_size",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 2745,
+        "cases": 1294,
+        "comparison_type": "increasing levels of nutrient intake (highest versus lowest quintile)",
+        "design": "case-control",
+        "timing": null,
+        "continent": "Europe",
+        "country": "Italy",
+        "location": "five Italian areas",
+        "ethnicity": "NA",
+        "population": "men with incident, histologically confirmed prostate cancer and hospital controls admitted for acute, non-neoplastic conditions",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases were 1294 men with incident, histologically confirmed prostate cancer, and admitted to the major teaching and general hospitals of study areas. Controls were 1451 men admitted for acute, non-neoplastic conditions to the same hospital network.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods; total_n derived from reported group counts 1294 + 1451 = 2745"
+          },
+          "cases": {
+            "excerpt": "Cases were 1294 men with incident, histologically confirmed prostate cancer, and admitted to the major teaching and general hospitals of study areas.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "Starch and monounsaturated fatty acids were directly associated with prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, conclusions"
+          },
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "the adverse effect of high intake of starch and monounsaturated fatty acids was statistically significant",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "Odds ratios (OR) and 95% confidence intervals (CI) were estimated for increasing levels of nutrient intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods"
+          },
+          "design": {
+            "excerpt": "analyzed using data from a case-control study carried out in five Italian areas between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, first sentence"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "a case-control study carried out in five Italian areas between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, first sentence"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "carried out in five Italian areas between 1991 and 2002",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, first sentence"
+          },
+          "exposure_measurement": {
+            "excerpt": "Information on dietary habits was elicited using a validated food frequency questionnaire including 78 food groups and recipes.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/15598953/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15599941|Glutamine|Prostate cancer",
+      "pmid": "15599941",
+      "pmcid": "",
+      "published_date": "2005-06-01",
+      "title": "Polymorphic forms of prostate specific antigen and their interaction with androgen receptor trinucleotide repeats in prostate cancer.",
+      "authors": [
+        "Binnie MC",
+        "Alexander FE",
+        "Heald C",
+        "Habib FK"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15599941/",
+      "exposure": "Glutamine",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "\"Glutamine\" appears only as androgen receptor CAG glutamine trinucleotide repeat length, a genetic polymorphism rather than a nutritional glutamine exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "15605915|Alcohol|Prostate cancer",
+      "pmid": "15605915",
+      "pmcid": "",
+      "published_date": "2004",
+      "title": "A glass of red wine a day may keep prostate cancer away.",
+      "authors": [],
+      "journal": "The journal of supportive oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15605915/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a short non-primary commentary piece (\"A glass of red wine a day may keep prostate cancer away\") without original comparative study results on alcohol and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "1edd6b89ef8bbfb2ad64389039bbb3c43cee522410996b2adc185574a600743e",
+  "requested_at": "2026-09-02T08:39:55.883284+08:00",
+  "received_at": "2026-09-02T08:40:19.717023+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "038857f45cb17b54f511ca34f48806ee07553b944372e70dc2c524a0f090e746",
+  "attempt": 1,
+  "context_ids": [
+    "20570911|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Red meat": 1
+  },
+  "input_digest": "2592888bedcaf48b3fc02ac87a3cf8c336fe5ac948611640c7589875d7f22fca",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 7130,
+    "cached_input_tokens": 0,
+    "output_tokens": 3488,
+    "reasoning_tokens": 1594
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0184275",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "9b08435a-d617-4dda-8b83-9ec72812f2d6",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0184275"
+  },
+  "output_sha256": "c68b888b4166bb2c04ff563e28be887390fd0031025b68f05bb78cf497b321cf",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"20570911|Red meat|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Nested case-control study within the Multiethnic Cohort evaluating meat preference and well-done red meat consumption in relation to incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.84,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.66,\n        \"ci_upper\": 1.07,\n        \"p_value\": 0.23,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 4169,\n        \"cases\": 2106,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"United States\",\n        \"location\": \"Hawaii and Los Angeles, California\",\n        \"ethnicity\": \"multiethnic\",\n        \"population\": \"Men aged 45-75 years at baseline in the Multiethnic Cohort study\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Cases (n=2,106) and controls (n=2,063) were genotyped for eight single nucleotide polymorphisms (SNPs) in NAT1 and seven SNPs in NAT2 that characterize all common alleles for these genes.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Cases (n=2,106) and controls (n=2,063) were genotyped for eight single nucleotide polymorphisms (SNPs) in NAT1 and seven SNPs in NAT2 that characterize all common alleles for these genes.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Well-done: 1020 / 1011; OR (95% CI), multivariate adjusted: 0.84 (0.66-1.07)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Table 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Well-done: 1020 / 1011; OR (95% CI), multivariate adjusted: 0.84 (0.66-1.07)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Table 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"p for trend: 0.23\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Table 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Rare / No Meat: 184 / 160 (1.00); Medium: 902 / 892 (0.93 [0.76-1.14]); Well-done: 1020 / 1011 (0.84 [0.66-1.07])\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Table 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"This study examined the associations between well-done (red) meat consumption, NAT1 and NAT2 acetylator genotypes and PC risk among five ethnicities (African American, Native Hawaiian, Japanese American, Latino and Caucasian) in a case-control study of PC nested within the Multiethnic Cohort study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants (N>215,000) were recruited from Hawaii and Los Angeles in 1993-1996, were aged 45-75 years at entry and were primarily comprised of African American, Native Hawaiian, Japanese American, Latino and Caucasian men and women. Incident PC cases since January 1995 were identified through Surveillance Epidemiology and End Results cancer registries.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Participants (N>215,000) were recruited from Hawaii and Los Angeles in 1993-1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"five ethnicities (African American, Native Hawaiian, Japanese American, Latino and Caucasian)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"location\": {\n            \"excerpt\": \"Participants (N>215,000) were recruited from Hawaii and Los Angeles in 1993-1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The validated food frequency questionnaire (FFQ) included questions on preference for well-done meat and the amount and frequency of consumption of different types of meat over the past year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2901393/\",\n            \"location\": \"Materials and Methods, paragraph 3\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

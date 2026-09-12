@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "receipt_id": "accb01b6ca59ee79d14a43b60ae44bf2f8eb4e57b9391065c8c58004e39566e0",
+  "requested_at": "2026-09-02T08:43:22.278229+08:00",
+  "received_at": "2026-09-02T08:43:51.206109+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "6ebaf0316e8347aa7f474e7a6fedc80652d11a40eb8c69dc095555978d9f1c15",
+  "attempt": 2,
+  "context_ids": [
+    "22927849|Folic acid|Prostate cancer",
+    "22927849|Vitamin B12|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Folic acid": 1,
+    "Vitamin B12": 1
+  },
+  "input_digest": "c17dd5bdd5ce5569b07fae801f9a4b5d7017c895696614ecdbee061658926346",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11015,
+    "cached_input_tokens": 0,
+    "output_tokens": 5240,
+    "reasoning_tokens": 1800
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02791125",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "059af598-c80d-4d51-81d9-0fd997162b47",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02791125"
+  },
+  "output_sha256": "ff8e63ede74e16f6a70944ac00666ffcc784eb40ea1d0ec64281bf400b2f59cd",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22927849|Folic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study provides multivariable-adjusted odds ratios for the association between dietary folate intake and risk of incident prostate cancer in American veterans.\",\n      \"extraction\": {\n        \"effect_size\": 1.02,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.64,\n        \"ci_upper\": 1.63,\n        \"p_value\": 0.95,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 416,\n        \"cases\": 144,\n        \"comparison_type\": \"dichotomous\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"American veterans undergoing prostate needle biopsy or seen in outpatient clinics\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Veteran American men (272 controls and 144 PC cases) who attended the Durham Veteran American Medical Center between 2004–2009 were enrolled into a case-control study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Analyses for the present study were restricted to patients who completed the dietary questionnaire (N = 144), a participation rate of 86.7% (144/166).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Compared to men reporting lower intake ≤700 mcg/day, those reporting higher folate intake had similar overall PC risk (OR = 1.02, 95%CI 0.63–1.64) after adjusting for potential confounders.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 3, Paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"High (>700 mcg/day) ... 1.02 (95%CI; 0.64–1.63) P = 0.95\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"High (>700 mcg/day) ... 1.02 (95%CI; 0.64–1.63) P = 0.95\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"High folate was >700 mcg/day (recommended is 400 mcg/day)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.4\"\n          },\n          \"design\": {\n            \"excerpt\": \"were enrolled into a case-control study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Men who had been screened for PC with a serum PSA in the last 12 months were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"African Americans comprised 55% of the cases but only 34% of the controls (P = 0.0002).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 3, Paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was obtained using the Harvard food frequency questionnaire (FFQ), developed and tested by [36].\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"22927849|Vitamin B12|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study provides multivariable-adjusted odds ratios for the association between vitamin B12 intake and incident prostate cancer risk in American veterans.\",\n      \"extraction\": {\n        \"effect_size\": 1.29,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.78,\n        \"ci_upper\": 2.12,\n        \"p_value\": 0.32,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 416,\n        \"cases\": 144,\n        \"comparison_type\": \"dichotomous\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"American veterans undergoing prostate needle biopsy or seen in outpatient clinics\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Veteran American men (272 controls and 144 PC cases) who attended the Durham Veteran American Medical Center between 2004–2009 were enrolled into a case-control study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Abstract\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Analyses for the present study were restricted to patients who completed the dietary questionnaire (N = 144), a participation rate of 86.7% (144/166).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"B12 ... High (>25 mcg/day) ... 1.29 (95%CI; 0.78–2.12) P = 0.32\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"B12 ... High (>25 mcg/day) ... 1.29 (95%CI; 0.78–2.12) P = 0.32\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"B12 ... High (>25 mcg/day) ... 1.29 (95%CI; 0.78–2.12) P = 0.32\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"high vitamin B12 was >25 mcg/day (recommended is 2.4 mcg/day)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.4\"\n          },\n          \"design\": {\n            \"excerpt\": \"were enrolled into a case-control study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Men who had been screened for PC with a serum PSA in the last 12 months were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"African Americans comprised 55% of the cases but only 34% of the controls (P = 0.0002).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 3, Paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was obtained using the Harvard food frequency questionnaire (FFQ), developed and tested by [36].\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/\",\n            \"location\": \"Section 2.2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "22927849|Folic acid|Prostate cancer",
+      "pmid": "22927849",
+      "pmcid": "PMC3423941",
+      "published_date": "2012",
+      "title": "Associations between Intake of Folate, Methionine, and Vitamins B-12, B-6 and Prostate Cancer Risk in American Veterans.",
+      "authors": [
+        "Vidal AC",
+        "Grant DJ",
+        "Williams CD",
+        "Masko E",
+        "Allott EH",
+        "Shuler K",
+        "McPhail M",
+        "Gaines A",
+        "Calloway E",
+        "Gerber L",
+        "Chi JT",
+        "Freedland SJ",
+        "Hoyo C"
+      ],
+      "journal": "Journal of cancer epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22927849/",
+      "exposure": "Folic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study provides multivariable-adjusted odds ratios for the association between dietary folate intake and risk of incident prostate cancer in American veterans.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.02,
+        "effect_type": "OR",
+        "ci_lower": 0.64,
+        "ci_upper": 1.63,
+        "p_value": 0.95,
+        "ci_confidence_level": 95,
+        "total_n": 416,
+        "cases": 144,
+        "comparison_type": "dichotomous",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Durham Veteran American Medical Center",
+        "ethnicity": "NA",
+        "population": "American veterans undergoing prostate needle biopsy or seen in outpatient clinics",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Veteran American men (272 controls and 144 PC cases) who attended the Durham Veteran American Medical Center between 2004–2009 were enrolled into a case-control study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Abstract; total_n derived from reported group counts 272 + 144 = 416"
+          },
+          "cases": {
+            "excerpt": "Cases n = 144 n (%) Mean (SD)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.1"
+          },
+          "effect_size": {
+            "excerpt": "Compared to men reporting lower intake ≤700 mcg/day, those reporting higher folate intake had similar overall PC risk (OR = 1.02, 95%CI 0.63–1.64) after adjusting for potential confounders.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 3, Paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.02 (95%CI; 0.64–1.63)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "P = 0.95",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "High folate was >700 mcg/day (recommended is 400 mcg/day)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.4"
+          },
+          "design": {
+            "excerpt": "were enrolled into a case-control study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "Men who had been screened for PC with a serum PSA in the last 12 months were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.1"
+          },
+          "continent": {
+            "excerpt": "Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Durham Veteran American Medical Center",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22927849/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.2"
+          }
+        },
+        "p_value_reported_as": "0.95",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 33154,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "5cfab45b646426fd508bba24fa529d4b919c29f71760792932ffd01b5b6ea1c1",
+      "pmc_source_receipt_digest": "2c4a39ad8b70258d9f6d7e05183314ea9804281d92b179a3b862138c507ef49e",
+      "pmc_source_raw_sha256": "8b166675ce2fa0bffdf1394ec517741006d8f7888c1137d1e0679bc2c8597670",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "f1d58384a296b11daeda5213798faaf6d39568cd91d8cbcd4d34835ffa4f7457"
+    },
+    {
+      "context_id": "22927849|Vitamin B12|Prostate cancer",
+      "pmid": "22927849",
+      "pmcid": "PMC3423941",
+      "published_date": "2012",
+      "title": "Associations between Intake of Folate, Methionine, and Vitamins B-12, B-6 and Prostate Cancer Risk in American Veterans.",
+      "authors": [
+        "Vidal AC",
+        "Grant DJ",
+        "Williams CD",
+        "Masko E",
+        "Allott EH",
+        "Shuler K",
+        "McPhail M",
+        "Gaines A",
+        "Calloway E",
+        "Gerber L",
+        "Chi JT",
+        "Freedland SJ",
+        "Hoyo C"
+      ],
+      "journal": "Journal of cancer epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22927849/",
+      "exposure": "Vitamin B12",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study provides multivariable-adjusted odds ratios for the association between vitamin B12 intake and incident prostate cancer risk in American veterans.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.29,
+        "effect_type": "OR",
+        "ci_lower": 0.78,
+        "ci_upper": 2.12,
+        "p_value": 0.32,
+        "ci_confidence_level": 95,
+        "total_n": 416,
+        "cases": 144,
+        "comparison_type": "dichotomous",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Durham Veteran American Medical Center",
+        "ethnicity": "NA",
+        "population": "American veterans undergoing prostate needle biopsy or seen in outpatient clinics",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Veteran American men (272 controls and 144 PC cases) who attended the Durham Veteran American Medical Center between 2004–2009 were enrolled into a case-control study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Abstract; total_n derived from reported group counts 272 + 144 = 416"
+          },
+          "cases": {
+            "excerpt": "Cases n = 144 n (%) Mean (SD)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.1"
+          },
+          "effect_size": {
+            "excerpt": "1.29 (95%CI; 0.78–2.12)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.29 (95%CI; 0.78–2.12)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "P = 0.32",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "high vitamin B12 was >25 mcg/day (recommended is 2.4 mcg/day)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.4"
+          },
+          "design": {
+            "excerpt": "were enrolled into a case-control study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "Men who had been screened for PC with a serum PSA in the last 12 months were recruited to participate in an ongoing case-control study at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.1"
+          },
+          "continent": {
+            "excerpt": "Durham Veterans Affairs Medical Center (DVAMC) in Durham, NC, from January 2007 to November 2009.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Durham Veteran American Medical Center",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22927849/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3423941/",
+            "location": "Section 2.2"
+          }
+        },
+        "p_value_reported_as": "0.32",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 33154,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "5cfab45b646426fd508bba24fa529d4b919c29f71760792932ffd01b5b6ea1c1",
+      "pmc_source_receipt_digest": "2c4a39ad8b70258d9f6d7e05183314ea9804281d92b179a3b862138c507ef49e",
+      "pmc_source_raw_sha256": "8b166675ce2fa0bffdf1394ec517741006d8f7888c1137d1e0679bc2c8597670",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "894f03e46592ab9190a392f08a96746aa607c8546f4292ec46ad5c042b10e47f"
+    }
+  ]
+}

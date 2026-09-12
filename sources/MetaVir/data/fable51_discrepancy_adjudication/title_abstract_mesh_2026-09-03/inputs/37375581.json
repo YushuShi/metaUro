@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:46.379356-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "443e2e730303d49886838537c328209a21dbc4f1cf1af44b01ec1dfc16075fbd",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "37375581",
+      "title": "Association between Vitamin A and E Forms and Prostate Cancer Risk in the Singapore Prostate Cancer Study.",
+      "abstract": "This study aimed to assess associations between forms of vitamin A and E (both individually and collectively) and the risk of prostate cancer, as well as identify potential effect modifiers. Utilizing data from the Singapore Prostate Cancer Study, a hospital-based case-control study, we measured the serum concentrations of 15 different forms of vitamins A and E in 156 prostate cancer patients and 118 control subjects, using a high-performance liquid chromatography technique. These forms included retinol, lutein, zeaxanthin, α-cryptoxanthin, β-cryptoxanthin, α-carotene, β-carotene, lycopene, ubiquinone, δ-tocopherol, γ-tocopherol, α-tocopherol, δ-tocotrienol, γ-tocotrienol, and α-tocotrienol. The odds ratio and 95% confidence interval for associations between vitamin A and E and prostate cancer risk were estimated using logistic regression models after adjustment for potential confounders. The analyses were further stratified by smoking and alcohol consumption status. The mixture effect of micronutrient groups was evaluated using weighted quantile sum regression. Higher concentrations of retinol, lutein, α-carotene, β-carotene, ubiquinone, α-tocopherol, δ-tocotrienol, γ-tocotrienol, and α-tocotrienol were significantly and positively associated with overall prostate cancer risk. Among ever-smokers, associations were stronger for lutein, β-cryptoxanthin and β-carotene compared with never-smokers. Among regular alcohol drinkers, associations were stronger for lutein, β-cryptoxanthin, ubiquinone, γ-tocotrienol and α-tocotrienol compared with non-regular alcohol drinkers. Retinol and α-tocotrienol contributed most to the group indices 'vitamin A and provitamin A carotenoids' and 'vitamin E', respectively. Several serum vitamin A and E forms were associated with prostate cancer risk, with significant effect modification by smoking and alcohol consumption status. Our findings shed light on prostate cancer etiology.",
+      "mesh": [
+        "Male",
+        "Humans",
+        "Vitamin A",
+        "beta Carotene",
+        "Tocotrienols",
+        "Lutein",
+        "alpha-Tocopherol",
+        "Beta-Cryptoxanthin",
+        "Ubiquinone",
+        "Case-Control Studies",
+        "Singapore",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Carotenoids"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "37375581",
+      "contexts": [
+        {
+          "context_id": "37375581|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "274",
+              "effect_measure_type": "OR",
+              "effect_size": "1.65",
+              "ci_lower": "1.36",
+              "ci_upper": "1.99",
+              "p_value": "2.5096834577077633e-7",
+              "comparison": "Each decile increase in the weighted vitamin A and provitamin A carotenoids serum index"
+            },
+            "Claude+Gemini": {
+              "sample_size": "274",
+              "effect_measure_type": "OR",
+              "effect_size": "6.08",
+              "ci_lower": "2.8",
+              "ci_upper": "13.2",
+              "p_value": "0.000005041039997028969",
+              "comparison": "extreme_quantile"
+            }
+          }
+        },
+        {
+          "context_id": "37375581|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "274",
+              "effect_measure_type": "OR",
+              "effect_size": "1.47",
+              "ci_lower": "1.23",
+              "ci_upper": "1.75",
+              "p_value": "0.000018437106194518172",
+              "comparison": "Each decile increase in the weighted vitamin E serum index"
+            },
+            "Claude+Gemini": {
+              "sample_size": "274",
+              "effect_measure_type": "OR",
+              "effect_size": "2.4",
+              "ci_lower": "1.08",
+              "ci_upper": "5.35",
+              "p_value": "0.034",
+              "comparison": "extreme_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

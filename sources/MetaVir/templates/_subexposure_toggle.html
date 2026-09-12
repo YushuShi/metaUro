@@ -1,0 +1,61 @@
+<link rel="stylesheet" href="/static/settings.css?v=2">
+<script src="/static/settings.js?v=plot-details-20260907" defer></script>
+<button type="button" id="open-analysis-settings" class="analysis-settings-button" aria-haspopup="dialog" aria-controls="analysis-settings-dialog"><span aria-hidden="true">⚙</span> Settings</button>
+<dialog id="analysis-settings-dialog" class="analysis-settings-dialog" data-repository="MetaVir" aria-labelledby="analysis-settings-title">
+    <div class="settings-dialog-header">
+        <div><h2 id="analysis-settings-title">Analysis settings</h2><p>Changes apply automatically and are saved in this browser.</p></div>
+        <button type="button" id="close-analysis-settings" class="settings-close">Done</button>
+    </div>
+    <div class="settings-body">
+        <section class="settings-section">
+            <h3>Exposure</h3>
+            <label class="settings-field" for="include-subexposures">Include subexposures
+                <select id="include-subexposures" aria-label="Include subexposures">
+                    {% set settings_subexposure_mode = subexposure_mode if subexposure_mode is defined else include_subexposures %}
+                    <option value="yes" {% if settings_subexposure_mode != 'no' %}selected{% endif %}>Yes</option>
+                    <option value="no" {% if settings_subexposure_mode == 'no' %}selected{% endif %}>No</option>
+                </select>
+            </label>
+            <p>Yes includes eligible child exposures under the selected parent using this repository's saved hierarchy and pooling rules. No uses the selected exposure alone. The hierarchy below shows every recorded child-to-parent relationship; an exposure can belong to more than one parent.</p>
+            <label class="settings-field" for="settings-hierarchy-search">Find an exposure in the hierarchy<input id="settings-hierarchy-search" type="search" placeholder="e.g. Omega-3, fiber, vitamin"></label>
+            <div id="settings-exposure-hierarchy" class="settings-hierarchy">Loading exposure hierarchy…</div>
+        </section>
+        <section class="settings-section">
+            <h3>Baseline incidence</h3>
+            <div id="settings-disease-name" class="settings-disease-name">Selected disease</div><p id="settings-disease-definition"></p>
+            <div class="settings-grid">
+                <label class="settings-field" for="settings-baseline-source">Reference risk source<select id="settings-baseline-source"><option value="seer">Published SEER value</option><option value="manual">Manual risk</option></select></label>
+                <label class="settings-field" for="settings-age">Starting age<select id="settings-age"></select></label>
+                <label class="settings-field" for="settings-years">Observation years<select id="settings-years"></select></label>
+                <label class="settings-field" for="settings-sex">Sex<select id="settings-sex"><option value="both">Both sexes</option><option value="male">Male</option><option value="female">Female</option></select></label>
+                <label class="settings-field" for="settings-race">Race / ethnicity<select id="settings-race"><option value="all_races_ethnicities">Mixed / all races and ethnicities</option></select></label>
+                <label id="settings-manual-field" class="settings-field settings-hidden" for="settings-manual-risk">Manual cumulative risk (%)<input id="settings-manual-risk" type="number" min="0.000001" max="99.999999" step="any" placeholder="e.g. 3.5"></label>
+            </div>
+            <div class="settings-risk-preview"><output id="settings-risk-value">Loading…</output><p id="settings-risk-context"></p></div>
+            <p>Published choices use five-year age and interval steps and stop at attained age 90. SEER estimates are population risks accounting for competing death. They serve here as a reference-risk proxy, rather than a measured risk in an unexposed study group.</p>
+            <p>Sex and race/ethnicity select the reference population for baseline risk and effect conversion. Each saved study keeps its reported population details.</p>
+            <p id="settings-baseline-note" role="status" aria-live="polite"></p>
+        </section>
+        <section class="settings-section">
+            <h3>Forest Plot</h3>
+            <div class="settings-grid">
+                <label class="settings-field" for="settings-effect-measure">Displayed effect measure<select id="settings-effect-measure"><option value="RR">Relative risk (RR)</option><option value="HR">Hazard ratio (HR)</option><option value="OR">Odds ratio (OR)</option></select></label>
+                <label class="settings-field" for="settings-forest-scale">Effect size and CI labels<select id="settings-forest-scale"><option value="both">Original and natural log</option><option value="log">Natural log</option><option value="original">Original</option></select></label>
+            </div>
+            <p>The forest axis is always logarithmic. Choose original values, natural-log values, or both for the numerical effect and 95% CI columns beside it.</p>
+            <p>HR conversions assume proportional hazards: risk is approximated using the baseline event-free probability. Applying this formula to SEER cumulative risk with competing deaths is an approximation. IRR is treated as HR under the existing constant-rate approximation. OR conversions use risk–odds algebra; an adjusted OR combined with an external baseline also gives an approximation.</p>
+            <div class="settings-formulas">HR → RR: [1 − (1 − p₀)<sup>HR</sup>] / p₀<br>RR → HR: log(1 − p₀ × RR) / log(1 − p₀)<br>OR → RR: OR / (1 − p₀ + p₀ × OR)<br>RR → OR: RR × (1 − p₀) / (1 − p₀ × RR)</div>
+            <p>An unstated exposure direction is assumed to be high versus low, or yes versus no for a binary exposure. This direction assumption is marked in the study details and does not by itself exclude an otherwise eligible study from pooling.</p>
+            <p>Without a matching baseline, HR ≈ RR ≈ OR is explicitly treated as an identity approximation. Values implying a probability outside 0–100% cannot be converted. Study eligibility remains Moderate or Good JBI quality.</p>
+        </section>
+        <section class="settings-section">
+            <h3>Sample size calculation</h3>
+            <div class="settings-grid">
+                <label class="settings-field" for="settings-study-design">Study design<select id="settings-study-design"><option value="prospective">Prospective</option><option value="retrospective">Retrospective case-control</option></select></label>
+                <label id="settings-exposure-rate-field" class="settings-field settings-hidden" for="settings-exposure-rate">Exposure among controls (%)<input id="settings-exposure-rate" type="number" min="0.0001" max="99.9999" step="any" value="50"></label>
+            </div>
+            <p>Prospective calculations compare event risks using the chosen baseline. Retrospective calculations use OR and compare control and case exposure prevalence: q₁ = OR × q₀ / (1 − q₀ + OR × q₀), with percentages converted to probabilities. The default exposure percentage is 50%. Change the case:control ratio (default 1:1), study design and exposure percentage beside the sample-size result on the main page. Case-control sample size does not require a disease-incidence input; any HR/RR-to-OR approximation is identified.</p>
+        </section>
+        <div id="settings-source-citation" class="analysis-baseline-citation" aria-live="polite"></div>
+    </div>
+</dialog>

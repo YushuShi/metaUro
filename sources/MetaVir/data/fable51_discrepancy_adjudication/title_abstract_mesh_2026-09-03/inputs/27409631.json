@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:45.849836-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "1182c2079533948fc7aa6887e2cb39efd0c90ca97adadb120f32e17e66d7db70",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "27409631",
+      "title": "Food Habits, Lifestyle Factors, and Risk of Prostate Cancer in Central Argentina: A Case Control Study Involving Self-Motivated Health Behavior Modifications after Diagnosis.",
+      "abstract": "Cancer is the second most important non-communicable disease worldwide and disproportionately impacts low- to middle-income countries. Diet in combination with other lifestyle habits seems to modify the risk for some cancers but little is known about South Americans. Food habits of Argentinean men pre- and post-diagnosis of prostate cancer (n = 326) were assessed along with other lifestyle factors. We studied whether any of the behaviors and risk factors for prostate cancer were found in men with other cancers (n = 394), compared with control subjects (n = 629). Before diagnosis, both cases reported a greater mean consumption of meats and fats and lower intakes of fruits, green vegetables, cruciferous vegetables, legumes, nuts, seeds, and whole grains than the controls (all p < 0.001). After diagnosis, cases significantly reduced the intake of meats and fats, and reported other dietary modifications with increased consumption of fish, fruits (including red fruits in prostate cancer), cruciferous vegetables, legumes, nuts, and black tea (all p < 0.001). Additional lifestyle aspects significantly predominant in cases included a reduced quality of sleep, emotional stress, low physical activity, tobacco smoking, alcohol consumption, living in rural areas, and being exposed to environmental contaminants. Argentinian men were predisposed to modify their unhealthy dietary habits and other lifestyle factors after cancer diagnosis.",
+      "mesh": [
+        "Aged",
+        "Argentina / epidemiology",
+        "Case-Control Studies",
+        "Diet / adverse effects",
+        "Diet, Healthy",
+        "Feeding Behavior",
+        "Health Behavior",
+        "Health Knowledge, Attitudes, Practice",
+        "Healthy Lifestyle",
+        "Humans",
+        "Life Style",
+        "Male",
+        "Middle Aged",
+        "Motivation",
+        "Prostatic Neoplasms / diagnosis, epidemiology, prevention & control, psychology",
+        "Risk Assessment",
+        "Risk Factors",
+        "Risk Reduction Behavior"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "27409631",
+      "contexts": [
+        {
+          "context_id": "27409631|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "27409631|Legumes|Prostate cancer",
+          "exposure": "Legumes",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "27409631|Whole-grain intake|Prostate cancer",
+          "exposure": "Whole-grain intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "955",
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.001",
+              "comparison": "Prostate cancer cases versus cancer-free controls"
+            },
+            "Claude+Gemini": {
+              "sample_size": "955",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.006",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

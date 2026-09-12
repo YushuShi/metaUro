@@ -1,0 +1,60 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:35:00.368098-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "0f89742bf5ecc330e239b017810afa01393b0f40e2a4f15fa1b59e56957d20f5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "28423352",
+      "title": "Prospective serum metabolomic profile of prostate cancer by size and extent of primary tumor.",
+      "abstract": "Two recent investigations found serum lipid and energy metabolites related to aggressive prostate cancer up to 20 years prior to diagnosis. To elucidate whether those metabolomic profiles represent etiologic or tumor biomarker signals, we prospectively examined serum metabolites of prostate cancer cases by size and extent of primary tumors in a nested case-control analysis in the ATBC Study cohort that compared cases diagnosed with T2 (n = 71), T3 (n = 51), or T4 (n = 15) disease to controls (n = 200). Time from fasting serum collection to diagnosis averaged 10 years (range 1-20). LC/MS-GC/MS identified 625 known compounds, and logistic regression estimated odds ratios (ORs) associated with one-standard deviation differences in log-metabolites. N-acetyl-3-methylhistidine, 3-methylhistidine and 2'-deoxyuridine were elevated in men with T2 cancers compared to controls (ORs = 1.38-1.79; 0.0002 ≤ p ≤ 0.01). By contrast, four lipid metabolites were inversely associated with T3 tumors: oleoyl-linoleoyl-glycerophosphoinositol (GPI), palmitoyl-linoleoyl-GPI, cholate, and inositol 1-phosphate (ORs = 0.49-0.60; 0.000017 ≤ p ≤ 0.003). Secondary bile acid lipids, sex steroids and caffeine-related xanthine metabolites were elevated, while two Krebs cycle metabolites were decreased, in men diagnosed with T4 cancers. Men with T2, T3, and T4 prostate cancer primaries exhibit qualitatively different metabolite profiles years in advance of diagnosis that may represent etiologic factors, molecular patterns reflective of distinct primary tumors, or a combination of both.",
+      "mesh": [
+        "Biomarkers, Tumor / blood",
+        "Humans",
+        "Male",
+        "Metabolomics / methods",
+        "Middle Aged",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, diagnosis, pathology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "28423352",
+      "contexts": [
+        {
+          "context_id": "28423352|Inositol|Prostate cancer",
+          "exposure": "Inositol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

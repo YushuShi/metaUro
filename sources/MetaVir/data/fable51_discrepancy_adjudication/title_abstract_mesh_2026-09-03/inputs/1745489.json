@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:06:57.986589-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "694b9cd170cccd7c228a4f1a126a64ed5934f20063c85813f691039c5d839a6d",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "1745489",
+      "title": "Dairy products and the risk of prostatic cancer.",
+      "abstract": "Dietary indicators of prostatic cancer risk were analyzed in a case-control study conducted in Northern Italy on 96 histologically confirmed cases and 292 controls in hospital for acute, nonneoplastic or genital tract diseases. There was a significant trend in risk as regards frequency of milk consumption: compared with nondrinkers or occasional milk drinkers, the relative risk (RR) was 1.2 (95% confidence interval, Cl, 0.7-1.9) for 1 or 2 glasses per day and 5.0 (95% Cl 1.5-16.6) for 2 or more glasses per day. By contrast, no consistent association was observed with measures of cheese or butter intake. This might, at least in part, be attributable to the lower measurement errors for milk (which tends to be consumed in regular and uniform patterns) as compared with other dairy products. However, the interpretation of these findings is not clear, since other sources of animal fat, like eggs or meat, as well as a summary fat score, were unrelated to prostatic cancer. Although these limitations and uncertainties are substantial, this study provides further evidence that elevated milk consumption may be an indicator of prostatic cancer risk.",
+      "mesh": [
+        "Aged",
+        "Animals",
+        "Case-Control Studies",
+        "Dairy Products / adverse effects",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Milk / adverse effects",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors",
+        "Smoking",
+        "Socioeconomic Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "1745489",
+      "contexts": [
+        {
+          "context_id": "1745489|Eggs|Prostate cancer",
+          "exposure": "Eggs",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

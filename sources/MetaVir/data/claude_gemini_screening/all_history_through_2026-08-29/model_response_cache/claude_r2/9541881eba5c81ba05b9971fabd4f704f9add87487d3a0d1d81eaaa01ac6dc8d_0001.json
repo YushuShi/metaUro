@@ -1,0 +1,965 @@
+{
+  "schema_version": 1,
+  "receipt_id": "60e15d0e445b0bc9f4238abe3ed013b518306c52614598a3c63d97a447b7e198",
+  "requested_at": "2026-09-02T07:27:48.403659+08:00",
+  "received_at": "2026-09-02T07:29:13.048830+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "9541881eba5c81ba05b9971fabd4f704f9add87487d3a0d1d81eaaa01ac6dc8d",
+  "attempt": 1,
+  "context_ids": [
+    "9665108|Linoleic acid|Prostate cancer",
+    "9665108|Vegetable and seed oil intake|Prostate cancer",
+    "9687986|Genistein|Prostate cancer",
+    "9691832|Vitamin D|Prostate cancer",
+    "9718219|Legumes|Prostate cancer",
+    "9718219|Mushrooms|Prostate cancer",
+    "9718219|Pepper (Capsicum)|Prostate cancer",
+    "9719025|Alcohol|Prostate cancer",
+    "9719074|Selenium|Prostate cancer",
+    "9719074|Vitamin E|Prostate cancer",
+    "9719083|Selenium|Prostate cancer",
+    "9721067|Genistein|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Genistein": 2,
+    "Legumes": 1,
+    "Linoleic acid": 1,
+    "Mushrooms": 1,
+    "Pepper (Capsicum)": 1,
+    "Selenium": 2,
+    "Vegetable and seed oil intake": 1,
+    "Vitamin D": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "3704c1e8204d96fa4b92cd12722214ae588de5acacc6c332e641644d8a1753e4",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10297,
+    "cached_input_tokens": 0,
+    "output_tokens": 9369,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.28571",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3d7387c5-07f5-428b-a9d9-67e5a4297e7a",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.28571"
+  },
+  "output_sha256": "f3f40e0f10473490815bb7365bdffb820364485255403537df3ee0eca9933b51",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"9665108|Linoleic acid|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is an explicit literature review with meta-analyses of previously published case-control and cohort risk estimates rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9665108|Vegetable and seed oil intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Vegetable oil is only mentioned within ecologic comparisons summarized in this review and meta-analysis, which is not original primary research.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9687986|Genistein|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study exclusively examines transplanted Dunning R3327 prostate tumors in rats fed soy or rye diets, with no human participants.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9691832|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of molecular vitamin D receptor mechanisms and cell-cycle regulation without original human incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9718219|Legumes|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective Netherlands Cohort Study reporting a multivariate rate ratio for pulse (legume) consumption and incident prostate cancer.\",\"extraction\":{\"effect_size\":0.71,\"effect_type\":\"RR\",\"ci_lower\":0.51,\"ci_upper\":0.98,\"p_value\":0.01,\"ci_confidence_level\":95,\"total_n\":58279,\"cases\":610,\"comparison_type\":\"highest versus lowest quintile of pulse consumption\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Europe\",\"country\":\"Netherlands\",\"location\":\"The Netherlands\",\"ethnicity\":\"NA\",\"population\":\"men aged 55-69 years at baseline in 1986\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"the Netherlands Cohort Study among 58,279 men of ages 55-69 years at baseline in 1986\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"610 cases with complete vegetable data\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"no associations were found except for consumption of pulses (RR, 0.71\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"(RR, 0.71; CI, 0.51-0.98; P for trend, 0.01)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P for trend, 0.01\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"(comparing highest versus lowest quintile)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"In multivariate case-cohort analyses\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"After 6.3 years of follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"a cohort study in The Netherlands\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"642 cases with complete fruit data were available for analysis\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9718219|Mushrooms|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The cohort reports a continuous rate ratio for mushroom consumption and incident prostate cancer.\",\"extraction\":{\"effect_size\":1.49,\"effect_type\":\"RR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":58279,\"cases\":610,\"comparison_type\":\"per increment of 25 g/day of mushroom consumption\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Europe\",\"country\":\"Netherlands\",\"location\":\"The Netherlands\",\"ethnicity\":\"NA\",\"population\":\"men aged 55-69 years at baseline in 1986\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"the Netherlands Cohort Study among 58,279 men of ages 55-69 years at baseline in 1986\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"610 cases with complete vegetable data\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"nonsignificant for sweet peppers (RR, 1.60) and mushrooms (RR, 1.49)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Individual vegetables and fruits were evaluated as continuous variables (g/day)... (RRs per increment of 25 g/day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"In multivariate case-cohort analyses\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"After 6.3 years of follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"a cohort study in The Netherlands\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Individual vegetables and fruits were evaluated as continuous variables (g/day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9718219|Pepper (Capsicum)|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The cohort reports a continuous rate ratio for sweet pepper consumption and incident prostate cancer.\",\"extraction\":{\"effect_size\":1.6,\"effect_type\":\"RR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":58279,\"cases\":610,\"comparison_type\":\"per increment of 25 g/day of sweet pepper consumption\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"Europe\",\"country\":\"Netherlands\",\"location\":\"The Netherlands\",\"ethnicity\":\"NA\",\"population\":\"men aged 55-69 years at baseline in 1986\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"the Netherlands Cohort Study among 58,279 men of ages 55-69 years at baseline in 1986\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"610 cases with complete vegetable data\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"nonsignificant for sweet peppers (RR, 1.60)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"(RRs per increment of 25 g/day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"In multivariate case-cohort analyses\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"After 6.3 years of follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"a cohort study in The Netherlands\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Individual vegetables and fruits were evaluated as continuous variables (g/day)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9718219/\",\"location\":\"abstract, results\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9719025|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original hospital-based case-control study evaluating alcohol consumption in relation to prostate cancer risk in U.S. white men.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":2740,\"cases\":699,\"comparison_type\":\"ever, current, and former drinkers compared to never drinkers\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"20 U.S. hospitals\",\"ethnicity\":\"White\",\"population\":\"white men with prostate cancer and matched hospital controls admitted 1977-1991\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a case-control study of 699 white prostate cancer cases and 2,041 matched controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"699 white prostate cancer cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"comparing ever, current, and former to never drinkers\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"The association was evaluated in a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"admitted between 1977-1991 to 20 U.S. hospitals\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"20 U.S. hospitals\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"},\"ethnicity\":{\"excerpt\":\"699 white prostate cancer cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"},\"location\":{\"excerpt\":\"admitted between 1977-1991 to 20 U.S. hospitals\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"},\"exposure_measurement\":{\"excerpt\":\"using the same alcohol exposure categories\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719025/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9719074|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is an editorial commentary titled \\\"ready for prime time?\\\" with no abstract or original data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9719074|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is an editorial commentary without original results on vitamin E and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9719083|Selenium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Nested case-control study within a prospective cohort reporting adjusted odds ratios for prediagnostic toenail selenium and incident advanced prostate cancer.\",\"extraction\":{\"effect_size\":0.35,\"effect_type\":\"OR\",\"ci_lower\":0.16,\"ci_upper\":0.78,\"p_value\":0.03,\"ci_confidence_level\":95,\"total_n\":null,\"cases\":181,\"comparison_type\":\"highest versus lowest quintile of toenail selenium\",\"design\":\"case_control\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"male health professionals aged 40-75 years\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":null,\"cases\":{\"excerpt\":\"From 1989 through 1994, 181 new cases of advanced prostate cancer were reported.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"the OR was 0.35 (95% CI = 0.16-0.78; P for trend = .03)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI = 0.16-0.78\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P for trend = .03\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"OR for comparison of highest to lowest quintile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"By use of a nested case-control design within a prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"we investigated the association between risk of prostate cancer and prediagnostic level of selenium in toenails\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Selenium levels were determined by neutron activation.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/9719083/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"9721067|Genistein|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The experiment feeds genistein diets to Lobund-Wistar rats and measures receptor expression in rat prostate tissue, with no human data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "9665108|Linoleic acid|Prostate cancer",
+      "pmid": "9665108",
+      "pmcid": "",
+      "published_date": "1998-07-01",
+      "title": "Linoleic acid intake and cancer risk: a review and meta-analysis.",
+      "authors": [
+        "Zock PL",
+        "Katan MB"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9665108/",
+      "exposure": "Linoleic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is an explicit literature review with meta-analyses of previously published case-control and cohort risk estimates rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9665108|Vegetable and seed oil intake|Prostate cancer",
+      "pmid": "9665108",
+      "pmcid": "",
+      "published_date": "1998-07-01",
+      "title": "Linoleic acid intake and cancer risk: a review and meta-analysis.",
+      "authors": [
+        "Zock PL",
+        "Katan MB"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9665108/",
+      "exposure": "Vegetable and seed oil intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Vegetable oil is only mentioned within ecologic comparisons summarized in this review and meta-analysis, which is not original primary research.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9687986|Genistein|Prostate cancer",
+      "pmid": "9687986",
+      "pmcid": "",
+      "published_date": "1998-08-01",
+      "title": "Inhibitory effects of soy and rye diets on the development of Dunning R3327 prostate adenocarcinoma in rats.",
+      "authors": [
+        "Landström M",
+        "Zhang JX",
+        "Hallmans G",
+        "Aman P",
+        "Bergh A",
+        "Damber JE",
+        "Mazur W",
+        "Wähäla K",
+        "Adlercreutz H"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9687986/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study exclusively examines transplanted Dunning R3327 prostate tumors in rats fed soy or rye diets, with no human participants.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9691832|Vitamin D|Prostate cancer",
+      "pmid": "9691832",
+      "pmcid": "",
+      "published_date": "1998-07-20",
+      "title": "[Molecular effects of vitamin D on cell cycle and oncogenesis].",
+      "authors": [
+        "Schmidt J",
+        "Wittenhagen P",
+        "Hørder M"
+      ],
+      "journal": "Ugeskrift for laeger",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9691832/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of molecular vitamin D receptor mechanisms and cell-cycle regulation without original human incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9718219|Legumes|Prostate cancer",
+      "pmid": "9718219",
+      "pmcid": "",
+      "published_date": "1998-08-01",
+      "title": "Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands.",
+      "authors": [
+        "Schuurman AG",
+        "Goldbohm RA",
+        "Dorant E",
+        "van den Brandt PA"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+      "exposure": "Legumes",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective Netherlands Cohort Study reporting a multivariate rate ratio for pulse (legume) consumption and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.71,
+        "effect_type": "RR",
+        "ci_lower": 0.51,
+        "ci_upper": 0.98,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 58279,
+        "cases": 610,
+        "comparison_type": "highest versus lowest quintile of pulse consumption",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "The Netherlands",
+        "ethnicity": "NA",
+        "population": "men aged 55-69 years at baseline in 1986",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The association between 21 vegetables and eight fruits and prostate cancer risk was assessed in the Netherlands Cohort Study among 58,279 men of ages 55-69 years at baseline in 1986. After 6.3 years of follow-up, 610 cases with complete vegetable data and 642 cases with complete fruit data were available for analysis.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 610 cases with complete vegetable data and 642 cases with complete fruit data were available for analysis.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "For vegetables categorized in botanical groups, no associations were found except for consumption of pulses (RR, 0.71; CI, 0.51-0.98; P for trend, 0.01).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "In multivariate case-cohort analyses, the following rate ratios (RRs) and 95% confidence intervals (CIs) for vegetable consumption were found (comparing highest versus lowest quintile): total vegetables (RR, 0.80; CI, 0.57-1.12); prepared vegetables (RR, 0.85; CI, 0.61-1.19); and raw vegetables (RR, 0.96; CI, 0.69-1.34). For vegetables categorized in botanical groups, no associations were found except for consumption of pulses (RR, 0.71; CI, 0.51-0.98; P for trend, 0.01).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P for trend, 0.01",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "(comparing highest versus lowest quintile)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "In multivariate case-cohort analyses",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "After 6.3 years of follow-up",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "a cohort study in The Netherlands",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "642 cases with complete fruit data were available for analysis",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.01",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9718219|Mushrooms|Prostate cancer",
+      "pmid": "9718219",
+      "pmcid": "",
+      "published_date": "1998-08-01",
+      "title": "Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands.",
+      "authors": [
+        "Schuurman AG",
+        "Goldbohm RA",
+        "Dorant E",
+        "van den Brandt PA"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+      "exposure": "Mushrooms",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The cohort reports a continuous rate ratio for mushroom consumption and incident prostate cancer.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.49,
+        "effect_type": "RR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 58279,
+        "cases": 610,
+        "comparison_type": "per increment of 25 g/day of mushroom consumption",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "The Netherlands",
+        "ethnicity": "NA",
+        "population": "men aged 55-69 years at baseline in 1986",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The association between 21 vegetables and eight fruits and prostate cancer risk was assessed in the Netherlands Cohort Study among 58,279 men of ages 55-69 years at baseline in 1986. After 6.3 years of follow-up, 610 cases with complete vegetable data and 642 cases with complete fruit data were available for analysis.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 610 cases with complete vegetable data and 642 cases with complete fruit data were available for analysis.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "Observed positive associations were significant for consumption of leek (RR, 1.38) and oranges (RR, 1.07) and nonsignificant for sweet peppers (RR, 1.60) and mushrooms (RR, 1.49). Results in subgroups of cases were more or less consistent with the overall results.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "In multivariate case-cohort analyses",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "After 6.3 years of follow-up",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "a cohort study in The Netherlands",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Individual vegetables and fruits were evaluated as continuous variables (g/day)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9718219|Pepper (Capsicum)|Prostate cancer",
+      "pmid": "9718219",
+      "pmcid": "",
+      "published_date": "1998-08-01",
+      "title": "Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands.",
+      "authors": [
+        "Schuurman AG",
+        "Goldbohm RA",
+        "Dorant E",
+        "van den Brandt PA"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+      "exposure": "Pepper (Capsicum)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The cohort reports a continuous rate ratio for sweet pepper consumption and incident prostate cancer.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.6,
+        "effect_type": "RR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 58279,
+        "cases": 610,
+        "comparison_type": "per increment of 25 g/day of sweet pepper consumption",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Netherlands",
+        "location": "The Netherlands",
+        "ethnicity": "NA",
+        "population": "men aged 55-69 years at baseline in 1986",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The association between 21 vegetables and eight fruits and prostate cancer risk was assessed in the Netherlands Cohort Study among 58,279 men of ages 55-69 years at baseline in 1986. After 6.3 years of follow-up, 610 cases with complete vegetable data and 642 cases with complete fruit data were available for analysis.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "After 6.3 years of follow-up, 610 cases with complete vegetable data and 642 cases with complete fruit data were available for analysis.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "Observed positive associations were significant for consumption of leek (RR, 1.38) and oranges (RR, 1.07) and nonsignificant for sweet peppers (RR, 1.60) and mushrooms (RR, 1.49). Results in subgroups of cases were more or less consistent with the overall results.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "(RRs per increment of 25 g/day)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "In multivariate case-cohort analyses",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "After 6.3 years of follow-up",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "a cohort study in The Netherlands",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Vegetable and fruit consumption and prostate cancer risk: a cohort study in The Netherlands",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Individual vegetables and fruits were evaluated as continuous variables (g/day)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9718219/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9719025|Alcohol|Prostate cancer",
+      "pmid": "9719025",
+      "pmcid": "",
+      "published_date": "1998-09-01",
+      "title": "Alcohol use and prostate cancer in U.S. whites: no association in a confirmatory study.",
+      "authors": [
+        "Lumey LH",
+        "Pittman B",
+        "Wynder EL"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original hospital-based case-control study evaluating alcohol consumption in relation to prostate cancer risk in U.S. white men.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 2740,
+        "cases": 699,
+        "comparison_type": "ever, current, and former drinkers compared to never drinkers",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "20 U.S. hospitals",
+        "ethnicity": "White",
+        "population": "white men with prostate cancer and matched hospital controls admitted 1977-1991",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The association was evaluated in a case-control study of 699 white prostate cancer cases and 2,041 matched controls, admitted between 1977-1991 to 20 U.S.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods; total_n derived from reported group counts 699 + 2041 = 2740"
+          },
+          "cases": {
+            "excerpt": "The association was evaluated in a case-control study of 699 white prostate cancer cases and 2,041 matched controls, admitted between 1977-1991 to 20 U.S.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "comparing ever, current, and former to never drinkers",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "The association was evaluated in a case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "admitted between 1977-1991 to 20 U.S. hospitals",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "20 U.S. hospitals",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": {
+            "excerpt": "699 white prostate cancer cases",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods"
+          },
+          "location": {
+            "excerpt": "admitted between 1977-1991 to 20 U.S. hospitals",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "using the same alcohol exposure categories",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719025/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 50.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9719074|Selenium|Prostate cancer",
+      "pmid": "9719074",
+      "pmcid": "",
+      "published_date": "1998-08-19",
+      "title": "Selenium, vitamin E, and prostate cancer--ready for prime time?",
+      "authors": [
+        "Taylor PR",
+        "Albanes D"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9719074/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is an editorial commentary titled \"ready for prime time?\" with no abstract or original data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9719074|Vitamin E|Prostate cancer",
+      "pmid": "9719074",
+      "pmcid": "",
+      "published_date": "1998-08-19",
+      "title": "Selenium, vitamin E, and prostate cancer--ready for prime time?",
+      "authors": [
+        "Taylor PR",
+        "Albanes D"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9719074/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is an editorial commentary without original results on vitamin E and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9719083|Selenium|Prostate cancer",
+      "pmid": "9719083",
+      "pmcid": "",
+      "published_date": "1998-08-19",
+      "title": "Study of prediagnostic selenium level in toenails and the risk of advanced prostate cancer.",
+      "authors": [
+        "Yoshizawa K",
+        "Willett WC",
+        "Morris SJ",
+        "Stampfer MJ",
+        "Spiegelman D",
+        "Rimm EB",
+        "Giovannucci E"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Nested case-control study within a prospective cohort reporting adjusted odds ratios for prediagnostic toenail selenium and incident advanced prostate cancer.",
+      "missing_key_fields": [
+        "total_n"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.35,
+        "effect_type": "OR",
+        "ci_lower": 0.16,
+        "ci_upper": 0.78,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": null,
+        "cases": 181,
+        "comparison_type": "highest versus lowest quintile of toenail selenium",
+        "design": "case_control",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male health professionals aged 40-75 years",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": null,
+          "cases": {
+            "excerpt": "From 1989 through 1994, 181 new cases of advanced prostate cancer were reported.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "After additionally controlling for family history of prostate cancer, body mass index, calcium intake, lycopene intake, saturated fat intake, vasectomy, and geographical region, the OR was 0.35 (95% CI = 0.16-0.78; P for trend = .03). Our results support earlier findings that higher selenium intakes may reduce the risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "After additionally controlling for family history of prostate cancer, body mass index, calcium intake, lycopene intake, saturated fat intake, vasectomy, and geographical region, the OR was 0.35 (95% CI = 0.16-0.78; P for trend = .03).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P for trend = .03",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "By use of a nested case-control design within a prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "we investigated the association between risk of prostate cancer and prediagnostic level of selenium in toenails",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Selenium levels were determined by neutron activation.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/9719083/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9721067|Genistein|Prostate cancer",
+      "pmid": "9721067",
+      "pmcid": "",
+      "published_date": "1998-09-15",
+      "title": "Genistein, a component of soy, inhibits the expression of the EGF and ErbB2/Neu receptors in the rat dorsolateral prostate.",
+      "authors": [
+        "Dalu A",
+        "Haskell JF",
+        "Coward L",
+        "Lamartiniere CA"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9721067/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The experiment feeds genistein diets to Lobund-Wistar rats and measures receptor expression in rat prostate tissue, with no human data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

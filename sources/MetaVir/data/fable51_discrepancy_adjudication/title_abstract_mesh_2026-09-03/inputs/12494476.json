@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:14.317024-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "913b52356365ca8cc5f5170aab68323ea7a499e09d9c02c35052e68241f00ef3",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12494476",
+      "title": "Serum selenium and risk of prostate cancer in U.S. blacks and whites.",
+      "abstract": "Prostate cancer is the fourth most common cancer in men worldwide and the most common cancer in men in the United States, with reported incidence rates for U.S. blacks being the highest in the world. The etiology of prostate cancer and an explanation for the racial disparity in incidence in the United States remain elusive. Epidemiologic studies suggest that selenium, an essential trace element, may protect against the disease. To further explore this hypothesis, we measured serum selenium in 212 cases and 233 controls participating in a multicenter, population-based case-control study that included comparable numbers of U.S. black and white men aged 40-79 years. Serum selenium was inversely associated with risk of prostate cancer (comparing highest to lowest quartiles, OR = 0.71, 95% CI 0.39-1.28; p for trend = 0.11), with similar patterns seen in both blacks and whites. Cubic regression spline analysis of continuous serum selenium indicated a reduced risk of prostate cancer above concentrations of 0.135 microg/ml (median among controls) compared to a reference value set at the median of the lowest selenium quartile. Because both the selenoenzyme GPX and vitamin E can function as antioxidants, we also explored their joint effect. Consistent with other studies, the inverse association with selenium was strongest among men with low serum alpha-tocopherol concentrations. In conclusion, our results suggest a moderately reduced risk of prostate cancer at higher serum selenium concentrations, a finding that can now be extended to include U.S. blacks. Since selenium exposure varies widely throughout the world, further research on optimal concentrations for cancer prevention is justified.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Black People",
+        "Case-Control Studies",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Risk Factors",
+        "Selenium / blood",
+        "United States / epidemiology",
+        "Vitamin E / blood",
+        "White People",
+        "Black or African American"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12494476",
+      "contexts": [
+        {
+          "context_id": "12494476|Antioxidants|Prostate cancer",
+          "exposure": "Antioxidants",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

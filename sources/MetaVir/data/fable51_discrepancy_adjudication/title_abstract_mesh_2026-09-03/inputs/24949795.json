@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:21.209168-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "83b60cab65d958d7b9223168037d3432f635c1e991465acc538342d9e8b9b9cf",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "24949795",
+      "title": "In older men, lower plasma 25-hydroxyvitamin D is associated with reduced incidence of prostate, but not colorectal or lung cancer.",
+      "abstract": "Prostate, colorectal and lung cancers are common in men. In this study, we aimed to determine whether vitamin D status is associated with the incidence of these cancers in older men. Prospective cohort study. 4208 older men aged 70-88 years in Perth, Western Australia. Plasma 25-hydroxyvitamin D [25(OH)D] concentration was measured by immunoassay. New diagnoses of prostate, colorectal and lung cancers were determined via electronic record linkage. During a mean follow-up of 6.7±1.8 years, there were 315, 117 and 101 new diagnoses of prostate, colorectal and lung cancer. In multivariate competing risks proportional hazards models, every 10 nmol/l decrease in 25(OH)D concentration was associated with a 4% reduction in prostate cancer incidence (sub-hazard ratio [SHR] 0.96, 95% confidence interval [CI] 0.92-1.00). Every halving of 25(OH)D concentration was associated with a 21% reduction in incident prostate cancer in multivariate analysis (SHR 0.79, 95% CI 0.63-0.99). Following exclusion of prostate cancer cases diagnosed within 3 years of blood sampling, low 25(OH)D <50 nmol/l was associated with lower incident prostate cancer, and higher 25(OH)D >75 nmol/l was associated with higher incidence, when compared to the reference range 50-75 nmol/l, respectively (p = 0.027). Significant associations were also observed when 25(OH)D was modeled as a quantitative variable. No associations were observed between plasma 25(OH)D concentration with incidence of colorectal or lung cancer. Lower levels of vitamin D may reduce prostate cancer risk in older men. By contrast, levels of vitamin D did not predict incidence of colorectal or lung cancers. Further studies are needed to determine whether a causal relationship exists between vitamin D and prostate cancer in ageing men.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Colorectal Neoplasms / blood, pathology",
+        "Humans",
+        "Lung Neoplasms / blood, pathology",
+        "Male",
+        "Prostate / pathology",
+        "Prostatic Neoplasms / blood, pathology",
+        "Risk Factors",
+        "Vitamin D / analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "24949795",
+      "contexts": [
+        {
+          "context_id": "24949795|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "4208",
+              "effect_measure_type": "HR",
+              "effect_size": "0.96",
+              "ci_lower": "0.92",
+              "ci_upper": "1",
+              "p_value": "0.05496920242407165",
+              "comparison": "Per 10 nmol/l decrease in plasma 25(OH)D concentration"
+            },
+            "Claude+Gemini": {
+              "sample_size": "3485",
+              "effect_measure_type": "HR",
+              "effect_size": "0.96",
+              "ci_lower": "0.92",
+              "ci_upper": "1",
+              "p_value": "0.079",
+              "comparison": "continuous"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

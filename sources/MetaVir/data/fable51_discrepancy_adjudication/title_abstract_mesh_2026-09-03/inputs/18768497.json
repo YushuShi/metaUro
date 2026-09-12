@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:26.976921-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "ffa22447e6b71c11fd6f93da55d1b1d88fccd45075a8f8ddce8ae2cdd2c54cf5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "18768497",
+      "title": "Serum calcium and incident and fatal prostate cancer in the National Health and Nutrition Examination Survey.",
+      "abstract": "We examined the association between serum calcium levels and the risk for prostate cancer using a prospective cohort, the National Health and Nutrition Examination Survey (NHANES) and the NHANES Epidemiologic Follow-up Study. Eighty-five incident cases of prostate cancer and 25 prostate cancer deaths occurred over 46,188 person-years of follow-up. Serum calcium was determined an average of 9.9 years before the diagnosis of prostate cancer. Comparing men in the top with men in the bottom tertile of serum calcium, the multivariable-adjusted relative hazard for fatal prostate cancer was 2.68 (95% confidence interval, 1.02-6.99; P(trend) = 0.04). For incident prostate cancer, the relative risk for the same comparison was 1.31 (95% confidence interval, 0.77-2.20; P(trend) = 0.34). These results support the hypothesis that high serum calcium or a factor strongly associated with it (e.g., high serum parathyroid hormone) increases the risk for fatal prostate cancer. Our finding of a >2.5-fold increased risk for men in the highest tertile of serum calcium is comparable in magnitude with the risk associated with family history and could add significantly to our ability to identify men at increased risk for fatal prostate cancer.",
+      "mesh": [
+        "Calcium / analysis",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Nutrition Surveys",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, epidemiology, mortality",
+        "Risk",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "18768497",
+      "contexts": [
+        {
+          "context_id": "18768497|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2814",
+              "effect_measure_type": "HR",
+              "effect_size": "2.68",
+              "ci_lower": "1.02",
+              "ci_upper": "6.99",
+              "p_value": "0.043",
+              "comparison": "Top versus bottom tertile of serum calcium"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2814",
+              "effect_measure_type": "RR",
+              "effect_size": "1.31",
+              "ci_lower": "0.77",
+              "ci_upper": "2.2",
+              "p_value": "0.341",
+              "comparison": "tertile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

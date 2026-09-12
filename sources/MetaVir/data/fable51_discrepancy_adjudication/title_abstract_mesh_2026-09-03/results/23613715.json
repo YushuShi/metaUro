@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:32:44.686902-04:00",
+  "pmid": "23613715",
+  "work_key": "fd1a80c582f94a091a6ec6ed3d0306a066073ce3edf0074d289fae27ef00fe0c",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/23613715_0002.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "23613715",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "23613715|Fish oil|Prostate cancer",
+        "exposure": "Fish oil",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports the ChatGPT CI only for an advanced-disease subgroup; Claude+Gemini CI and p value are absent from allowed metadata.",
+        "one_sentence_explanation": "The allowed metadata supports the ChatGPT confidence interval only for the advanced-disease stratum and lacks the Claude+Gemini values, so the target estimate cannot be mapped uniquely."
+      },
+      {
+        "context_id": "23613715|Fish oil|Prostate cancer",
+        "exposure": "Fish oil",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports the ChatGPT HR only for an advanced-disease subgroup; the overall incident estimate (possibly the Claude+Gemini value) is not reported in allowed metadata.",
+        "one_sentence_explanation": "The allowed metadata supports the ChatGPT value only for the advanced-disease stratum and lacks an overall incident estimate, so the target estimate cannot be mapped uniquely."
+      },
+      {
+        "context_id": "23613715|Fish oil|Prostate cancer",
+        "exposure": "Fish oil",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives the total study N (matching ChatGPT) but not the analytic N for the incident-outcome estimate; the Claude+Gemini value is absent from allowed metadata.",
+        "one_sentence_explanation": "The allowed metadata supports the ChatGPT total only as the overall study size, and does not state the participants analyzed for the incident fish-oil estimate, so the field cannot be resolved uniquely."
+      }
+    ]
+  }
+}

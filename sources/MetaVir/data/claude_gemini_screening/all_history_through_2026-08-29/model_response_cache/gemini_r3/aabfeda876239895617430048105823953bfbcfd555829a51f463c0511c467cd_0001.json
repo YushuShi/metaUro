@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "6d6c50c30cf462c16d6f3606921b4cdec84e330c155f154a194522699137f818",
+  "requested_at": "2026-09-02T08:32:35.078522+08:00",
+  "received_at": "2026-09-02T08:33:04.204814+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "aabfeda876239895617430048105823953bfbcfd555829a51f463c0511c467cd",
+  "attempt": 1,
+  "context_ids": [
+    "40761352|Omega-3 fatty acids|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Omega-3 fatty acids": 1
+  },
+  "input_digest": "8cc970b7351d6a82ee351b353d04bf1bdb021c860c4293d57f2fe68fb9250388",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15968,
+    "cached_input_tokens": 0,
+    "output_tokens": 3405,
+    "reasoning_tokens": 1561
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.024744750000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c620d30d-b364-4bf8-872c-872ccc61f370",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.024744750000000003"
+  },
+  "output_sha256": "d5eccda8b43651858f836cd55be55cfa25db5a7b14fe58af3c9ad8153f1f2a21",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"40761352|Omega-3 fatty acids|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study based on the PLCO trial evaluates dietary intake of Omega-3 fatty acids and incident prostate cancer risk with complete quantitative data.\",\n      \"extraction\": {\n        \"effect_size\": 0.99,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.88,\n        \"ci_upper\": 1.1,\n        \"p_value\": 0.836,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 30552,\n        \"cases\": 3357,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Male participants aged 55–74 years from the Prostate, Lung, Colorectal, and Ovarian (PLCO) Screening Trial\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 30,552 male participants aged 55–74 years were included, with a median follow-up time of ≥7 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The final number of participants included in the study was 30,552, including non-advanced prostate cancer patients (n = 2,969) and advanced prostate cancer patients (n = 388).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Method, Study population, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Q5 (>0.15 to ≤ 1.94) ... HR 3: 0.99 (0.88–1.10), P 3: 0.836\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"HR 3 ... 0.99 (0.88–1.10)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"HR 3 ... P 3 = 0.836\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Omega-3 intake was divided into quintiles based on the entire sample, and HRs for quintiles 2–5 were calculated using the first (lowest) quintile as a reference.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Method, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"This study utilized data from the Prostate, Lung, Colorectal, and Ovarian (PLCO) Screening Trial to investigate the associations between Omega-3 (EPA, DPA, DHA) intake from dietary sources and the risk of prostate cancer and mortality.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"A total of 154,887 participants were enrolled in the trial from November 1993 to July 2001 ... all participants followed for a minimum of 7 years for prostate cancer outcomes.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Method, Study design, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Each PLCO screening center obtained annual International Review Board approval (PLCO-1221) and all participants provided written informed consent.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Ethics statement\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White, Non-Hispanic 27,725 (90.8); Black, Non-Hispanic 738 (2.4); Hispanic 595 (1.9); Asian 1,246 (4.1); Others 218 (0.7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"In addition, the subjects of this study were mainly non-Hispanic White men in the United States aged 55–74 years\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Discussion, paragraph 7\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The DHQ questionnaire was utilized to gather data on the average daily intake of DHA, DPA, and EPA, which were subsequently summed to represent the average daily Omega-3 intake.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12318741/\",\n            \"location\": \"Method, Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

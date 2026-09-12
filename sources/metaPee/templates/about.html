@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About MetaPee: Urinary System Cancers & Nutrition</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='i18n.js') }}?v=2.0" defer></script>
+    <style>
+        .about-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.85);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+
+        h2 {
+            font-family: 'Unbounded', sans-serif;
+            color: var(--text-primary);
+            margin-bottom: 24px;
+            border-bottom: 2px solid var(--accent);
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            line-height: 1.6;
+        }
+
+        .disclaimer-box {
+            background-color: #ffedd5;
+            border: 1px solid #fdba74;
+            color: #7c2d12;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .disclaimer-title {
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            transition: transform 0.2s;
+        }
+
+        .back-link:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+<script src="/static/subexposures.js" defer></script>
+</head>
+
+<body>
+    <div class="background-globes">
+        <div class="globe globe-1"></div>
+        <div class="globe globe-2"></div>
+        <div class="globe globe-3"></div>
+    </div>
+
+    <div class="about-container">
+        <div class="about-toolbar">
+            <a href="/?include_subexposures={{ include_subexposures }}" class="back-link">← Back to Tool</a>
+            {% include '_language_picker.html' %}
+            {% include '_subexposure_toggle.html' %}
+        </div>
+
+        <h1>About MetaPee: Urinary System Cancers & Nutrition</h1>
+
+        <div class="disclaimer-box">
+            <div class="disclaimer-title">
+                ⚠️ CAUTION: AI-Generated Results
+            </div>
+            <p>
+                <strong>This tool uses automated algorithms to extract data from article titles, abstracts, MeSH terms, and conditionally available PMC full text.</strong>
+                While we strive for accuracy, the extraction process may occasionally misinterpret extraction values,
+                sample sizes, or study designs.
+            </p>
+            <p style="margin-bottom: 0;">
+                <strong>Always verify the extracted data against the original publication before making any clinical or
+                    research decisions.</strong>
+                This tool is intended for exploratory and educational purposes only.
+            </p>
+        </div>
+
+        <h2>How It Works</h2>
+        <p>
+            MetaPee uses large language models to facilitate rapid synthesis of evidence regarding food supplements (nutrition) and <strong>urinary system cancers</strong>. The public web app reads saved, audited results. During each scheduled monthly update, the pipeline:
+        </p>
+        <ol>
+            <li><strong>Searches PubMed</strong> for relevant clinical trials and observational studies linking the
+                exposure to the selected cancer outcome.</li>
+            <li><strong>Finds Key Studies</strong> on PubMed using natural language processing to extract effect sizes (odds ratios, hazard
+                ratios) and confidence intervals.</li>
+            <li><strong>Reviews Full Text When Needed</strong> through PMCID when JBI is Fair or key evidence is missing.</li>
+            <li><strong>Synthesizes Evidence</strong> by pooling the results using a Random-Effects Meta-Analysis model.
+            </li>
+            <li><strong>Visualizes Results</strong> in a Forest Plot to show the overall trend.</li>
+        </ol>
+
+        <p style="font-size: 0.9rem; color: #666; font-style: italic; margin-top: 10px;">
+            Source of exposure list: National Institutes of Health, Office of Dietary Supplements (n.d.). Dietary
+            supplement fact sheets.
+        </p>
+
+        <h2>Understanding Meta-Analysis in Urinary System Cancers</h2>
+        <p>
+            A <strong>Meta-Analysis</strong> is a statistical technique that combines the results of multiple scientific
+            studies. By pooling data from various sources, we can get a more precise estimate of an effect than any
+            single study can provide.
+        </p>
+
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; margin-top: 1.5rem; color: var(--text-primary);">Interpreting Heterogeneity (I²)</h3>
+        <p>
+            The <strong>I² statistic</strong> measures the percentage of variation across studies that is due to heterogeneity (true differences in effects) rather than chance. MetaPee interprets I² based on standard guidelines:
+        </p>
+        <ul style="margin-bottom: 16px; padding-left: 20px;">
+            <li style="margin-bottom: 8px;"><strong>&lt; 25%:</strong> Low heterogeneity (indicating consistent findings across studies)</li>
+            <li style="margin-bottom: 8px;"><strong>25% to &lt; 50%:</strong> Moderate heterogeneity (suggesting some variability in results)</li>
+            <li style="margin-bottom: 8px;"><strong>50% to &lt; 75%:</strong> Substantial heterogeneity (reflecting considerable variability)</li>
+            <li style="margin-bottom: 8px;"><strong>&ge; 75%:</strong> Very high heterogeneity (reflecting highly inconsistent results)</li>
+        </ul>
+        <p>
+            If a pooled effect is statistically significant but has substantial or very high heterogeneity (I² &ge; 50%), the results are flagged to be interpreted with caution due to the high variability between the included studies.
+        </p>
+
+        <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; margin-top: 1.5rem; color: var(--text-primary);">Exposure Quantification</h3>
+        <p>
+            To facilitate accurate comparison of findings, MetaPee categorizes how exposure to food supplements or nutritional factors was measured in each study:
+        </p>
+        <ul style="margin-bottom: 16px; padding-left: 20px;">
+            <li style="margin-bottom: 8px;">
+                <strong>Dietary Intake:</strong> The exposure is measured based on self-reported or observed consumption of foods, beverages, or supplements. Common assessment methods include food frequency questionnaires (FFQs), 24-hour dietary recalls, and diet diaries.
+            </li>
+            <li style="margin-bottom: 8px;">
+                <strong>Human Biospecimen:</strong> The exposure is quantified objectively using biological samples collected from study participants. This involves measuring levels of the nutrient, compound, or its metabolites in biospecimens like blood (serum/plasma), urine, adipose tissue, or other body fluids.
+            </li>
+            <li style="margin-bottom: 8px;">
+                <strong>Unclear:</strong> If the available article evidence does not specify how the exposure was measured or if there is insufficient detail to categorize it, the exposure quantification type is marked as unclear.
+            </li>
+        </ul>
+
+        <h2>JBI Quality Appraisal</h2>
+        <p>
+            Study quality is assessed using the <strong>JBI Critical Appraisal Tools</strong>, selected automatically
+            based on the study design identified by the LLM. Cross-Sectional is used as a fallback when the design is
+            unclear.
+        </p>
+
+        <!-- Tab Buttons -->
+        <div style="display: flex; gap: 0; border-bottom: 2px solid #ddd; margin-bottom: 1rem; flex-wrap: wrap;">
+            <button class="jbi-tab" onclick="showJbiTab('rct')"
+                style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid transparent; color: #666;"
+                id="tab-rct">Clinical Trials (RCTs) (13 items)</button>
+            <button class="jbi-tab active" onclick="showJbiTab('cross-sectional')"
+                style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid var(--primary); color: var(--primary);"
+                id="tab-cross-sectional">Cross-Sectional (8 items)</button>
+            <button class="jbi-tab" onclick="showJbiTab('cohort')"
+                style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid transparent; color: #666;"
+                id="tab-cohort">Cohort (11 items)</button>
+            <button class="jbi-tab" onclick="showJbiTab('case-control')"
+                style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid transparent; color: #666;"
+                id="tab-case-control">Case-Control (10 items)</button>
+        </div>
+
+        <!-- RCT Tab -->
+        <div id="jbi-rct" class="jbi-panel" style="display: none;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Randomized Controlled Trials (2023 Revision)</h3>
+            <ol>
+                <li>Was true randomization used for assignment of participants to treatment groups?</li>
+                <li>Was allocation to treatment groups concealed?</li>
+                <li>Were treatment groups similar at baseline?</li>
+                <li>Were participants blind to treatment assignment?</li>
+                <li>Were those delivering the treatment blind to treatment assignment?</li>
+                <li>Were treatment groups treated identically other than the intervention of interest?</li>
+                <li>Were outcome assessors blind to treatment assignment?</li>
+                <li>Were outcomes measured in the same way for treatment groups?</li>
+                <li>Were outcomes measured in a reliable way?</li>
+                <li>Was follow-up complete and, if not, were differences between groups in terms of their follow-up adequately described and analyzed?</li>
+                <li>Were participants analyzed in the groups to which they were randomized?</li>
+                <li>Was appropriate statistical analysis used?</li>
+                <li>Was the trial design appropriate, and were any deviations from the standard RCT design (e.g., crossover, cluster) accounted for in the conduct and analysis of the trial?</li>
+            </ol>
+        </div>
+
+        <!-- Cross-Sectional Tab -->
+        <div id="jbi-cross-sectional" class="jbi-panel">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Analytical Cross-Sectional Studies
+            </h3>
+            <ol>
+                <li>Were the criteria for inclusion in the sample clearly defined?</li>
+                <li>Were the study subjects and the setting described in detail?</li>
+                <li>Was the exposure measured in a valid and reliable way?</li>
+                <li>Were objective, standard criteria used for measurement of the condition?</li>
+                <li>Were confounding factors identified?</li>
+                <li>Were strategies to deal with confounding factors stated?</li>
+                <li>Were the outcomes measured in a valid and reliable way?</li>
+                <li>Was appropriate statistical analysis used?</li>
+            </ol>
+        </div>
+
+        <!-- Cohort Tab -->
+        <div id="jbi-cohort" class="jbi-panel" style="display: none;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Cohort Studies</h3>
+            <ol>
+                <li>Were the two groups similar and recruited from the same population?</li>
+                <li>Were the exposures measured similarly to assign people to both exposed and unexposed groups?</li>
+                <li>Was the exposure measured in a valid and reliable way?</li>
+                <li>Were confounding factors identified?</li>
+                <li>Were strategies to deal with confounding factors stated?</li>
+                <li>Were the groups/participants free of the outcome at the start of the study (or at the moment of
+                    exposure)?</li>
+                <li>Were the outcomes measured in a valid and reliable way?</li>
+                <li>Was the follow up time reported and sufficient to be long enough for outcomes to occur?</li>
+                <li>Was follow up complete, and if not, were the reasons to loss to follow up described and explored?
+                </li>
+                <li>Were strategies to address incomplete follow up utilized?</li>
+                <li>Was appropriate statistical analysis used?</li>
+            </ol>
+        </div>
+
+        <!-- Case-Control Tab -->
+        <div id="jbi-case-control" class="jbi-panel" style="display: none;">
+            <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Case-Control Studies</h3>
+            <ol>
+                <li>Were the groups comparable other than the presence of disease in cases or the absence of disease in
+                    controls?</li>
+                <li>Were cases and controls matched appropriately?</li>
+                <li>Were the same criteria used for identification of cases and controls?</li>
+                <li>Was exposure measured in a standard, valid and reliable way?</li>
+                <li>Was exposure measured in the same way for cases and controls?</li>
+                <li>Were confounding factors identified?</li>
+                <li>Were strategies to deal with confounding factors stated?</li>
+                <li>Were outcomes assessed in a standard, valid and reliable way for cases and controls?</li>
+                <li>Was the exposure period of interest long enough to be meaningful?</li>
+                <li>Was appropriate statistical analysis used?</li>
+            </ol>
+        </div>
+
+        <p>
+            <strong>Scoring Criteria:</strong>
+        <ul>
+            <li><strong>Score %:</strong> Calculated as the percentage of all checklist items rated as "Yes"; "No", "Unclear", and "NA" receive no credit.</li>
+            <li><strong>Good:</strong> &gt; 80% of items rated as "Yes" (i.e., 80.1% or higher).</li>
+            <li><strong>Moderate:</strong> 51% to 80% of items rated as "Yes" (i.e., 51.0% to 80.0% inclusive).</li>
+            <li><strong>Fair:</strong> &lt; 51% of items rated as "Yes" (i.e., 50.9% or lower; this includes exactly 50.0%).</li>
+        </ul>
+        </p>
+        <p style="font-size: 0.85rem; color: #666; font-style: italic; margin-top: 10px; line-height: 1.5;">
+            References:<br>
+            <span class="notranslate" translate="no">• Barker, T. H., Stone, J. C., Sears, K., et al. (2023). The revised JBI critical appraisal tool for the assessment of risk of bias for randomized controlled trials. <i>JBI Evidence Synthesis</i>, 21(3), 494–506.</span>
+            <a href="https://journals.lww.com/jbisrir/Fulltext/2023/03000/The_revised_JBI_critical_appraisal_tool_for_the.5.aspx?context=FeaturedArticles&collectionId=2" target="_blank" style="color: var(--primary);">Journal Article Link</a>.<br>
+            <span class="notranslate" translate="no">• Joanna Briggs Institute. Critical appraisal tools.</span>
+            <a class="notranslate" translate="no" href="https://jbi.global/critical-appraisal-tools" target="_blank" style="color: var(--primary);">https://jbi.global/critical-appraisal-tools</a>. <span>Accessed 11 Feb 2026.</span>
+        </p>
+
+        <hr style="border: 0; border-top: 1px solid var(--border); margin: 30px 0;">
+
+        <div class="feedback-section" style="margin-top: 20px;">
+            <h2>Bug Reporting & Feedback</h2>
+            <p>
+                If you encounter any issues, bugs, or discrepancies in the extracted data, please report them to:
+            </p>
+            <p style="margin-top: 15px; font-size: 1.05rem; line-height: 1.6;">
+                <strong>Margaux Delporte</strong><br>
+                Email: <a href="mailto:margauxdelporte@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--primary);">margauxdelporte@gmail.com</a>
+            </p>
+            <p style="margin-top: 15px; font-size: 1.05rem; line-height: 1.6;">
+                <strong>Yushu Shi</strong><br>
+                Email: <a href="mailto:shiyushu2006@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--primary);">shiyushu2006@gmail.com</a>
+            </p>
+        </div>
+
+        <script>
+            function showJbiTab(tabName) {
+                // Hide all panels
+                document.querySelectorAll('.jbi-panel').forEach(p => p.style.display = 'none');
+                // Reset all tabs
+                document.querySelectorAll('.jbi-tab').forEach(t => {
+                    t.style.borderBottom = '3px solid transparent';
+                    t.style.color = '#666';
+                });
+                // Show selected panel and highlight tab
+                document.getElementById('jbi-' + tabName).style.display = 'block';
+                const activeTab = document.getElementById('tab-' + tabName);
+                activeTab.style.borderBottom = '3px solid var(--primary)';
+                activeTab.style.color = 'var(--primary)';
+            }
+        </script>
+    </div>
+</body>
+
+</html>

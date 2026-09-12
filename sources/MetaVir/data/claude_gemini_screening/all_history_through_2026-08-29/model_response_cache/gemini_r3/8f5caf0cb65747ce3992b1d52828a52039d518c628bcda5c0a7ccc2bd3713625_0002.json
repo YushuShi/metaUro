@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "receipt_id": "59b7af43b1326271f62944c70eb78a14dda9da863ae338dc636acc73ca5d1459",
+  "requested_at": "2026-09-02T08:52:32.312638+08:00",
+  "received_at": "2026-09-02T08:52:52.182515+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "8f5caf0cb65747ce3992b1d52828a52039d518c628bcda5c0a7ccc2bd3713625",
+  "attempt": 2,
+  "context_ids": [
+    "30825046|Choline|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Choline": 1
+  },
+  "input_digest": "3d9e97f3ade93dabb382293f2bfaf770011374856da75adb928f3f069140f9f5",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 14673,
+    "cached_input_tokens": 0,
+    "output_tokens": 2464,
+    "reasoning_tokens": 646
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02024475",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "6841cd6e-ace9-49b8-aa4b-46c1d9d6ac0c",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02024475"
+  },
+  "output_sha256": "dde6d0911a14f57d9986b753023d7f3895dd63d95918517e54a371367addc717",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"30825046|Choline|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study investigating dietary choline intake and risk of incident total and lethal prostate cancer with multivariable risk estimates.\",\n      \"extraction\": {\n        \"effect_size\": 1.02,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.85,\n        \"ci_upper\": 1.22,\n        \"p_value\": 0.8,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 6528,\n        \"cases\": 811,\n        \"comparison_type\": \"categorical_highest_vs_lowest\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Forsyth County, NC, Jackson, MS, Minneapolis, MN, and Washington County, MD\",\n        \"ethnicity\": \"African American and White\",\n        \"population\": \"Atherosclerosis Risk in Communities (ARIC) Study male participants aged 45-64 years without baseline cancer\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After exclusions, 6,528 men (5,001 white, 1,527 African-American) comprised the analytic cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Methods, Study population, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Over a mean follow-up of 18 years, we observed 811 total first primary prostate cancer cases during 118,211 person-years\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Results, Total, lethal, and fatal prostate cancer in men at risk for prostate cancer, paragraph 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Model 2, (HR) ... 1.02 (0.85–1.22)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Table 3, Total prostate cancer, All, Model 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Model 2, (HR) ... 1.02 (0.85–1.22)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Table 3, Total prostate cancer, All, Model 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Model 2, (HR) ... p-trend ... 0.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Table 3, Total prostate cancer, All, Model 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Tertile of energy-adjusted choline intake ... 1 (59.7–281.1) ... 3 (345.2–887.5)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Table 3, header\"\n          },\n          \"design\": {\n            \"excerpt\": \"This analysis was conducted in ARIC, a prospective cohort study of 15,792 participants (7,032 men) aged 45 to 64 years old at enrollment between 1987 and 1989.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We included 6,528 men (24.4% African American) without a cancer diagnosis at baseline (1987–1989) followed through 2012.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Participants were recruited from Forsyth County, NC, Jackson, MS, Minneapolis, MN, and Washington County, MD\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"After exclusions, 6,528 men (5,001 white, 1,527 African-American) comprised the analytic cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Methods, Study population, paragraph 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"Participants were recruited from Forsyth County, NC, Jackson, MS, Minneapolis, MN, and Washington County, MD\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed by interview during Visits 1 (1987–1989) and 3 (1991–1993) using a modified 66-item Willett FFQ\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/\",\n            \"location\": \"Methods, Assessment of choline and betaine intake, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "30825046|Choline|Prostate cancer",
+      "pmid": "30825046",
+      "pmcid": "PMC6553878",
+      "published_date": "2019-04-01",
+      "title": "Dietary choline and betaine intakes and risk of total and lethal prostate cancer in the Atherosclerosis Risk in Communities (ARIC) Study.",
+      "authors": [
+        "Han P",
+        "Bidulescu A",
+        "Barber JR",
+        "Zeisel SH",
+        "Joshu CE",
+        "Prizment AE",
+        "Vitolins MZ",
+        "Platz EA"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30825046/",
+      "exposure": "Choline",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study investigating dietary choline intake and risk of incident total and lethal prostate cancer with multivariable risk estimates.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.02,
+        "effect_type": "HR",
+        "ci_lower": 0.85,
+        "ci_upper": 1.22,
+        "p_value": 0.8,
+        "ci_confidence_level": 95,
+        "total_n": 6528,
+        "cases": 811,
+        "comparison_type": "categorical_highest_vs_lowest",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Atherosclerosis Risk in Communities (ARIC) Study male participants aged 45-64 years without baseline cancer",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After exclusions, 6,528 men (5,001 white, 1,527 African-American) comprised the analytic cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Methods, Study population, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Over a mean follow-up of 18 years, we observed 811 total first primary prostate cancer cases during 118,211 person-years, 95 lethal prostate cancer cases during 118,433 person-years, and 88 fatal prostate cancer cases during 132,309 person-years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Results, Total, lethal, and fatal prostate cancer in men at risk for prostate cancer, paragraph 3"
+          },
+          "effect_size": {
+            "excerpt": "1.02 (0.85–1.22)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Table 3, Total prostate cancer, All, Model 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Overall, baseline choline intake was not associated with incidence of total, lethal or fatal prostate cancer overall (model 1; Table 3 ), although compared to the first tertile, the second tertile of baseline choline intake was associated with increased total prostate cancer risk (HR: 1.22 [95% CI: 1.03–1.44]) .",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Table 3, Total prostate cancer, All, Model 2"
+          },
+          "p_value": {
+            "excerpt": "0.8",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Table 3, Total prostate cancer, All, Model 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Table 3, header"
+          },
+          "design": {
+            "excerpt": "This analysis was conducted in ARIC, a prospective cohort study of 15,792 participants (7,032 men) aged 45 to 64 years old at enrollment between 1987 and 1989.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "We included 6,528 men (24.4% African American) without a cancer diagnosis at baseline (1987–1989) followed through 2012.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Abstract, Methods"
+          },
+          "continent": {
+            "excerpt": "Participants were recruited from Forsyth County, NC, Jackson, MS, Minneapolis, MN, and Washington County, MD",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed by interview during Visits 1 (1987–1989) and 3 (1991–1993) using a modified 66-item Willett FFQ",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6553878/",
+            "location": "Methods, Assessment of choline and betaine intake, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.8",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 42889,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "fcef4388501dabcc12d32d2a2e32c5ce81268955da5f0e0f85b097fb212d0a03",
+      "pmc_source_receipt_digest": "62d6ac16c94ce546fad1a0a61264bc948807928924594c54f1816f12c8f31ae2",
+      "pmc_source_raw_sha256": "fac6d51eeb174341e172abb09142ebbd3c24a99288f49095171868d9cd12d407",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "4453ea0bf6a06675ccaf51c0af07630ff6cf7a7768030cd7f8bb43578f0bce72"
+    }
+  ]
+}

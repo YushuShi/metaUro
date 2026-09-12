@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:21.335009-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c3fd0bb172699f054e01b2ca3c91524f7e27a35ddbad2cfdc550948297e46316",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17634273",
+      "title": "Dietary isoflavones may protect against prostate cancer in Japanese men.",
+      "abstract": "We examined associations between nutritional and other lifestyle factors and the prevalence of prostate cancer in a case-control study of Japanese men. Two hundred patients and 200 age-matched controls (+/-5 y) were selected from 3 geographic areas of Japan. BMI, physical activity, occupation, family history of prostate cancer, and medical history were not associated with prostate cancer risk. Isoflavones and their aglycones (genistein and daidzein) were significantly associated with decreased risk. The odds ratio for the highest category (> or = 89.9 mg/d) compared with the lowest category (<30.5 mg/d) of isoflavone intake was 0.42 (95% CI = 0.24-0.72) and the linear trend was significant (P < 0.01). PUFA, (n-6) fatty acids, and magnesium were significantly associated with decreased risk but not after adjustment for isoflavone intake. Isoflavone intake was correlated with the intake of PUFA (r = 0.68, P < 0.001), (n-6) fatty acids (r = 0.69, P < 0.001), and magnesium (r = 0.56, P < 0.001), because soy products contain high levels of these nutrients. On the other hand, isoflavone significantly decreased the risk of prostate cancer regardless of adjustment by PUFA, (n-6) fatty acids or magnesium. In conclusion, our findings indicate that isoflavones might be an effective dietary protective factor against prostate cancer in Japanese men.",
+      "mesh": [
+        "Asian People",
+        "Body Mass Index",
+        "Diet",
+        "Humans",
+        "Isoflavones / administration & dosage, pharmacology",
+        "Japan",
+        "Male",
+        "Motor Activity",
+        "Occupations",
+        "Odds Ratio",
+        "Prostatic Neoplasms / diet therapy, prevention & control",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17634273",
+      "contexts": [
+        {
+          "context_id": "17634273|Magnesium|Prostate cancer",
+          "exposure": "Magnesium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "400",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        },
+        {
+          "context_id": "17634273|Soy|Prostate cancer",
+          "exposure": "Soy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "receipt_id": "8bb1b389f8695f899e65e3f45e2bde7ea86d3a96a2f53982eb8f5a0e89d0fb8b",
+  "requested_at": "2026-09-02T07:24:58.973913+08:00",
+  "received_at": "2026-09-02T07:25:08.775748+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "018a3f44c1e68d94619db7b3eff734a52e42c021e24bf29d6adc3a95ea05dcb5",
+  "attempt": 1,
+  "context_ids": [
+    "7892289|Soy|Prostate cancer",
+    "7901532|Low-fat diet|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Low-fat diet": 1,
+    "Soy": 1
+  },
+  "input_digest": "6a22c6ec802240dd201dd9b545520d0ca3ff55bc5dc4c6d2705ef7ca99507c26",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5319,
+    "cached_input_tokens": 0,
+    "output_tokens": 825,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.04722",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "81c2e674-bbd5-4153-a2b3-eb411f545d79",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.04722"
+  },
+  "output_sha256": "22f15ac740e4ca91f5d51408395ed6e8ffe6415c05a7e8bb03f74dafa6db495a",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"7892289|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-DIAGNOSTIC-MECHANISTIC\",\"reason\":\"This is an analytical HPLC method-development paper quantifying phytoestrogens in legumes and urine, providing no evidence on developing prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7901532|Low-fat diet|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"The study only compares plasma isoflavonoid concentrations between 14 Japanese and 14 Finnish men and reports no prostate cancer incidence results, with the low-fat diet mentioned only as hypothesis background.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "7892289|Soy|Prostate cancer",
+      "pmid": "7892289",
+      "pmcid": "",
+      "published_date": "1995-01-01",
+      "title": "Rapid HPLC analysis of dietary phytoestrogens from legumes and from human urine.",
+      "authors": [
+        "Franke AA",
+        "Custer LJ",
+        "Cerna CM",
+        "Narala K"
+      ],
+      "journal": "Proceedings of the Society for Experimental Biology and Medicine. Society for Experimental Biology and Medicine (New York, N.Y.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7892289/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-DIAGNOSTIC-MECHANISTIC",
+      "reason": "This is an analytical HPLC method-development paper quantifying phytoestrogens in legumes and urine, providing no evidence on developing prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7901532|Low-fat diet|Prostate cancer",
+      "pmid": "7901532",
+      "pmcid": "",
+      "published_date": "1993-11-13",
+      "title": "Plasma concentrations of phyto-oestrogens in Japanese men.",
+      "authors": [
+        "Adlercreutz H",
+        "Markkanen H",
+        "Watanabe S"
+      ],
+      "journal": "Lancet (London, England)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7901532/",
+      "exposure": "Low-fat diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "The study only compares plasma isoflavonoid concentrations between 14 Japanese and 14 Finnish men and reports no prostate cancer incidence results, with the low-fat diet mentioned only as hypothesis background.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

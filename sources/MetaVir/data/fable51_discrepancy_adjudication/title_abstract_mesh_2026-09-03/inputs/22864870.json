@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:31:17.300812-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "2613e02b1518a7ab1ae4d1eef8130242cdaa50a6a6152531f85e769d250af9e5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "22864870",
+      "title": "Green and black tea intake in relation to prostate cancer risk among Singapore Chinese.",
+      "abstract": "Tea is one of the most commonly consumed beverages worldwide. To date, observational data from prospective cohort studies investigating the relationship between green and black tea intake and prostate cancer risk are sparse and equivocal. In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk. Tea consumption data for 27,293 men were collected at baseline (between 1993 and 1998) using a validated food frequency questionnaire. After an average of 11.2 years of follow-up, 298 men had developed prostate cancer. Proportional hazards regression methods were used to assess the associations between tea intake and prostate cancer risk. There was no association between daily green tea intake and prostate cancer risk, compared with no green tea intake [hazard ratio (HR) = 1.08; 95 % confidence interval (CI) 0.79, 1.47]. For black tea, a statistically significant positive association and trend were observed for daily intake compared with no black tea intake (HR = 1.41, 95 % CI 1.03, 1.92; p for trend <0.01) Few prospective data are available from populations that have both a high level and wide range of black and green tea intake; this study represents a unique opportunity to evaluate their individual effects on prostate cancer risk. Our findings support the notion that green tea intake does not protect against prostate cancer and that black tea intake may increase prostate cancer risk.",
+      "mesh": [
+        "Aged",
+        "Asian People",
+        "Cohort Studies",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Plant Extracts / administration & dosage",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk",
+        "Singapore / epidemiology",
+        "Tea"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "22864870",
+      "contexts": [
+        {
+          "context_id": "22864870|Green tea|Prostate cancer",
+          "exposure": "Green tea",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "27293",
+              "effect_measure_type": "HR",
+              "effect_size": "1.08",
+              "ci_lower": "0.79",
+              "ci_upper": "1.47",
+              "p_value": "0.6271005773940679",
+              "comparison": "Daily green tea intake versus no green tea intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "27293",
+              "effect_measure_type": "HR",
+              "effect_size": "1.08",
+              "ci_lower": "0.79",
+              "ci_upper": "1.48",
+              "p_value": "0.6",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

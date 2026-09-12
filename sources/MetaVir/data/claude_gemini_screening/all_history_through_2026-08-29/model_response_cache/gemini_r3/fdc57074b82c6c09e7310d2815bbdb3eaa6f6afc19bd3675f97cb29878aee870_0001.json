@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "c685736f53997a18cf7a98af72797a79c6f3a22b5720c58274c5003b8b378b4e",
+  "requested_at": "2026-09-02T08:43:47.777872+08:00",
+  "received_at": "2026-09-02T08:44:06.838193+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "fdc57074b82c6c09e7310d2815bbdb3eaa6f6afc19bd3675f97cb29878aee870",
+  "attempt": 1,
+  "context_ids": [
+    "23256145|Dairy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Dairy": 1
+  },
+  "input_digest": "68eb48efc90eb0b0c49a678f68a5e5c7ace89da47e33b0a015d6ceb55845289a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 14980,
+    "cached_input_tokens": 0,
+    "output_tokens": 2943,
+    "reasoning_tokens": 974
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02227125",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3f50c748-8c08-4c40-8ba9-61aaeae8db35",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02227125"
+  },
+  "output_sha256": "b8ca2589f68ce679495882fe3f619e310e0f887dd117ae6eae950d9da17beb97",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"23256145|Dairy|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study investigating total dairy intake and incident prostate cancer risk in U.S. male physicians.\",\n      \"extraction\": {\n        \"effect_size\": 1.12,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.93,\n        \"ci_upper\": 1.35,\n        \"p_value\": 0.06,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 21660,\n        \"cases\": 2806,\n        \"comparison_type\": \"categorical_highest_vs_lowest\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Physicians' Health Study participants\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"These exclusions resulted in a study population of 21,660 men for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Participants and Methods, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We confirmed 2806 incident cases of PCa diagnosed among 21,660 men in 470,612 person-years through 2010.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"In multivariable-adjusted analyses, men in the highest category of total dairy foods had a 12% (95% CI: −7%, 35%) higher risk to develop PCa than men in the lowest intake category ( P -trend = 0.06) ( Table 2 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.12 (0.93, 1.35)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"In multivariable-adjusted analyses, men in the highest category of total dairy foods had a 12% (95% CI: −7%, 35%) higher risk to develop PCa than men in the lowest intake category ( P -trend = 0.06) ( Table 2 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The intake of total dairy products was associated with increased PCa incidence [HR = 1.12 (95% CI: 0.93, 1.35); >2.5 servings/d vs. ≤0.5 servings/d].\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Abstract\"\n          },\n          \"design\": {\n            \"excerpt\": \"We conducted a cohort study in the Physicians’ Health Study ( n = 21,660) and a survival analysis among the incident PCa cases ( n = 2806).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We investigated the association between intake of dairy products and the incidence and survival of PCa during a 28-y follow-up.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The PHS was a randomized, blinded, and placebo-controlled trial of aspirin and β-carotene in the prevention of heart disease and cancer among 22,071 U.S. male physicians aged 40–84 y in 1982 ( 15 , 16 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Participants and Methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Men who consumed more dairy products tended to be older, smoked less, drank less alcohol, exercised more, and were more likely to be Caucasian and diabetic.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The PHS was a randomized, blinded, and placebo-controlled trial of aspirin and β-carotene in the prevention of heart disease and cancer among 22,071 U.S. male physicians aged 40–84 y in 1982 ( 15 , 16 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Participants and Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The run-in and 12-mo questionnaires in the PHS included abbreviated FFQs. The run-in questionnaire asked about the consumption of whole milk, skim/low-fat milk, and cold breakfast cereal (categories: ≥2 servings/d, daily, 5–6 servings/wk, 2–4 servings/wk, 1 serving/wk, 1–3 servings/mo, rarely/never) in the past year. The 12-mo questionnaire asked about the intake during the previous year of hard cheese (e.g., American, Cheddar) and ice cream.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3542910/\",\n            \"location\": \"Participants and Methods, Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

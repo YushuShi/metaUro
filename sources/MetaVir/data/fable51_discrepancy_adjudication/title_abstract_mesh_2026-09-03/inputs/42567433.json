@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:39:25.856726-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "a48e4b11cb43f517499ea0bf61d243e5578aebee1f59b36da4236442c4eb2244",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "42567433",
+      "title": "Consumption of Ultra-Processed Foods and Increased Risks of Prostate Cancer in a Random Sample of United States Adults.",
+      "abstract": "In the United States and worldwide, there is an increasing body of reliable evidence suggesting that ultra processed food intake is linked to many adverse outcomes. Prostate is one of the most common cancers and has dietary influences. Data are sparse about ultra processed foods and prostate cancer. We used nationally representative data from the United States National Health and Nutrition Examination Survey from 2003 to 2023. Ultra processed food intake was estimated from two 24-hour dietary recalls using the validated and widely used NOVA classification and categorized into quartiles based on the percentage of total energy intake. Prostate cancer was defined by self-report. We used relative risks to estimate effects. We used 90% confidence intervals to test for significance as harm was prespecified. Crude and multivariable logistic regression models were adjusted for age, smoking status, race/ethnicity, and poverty status. Among 17,024 male adults, compared to those in the lowest, participants in the combined second, third, and fourth quartiles had a significant 29% higher risk of prostate cancer (p = 0.031), while those in the combined third and fourth quartiles had a significant 30% higher risk (p=0.035). Perhaps due to smaller sample sizes, those in the fourth quartile had a possible but non-significant increase of 31% (p=0.079). In adjusted analyses, corresponding values were 27% (p=0.045), 31% (p=0.037), and 34% (p=0.072). In these data, people with higher ultra-processed food intake had higher risks of prostate cancer. Analytic studies are necessary to test this hypothesis.",
+      "mesh": []
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "42567433",
+      "contexts": [
+        {
+          "context_id": "42567433|Ultra-processed food intake|Prostate cancer",
+          "exposure": "Ultra-processed food intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-WRONG-OUTCOME"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

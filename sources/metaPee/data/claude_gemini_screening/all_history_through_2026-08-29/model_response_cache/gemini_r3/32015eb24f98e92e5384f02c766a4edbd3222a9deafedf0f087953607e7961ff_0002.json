@@ -1,0 +1,634 @@
+{
+  "schema_version": 1,
+  "receipt_id": "e12e8f6274aea56c97daa48f1f2a9607f7f8d4c3965ec4e329ddffb6b767441b",
+  "requested_at": "2026-09-03T17:18:50.414578-04:00",
+  "received_at": "2026-09-03T17:19:30.468100-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "32015eb24f98e92e5384f02c766a4edbd3222a9deafedf0f087953607e7961ff",
+  "dispatch_work_unit_key": "d2f3af8a5a54e79ff32e23b7ccae8c30520fa79c5a5d9a79c2b5b81dc49c6706",
+  "attempt": 2,
+  "context_ids": [
+    "22086884|Calcium|Renal cell carcinoma",
+    "22086884|Vitamin D|Renal cell carcinoma"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "1bc6afaa45809942ea95e713ca676dd2daafeaee4f0949e13be3592cc79ba36f",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15238,
+    "cached_input_tokens": 0,
+    "output_tokens": 8078,
+    "reasoning_tokens": 1345
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.041721",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "bd549b20-0f85-49ce-abc8-7483269c651a",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.041721"
+  },
+  "output_sha256": "2dd41e256911380a62ec56570c566bf1898c12bd2866e2b7b46ebe8a81b130ee",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22086884|Calcium|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study assessed the association between total serum calcium concentration and incident renal cell carcinoma risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.3,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.2,\n        \"ci_upper\": 0.7,\n        \"p_value\": \"<0.001\",\n        \"total_n\": 462,\n        \"cases\": 154,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"nested case-control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Finland\",\n        \"population\": \"Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants\",\n        \"gender\": \"Male\",\n        \"smoking_status\": \"smokers\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total serum calcium, mg/dL ... ≥ 10.30 ... 0.3\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"≥ 10.30 ... 0.3 [95% CI: 0.2, 0.7]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total serum calcium, mg/dL ... P trend/ P interaction < 0.001\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Total serum calcium, mg/dL: < 9.50 (Reference), ≥ 9.50 – 10.00, ≥ 10.00 – 10.30, ≥ 10.30\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"In this nested case-control study, whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis among male smokers participating in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The Finnish population is generally homogenous\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Discussion, Strengths and Limitations, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Total serum calcium was measured by colorimetric assay (BioVision, Mountain View, CA) at the Penn State University Core Endocrine Lab.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, Whole Blood Lead, Serum Calcium, and Serum Vitamin D Measurements, paragraph 2\"\n          },\n          \"gender\": {\n            \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [\n        {\n          \"effect_size\": 0.9,\n          \"effect_type\": \"OR\",\n          \"ci_lower\": 0.5,\n          \"ci_upper\": 1.5,\n          \"p_value\": 0.756,\n          \"total_n\": 462,\n          \"cases\": 154,\n          \"comparison_type\": \"categorical\",\n          \"design\": \"nested case-control\",\n          \"timing\": \"prospective\",\n          \"continent\": \"Europe\",\n          \"country\": \"Finland\",\n          \"population\": \"Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants\",\n          \"gender\": \"Male\",\n          \"smoking_status\": \"smokers\",\n          \"exposure_subtype\": \"dietary_component\",\n          \"exposure_measurement_type\": \"dietary_intake\",\n          \"needs_inversion\": false,\n          \"evidence\": {\n            \"sample_size\": {\n              \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 3\"\n            },\n            \"cases\": {\n              \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 3\"\n            },\n            \"effect_size\": {\n              \"excerpt\": \"Dietary Calcium (mg/d) ... 1668.8 to 3854.2 ... 0.9\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"confidence_interval\": {\n              \"excerpt\": \"1668.8 to 3854.2 ... 0.9 [95% CI: 0.5, 1.5]\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"p_value\": {\n              \"excerpt\": \"Dietary Calcium (mg/d) ... P trend 0.756\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"comparison\": {\n              \"excerpt\": \"Dietary Calcium (mg/d): 206.4 to 1019.3 (Reference), 1019.4 to 1313.4, 1313.5 to 1668.7, 1668.8 to 3854.2\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"design\": {\n              \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 3\"\n            },\n            \"timing\": {\n              \"excerpt\": \"dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 2\"\n            },\n            \"continent\": {\n              \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 1\"\n            },\n            \"ethnicity\": {\n              \"excerpt\": \"The Finnish population is generally homogenous\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Discussion, Strengths and Limitations, paragraph 1\"\n            },\n            \"exposure_measurement\": {\n              \"excerpt\": \"dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 2\"\n            },\n            \"gender\": {\n              \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 1\"\n            },\n            \"smoking_status\": {\n              \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 1\"\n            }\n          }\n        }\n      ],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"22086884|Vitamin D|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study evaluated serum 25-hydroxyvitamin D and dietary vitamin D intake in relation to incident renal cell carcinoma risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.2,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.6,\n        \"ci_upper\": 2.5,\n        \"p_value\": 0.475,\n        \"total_n\": 308,\n        \"cases\": 154,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"nested case-control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Finland\",\n        \"population\": \"Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants\",\n        \"gender\": \"Male\",\n        \"smoking_status\": \"smokers\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The concentration of 25-hydroxyvitamin D (which includes both 25(OH)D 2 and 25(OH)D 3 ) was measured by direct, competitive chemiluminescence immunoassay at Heartland Assays, Inc. (Ames, Iowa), as described previously ( 25 ), on cases and VDPP controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, Whole Blood Lead, Serum Calcium, and Serum Vitamin D Measurements, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Serum 25-OH vitamin D (ng/mL) ... 18.7 to 36.7 ... 1.2\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"18.7 to 36.7 ... 1.2 [95% CI: 0.6, 2.5]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Serum 25-OH vitamin D (ng/mL) ... P trend 0.475\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Serum 25-OH vitamin D (ng/mL): 0.2 to 8.5 (Reference), 8.6 to 13.0, 13.1 to 18.6, 18.7 to 36.7\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Table 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"In this nested case-control study, whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis among male smokers participating in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The Finnish population is generally homogenous\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Discussion, Strengths and Limitations, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The concentration of 25-hydroxyvitamin D (which includes both 25(OH)D 2 and 25(OH)D 3 ) was measured by direct, competitive chemiluminescence immunoassay at Heartland Assays, Inc. (Ames, Iowa)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, Whole Blood Lead, Serum Calcium, and Serum Vitamin D Measurements, paragraph 2\"\n          },\n          \"gender\": {\n            \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [\n        {\n          \"effect_size\": 1.3,\n          \"effect_type\": \"OR\",\n          \"ci_lower\": 0.7,\n          \"ci_upper\": 2.2,\n          \"p_value\": 0.507,\n          \"total_n\": 462,\n          \"cases\": 154,\n          \"comparison_type\": \"categorical\",\n          \"design\": \"nested case-control\",\n          \"timing\": \"prospective\",\n          \"continent\": \"Europe\",\n          \"country\": \"Finland\",\n          \"population\": \"Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants\",\n          \"gender\": \"Male\",\n          \"smoking_status\": \"smokers\",\n          \"exposure_subtype\": \"dietary_component\",\n          \"exposure_measurement_type\": \"dietary_intake\",\n          \"needs_inversion\": false,\n          \"evidence\": {\n            \"sample_size\": {\n              \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 3\"\n            },\n            \"cases\": {\n              \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 3\"\n            },\n            \"effect_size\": {\n              \"excerpt\": \"Dietary Vitamin D (ug/d) ... 7.2 to 17.6 ... 1.3\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"confidence_interval\": {\n              \"excerpt\": \"7.2 to 17.6 ... 1.3 [95% CI: 0.7, 2.2]\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"p_value\": {\n              \"excerpt\": \"Dietary Vitamin D (ug/d) ... P trend 0.507\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"comparison\": {\n              \"excerpt\": \"Dietary Vitamin D (ug/d): 0.7 to 3.4 (Reference), 3.5 to 4.8, 4.9 to 7.1, 7.2 to 17.6\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Table 1\"\n            },\n            \"design\": {\n              \"excerpt\": \"Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 3\"\n            },\n            \"timing\": {\n              \"excerpt\": \"dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 2\"\n            },\n            \"continent\": {\n              \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 1\"\n            },\n            \"ethnicity\": {\n              \"excerpt\": \"The Finnish population is generally homogenous\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Discussion, Strengths and Limitations, paragraph 1\"\n            },\n            \"exposure_measurement\": {\n              \"excerpt\": \"dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 2\"\n            },\n            \"gender\": {\n              \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 1\"\n            },\n            \"smoking_status\": {\n              \"excerpt\": \"ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.\",\n              \"source\": \"full_text\",\n              \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/\",\n              \"location\": \"Materials and Methods, paragraph 1\"\n            }\n          }\n        }\n      ],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "22086884|Calcium|Renal cell carcinoma",
+      "pmid": "22086884",
+      "pmcid": "PMC3601826",
+      "published_date": "2012-01-01",
+      "title": "Lead, calcium uptake, and related genetic variants in association with renal cell carcinoma risk in a cohort of male Finnish smokers.",
+      "authors": [
+        "Southard EB",
+        "Roff A",
+        "Fortugno T",
+        "Richie JP",
+        "Kaag M",
+        "Chinchilli VM",
+        "Virtamo J",
+        "Albanes D",
+        "Weinstein S",
+        "Wilson RT"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22086884/",
+      "exposure": "Calcium",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study assessed the association between total serum calcium concentration and incident renal cell carcinoma risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.3,
+        "effect_type": "OR",
+        "ci_lower": 0.2,
+        "ci_upper": 0.7,
+        "p_value": 0.001,
+        "total_n": 462,
+        "cases": 154,
+        "comparison_type": "categorical",
+        "design": "nested case-control",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "population": "Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants",
+        "gender": "Male",
+        "smoking_status": "smokers",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.3,
+        "reported_ci_lower": 0.2,
+        "reported_ci_upper": 0.7,
+        "reported_p_value": 0.001,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 3; total_n derived from reported group counts 154 + 308 = 462"
+          },
+          "cases": {
+            "excerpt": "Among 154 newly diagnosed cases and 308 matched controls, RCC was associated with higher whole blood lead (OR=2.0, 95% CI:1.0,3.9; quartile 4 (Q4) v.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 3"
+          },
+          "effect_size": {
+            "excerpt": "Results for whole blood lead were similar but the magnitude of association was more pronounced using only controls from the VDPP (Q4 v. Q1: OR=3.1, 95% CI: 1.1, 8.4), although the trend was not statistically significant (p-trend=0.300).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "0.3 0.2, 0.7",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "Higher total serum calcium (P trend =<0.001) was associated with reduced RCC risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "In this nested case-control study, whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis among male smokers participating in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Abstract, Methods"
+          },
+          "continent": {
+            "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "The Finnish population is generally homogenous",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Discussion, Strengths and Limitations, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Total serum calcium was measured by colorimetric assay (BioVision, Mountain View, CA) at the Penn State University Core Endocrine Lab.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, Whole Blood Lead, Serum Calcium, and Serum Vitamin D Measurements, paragraph 2"
+          },
+          "gender": {
+            "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 1"
+          }
+        },
+        "ethnicity": "White",
+        "ethnicity_basis": "Population imputation: stated White/European population -> White",
+        "ethnicity_supporting_text": "The Finnish population is generally homogenous"
+      },
+      "additional_extractions": [
+        {
+          "p_value_relation": null,
+          "effect_size": 0.9,
+          "effect_type": "OR",
+          "ci_lower": 0.5,
+          "ci_upper": 1.5,
+          "p_value": 0.756,
+          "total_n": 462,
+          "cases": 154,
+          "comparison_type": "categorical",
+          "design": "nested case-control",
+          "timing": "prospective",
+          "continent": "Europe",
+          "country": "Finland",
+          "population": "Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants",
+          "gender": "Male",
+          "smoking_status": "smokers",
+          "exposure_subtype": "dietary_component",
+          "exposure_measurement_type": "dietary_intake",
+          "needs_inversion": false,
+          "reported_effect_type": "OR",
+          "reported_effect_type_label": "OR",
+          "reported_effect_size": 0.9,
+          "reported_ci_lower": 0.5,
+          "reported_ci_upper": 1.5,
+          "reported_p_value": 0.756,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 3; total_n derived from reported group counts 154 + 308 = 462"
+            },
+            "cases": {
+              "excerpt": "Among 154 newly diagnosed cases and 308 matched controls, RCC was associated with higher whole blood lead (OR=2.0, 95% CI:1.0,3.9; quartile 4 (Q4) v.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 3"
+            },
+            "effect_size": {
+              "excerpt": "0.9 0.5, 1.5",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "confidence_interval": {
+              "excerpt": "0.9 0.5, 1.5",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "p_value": {
+              "excerpt": "0.756",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "comparison": {
+              "excerpt": "",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "design": {
+              "excerpt": "Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 3"
+            },
+            "timing": {
+              "excerpt": "dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 2"
+            },
+            "continent": {
+              "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 1"
+            },
+            "ethnicity": {
+              "excerpt": "The Finnish population is generally homogenous",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Discussion, Strengths and Limitations, paragraph 1"
+            },
+            "exposure_measurement": {
+              "excerpt": "dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 2"
+            },
+            "gender": {
+              "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 1"
+            },
+            "smoking_status": {
+              "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 1"
+            }
+          },
+          "ethnicity": "White",
+          "ethnicity_basis": "Population imputation: stated White/European population -> White",
+          "ethnicity_supporting_text": "The Finnish population is generally homogenous"
+        }
+      ],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43743,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "702e278e732601feb5e458648c3c207063f16d9dd3d614d1137f27f88a267a29",
+      "pmc_source_receipt_digest": "d1418ac58b854e9a41e58268a083549249bc91288ab350dd52930be606177550",
+      "pmc_source_raw_sha256": "08c4ae80d57a9a66074e0783155837978953de527224f0fd9f82764b95ab6b0d",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "d170f641f4fab60532785d3231d2ee4411abde94a4108977ee21bbbf0035c249"
+    },
+    {
+      "context_id": "22086884|Vitamin D|Renal cell carcinoma",
+      "pmid": "22086884",
+      "pmcid": "PMC3601826",
+      "published_date": "2012-01-01",
+      "title": "Lead, calcium uptake, and related genetic variants in association with renal cell carcinoma risk in a cohort of male Finnish smokers.",
+      "authors": [
+        "Southard EB",
+        "Roff A",
+        "Fortugno T",
+        "Richie JP",
+        "Kaag M",
+        "Chinchilli VM",
+        "Virtamo J",
+        "Albanes D",
+        "Weinstein S",
+        "Wilson RT"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22086884/",
+      "exposure": "Vitamin D",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study evaluated serum 25-hydroxyvitamin D and dietary vitamin D intake in relation to incident renal cell carcinoma risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 1.2,
+        "effect_type": "OR",
+        "ci_lower": 0.6,
+        "ci_upper": 2.5,
+        "p_value": 0.475,
+        "total_n": 308,
+        "cases": 154,
+        "comparison_type": "categorical",
+        "design": "nested case-control",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "population": "Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants",
+        "gender": "Male",
+        "smoking_status": "smokers",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 1.2,
+        "reported_ci_lower": 0.6,
+        "reported_ci_upper": 2.5,
+        "reported_p_value": 0.475,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, Whole Blood Lead, Serum Calcium, and Serum Vitamin D Measurements, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Among 154 newly diagnosed cases and 308 matched controls, RCC was associated with higher whole blood lead (OR=2.0, 95% CI:1.0,3.9; quartile 4 (Q4) v.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 3"
+          },
+          "effect_size": {
+            "excerpt": "1.2 0.6, 2.5",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 1"
+          },
+          "confidence_interval": {
+            "excerpt": "1.2 0.6, 2.5",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 1"
+          },
+          "p_value": {
+            "excerpt": "0.475",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "In this nested case-control study, whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis among male smokers participating in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "whole blood lead (Pb), total serum calcium, and serum 25-hydroxyvitamin D were measured in blood drawn prior to diagnosis",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Abstract, Methods"
+          },
+          "continent": {
+            "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "The Finnish population is generally homogenous",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Discussion, Strengths and Limitations, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "The concentration of 25-hydroxyvitamin D (which includes both 25(OH)D 2 and 25(OH)D 3 ) was measured by direct, competitive chemiluminescence immunoassay at Heartland Assays, Inc. (Ames, Iowa)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, Whole Blood Lead, Serum Calcium, and Serum Vitamin D Measurements, paragraph 2"
+          },
+          "gender": {
+            "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+            "location": "Materials and Methods, paragraph 1"
+          }
+        },
+        "ethnicity": "White",
+        "ethnicity_basis": "Population imputation: stated White/European population -> White",
+        "ethnicity_supporting_text": "The Finnish population is generally homogenous"
+      },
+      "additional_extractions": [
+        {
+          "p_value_relation": null,
+          "effect_size": 1.3,
+          "effect_type": "OR",
+          "ci_lower": 0.7,
+          "ci_upper": 2.2,
+          "p_value": 0.507,
+          "total_n": 462,
+          "cases": 154,
+          "comparison_type": "categorical",
+          "design": "nested case-control",
+          "timing": "prospective",
+          "continent": "Europe",
+          "country": "Finland",
+          "population": "Alpha-Tocopherol, Beta-Carotene (ATBC) Cancer Prevention Study participants",
+          "gender": "Male",
+          "smoking_status": "smokers",
+          "exposure_subtype": "dietary_component",
+          "exposure_measurement_type": "dietary_intake",
+          "needs_inversion": false,
+          "reported_effect_type": "OR",
+          "reported_effect_type_label": "OR",
+          "reported_effect_size": 1.3,
+          "reported_ci_lower": 0.7,
+          "reported_ci_upper": 2.2,
+          "reported_p_value": 0.507,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 3; total_n derived from reported group counts 154 + 308 = 462"
+            },
+            "cases": {
+              "excerpt": "Among 154 newly diagnosed cases and 308 matched controls, RCC was associated with higher whole blood lead (OR=2.0, 95% CI:1.0,3.9; quartile 4 (Q4) v.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 3"
+            },
+            "effect_size": {
+              "excerpt": "1.3 0.7, 2.2",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "confidence_interval": {
+              "excerpt": "1.3 0.7, 2.2",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "p_value": {
+              "excerpt": "0.507",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "comparison": {
+              "excerpt": "",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Table 1"
+            },
+            "design": {
+              "excerpt": "Our study utilized a nested case-control study of the ATBC cohort including 154 RCC cases and 308 controls.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 3"
+            },
+            "timing": {
+              "excerpt": "dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 2"
+            },
+            "continent": {
+              "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 1"
+            },
+            "ethnicity": {
+              "excerpt": "The Finnish population is generally homogenous",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Discussion, Strengths and Limitations, paragraph 1"
+            },
+            "exposure_measurement": {
+              "excerpt": "dietary intake was obtained by a validated 12-month food frequency questionnaire consisting of modified diet history including both portion size and frequency of consumption",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 2"
+            },
+            "gender": {
+              "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 1"
+            },
+            "smoking_status": {
+              "excerpt": "ATBC enrolled nearly 30,000 male smokers aged 50–69 years in southwestern Finland from 1985–1988.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3601826/",
+              "location": "Materials and Methods, paragraph 1"
+            }
+          },
+          "ethnicity": "White",
+          "ethnicity_basis": "Population imputation: stated White/European population -> White",
+          "ethnicity_supporting_text": "The Finnish population is generally homogenous"
+        }
+      ],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43743,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "702e278e732601feb5e458648c3c207063f16d9dd3d614d1137f27f88a267a29",
+      "pmc_source_receipt_digest": "d1418ac58b854e9a41e58268a083549249bc91288ab350dd52930be606177550",
+      "pmc_source_raw_sha256": "08c4ae80d57a9a66074e0783155837978953de527224f0fd9f82764b95ab6b0d",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "325749a8c6c3eb4490fb1cc8b3c38015f76b865dbf5f0acaa14ae8b9491417b7"
+    }
+  ]
+}

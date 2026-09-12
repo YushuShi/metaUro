@@ -1,0 +1,347 @@
+{
+  "schema_version": 1,
+  "receipt_id": "e73c5fd0ff760e11504061e906349b7c802d13a1a42d177c204594ca42bb1ede",
+  "requested_at": "2026-09-02T08:41:43.106562+08:00",
+  "received_at": "2026-09-02T08:42:09.803321+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "77ec22b85ed7c5616f98d75ea2664b4189381985c17caf240ca4eacb16f4d977",
+  "attempt": 2,
+  "context_ids": [
+    "22022057|Alcohol|Prostate cancer",
+    "22022057|Tea|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Tea": 1
+  },
+  "input_digest": "7cc065313367e7d7d5315294da3f59a3b183c5828cfea23598e2ead45fd282f7",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 6566,
+    "cached_input_tokens": 0,
+    "output_tokens": 4393,
+    "reasoning_tokens": 1566
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02139825",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "93de8649-2d3c-461e-867f-85d4fd0f19c8",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02139825"
+  },
+  "output_sha256": "0615d59c18fd5df8c7ac9748b358e4da0dc5216938d9b87734aedb2eff2009e8",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22022057|Alcohol|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Hospital-based case-control study investigating the association between alcohol consumption and prostate cancer risk in India.\",\n      \"extraction\": {\n        \"effect_size\": 0.8,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": null,\n        \"ci_confidence_level\": null,\n        \"total_n\": 290,\n        \"cases\": 123,\n        \"comparison_type\": \"exposed_vs_unexposed\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"India\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based patients attending the outpatient department at Tata Memorial Hospital in Mumbai, India\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001. There were 123 histologically confirmed prostate ‘cancer cases’ and 167 ‘normal controls (free of cancer)’ which were considered as ‘eligible entrants’ into the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"There were 123 histologically confirmed prostate ‘cancer cases’ and 167 ‘normal controls (free of cancer)’ which were considered as ‘eligible entrants’ into the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Chewers (OR = 0.4), smokers (OR = 0.9) and alcohol-drinker (OR = 0.8) did not show any excess significant risk compared to the non-habit group, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"RESULTS, paragraph 3\"\n          },\n          \"confidence_interval\": null,\n          \"p_value\": null,\n          \"comparison\": {\n            \"excerpt\": \"Chewers (OR = 0.4), smokers (OR = 0.9) and alcohol-drinker (OR = 0.8) did not show any excess significant risk compared to the non-habit group, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"RESULTS, paragraph 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The hospital being a comprehensive cancer centre for diagnosis and treatment attracts patients from all parts of India.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 2\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"The questionnaire contained socio-demographic information (age, sex, religion, residence), lifestyle habits such as smoking, chewing, alcohol drinking), dietary habits, comorbid conditions including history of diabetes, hypertension, tuberculosis, height and weight for calculation of BMI, family history of cancer, history of vasectomy and number of children.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 3\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"No\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"22022057|Tea|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Hospital-based case-control study assessing the association between tea drinking and incident prostate cancer risk in India.\",\n      \"extraction\": {\n        \"effect_size\": 0.7,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": null,\n        \"ci_confidence_level\": null,\n        \"total_n\": 290,\n        \"cases\": 123,\n        \"comparison_type\": \"exposed_vs_unexposed\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"India\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based patients attending the outpatient department at Tata Memorial Hospital in Mumbai, India\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001. There were 123 histologically confirmed prostate ‘cancer cases’ and 167 ‘normal controls (free of cancer)’ which were considered as ‘eligible entrants’ into the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"There were 123 histologically confirmed prostate ‘cancer cases’ and 167 ‘normal controls (free of cancer)’ which were considered as ‘eligible entrants’ into the study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Similarly neither tea (OR = 0.7) nor coffee drinking (OR = 1.3) showed any additional risk for prostate cancer compared to non-drinkers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"RESULTS, paragraph 4\"\n          },\n          \"confidence_interval\": null,\n          \"p_value\": null,\n          \"comparison\": {\n            \"excerpt\": \"Similarly neither tea (OR = 0.7) nor coffee drinking (OR = 1.3) showed any additional risk for prostate cancer compared to non-drinkers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"RESULTS, paragraph 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The hospital being a comprehensive cancer centre for diagnosis and treatment attracts patients from all parts of India.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 2\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Data on age, tobacco-habits, diabetes, hypertension, BMI, dietary factors, tea, coffee, family history of cancer and vasectomy were collected by the social investigators.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/\",\n            \"location\": \"MATERIALS AND METHODS, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"No\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "22022057|Alcohol|Prostate cancer",
+      "pmid": "22022057",
+      "pmcid": "PMC3193734",
+      "published_date": "2011-07-01",
+      "title": "Risk factors for prostate cancer: An hospital-based case-control study from Mumbai, India.",
+      "authors": [
+        "Ganesh B",
+        "Saoba SL",
+        "Sarade MN",
+        "Pinjari SV"
+      ],
+      "journal": "Indian journal of urology : IJU : journal of the Urological Society of India",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22022057/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study investigating the association between alcohol consumption and prostate cancer risk in India.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.8,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 290,
+        "cases": 123,
+        "comparison_type": "exposed_vs_unexposed",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "India",
+        "location": "Mumbai, India",
+        "ethnicity": "NA",
+        "population": "Hospital-based patients attending the outpatient department at Tata Memorial Hospital in Mumbai, India",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "During the period 1999-2001, 290 patients were interviewed. Of these, 123 histologically proven prostate cancer patients (ICD9: 1859) were included as ‘cases’ and 167 as ‘normal’ controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Of these, 123 histologically proven prostate cancer patients (ICD9: 1859) were included as ‘cases’ and 167 as ‘normal’ controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Chewers (OR = 0.4), smokers (OR = 0.9) and alcohol-drinker (OR = 0.8) did not show any excess significant risk compared to the non-habit group, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "RESULTS, paragraph 3"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Chewers (OR = 0.4), smokers (OR = 0.9) and alcohol-drinker (OR = 0.8) did not show any excess significant risk compared to the non-habit group, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "RESULTS, paragraph 3"
+          },
+          "design": {
+            "excerpt": "This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The hospital being a comprehensive cancer centre for diagnosis and treatment attracts patients from all parts of India.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 2"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "An hospital-based case-control study from Mumbai, India",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22022057/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "The questionnaire contained socio-demographic information (age, sex, religion, residence), lifestyle habits such as smoking, chewing, alcohol drinking), dietary habits, comorbid conditions including history of diabetes, hypertension, tuberculosis, height and weight for calculation of BMI, family history of cancer, history of vasectomy and number of children.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 3"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "No",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 19725,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "acd527da60361367a55b9c9e8672bacd5b2349ae47a01ccbbbf1f0b70dcafaed",
+      "pmc_source_receipt_digest": "1fffacc3b5bf09ca64f9aecd551e53f8edcf4c6867d625373b740d39cc9f1915",
+      "pmc_source_raw_sha256": "7c1c10c7e1e329de93ae51c6ff92be5aa8aa3bb0f81479a6ac94024a7477dbe7",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "1666a22a781b27f48ba1ddcd44fe1f4a7890ce824f2f2b2728408634197997e9"
+    },
+    {
+      "context_id": "22022057|Tea|Prostate cancer",
+      "pmid": "22022057",
+      "pmcid": "PMC3193734",
+      "published_date": "2011-07-01",
+      "title": "Risk factors for prostate cancer: An hospital-based case-control study from Mumbai, India.",
+      "authors": [
+        "Ganesh B",
+        "Saoba SL",
+        "Sarade MN",
+        "Pinjari SV"
+      ],
+      "journal": "Indian journal of urology : IJU : journal of the Urological Society of India",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22022057/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study assessing the association between tea drinking and incident prostate cancer risk in India.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.7,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 290,
+        "cases": 123,
+        "comparison_type": "exposed_vs_unexposed",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "India",
+        "location": "Mumbai, India",
+        "ethnicity": "NA",
+        "population": "Hospital-based patients attending the outpatient department at Tata Memorial Hospital in Mumbai, India",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "During the period 1999-2001, 290 patients were interviewed. Of these, 123 histologically proven prostate cancer patients (ICD9: 1859) were included as ‘cases’ and 167 as ‘normal’ controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Of these, 123 histologically proven prostate cancer patients (ICD9: 1859) were included as ‘cases’ and 167 as ‘normal’ controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Similarly neither tea (OR = 0.7) nor coffee drinking (OR = 1.3) showed any additional risk for prostate cancer compared to non-drinkers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "RESULTS, paragraph 4"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Similarly neither tea (OR = 0.7) nor coffee drinking (OR = 1.3) showed any additional risk for prostate cancer compared to non-drinkers.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "RESULTS, paragraph 4"
+          },
+          "design": {
+            "excerpt": "This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "This is a retrospective unmatched hospital-based case-control study conducted at Tata Memorial Hospital that included subjects registered between the years 1999 and 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The hospital being a comprehensive cancer centre for diagnosis and treatment attracts patients from all parts of India.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 2"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "An hospital-based case-control study from Mumbai, India",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22022057/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Data on age, tobacco-habits, diabetes, hypertension, BMI, dietary factors, tea, coffee, family history of cancer and vasectomy were collected by the social investigators.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3193734/",
+            "location": "MATERIALS AND METHODS, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "No",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 19725,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "acd527da60361367a55b9c9e8672bacd5b2349ae47a01ccbbbf1f0b70dcafaed",
+      "pmc_source_receipt_digest": "1fffacc3b5bf09ca64f9aecd551e53f8edcf4c6867d625373b740d39cc9f1915",
+      "pmc_source_raw_sha256": "7c1c10c7e1e329de93ae51c6ff92be5aa8aa3bb0f81479a6ac94024a7477dbe7",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "3b9df6629bc85ee1a641a8de339936ab392058d8dee79227fe4902c54f3c2740"
+    }
+  ]
+}

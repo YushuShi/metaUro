@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:21:59.016619-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9f7ae444751fdcfb5351c6a966aa2548b451fb0d554217e9a175aaf1a4c3ef81",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12145029",
+      "title": "Dairy products, calcium, and prostate cancer risk in the Physicians' Health Study.",
+      "abstract": "",
+      "mesh": [
+        "Calcitriol / biosynthesis, blood, physiology",
+        "Calcium, Dietary / adverse effects",
+        "Dairy Products / adverse effects",
+        "Humans",
+        "Male",
+        "Prostatic Neoplasms / blood, etiology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12145029",
+      "contexts": [
+        {
+          "context_id": "12145029|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NONPRIMARY"
+            }
+          }
+        },
+        {
+          "context_id": "12145029|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NONPRIMARY"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

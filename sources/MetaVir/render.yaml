@@ -1,0 +1,31 @@
+services:
+  - type: web
+    name: metavir
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    disk:
+      name: metavir-review-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: VERIFICATIONS_FILE
+        value: /var/data/verifications.json
+      - key: REPORTER_ID_SECRET
+        sync: false
+      - key: REPORTER_COOKIE_SECURE
+        value: "true"
+      - key: SMTP_HOST
+        value: smtp.gmail.com
+      - key: SMTP_PORT
+        value: "587"
+      - key: SMTP_USE_TLS
+        value: "true"
+      - key: SMTP_USE_SSL
+        value: "false"
+      - key: SMTP_USERNAME
+        sync: false
+      - key: SMTP_PASSWORD
+        sync: false
+      - key: SMTP_FROM
+        sync: false

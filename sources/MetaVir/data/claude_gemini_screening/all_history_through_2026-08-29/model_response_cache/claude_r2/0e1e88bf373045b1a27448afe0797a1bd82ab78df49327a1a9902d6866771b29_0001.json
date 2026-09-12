@@ -1,0 +1,642 @@
+{
+  "schema_version": 1,
+  "receipt_id": "85614559e35a01e0bbc634e4f148ce863ecbbeb0bda1873e2cea6ecde7ac3eda",
+  "requested_at": "2026-09-02T07:56:37.020302+08:00",
+  "received_at": "2026-09-02T07:57:53.644353+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "0e1e88bf373045b1a27448afe0797a1bd82ab78df49327a1a9902d6866771b29",
+  "attempt": 1,
+  "context_ids": [
+    "21857523|Antioxidants|Prostate cancer",
+    "21865407|Zinc|Prostate cancer",
+    "21865830|Omega-3 fatty acids|Prostate cancer",
+    "21870422|Melatonin|Prostate cancer",
+    "21872808|Vitamin D|Prostate cancer",
+    "21875277|Calcium|Prostate cancer",
+    "21887707|Calcium|Prostate cancer",
+    "21896650|Selenium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Calcium": 2,
+    "Melatonin": 1,
+    "Omega-3 fatty acids": 1,
+    "Selenium": 1,
+    "Vitamin D": 1,
+    "Zinc": 1
+  },
+  "input_digest": "8a7c4615add2e24da6b6abaf4c3d273ede46d384f970af735ce92654f4c756a4",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10061,
+    "cached_input_tokens": 0,
+    "output_tokens": 7789,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.24503000000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "515837f3-b311-4216-b2f7-ebfc66f8d54a",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.24503000000000003"
+  },
+  "output_sha256": "26bcc885f96fed7f66eae7fadb39527967778cd5c14a3ff65f887aa0b9bb0685",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"21857523|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a narrative review summarizing oxidative stress effects and antioxidant prevention potential rather than original human data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21865407|Zinc|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study exclusively examines zinc supplementation in MNU/testosterone-treated Sprague Dawley rats with no human participants.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21865830|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The record supplies only a title with no abstract or original results, indicating a commentary/editorial-type publication on omega-3 fatty acids and gene-environment interaction rather than a reported primary analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21870422|Melatonin|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a literature review of night shift work and cancer risk, and melatonin is only discussed mechanistically rather than as a measured nutritional exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21872808|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review/position argument about desirable serum 25-hydroxyvitamin D thresholds citing existing epidemiologic literature rather than reporting an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21875277|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original human case-control comparison of total and ionized serum calcium between prostate cancer patients and healthy controls with reported association p values.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.02,\"ci_confidence_level\":null,\"total_n\":80,\"cases\":40,\"comparison_type\":\"prostate cancer cases versus healthy controls (total serum calcium)\",\"design\":\"case_control\",\"timing\":\"serum calcium measured in prostate cancer patients compared with healthy controls\",\"continent\":\"Asia\",\"country\":\"India\",\"location\":\"North India\",\"ethnicity\":\"NA\",\"population\":\"North Indian men (40 prostate cancer patients and 40 healthy controls)\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a pilot study of 40 prostate cancer patients and compared with 40 healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"40 prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"an association between prostate cancer risk and total and ionized serum calcium levels(p=0.020 and p≤0.001 respectively)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"abstract\"},\"comparison\":{\"excerpt\":\"40 prostate cancer patients and compared with 40 healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We assayed total serum calcium and ionized serum calcium in a pilot study of 40 prostate cancer patients and compared with 40 healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"We assayed total serum calcium and ionized serum calcium in a pilot study of 40 prostate cancer patients\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"Impact of total and ionized serum calcium on prostate cancer risk in North Indian men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"North Indian men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"We assayed total serum calcium and ionized serum calcium\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21875277/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"No\",\"q7\":\"No\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"21887707|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting a population-wide dietary calcium intake estimate for prostate cancer risk (highest vs lowest quartile OR) in addition to the genotype interaction analysis.\",\"extraction\":{\"effect_size\":2.2,\"effect_type\":\"OR\",\"ci_lower\":1.4,\"ci_upper\":3.46,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":783,\"cases\":533,\"comparison_type\":\"highest versus lowest quartile of calcium intake\",\"design\":\"case_control\",\"timing\":\"dietary calcium intake assessed by food frequency questionnaire in cases and controls\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"California\",\"ethnicity\":\"African-American\",\"population\":\"African-American prostate cancer cases and controls in the California Collaborative Prostate Cancer Study\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"533 African-American prostate cancer cases (256 with advanced stage at diagnosis, 277 with localized stage) and 250 African-American controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"533 African-American prostate cancer cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"men in the highest quartile had an approximately twofold increased risk of localized and advanced prostate cancer (odds ratio [OR] = 2.20\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% confidence interval [CI] = 1.40, 3.46\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Compared with men in the lowest quartile of calcium intake, men in the highest quartile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We examined the effects of genotype, calcium intake, and diet-gene interactions by conditional logistic regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"calcium intake, assessed by a food frequency questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"who participated in the California Collaborative Prostate Cancer Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"533 African-American prostate cancer cases ... and 250 African-American controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"the California Collaborative Prostate Cancer Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"calcium intake, assessed by a food frequency questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21887707/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"21896650|Selenium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Randomized placebo-controlled trial of selenomethionine supplementation with prostate cancer occurrence over 3 years as the primary endpoint in cancer-free men with HGPIN.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.73,\"ci_confidence_level\":null,\"total_n\":423,\"cases\":null,\"comparison_type\":\"selenium 200 µg/d as selenomethionine versus placebo\",\"design\":\"rct\",\"timing\":\"3-year randomized supplementation with prostate cancer as endpoint\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men with high-grade prostatic intraepithelial neoplasia (HGPIN)\",\"exposure_subtype\":\"supplement\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Of 619 enrolled patients, 423 randomized men with HGPIN (212 selenium and 211 placebo) were eligible\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21896650/\",\"location\":\"abstract\"},\"cases\":null,\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"Three-year cancer rates were 36.6% (placebo) versus 35.6% (selenium; P = 0.73, adjusted)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21896650/\",\"location\":\"abstract\"},\"comparison\":{\"excerpt\":\"placebo-controlled trial of selenium 200 (μg/d) as selenomethionine in men with HGPIN\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21896650/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a double-blind, randomized, placebo-controlled trial\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21896650/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"The primary endpoint was progression of HGPIN to prostate cancer over a 3-year period\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21896650/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"This National Cancer Institute Intergroup trial was coordinated by the Southwest Oncology Group (SWOG)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21896650/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"selenium 200 (μg/d) as selenomethionine\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21896650/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"rct\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"Yes\",\"q12\":\"Yes\",\"q13\":\"Yes\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "21857523|Antioxidants|Prostate cancer",
+      "pmid": "21857523",
+      "pmcid": "",
+      "published_date": "2012-03-01",
+      "title": "The role of oxidative stress in prostate cancer.",
+      "authors": [
+        "Gupta-Elera G",
+        "Garrett AR",
+        "Robison RA",
+        "O'Neill KL"
+      ],
+      "journal": "European journal of cancer prevention : the official journal of the European Cancer Prevention Organisation (ECP)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21857523/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a narrative review summarizing oxidative stress effects and antioxidant prevention potential rather than original human data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21865407|Zinc|Prostate cancer",
+      "pmid": "21865407",
+      "pmcid": "",
+      "published_date": "2011-09-01",
+      "title": "Protective effect of zinc on N-methyl-N-nitrosourea and testosterone-induced prostatic intraepithelial neoplasia in the dorsolateral prostate of Sprague Dawley rats.",
+      "authors": [
+        "Banudevi S",
+        "Elumalai P",
+        "Sharmila G",
+        "Arunkumar R",
+        "Senthilkumar K",
+        "Arunakaran J"
+      ],
+      "journal": "Experimental biology and medicine (Maywood, N.J.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21865407/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study exclusively examines zinc supplementation in MNU/testosterone-treated Sprague Dawley rats with no human participants.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21865830|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "21865830",
+      "pmcid": "",
+      "published_date": "2011",
+      "title": "Dietary omega-3 fatty acids, genetic variation and risk of breast and prostate cancers.",
+      "authors": [
+        "Mauermann J",
+        "Pouliot F",
+        "Fradet V"
+      ],
+      "journal": "World review of nutrition and dietetics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21865830/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21870422|Melatonin|Prostate cancer",
+      "pmid": "21870422",
+      "pmcid": "",
+      "published_date": "2011",
+      "title": "[Night shift work and cancer risk: a literature review].",
+      "authors": [
+        "Brudnowska J",
+        "Pepłońska B"
+      ],
+      "journal": "Medycyna pracy",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21870422/",
+      "exposure": "Melatonin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a literature review of night shift work and cancer risk, and melatonin is only discussed mechanistically rather than as a measured nutritional exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21872808|Vitamin D|Prostate cancer",
+      "pmid": "21872808",
+      "pmcid": "",
+      "published_date": "2011-08-01",
+      "title": "Why the minimum desirable serum 25-hydroxyvitamin D level should be 75 nmol/L (30 ng/ml).",
+      "authors": [
+        "Vieth R"
+      ],
+      "journal": "Best practice & research. Clinical endocrinology & metabolism",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21872808/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review/position argument about desirable serum 25-hydroxyvitamin D thresholds citing existing epidemiologic literature rather than reporting an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21875277|Calcium|Prostate cancer",
+      "pmid": "21875277",
+      "pmcid": "",
+      "published_date": "2011",
+      "title": "Impact of total and ionized serum calcium on prostate cancer risk in North Indian men.",
+      "authors": [
+        "George GP",
+        "Ramesh V",
+        "Mittal RD"
+      ],
+      "journal": "Asian Pacific journal of cancer prevention : APJCP",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original human case-control comparison of total and ionized serum calcium between prostate cancer patients and healthy controls with reported association p values.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.02,
+        "ci_confidence_level": null,
+        "total_n": 80,
+        "cases": 40,
+        "comparison_type": "prostate cancer cases versus healthy controls (total serum calcium)",
+        "design": "case_control",
+        "timing": "serum calcium measured in prostate cancer patients compared with healthy controls",
+        "continent": "Asia",
+        "country": "India",
+        "location": "North India",
+        "ethnicity": "NA",
+        "population": "North Indian men (40 prostate cancer patients and 40 healthy controls)",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We assayed total serum calcium and ionized serum calcium in a pilot study of 40 prostate cancer patients and compared with 40 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "abstract; total_n derived from reported group counts 40 + 40 = 80"
+          },
+          "cases": {
+            "excerpt": "We assayed total serum calcium and ionized serum calcium in a pilot study of 40 prostate cancer patients and compared with 40 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "an association between prostate cancer risk and total and ionized serum calcium levels(p=0.020 and p≤0.001 respectively)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "abstract"
+          },
+          "comparison": {
+            "excerpt": "40 prostate cancer patients and compared with 40 healthy controls",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "We assayed total serum calcium and ionized serum calcium in a pilot study of 40 prostate cancer patients and compared with 40 healthy controls",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "We assayed total serum calcium and ionized serum calcium in a pilot study of 40 prostate cancer patients",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "Impact of total and ionized serum calcium on prostate cancer risk in North Indian men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "North Indian men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "We assayed total serum calcium and ionized serum calcium",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21875277/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "No",
+          "q7": "No",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 20.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21887707|Calcium|Prostate cancer",
+      "pmid": "21887707",
+      "pmcid": "PMC3234334",
+      "published_date": "2012-01-01",
+      "title": "Calcium intake and prostate cancer among African Americans: effect modification by vitamin D receptor calcium absorption genotype.",
+      "authors": [
+        "Rowland GW",
+        "Schwartz GG",
+        "John EM",
+        "Ingles SA"
+      ],
+      "journal": "Journal of bone and mineral research : the official journal of the American Society for Bone and Mineral Research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting a population-wide dietary calcium intake estimate for prostate cancer risk (highest vs lowest quartile OR) in addition to the genotype interaction analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 2.2,
+        "effect_type": "OR",
+        "ci_lower": 1.4,
+        "ci_upper": 3.46,
+        "p_value": 0.0006357102017564051,
+        "ci_confidence_level": 95,
+        "total_n": 783,
+        "cases": 533,
+        "comparison_type": "highest versus lowest quartile of calcium intake",
+        "design": "case_control",
+        "timing": "dietary calcium intake assessed by food frequency questionnaire in cases and controls",
+        "continent": "North America",
+        "country": "United States",
+        "location": "California",
+        "ethnicity": "NA",
+        "population": "African-American prostate cancer cases and controls in the California Collaborative Prostate Cancer Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We examined VDR Cdx2 genotype and calcium intake, assessed by a food frequency questionnaire, in 533 African-American prostate cancer cases (256 with advanced stage at diagnosis, 277 with localized stage) and 250 African-American controls who participated in the California Collaborative Prostate Cancer Study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract; total_n derived from reported group counts 533 + 250 = 783"
+          },
+          "cases": {
+            "excerpt": "We examined VDR Cdx2 genotype and calcium intake, assessed by a food frequency questionnaire, in 533 African-American prostate cancer cases (256 with advanced stage at diagnosis, 277 with localized stage) and 250 African-American controls who participated in the California Collaborative Prostate Cancer Study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Compared with men in the lowest quartile of calcium intake, men in the highest quartile had an approximately twofold increased risk of localized and advanced prostate cancer (odds ratio [OR] = 2.20, 95% confidence interval [CI] = 1.40, 3.46), with a significant dose-response.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Compared with men in the lowest quartile of calcium intake, men in the highest quartile had an approximately twofold increased risk of localized and advanced prostate cancer (odds ratio [OR] = 2.20, 95% confidence interval [CI] = 1.40, 3.46), with a significant dose-response.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Compared with men in the lowest quartile of calcium intake, men in the highest quartile",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "We examined the effects of genotype, calcium intake, and diet-gene interactions by conditional logistic regression",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "calcium intake, assessed by a food frequency questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "who participated in the California Collaborative Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "the California Collaborative Prostate Cancer Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "calcium intake, assessed by a food frequency questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21887707/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 2.2,
+            "effect_type": "OR",
+            "ci_lower": 1.4,
+            "ci_upper": 3.46,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21896650|Selenium|Prostate cancer",
+      "pmid": "21896650",
+      "pmcid": "PMC3208719",
+      "published_date": "2011-11-01",
+      "title": "Phase III trial of selenium to prevent prostate cancer in men with high-grade prostatic intraepithelial neoplasia: SWOG S9917.",
+      "authors": [
+        "Marshall JR",
+        "Tangen CM",
+        "Sakr WA",
+        "Wood DP",
+        "Berry DL",
+        "Klein EA",
+        "Lippman SM",
+        "Parnes HL",
+        "Alberts DS",
+        "Jarrard DF",
+        "Lee WR",
+        "Gaziano JM",
+        "Crawford ED",
+        "Ely B",
+        "Ray M",
+        "Davis W",
+        "Minasian LM",
+        "Thompson IM"
+      ],
+      "journal": "Cancer prevention research (Philadelphia, Pa.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Randomized placebo-controlled trial of selenomethionine supplementation with prostate cancer occurrence over 3 years as the primary endpoint in cancer-free men with HGPIN.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "cases"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.73,
+        "ci_confidence_level": null,
+        "total_n": 423,
+        "cases": null,
+        "comparison_type": "selenium 200 µg/d as selenomethionine versus placebo",
+        "design": "rct",
+        "timing": "3-year randomized supplementation with prostate cancer as endpoint",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men with high-grade prostatic intraepithelial neoplasia (HGPIN)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Of 619 enrolled patients, 423 randomized men with HGPIN (212 selenium and 211 placebo) were eligible (by central pathology review) and included in the primary analysis.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+            "location": "abstract"
+          },
+          "cases": null,
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Three-year cancer rates were 36.6% (placebo) versus 35.6% (selenium; P = 0.73, adjusted)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+            "location": "abstract"
+          },
+          "comparison": {
+            "excerpt": "placebo-controlled trial of selenium 200 (μg/d) as selenomethionine in men with HGPIN",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a double-blind, randomized, placebo-controlled trial",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "The primary endpoint was progression of HGPIN to prostate cancer over a 3-year period",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "This National Cancer Institute Intergroup trial was coordinated by the Southwest Oncology Group (SWOG)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "selenium 200 (μg/d) as selenomethionine",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21896650/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "0.73",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "rct",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "Yes",
+          "q13": "Yes"
+        },
+        "score_percent": 46.2,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

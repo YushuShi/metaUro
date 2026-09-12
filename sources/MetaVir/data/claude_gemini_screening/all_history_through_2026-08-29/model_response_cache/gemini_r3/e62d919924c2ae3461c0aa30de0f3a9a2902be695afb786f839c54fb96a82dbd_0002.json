@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ee786c4cde7c11ff41f71c9467620c70c4165288d8fc2ddab26c45a8ad34a5d1",
+  "requested_at": "2026-09-02T08:48:03.898440+08:00",
+  "received_at": "2026-09-02T08:48:33.152366+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "e62d919924c2ae3461c0aa30de0f3a9a2902be695afb786f839c54fb96a82dbd",
+  "attempt": 2,
+  "context_ids": [
+    "25527761|Calcium|Prostate cancer",
+    "25527761|Phosphorus|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Phosphorus": 1
+  },
+  "input_digest": "9871a3905ee45c277fad7547a0e7fa9b670a1e1bdba685fe49b16cd05b8ff9ef",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 26268,
+    "cached_input_tokens": 0,
+    "output_tokens": 5120,
+    "reasoning_tokens": 1847
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.038901000000000005",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "0d20c0fc-d3bc-4a2a-b783-a2f7d7e77202",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.038901000000000005"
+  },
+  "output_sha256": "c4d817597e5bc4b89788de4739a049fee9e0168eb3a669147d896670e7787b2b",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"25527761|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study assesses the association between calcium intake and incident prostate cancer risk over 24 years of follow-up.\",\n      \"extraction\": {\n        \"effect_size\": 1.24,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 1.02,\n        \"ci_upper\": 1.51,\n        \"p_value\": 0.02,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 47885,\n        \"cases\": 5861,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Health Professionals Follow-Up Study male health professionals aged 40–75 y\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"From 1986 to January 2010, we documented 5861 incident prostate cancer cases (excluding T1a cases) during 941,471 person-years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The highest intakes of total calcium were associated with higher risk of prostate cancer (adjusted relative risk, RR, for ≥2000 mg/d compared with 500–749 mg/d = 1.24; 95% CI: 1.02, 1.51; P value for linear trend across categories = 0.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 4\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"adjusted relative risk, RR, for ≥2000 mg/d compared with 500–749 mg/d = 1.24; 95% CI: 1.02, 1.51\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P value for linear trend across categories = 0.02\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 4\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"≥2000 mg/d compared with 500–749 mg/d\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The HPFS is approved by the Human Subjects Committee at the Harvard School of Public Health.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Semiquantitative FFQs with more than 130 food items were administered in 1986 and every 4 y thereafter, through 2006.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Assessment of dietary intakes, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"25527761|Phosphorus|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study assesses the association between phosphorus intake and incident prostate cancer risk over 24 years of follow-up.\",\n      \"extraction\": {\n        \"effect_size\": 1.12,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 1.03,\n        \"ci_upper\": 1.23,\n        \"p_value\": 0.003,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 47885,\n        \"cases\": 5861,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Health Professionals Follow-Up Study male health professionals aged 40–75 y\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"From 1986 to January 2010, we documented 5861 incident prostate cancer cases (excluding T1a cases) during 941,471 person-years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Higher quintiles of phosphorus intake were associated with greater risk of prostate cancer (adjusted RR for quintile 5 compared with quintile 1: 1.12; 95% CI: 1.03, 1.23; P -trend = 0.003) ( Table 4 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 6\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"adjusted RR for quintile 5 compared with quintile 1: 1.12; 95% CI: 1.03, 1.23\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 6\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P -trend = 0.003\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 6\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"quintile 5 compared with quintile 1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"RESULTS, paragraph 6\"\n          },\n          \"design\": {\n            \"excerpt\": \"After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The HPFS is approved by the Human Subjects Committee at the Harvard School of Public Health.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Study population, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Semiquantitative FFQs with more than 130 food items were administered in 1986 and every 4 y thereafter, through 2006.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/\",\n            \"location\": \"SUBJECTS AND METHODS, Assessment of dietary intakes, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "25527761|Calcium|Prostate cancer",
+      "pmid": "25527761",
+      "pmcid": "PMC4266887",
+      "published_date": "2015-01-01",
+      "title": "Calcium and phosphorus intake and prostate cancer risk: a 24-y follow-up study.",
+      "authors": [
+        "Wilson KM",
+        "Shui IM",
+        "Mucci LA",
+        "Giovannucci E"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25527761/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study assesses the association between calcium intake and incident prostate cancer risk over 24 years of follow-up.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.24,
+        "effect_type": "RR",
+        "ci_lower": 1.02,
+        "ci_upper": 1.51,
+        "p_value": 0.02,
+        "ci_confidence_level": 95,
+        "total_n": 47885,
+        "cases": 5861,
+        "comparison_type": "categorical",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "north_america",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Health Professionals Follow-Up Study male health professionals aged 40–75 y",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Design: In total, 47,885 men in the cohort reported diet data in 1986 and every 4 y thereafter. From 1986 to 2010, 5861 cases of prostate cancer were identified, including 789 lethal cancers (fatal or metastatic).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "From 1986 to January 2010, we documented 5861 incident prostate cancer cases (excluding T1a cases) during 941,471 person-years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "The highest intakes of total calcium were associated with higher risk of prostate cancer (adjusted relative risk, RR, for ≥2000 mg/d compared with 500–749 mg/d = 1.24; 95% CI: 1.02, 1.51; P value for linear trend across categories = 0.02) ( Table 2 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 4"
+          },
+          "confidence_interval": {
+            "excerpt": "The highest intakes of total calcium were associated with higher risk of prostate cancer (adjusted relative risk, RR, for ≥2000 mg/d compared with 500–749 mg/d = 1.24; 95% CI: 1.02, 1.51; P value for linear trend across categories = 0.02) ( Table 2 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 4"
+          },
+          "p_value": {
+            "excerpt": "P value for linear trend across categories = 0.02",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 4"
+          },
+          "comparison": {
+            "excerpt": "≥2000 mg/d compared with 500–749 mg/d",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 4"
+          },
+          "design": {
+            "excerpt": "After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The HPFS is approved by the Human Subjects Committee at the Harvard School of Public Health.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Semiquantitative FFQs with more than 130 food items were administered in 1986 and every 4 y thereafter, through 2006.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Assessment of dietary intakes, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 54785,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "a5b87ca62d7649a9231a85034f31f38f6e3c6ce2432c26f9017f42d4d338bccb",
+      "pmc_source_receipt_digest": "64911788e2cc0a4860b54aaddf3ab604d8098f1a7cfb119603a8a8367e02bc4a",
+      "pmc_source_raw_sha256": "80bb698395b183dbfe07d515fdfb6c450f25af04d4eea99cdf818ee3d749bed5",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "ddba655c762eeafda0a76d9486cca099c6301c7ccafc2813af7f4caf449cd1c8"
+    },
+    {
+      "context_id": "25527761|Phosphorus|Prostate cancer",
+      "pmid": "25527761",
+      "pmcid": "PMC4266887",
+      "published_date": "2015-01-01",
+      "title": "Calcium and phosphorus intake and prostate cancer risk: a 24-y follow-up study.",
+      "authors": [
+        "Wilson KM",
+        "Shui IM",
+        "Mucci LA",
+        "Giovannucci E"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25527761/",
+      "exposure": "Phosphorus",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study assesses the association between phosphorus intake and incident prostate cancer risk over 24 years of follow-up.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.12,
+        "effect_type": "RR",
+        "ci_lower": 1.03,
+        "ci_upper": 1.23,
+        "p_value": 0.003,
+        "ci_confidence_level": 95,
+        "total_n": 47885,
+        "cases": 5861,
+        "comparison_type": "quintiles",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "north_america",
+        "country": "United States",
+        "location": "Health Professionals Follow-Up Study",
+        "ethnicity": "NA",
+        "population": "Health Professionals Follow-Up Study male health professionals aged 40–75 y",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Design: In total, 47,885 men in the cohort reported diet data in 1986 and every 4 y thereafter. From 1986 to 2010, 5861 cases of prostate cancer were identified, including 789 lethal cancers (fatal or metastatic).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "From 1986 to January 2010, we documented 5861 incident prostate cancer cases (excluding T1a cases) during 941,471 person-years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Higher quintiles of phosphorus intake were associated with greater risk of prostate cancer (adjusted RR for quintile 5 compared with quintile 1: 1.12; 95% CI: 1.03, 1.23; P -trend = 0.003) ( Table 4 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 6"
+          },
+          "confidence_interval": {
+            "excerpt": "Higher quintiles of phosphorus intake were associated with greater risk of prostate cancer (adjusted RR for quintile 5 compared with quintile 1: 1.12; 95% CI: 1.03, 1.23; P -trend = 0.003) ( Table 4 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 6"
+          },
+          "p_value": {
+            "excerpt": "P -trend = 0.003",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 6"
+          },
+          "comparison": {
+            "excerpt": "quintile 5 compared with quintile 1",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "RESULTS, paragraph 6"
+          },
+          "design": {
+            "excerpt": "After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After excluding men who reported a diagnosis of cancer (except nonmelanoma skin cancer) before baseline, a total of 47,885 men were followed prospectively for cancer incidence, metastases, and mortality until 2010.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The HPFS is approved by the Human Subjects Committee at the Harvard School of Public Health.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in the Health Professionals Follow-Up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25527761/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Semiquantitative FFQs with more than 130 food items were administered in 1986 and every 4 y thereafter, through 2006.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4266887/",
+            "location": "SUBJECTS AND METHODS, Assessment of dietary intakes, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.003",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 54785,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "a5b87ca62d7649a9231a85034f31f38f6e3c6ce2432c26f9017f42d4d338bccb",
+      "pmc_source_receipt_digest": "64911788e2cc0a4860b54aaddf3ab604d8098f1a7cfb119603a8a8367e02bc4a",
+      "pmc_source_raw_sha256": "80bb698395b183dbfe07d515fdfb6c450f25af04d4eea99cdf818ee3d749bed5",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "39a5c2e6c93bcc00787a0b220d82f6916a19d638ca30c879dabcc4669d57d388"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:08.636760-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c620260057f30546a1f7325b723aedea12e67596927398eaea54accede38c3fd",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "23549401",
+      "title": "Dietary fat, fatty acids, and risk of prostate cancer in the NIH-AARP diet and health study.",
+      "abstract": "Observational studies report inconsistent associations of fat and fatty acids with prostate cancer. We investigated associations between dietary fats and fatty acids and risk of prostate cancer in the NIH-American Association of Retired Persons (AARP) Diet and Health Study. Diet was assessed at baseline with self-administered food-frequency questionnaires. Cases were determined by linkage with state cancer registries. HR and 95% confidence intervals (CI) were estimated with Cox proportional hazards models. Among 288,268 men with average follow-up of nine years, 23,281 prostate cancer cases (18,934 nonadvanced and 2,930 advanced including 725 fatal cases) were identified. Total fat and mono- and polyunsaturated fat intakes were not associated with incidence of prostate cancer. Saturated fat intake was related to increased risk of advanced prostate cancer (HRQuintile 5 vs. Qunitile 1 (Q1 vs. Q5), 1.21; 95% CI, 1.00-1.46; Ptrend = 0.03) and fatal prostate cancer (HRQ5 vs. Q1, 1.47; 95% CI, 1.01-2.15; Ptrend = 0.04). α-Linolenic acid (ALA) intake was related to increased risk of advanced prostate cancer (HRQ5 vs. Q1, 1.17; 95% CI, 1.04-1.31; Ptrend = 0.01). Eicosapentanoic acid (EPA) intake was related to decreased risk of fatal prostate cancer (HRQ5 vs. Q1, 0.82; 95% CI, 0.64-1.04; Ptrend = 0.02). Our study suggests that the associations of fat and fatty acids differ by prostate cancer severity. Saturated fat, ALA, and EPA intakes were related to the risk of advanced or fatal prostate cancer but not to nonadvanced prostate cancer. Identifying factors associated with advanced prostate cancer could reduce morbidity and mortality.",
+      "mesh": [
+        "Aged",
+        "Dietary Fats / adverse effects",
+        "Fatty Acids / adverse effects",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Prognosis",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "23549401",
+      "contexts": [
+        {
+          "context_id": "23549401|Eicosapentaenoic acid|Prostate cancer",
+          "exposure": "Eicosapentaenoic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-WRONG-OUTCOME"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:21:35.043694-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9cca18dd2dfa6635f58cc21c758a3b36de5d43413e52fefebc88fda41a5fc9bf",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11552706",
+      "title": "Case-control study of alcohol consumption and prostate cancer risk in Montréal, Canada.",
+      "abstract": "to estimate the risk of prostate cancer associated with alcohol consumption. Between 1979 and 1985 a population-based case-control study was carried out in Montréal, which accrued over 4000 men in total, including cases of prostate cancer, other cancers, and population controls. The present analysis was restricted to the subset, aged 45-70 years. who underwent face-to-face interviews, in which aspects of lifelong alcohol consumption were ascertained. The cancer control series was further restricted to men whose tumor types were considered unrelated to alcohol consumption. There were 399 incident cases of prostate cancer, 476 population controls, and 674 cancer controls. When using the population controls, risk increased with increasing cumulative consumption of alcohol. There was no decrease in risk after quitting. Risk was particularly high among those who reported having started before age 15 years (odds ratio = 3.8; 95% confidence interval: 1.6-9.3). The results obtained using the cancer controls were less pronounced, but still indicated an excess risk associated with alcohol consumption. Beer was the most prevalent type of alcohol consumed in this population and showed the strongest association with prostate cancer. The results are consistent with an increase in the risk of prostate cancer due to alcohol consumption.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Alcohol Drinking / adverse effects",
+        "Alcoholic Beverages / adverse effects",
+        "Case-Control Studies",
+        "Confidence Intervals",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / etiology",
+        "Quebec",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11552706",
+      "contexts": [
+        {
+          "context_id": "11552706|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "3.8",
+              "ci_lower": "1.6",
+              "ci_upper": "9.3",
+              "p_value": "0.0029457925510077607",
+              "comparison": "Alcohol initiation before age 15 years versus an unspecified reference group, using population controls"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1549",
+              "effect_measure_type": "OR",
+              "effect_size": "3.8",
+              "ci_lower": "1.6",
+              "ci_upper": "9.3",
+              "p_value": null,
+              "comparison": "Men who reported having started drinking before age 15 years versus others, using population controls"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

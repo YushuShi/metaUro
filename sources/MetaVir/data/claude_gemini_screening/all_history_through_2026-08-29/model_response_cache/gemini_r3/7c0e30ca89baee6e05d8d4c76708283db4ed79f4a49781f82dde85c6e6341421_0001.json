@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "0072667f56866008d57d39d1224f73d4c4e5cf4895b46f7255624421f55ce64a",
+  "requested_at": "2026-09-02T08:34:49.497581+08:00",
+  "received_at": "2026-09-02T08:35:13.058821+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "7c0e30ca89baee6e05d8d4c76708283db4ed79f4a49781f82dde85c6e6341421",
+  "attempt": 1,
+  "context_ids": [
+    "8297729|Alcohol|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1
+  },
+  "input_digest": "c6a22380fbb0b389e1201785cee01d163dcdb98cd332a38c42298a0aa2dde88c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15776,
+    "cached_input_tokens": 0,
+    "output_tokens": 2865,
+    "reasoning_tokens": 1316
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02257575",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "b5c44a88-6ab9-4ad9-a867-063d7f96429f",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02257575"
+  },
+  "output_sha256": "320ba94ea473c17ee0d48dbd9915b3f92506bbd12ebb85684128ccf41d8be2d0",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"8297729|Alcohol|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This cohort study provides incidence risk estimates for prostate cancer among male alcohol abusers compared to the general Danish population.\",\n      \"extraction\": {\n        \"effect_size\": 1.4,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 1.2,\n        \"ci_upper\": 1.8,\n        \"p_value\": \"<0.01\",\n        \"ci_confidence_level\": 95,\n        \"total_n\": 15214,\n        \"cases\": 91,\n        \"comparison_type\": \"alcohol abusers vs general population\",\n        \"design\": \"cohort\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Denmark\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Male alcohol abusers attending an outpatient clinic in Copenhagen\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After these linkages and exclusions the cohort consisted of 15,214 men and 3,093 women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Materials and methods, Follow-up for cancer morbidity, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Prostate 91 63.2 1.4 (1.2-1.8)**\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Table I\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The men developed prostatic cancer significantly more frequently than expected (RR = 1.4; 95% CI 1.2-1.8).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"(RR = 1.4; 95% CI 1.2-1.8)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Prostate 91 63.2 1.4 (1.2-1.8)**\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Table I\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Expected numbers of cancer cases were obtained by multiplying the age-, sex- and calendar period-specific person-years by the corresponding incidence rates of cancer in the Danish population.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Materials and methods, Analyses, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"Of 18,368 alcohol abusers who entered an outpatient clinic in Copenhagen during 1954-87, 18,307 were followed and their cancer incidence was compared with that of the total Danish population.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The period of risk of cancer was defined as being from the date of entering the outpatient clinic to emigration, death, or to 31 December 1987, whichever occurred first.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Materials and methods, Analyses, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Of 18,368 alcohol abusers who entered an outpatient clinic in Copenhagen during 1954-87, 18,307 were followed and their cancer incidence was compared with that of the total Danish population.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"On entry to the clinic a history of alcohol intake was obtained in a standardised fashion by an experienced social worker and a psychiatrist.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1968677/\",\n            \"location\": \"Materials and methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"No\",\n          \"q2\": \"Unclear\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

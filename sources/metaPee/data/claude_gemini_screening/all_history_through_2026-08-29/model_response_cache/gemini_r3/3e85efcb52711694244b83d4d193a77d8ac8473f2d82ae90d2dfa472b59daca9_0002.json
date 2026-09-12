@@ -1,0 +1,770 @@
+{
+  "schema_version": 1,
+  "receipt_id": "0274ea6250b7fd165546baea82dc420d9b88a885dde2a5c5632e331c78f03a13",
+  "requested_at": "2026-09-03T17:15:20.159961-04:00",
+  "received_at": "2026-09-03T17:15:56.283643-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "3e85efcb52711694244b83d4d193a77d8ac8473f2d82ae90d2dfa472b59daca9",
+  "dispatch_work_unit_key": "9c662992ebc814408c03eb76dca981d7cfc29a13de81edd8bb16cae5e3834169",
+  "attempt": 2,
+  "context_ids": [
+    "20043202|Vitamin B1|Bladder cancer",
+    "20043202|Vitamin B3|Bladder cancer",
+    "20043202|Vitamin D|Bladder cancer",
+    "20043202|Vitamin E|Bladder cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin B1": 1,
+    "Vitamin B3": 1,
+    "Vitamin D": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "13a518479992d76e38f3ce233a943e1ace41777075beea8682aa10c70fc4faa1",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 21772,
+    "cached_input_tokens": 0,
+    "output_tokens": 7989,
+    "reasoning_tokens": 1007
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.04628775",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "692127ad-36b1-490b-bcbd-dcab27888688",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.04628775"
+  },
+  "output_sha256": "f6230cbd1b12215abd902b037c2b90adcebf2a55a67066ef84fc628b06c39f24",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"20043202|Vitamin B1|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study reports adjusted odds ratios for the association between vitamin B1 (thiamin) intake and bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.63,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.35,\n        \"ci_upper\": 1.14,\n        \"p_value\": \"0.50\",\n        \"total_n\": 561,\n        \"cases\": 322,\n        \"comparison_type\": \"highest vs lowest quartile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Population-based case-control study in New Hampshire, USA\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"All smoking statuses\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"a total of 322 cases and 239 controls were included in the dietary analyses of this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Thiamin (mg) ... Q4 ... ORs (95% CI) 0.63 (0.35–1.14)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Thiamin (mg) ... Q4 ... ORs (95% CI) 0.63 (0.35–1.14)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Thiamin (mg) ... p Trend 0.50\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Daily intake Q1 ... Q4 ... Thiamin (mg) 0.21–1.32 ... ≥3.35\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"A population-based case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 2\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Bladder cancer cases consisted of approximately three times more men (74%) than women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"20043202|Vitamin B3|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study evaluates the association between vitamin B3 (niacin) total intake and bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.56,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.31,\n        \"ci_upper\": 1.02,\n        \"p_value\": \"0.23\",\n        \"total_n\": 561,\n        \"cases\": 322,\n        \"comparison_type\": \"highest vs lowest quartile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Population-based case-control study in New Hampshire, USA\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"All smoking statuses\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"a total of 322 cases and 239 controls were included in the dietary analyses of this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Niacin (B3) (mg) ... Q4 ... ORs (95% CI) 0.56 (0.31–1.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Niacin (B3) (mg) ... Q4 ... ORs (95% CI) 0.56 (0.31–1.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Niacin (B3) (mg) ... p Trend 0.23\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Daily intake Q1 ... Q4 ... Niacin (B3) (mg) 5.77–21.91 ... ≥46.51\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"A population-based case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 2\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Bladder cancer cases consisted of approximately three times more men (74%) than women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"20043202|Vitamin D|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study reports risk estimates for total vitamin D intake and incident bladder cancer.\",\n      \"extraction\": {\n        \"effect_size\": 0.58,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.31,\n        \"ci_upper\": 1.06,\n        \"p_value\": \"0.22\",\n        \"total_n\": 561,\n        \"cases\": 322,\n        \"comparison_type\": \"highest vs lowest quartile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Population-based case-control study in New Hampshire, USA\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"All smoking statuses\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"a total of 322 cases and 239 controls were included in the dietary analyses of this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Vitamin D (IU) ... Q4 ... ORs (95% CI) 0.58 (0.31–1.06)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Vitamin D (IU) ... Q4 ... ORs (95% CI) 0.58 (0.31–1.06)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Vitamin D (IU) ... p Trend 0.22\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Daily intake Q1 ... Q4 ... Vitamin D (IU) 15.53–171.74 ... ≥641.13\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"A population-based case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 2\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Bladder cancer cases consisted of approximately three times more men (74%) than women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"20043202|Vitamin E|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study reports odds ratios for the relationship between vitamin E intake and bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.66,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.36,\n        \"ci_upper\": 1.2,\n        \"p_value\": \"0.09\",\n        \"total_n\": 561,\n        \"cases\": 322,\n        \"comparison_type\": \"highest vs lowest quartile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Population-based case-control study in New Hampshire, USA\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"All smoking statuses\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"a total of 322 cases and 239 controls were included in the dietary analyses of this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The ORs (95% CI) for highest quartile versus lowest quartile for total intake of vitamin E was 0.66 (0.36–1.20; p trend = 0.09)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"The ORs (95% CI) for highest quartile versus lowest quartile for total intake of vitamin E was 0.66 (0.36–1.20; p trend = 0.09)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"The ORs (95% CI) for highest quartile versus lowest quartile for total intake of vitamin E was 0.66 (0.36–1.20; p trend = 0.09)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The ORs (95% CI) for highest quartile versus lowest quartile for total intake of vitamin E\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"A population-based case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A case–control study was conducted in New Hampshire, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Methods, Dietary data, paragraph 2\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Bladder cancer cases consisted of approximately three times more men (74%) than women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/\",\n            \"location\": \"Results, Study characteristics, paragraph 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "20043202|Vitamin B1|Bladder cancer",
+      "pmid": "20043202",
+      "pmcid": "PMC2839516",
+      "published_date": "2010-04-01",
+      "title": "Minerals and vitamins and the risk of bladder cancer: results from the New Hampshire Study.",
+      "authors": [
+        "Brinkman MT",
+        "Karagas MR",
+        "Zens MS",
+        "Schned A",
+        "Reulen RC",
+        "Zeegers MP"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20043202/",
+      "exposure": "Vitamin B1",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study reports adjusted odds ratios for the association between vitamin B1 (thiamin) intake and bladder cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.63,
+        "effect_type": "OR",
+        "ci_lower": 0.35,
+        "ci_upper": 1.14,
+        "p_value": 0.5,
+        "total_n": 561,
+        "cases": 322,
+        "comparison_type": "highest vs lowest quartile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Population-based case-control study in New Hampshire, USA",
+        "gender": "Mixed",
+        "smoking_status": "All smoking statuses",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.63,
+        "reported_ci_lower": 0.35,
+        "reported_ci_upper": 1.14,
+        "reported_p_value": 0.5,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Interviews which included dietary assessment took place between 2000 and 2003 for both cases and controls (for 95% of subjects). As data were unavailable for 150 cases and 455 controls; a total of 322 cases and 239 controls were included in the dietary analyses of this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 322 + 239 = 561"
+          },
+          "cases": {
+            "excerpt": "Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Table 2 Calculated odds ratios (95%) for total intake of vitamins and bladder cancer Daily intake Q1 Q2 Q3 Q4 p Trend Alpha-carotene (μg) 3.4–404 404.1–647.13 647.14–1104.70 ≥1104.71 0.26 Cases/controls 76/59 89/60 77/61 77/59 ORs (95% CI) 1.00 1.33 (0.77–2.30) 1.19 (0.68–2.11) 1.48 (0.83–2.64) Beta-carotene (μg) 292.29–2294.21 2294.22–3773.80 3773.81–5517.20 ≥5517.21 0.90 Cases/controls 94/59 78/61 65/60 79/59 ORs (95% CI) 1.00 0.87 (0.50–1.50) 0.80 (0.46–1.39) 0.99 (0.56–1.72) Beta-cryptoxanthin (μg) 0–52.60 52.61–125.77 125.78–215.71 ≥215.72 0.65 Cases/controls 109/59 76/61 59/58 78/61 ORs (95% CI) 1.00 0.69 (0.40–1.20) 0.66 (0.37–1.16) 0.87 (0.50–1.53) Lycopene (μg) 0–3092.68 3092.69–4827 4828–7746.43 ≥7746.44 0.74 Cases/controls 89/59 73/60 72/60 88/60 ORs (95% CI) 1.00 0.96 (0.55–1.66) 0.70 (0.39–1.24) 0.98 (0.55–1.73) Lutein (μg) 0.93–1261.48 1261.49–1942.44 1942.45–3134.85 ≥3134.86 0.66 Cases/controls 116/58 61/61 74/60 70/59 ORs (95% CI) 1.00 0.52 (0.30–0.90) 0.76 (0.45–1.31) 0.80 (0.46–1.40) Total carotenoids (μg) 398.26–8879.22 8879.23–12900.60 12900.61–17932.72 ≥17932.73 0.47 Cases/controls 107/59 73/60 52/60 87/60 ORs (95% CI) 1.00 0.70 (0.41–1.21) 0.49 (0.27–0.86) 0.90 (0.51–1.59) Vitamin D (IU) 15.53–171.74 171.75–388.90 388.91–641.12 ≥641.13 0.22 Cases/controls 89/59 72/60 100/60 61/60 ORs (95% CI) 1.00 0.78 (0.44–1.38) 1.03 (0.60–1.76) 0.58 (0.31–1.06) Vitamin E (mg) 1.13–7.26 7.27–20.94 20.95–193.35 ≥193.36 0.09 Cases/controls 77/57 95/58 81/57 54/57 ORs (95% CI) 1.00 1.19 (0.68–2.08) 0.88 (0.49–1.56) 0.66 (0.36–1.20) Thiamin (mg) 0.21–1.32 1.33–2.11 2.12–3.34 ≥3.35 0.50 Cases/controls 91/58 63/59 99/63 67/58 ORs (95% CI) 1.00 0.53 (0.29–0.96) 0.97 (0.56–1.68) 0.63 (0.35–1.14) Riboflavin (mg) 0.25–1.63 1.64–2.75 2.76–4.04 ≥4.05 0.61 Cases/controls 85/60 74/59 91/61 71/59 ORs (95% CI) 1.00 0.73 (0.41–1.29) 1.02 (0.58–1.77) 0.75 (0.42–1.34) Niacin (B3) (mg) 5.77–21.91 21.92–33.07 33.08–46.50 ≥46.51 0.23 Cases/controls 90/58 68/60 93/60 67/60 ORs (95% CI) 1.00 0.59 (0.33–1.06) 0.94 (0.54–1.64) 0.56 (0.31–1.02) Vitamin B6 (mg) 0.32–1.94 1.95–3.28 3.29–4.88 ≥4.89 0.41 Cases/controls 93/59 75/59 77/61 75/59 ORs (95% CI) 1.00 0.67 (0.38–1.18) 0.82 (0.47–1.44) 0.72 (0.41–1.27) Vitamin B12 (μg) 0.75–5.51 5.52–10.82 10.83–18.0 ≥18.1 0.75 Cases/controls 79/60 89/60 65/60 87/59 ORs (95% CI) 1.00 1.30 (0.75–2.26) 0.84 (0.47–1.51) 1.05 (0.60–1.84) Folate (μg) 48.41–339.03 339.04–579.10 579.11–819.50 ≥819.51 0.43 Cases/controls 82/59 82/61 85/59 71/60 ORs (95% CI) 1.00 0.83 (0.47–1.46) 0.91 (0.53–1.56) 0.74 (0.40–1.35) Vitamin C (mg) 14.61–113.03 113.04–190.25 190.26–366.10 ≥366.11 0.42 Cases/controls 98/58 78/60 80/61 62/59 ORs (95% CI) 1.00 0.83 (0.48–1.43) 0.84 (0.48–1.45) 0.78 (0.45–1.38) OR odds ratios, CI confidence intervals, adjusted for age, sex, smoking status: current versus non-current smoker, pack years smoked (categories: 0–10, 10–20, 20–30, 30–40, 40–50, 50+), and total energy intake (quartiles kcal/day)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "lowest) and smoking characteristics and age Carotenoids Vitamin D Vitamin E Thiamin Niacin <12900.6 μg ≥12900.6 μg ORs (95% CI) <388.91 IU ≥388.91 IU ORs (95% CI) <20.7 (mg) ≥20.7 (mg) ORs (95% CI) <2.12 (mg) ≥2.12 (mg) ORs (95% CI) <33.08 (mg) ≥33.08 (mg) ORs (95% CI) Cases/controls Cases/controls Cases/controls Cases/controls Cases/controls Cases/controls Cases/controls Cases/controls Cases/controls Cases/controls Smoking status Never* 28/43 28/52 0.66 (0.32–1.35) 29/54 27/41 1.04 (0.50–2.15) 33/51 20/42 0.64 (0.31–1.33) 23/50 33/44 1.35 (0.66–2.77) 27/53 29/41 1.10 (0.54–2.26) Ever* 155/76 111/68 0.75 (0.48–1.17) 132/65 134/79 0.82 (0.54–1.24) 140/64 117/73 0.73 (0.48–1.13) 134/70 132/74 0.91 (0.59–1.39) 135/66 131/77 0.80 (0.52–1.23) p Interaction 0.98 0.41 0.87 0.27 0.26 Cigarettes/day <20 25/30 26/23 1.65 (0.68–3.99) 19/26 32/27 1.58 (0.66–3.79) 20/27 31/23 1.57 (0.63–3.88) 19/28 32/25 1.85 (0.78–4.41) 20/27 31/25 1.64 (0.68–3.95) ≥20 127/44 84/44 0.62 (0.36–1.09) 111/38 100/50 0.73 (0.43–1.23) 118/36 85/48 0.58 (0.34–0.99) 114/41 97/47 0.78 (0.46–1.34) 114/38 97/50 0.66 (0.39–1.14) p Interaction 0.08 0.14 0.03 0.10 0.08 Years smoking <27 51/38 45/34 1.19 (0.58–2.47) 49/32 47/40 0.78 (0.40–1.52) 49/36 45/32 1.08 (0.54–2.16) 46/30 50/42 0.71 (0.35–1.43) 47/30 49/41 0.70 (0.35–1.41) ≥27 101/37 64/33 0.62 (0.33–1.16) 81/32 84/38 1.00 (0.55–1.81) 89/27 70/40 0.61 (0.33–1.12) 87/39 78/31 1.41 (0.76–2.59) 87/35 78/35 1.02 (0.56–1.85) p Interaction 0.20 0.58 0.24 0.19 0.51 Age <63 73/59 69/54 0.91 (0.49–1.68) 76/69 66/44 1.55 (0.88–2.74) 79/61 56/47 1.12 (0.62–2.01) 69/65 73/47 2.02 (1.11–3.68) 69/63 73/48 1.59 (0.88–2.87) ≥63 110/60 70/66 0.59 (0.35–0.99) 85/50 95/76 0.65 (0.40–1.08) 94/54 81/68 0.61 (0.37–1.02) 88/55 92/71 0.75 (0.45–1.24) 93/56 87/70 0.64 (0.38–1.07) p Interaction 0.18 0.04 0.18 0.02 0.03 IU international units, mg milligrams, low intakes were categorized below median and high intakes above medians Adjusted for age, sex, smoking status (current/non-current), number of cigarettes per day, and years of smoking * Adjusted for age, sex, and kcal only",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "We used previously reported arbitrary values for these factors: 0.05 (alpha-level), 0.25 (prior probability), and 0.5 (false-positive report probability) [ 46 , 47 ]. All reported p values were two-sided and values less than or equal to 0.05 were considered to be statistically significant.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "A population-based case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "A case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 2"
+          },
+          "gender": {
+            "excerpt": "Bladder cancer cases consisted of approximately three times more men (74%) than women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 48642,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c91dbb04e216dddafa2e2edef574601822380acdb13c8b178144af7c84222794",
+      "pmc_source_receipt_digest": "3aff45adcef45033d1ff41625c5913be0898d0410d6f1197bf6c313f8ba42cb8",
+      "pmc_source_raw_sha256": "d844b903db70b050dac71aa23362b80863435432f75c100d0129415ca906c473",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "12d4ec70bfbf5b0db8c6ea5262f73bba7a1200f2bf058b41c86ef881b9ea7b2d"
+    },
+    {
+      "context_id": "20043202|Vitamin B3|Bladder cancer",
+      "pmid": "20043202",
+      "pmcid": "PMC2839516",
+      "published_date": "2010-04-01",
+      "title": "Minerals and vitamins and the risk of bladder cancer: results from the New Hampshire Study.",
+      "authors": [
+        "Brinkman MT",
+        "Karagas MR",
+        "Zens MS",
+        "Schned A",
+        "Reulen RC",
+        "Zeegers MP"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20043202/",
+      "exposure": "Vitamin B3",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study evaluates the association between vitamin B3 (niacin) total intake and bladder cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.56,
+        "effect_type": "OR",
+        "ci_lower": 0.31,
+        "ci_upper": 1.02,
+        "p_value": 0.23,
+        "total_n": 561,
+        "cases": 322,
+        "comparison_type": "highest vs lowest quartile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Population-based case-control study in New Hampshire, USA",
+        "gender": "Mixed",
+        "smoking_status": "All smoking statuses",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.56,
+        "reported_ci_lower": 0.31,
+        "reported_ci_upper": 1.02,
+        "reported_p_value": 0.23,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Interviews which included dietary assessment took place between 2000 and 2003 for both cases and controls (for 95% of subjects). As data were unavailable for 150 cases and 455 controls; a total of 322 cases and 239 controls were included in the dietary analyses of this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 322 + 239 = 561"
+          },
+          "cases": {
+            "excerpt": "Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "lowest quartile OR: 0.56; 95% CI: 0.31–1.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "lowest quartile OR: 0.56; 95% CI: 0.31–1.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Table 2 Calculated odds ratios (95%) for total intake of vitamins and bladder cancer Daily intake Q1 Q2 Q3 Q4 p Trend Alpha-carotene (μg) 3.4–404 404.1–647.13 647.14–1104.70 ≥1104.71 0.26 Cases/controls 76/59 89/60 77/61 77/59 ORs (95% CI) 1.00 1.33 (0.77–2.30) 1.19 (0.68–2.11) 1.48 (0.83–2.64) Beta-carotene (μg) 292.29–2294.21 2294.22–3773.80 3773.81–5517.20 ≥5517.21 0.90 Cases/controls 94/59 78/61 65/60 79/59 ORs (95% CI) 1.00 0.87 (0.50–1.50) 0.80 (0.46–1.39) 0.99 (0.56–1.72) Beta-cryptoxanthin (μg) 0–52.60 52.61–125.77 125.78–215.71 ≥215.72 0.65 Cases/controls 109/59 76/61 59/58 78/61 ORs (95% CI) 1.00 0.69 (0.40–1.20) 0.66 (0.37–1.16) 0.87 (0.50–1.53) Lycopene (μg) 0–3092.68 3092.69–4827 4828–7746.43 ≥7746.44 0.74 Cases/controls 89/59 73/60 72/60 88/60 ORs (95% CI) 1.00 0.96 (0.55–1.66) 0.70 (0.39–1.24) 0.98 (0.55–1.73) Lutein (μg) 0.93–1261.48 1261.49–1942.44 1942.45–3134.85 ≥3134.86 0.66 Cases/controls 116/58 61/61 74/60 70/59 ORs (95% CI) 1.00 0.52 (0.30–0.90) 0.76 (0.45–1.31) 0.80 (0.46–1.40) Total carotenoids (μg) 398.26–8879.22 8879.23–12900.60 12900.61–17932.72 ≥17932.73 0.47 Cases/controls 107/59 73/60 52/60 87/60 ORs (95% CI) 1.00 0.70 (0.41–1.21) 0.49 (0.27–0.86) 0.90 (0.51–1.59) Vitamin D (IU) 15.53–171.74 171.75–388.90 388.91–641.12 ≥641.13 0.22 Cases/controls 89/59 72/60 100/60 61/60 ORs (95% CI) 1.00 0.78 (0.44–1.38) 1.03 (0.60–1.76) 0.58 (0.31–1.06) Vitamin E (mg) 1.13–7.26 7.27–20.94 20.95–193.35 ≥193.36 0.09 Cases/controls 77/57 95/58 81/57 54/57 ORs (95% CI) 1.00 1.19 (0.68–2.08) 0.88 (0.49–1.56) 0.66 (0.36–1.20) Thiamin (mg) 0.21–1.32 1.33–2.11 2.12–3.34 ≥3.35 0.50 Cases/controls 91/58 63/59 99/63 67/58 ORs (95% CI) 1.00 0.53 (0.29–0.96) 0.97 (0.56–1.68) 0.63 (0.35–1.14) Riboflavin (mg) 0.25–1.63 1.64–2.75 2.76–4.04 ≥4.05 0.61 Cases/controls 85/60 74/59 91/61 71/59 ORs (95% CI) 1.00 0.73 (0.41–1.29) 1.02 (0.58–1.77) 0.75 (0.42–1.34) Niacin (B3) (mg) 5.77–21.91 21.92–33.07 33.08–46.50 ≥46.51 0.23 Cases/controls 90/58 68/60 93/60 67/60 ORs (95% CI) 1.00 0.59 (0.33–1.06) 0.94 (0.54–1.64) 0.56 (0.31–1.02) Vitamin B6 (mg) 0.32–1.94 1.95–3.28 3.29–4.88 ≥4.89 0.41 Cases/controls 93/59 75/59 77/61 75/59 ORs (95% CI) 1.00 0.67 (0.38–1.18) 0.82 (0.47–1.44) 0.72 (0.41–1.27) Vitamin B12 (μg) 0.75–5.51 5.52–10.82 10.83–18.0 ≥18.1 0.75 Cases/controls 79/60 89/60 65/60 87/59 ORs (95% CI) 1.00 1.30 (0.75–2.26) 0.84 (0.47–1.51) 1.05 (0.60–1.84) Folate (μg) 48.41–339.03 339.04–579.10 579.11–819.50 ≥819.51 0.43 Cases/controls 82/59 82/61 85/59 71/60 ORs (95% CI) 1.00 0.83 (0.47–1.46) 0.91 (0.53–1.56) 0.74 (0.40–1.35) Vitamin C (mg) 14.61–113.03 113.04–190.25 190.26–366.10 ≥366.11 0.42 Cases/controls 98/58 78/60 80/61 62/59 ORs (95% CI) 1.00 0.83 (0.48–1.43) 0.84 (0.48–1.45) 0.78 (0.45–1.38) OR odds ratios, CI confidence intervals, adjusted for age, sex, smoking status: current versus non-current smoker, pack years smoked (categories: 0–10, 10–20, 20–30, 30–40, 40–50, 50+), and total energy intake (quartiles kcal/day)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "A population-based case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "A case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 2"
+          },
+          "gender": {
+            "excerpt": "Bladder cancer cases consisted of approximately three times more men (74%) than women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          }
+        },
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 48642,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c91dbb04e216dddafa2e2edef574601822380acdb13c8b178144af7c84222794",
+      "pmc_source_receipt_digest": "3aff45adcef45033d1ff41625c5913be0898d0410d6f1197bf6c313f8ba42cb8",
+      "pmc_source_raw_sha256": "d844b903db70b050dac71aa23362b80863435432f75c100d0129415ca906c473",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "d0e152903a205a470b72c107fca27485dc058988bcbd1a999801751e79474702"
+    },
+    {
+      "context_id": "20043202|Vitamin D|Bladder cancer",
+      "pmid": "20043202",
+      "pmcid": "PMC2839516",
+      "published_date": "2010-04-01",
+      "title": "Minerals and vitamins and the risk of bladder cancer: results from the New Hampshire Study.",
+      "authors": [
+        "Brinkman MT",
+        "Karagas MR",
+        "Zens MS",
+        "Schned A",
+        "Reulen RC",
+        "Zeegers MP"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20043202/",
+      "exposure": "Vitamin D",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study reports risk estimates for total vitamin D intake and incident bladder cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.58,
+        "effect_type": "OR",
+        "ci_lower": 0.31,
+        "ci_upper": 1.06,
+        "p_value": 0.22,
+        "total_n": 561,
+        "cases": 322,
+        "comparison_type": "highest vs lowest quartile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Population-based case-control study in New Hampshire, USA",
+        "gender": "Mixed",
+        "smoking_status": "All smoking statuses",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.58,
+        "reported_ci_lower": 0.31,
+        "reported_ci_upper": 1.06,
+        "reported_p_value": 0.22,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Interviews which included dietary assessment took place between 2000 and 2003 for both cases and controls (for 95% of subjects). As data were unavailable for 150 cases and 455 controls; a total of 322 cases and 239 controls were included in the dietary analyses of this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 322 + 239 = 561"
+          },
+          "cases": {
+            "excerpt": "Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Although the point estimate for vitamin D was well below one, this also did not reach statistical significance (OR: 0.58; 95% CI: 0.31–1.06; p trend = 0.22).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Although the point estimate for vitamin D was well below one, this also did not reach statistical significance (OR: 0.58; 95% CI: 0.31–1.06; p trend = 0.22).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Although the point estimate for vitamin D was well below one, this also did not reach statistical significance (OR: 0.58; 95% CI: 0.31–1.06; p trend = 0.22).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "A population-based case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "A case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 2"
+          },
+          "gender": {
+            "excerpt": "Bladder cancer cases consisted of approximately three times more men (74%) than women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 48642,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c91dbb04e216dddafa2e2edef574601822380acdb13c8b178144af7c84222794",
+      "pmc_source_receipt_digest": "3aff45adcef45033d1ff41625c5913be0898d0410d6f1197bf6c313f8ba42cb8",
+      "pmc_source_raw_sha256": "d844b903db70b050dac71aa23362b80863435432f75c100d0129415ca906c473",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "a4bf915a94a3de0c01e8ea4098ad90d626b73ece6cce2f5b902be1ed27fbf757"
+    },
+    {
+      "context_id": "20043202|Vitamin E|Bladder cancer",
+      "pmid": "20043202",
+      "pmcid": "PMC2839516",
+      "published_date": "2010-04-01",
+      "title": "Minerals and vitamins and the risk of bladder cancer: results from the New Hampshire Study.",
+      "authors": [
+        "Brinkman MT",
+        "Karagas MR",
+        "Zens MS",
+        "Schned A",
+        "Reulen RC",
+        "Zeegers MP"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20043202/",
+      "exposure": "Vitamin E",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study reports odds ratios for the relationship between vitamin E intake and bladder cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.66,
+        "effect_type": "OR",
+        "ci_lower": 0.36,
+        "ci_upper": 1.2,
+        "p_value": 0.09,
+        "total_n": 561,
+        "cases": 322,
+        "comparison_type": "highest vs lowest quartile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Population-based case-control study in New Hampshire, USA",
+        "gender": "Mixed",
+        "smoking_status": "All smoking statuses",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.66,
+        "reported_ci_lower": 0.36,
+        "reported_ci_upper": 1.2,
+        "reported_p_value": 0.09,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Interviews which included dietary assessment took place between 2000 and 2003 for both cases and controls (for 95% of subjects). As data were unavailable for 150 cases and 455 controls; a total of 322 cases and 239 controls were included in the dietary analyses of this study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 322 + 239 = 561"
+          },
+          "cases": {
+            "excerpt": "Dietary data were collected from 322 cases and 239 controls using a 121-item food frequency questionnaire.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "We observed a borderline statistically significant inverse association between total intake of vitamin E and bladder cancer (highest vs. lowest quartile, OR: 0.66; 95% CI: 0.36–1.20; p trend = 0.09).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "lowest quartile, OR: 0.66; 95% CI: 0.36–1.20; p trend = 0.09).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, paragraph 1"
+          },
+          "p_value": {
+            "excerpt": "The ORs (95% CI) for highest quartile versus lowest quartile for total intake of vitamin E was 0.66 (0.36–1.20; p trend = 0.09)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "The ORs (95% CI) for highest quartile versus lowest quartile for total intake of vitamin E",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, paragraph 1"
+          },
+          "design": {
+            "excerpt": "A population-based case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "bladder cancer cases were identified from the New Hampshire State Department of Health and Human Services Cancer Registry as histologically confirmed, primary bladder cancer diagnosed between 1 July 1998 and 31 December 2001.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "A case–control study was conducted in New Hampshire, USA.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary information was collected from a 121-item semi-quantitative food frequency questionnaire (FFQ) that was developed by Willett et al.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Methods, Dietary data, paragraph 2"
+          },
+          "gender": {
+            "excerpt": "Bladder cancer cases consisted of approximately three times more men (74%) than women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "There was a higher prevalence of current smokers and greater number of both cigarettes smoked per day and years smoked among cases compared with the controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2839516/",
+            "location": "Results, Study characteristics, paragraph 1"
+          }
+        },
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "To be eligible for inclusion in the study, all cases had to be New Hampshire residents aged between 25 and 74, have a listed phone number and speak English."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 48642,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c91dbb04e216dddafa2e2edef574601822380acdb13c8b178144af7c84222794",
+      "pmc_source_receipt_digest": "3aff45adcef45033d1ff41625c5913be0898d0410d6f1197bf6c313f8ba42cb8",
+      "pmc_source_raw_sha256": "d844b903db70b050dac71aa23362b80863435432f75c100d0129415ca906c473",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b72a251b3d1abbffc996346dc0ba68936550d537e1e98502c7b0489c5fab7ac4"
+    }
+  ]
+}

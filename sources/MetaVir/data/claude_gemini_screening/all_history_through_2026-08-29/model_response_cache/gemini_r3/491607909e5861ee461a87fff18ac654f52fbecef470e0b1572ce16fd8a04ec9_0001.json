@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "f1011342ed4eecca0047535a8b1a5cdea386d22143e2935a64f8c9bdb45ceae9",
+  "requested_at": "2026-09-02T08:42:28.653956+08:00",
+  "received_at": "2026-09-02T08:42:58.009095+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "491607909e5861ee461a87fff18ac654f52fbecef470e0b1572ce16fd8a04ec9",
+  "attempt": 1,
+  "context_ids": [
+    "22499501|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin D": 1
+  },
+  "input_digest": "8be29ac04d5fc6618be8ac5c0ee25cf2e94c261e53a2e65a375d0da10862dc2c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13940,
+    "cached_input_tokens": 0,
+    "output_tokens": 3928,
+    "reasoning_tokens": 2256
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.025185",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "44c37fc0-783f-4485-8846-d9b8caf973fd",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.025185"
+  },
+  "output_sha256": "a487de5d18e5690fcc0aa383daf288f0f1bcf6127012e8827c27173e385c1a24",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22499501|Vitamin D|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective nested case-control study evaluating prediagnostic plasma 25(OH)D levels and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 0.43,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.24,\n        \"ci_upper\": 0.76,\n        \"p_value\": 0.001,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 2591,\n        \"cases\": 1260,\n        \"comparison_type\": \"highest vs lowest quartile\",\n        \"design\": \"nested case-control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Health Professionals Follow-up Study\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"We included 1260 men who were diagnosed with prostate cancer after providing a blood sample in 1993–1995 and 1331 control subjects.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Abstract/Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We included 1260 men who were diagnosed with prostate cancer after providing a blood sample in 1993–1995 and 1331 control subjects.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Abstract/Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Higher 25(OH)D levels were associated with a 57% reduction in the risk of lethal prostate cancer (highest vs lowest quartile: odds ratio = 0.43, 95% confidence interval = 0.24 to 0.76).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Abstract/Results, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Higher 25(OH)D levels were associated with a 57% reduction in the risk of lethal prostate cancer (highest vs lowest quartile: odds ratio = 0.43, 95% confidence interval = 0.24 to 0.76).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Abstract/Results, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"We observed a statistically significant inverse association between plasma 25(OH)D levels and lethal prostate cancer (highest vs lowest quartile: OR = 0.43, 95% CI = 0.24 to 0.76; P trend = .001).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Results/Plasma Vitamin D and Prostate Cancer, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"highest vs lowest quartile: odds ratio = 0.43, 95% confidence interval = 0.24 to 0.76\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Abstract/Results, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"A Prospective Nested Case–Control Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Title\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We assessed prediagnostic 25-hydroxyvitamin D [25(OH)D] levels in plasma, variation in vitamin D–related genes, and risk of lethal prostate cancer using a prospective case–control study nested within the Health Professionals Follow-up Study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Abstract/Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The HPFS cohort includes 51 529 US male health professionals who were aged 40–75 years at enrollment in 1986\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Methods/Study Population, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Plasma 25(OH)D was measured using a radioimmunosorbent assay in the laboratory of Dr Bruce Hollis ( 13 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3341310/\",\n            \"location\": \"Methods/25(OH)D Assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

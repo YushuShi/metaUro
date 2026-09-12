@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:23.543635-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "e3773bc37ae9958a443512f0351efdc53cf0c96bed8e5209ef838a719ca96f51",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15126606",
+      "title": "A prospective study of plasma selenium levels and prostate cancer risk.",
+      "abstract": "Epidemiologic studies suggest that low selenium levels are associated with an increased incidence of prostate cancer, although results are conflicting. We examined the association between pre-diagnostic plasma selenium levels and risk of prostate cancer in men enrolled in the Physicians' Health Study. Using plasma samples obtained in 1982 from healthy men enrolled in the study, we conducted a nested case-control study among 586 men diagnosed with prostate cancer during 13 years of follow-up and 577 control subjects. Odds ratios (ORs) and 95% confidence intervals (CIs) for the risk of prostate cancer in pre- (before October 1990) and post- (after October 1990) prostate-specific antigen (PSA) screening eras were calculated using multivariable logistic regression. Pre-diagnostic plasma selenium levels were inversely associated with risk of advanced prostate cancer (5th versus 1st quintile OR = 0.52, 95% CI = 0.28 to 0.98; P(trend) =.05), even among men diagnosed after 1990 (5th versus 1st quintile OR = 0.39, 95% CI = 0.16 to 0.97). The inverse association with prostate cancer risk was observed only for case subjects with elevated baseline PSA levels (PSA >4 ng/mL, 5th versus 1st quintile OR = 0.49, 95% CI = 0.28 to 0.86; P(trend) =.002). These inverse associations were observed in both pre- and post-PSA eras. The inverse association between baseline plasma selenium levels and risk of advanced prostate cancer, even among men diagnosed during the post-PSA era, suggests that higher levels of selenium may slow prostate cancer tumor progression. Ongoing randomized trials of selenium supplements may help to further evaluate this issue.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Anticarcinogenic Agents / blood, pharmacology",
+        "Antioxidants / pharmacology",
+        "Case-Control Studies",
+        "Controlled Clinical Trials as Topic",
+        "Disease Progression",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Patient Selection",
+        "Physicians",
+        "Prospective Studies",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / blood, diagnosis, immunology, prevention & control",
+        "Risk Assessment",
+        "Selenium / blood, pharmacology",
+        "Severity of Illness Index"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15126606",
+      "contexts": [
+        {
+          "context_id": "15126606|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.52",
+              "ci_lower": "0.28",
+              "ci_upper": "0.98",
+              "p_value": "0.05",
+              "comparison": "5th versus 1st quintile of pre-diagnostic plasma selenium"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1163",
+              "effect_measure_type": "OR",
+              "effect_size": "0.52",
+              "ci_lower": "0.28",
+              "ci_upper": "0.98",
+              "p_value": "0.05",
+              "comparison": "5th versus 1st quintile of pre-diagnostic plasma selenium"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

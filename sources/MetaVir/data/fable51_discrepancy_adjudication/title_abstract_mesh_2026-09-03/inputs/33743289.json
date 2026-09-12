@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:36:33.891711-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "e2f94e16276ffeb81b7c0333befb254a49a04c55c181fe46663b667763d51ede",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "33743289",
+      "title": "Consumption of ultra-processed foods and drinks and colorectal, breast, and prostate cancer.",
+      "abstract": "To study whether the consumption of ultra-processed foods and drinks is associated with breast, colorectal, and prostate cancers. Multicentric population-based case-control study (MCC-Spain) conducted in 12 Spanish provinces. Participants were men and women between 20 and 85 years of age with diagnoses of colorectal (n = 1852), breast (n = 1486), or prostate cancer (n = 953), and population-based controls (n = 3543) frequency-matched by age, sex, and region. Dietary intake was collected using a validated food frequency questionnaire. Foods and drinks were categorized according to their degree of processing based on the NOVA classification. Unconditional multivariable logistic regression was used to evaluate the association between ultra-processed food and drink consumption and colorectal, breast, and prostate cancer. In multiple adjusted models, consumption of ultra-processed foods and drinks was associated with a higher risk of colorectal cancer (OR for a 10% increase in consumption: 1.11; 95% CI 1.04-1.18). The corresponding odds for breast (OR 1.03; 95% CI 0.96-1.11) and prostate cancer (OR 1.02; 95% CI 0.93-1.12) were indicative of no association. Results of this large population-based case-control study suggest an association between the consumption of ultra-processed foods and drinks and colorectal cancer. Food policy and public health should include a focus on food processing when formulating dietary guidelines.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Breast Neoplasms / epidemiology, etiology",
+        "Case-Control Studies",
+        "Colorectal Neoplasms / epidemiology, etiology",
+        "Diet / adverse effects, statistics & numerical data",
+        "Diet Surveys",
+        "Eating",
+        "Fast Foods / adverse effects, statistics & numerical data",
+        "Female",
+        "Food Handling",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Spain / epidemiology",
+        "Young Adult"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "33743289",
+      "contexts": [
+        {
+          "context_id": "33743289|Ultra-processed food intake|Prostate cancer",
+          "exposure": "Ultra-processed food intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "1.02",
+              "ci_lower": "0.93",
+              "ci_upper": "1.12",
+              "p_value": null,
+              "comparison": "Per 10% increase in ultra-processed food and drink consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "4496",
+              "effect_measure_type": "OR",
+              "effect_size": "1.02",
+              "ci_lower": "0.93",
+              "ci_upper": "1.12",
+              "p_value": null,
+              "comparison": "per 10% increase in consumption"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

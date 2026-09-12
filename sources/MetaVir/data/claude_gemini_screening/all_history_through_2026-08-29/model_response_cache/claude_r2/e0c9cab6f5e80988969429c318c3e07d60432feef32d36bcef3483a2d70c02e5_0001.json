@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "receipt_id": "7b67d9e5c2135ea7f0fa7d5b530873218ebe528a98fc8c7f364813ad95a1e640",
+  "requested_at": "2026-09-02T08:18:53.827540+08:00",
+  "received_at": "2026-09-02T08:18:58.388545+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "e0c9cab6f5e80988969429c318c3e07d60432feef32d36bcef3483a2d70c02e5",
+  "attempt": 1,
+  "context_ids": [
+    "36826044|Tongkat ali|Prostate cancer",
+    "36829848|Antioxidants|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Tongkat ali": 1
+  },
+  "input_digest": "02bfb8d7c9a027a6cc7d29ffc8e3b0cbecffdb31477216e71637ec6241b76e17",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5244,
+    "cached_input_tokens": 0,
+    "output_tokens": 284,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.03332",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "4075e77a-8c46-461d-b9fb-8b075858c535",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.03332"
+  },
+  "output_sha256": "82959e95be3eeacfa21f0d2ac0d54499ab088d5e3774bad82cce76d656cf318c",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"36826044|Tongkat ali|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of molecular targets and phytochemicals from Malaysian medicinal plants (including Eurycoma longifolia/Tongkat ali) rather than an original human study of incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"36829848|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article explicitly states \\\"in this review, we briefly describe the most common antioxidants\\\", making it a narrative review rather than an original human study of prostate cancer incidence.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "36826044|Tongkat ali|Prostate cancer",
+      "pmid": "36826044",
+      "pmcid": "PMC9954984",
+      "published_date": "2023-02-09",
+      "title": "Advances in Molecular Regulation of Prostate Cancer Cells by Top Natural Products of Malaysia.",
+      "authors": [
+        "Prieto JM",
+        "Hanafi MMM"
+      ],
+      "journal": "Current issues in molecular biology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36826044/",
+      "exposure": "Tongkat ali",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of molecular targets and phytochemicals from Malaysian medicinal plants (including Eurycoma longifolia/Tongkat ali) rather than an original human study of incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "36829848|Antioxidants|Prostate cancer",
+      "pmid": "36829848",
+      "pmcid": "PMC9951863",
+      "published_date": "2023-01-27",
+      "title": "Novel Insights into the Role of the Antioxidants in Prostate Pathology.",
+      "authors": [
+        "Rago V",
+        "Di Agostino S"
+      ],
+      "journal": "Antioxidants (Basel, Switzerland)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36829848/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article explicitly states \"in this review, we briefly describe the most common antioxidants\", making it a narrative review rather than an original human study of prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

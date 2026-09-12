@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "4b073c28ee455f9c688397ac42c15e39dbad672f3c3dc3a0258d89f8c2394f67",
+  "requested_at": "2026-09-02T08:40:30.522028+08:00",
+  "received_at": "2026-09-02T08:40:45.186988+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "ed4f12173d933212c4fcf97ee91ef8199269f4a298950bc397737c657ef2e7b0",
+  "attempt": 1,
+  "context_ids": [
+    "18521907|Soy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Soy": 1
+  },
+  "input_digest": "44562940b1b0b9d51f80aea3b4646066b6028b84748c55a28f1ed7c7d9c41a29",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11931,
+    "cached_input_tokens": 0,
+    "output_tokens": 2466,
+    "reasoning_tokens": 632
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.01819575",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "57af3264-75d2-47ec-a619-8f83771b5dae",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.01819575"
+  },
+  "output_sha256": "55fd5473b69221537b670237c2f22b1052742f4a810cd62370be9efd2c51879c",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"18521907|Soy|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study reporting multivariable-adjusted relative risks for soy product intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.9,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.8,\n        \"ci_upper\": 1.01,\n        \"p_value\": 0.2,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 82483,\n        \"cases\": 4404,\n        \"comparison_type\": \"tertiles\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Hawaii and Los Angeles, California\",\n        \"ethnicity\": null,\n        \"population\": \"Multiethnic Cohort Study participants\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Among 96,958 men in the cohort, we excluded from the current study men who did not self-identify as 1 of the 5 racial/ethnic groups ( n = 5,944), men with a history of prostate cancer at baseline ( n = 2,890), men with implausible diet based on total energy intake or its components ( n = 3,653), 17 and men with incomplete answers to height, weight, education, or smoking ( n = 1,988), leaving a total of 82,483 men for the analyses.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Material and methods, Study cohort, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 4,404 prostate cancer cases including 1,278 nonlocalized or high-grade cases were recorded during the average follow-up period of 8 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Soy products (g/1,000 kcal) ... ≥2.8: RR = 0.90 (0.80–1.01)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Table II\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Soy products (g/1,000 kcal) ... ≥2.8: 0.90 (0.80–1.01)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Table II\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Soy products (g/1,000 kcal) ... p for trend = 0.20\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Table II\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"For soy intake, tertiles were used because over 40% of the men in the cohort did not consume soy.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The analyses included 82,483 men who completed a detailed quantitative food frequency questionnaire in 1993–1996. A total of 4,404 prostate cancer cases including 1,278 nonlocalized or high-grade cases were recorded during the average follow-up period of 8 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The cohort consists of more than 215,000 adults aged 45–75 years who completed a mailed questionnaire in 1993–1996... Prostate cancer cases were ascertained by linking the cohort to the Surveillance, Epidemiology and End Results (SEER) cancer registries covering Hawaii and California through December 31, 2002.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Material and methods, Study cohort and Case ascertainment\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Participants are mainly from 5 racial/ethnic populations in Hawaii and Los Angeles, California: African Americans, Native Hawaiians, Japanese Americans, Latinos and Whites.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Material and methods, Study cohort, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": {\n            \"excerpt\": \"Participants are mainly from 5 racial/ethnic populations in Hawaii and Los Angeles, California: African Americans, Native Hawaiians, Japanese Americans, Latinos and Whites.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Material and methods, Study cohort, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake at baseline was assessed by a self-administered quantitative food frequency questionnaire (QFFQ)... Soy product intake was estimated from tofu, miso and vegetarian meat.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3040575/\",\n            \"location\": \"Material and methods, Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

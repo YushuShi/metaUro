@@ -1,0 +1,772 @@
+{
+  "schema_version": 1,
+  "receipt_id": "57ed34e0010f875c7aad98ce16b4f5f0a062082e77b5aa614a290d7314e22e73",
+  "requested_at": "2026-09-02T07:44:20.307830+08:00",
+  "received_at": "2026-09-02T07:45:31.089453+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "7e99925165683c88dfc4e58a6a5dc7d6eef3711cc6802c99f3f3b8de36581595",
+  "attempt": 1,
+  "context_ids": [
+    "17317210|DIM|Prostate cancer",
+    "17317210|Indole-3-carbinol|Prostate cancer",
+    "17319025|Vitamin D|Prostate cancer",
+    "17319238|Selenium|Prostate cancer",
+    "17337648|Fermented foods|Prostate cancer",
+    "17337648|Genistein|Prostate cancer",
+    "17337648|Miso|Prostate cancer",
+    "17337648|Soy|Prostate cancer",
+    "17342083|Calcium|Prostate cancer",
+    "17342083|Dairy|Prostate cancer",
+    "17342743|Saw palmetto|Prostate cancer",
+    "17349069|Calcium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 2,
+    "Dairy": 1,
+    "DIM": 1,
+    "Fermented foods": 1,
+    "Genistein": 1,
+    "Indole-3-carbinol": 1,
+    "Miso": 1,
+    "Saw palmetto": 1,
+    "Selenium": 1,
+    "Soy": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "f521ccb7d943530673da6c764c71113deb0a293ea0965aa9fd9f35755723e806",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9829,
+    "cached_input_tokens": 0,
+    "output_tokens": 7495,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.23652",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "a6a13aeb-622a-4cab-8abf-9bd051a80ac2",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.23652"
+  },
+  "output_sha256": "d9815336333097728b50e2869c65c45990a65f41d52d16efea1ac035ee45b744",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"17317210|DIM|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of epidemiologic evidence and mechanisms for cruciferous vegetables, indoles, and DIM rather than an original study of prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17317210|Indole-3-carbinol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review summarizing epidemiological and mechanistic literature on glucosinolate derivatives including indole-3-carbinol, with no primary prostate cancer incidence analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17319025|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a commentary-style piece on vitamin D and health with no abstract or original comparative data on prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17319238|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Selenium is mentioned only incidentally as a speculative soil exposure in a narrative discussion of disparities and programs, with no nutritional selenium exposure analysis of prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17337648|Fermented foods|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The study assessed soy foods, miso soup, and specific isoflavones rather than fermented foods as an exposure category, so no fermented-food estimate exists.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17337648|Genistein|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Population-based prospective cohort of Japanese men reporting dietary genistein intake in relation to incident prostate cancer with a quantitative relative risk.\",\"extraction\":{\"effect_size\":0.52,\"effect_type\":\"RR\",\"ci_lower\":0.3,\"ci_upper\":0.9,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":43509,\"cases\":307,\"comparison_type\":\"highest vs lowest quartile of genistein intake (men aged >60 years, localized prostate cancer)\",\"design\":\"prospective cohort\",\"timing\":\"prospective, exposure assessed at baseline with follow-up 1995-2004\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men ages 45 to 74 years\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"we conducted a population-based prospective study in 43,509 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During follow-up from 1995 through 2004, 307 men were newly diagnosed with prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"relative risks for men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest of 0.52\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.52 [95% confidence interval (95% CI), 0.30-0.90]\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"we conducted a population-based prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"During follow-up from 1995 through 2004\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"43,509 Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"43,509 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"Soy product and isoflavone consumption in relation to prostate cancer in Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Participants responded to a validated questionnaire, which included 147 food items.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17337648|Miso|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The prospective cohort explicitly evaluated miso soup intake in relation to incident prostate cancer, although only a null qualitative result is reported for this food.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":43509,\"cases\":307,\"comparison_type\":\"miso soup intake categories versus lowest intake (total prostate cancer)\",\"design\":\"prospective cohort\",\"timing\":\"prospective, exposure assessed at baseline with follow-up 1995-2004\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men ages 45 to 74 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"we conducted a population-based prospective study in 43,509 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During follow-up from 1995 through 2004, 307 men were newly diagnosed with prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Intakes of genistein, daidzein, miso soup, and soy food were not associated with total prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"we conducted a population-based prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"During follow-up from 1995 through 2004\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"43,509 Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"43,509 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"Soy product and isoflavone consumption in relation to prostate cancer in Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Participants responded to a validated questionnaire, which included 147 food items.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17337648|Soy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting soy food intake and incident prostate cancer with a quantitative relative risk for the highest versus lowest quartile.\",\"extraction\":{\"effect_size\":0.52,\"effect_type\":\"RR\",\"ci_lower\":0.29,\"ci_upper\":0.9,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":43509,\"cases\":307,\"comparison_type\":\"highest vs lowest quartile of soy food consumption (men aged >60 years, localized prostate cancer)\",\"design\":\"prospective cohort\",\"timing\":\"prospective, exposure assessed at baseline with follow-up 1995-2004\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men ages 45 to 74 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"we conducted a population-based prospective study in 43,509 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During follow-up from 1995 through 2004, 307 men were newly diagnosed with prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"soy food consumption compared with the lowest of ... 0.52 (95% CI, 0.29-0.90)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.52 (95% CI, 0.29-0.90)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"we conducted a population-based prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"During follow-up from 1995 through 2004\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"43,509 Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"43,509 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"Soy product and isoflavone consumption in relation to prostate cancer in Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Participants responded to a validated questionnaire, which included 147 food items.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17337648/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17342083|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a short editorial/commentary item on calcium, dairy, and prostate cancer without an abstract or original comparative results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17342083|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"No original study data are presented; the item is a commentary on dairy and prostate cancer with no abstract or results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17342743|Saw palmetto|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study administered saw palmetto extract exclusively to TRAMP transgenic mice, providing no human evidence on prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17349069|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This mechanism-exploring commentary lacks an abstract and reports no original human data on dietary calcium and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "17317210|DIM|Prostate cancer",
+      "pmid": "17317210",
+      "pmcid": "PMC2737735",
+      "published_date": "2007-03-01",
+      "title": "Cruciferous vegetables and human cancer risk: epidemiologic evidence and mechanistic basis.",
+      "authors": [
+        "Higdon JV",
+        "Delage B",
+        "Williams DE",
+        "Dashwood RH"
+      ],
+      "journal": "Pharmacological research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17317210/",
+      "exposure": "DIM",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of epidemiologic evidence and mechanisms for cruciferous vegetables, indoles, and DIM rather than an original study of prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17317210|Indole-3-carbinol|Prostate cancer",
+      "pmid": "17317210",
+      "pmcid": "PMC2737735",
+      "published_date": "2007-03-01",
+      "title": "Cruciferous vegetables and human cancer risk: epidemiologic evidence and mechanistic basis.",
+      "authors": [
+        "Higdon JV",
+        "Delage B",
+        "Williams DE",
+        "Dashwood RH"
+      ],
+      "journal": "Pharmacological research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17317210/",
+      "exposure": "Indole-3-carbinol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review summarizing epidemiological and mechanistic literature on glucosinolate derivatives including indole-3-carbinol, with no primary prostate cancer incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17319025|Vitamin D|Prostate cancer",
+      "pmid": "17319025",
+      "pmcid": "",
+      "published_date": "2007-02-01",
+      "title": "Vitamin D and your health: breaking old rules, raising new hopes.",
+      "authors": [],
+      "journal": "Harvard men's health watch",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17319025/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a commentary-style piece on vitamin D and health with no abstract or original comparative data on prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17319238|Selenium|Prostate cancer",
+      "pmid": "17319238",
+      "pmcid": "",
+      "published_date": "2006-08-01",
+      "title": "Prostate cancer disparities in South Carolina: early detection, special programs, and descriptive epidemiology.",
+      "authors": [
+        "Drake BF",
+        "Keane TE",
+        "Mosley CM",
+        "Adams SA",
+        "Elder KT",
+        "Modayil MV",
+        "Ureda JR",
+        "Hebert JR"
+      ],
+      "journal": "Journal of the South Carolina Medical Association (1975)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17319238/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17337648|Fermented foods|Prostate cancer",
+      "pmid": "17337648",
+      "pmcid": "",
+      "published_date": "2007-03-01",
+      "title": "Soy product and isoflavone consumption in relation to prostate cancer in Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Otani T",
+        "Inoue M",
+        "Tsugane S",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+      "exposure": "Fermented foods",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The study assessed soy foods, miso soup, and specific isoflavones rather than fermented foods as an exposure category, so no fermented-food estimate exists.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17337648|Genistein|Prostate cancer",
+      "pmid": "17337648",
+      "pmcid": "",
+      "published_date": "2007-03-01",
+      "title": "Soy product and isoflavone consumption in relation to prostate cancer in Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Otani T",
+        "Inoue M",
+        "Tsugane S",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Population-based prospective cohort of Japanese men reporting dietary genistein intake in relation to incident prostate cancer with a quantitative relative risk.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.52,
+        "effect_type": "RR",
+        "ci_lower": 0.3,
+        "ci_upper": 0.9,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 43509,
+        "cases": 307,
+        "comparison_type": "highest vs lowest quartile of genistein intake (men aged >60 years, localized prostate cancer)",
+        "design": "prospective cohort",
+        "timing": "prospective, exposure assessed at baseline with follow-up 1995-2004",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men ages 45 to 74 years",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Here, we conducted a population-based prospective study in 43,509 Japanese men ages 45 to 74 years who generally have a high intake of isoflavones and low incidence of prostate cancer. Participants responded to a validated questionnaire, which included 147 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During follow-up from 1995 through 2004, 307 men were newly diagnosed with prostate cancer, of which 74 cases were advanced, 220 cases were organ localized, and 13 cases were of an undetermined stage.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "These results were strengthened when analysis was confined to men ages >60 years, in whom isoflavones and soy food were associated with a dose-dependent decrease in the risk of localized cancer, with relative risks for men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest of 0.52 [95% confidence interval (95% CI), 0.30-0.90], 0.50 (95% CI, 0.28-0.88), and 0.52 (95% CI, 0.29-0.90), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "These results were strengthened when analysis was confined to men ages >60 years, in whom isoflavones and soy food were associated with a dose-dependent decrease in the risk of localized cancer, with relative risks for men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest of 0.52 [95% confidence interval (95% CI), 0.30-0.90], 0.50 (95% CI, 0.28-0.88), and 0.52 (95% CI, 0.29-0.90), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "we conducted a population-based prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "During follow-up from 1995 through 2004",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "43,509 Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "43,509 Japanese men ages 45 to 74 years",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "Soy product and isoflavone consumption in relation to prostate cancer in Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Participants responded to a validated questionnaire, which included 147 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17337648|Miso|Prostate cancer",
+      "pmid": "17337648",
+      "pmcid": "",
+      "published_date": "2007-03-01",
+      "title": "Soy product and isoflavone consumption in relation to prostate cancer in Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Otani T",
+        "Inoue M",
+        "Tsugane S",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+      "exposure": "Miso",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The prospective cohort explicitly evaluated miso soup intake in relation to incident prostate cancer, although only a null qualitative result is reported for this food.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 43509,
+        "cases": 307,
+        "comparison_type": "miso soup intake categories versus lowest intake (total prostate cancer)",
+        "design": "prospective cohort",
+        "timing": "prospective, exposure assessed at baseline with follow-up 1995-2004",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men ages 45 to 74 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Here, we conducted a population-based prospective study in 43,509 Japanese men ages 45 to 74 years who generally have a high intake of isoflavones and low incidence of prostate cancer. Participants responded to a validated questionnaire, which included 147 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During follow-up from 1995 through 2004, 307 men were newly diagnosed with prostate cancer, of which 74 cases were advanced, 220 cases were organ localized, and 13 cases were of an undetermined stage.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Intakes of genistein, daidzein, miso soup, and soy food were not associated with total prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "we conducted a population-based prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "During follow-up from 1995 through 2004",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "43,509 Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "43,509 Japanese men ages 45 to 74 years",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "Soy product and isoflavone consumption in relation to prostate cancer in Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Participants responded to a validated questionnaire, which included 147 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17337648|Soy|Prostate cancer",
+      "pmid": "17337648",
+      "pmcid": "",
+      "published_date": "2007-03-01",
+      "title": "Soy product and isoflavone consumption in relation to prostate cancer in Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Otani T",
+        "Inoue M",
+        "Tsugane S",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting soy food intake and incident prostate cancer with a quantitative relative risk for the highest versus lowest quartile.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.52,
+        "effect_type": "RR",
+        "ci_lower": 0.29,
+        "ci_upper": 0.9,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 43509,
+        "cases": 307,
+        "comparison_type": "highest vs lowest quartile of soy food consumption (men aged >60 years, localized prostate cancer)",
+        "design": "prospective cohort",
+        "timing": "prospective, exposure assessed at baseline with follow-up 1995-2004",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men ages 45 to 74 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Here, we conducted a population-based prospective study in 43,509 Japanese men ages 45 to 74 years who generally have a high intake of isoflavones and low incidence of prostate cancer. Participants responded to a validated questionnaire, which included 147 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During follow-up from 1995 through 2004, 307 men were newly diagnosed with prostate cancer, of which 74 cases were advanced, 220 cases were organ localized, and 13 cases were of an undetermined stage.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "These results were strengthened when analysis was confined to men ages >60 years, in whom isoflavones and soy food were associated with a dose-dependent decrease in the risk of localized cancer, with relative risks for men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest of 0.52 [95% confidence interval (95% CI), 0.30-0.90], 0.50 (95% CI, 0.28-0.88), and 0.52 (95% CI, 0.29-0.90), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "These results were strengthened when analysis was confined to men ages >60 years, in whom isoflavones and soy food were associated with a dose-dependent decrease in the risk of localized cancer, with relative risks for men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest of 0.52 [95% confidence interval (95% CI), 0.30-0.90], 0.50 (95% CI, 0.28-0.88), and 0.52 (95% CI, 0.29-0.90), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "men in the highest quartile of genistein, daidzein, and soy food consumption compared with the lowest",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "we conducted a population-based prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "During follow-up from 1995 through 2004",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "43,509 Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "43,509 Japanese men ages 45 to 74 years",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "Soy product and isoflavone consumption in relation to prostate cancer in Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Participants responded to a validated questionnaire, which included 147 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17337648/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17342083|Calcium|Prostate cancer",
+      "pmid": "17342083",
+      "pmcid": "PMC2360091",
+      "published_date": "2007-03-26",
+      "title": "Calcium, dairy, and prostate cancer.",
+      "authors": [
+        "Heaney RP"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17342083/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a short editorial/commentary item on calcium, dairy, and prostate cancer without an abstract or original comparative results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17342083|Dairy|Prostate cancer",
+      "pmid": "17342083",
+      "pmcid": "PMC2360091",
+      "published_date": "2007-03-26",
+      "title": "Calcium, dairy, and prostate cancer.",
+      "authors": [
+        "Heaney RP"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17342083/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "No original study data are presented; the item is a commentary on dairy and prostate cancer with no abstract or results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17342743|Saw palmetto|Prostate cancer",
+      "pmid": "17342743",
+      "pmcid": "",
+      "published_date": "2007-05-01",
+      "title": "Effects of dietary saw palmetto on the prostate of transgenic adenocarcinoma of the mouse prostate model (TRAMP).",
+      "authors": [
+        "Wadsworth TL",
+        "Worstell TR",
+        "Greenberg NM",
+        "Roselli CE"
+      ],
+      "journal": "The Prostate",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17342743/",
+      "exposure": "Saw palmetto",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study administered saw palmetto extract exclusively to TRAMP transgenic mice, providing no human evidence on prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17349069|Calcium|Prostate cancer",
+      "pmid": "17349069",
+      "pmcid": "",
+      "published_date": "2007-04-01",
+      "title": "Exploration of possible mechanisms linking vitamin D status and dietary calcium to prostate cancer.",
+      "authors": [
+        "Fraser DR"
+      ],
+      "journal": "The British journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17349069/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This mechanism-exploring commentary lacks an abstract and reports no original human data on dietary calcium and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

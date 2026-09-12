@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "receipt_id": "156909db9d6e97b8a590c64fbe108e68278f61ef6daa42a5ac35436f49911e83",
+  "requested_at": "2026-09-02T08:52:02.476564+08:00",
+  "received_at": "2026-09-02T08:52:19.769582+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "83730803f8589ac73f5a37f0017101424de0cafa3940bfb1df50b13b7bb55ec9",
+  "attempt": 2,
+  "context_ids": [
+    "30577563|Zinc|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Zinc": 1
+  },
+  "input_digest": "f056cac522fc2397c678825369ca29590b85b45ed78642f1e70bd3bc39f4f02a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13477,
+    "cached_input_tokens": 0,
+    "output_tokens": 2620,
+    "reasoning_tokens": 918
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.01993275",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "6e798c68-cf7b-4802-9bb2-a270be61859d",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.01993275"
+  },
+  "output_sha256": "3cd64f6dd442792e3449fed92ec3786e4189a0bb8c25f956ae181ad98f4ff1e9",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence for continent must cite full_text, not abstract",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"30577563|Zinc|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study investigated dietary zinc intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.39,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.0,\n        \"ci_upper\": 1.95,\n        \"p_value\": \"0.051\",\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1961,\n        \"cases\": 733,\n        \"comparison_type\": \"tertile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Spain\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Population-based incident prostate cancer cases from 14 hospitals and frequency-matched controls from primary care lists in 7 Spanish provinces\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 1112 confirmed PC cases and 1493 controls were finally included in this study... As a result, 733 cases and 1228 controls were included in this analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Section 2.1 Study Population and Data Collection, paragraph 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"733 incident cases and 1228 population-based controls were included for this study.\",\n            \"source\": \"abstract\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Abstract\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"When dietary calcium and grains and legumes intake were also considered, the magnitude of the association increased (OR: 1.39; 95% CI: 1.00–1.95; p-trend = 0.051).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Section 3.1 Zinc Intake and Prostate Cancer Risk, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"T3 (>10.53 mg/day) ... 1.39 (1.00;1.95)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"p-trend ... 0.051\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Dietary zinc was categorized in tertiles on the basis of the distribution among controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Section 2.2 Statistical Analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"Our aim was to explore this association in an MCC-Spain case-control study\",\n            \"source\": \"abstract\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"From 2008 to 2013, subjects from 12 different provinces of Spain were invited to participate.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Section 2.1 Study Population and Data Collection, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Dietary Zinc and Risk of Prostate Cancer in Spain: MCC-Spain Study.\",\n            \"source\": \"abstract\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Title\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"We used Genomebrowser [ 26 ] to identify those genetic variants associated with PC through GWAS in the population with European ancestry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Section 2.1 Study Population and Data Collection, paragraph 4\"\n          },\n          \"location\": {\n            \"excerpt\": \"diagnosed during the recruitment period in 14 hospitals from 7 Spanish provinces (Asturias, Barcelona, Cantabria, Granada, Huelva, Madrid and Valencia).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Section 2.1 Study Population and Data Collection, paragraph 3\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Diet and alcohol consumption habits were collected by means of a semi-quantitative food frequency questionnaire (FFQ) previously validated in Spain [ 21 ]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC6356690/\",\n            \"location\": \"Section 2.1 Study Population and Data Collection, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:23:35.823745+08:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Evidence for cases must cite full_text, not abstract",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "3cd64f6dd442792e3449fed92ec3786e4189a0bb8c25f956ae181ad98f4ff1e9"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "verified_source_label",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.cases.source",
+      "before": "abstract",
+      "after": "full_text",
+      "rule": "exact_excerpt_in_verified_full_text_with_exact_pmcid_url_and_abstract_location"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "verified_source_label",
+      "context_id": "30577563|Zinc|Prostate cancer",
+      "field": "results[0].extraction.evidence.design.source",
+      "before": "abstract",
+      "after": "full_text",
+      "rule": "exact_excerpt_in_verified_full_text_with_exact_pmcid_url_and_abstract_location"
+    }
+  ]
+}

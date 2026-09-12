@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:33.205352-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "eb3da39977a29e292e6ff38849a66200af9d4a1a61028982749b7257645e0fe3",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "21896650",
+      "title": "Phase III trial of selenium to prevent prostate cancer in men with high-grade prostatic intraepithelial neoplasia: SWOG S9917.",
+      "abstract": "The threat of prostate cancer and the significant and often negative impact of its treatment underscore the importance of prevention. High-grade prostatic intraepithelial neoplasia (HGPIN) has been identified as a potential premalignant lesion marking an increased risk of prostate cancer and substantial evidence suggests that men with HGPIN are in need of prostate cancer prevention. In vitro, in vivo, epidemiologic, and clinical trial evidence that selenium supplementation protects against prostate cancer motivated the study we report here: a double-blind, randomized, placebo-controlled trial of selenium 200 (μg/d) as selenomethionine in men with HGPIN. The primary endpoint was progression of HGPIN to prostate cancer over a 3-year period. This National Cancer Institute Intergroup trial was coordinated by the Southwest Oncology Group (SWOG). Of 619 enrolled patients, 423 randomized men with HGPIN (212 selenium and 211 placebo) were eligible (by central pathology review) and included in the primary analysis. Three-year cancer rates were 36.6% (placebo) versus 35.6% (selenium; P = 0.73, adjusted). The majority of patients who developed cancer on trial (70.8%, selenium and 75.5%, placebo) had a Gleason score of 6 or less than 6; there were no differences in Gleason scores between the two arms. Subset analyses included the finding of a nonsignificantly reduced prostate cancer risk (relative risk = 0.82; 95% CI: 0.40-1.69) in selenium versus placebo patients in the lowest quartile of baseline plasma selenium level (<106 ng/mL). Overall, and in all other subsets defined by baseline blood selenium levels, selenium supplementation had no effect on prostate cancer risk. The 36% prostate cancer rate in men with HGPIN indicates the association of this lesion with an elevated prostate cancer risk. Future study in this setting should focus on selenium-deficient populations and selenium pharmacogenetics.",
+      "mesh": [
+        "Aged",
+        "Antioxidants / therapeutic use",
+        "Dietary Supplements",
+        "Disease Progression",
+        "Double-Blind Method",
+        "Follow-Up Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Grading",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Intraepithelial Neoplasia / pathology, prevention & control",
+        "Prostatic Neoplasms / pathology, prevention & control",
+        "Selenium / therapeutic use",
+        "Treatment Outcome"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "21896650",
+      "contexts": [
+        {
+          "context_id": "21896650|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "255",
+              "effect_measure_type": "RR",
+              "effect_size": "0.97",
+              "ci_lower": "0.68",
+              "ci_upper": "1.39",
+              "p_value": "0.73",
+              "comparison": "Selenium supplementation versus placebo"
+            },
+            "Claude+Gemini": {
+              "sample_size": "423",
+              "effect_measure_type": "RR",
+              "effect_size": "0.97",
+              "ci_lower": "0.68",
+              "ci_upper": "1.39",
+              "p_value": "0.73",
+              "comparison": "treatment_vs_placebo"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

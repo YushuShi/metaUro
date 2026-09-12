@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "96418ae8e583bb34f59fae9bba8a617c2191ad2bc2fd7e56e9bc1a7991b98c1b",
+  "requested_at": "2026-09-02T08:43:29.196606+08:00",
+  "received_at": "2026-09-02T08:43:46.079799+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "a755feb9d3a954548a90cfda137ef920c2f6ab173a0b714eb3657c9c88033a9a",
+  "attempt": 1,
+  "context_ids": [
+    "23162860|Multivitamin|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Multivitamin": 1
+  },
+  "input_digest": "aba69e82c8b2d2c5807033fc600b3055417351f3a3bc1bd2982371bdc4af8ba5",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 16145,
+    "cached_input_tokens": 0,
+    "output_tokens": 2426,
+    "reasoning_tokens": 699
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02120625",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "04d28aa5-f2f9-4344-9767-08e65df0413c",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02120625"
+  },
+  "output_sha256": "d3958a83923d6a481060fc115807550f13ea4c7e37814eb9f260098dd5fce24c",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"23162860|Multivitamin|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This is a large-scale randomized, double-blind, placebo-controlled trial evaluating the effect of daily multivitamin supplementation on incident prostate cancer in male physicians.\",\n      \"extraction\": {\n        \"effect_size\": 0.98,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.88,\n        \"ci_upper\": 1.09,\n        \"p_value\": 0.76,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 13980,\n        \"cases\": 1373,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"RCT\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Male US physicians aged >= 50 years initially free of prostate cancer\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Thus, these analyses included 13,980 men initially free of prostate cancer\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Methods, Statistical Analyses, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Prostate cancer: Active 6,988 (683); Placebo 6,992 (690)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Table 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"There was no significant effect of a daily multivitamin on prostate cancer (HR, 0.98; 95% CI, 0.88–1.09; P =0.76)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Results, Multivitamin use and cancer, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Prostate cancer: Adjusted HR (95% CI) 0.98 (0.88–1.09)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Prostate cancer: Adjusted HR (95% CI) 0.98 (0.88–1.09), P = 0.76\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The Physicians’ Health Study II (PHS II) was a randomized, double-blind, placebo-controlled, 2x2x2x2 factorial trial evaluating the balance of risks and benefits of a multivitamin (Centrum Silver or its placebo daily...)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Methods, Design, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Physicians’ Health Study II is a randomized, double-blind, placebo-controlled trial of a common multivitamin\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Abstract, Design\"\n          },\n          \"timing\": {\n            \"excerpt\": \"began in 1997 with treatment and follow-up through June 1, 2011.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Abstract, Design\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 14,641 male U.S. physicians initially aged ≥50 years\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Abstract, Setting and Participants\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This is especially important given the potential challenge of generalizing to younger men and women and racial and ethnic groups not included in PHS II.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Comment, paragraph 10\"\n          },\n          \"location\": {\n            \"excerpt\": \"A total of 14,641 male U.S. physicians initially aged ≥50 years\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Abstract, Setting and Participants\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Participants were sent monthly calendar packs containing a multivitamin or placebo (taken daily) every six months for the first year, then annually thereafter.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3517179/\",\n            \"location\": \"Methods, Treatment, Follow-up, and Compliance, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"rct\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"Yes\",\n          \"q13\": \"Yes\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:58.322937-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "63beb47b447c4e50b9e621364614997d815ffe4e969af58fd2c89ba2db95cacd",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "20119870",
+      "title": "Polymorphisms in the HPC/ELAC-2 and alpha 1-antitrypsin genes that correlate with human diseases in a North Indian population.",
+      "abstract": "Two genes HPC/ELAC-2 and AAT were studied in north Indian population. HPC/ELAC-2 was studied in prostate cancer cases and AAT was studied in COPD patients. HPC/ELAC-2 is considered as an important cancer-susceptibility gene in prostate cancer. There are two common polymorphisms of this gene, i.e., Ser217Leu and Ala541Thr. Alpha 1 antitrypsin is a highly polymorphic anti-elastase enzyme, especially active in the protection of alveoli and liver. In the present study, we observed the distribution of two deficient alleles PiZ and Pi S in COPD patients. We extracted the DNA from 157 prostate cancer cases, 200 COPD patients, 170 BPH and 370 healthy controls. The polymorphisms were studied by PCR-RFLP technique. The mutant genotype (Leu/Leu) of HPC/ELAC-2 was present in 9.6, 7.6 and 5.9% of BPH, cancer cases and healthy controls, respectively. Higher risk of Ser/Leu as well as Leu/Leu had shown when compared to healthy controls. That was about 1.5 and 1.7-fold (OR = 1.55; 95% CI = 0.96-2.51; OR = 1.70; 95% CI = 0.74-3.92), respectively. Risk was found to be increased in smokers and those consuming non-vegetarian diet. Our results suggest that the HPC/ELAC-2 polymorphisms, especially in localized cases, could help to predict prostate cancer risk and confirm its high prevalence of the leu/leu allele in north Indian population. Considering heterozygous PiZ genotype, we obtained an OR of 3.82 (P = 0.03). Multivariate analysis adjusted by age sex and drinking habit showed 4.15-fold increased risk for COPD in PiZ heterozygous individuals. No increased risk was observed in the individuals carrying PiS alleles.",
+      "mesh": [
+        "Genetic Predisposition to Disease",
+        "Genotype",
+        "Humans",
+        "India",
+        "Male",
+        "Neoplasm Proteins / genetics",
+        "Polymorphism, Genetic",
+        "Prostatic Hyperplasia / genetics",
+        "Prostatic Neoplasms / genetics",
+        "Pulmonary Disease, Chronic Obstructive / genetics",
+        "alpha 1-Antitrypsin / genetics"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "20119870",
+      "contexts": [
+        {
+          "context_id": "20119870|Vegetarian diet|Prostate cancer",
+          "exposure": "Vegetarian diet",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-GENETIC-FOCUS"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

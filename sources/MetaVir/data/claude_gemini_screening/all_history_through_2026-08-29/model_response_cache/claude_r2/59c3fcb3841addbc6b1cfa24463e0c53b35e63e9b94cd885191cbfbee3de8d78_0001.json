@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "receipt_id": "3313fe8a009109cbf7a5b6d693bf3781e262b504c3c56d8694bfff04414b5e0a",
+  "requested_at": "2026-09-02T07:55:17.486319+08:00",
+  "received_at": "2026-09-02T07:56:44.726951+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "59c3fcb3841addbc6b1cfa24463e0c53b35e63e9b94cd885191cbfbee3de8d78",
+  "attempt": 1,
+  "context_ids": [
+    "21518228|Green tea|Prostate cancer",
+    "21518228|Multivitamin|Prostate cancer",
+    "21518228|Polyunsaturated fat (PUFA)|Prostate cancer",
+    "21518228|Tea|Prostate cancer",
+    "21518693|Docosahexaenoic acid|Prostate cancer",
+    "21518693|Fish oil|Prostate cancer",
+    "21518693|Omega-3 fatty acids|Prostate cancer",
+    "21518693|Omega-6 fatty acids|Prostate cancer",
+    "21526212|Alcohol|Prostate cancer",
+    "21526454|Processed meat intake|Prostate cancer",
+    "21526454|Red meat|Prostate cancer",
+    "21532839|Omega-6 fatty acids|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Docosahexaenoic acid": 1,
+    "Fish oil": 1,
+    "Green tea": 1,
+    "Multivitamin": 1,
+    "Omega-3 fatty acids": 1,
+    "Omega-6 fatty acids": 2,
+    "Polyunsaturated fat (PUFA)": 1,
+    "Processed meat intake": 1,
+    "Red meat": 1,
+    "Tea": 1
+  },
+  "input_digest": "7feac8fb479215ac0e8720c43b850e35021a23aea58200b42501d424698b88ff",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 8569,
+    "cached_input_tokens": 0,
+    "output_tokens": 9353,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.27667",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "d4f83ac0-3ef8-423b-836e-b394a3628bfe",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.27667"
+  },
+  "output_sha256": "6f07d95e3433c593a8b6b5e9acb3d9347570526c09a2453a8306dcb689a01af9",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"21518228|Green tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This publication is a narrative literature review of dietary components and prostate cancer, stating \\\"In the present review, we explore the current evidence\\\" with \\\"A literature search was conducted using PubMed®\\\", not an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21518228|Multivitamin|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review summarizing published evidence (\\\"In the present review, we explore the current evidence\\\") rather than reporting original multivitamin-prostate cancer incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21518228|Polyunsaturated fat (PUFA)|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Evidence on omega-3 polyunsaturated fatty acid intake is presented within a narrative review based on a PubMed literature search, not an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21518228|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Green tea findings are summarized in a narrative review of published studies (\\\"A literature search was conducted using PubMed® to identify key studies\\\"), so no primary data are reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21518693|Docosahexaenoic acid|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"This nested case-control analysis within the Prostate Cancer Prevention Trial reports a serum phospholipid docosahexaenoic acid biomarker association with prostate cancer risk (quartile 4 vs 1 OR = 2.50, 95% CI 1.34-4.65).\",\"extraction\":{\"effect_size\":2.5,\"effect_type\":\"OR\",\"ci_lower\":1.34,\"ci_upper\":4.65,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":3461,\"cases\":1658,\"comparison_type\":\"Quartile 4 vs quartile 1 of serum phospholipid docosahexaenoic acid, high-grade prostate cancer\",\"design\":\"case_control\",\"timing\":\"1994-2003\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Participants aged 55-84 years in the Prostate Cancer Prevention Trial\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Cases (n = 1,658) were frequency matched to controls (n = 1,803)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Cases (n = 1,658)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Docosahexaenoic acid was positively associated with high-grade disease (quartile 4 vs. 1: odds ratio (OR) = 2.50\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% confidence interval (CI): 1.34, 4.65)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"quartile 4 vs. 1\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"in a nested case-control analysis of participants\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"in the Prostate Cancer Prevention Trial during 1994-2003\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Phospholipid fatty acids were extracted from serum\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"21518693|Fish oil|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The study measured serum phospholipid fatty acid concentrations (\\\"Phospholipid fatty acids were extracted from serum\\\") and provides no fish oil supplement or intake exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21518693|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Serum phospholipid ω-3 fatty acid concentrations were examined in relation to prostate cancer risk in this nested case-control analysis, although no ω-3 class-specific estimate is reported in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":3461,\"cases\":1658,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"1994-2003\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Participants aged 55-84 years in the Prostate Cancer Prevention Trial\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Cases (n = 1,658) were frequency matched to controls (n = 1,803)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Cases (n = 1,658)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"in a nested case-control analysis of participants\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"in the Prostate Cancer Prevention Trial during 1994-2003\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"concentrations of ω-3, ω-6, and trans-fatty acids (TFAs) were expressed as proportions of the total\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"21518693|Omega-6 fatty acids|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Serum phospholipid ω-6 fatty acid concentrations were analyzed against prostate cancer risk by grade in this nested case-control study, though no ω-6-specific effect estimate appears in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":3461,\"cases\":1658,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"1994-2003\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Participants aged 55-84 years in the Prostate Cancer Prevention Trial\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Cases (n = 1,658) were frequency matched to controls (n = 1,803)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Cases (n = 1,658)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"in a nested case-control analysis of participants\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"in the Prostate Cancer Prevention Trial during 1994-2003\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"concentrations of ω-3, ω-6, and trans-fatty acids (TFAs) were expressed as proportions of the total\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21518693/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"21526212|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is explicitly a \\\"systematic review and meta-analysis\\\" pooling published cohort and case-control studies rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"21526454|Processed meat intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"This population-based case-control study reports increased advanced prostate cancer risk with higher processed meat consumption (OR = 1.57, CI = 1.04-2.36).\",\"extraction\":{\"effect_size\":1.57,\"effect_type\":\"OR\",\"ci_lower\":1.04,\"ci_upper\":2.36,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":1253,\"cases\":726,\"comparison_type\":\"Higher versus lower processed meat consumption, advanced prostate cancer\",\"design\":\"case_control\",\"timing\":null,\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer cases aged 40-79 years and population controls\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Newly diagnosed cases aged 40-79 years (531 advanced cases, 195 localized cases) and 527 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"531 advanced cases, 195 localized cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"processed meat (OR = 1.57, CI = 1.04-2.36)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"CI = 1.04-2.36\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"increased risks were associated with higher consumption of ... processed meat\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"in a population-based case-control study of prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"were asked about dietary intake, including usual meat cooking methods and doneness levels\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"21526454|Red meat|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The case-control study reports red meat associations with advanced prostate cancer risk, including grilled red meat (OR = 1.63, CI = 0.99-2.68) and well-done red meat (OR = 1.52, CI = 0.93-2.46).\",\"extraction\":{\"effect_size\":1.63,\"effect_type\":\"OR\",\"ci_lower\":0.99,\"ci_upper\":2.68,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":1253,\"cases\":726,\"comparison_type\":\"Higher versus lower consumption of grilled red meat, advanced prostate cancer\",\"design\":\"case_control\",\"timing\":null,\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer cases aged 40-79 years and population controls\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Newly diagnosed cases aged 40-79 years (531 advanced cases, 195 localized cases) and 527 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"531 advanced cases, 195 localized cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"grilled red meat (OR = 1.63, CI = 0.99-2.68)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"CI = 0.99-2.68\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"increased risks were associated with higher consumption of ... grilled red meat\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"in a population-based case-control study of prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"were asked about dietary intake, including usual meat cooking methods and doneness levels\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/21526454/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"21532839|Omega-6 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of metabolic and lifestyle mechanisms in prostate cancer progression (\\\"This evidence indicates lifestyle interventions may be effective\\\") without original omega-6 incidence data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "21518228|Green tea|Prostate cancer",
+      "pmid": "21518228",
+      "pmcid": "",
+      "published_date": "2011-05-01",
+      "title": "Prostate cancer and diet: food for thought?",
+      "authors": [
+        "Hori S",
+        "Butler E",
+        "McLoughlin J"
+      ],
+      "journal": "BJU international",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518228/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This publication is a narrative literature review of dietary components and prostate cancer, stating \"In the present review, we explore the current evidence\" with \"A literature search was conducted using PubMed®\", not an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21518228|Multivitamin|Prostate cancer",
+      "pmid": "21518228",
+      "pmcid": "",
+      "published_date": "2011-05-01",
+      "title": "Prostate cancer and diet: food for thought?",
+      "authors": [
+        "Hori S",
+        "Butler E",
+        "McLoughlin J"
+      ],
+      "journal": "BJU international",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518228/",
+      "exposure": "Multivitamin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review summarizing published evidence (\"In the present review, we explore the current evidence\") rather than reporting original multivitamin-prostate cancer incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21518228|Polyunsaturated fat (PUFA)|Prostate cancer",
+      "pmid": "21518228",
+      "pmcid": "",
+      "published_date": "2011-05-01",
+      "title": "Prostate cancer and diet: food for thought?",
+      "authors": [
+        "Hori S",
+        "Butler E",
+        "McLoughlin J"
+      ],
+      "journal": "BJU international",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518228/",
+      "exposure": "Polyunsaturated fat (PUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Evidence on omega-3 polyunsaturated fatty acid intake is presented within a narrative review based on a PubMed literature search, not an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21518228|Tea|Prostate cancer",
+      "pmid": "21518228",
+      "pmcid": "",
+      "published_date": "2011-05-01",
+      "title": "Prostate cancer and diet: food for thought?",
+      "authors": [
+        "Hori S",
+        "Butler E",
+        "McLoughlin J"
+      ],
+      "journal": "BJU international",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518228/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Green tea findings are summarized in a narrative review of published studies (\"A literature search was conducted using PubMed® to identify key studies\"), so no primary data are reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21518693|Docosahexaenoic acid|Prostate cancer",
+      "pmid": "21518693",
+      "pmcid": "PMC3145396",
+      "published_date": "2011-06-15",
+      "title": "Serum phospholipid fatty acids and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "authors": [
+        "Brasky TM",
+        "Till C",
+        "White E",
+        "Neuhouser ML",
+        "Song X",
+        "Goodman P",
+        "Thompson IM",
+        "King IB",
+        "Albanes D",
+        "Kristal AR"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+      "exposure": "Docosahexaenoic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control analysis within the Prostate Cancer Prevention Trial reports a serum phospholipid docosahexaenoic acid biomarker association with prostate cancer risk (quartile 4 vs 1 OR = 2.50, 95% CI 1.34-4.65).",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.5,
+        "effect_type": "OR",
+        "ci_lower": 1.34,
+        "ci_upper": 4.65,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 3461,
+        "cases": 1658,
+        "comparison_type": "Quartile 4 vs quartile 1 of serum phospholipid docosahexaenoic acid, high-grade prostate cancer",
+        "design": "case_control",
+        "timing": "1994-2003",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants aged 55-84 years in the Prostate Cancer Prevention Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This study examined the associations between inflammation-related phospholipid fatty acids and the 7-year-period prevalence of prostate cancer in a nested case-control analysis of participants, aged 55-84 years, in the Prostate Cancer Prevention Trial during 1994-2003. Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract; total_n derived from reported group counts 1658 + 1803 = 3461"
+          },
+          "cases": {
+            "excerpt": "Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "1: odds ratio (OR) = 2.50, 95% confidence interval (CI): 1.34, 4.65); TFA 18:1 and TFA 18:2 were linearly and inversely associated with risk of high-grade prostate cancer (quartile 4 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "1: odds ratio (OR) = 2.50, 95% confidence interval (CI): 1.34, 4.65); TFA 18:1 and TFA 18:2 were linearly and inversely associated with risk of high-grade prostate cancer (quartile 4 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "quartile 4 vs. 1",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "in a nested case-control analysis of participants",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "in the Prostate Cancer Prevention Trial during 1994-2003",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Phospholipid fatty acids were extracted from serum",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21518693|Fish oil|Prostate cancer",
+      "pmid": "21518693",
+      "pmcid": "PMC3145396",
+      "published_date": "2011-06-15",
+      "title": "Serum phospholipid fatty acids and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "authors": [
+        "Brasky TM",
+        "Till C",
+        "White E",
+        "Neuhouser ML",
+        "Song X",
+        "Goodman P",
+        "Thompson IM",
+        "King IB",
+        "Albanes D",
+        "Kristal AR"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+      "exposure": "Fish oil",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The study measured serum phospholipid fatty acid concentrations (\"Phospholipid fatty acids were extracted from serum\") and provides no fish oil supplement or intake exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21518693|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "21518693",
+      "pmcid": "PMC3145396",
+      "published_date": "2011-06-15",
+      "title": "Serum phospholipid fatty acids and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "authors": [
+        "Brasky TM",
+        "Till C",
+        "White E",
+        "Neuhouser ML",
+        "Song X",
+        "Goodman P",
+        "Thompson IM",
+        "King IB",
+        "Albanes D",
+        "Kristal AR"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Serum phospholipid ω-3 fatty acid concentrations were examined in relation to prostate cancer risk in this nested case-control analysis, although no ω-3 class-specific estimate is reported in the abstract.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 3461,
+        "cases": 1658,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "1994-2003",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants aged 55-84 years in the Prostate Cancer Prevention Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This study examined the associations between inflammation-related phospholipid fatty acids and the 7-year-period prevalence of prostate cancer in a nested case-control analysis of participants, aged 55-84 years, in the Prostate Cancer Prevention Trial during 1994-2003. Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract; total_n derived from reported group counts 1658 + 1803 = 3461"
+          },
+          "cases": {
+            "excerpt": "Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "in a nested case-control analysis of participants",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "in the Prostate Cancer Prevention Trial during 1994-2003",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "concentrations of ω-3, ω-6, and trans-fatty acids (TFAs) were expressed as proportions of the total",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21518693|Omega-6 fatty acids|Prostate cancer",
+      "pmid": "21518693",
+      "pmcid": "PMC3145396",
+      "published_date": "2011-06-15",
+      "title": "Serum phospholipid fatty acids and prostate cancer risk: results from the prostate cancer prevention trial.",
+      "authors": [
+        "Brasky TM",
+        "Till C",
+        "White E",
+        "Neuhouser ML",
+        "Song X",
+        "Goodman P",
+        "Thompson IM",
+        "King IB",
+        "Albanes D",
+        "Kristal AR"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+      "exposure": "Omega-6 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Serum phospholipid ω-6 fatty acid concentrations were analyzed against prostate cancer risk by grade in this nested case-control study, though no ω-6-specific effect estimate appears in the abstract.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 3461,
+        "cases": 1658,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "1994-2003",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants aged 55-84 years in the Prostate Cancer Prevention Trial",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This study examined the associations between inflammation-related phospholipid fatty acids and the 7-year-period prevalence of prostate cancer in a nested case-control analysis of participants, aged 55-84 years, in the Prostate Cancer Prevention Trial during 1994-2003. Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract; total_n derived from reported group counts 1658 + 1803 = 3461"
+          },
+          "cases": {
+            "excerpt": "Cases (n = 1,658) were frequency matched to controls (n = 1,803) on age, treatment, and prostate cancer family history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "in a nested case-control analysis of participants",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "in the Prostate Cancer Prevention Trial during 1994-2003",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "concentrations of ω-3, ω-6, and trans-fatty acids (TFAs) were expressed as proportions of the total",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21518693/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21526212|Alcohol|Prostate cancer",
+      "pmid": "21526212",
+      "pmcid": "PMC3078147",
+      "published_date": "2011-04-15",
+      "title": "Association between alcohol consumption and cancers in the Chinese population--a systematic review and meta-analysis.",
+      "authors": [
+        "Li Y",
+        "Yang H",
+        "Cao J"
+      ],
+      "journal": "PloS one",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21526212/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is explicitly a \"systematic review and meta-analysis\" pooling published cohort and case-control studies rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21526454|Processed meat intake|Prostate cancer",
+      "pmid": "21526454",
+      "pmcid": "PMC3516139",
+      "published_date": "2011",
+      "title": "Meat consumption, cooking practices, meat mutagens, and risk of prostate cancer.",
+      "authors": [
+        "John EM",
+        "Stern MC",
+        "Sinha R",
+        "Koo J"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study reports increased advanced prostate cancer risk with higher processed meat consumption (OR = 1.57, CI = 1.04-2.36).",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.57,
+        "effect_type": "OR",
+        "ci_lower": 1.04,
+        "ci_upper": 2.36,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 1253,
+        "cases": 726,
+        "comparison_type": "Higher versus lower processed meat consumption, advanced prostate cancer",
+        "design": "case_control",
+        "timing": null,
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer cases aged 40-79 years and population controls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Newly diagnosed cases aged 40-79 years (531 advanced cases, 195 localized cases) and 527 controls were asked about dietary intake, including usual meat cooking methods and doneness levels.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract; total_n derived from reported group counts 531 + 195 + 527 = 1253"
+          },
+          "cases": {
+            "excerpt": "Newly diagnosed cases aged 40-79 years (531 advanced cases, 195 localized cases) and 527 controls were asked about dietary intake, including usual meat cooking methods and doneness levels.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract; cases derived from reported group counts 531 + 195 = 726"
+          },
+          "effect_size": {
+            "excerpt": "For advanced prostate cancer, but not localized disease, increased risks were associated with higher consumption of hamburgers (OR = 1.79, CI = 1.10-2.92), processed meat (OR = 1.57, CI = 1.04-2.36), grilled red meat (OR = 1.63, CI = 0.99-2.68), and well-done red meat (OR = 1.52, CI = 0.93-2.46), and intermediate intake of 2-amino-1-methyl1-6-phenylimidazo[4,5-b]pyridine (PhIP) (Quartile 2 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Odds ratios (OR) and 95% confidence intervals (CI) were calculated using multivariate logistic regression. For advanced prostate cancer, but not localized disease, increased risks were associated with higher consumption of hamburgers (OR = 1.79, CI = 1.10-2.92), processed meat (OR = 1.57, CI = 1.04-2.36), grilled red meat (OR = 1.63, CI = 0.99-2.68), and well-done red meat (OR = 1.52, CI = 0.93-2.46), and intermediate intake of 2-amino-1-methyl1-6-phenylimidazo[4,5-b]pyridine (PhIP) (Quartile 2 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "in a population-based case-control study of prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "were asked about dietary intake, including usual meat cooking methods and doneness levels",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21526454|Red meat|Prostate cancer",
+      "pmid": "21526454",
+      "pmcid": "PMC3516139",
+      "published_date": "2011",
+      "title": "Meat consumption, cooking practices, meat mutagens, and risk of prostate cancer.",
+      "authors": [
+        "John EM",
+        "Stern MC",
+        "Sinha R",
+        "Koo J"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The case-control study reports red meat associations with advanced prostate cancer risk, including grilled red meat (OR = 1.63, CI = 0.99-2.68) and well-done red meat (OR = 1.52, CI = 0.93-2.46).",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.63,
+        "effect_type": "OR",
+        "ci_lower": 0.99,
+        "ci_upper": 2.68,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 1253,
+        "cases": 726,
+        "comparison_type": "Higher versus lower consumption of grilled red meat, advanced prostate cancer",
+        "design": "case_control",
+        "timing": null,
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer cases aged 40-79 years and population controls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Newly diagnosed cases aged 40-79 years (531 advanced cases, 195 localized cases) and 527 controls were asked about dietary intake, including usual meat cooking methods and doneness levels.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract; total_n derived from reported group counts 531 + 195 + 527 = 1253"
+          },
+          "cases": {
+            "excerpt": "Newly diagnosed cases aged 40-79 years (531 advanced cases, 195 localized cases) and 527 controls were asked about dietary intake, including usual meat cooking methods and doneness levels.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract; cases derived from reported group counts 531 + 195 = 726"
+          },
+          "effect_size": {
+            "excerpt": "For advanced prostate cancer, but not localized disease, increased risks were associated with higher consumption of hamburgers (OR = 1.79, CI = 1.10-2.92), processed meat (OR = 1.57, CI = 1.04-2.36), grilled red meat (OR = 1.63, CI = 0.99-2.68), and well-done red meat (OR = 1.52, CI = 0.93-2.46), and intermediate intake of 2-amino-1-methyl1-6-phenylimidazo[4,5-b]pyridine (PhIP) (Quartile 2 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Odds ratios (OR) and 95% confidence intervals (CI) were calculated using multivariate logistic regression. For advanced prostate cancer, but not localized disease, increased risks were associated with higher consumption of hamburgers (OR = 1.79, CI = 1.10-2.92), processed meat (OR = 1.57, CI = 1.04-2.36), grilled red meat (OR = 1.63, CI = 0.99-2.68), and well-done red meat (OR = 1.52, CI = 0.93-2.46), and intermediate intake of 2-amino-1-methyl1-6-phenylimidazo[4,5-b]pyridine (PhIP) (Quartile 2 vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "in a population-based case-control study of prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "were asked about dietary intake, including usual meat cooking methods and doneness levels",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21526454/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "21532839|Omega-6 fatty acids|Prostate cancer",
+      "pmid": "21532839",
+      "pmcid": "PMC3076778",
+      "published_date": "2010-07-25",
+      "title": "Metabolic imbalance and prostate cancer progression.",
+      "authors": [
+        "Burton AJ",
+        "Tilling KM",
+        "Holly JM",
+        "Hamdy FC",
+        "Rowlands MA",
+        "Donovan JL",
+        "Martin RM"
+      ],
+      "journal": "International journal of molecular epidemiology and genetics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21532839/",
+      "exposure": "Omega-6 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of metabolic and lifestyle mechanisms in prostate cancer progression (\"This evidence indicates lifestyle interventions may be effective\") without original omega-6 incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "receipt_id": "6273d1d341168b4f852c3e251d0fdc61c5413d8bc01fd643c40994cdd9e5687f",
+  "requested_at": "2026-09-02T08:33:18.846664+08:00",
+  "received_at": "2026-09-02T08:34:06.025380+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "e583b9556dda4887278650d0da7704be69d6ec3952b6437bd6094061d3bf807a",
+  "attempt": 2,
+  "context_ids": [
+    "39180769|Beta-carotene|Prostate cancer",
+    "39180769|Vitamin A|Prostate cancer",
+    "39180769|Vitamin D|Prostate cancer",
+    "39180769|Vitamin E|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Beta-carotene": 1,
+    "Vitamin A": 1,
+    "Vitamin D": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "c2c4689ae3360dd488f9ab6bd5a25261e83a06560a586ee4e1f7f52b6e9c4ea0",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11896,
+    "cached_input_tokens": 0,
+    "output_tokens": 8686,
+    "reasoning_tokens": 2464
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0414945",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "cf09c66f-5ee6-4abd-9379-2b6532b9418e",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0414945"
+  },
+  "output_sha256": "c07d3684760fa3d6a411571e803253092d7708c8343737bd10bc4d5bcf678442",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"39180769|Beta-carotene|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study provides multivariable-adjusted odds ratios for serum beta-carotene quintiles and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.92,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.69,\n        \"ci_upper\": 1.23,\n        \"p_value\": 0.4,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 2000,\n        \"cases\": 1000,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Finland\",\n        \"location\": \"Finland\",\n        \"ethnicity\": \"European\",\n        \"population\": \"male cigarette smokers\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"n (cases/controls) 1000/1000\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"1000 incident prostate cancer cases\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Beta-carotene quintile category d ... Q5 0.92 (0.69–1.23)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.92 (0.69–1.23)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Beta-carotene quintile category ... P trend 0.40\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Beta-carotene quintile category d Q1 Reference ... Q5 0.92 (0.69–1.23)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"in case–control data nested within the ATBC Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"continent\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"all of European ancestry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"location\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum alpha-tocopherol, beta-carotene and retinol were measured in the baseline samples for the entire ATBC Study cohort between 1985 and 1988 using high-performance liquid chromatography.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, Baseline serum vitamin D...\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"39180769|Vitamin A|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study provides multivariable-adjusted odds ratios for baseline serum retinol quintiles and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.22,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.91,\n        \"ci_upper\": 1.63,\n        \"p_value\": 0.1,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 2000,\n        \"cases\": 1000,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Finland\",\n        \"location\": \"Finland\",\n        \"ethnicity\": \"European\",\n        \"population\": \"male cigarette smokers\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"n (cases/controls) 1000/1000\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"1000 incident prostate cancer cases\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Retinol quintile category d ... Q5 1.22 (0.91–1.63)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.22 (0.91–1.63)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Retinol quintile category ... P trend 0.10\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Retinol quintile category d Q1 Reference ... Q5 1.22 (0.91–1.63)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"in case–control data nested within the ATBC Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"continent\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"all of European ancestry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"location\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum alpha-tocopherol, beta-carotene and retinol were measured in the baseline samples for the entire ATBC Study cohort between 1985 and 1988 using high-performance liquid chromatography.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, Baseline serum vitamin D...\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"39180769|Vitamin D|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study evaluates baseline serum 25(OH)D quintiles and prostate cancer risk with conditional logistic regression.\",\n      \"extraction\": {\n        \"effect_size\": 1.44,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.06,\n        \"ci_upper\": 1.96,\n        \"p_value\": 0.07,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 1998,\n        \"cases\": 999,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Finland\",\n        \"location\": \"Finland\",\n        \"ethnicity\": \"European\",\n        \"population\": \"male cigarette smokers\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"n (cases/controls) ... Unstratified 999/999\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"n (cases/controls) ... Unstratified 999/999\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"OR = 1.44 for Q5 vs Q1; 95% CI: 1.06, 1.96\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"95% CI: 1.06, 1.96\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P trend = 0.07\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"OR = 1.44 for Q5 vs Q1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"in case–control data nested within the ATBC Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"continent\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"all of European ancestry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"location\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum 25-hydroxyvitamin D [25(OH)D] was considered the indicator of vitamin D biochemical status and measured by using a Diasorin Liaison 25(OH)D platform with a direct, competitive chemiluminescence immunoassay (Heartland Assays, Inc.)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, Baseline serum vitamin D...\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"39180769|Vitamin E|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study provides multivariable-adjusted odds ratios for serum alpha-tocopherol quintiles and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.66,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.49,\n        \"ci_upper\": 0.91,\n        \"p_value\": 0.04,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 2000,\n        \"cases\": 1000,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Finland\",\n        \"location\": \"Finland\",\n        \"ethnicity\": \"European\",\n        \"population\": \"male cigarette smokers\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"n (cases/controls) 1000/1000\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"1000 incident prostate cancer cases\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Alpha-tocopherol quintile category d ... Q5 0.66 (0.49–0.91)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.66 (0.49–0.91)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Alpha-tocopherol quintile category ... P trend 0.04\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Alpha-tocopherol quintile category d Q1 Reference ... Q5 0.66 (0.49–0.91)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"in case–control data nested within the ATBC Study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"continent\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"all of European ancestry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"location\": {\n            \"excerpt\": \"50- to 69-year-old male cigarette smokers from Finland\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, ATBC Study\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum alpha-tocopherol, beta-carotene and retinol were measured in the baseline samples for the entire ATBC Study cohort between 1985 and 1988 using high-performance liquid chromatography.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/\",\n            \"location\": \"Methods, Baseline serum vitamin D...\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "39180769|Beta-carotene|Prostate cancer",
+      "pmid": "39180769",
+      "pmcid": "PMC12102485",
+      "published_date": "2024-08-14",
+      "title": "Disentangling discordant vitamin D associations with prostate cancer incidence and fatality in a large, nested case-control study.",
+      "authors": [
+        "Etiévant L",
+        "Gail MH",
+        "Albanes D"
+      ],
+      "journal": "International journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39180769/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study provides multivariable-adjusted odds ratios for serum beta-carotene quintiles and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.92,
+        "effect_type": "OR",
+        "ci_lower": 0.69,
+        "ci_upper": 1.23,
+        "p_value": 0.4,
+        "ci_confidence_level": 95,
+        "total_n": 2000,
+        "cases": 1000,
+        "comparison_type": "extreme_quantile",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male cigarette smokers",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Prostate cancer fatality in the 1000 cases included in the nested case–control study A Cox proportional-hazards model was used to estimate hazard ratios (HRs) and CIs of prostate cancer-specific fatality from date of diagnosis in the nested case–control study ( n = 1000).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3; total_n derived from reported group counts 1000 + 1000 = 2000"
+          },
+          "cases": {
+            "excerpt": "To investigate possible factors responsible for a spurious association with prostate cancer fatality, we reanalysed baseline serum vitamin D associations with prostate cancer risk and prostate cancer-specific fatality in case–control data nested within the ATBC Study (1000 controls and 1000 incident prostate cancer cases).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "18 A convincing controlled trial of vitamin D supplementation and prostate cancer-specific fatality would need to be large, long or both in order to demonstrate protective effects as indicated by the relative hazards in Table 4 , because the association appears to be of modest magnitude and the absolute hazard of death from prostate cancer is small, except for those with advanced and very aggressive disease. For example, under the assumption that a vitamin D supplement regimen raised all cases into the fifth quintile group of Table 4 and that a placebo group had a hazard that corresponded to the third quintile category of the present study, one would need to detect a hazard ratio of 0.751/0.816 = 0.920.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "0.92 (0.69–1.23)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.40",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "in case–control data nested within the ATBC Study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "continent": {
+            "excerpt": "50- to 69-year-old male cigarette smokers from Finland",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum alpha-tocopherol, beta-carotene and retinol were measured in the baseline samples for the entire ATBC Study cohort between 1985 and 1988 using high-performance liquid chromatography.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, Baseline serum vitamin D..."
+          }
+        },
+        "p_value_reported_as": "0.4",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36487,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "48bede1c39aab2b6fcac711880dd250967c6d40fd1d19c8dd9a17f63edf7d157",
+      "pmc_source_receipt_digest": "c259c104e2038755d5bdcacbeda190f008ec9fc027620e4d184ece46d1782003",
+      "pmc_source_raw_sha256": "0c069238acb840a7daad28aeb195ca3f29761b148dfecb9e12c97ea70d95562b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e120c4d1bc9b5d1ebdfa9b6e2205f91f04ba3ba98e252c7130ea8ccc8e0b3d8d"
+    },
+    {
+      "context_id": "39180769|Vitamin A|Prostate cancer",
+      "pmid": "39180769",
+      "pmcid": "PMC12102485",
+      "published_date": "2024-08-14",
+      "title": "Disentangling discordant vitamin D associations with prostate cancer incidence and fatality in a large, nested case-control study.",
+      "authors": [
+        "Etiévant L",
+        "Gail MH",
+        "Albanes D"
+      ],
+      "journal": "International journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39180769/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study provides multivariable-adjusted odds ratios for baseline serum retinol quintiles and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.22,
+        "effect_type": "OR",
+        "ci_lower": 0.91,
+        "ci_upper": 1.63,
+        "p_value": 0.1,
+        "ci_confidence_level": 95,
+        "total_n": 2000,
+        "cases": 1000,
+        "comparison_type": "extreme_quantile",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male cigarette smokers",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Prostate cancer fatality in the 1000 cases included in the nested case–control study A Cox proportional-hazards model was used to estimate hazard ratios (HRs) and CIs of prostate cancer-specific fatality from date of diagnosis in the nested case–control study ( n = 1000).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3; total_n derived from reported group counts 1000 + 1000 = 2000"
+          },
+          "cases": {
+            "excerpt": "To investigate possible factors responsible for a spurious association with prostate cancer fatality, we reanalysed baseline serum vitamin D associations with prostate cancer risk and prostate cancer-specific fatality in case–control data nested within the ATBC Study (1000 controls and 1000 incident prostate cancer cases).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "The ORs for retinol suggested a moderate positive association with prostate cancer risk (OR = 1.22 for Q5 vs Q1; 95% CI: 0.91, 1.63; P trend = 0.10; Table 3 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "The ORs for retinol suggested a moderate positive association with prostate cancer risk (OR = 1.22 for Q5 vs Q1; 95% CI: 0.91, 1.63; P trend = 0.10; Table 3 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "P trend g 0.10",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "in case–control data nested within the ATBC Study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "continent": {
+            "excerpt": "50- to 69-year-old male cigarette smokers from Finland",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum alpha-tocopherol, beta-carotene and retinol were measured in the baseline samples for the entire ATBC Study cohort between 1985 and 1988 using high-performance liquid chromatography.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, Baseline serum vitamin D..."
+          }
+        },
+        "p_value_reported_as": "0.1",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36487,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "48bede1c39aab2b6fcac711880dd250967c6d40fd1d19c8dd9a17f63edf7d157",
+      "pmc_source_receipt_digest": "c259c104e2038755d5bdcacbeda190f008ec9fc027620e4d184ece46d1782003",
+      "pmc_source_raw_sha256": "0c069238acb840a7daad28aeb195ca3f29761b148dfecb9e12c97ea70d95562b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "1901f0c2f2a1074b808d7b23cd92c67888bcdf5dc2657dbf727ae4b7c1716134"
+    },
+    {
+      "context_id": "39180769|Vitamin D|Prostate cancer",
+      "pmid": "39180769",
+      "pmcid": "PMC12102485",
+      "published_date": "2024-08-14",
+      "title": "Disentangling discordant vitamin D associations with prostate cancer incidence and fatality in a large, nested case-control study.",
+      "authors": [
+        "Etiévant L",
+        "Gail MH",
+        "Albanes D"
+      ],
+      "journal": "International journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39180769/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study evaluates baseline serum 25(OH)D quintiles and prostate cancer risk with conditional logistic regression.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.44,
+        "effect_type": "OR",
+        "ci_lower": 1.06,
+        "ci_upper": 1.96,
+        "p_value": 0.07,
+        "ci_confidence_level": 95,
+        "total_n": 1998,
+        "cases": 999,
+        "comparison_type": "extreme_quantile",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male cigarette smokers",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 2"
+          },
+          "cases": {
+            "excerpt": "999/999 a , c , d",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 2"
+          },
+          "effect_size": {
+            "excerpt": "Prostate cancer risk was positively associated with the highest quintile category of season-specific 25(OH)D in the unstratified analysis (OR = 1.44 for Q5 vs Q1; 95% CI: 1.06, 1.96; P trend = 0.07; Table 2 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Results, paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Prostate cancer risk was positively associated with the highest quintile category of season-specific 25(OH)D in the unstratified analysis (OR = 1.44 for Q5 vs Q1; 95% CI: 1.06, 1.96; P trend = 0.07; Table 2 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Results, paragraph 2"
+          },
+          "p_value": {
+            "excerpt": "P trend = 0.07",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Results, paragraph 2"
+          },
+          "comparison": {
+            "excerpt": "OR = 1.44 for Q5 vs Q1",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Results, paragraph 2"
+          },
+          "design": {
+            "excerpt": "in case–control data nested within the ATBC Study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "continent": {
+            "excerpt": "50- to 69-year-old male cigarette smokers from Finland",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum 25-hydroxyvitamin D [25(OH)D] was considered the indicator of vitamin D biochemical status and measured by using a Diasorin Liaison 25(OH)D platform with a direct, competitive chemiluminescence immunoassay (Heartland Assays, Inc.)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, Baseline serum vitamin D..."
+          }
+        },
+        "p_value_reported_as": "0.07",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36487,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "48bede1c39aab2b6fcac711880dd250967c6d40fd1d19c8dd9a17f63edf7d157",
+      "pmc_source_receipt_digest": "c259c104e2038755d5bdcacbeda190f008ec9fc027620e4d184ece46d1782003",
+      "pmc_source_raw_sha256": "0c069238acb840a7daad28aeb195ca3f29761b148dfecb9e12c97ea70d95562b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "ea3a089595f59499a4758651f0587b5aaa271eae4dc7f06a04b96f605ccaf53a"
+    },
+    {
+      "context_id": "39180769|Vitamin E|Prostate cancer",
+      "pmid": "39180769",
+      "pmcid": "PMC12102485",
+      "published_date": "2024-08-14",
+      "title": "Disentangling discordant vitamin D associations with prostate cancer incidence and fatality in a large, nested case-control study.",
+      "authors": [
+        "Etiévant L",
+        "Gail MH",
+        "Albanes D"
+      ],
+      "journal": "International journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39180769/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study provides multivariable-adjusted odds ratios for serum alpha-tocopherol quintiles and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.66,
+        "effect_type": "OR",
+        "ci_lower": 0.49,
+        "ci_upper": 0.91,
+        "p_value": 0.04,
+        "ci_confidence_level": 95,
+        "total_n": 2000,
+        "cases": 1000,
+        "comparison_type": "extreme_quantile",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Finland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male cigarette smokers",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Prostate cancer fatality in the 1000 cases included in the nested case–control study A Cox proportional-hazards model was used to estimate hazard ratios (HRs) and CIs of prostate cancer-specific fatality from date of diagnosis in the nested case–control study ( n = 1000).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3; total_n derived from reported group counts 1000 + 1000 = 2000"
+          },
+          "cases": {
+            "excerpt": "To investigate possible factors responsible for a spurious association with prostate cancer fatality, we reanalysed baseline serum vitamin D associations with prostate cancer risk and prostate cancer-specific fatality in case–control data nested within the ATBC Study (1000 controls and 1000 incident prostate cancer cases).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Men in the highest quintile category of baseline alpha-tocopherol were less likely to develop prostate cancer during follow-up than men in the lowest quintile category (OR = 0.66 for Q5 vs Q1; 95% CI: 0.49, 0.91; P trend = 0.04; Table 3 ). There was no association between high baseline beta-carotene and increased or reduced prostate cancer risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "Men in the highest quintile category of baseline alpha-tocopherol were less likely to develop prostate cancer during follow-up than men in the lowest quintile category (OR = 0.66 for Q5 vs Q1; 95% CI: 0.49, 0.91; P trend = 0.04; Table 3 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "Men in the highest quintile category of baseline alpha-tocopherol were less likely to develop prostate cancer during follow-up than men in the lowest quintile category (OR = 0.66 for Q5 vs Q1; 95% CI: 0.49, 0.91; P trend = 0.04; Table 3 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "in case–control data nested within the ATBC Study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "The trial ended in April 1993 but follow-up of the n = 29 133 participants continued through the Finnish Cancer Registry and Statistics Finland.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "continent": {
+            "excerpt": "50- to 69-year-old male cigarette smokers from Finland",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, ATBC Study"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum alpha-tocopherol, beta-carotene and retinol were measured in the baseline samples for the entire ATBC Study cohort between 1985 and 1988 using high-performance liquid chromatography.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12102485/",
+            "location": "Methods, Baseline serum vitamin D..."
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36487,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "48bede1c39aab2b6fcac711880dd250967c6d40fd1d19c8dd9a17f63edf7d157",
+      "pmc_source_receipt_digest": "c259c104e2038755d5bdcacbeda190f008ec9fc027620e4d184ece46d1782003",
+      "pmc_source_raw_sha256": "0c069238acb840a7daad28aeb195ca3f29761b148dfecb9e12c97ea70d95562b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "956ad248405549181a282fde7aee4db46ae5a3eedb4e63c11e474ae50a40fcae"
+    }
+  ]
+}

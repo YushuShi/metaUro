@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:33:21.207772-04:00",
+  "pmid": "24463248",
+  "work_key": "21b3d518cb9234cc1ac144048bd8b81d406e9ecfc7c096da7f3575317541cf83",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/24463248_0002.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "24463248",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "24463248|Lycopene|Prostate cancer",
+        "exposure": "Lycopene",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT's CI and p value match an abstract estimate for a lethal-disease endpoint rather than total incidence; Claude+Gemini's CI is absent and its p value maps to a different stratum.",
+        "one_sentence_explanation": "The allowed metadata contains ChatGPT's interval and p value for a lethal-disease endpoint, while Claude+Gemini's interval is absent and its p value belongs to a different stratum, so the field cannot be resolved."
+      },
+      {
+        "context_id": "24463248|Lycopene|Prostate cancer",
+        "exposure": "Lycopene",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT's value matches an abstract estimate for a lethal-disease endpoint rather than total incidence; Claude+Gemini's value is absent from the allowed metadata.",
+        "one_sentence_explanation": "The allowed metadata contains ChatGPT's estimate but for a lethal-disease endpoint, while Claude+Gemini's estimate is absent, so the target total-incidence value cannot be mapped uniquely."
+      }
+    ]
+  }
+}

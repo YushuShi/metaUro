@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:39:03.931517-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "5d6a12d43b5d735c60a81870b54d249af3aa3263dece0576f2fe9a6371ea0258",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "40684909",
+      "title": "Dietary Fiber Intake and Prostate Cancer Outcomes and All-Cause Mortality: Findings From a Secondary Analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study.",
+      "abstract": "Prostate cancer is one of the most common cancers in the United States. Dietary fiber intake may play a role in reducing cancer risk and mortality. However, the relationship between dietary fiber intake and both prostate cancer risk and prostate cancer-specific mortality remains uncertain. The aim of the study was to examine the association between dietary fiber intake and prostate cancer risk, prostate cancer-specific mortality, and all-cause mortality. This study was a secondary analysis of the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study, a multicenter randomized trial conducted in the United States that included 2 arms: one undergoing annual screening and the other receiving usual care. A total of 49 476 participants (annual screening arm: 25 669 men; usual care arm: 23 807 men) aged 55 to 74 years were enrolled from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Study between the years 1993 and 2001. Prostate cancer risk, prostate cancer-specific mortality, and all-cause mortality were considered as main outcomes. Cox proportional hazard and competing risk regressions were used within each arm to examine the associations of dietary fiber intake with prostate cancer risk, all-cause mortality, and prostate cancer-specific mortality. Compared with the low tertile total fiber intake, high tertile total fiber intake in the annual screening arm was linked to reduced prostate cancer risk (adjusted hazard ratio 0.87; 95% CI, 0.76 to 0.99), and high-soluble fiber intake in the usual care arm had a similar association (adjusted hazard ratio 0.86; 95% CI, 0.75 to 0.98) after adjusting for confounders. There were statistically significant inverse associations between dietary fiber intake (total, insoluble, and soluble) and all-cause mortality among participants in both arms (P < .01). Significant associations of dietary fiber intake (total, soluble, and insoluble) with advanced prostate cancer risk and prostate cancer-specific mortality in both arms were not observed (P > .05). High dietary fiber intake (total, soluble, and insoluble) was found to be associated with decreased all-cause mortality, which may suggest a protective effect of dietary fiber intake. Further prospective studies are needed to build on these findings.",
+      "mesh": [
+        "Humans",
+        "Dietary Fiber / administration & dosage",
+        "Male",
+        "Prostatic Neoplasms / mortality, prevention & control",
+        "Middle Aged",
+        "Aged",
+        "United States / epidemiology",
+        "Early Detection of Cancer",
+        "Risk Factors",
+        "Diet",
+        "Female",
+        "Cause of Death"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "40684909",
+      "contexts": [
+        {
+          "context_id": "40684909|Soluble dietary fiber intake|Prostate cancer",
+          "exposure": "Soluble dietary fiber intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "49476",
+              "effect_measure_type": "HR",
+              "effect_size": "0.86",
+              "ci_lower": "0.75",
+              "ci_upper": "0.98",
+              "p_value": null,
+              "comparison": "high versus low tertile soluble fiber intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "23807",
+              "effect_measure_type": "HR",
+              "effect_size": "0.86",
+              "ci_lower": "0.75",
+              "ci_upper": "0.98",
+              "p_value": null,
+              "comparison": "high tertile vs low tertile soluble fiber intake (usual care arm)"
+            }
+          }
+        },
+        {
+          "context_id": "40684909|Total dietary fiber intake|Prostate cancer",
+          "exposure": "Total dietary fiber intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "49476",
+              "effect_measure_type": "HR",
+              "effect_size": "0.87",
+              "ci_lower": "0.76",
+              "ci_upper": "0.99",
+              "p_value": null,
+              "comparison": "high versus low tertile total fiber intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "25669",
+              "effect_measure_type": "HR",
+              "effect_size": "0.87",
+              "ci_lower": "0.76",
+              "ci_upper": "0.99",
+              "p_value": null,
+              "comparison": "high tertile vs low tertile total fiber intake (annual screening arm)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

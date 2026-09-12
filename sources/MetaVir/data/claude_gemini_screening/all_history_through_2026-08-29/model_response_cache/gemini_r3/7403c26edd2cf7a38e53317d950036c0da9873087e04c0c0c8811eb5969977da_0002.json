@@ -1,0 +1,517 @@
+{
+  "schema_version": 1,
+  "receipt_id": "b571ae68b5cc832552706d74066f06e214f2cae4984da4e7a35b5b864693a09e",
+  "requested_at": "2026-09-02T08:36:21.959322+08:00",
+  "received_at": "2026-09-02T08:36:49.008040+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "7403c26edd2cf7a38e53317d950036c0da9873087e04c0c0c8811eb5969977da",
+  "attempt": 2,
+  "context_ids": [
+    "10408871|Red meat|Prostate cancer",
+    "10408871|Vitamin C|Prostate cancer",
+    "10408871|Vitamin E|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Red meat": 1,
+    "Vitamin C": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "22cd9b3e9f4855f14db0692412e1ea5cf6472ff0db8669fb7608ec3ae3d0261b",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13464,
+    "cached_input_tokens": 0,
+    "output_tokens": 5791,
+    "reasoning_tokens": 1230
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.03181425",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "e0b9cfda-8398-4372-951b-ddc6991e0b48",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.03181425"
+  },
+  "output_sha256": "558e6f47be2354001bccc84284cc084b0fe4140d0f70c2de070dd14f5ac6679d",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"10408871|Red meat|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study assessed red meat intake and incident prostate cancer risk in Uruguay.\",\n      \"extraction\": {\n        \"effect_size\": 1.7,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.8,\n        \"ci_upper\": 3.4,\n        \"p_value\": 0.17,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 408,\n        \"cases\": 175,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"South America\",\n        \"country\": \"Uruguay\",\n        \"location\": \"Montevideo\",\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based incident prostate cancer cases and controls in Montevideo\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Of 190 cases identified, 15 patients refused interview, leaving 175 cases of prostate carcinomas (response rate 92.1%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Selection of cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"When total energy intake was introduced in the model, red meat intake was no longer significant (OR 1.7, 95% CI 0.8-3.4, P-value for trend 0.17).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"OR2 1.7 95% CI 0.8-3.4\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Table 2, Red meat\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P-value for trend 0.17\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"When the highest quartile of intake was compared with the lowest, positive findings were obtained for red meat intake\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"participants were asked how often, on average, over the past year or the year prior to onset of symptoms, they had consumed that amount of each food.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Questionnaire, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": {\n            \"excerpt\": \"admitted to the four major hospitals in Montevideo, were considered eligible for this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Selection of cases, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The food-frequency questionnaire included 64 food items, representative of usual diet of the Uruguayan population.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Questionnaire, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"10408871|Vitamin C|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study assessed dietary vitamin C intake and incident prostate cancer risk in Uruguay.\",\n      \"extraction\": {\n        \"effect_size\": 0.4,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.2,\n        \"ci_upper\": 0.8,\n        \"p_value\": 0.008,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 408,\n        \"cases\": 175,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"South America\",\n        \"country\": \"Uruguay\",\n        \"location\": \"Montevideo\",\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based incident prostate cancer cases and controls in Montevideo\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"leaving 175 cases of prostate carcinomas (response rate 92.1%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Selection of cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Both vitamins C and E were associated with a protective effect (OR for vitamin C 0.4, 95% CI 0.2-0.8)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"RESULTS, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Vitamin C IV OR 0.4 95% CI 0.2-0.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Table 3, Vitamin C\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Vitamin C P for trend 0.008\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Table 3, Vitamin C\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"When the highest quartile of intake was compared with the lowest\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"participants were asked how often, on average, over the past year or the year prior to onset of symptoms, they had consumed that amount of each food.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Questionnaire, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": {\n            \"excerpt\": \"admitted to the four major hospitals in Montevideo, were considered eligible for this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Selection of cases, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Nutrient indices were derived from local food tables (Mazzei and Puchulu, 1996).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Questionnaire, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"10408871|Vitamin E|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study assessed dietary vitamin E intake and incident prostate cancer risk in Uruguay.\",\n      \"extraction\": {\n        \"effect_size\": 0.6,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.3,\n        \"ci_upper\": 1.1,\n        \"p_value\": 0.03,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 408,\n        \"cases\": 175,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"South America\",\n        \"country\": \"Uruguay\",\n        \"location\": \"Montevideo\",\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based incident prostate cancer cases and controls in Montevideo\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"leaving 175 cases of prostate carcinomas (response rate 92.1%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Selection of cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"vitamin E (OR 0.6, 95% CI 0.3–1.1) were associated with reduced risks of prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Vitamin E IV OR 0.6 95% CI 0.3-1.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Table 3, Vitamin E\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Vitamin E P for trend 0.03\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Table 3, Vitamin E\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"When the highest quartile of intake was compared with the lowest\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"participants were asked how often, on average, over the past year or the year prior to onset of symptoms, they had consumed that amount of each food.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Questionnaire, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": {\n            \"excerpt\": \"admitted to the four major hospitals in Montevideo, were considered eligible for this study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Selection of cases, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Nutrient indices were derived from local food tables (Mazzei and Puchulu, 1996).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/\",\n            \"location\": \"SUBJECTS AND METHODS, Questionnaire, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "10408871|Red meat|Prostate cancer",
+      "pmid": "10408871",
+      "pmcid": "PMC2362326",
+      "published_date": "1999-05-01",
+      "title": "Foods, nutrients and prostate cancer: a case-control study in Uruguay.",
+      "authors": [
+        "Deneo-Pellegrini H",
+        "De Stefani E",
+        "Ronco A",
+        "Mendilaharsu M"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study assessed red meat intake and incident prostate cancer risk in Uruguay.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.7,
+        "effect_type": "OR",
+        "ci_lower": 0.8,
+        "ci_upper": 3.4,
+        "p_value": 0.17,
+        "ci_confidence_level": 95,
+        "total_n": 408,
+        "cases": 175,
+        "comparison_type": "extreme_quantiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "South America",
+        "country": "Uruguay",
+        "location": "Montevideo, Uruguay",
+        "ethnicity": "NA",
+        "population": "Hospital-based incident prostate cancer cases and controls in Montevideo",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Among carotenoids, only lutein 592 H Deneo-Pellegrini et al British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 1 Distribution of cases and controls by selected variables Variable: Category Cases Controls Hospital Cancer Institute 50 (28.6) 65 (27.9) Pasteur 29 (16.6) 38 (16.3) University 77 (44.0) 105 (45.1) Maciel 19 (10.8) 25 (10.7) Age (years) 40-49 2 (1.1) 3 (1.3) 50-59 7 (4.0) 22 (9.4) 60-69 54 (30.9) 83 (35.6) 70-79 87 (49.5) 103 (44.2) 80-89 25 (14.3) 22 (9.4) Residence Montevideo 85 (48.6) 122 (52.4) Other counties 90 (51.4) 111 (47.6) Urban/rural status Urban 118 (67.4) 178 (76.4) Rural 57 (32.6) 55 (23.6) Education (years) 0-2 58 (33.1) 70 (30.0) 3-5 67 (38.3) 73 (31.3) 6+ 50 (28.6) 90 (38.6) Monthly income (US dollars) <157 48 (27.4) 73 (31.3) 158+ 49 (28.0) 69 (29.6) Unknown 78 (44.6) 91 (39.1) Family history of prostate cancer No 168 (96.0) 232 (99.6) Yes 7 (4.0) 1 (0.4) Number of patients 175 (100) 233 (10) Food and prostate cancer 593 British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 2 Odds ratios of prostate cancer for food groups Quartile Food group I II III IV P for trend Red meat IQRc 182 183-365 366-378 379+ Cases/Controls 32/71 61/78 36/40 46/44 OR1a 1.0 1.6 1.8 2.0 95% CI - 0.9-2.9 0.9-3.5 1.1-3.8 0.03 OR2b 1.0 1.5 1.7 1.7 95% CI - 0.9-2.7 0.9-3.3 0.8-3.4 0.17 White meat IQR 24 25-64 65-104 105+ Cases/Controls 44/58 41/65 51/59 39/51 OR1 1.0 0.9 1.2 1.1 95% CI - 0.5-1.5 0.7-2.1 0.6-2.0 0.51 OR2 1.0 0.8 1.1 0.9 95% CI - 0.5-1.5 0.6-1.9 0.5-1.8 0.86 Poultry IQR 12 13-40 41-52 53+ Cases/Controls 45/75 26/32 64/83 40/43 OR1 1.0 1.3 1.3 1.5 95% CI - 0.7-2.6 0.8-2.2 0.8-2.6 0.18 OR2 1.0 1.3 1.2 1.3 95% CI - 0.7-2.5 0.7-2.0 0.7-2.4 0.38 Fish IQR 0 1-18 19-52 53+ Cases/Controls 41/61 50/59 60/73 24/70 OR1 1.0 1.3 1.4 0.9 95% CI - 0.7-2.2 0.8-2.4 0.5-1.9 0.78 OR2 1.0 1.3 1.3 0.9 95% CI - 0.7-2.3 0.7-2.2 0.5-1.8 0.99 Processed meat IQR 182 183-365 366-378 379+ Cases/Controls 41/60 48/56 46/54 40/63 OR1 1.0 1.2 1.1 0.9 95% CI - 0.7-2.1 0.6-2.0 0.5-1.7 0.75 OR2 1.0 1.2 1.0 0.8 95% CI - 0.7-2.2 0.6-1.8 0.4-1.4 0.31 Offal IQR 0 1-24 25-52 53+ Cases/Controls 74/119 36/49 33/25 32/40 OR1 1.0 1.2 2.1 1.2 95% CI - 0.7-2.0 1.1-3.9 0.7-2.1 0.18 OR2 1.0 1.3 2.1 1.1 95% CI - 0.8-2.3 1.1-3.8 0.6-1.9 0.30 Total meat IQR 422 423-570 571-767 768+ Cases/Controls 30/72 53/50 46/58 46/53 OR1 1.0 2.6 1.7 1.9 95% CI - 1.4-4.7 0.9-3.1 1.1-3.6 0.11 OR2 1.0 2.3 1.5 1.6 95% CI - 1.3-4.4 0.8-2.9 0.8-3.4 0.59 Dairy foods IQR 312 313-469 470-729 730+ Cases/Controls 43/61 46/56 40/56 46/60 OR1 1.0 1.1 1.1 1.1 95% CI - 0.6-1.8 0.6-2.0 0.6-1.9 0.65 OR2 1.0 0.9 0.9 0.8 95% CI - 0.5-1.7 0.5-1.7 0.4-1.6 0.60 Eggs IQR 48 49-103 104-142 143+ Cases/Controls 35/63 44/54 47/61 49/55 OR1 1.0 1.5 1.5 1.6 95% CI - 0.8-2.7 0.8-2.6 0.9-2.9 0.12 OR2 1.0 1.4 1.3 1.4 95% CI - 0.8-2.5 0.7-2.4 0.7-2.6 0.41 displayed a moderate decreased risk of 0.70 (95% CI 0.4-1.3), but without a significant trend.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1; total_n derived from reported group counts 175 + 233 = 408"
+          },
+          "cases": {
+            "excerpt": "In the period 1994-1997, all incident- and histologically verified prostatic adenocarcinomas occurring in men in the age range 40-89 years, admitted to the four major hospitals in Montevideo, were considered eligible for this study. Of 190 cases identified, 15 patients refused interview, leaving 175 cases of prostate carcinomas (response rate 92.1%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Selection of cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "When total energy intake was introduced in the model, red meat intake was no longer significant (OR 1.7, 95% CI 0.8-3.4, P-value for trend 0.17). Desserts intake was associated with a moderate increased risk (OR 1.8, 95% CI 0.9-3.3), whereas vegetables, and vegetables and fruits together, were associated with reduced risks (OR for all vegetables and fruits 0.5, 95% CI 0.3-0.9, P-value for linear trend 0.04).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "When total energy intake was introduced in the model, red meat intake was no longer significant (OR 1.7, 95% CI 0.8-3.4, P-value for trend 0.17).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Table 2, Red meat"
+          },
+          "p_value": {
+            "excerpt": "P-value for trend 0.17",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "comparison": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest, positive findings were obtained for red meat intake",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "design": {
+            "excerpt": "A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "participants were asked how often, on average, over the past year or the year prior to onset of symptoms, they had consumed that amount of each food.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Questionnaire, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Questionnaire, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.17",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29019,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "29b2f8ebd91ae28e43edafb602d2cc578fe3cf582526204eab54ed4cffc03e55",
+      "pmc_source_receipt_digest": "7235454fb07d17e3cf4f47dc9124f4db727b1002a0a5896f34d9dc9939bd6529",
+      "pmc_source_raw_sha256": "fdde5cae0f74be882a407dd8abd6889511d452cefba71b0cce0c0d7a8732732a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "3e6faf85ed508472637a527838b601d9cb2c565cb29eaf3517aeca8fdf398dfd"
+    },
+    {
+      "context_id": "10408871|Vitamin C|Prostate cancer",
+      "pmid": "10408871",
+      "pmcid": "PMC2362326",
+      "published_date": "1999-05-01",
+      "title": "Foods, nutrients and prostate cancer: a case-control study in Uruguay.",
+      "authors": [
+        "Deneo-Pellegrini H",
+        "De Stefani E",
+        "Ronco A",
+        "Mendilaharsu M"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+      "exposure": "Vitamin C",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study assessed dietary vitamin C intake and incident prostate cancer risk in Uruguay.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.4,
+        "effect_type": "OR",
+        "ci_lower": 0.2,
+        "ci_upper": 0.8,
+        "p_value": 0.008,
+        "ci_confidence_level": 95,
+        "total_n": 408,
+        "cases": 175,
+        "comparison_type": "extreme_quantiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "South America",
+        "country": "Uruguay",
+        "location": "Montevideo, Uruguay",
+        "ethnicity": "NA",
+        "population": "Hospital-based incident prostate cancer cases and controls in Montevideo",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Among carotenoids, only lutein 592 H Deneo-Pellegrini et al British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 1 Distribution of cases and controls by selected variables Variable: Category Cases Controls Hospital Cancer Institute 50 (28.6) 65 (27.9) Pasteur 29 (16.6) 38 (16.3) University 77 (44.0) 105 (45.1) Maciel 19 (10.8) 25 (10.7) Age (years) 40-49 2 (1.1) 3 (1.3) 50-59 7 (4.0) 22 (9.4) 60-69 54 (30.9) 83 (35.6) 70-79 87 (49.5) 103 (44.2) 80-89 25 (14.3) 22 (9.4) Residence Montevideo 85 (48.6) 122 (52.4) Other counties 90 (51.4) 111 (47.6) Urban/rural status Urban 118 (67.4) 178 (76.4) Rural 57 (32.6) 55 (23.6) Education (years) 0-2 58 (33.1) 70 (30.0) 3-5 67 (38.3) 73 (31.3) 6+ 50 (28.6) 90 (38.6) Monthly income (US dollars) <157 48 (27.4) 73 (31.3) 158+ 49 (28.0) 69 (29.6) Unknown 78 (44.6) 91 (39.1) Family history of prostate cancer No 168 (96.0) 232 (99.6) Yes 7 (4.0) 1 (0.4) Number of patients 175 (100) 233 (10) Food and prostate cancer 593 British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 2 Odds ratios of prostate cancer for food groups Quartile Food group I II III IV P for trend Red meat IQRc 182 183-365 366-378 379+ Cases/Controls 32/71 61/78 36/40 46/44 OR1a 1.0 1.6 1.8 2.0 95% CI - 0.9-2.9 0.9-3.5 1.1-3.8 0.03 OR2b 1.0 1.5 1.7 1.7 95% CI - 0.9-2.7 0.9-3.3 0.8-3.4 0.17 White meat IQR 24 25-64 65-104 105+ Cases/Controls 44/58 41/65 51/59 39/51 OR1 1.0 0.9 1.2 1.1 95% CI - 0.5-1.5 0.7-2.1 0.6-2.0 0.51 OR2 1.0 0.8 1.1 0.9 95% CI - 0.5-1.5 0.6-1.9 0.5-1.8 0.86 Poultry IQR 12 13-40 41-52 53+ Cases/Controls 45/75 26/32 64/83 40/43 OR1 1.0 1.3 1.3 1.5 95% CI - 0.7-2.6 0.8-2.2 0.8-2.6 0.18 OR2 1.0 1.3 1.2 1.3 95% CI - 0.7-2.5 0.7-2.0 0.7-2.4 0.38 Fish IQR 0 1-18 19-52 53+ Cases/Controls 41/61 50/59 60/73 24/70 OR1 1.0 1.3 1.4 0.9 95% CI - 0.7-2.2 0.8-2.4 0.5-1.9 0.78 OR2 1.0 1.3 1.3 0.9 95% CI - 0.7-2.3 0.7-2.2 0.5-1.8 0.99 Processed meat IQR 182 183-365 366-378 379+ Cases/Controls 41/60 48/56 46/54 40/63 OR1 1.0 1.2 1.1 0.9 95% CI - 0.7-2.1 0.6-2.0 0.5-1.7 0.75 OR2 1.0 1.2 1.0 0.8 95% CI - 0.7-2.2 0.6-1.8 0.4-1.4 0.31 Offal IQR 0 1-24 25-52 53+ Cases/Controls 74/119 36/49 33/25 32/40 OR1 1.0 1.2 2.1 1.2 95% CI - 0.7-2.0 1.1-3.9 0.7-2.1 0.18 OR2 1.0 1.3 2.1 1.1 95% CI - 0.8-2.3 1.1-3.8 0.6-1.9 0.30 Total meat IQR 422 423-570 571-767 768+ Cases/Controls 30/72 53/50 46/58 46/53 OR1 1.0 2.6 1.7 1.9 95% CI - 1.4-4.7 0.9-3.1 1.1-3.6 0.11 OR2 1.0 2.3 1.5 1.6 95% CI - 1.3-4.4 0.8-2.9 0.8-3.4 0.59 Dairy foods IQR 312 313-469 470-729 730+ Cases/Controls 43/61 46/56 40/56 46/60 OR1 1.0 1.1 1.1 1.1 95% CI - 0.6-1.8 0.6-2.0 0.6-1.9 0.65 OR2 1.0 0.9 0.9 0.8 95% CI - 0.5-1.7 0.5-1.7 0.4-1.6 0.60 Eggs IQR 48 49-103 104-142 143+ Cases/Controls 35/63 44/54 47/61 49/55 OR1 1.0 1.5 1.5 1.6 95% CI - 0.8-2.7 0.8-2.6 0.9-2.9 0.12 OR2 1.0 1.4 1.3 1.4 95% CI - 0.8-2.5 0.7-2.4 0.7-2.6 0.41 displayed a moderate decreased risk of 0.70 (95% CI 0.4-1.3), but without a significant trend.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1; total_n derived from reported group counts 175 + 233 = 408"
+          },
+          "cases": {
+            "excerpt": "In the period 1994-1997, all incident- and histologically verified prostatic adenocarcinomas occurring in men in the age range 40-89 years, admitted to the four major hospitals in Montevideo, were considered eligible for this study. Of 190 cases identified, 15 patients refused interview, leaving 175 cases of prostate carcinomas (response rate 92.1%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Selection of cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Both vitamins C and E were associated with a protective effect (OR for vitamin C 0.4, 95% CI 0.2-0.8), and vitamin D displayed a moderate reduced risk of 0.7 (95% CI 0.4-1.2).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "RESULTS, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "Both vitamins C and E were associated with a protective effect (OR for vitamin C 0.4, 95% CI 0.2-0.8), and vitamin D displayed a moderate reduced risk of 0.7 (95% CI 0.4-1.2).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Table 3, Vitamin C"
+          },
+          "p_value": {
+            "excerpt": "596 H Deneo-Pellegrini et al British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 3 (Cont) Odds ratios of prostate cancer for nutrientsa Quartile Nutrient I II III IV P for trend Lutein IQRf 1214 1215-2086 2087-3593 3594+ Cases/Controls 44/58 51/51 43/59 37/65 OR 1.0 1.3 0.9 0.7 95% CI - 0.7-2.3 0.5-1.7 0.4-1.3 0.15 Vitamin C IQRd 85.8 85.9-115.6 115.7-161.8 161.9+ Cases/Controls 55/47 45/57 39/63 36/66 OR 1.0 0.6 0.5 0.4 95% CI - 0.3-1.0 0.3-0.8 0.2-0.8 0.008 Vitamin E IQRd 5.0 5.1-6.0 6.1-7.8 7.9+ Cases/Controls 49/53 52/50 37/65 37/65 OR 1.0 1.2 0.6 0.6 95% CI - 0.7-2.1 0.3-1.1 0.3-1.1 0.03 Vitamin D IQRe 75.2 75.3-148.4 184.5-189.7 189.8+ Cases/Controls 44/58 52/49 46/57 33/69 OR 1.0 1.3 0.9 0.7 95% CI - 0.7-2.5 0.5-1.8 0.4-1.2 0.14 aAdjusted for age, residence, urban/rural status, education, family history of prostate cancer, body mass index and total energy intake.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Table 3, Vitamin C"
+          },
+          "comparison": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "design": {
+            "excerpt": "A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "participants were asked how often, on average, over the past year or the year prior to onset of symptoms, they had consumed that amount of each food.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Questionnaire, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Nutrient indices were derived from local food tables (Mazzei and Puchulu, 1996).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Questionnaire, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.008",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29019,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "29b2f8ebd91ae28e43edafb602d2cc578fe3cf582526204eab54ed4cffc03e55",
+      "pmc_source_receipt_digest": "7235454fb07d17e3cf4f47dc9124f4db727b1002a0a5896f34d9dc9939bd6529",
+      "pmc_source_raw_sha256": "fdde5cae0f74be882a407dd8abd6889511d452cefba71b0cce0c0d7a8732732a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "bf2ef218af30ad855b9b4836b2f6577d7c45721644566218f7c30d6ad027b83a"
+    },
+    {
+      "context_id": "10408871|Vitamin E|Prostate cancer",
+      "pmid": "10408871",
+      "pmcid": "PMC2362326",
+      "published_date": "1999-05-01",
+      "title": "Foods, nutrients and prostate cancer: a case-control study in Uruguay.",
+      "authors": [
+        "Deneo-Pellegrini H",
+        "De Stefani E",
+        "Ronco A",
+        "Mendilaharsu M"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study assessed dietary vitamin E intake and incident prostate cancer risk in Uruguay.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.6,
+        "effect_type": "OR",
+        "ci_lower": 0.3,
+        "ci_upper": 1.1,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": 408,
+        "cases": 175,
+        "comparison_type": "extreme_quantiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "South America",
+        "country": "Uruguay",
+        "location": "Montevideo, Uruguay",
+        "ethnicity": "NA",
+        "population": "Hospital-based incident prostate cancer cases and controls in Montevideo",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Among carotenoids, only lutein 592 H Deneo-Pellegrini et al British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 1 Distribution of cases and controls by selected variables Variable: Category Cases Controls Hospital Cancer Institute 50 (28.6) 65 (27.9) Pasteur 29 (16.6) 38 (16.3) University 77 (44.0) 105 (45.1) Maciel 19 (10.8) 25 (10.7) Age (years) 40-49 2 (1.1) 3 (1.3) 50-59 7 (4.0) 22 (9.4) 60-69 54 (30.9) 83 (35.6) 70-79 87 (49.5) 103 (44.2) 80-89 25 (14.3) 22 (9.4) Residence Montevideo 85 (48.6) 122 (52.4) Other counties 90 (51.4) 111 (47.6) Urban/rural status Urban 118 (67.4) 178 (76.4) Rural 57 (32.6) 55 (23.6) Education (years) 0-2 58 (33.1) 70 (30.0) 3-5 67 (38.3) 73 (31.3) 6+ 50 (28.6) 90 (38.6) Monthly income (US dollars) <157 48 (27.4) 73 (31.3) 158+ 49 (28.0) 69 (29.6) Unknown 78 (44.6) 91 (39.1) Family history of prostate cancer No 168 (96.0) 232 (99.6) Yes 7 (4.0) 1 (0.4) Number of patients 175 (100) 233 (10) Food and prostate cancer 593 British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 2 Odds ratios of prostate cancer for food groups Quartile Food group I II III IV P for trend Red meat IQRc 182 183-365 366-378 379+ Cases/Controls 32/71 61/78 36/40 46/44 OR1a 1.0 1.6 1.8 2.0 95% CI - 0.9-2.9 0.9-3.5 1.1-3.8 0.03 OR2b 1.0 1.5 1.7 1.7 95% CI - 0.9-2.7 0.9-3.3 0.8-3.4 0.17 White meat IQR 24 25-64 65-104 105+ Cases/Controls 44/58 41/65 51/59 39/51 OR1 1.0 0.9 1.2 1.1 95% CI - 0.5-1.5 0.7-2.1 0.6-2.0 0.51 OR2 1.0 0.8 1.1 0.9 95% CI - 0.5-1.5 0.6-1.9 0.5-1.8 0.86 Poultry IQR 12 13-40 41-52 53+ Cases/Controls 45/75 26/32 64/83 40/43 OR1 1.0 1.3 1.3 1.5 95% CI - 0.7-2.6 0.8-2.2 0.8-2.6 0.18 OR2 1.0 1.3 1.2 1.3 95% CI - 0.7-2.5 0.7-2.0 0.7-2.4 0.38 Fish IQR 0 1-18 19-52 53+ Cases/Controls 41/61 50/59 60/73 24/70 OR1 1.0 1.3 1.4 0.9 95% CI - 0.7-2.2 0.8-2.4 0.5-1.9 0.78 OR2 1.0 1.3 1.3 0.9 95% CI - 0.7-2.3 0.7-2.2 0.5-1.8 0.99 Processed meat IQR 182 183-365 366-378 379+ Cases/Controls 41/60 48/56 46/54 40/63 OR1 1.0 1.2 1.1 0.9 95% CI - 0.7-2.1 0.6-2.0 0.5-1.7 0.75 OR2 1.0 1.2 1.0 0.8 95% CI - 0.7-2.2 0.6-1.8 0.4-1.4 0.31 Offal IQR 0 1-24 25-52 53+ Cases/Controls 74/119 36/49 33/25 32/40 OR1 1.0 1.2 2.1 1.2 95% CI - 0.7-2.0 1.1-3.9 0.7-2.1 0.18 OR2 1.0 1.3 2.1 1.1 95% CI - 0.8-2.3 1.1-3.8 0.6-1.9 0.30 Total meat IQR 422 423-570 571-767 768+ Cases/Controls 30/72 53/50 46/58 46/53 OR1 1.0 2.6 1.7 1.9 95% CI - 1.4-4.7 0.9-3.1 1.1-3.6 0.11 OR2 1.0 2.3 1.5 1.6 95% CI - 1.3-4.4 0.8-2.9 0.8-3.4 0.59 Dairy foods IQR 312 313-469 470-729 730+ Cases/Controls 43/61 46/56 40/56 46/60 OR1 1.0 1.1 1.1 1.1 95% CI - 0.6-1.8 0.6-2.0 0.6-1.9 0.65 OR2 1.0 0.9 0.9 0.8 95% CI - 0.5-1.7 0.5-1.7 0.4-1.6 0.60 Eggs IQR 48 49-103 104-142 143+ Cases/Controls 35/63 44/54 47/61 49/55 OR1 1.0 1.5 1.5 1.6 95% CI - 0.8-2.7 0.8-2.6 0.9-2.9 0.12 OR2 1.0 1.4 1.3 1.4 95% CI - 0.8-2.5 0.7-2.4 0.7-2.6 0.41 displayed a moderate decreased risk of 0.70 (95% CI 0.4-1.3), but without a significant trend.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1; total_n derived from reported group counts 175 + 233 = 408"
+          },
+          "cases": {
+            "excerpt": "In the period 1994-1997, all incident- and histologically verified prostatic adenocarcinomas occurring in men in the age range 40-89 years, admitted to the four major hospitals in Montevideo, were considered eligible for this study. Of 190 cases identified, 15 patients refused interview, leaving 175 cases of prostate carcinomas (response rate 92.1%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Selection of cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Food and prostate cancer 595 British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 3 Odds ratios of prostate cancer for nutrientsa Quartile Nutrient I II III IV P for trend Total energy IQRb 1527 1528-1914 1915-2326 2327+ Cases/Controls 38/66 40/59 46/57 51/51 OR 1.0 1.2 1.5 1.9 95% CI - 0.7-2.2 0.9-2.7 1.0-3.4 0.03 Protein IQRc 62.9 63.0-76.9 77.0-97.4 97.5+ Cases/Controls 38/64 43/59 53/49 41/61 OR 1.0 1.1 1.7 1.0 95% CI - 0.6-1.9 0.9-3.1 0.6-1.8 0.60 Carbohydrate IQRc 188.5 188.5-244.3 244.4-301.7 301.8+ Cases/Controls 48/54 48/54 48/54 31/71 OR 1.0 1.0 1.1 0.5 95% CI - 0.6-1.8 0.6-2.0 0.3-1.0 0.13 Total fat IQRc 53.7 53.8-66.7 66.8-82.2 82.3+ Cases/Controls 34/68 46/56 49/53 46/56 OR 1.0 1.6 2.0 1.8 95% CI - 0.9-2.9 1.1-3.7 0.9-3.4 0.04 Saturated fat IQRc 20.1 20.2-25.8 25.9-32.7 32.8+ Cases/Controls 39/63 49/53 46/56 41/61 OR 1.0 1.4 1.2 0.9 95% CI - 0.8-2.4 0.7-2.1 0.5-1.7 0.78 Cholesterol IQRd 288.9 289.0-398.7 398.8-522.6 522.7+ Cases/Controls 32/70 40/62 55/47 48/54 OR 1.0 1.8 2.4 1.0 95% CI - 1.0-3.2 1.3-4.4 0.6-1.9 0.72 Vitamin A IQRe 6204 6205-9460 9461-15838 15839+ Cases/Controls 43/59 49/53 44/58 39/63 OR 1.0 1.3 1.0 0.8 95% CI - 0.8-2.4 0.6-1.9 0.4-1.4 0.34 Dietary fibre IQRc 18.2 18.3-21.7 21.8-27.1 27.2+ Cases/Controls 36/66 48/54 47/55 44/58 OR 1.0 1.6 1.7 1.5 95% CI - 0.9-2.9 0.9-3.2 0.8-2.6 0.18 Sucrose IQRc 12.1 12.2-19.2 19.3-29.6 29.7+ Cases/Controls 39/63 47/55 45/57 44/58 OR 1.0 1.2 1.4 1.0 95% CI - 0.6-2.1 0.8-2.6 0.6-1.8 0.49 Beta-carotene IQRf 2705 2706-4270 4271-7484 7485+ Cases/Controls 41/61 44/58 48/54 42/60 OR 1.0 1.2 1.4 1.0 95% CI - 0.6-2.1 0.8-2.6 0.6-1.8 0.79 Alpha-carotene IQRf 109 110-291 292-600 601+ Cases/Controls 41/61 55/47 42/60 37/65 OR 1.0 1.8 1.1 0.9 95% CI - 1.0-3.3 0.6-1.9 0.5-1.6 0.40 Lycopene IQRf 1300 1301-2501 2502-3300 3301+ Cases/Controls 41/61 51/51 36/66 47/55 OR 1.0 1.6 0.8 1.2 95% CI - 0.9-2.8 0.4-1.4 0.7-2.2 0.90 patients, and also after controlling for dietary fibre and vitamin E intakes (results not shown). As in previous studies (West et al, 1991; Rohan et al, 1995; Whittemore et al, 1995; Meyer et al, 1997), total energy intake was a risk factor for prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "On the other hand, vegetables and fruits (OR 0.5, 95% CI 0.3–0.9), vitamin C (OR 0.4, 95% 0.2–0.8) and vitamin E (OR 0.6, 95% CI 0.3–1.1) were associated with reduced risks of prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Table 3, Vitamin E"
+          },
+          "p_value": {
+            "excerpt": "596 H Deneo-Pellegrini et al British Journal of Cancer (1999) 80(3/4), 591-597 (c) Cancer Research Campaign 1999 Table 3 (Cont) Odds ratios of prostate cancer for nutrientsa Quartile Nutrient I II III IV P for trend Lutein IQRf 1214 1215-2086 2087-3593 3594+ Cases/Controls 44/58 51/51 43/59 37/65 OR 1.0 1.3 0.9 0.7 95% CI - 0.7-2.3 0.5-1.7 0.4-1.3 0.15 Vitamin C IQRd 85.8 85.9-115.6 115.7-161.8 161.9+ Cases/Controls 55/47 45/57 39/63 36/66 OR 1.0 0.6 0.5 0.4 95% CI - 0.3-1.0 0.3-0.8 0.2-0.8 0.008 Vitamin E IQRd 5.0 5.1-6.0 6.1-7.8 7.9+ Cases/Controls 49/53 52/50 37/65 37/65 OR 1.0 1.2 0.6 0.6 95% CI - 0.7-2.1 0.3-1.1 0.3-1.1 0.03 Vitamin D IQRe 75.2 75.3-148.4 184.5-189.7 189.8+ Cases/Controls 44/58 52/49 46/57 33/69 OR 1.0 1.3 0.9 0.7 95% CI - 0.7-2.5 0.5-1.8 0.4-1.2 0.14 aAdjusted for age, residence, urban/rural status, education, family history of prostate cancer, body mass index and total energy intake.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Table 3, Vitamin E"
+          },
+          "comparison": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "design": {
+            "excerpt": "A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "participants were asked how often, on average, over the past year or the year prior to onset of symptoms, they had consumed that amount of each food.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Questionnaire, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "A case–control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "Abstract, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Nutrient indices were derived from local food tables (Mazzei and Puchulu, 1996).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2362326/",
+            "location": "SUBJECTS AND METHODS, Questionnaire, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29019,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "29b2f8ebd91ae28e43edafb602d2cc578fe3cf582526204eab54ed4cffc03e55",
+      "pmc_source_receipt_digest": "7235454fb07d17e3cf4f47dc9124f4db727b1002a0a5896f34d9dc9939bd6529",
+      "pmc_source_raw_sha256": "fdde5cae0f74be882a407dd8abd6889511d452cefba71b0cce0c0d7a8732732a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "161c7610b89adac9c930279220e19bc650e9ebf4b9e8f968fdacb9a86d3ee478"
+    }
+  ]
+}

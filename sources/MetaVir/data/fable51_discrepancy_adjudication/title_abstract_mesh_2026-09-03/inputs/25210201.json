@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:37.472820-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "93dbc238e466c634604876b639258b5ecd6c27b873baae2cc653176724d3026a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25210201",
+      "title": "Circulating fatty acids and prostate cancer risk: individual participant meta-analysis of prospective studies.",
+      "abstract": "Individual studies have suggested that some circulating fatty acids are associated with prostate cancer risk, but have not been large enough to provide precise estimates of associations, particularly by stage and grade of disease. Principal investigators of prospective studies on circulating fatty acids and prostate cancer were invited to collaborate. Investigators provided individual participant data on circulating fatty acids (weight percent) and other characteristics of prostate cancer cases and controls. Prostate cancer risk by study-specific fifths of 14 fatty acids was estimated using multivariable-adjusted conditional logistic regression. All statistical tests were two-sided. Five thousand and ninety-eight case patients and 6649 control patients from seven studies with an average follow-up of 5.1 (SD = 3.3) years were included. Stearic acid (18:0) was inversely associated with total prostate cancer (odds ratio [OR] Q5 vs Q1 = 0.88, 95% confidence interval [CI] = 0.78 to 1.00, P trend = .043). Prostate cancer risk was, respectively, 14% and 16% greater in the highest fifth of eicosapentaenoic acid (20:5n-3) (OR = 1.14, 95% CI = 1.01 to 1.29, Ptrend = .001) and docosapentaenoic acid (22:5n-3) (OR = 1.16, 95% CI = 1.02 to 1.33, P trend = .003), but in each case there was heterogeneity between studies (P = .022 and P < .001, respectively). There was heterogeneity in the association between docosapentaenoic acid and prostate cancer by grade of disease (P = .006); the association was statistically significant for low-grade disease but not high-grade disease. The remaining 11 fatty acids were not statistically associated with total prostate cancer risk. There was no strong evidence that circulating fatty acids are important predictors of prostate cancer risk. It is not clear whether the modest associations of stearic, eicosapentaenoic, and docosapentaenoic acid are causal.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "Eicosapentaenoic Acid / blood",
+        "Fatty Acids / blood",
+        "Fatty Acids, Unsaturated / blood",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood",
+        "Risk Assessment",
+        "Risk Factors",
+        "Stearic Acids / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25210201",
+      "contexts": [
+        {
+          "context_id": "25210201|Eicosapentaenoic acid|Prostate cancer",
+          "exposure": "Eicosapentaenoic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-REVIEW"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "25210201|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-REVIEW"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

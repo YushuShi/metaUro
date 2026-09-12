@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "receipt_id": "803c62902e649c2aea146b5305ecd4afac395757d12b58bcf8bf83e76650b485",
+  "requested_at": "2026-09-02T07:27:14.198301+08:00",
+  "received_at": "2026-09-02T07:27:28.127540+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "220ad2eff118b7812c17c0e1f9e6fc2da6b14c7aa33f4045c366981ae86a9c12",
+  "attempt": 1,
+  "context_ids": [
+    "9343839|Eggs|Prostate cancer",
+    "9343839|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Eggs": 1,
+    "Red meat": 1
+  },
+  "input_digest": "090d3065a57e3d0d9194b84a4636e2826870b60e2ff726e5fd950a3e7d837317",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 4963,
+    "cached_input_tokens": 0,
+    "output_tokens": 1006,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.04996500000000001",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "2083a8e7-97b0-486a-b31f-5620c3f4cd58",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.04996500000000001"
+  },
+  "output_sha256": "6cb2c330560e097b8b863a675f80351f74fd632c164b65ac7075df83ddd671f5",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"9343839|Eggs|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NO-TARGET-ESTIMATE\",\"reason\":\"This ecological correlation analysis reports only that \\\"Higher meat intakes were significantly and positively correlated with cancers of the colon, rectum, prostate, and female breast\\\" and gives no separable egg-specific prostate cancer incidence estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"9343839|Red meat|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-COMPOUND\",\"reason\":\"The prostate cancer association is reported only for aggregate \\\"meat intakes\\\" spanning pork, beef, and poultry, so no red-meat-specific estimate can be separated from the combined exposure.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "9343839|Eggs|Prostate cancer",
+      "pmid": "9343839",
+      "pmcid": "",
+      "published_date": "1997",
+      "title": "An ecological study of trends in cancer incidence and dietary changes in Hong Kong.",
+      "authors": [
+        "Koo LC",
+        "Mang OW",
+        "Ho JH"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9343839/",
+      "exposure": "Eggs",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "This ecological correlation analysis reports only that \"Higher meat intakes were significantly and positively correlated with cancers of the colon, rectum, prostate, and female breast\" and gives no separable egg-specific prostate cancer incidence estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "9343839|Red meat|Prostate cancer",
+      "pmid": "9343839",
+      "pmcid": "",
+      "published_date": "1997",
+      "title": "An ecological study of trends in cancer incidence and dietary changes in Hong Kong.",
+      "authors": [
+        "Koo LC",
+        "Mang OW",
+        "Ho JH"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9343839/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-COMPOUND",
+      "reason": "The prostate cancer association is reported only for aggregate \"meat intakes\" spanning pork, beef, and poultry, so no red-meat-specific estimate can be separated from the combined exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

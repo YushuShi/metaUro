@@ -1,0 +1,866 @@
+{
+  "schema_version": 1,
+  "receipt_id": "01640d1831850e8116731ab7108b6a1ffd5718f7265c99777ef0af9bb85c1f99",
+  "requested_at": "2026-09-02T08:24:50.250970+08:00",
+  "received_at": "2026-09-02T08:26:10.100924+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "ebd7894f578cb43780c6f8b8219f6f386a41b59ddf4b541860077358fb111764",
+  "attempt": 2,
+  "context_ids": [
+    "41327648|Non-nutritive sweetener intake|Prostate cancer",
+    "41327648|Tea|Prostate cancer",
+    "41346686|Dairy|Prostate cancer",
+    "41346686|Monounsaturated fat (MUFA)|Prostate cancer",
+    "41346686|Polyunsaturated fat (PUFA)|Prostate cancer",
+    "41366988|Caffeine|Prostate cancer",
+    "41375042|Akkermansia muciniphila|Prostate cancer",
+    "41379769|Alcohol|Prostate cancer",
+    "41384118|Akkermansia muciniphila|Prostate cancer",
+    "41384118|Prebiotics|Prostate cancer",
+    "41384118|Probiotics|Prostate cancer",
+    "41384299|Probiotics|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Akkermansia muciniphila": 2,
+    "Alcohol": 1,
+    "Caffeine": 1,
+    "Dairy": 1,
+    "Monounsaturated fat (MUFA)": 1,
+    "Non-nutritive sweetener intake": 1,
+    "Polyunsaturated fat (PUFA)": 1,
+    "Prebiotics": 1,
+    "Probiotics": 2,
+    "Tea": 1
+  },
+  "input_digest": "c952f21bfa8187681a2fa68fe0b632d3b18c66994c58b3d64c728857317d0ef5",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10087,
+    "cached_input_tokens": 0,
+    "output_tokens": 8522,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.263485",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "82b84ab5-478d-48b6-94c9-36bb3c4c0e64",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.263485"
+  },
+  "output_sha256": "e32a9a1859bc2f6d5bcb60d88b56fb755be336bbded2b4f1536892c9013081c4",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"41327648|Non-nutritive sweetener intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-MENDELIAN-RANDOMIZATION\",\"reason\":\"The study estimates the artificial-sweetener–prostate cancer association using a 2-sample Mendelian randomization design with genetic instrumental variables rather than a measured dietary exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41327648|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-MENDELIAN-RANDOMIZATION\",\"reason\":\"Tea appears only as a vehicle for genetically instrumented artificial sweetener intake in a 2-sample Mendelian randomization analysis, not as a measured population-wide exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41346686|Dairy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort of 49,424 men reporting a quantitative hazard ratio for intake of fat from dairy and incident prostate cancer.\",\"extraction\":{\"effect_size\":1.13,\"effect_type\":\"HR\",\"ci_lower\":1.02,\"ci_upper\":1.25,\"p_value\":0.069,\"ci_confidence_level\":95,\"total_n\":49424,\"cases\":4308,\"comparison_type\":\"Quartile 4 vs quartile 1 of fat intake from dairy\",\"design\":\"prospective cohort\",\"timing\":\"prediagnostic\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"Men in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"This prospective cohort included 49,424 men from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"we documented 4,308 incident cases of PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"a greater intake of fat from dairy (HR Q4vs.Q1:1.13; 95% CI: 1.02-1.25\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI: 1.02-1.25\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P trend = 0.069\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"HR Q4vs.Q1\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"This prospective cohort included 49,424 men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"During follow-up, we documented 4,308 incident cases of PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"continent\":{\"excerpt\":\"the specific impact of dietary fat from specific food sources on PCa susceptibility in United States populations\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, background\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in United States populations\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, background\"},\"exposure_measurement\":{\"excerpt\":\"Total amount and specific types of fat intakes were not associated with PCa incidence\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41346686|Monounsaturated fat (MUFA)|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Same prospective cohort reports a qualitative null association of specific fat types, including MUFA intake, with prostate cancer incidence, though no incidence-specific estimate is given in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":49424,\"cases\":4308,\"comparison_type\":null,\"design\":\"prospective cohort\",\"timing\":\"prediagnostic\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"Men in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"This prospective cohort included 49,424 men from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"we documented 4,308 incident cases of PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"This prospective cohort included 49,424 men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"During follow-up, we documented 4,308 incident cases of PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"continent\":{\"excerpt\":\"in United States populations\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, background\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in United States populations\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, background\"},\"exposure_measurement\":{\"excerpt\":\"Total amount and specific types of fat intakes were not associated with PCa incidence and mortality.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41346686|Polyunsaturated fat (PUFA)|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Same prospective cohort reports that specific fat types, including PUFA intake, were not associated with prostate cancer incidence, with quantitative PUFA estimates given only for mortality.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":49424,\"cases\":4308,\"comparison_type\":null,\"design\":\"prospective cohort\",\"timing\":\"prediagnostic\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"Men in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"This prospective cohort included 49,424 men from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"we documented 4,308 incident cases of PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"This prospective cohort included 49,424 men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"During follow-up, we documented 4,308 incident cases of PCa\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"},\"continent\":{\"excerpt\":\"in United States populations\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, background\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in United States populations\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, background\"},\"exposure_measurement\":{\"excerpt\":\"Total amount and specific types of fat intakes were not associated with PCa incidence and mortality.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41346686/\",\"location\":\"abstract, results\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41366988|Caffeine|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original human cross-sectional NHANES analysis reporting an adjusted odds ratio for large caffeine intake and prostate cancer.\",\"extraction\":{\"effect_size\":1.25,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":1789,\"cases\":null,\"comparison_type\":\"Large caffeine intake vs little caffeine consumption\",\"design\":\"cross-sectional\",\"timing\":\"concurrent\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"1789 subjects from the National Health and Nutrition Examination Survey 2009 to 2018 waves\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 1789 subjects from the National Health and Nutrition Examination Survey 2009 to 2018 waves were enrolled in this study.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"abstract, methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"those who reported large intake had a multivariate adjusted odd ratio (OR) with 95% confidence interval (CI) of 1.25 (2.21-15.52)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"compared to those reporting little caffeine consumption, those who reported large intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"A cross-sectional study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"title\"},\"timing\":{\"excerpt\":\"Exploration between caffeine intake, physical activity, and prostate cancer using data from the large-scale NHANES survey: A cross-sectional study.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"title\"},\"continent\":{\"excerpt\":\"National Health and Nutrition Examination Survey 2009 to 2018 waves\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"abstract, methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"United States / epidemiology\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"MeSH terms\"},\"exposure_measurement\":{\"excerpt\":\"Caffeine / administration & dosage\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/41366988/\",\"location\":\"MeSH terms\"}}},\"jbi\":{\"checklist_type\":\"cross_sectional\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"NA\",\"q10\":\"NA\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"41375042|Akkermansia muciniphila|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a semi-systematic review of literature on the gut microbiome and prostate cancer therapy rather than an original human study of incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41379769|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NO-TARGET-ESTIMATE\",\"reason\":\"Alcohol intake is only one predictor in multivariable cancer-prediction models, with no separable prostate-cancer-specific alcohol association reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41384118|Akkermansia muciniphila|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Narrative review of microbiome mechanisms in prostate cancer without original incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41384118|Prebiotics|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Narrative review discussing prebiotic-based therapeutic approaches, not an original human incidence study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41384118|Probiotics|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Narrative review discussing probiotic modulation of the microbiome, not an original human incidence study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"41384299|Probiotics|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Explicitly labelled review synthesizing evidence on gut microbiota and probiotics in prostate cancer without original incidence results.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "41327648|Non-nutritive sweetener intake|Prostate cancer",
+      "pmid": "41327648",
+      "pmcid": "PMC12662481",
+      "published_date": "2025-11-28",
+      "title": "Causal association between artificial sweeteners and risk of 15 tumors: A 2-way 2-sample Mendelian randomization analysis.",
+      "authors": [
+        "Yang H",
+        "Liu Y",
+        "Peng J",
+        "Mao X",
+        "Zhang Y",
+        "Chen S",
+        "Sun G",
+        "Zhu L",
+        "Zhao Y"
+      ],
+      "journal": "Medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41327648/",
+      "exposure": "Non-nutritive sweetener intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-MENDELIAN-RANDOMIZATION",
+      "reason": "The report uses Mendelian randomization or genetic instruments, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41327648|Tea|Prostate cancer",
+      "pmid": "41327648",
+      "pmcid": "PMC12662481",
+      "published_date": "2025-11-28",
+      "title": "Causal association between artificial sweeteners and risk of 15 tumors: A 2-way 2-sample Mendelian randomization analysis.",
+      "authors": [
+        "Yang H",
+        "Liu Y",
+        "Peng J",
+        "Mao X",
+        "Zhang Y",
+        "Chen S",
+        "Sun G",
+        "Zhu L",
+        "Zhao Y"
+      ],
+      "journal": "Medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41327648/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-MENDELIAN-RANDOMIZATION",
+      "reason": "The report uses Mendelian randomization or genetic instruments, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41346686|Dairy|Prostate cancer",
+      "pmid": "41346686",
+      "pmcid": "PMC12672308",
+      "published_date": "2025",
+      "title": "Associations of specific food sources of dietary fat with prostate cancer incidence and mortality: results from a large prospective cohort.",
+      "authors": [
+        "Fu YX",
+        "Ye Z",
+        "Li YD",
+        "Liu N",
+        "Chen XS",
+        "Jiang XL",
+        "Li K"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort of 49,424 men reporting a quantitative hazard ratio for intake of fat from dairy and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.13,
+        "effect_type": "HR",
+        "ci_lower": 1.02,
+        "ci_upper": 1.25,
+        "p_value": 0.069,
+        "ci_confidence_level": 95,
+        "total_n": 49424,
+        "cases": 4308,
+        "comparison_type": "Quartile 4 vs quartile 1 of fat intake from dairy",
+        "design": "prospective cohort",
+        "timing": "prediagnostic",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Men in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This prospective cohort included 49,424 men from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During follow-up, we documented 4,308 incident cases of PCa, of whom 392 died from PCa.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "When considering available food sources, a greater intake of fat from dairy (HR <sub>Q4vs.Q1</sub>:1.13; 95% CI: 1.02-1.25; <i>P</i> <sub>trend</sub> = 0.069) and saturated fatty acids (SFAs) from dairy (HR <sub>Q4vs.Q1</sub>:1.12; 95% CI: 1.01-1.24; <i>P</i> <sub>trend</sub> = 0.059) was associated with a higher incidence of PCa in a linear dose-response association (all <i>P</i> <sub>non - linearity</sub> >0.05).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "When considering available food sources, a greater intake of fat from dairy (HR <sub>Q4vs.Q1</sub>:1.13; 95% CI: 1.02-1.25; <i>P</i> <sub>trend</sub> = 0.069) and saturated fatty acids (SFAs) from dairy (HR <sub>Q4vs.Q1</sub>:1.12; 95% CI: 1.01-1.24; <i>P</i> <sub>trend</sub> = 0.059) was associated with a higher incidence of PCa in a linear dose-response association (all <i>P</i> <sub>non - linearity</sub> >0.05).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "When considering available food sources, a greater intake of fat from dairy (HR <sub>Q4vs.Q1</sub>:1.13; 95% CI: 1.02-1.25; <i>P</i> <sub>trend</sub> = 0.069) and saturated fatty acids (SFAs) from dairy (HR <sub>Q4vs.Q1</sub>:1.12; 95% CI: 1.01-1.24; <i>P</i> <sub>trend</sub> = 0.059) was associated with a higher incidence of PCa in a linear dose-response association (all <i>P</i> <sub>non - linearity</sub> >0.05).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "This prospective cohort included 49,424 men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "During follow-up, we documented 4,308 incident cases of PCa",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "continent": {
+            "excerpt": "the specific impact of dietary fat from specific food sources on PCa susceptibility in United States populations",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, background"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in United States populations",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, background"
+          },
+          "exposure_measurement": {
+            "excerpt": "Total amount and specific types of fat intakes were not associated with PCa incidence",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "0.069",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41346686|Monounsaturated fat (MUFA)|Prostate cancer",
+      "pmid": "41346686",
+      "pmcid": "PMC12672308",
+      "published_date": "2025",
+      "title": "Associations of specific food sources of dietary fat with prostate cancer incidence and mortality: results from a large prospective cohort.",
+      "authors": [
+        "Fu YX",
+        "Ye Z",
+        "Li YD",
+        "Liu N",
+        "Chen XS",
+        "Jiang XL",
+        "Li K"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+      "exposure": "Monounsaturated fat (MUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Same prospective cohort reports a qualitative null association of specific fat types, including MUFA intake, with prostate cancer incidence, though no incidence-specific estimate is given in the abstract.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 49424,
+        "cases": 4308,
+        "comparison_type": null,
+        "design": "prospective cohort",
+        "timing": "prediagnostic",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Men in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This prospective cohort included 49,424 men from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During follow-up, we documented 4,308 incident cases of PCa, of whom 392 died from PCa.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "This prospective cohort included 49,424 men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "During follow-up, we documented 4,308 incident cases of PCa",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "continent": {
+            "excerpt": "in United States populations",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, background"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in United States populations",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, background"
+          },
+          "exposure_measurement": {
+            "excerpt": "Total amount and specific types of fat intakes were not associated with PCa incidence and mortality.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41346686|Polyunsaturated fat (PUFA)|Prostate cancer",
+      "pmid": "41346686",
+      "pmcid": "PMC12672308",
+      "published_date": "2025",
+      "title": "Associations of specific food sources of dietary fat with prostate cancer incidence and mortality: results from a large prospective cohort.",
+      "authors": [
+        "Fu YX",
+        "Ye Z",
+        "Li YD",
+        "Liu N",
+        "Chen XS",
+        "Jiang XL",
+        "Li K"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+      "exposure": "Polyunsaturated fat (PUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Same prospective cohort reports that specific fat types, including PUFA intake, were not associated with prostate cancer incidence, with quantitative PUFA estimates given only for mortality.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 49424,
+        "cases": 4308,
+        "comparison_type": null,
+        "design": "prospective cohort",
+        "timing": "prediagnostic",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Men in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "This prospective cohort included 49,424 men from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During follow-up, we documented 4,308 incident cases of PCa, of whom 392 died from PCa.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "This prospective cohort included 49,424 men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "During follow-up, we documented 4,308 incident cases of PCa",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          },
+          "continent": {
+            "excerpt": "in United States populations",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, background"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in United States populations",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, background"
+          },
+          "exposure_measurement": {
+            "excerpt": "Total amount and specific types of fat intakes were not associated with PCa incidence and mortality.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41346686/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41366988|Caffeine|Prostate cancer",
+      "pmid": "41366988",
+      "pmcid": "PMC12688939",
+      "published_date": "2025-12-05",
+      "title": "Exploration between caffeine intake, physical activity, and prostate cancer using data from the large-scale NHANES survey: A cross-sectional study.",
+      "authors": [
+        "Liu Q",
+        "Xu S"
+      ],
+      "journal": "Medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+      "exposure": "Caffeine",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original human cross-sectional NHANES analysis reporting an adjusted odds ratio for large caffeine intake and prostate cancer.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.25,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 1789,
+        "cases": null,
+        "comparison_type": "Large caffeine intake vs little caffeine consumption",
+        "design": "cross-sectional",
+        "timing": "concurrent",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "1789 subjects from the National Health and Nutrition Examination Survey 2009 to 2018 waves",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 1789 subjects from the National Health and Nutrition Examination Survey 2009 to 2018 waves were enrolled in this study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+            "location": "abstract, methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "In the fully adjusted model, compared to those reporting little caffeine consumption, those who reported large intake had a multivariate adjusted odd ratio (OR) with 95% confidence interval (CI) of 1.25 (2.21-15.52). Participants with large PA were more likely to develop prostate cancer (OR = 1.68, 95% CI: 1.47-3.80), whereas a significant inverse association between medium PA and prostate cancer was observed (OR = 0.66, 95% CI: 0.48-0.81).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "compared to those reporting little caffeine consumption, those who reported large intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "A cross-sectional study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+            "location": "title"
+          },
+          "timing": {
+            "excerpt": "Exploration between caffeine intake, physical activity, and prostate cancer using data from the large-scale NHANES survey: A cross-sectional study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+            "location": "title"
+          },
+          "continent": {
+            "excerpt": "National Health and Nutrition Examination Survey 2009 to 2018 waves",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/41366988/",
+            "location": "MeSH terms"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 50.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41375042|Akkermansia muciniphila|Prostate cancer",
+      "pmid": "41375042",
+      "pmcid": "PMC12691484",
+      "published_date": "2025-11-29",
+      "title": "Modulating Prostate Cancer Therapy Through the Gut Microbiome: A Comprehensive Review.",
+      "authors": [
+        "Magashi Ali MA",
+        "Abdulkadir SA"
+      ],
+      "journal": "Cancers",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41375042/",
+      "exposure": "Akkermansia muciniphila",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a semi-systematic review of literature on the gut microbiome and prostate cancer therapy rather than an original human study of incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41379769|Alcohol|Prostate cancer",
+      "pmid": "41379769",
+      "pmcid": "PMC12722001",
+      "published_date": "2025-12-01",
+      "title": "Risk of cancer following presentation with new-onset atrial fibrillation using data from UK national databases.",
+      "authors": [
+        "Yoshimura H",
+        "Zakkak N",
+        "Lyratzopoulos G",
+        "Lip GYH",
+        "Schmidt F",
+        "Providencia R"
+      ],
+      "journal": "Europace : European pacing, arrhythmias, and cardiac electrophysiology : journal of the working groups on cardiac pacing, arrhythmias, and cardiac cellular electrophysiology of the European Society of Cardiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41379769/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "Alcohol intake is only one predictor in multivariable cancer-prediction models, with no separable prostate-cancer-specific alcohol association reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41384118|Akkermansia muciniphila|Prostate cancer",
+      "pmid": "41384118",
+      "pmcid": "PMC12689563",
+      "published_date": "2025",
+      "title": "Reprogramming prostate cancer through the microbiome.",
+      "authors": [
+        "Bautista J",
+        "Cardona-Maya WD",
+        "Gancino-Guevara K",
+        "López-Cortés A"
+      ],
+      "journal": "Frontiers in medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41384118/",
+      "exposure": "Akkermansia muciniphila",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Narrative review of microbiome mechanisms in prostate cancer without original incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41384118|Prebiotics|Prostate cancer",
+      "pmid": "41384118",
+      "pmcid": "PMC12689563",
+      "published_date": "2025",
+      "title": "Reprogramming prostate cancer through the microbiome.",
+      "authors": [
+        "Bautista J",
+        "Cardona-Maya WD",
+        "Gancino-Guevara K",
+        "López-Cortés A"
+      ],
+      "journal": "Frontiers in medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41384118/",
+      "exposure": "Prebiotics",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Narrative review discussing prebiotic-based therapeutic approaches, not an original human incidence study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41384118|Probiotics|Prostate cancer",
+      "pmid": "41384118",
+      "pmcid": "PMC12689563",
+      "published_date": "2025",
+      "title": "Reprogramming prostate cancer through the microbiome.",
+      "authors": [
+        "Bautista J",
+        "Cardona-Maya WD",
+        "Gancino-Guevara K",
+        "López-Cortés A"
+      ],
+      "journal": "Frontiers in medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41384118/",
+      "exposure": "Probiotics",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Narrative review discussing probiotic modulation of the microbiome, not an original human incidence study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "41384299|Probiotics|Prostate cancer",
+      "pmid": "41384299",
+      "pmcid": "PMC12728495",
+      "published_date": "2026-02-01",
+      "title": "Gut microbiota as a multifaceted modulator of prostate cancer: Mechanistic insights, therapeutic opportunities and clinical challenges (Review).",
+      "authors": [
+        "Hao Z",
+        "Xie Y",
+        "Zhang R",
+        "Sang H",
+        "Li L",
+        "Liu Y",
+        "Hu J",
+        "Wang J",
+        "Chai K",
+        "Zhao Q"
+      ],
+      "journal": "Molecular medicine reports",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/41384299/",
+      "exposure": "Probiotics",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Explicitly labelled review synthesizing evidence on gut microbiota and probiotics in prostate cancer without original incidence results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

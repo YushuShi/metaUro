@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:31:21.106408-04:00",
+  "pmid": "22527172",
+  "work_key": "49f8e148c814d7d6415aef4f9900a9a271e08d1c16feaab8239bcb4ad76adb85",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/22527172_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "22527172",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "22527172|Oats|Prostate cancer",
+        "exposure": "Oats",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "High intake of oatmeal in adolescence (≥5 vs. ≤4 times/week) was not significantly associated with risk of PCa diagnosis (OR = 0.99, 95 % CI: 0.77-1.27)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": false,
+        "manual_review_reason": null,
+        "one_sentence_explanation": "The abstract reports a separable oatmeal-specific estimate for prostate cancer diagnosis in an original cohort study, so Claude+Gemini's INCLUDE is supported and ChatGPT's S2-NO-TARGET-ESTIMATE code is not."
+      },
+      {
+        "context_id": "22527172|Whole-grain intake|Prostate cancer",
+        "exposure": "Whole-grain intake",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "We used regression models to estimate odds ratios (ORs) and hazard ratios (HRs) for PCa according to whole-grain consumption",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Study reports whole-grain foods (rye bread, oatmeal, whole-wheat bread) separately; abstract gives no aggregate whole-grain estimate, so poolability for a composite exposure needs checking.",
+        "one_sentence_explanation": "The outcome is prostate cancer and whole-grain consumption is the evaluated exposure, so ChatGPT's S2-CANCER-MISMATCH is unsupported and Claude+Gemini's INCLUDE is supported, though only food-specific rather than aggregate estimates appear in the abstract."
+      }
+    ]
+  }
+}

@@ -1,0 +1,145 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:20:55.458622-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "3aee3b528702f6a8e6b103c2df341847a3cfc7d86624bf781ded4f2dcd6386b0",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "10952096",
+      "title": "Vegetables, fruits, legumes and prostate cancer: a multiethnic case-control study.",
+      "abstract": "The evidence for a protective effect of vegetables, fruits, and legumes against prostate cancer is weak and inconsistent. We examined the relationship of these food groups and their constituent foods to prostate cancer risk in a multicenter case-control study of African-American, white, Japanese, and Chinese men. Cases (n = 1619) with histologically confirmed prostate cancer were identified through the population-based tumor registries of Hawaii, San Francisco, and Los Angeles in the United States and British Columbia and Ontario in Canada. Controls (n = 1618) were frequency-matched to cases on ethnicity, age, and region of residence of the case, in a ratio of approximately 1:1. Dietary and other information was collected by in-person home interview; a blood sample was obtained from control subjects for prostate-specific antigen determination. Odds ratios (OR) were estimated using logistic regression, adjusting for age, geographic location, education, calories, and when indicated, ethnicity. Intake of legumes (whether total legumes, soyfoods specifically, or other legumes) was inversely related to prostate cancer (OR for highest relative to lowest quintile for total legumes = 0.62; P for trend = 0.0002); results were similar when restricted to prostate-specific antigen-normal controls or to advanced cases. Intakes of yellow-orange and cruciferous vegetables were also inversely related to prostate cancer, especially for advanced cases, among whom the highest quintile OR for yellow-orange vegetables = 0.67 (P for trend = 0.01) and the highest quintile OR for cruciferous vegetables = 0.61 (P for trend = 0.006). Intake of tomatoes and of fruits was not related to risk. Findings were generally consistent across ethnic groups. These results suggest that legumes (not limited to soy products) and certain categories of vegetables may protect against prostate cancer.",
+      "mesh": [
+        "Aged",
+        "Anticarcinogenic Agents / therapeutic use",
+        "Asian People",
+        "Black People",
+        "British Columbia / epidemiology",
+        "California / epidemiology",
+        "Case-Control Studies",
+        "Diet Surveys",
+        "Fabaceae / therapeutic use",
+        "Feeding Behavior / ethnology",
+        "Fruit / therapeutic use",
+        "Hawaii / epidemiology",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Odds Ratio",
+        "Ontario / epidemiology",
+        "Phytotherapy",
+        "Plants, Medicinal",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / ethnology, prevention & control",
+        "Vegetables / therapeutic use",
+        "White People",
+        "Black or African American"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "10952096",
+      "contexts": [
+        {
+          "context_id": "10952096|Legumes|Prostate cancer",
+          "exposure": "Legumes",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.62",
+              "ci_lower": "0.48192532477654154",
+              "ci_upper": "0.7976339491564135",
+              "p_value": "0.0002",
+              "comparison": "highest versus lowest quintile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "3237",
+              "effect_measure_type": "OR",
+              "effect_size": "0.62",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.0002",
+              "comparison": "highest versus lowest quintile of total legume intake"
+            }
+          }
+        },
+        {
+          "context_id": "10952096|Soy|Prostate cancer",
+          "exposure": "Soy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "3237",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "quintiles of soyfood intake (highest versus lowest)"
+            }
+          }
+        },
+        {
+          "context_id": "10952096|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "3237",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "quintiles of tomato intake (highest versus lowest)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

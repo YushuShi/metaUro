@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:10.102328-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "4201efdfc501ab860a131402031a772bbe3da395957d6ce40fffead48cbd7767",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11440960",
+      "title": "Inverse associations between plasma lycopene and other carotenoids and prostate cancer.",
+      "abstract": "Although dietary intake of tomatoes and tomato products containing lycopene has been reported to reduce the risk of prostate cancer, few studies have been done on the relationship between plasma lycopene and other carotenoids and prostate cancer. This case-control study was conducted to investigate the effects of plasma lycopene, other carotenoids, and retinol, as well as alpha- and gamma-tocopherols on the risk of prostate cancer. The study included 65 patients with prostate cancer and 132 cancer-free controls; all of them were interviewed using a standard epidemiological questionnaire at the Memorial Sloan-Kettering Cancer Center from 1993 to 1997. Plasma levels of carotenoids, retinol, and tocopherols were measured by high performance liquid chromatography. An unconditional logistic regression model was used in bivariate and multivariate analyses using Statistical Analysis System (SAS). After adjusting for age, race, years of education, daily caloric intake, pack-years of smoking, alcohol consumption, and family history of prostate cancer, significantly inverse associations with prostate cancer were observed with plasma concentrations of the following carotenoids: lycopene [odds ratio (OR), 0.17; 95% confidence interval (CI), 0.04-0.78; P for trend, 0.0052] and zeaxanthin (OR, 0.22; 95% CI, 0.06-0.83; P for trend, 0.0028) when comparing highest with lowest quartiles. Borderline associations were found for lutein (OR, 0.30; 95% CI, 0.09-1.03; P for trend, 0.0064) and beta-cryptoxanthin (OR, 0.31; 95% CI, 0.08-1.24; P for trend, 0.0666). No obvious associations were found for alpha- and beta-carotenes, retinol, and alpha- and gamma-tocopherols. Our study confirmed the inverse associations between lycopene, other carotenoids such as zeaxanthin, lutein, and beta-cryptoxanthin, and prostate cancer. This study provides justification for further research on the associations between lycopene and other antioxidants and the risk of prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Carotenoids / blood",
+        "Case-Control Studies",
+        "Cryptoxanthins",
+        "Humans",
+        "Lutein / blood",
+        "Lycopene",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / etiology, prevention & control",
+        "Risk Factors",
+        "Xanthophylls",
+        "Zeaxanthins",
+        "beta Carotene / analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11440960",
+      "contexts": [
+        {
+          "context_id": "11440960|Zeaxanthin|Prostate cancer",
+          "exposure": "Zeaxanthin",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.22",
+              "ci_lower": "0.06",
+              "ci_upper": "0.83",
+              "p_value": "0.0028",
+              "comparison": "highest versus lowest quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "197",
+              "effect_measure_type": "OR",
+              "effect_size": "0.22",
+              "ci_lower": "0.06",
+              "ci_upper": "0.83",
+              "p_value": "0.0028",
+              "comparison": "highest vs lowest quartile of plasma zeaxanthin"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

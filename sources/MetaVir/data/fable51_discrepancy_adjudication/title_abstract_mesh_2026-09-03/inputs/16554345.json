@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:25:42.127102-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "3a3903a40a4cc48ef2cd0e91280f682cf7341d9fb5f8c746c55ddb1696884bbf",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "16554345",
+      "title": "Folate nutrition and prostate cancer incidence in a large cohort of US men.",
+      "abstract": "Folate has important roles in DNA synthesis, repair, and methylation and is inversely associated with the risk of some cancers. The authors examined this association among 65,836 men in the American Cancer Society Cancer Prevention Study II Nutrition Cohort. During 9 years of follow-up, 5,158 men were diagnosed with prostate cancer. Folate intakes were estimated from the questionnaire administered at enrollment in 1992-1993, and Cox proportional hazards models were used to calculate hazard rate ratios adjusted for potential confounders. Neither dietary nor total folate intake was associated with prostate cancer overall. However, higher folate levels were associated with a nonsignificant decreased risk of advanced prostate cancer (multivariate rate ratio=0.78, 95% confidence interval: 0.53, 1.15 for the highest vs. lowest quintiles of dietary folate and rate ratio=0.79, 95% confidence interval: 0.54, 1.17 for the highest vs. lowest quintile of total folate). The association was similar for quintiles 2-5, suggesting that only a small increase in folate intake was needed to alter the risk of advanced prostate cancer. Because the statistical power of the analysis with advanced prostate cancer was limited by the low number of cases, further study is needed to establish this association.",
+      "mesh": [
+        "Aged",
+        "Diet",
+        "Folic Acid / administration & dosage",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "16554345",
+      "contexts": [
+        {
+          "context_id": "16554345|Folic acid|Prostate cancer",
+          "exposure": "Folic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_MEASURE_TYPE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "65836",
+              "effect_measure_type": "RR",
+              "effect_size": "0.78",
+              "ci_lower": "0.53",
+              "ci_upper": "1.15",
+              "p_value": "0.20864713166785764",
+              "comparison": "highest vs. lowest quintiles of dietary folate"
+            },
+            "Claude+Gemini": {
+              "sample_size": "65836",
+              "effect_measure_type": "HR",
+              "effect_size": "0.78",
+              "ci_lower": "0.53",
+              "ci_upper": "1.15",
+              "p_value": "0.20864713166785764",
+              "comparison": "highest vs. lowest quintile of dietary folate intake"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:25.448354-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "a8545ed68224e9c81b75879afbbb6ca345e022fbde5cc04609c0ea18cb971ba3",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "36148781",
+      "title": "Protein and amino acid intakes in relation to prostate cancer risk and mortality-A prospective study in the European Prospective Investigation into Cancer and Nutrition.",
+      "abstract": "The association between protein intake and prostate cancer risk remains unclear. To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality. In 131,425 men from the European Prospective Investigation into Cancer and Nutrition, protein and amino acid intakes were estimated using validated dietary questionnaires. Multivariable-adjusted Cox regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs). During a mean follow-up of 14.2 years, 6939 men were diagnosed with prostate cancer and 914 died of the disease. Dairy protein was positively associated with overall prostate cancer risk in the three highest fifths compared to the lowest (HR<sub>Q3</sub> =1.14 (95% CI 1.05-1.23); HR<sub>Q</sub> 4=1.09 (1.01-1.18); HR<sub>Q5</sub> =1.10 (1.02-1.19)); similar results were observed for yogurt protein (HR<sub>Q3</sub> =1.14 (1.05-1.24); HR<sub>Q4</sub> =1.09 (1.01-1.18); HR<sub>Q5</sub> =1.12 (1.04-1.21)). For egg protein intake and prostate cancer mortality, no association was observed by fifths, but there was suggestive evidence of a positive association in the analysis per standard deviation increment. There was no strong evidence of associations with different tumour subtypes. Considering the weak associations and many tests, the results must be interpreted with caution. This study does not provide strong evidence for an association of intakes of total protein, protein from different dietary sources or amino acids with prostate cancer risk or mortality. However, our results may suggest some weak positive associations, which need to be confirmed in large-scale, pooled analyses of prospective data.",
+      "mesh": [
+        "Male",
+        "Humans",
+        "Prospective Studies",
+        "Risk Factors",
+        "Diet",
+        "Prostatic Neoplasms / epidemiology, pathology",
+        "Amino Acids"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "36148781",
+      "contexts": [
+        {
+          "context_id": "36148781|Dietary protein intake|Prostate cancer",
+          "exposure": "Dietary protein intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "131425",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "128914",
+              "effect_measure_type": "HR",
+              "effect_size": "0.76",
+              "ci_lower": "0.59",
+              "ci_upper": "1",
+              "p_value": "0.04",
+              "comparison": "quantile"
+            }
+          }
+        },
+        {
+          "context_id": "36148781|Egg protein|Prostate cancer",
+          "exposure": "Egg protein",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "131425",
+              "effect_measure_type": "HR",
+              "effect_size": "1.22",
+              "ci_lower": "0.98",
+              "ci_upper": "1.53",
+              "p_value": "0.1",
+              "comparison": "Highest fifth versus lowest fifth of egg-protein intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "119383",
+              "effect_measure_type": "HR",
+              "effect_size": "1.22",
+              "ci_lower": "0.98",
+              "ci_upper": "1.53",
+              "p_value": "0.1",
+              "comparison": "quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

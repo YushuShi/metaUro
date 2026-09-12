@@ -1,0 +1,754 @@
+{
+  "schema_version": 1,
+  "receipt_id": "a18fd4cb8e1e840280153b9896978acea88f6191bbb1ae0cab16bc7ff378ded2",
+  "requested_at": "2026-09-02T07:22:07.594790+08:00",
+  "received_at": "2026-09-02T07:23:19.900786+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "919d2e4528493c2b6894ad9d24764ae98858701b5d76292d33502b9e87cd5c4b",
+  "attempt": 1,
+  "context_ids": [
+    "1627305|Beta-carotene|Prostate cancer",
+    "1627305|Vitamin A|Prostate cancer",
+    "1659780|Low-fat diet|Prostate cancer",
+    "1659780|Soy|Prostate cancer",
+    "1673664|Polyunsaturated fat (PUFA)|Prostate cancer",
+    "1745489|Dairy|Prostate cancer",
+    "1745489|Eggs|Prostate cancer",
+    "1855198|Antioxidants|Prostate cancer",
+    "1855198|Selenium|Prostate cancer",
+    "1855198|Vitamin E|Prostate cancer",
+    "1873441|Beta-carotene|Prostate cancer",
+    "1873441|Monounsaturated fat (MUFA)|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Beta-carotene": 2,
+    "Dairy": 1,
+    "Eggs": 1,
+    "Low-fat diet": 1,
+    "Monounsaturated fat (MUFA)": 1,
+    "Polyunsaturated fat (PUFA)": 1,
+    "Selenium": 1,
+    "Soy": 1,
+    "Vitamin A": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "f15ecb6c831c0bdea910d4ee3b2528dc689e6d78ffe022ef0e0625187a6e8b56",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 8374,
+    "cached_input_tokens": 0,
+    "output_tokens": 7397,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.22679500000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "24f74ab3-b549-4426-914c-bbb028d8e199",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.22679500000000002"
+  },
+  "output_sha256": "584e70fef3077e6cc04046dd12bccc27c87724bff99871ef0507834c75820156",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"1627305|Beta-carotene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The supplied record provides only a title with no abstract or reported original results, indicating a non-primary commentary-type publication rather than an original human study of beta-carotene and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1627305|Vitamin A|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"No abstract or original data are supplied for this title, so it cannot be treated as a primary human study reporting vitamin A and incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1659780|Low-fat diet|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"The study measured urinary lignan and isoflavonoid excretion in healthy Japanese adults and reported no prostate-cancer incidence results, only speculation about low cancer mortality.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1659780|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"Soybean-product intake was correlated only with urinary isoflavonoid excretion, with no incident prostate-cancer outcome assessed in the study population.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1673664|Polyunsaturated fat (PUFA)|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"This report reviews dietary n-3 polyunsaturated fatty acid effects exclusively in carcinogen-induced and transplant animal tumor models, with no human prostate-cancer incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1745489|Dairy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Hospital-based case-control study in Northern Italy reporting milk/dairy consumption and histologically confirmed incident prostatic cancer risk with a quantitative relative risk estimate.\",\"extraction\":{\"effect_size\":5.0,\"effect_type\":\"RR\",\"ci_lower\":1.5,\"ci_upper\":16.6,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":388,\"cases\":96,\"comparison_type\":\"2 or more glasses of milk per day vs nondrinkers or occasional milk drinkers\",\"design\":\"case_control\",\"timing\":null,\"continent\":\"Europe\",\"country\":\"Italy\",\"location\":\"Northern Italy\",\"ethnicity\":\"NA\",\"population\":\"Histologically confirmed prostatic cancer cases and hospital controls with acute, nonneoplastic or genital tract diseases\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"96 histologically confirmed cases and 292 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"96 histologically confirmed cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"the relative risk (RR) was 1.2 ... for 1 or 2 glasses per day and 5.0 ... for 2 or more glasses per day\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"5.0 (95% Cl 1.5-16.6) for 2 or more glasses per day\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"compared with nondrinkers or occasional milk drinkers\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a case-control study conducted in Northern Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"conducted in Northern Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Northern Italy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"a significant trend in risk as regards frequency of milk consumption\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1745489/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"1745489|Eggs|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Eggs are mentioned only incidentally as another animal-fat source stated to be unrelated to prostatic cancer, with no egg-specific risk estimate reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1855198|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study tested naturally occurring antioxidants on DMAB-initiated prostate carcinogenesis exclusively in male F344 rats.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1855198|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Dietary selenium was administered only to carcinogen-treated F344 rats, providing no human prostate-cancer incidence evidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1855198|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Alpha-tocopherol was fed to rats in an animal prostate carcinogenesis model, so the study is exclusively preclinical.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"1873441|Beta-carotene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Population-based case-control study in Utah reporting dietary beta-carotene intake in relation to incident prostate cancer with an odds ratio and confidence interval.\",\"extraction\":{\"effect_size\":0.6,\"effect_type\":\"OR\",\"ci_lower\":0.3,\"ci_upper\":1.6,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":1037,\"cases\":358,\"comparison_type\":\"Higher versus lower dietary beta-carotene intake in younger males (aggressive tumors)\",\"design\":\"case_control\",\"timing\":null,\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Utah\",\"ethnicity\":\"NA\",\"population\":\"Men diagnosed with prostate cancer between 1984 and 1985 and age- and county-matched population controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"358 cases diagnosed with prostate cancer between 1984 and 1985, and 679 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"358 cases diagnosed with prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"beta-carotene which showed a nonsignificant protective effect (OR = 0.6, CI = 0.3-1.6)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"(OR = 0.6, CI = 0.3-1.6)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"No associations were found in younger males, with the exception of physical activity ... and beta-carotene which showed a nonsignificant protective effect\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A population-based case-control study in Utah\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"case-control study in Utah\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in Utah\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary data were ascertained using a quantitative food-frequency questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"1873441|Monounsaturated fat (MUFA)|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The Utah case-control study reports a specific odds ratio for dietary monounsaturated fat intake and incident aggressive prostate cancer in older men.\",\"extraction\":{\"effect_size\":3.6,\"effect_type\":\"OR\",\"ci_lower\":1.3,\"ci_upper\":9.7,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":1037,\"cases\":358,\"comparison_type\":\"Higher versus lower dietary monounsaturated fat intake in older males with aggressive tumors\",\"design\":\"case_control\",\"timing\":null,\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Utah\",\"ethnicity\":\"NA\",\"population\":\"Men diagnosed with prostate cancer between 1984 and 1985 and age- and county-matched population controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"358 cases diagnosed with prostate cancer between 1984 and 1985, and 679 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"358 cases diagnosed with prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"OR = 3.6 (CI = 1.3-9.7) for monounsaturated fat\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"(CI = 1.3-9.7)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Dietary fat was the strongest risk factor for these males\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A population-based case-control study in Utah\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"timing\":null,\"continent\":{\"excerpt\":\"case-control study in Utah\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in Utah\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary data were ascertained using a quantitative food-frequency questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/1873441/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "1627305|Beta-carotene|Prostate cancer",
+      "pmid": "1627305",
+      "pmcid": "",
+      "published_date": "1992-06-01",
+      "title": "Beta-carotene, vitamin A and prostatic cancer.",
+      "authors": [
+        "Virtamo J",
+        "Huttunen JK"
+      ],
+      "journal": "Annals of medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1627305/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The supplied record provides only a title with no abstract or reported original results, indicating a non-primary commentary-type publication rather than an original human study of beta-carotene and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1627305|Vitamin A|Prostate cancer",
+      "pmid": "1627305",
+      "pmcid": "",
+      "published_date": "1992-06-01",
+      "title": "Beta-carotene, vitamin A and prostatic cancer.",
+      "authors": [
+        "Virtamo J",
+        "Huttunen JK"
+      ],
+      "journal": "Annals of medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1627305/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "No abstract or original data are supplied for this title, so it cannot be treated as a primary human study reporting vitamin A and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1659780|Low-fat diet|Prostate cancer",
+      "pmid": "1659780",
+      "pmcid": "",
+      "published_date": "1991-12-01",
+      "title": "Urinary excretion of lignans and isoflavonoid phytoestrogens in Japanese men and women consuming a traditional Japanese diet.",
+      "authors": [
+        "Adlercreutz H",
+        "Honjo H",
+        "Higashi A",
+        "Fotsis T",
+        "Hämäläinen E",
+        "Hasegawa T",
+        "Okada H"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1659780/",
+      "exposure": "Low-fat diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "The study measured urinary lignan and isoflavonoid excretion in healthy Japanese adults and reported no prostate-cancer incidence results, only speculation about low cancer mortality.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1659780|Soy|Prostate cancer",
+      "pmid": "1659780",
+      "pmcid": "",
+      "published_date": "1991-12-01",
+      "title": "Urinary excretion of lignans and isoflavonoid phytoestrogens in Japanese men and women consuming a traditional Japanese diet.",
+      "authors": [
+        "Adlercreutz H",
+        "Honjo H",
+        "Higashi A",
+        "Fotsis T",
+        "Hämäläinen E",
+        "Hasegawa T",
+        "Okada H"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1659780/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "Soybean-product intake was correlated only with urinary isoflavonoid excretion, with no incident prostate-cancer outcome assessed in the study population.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1673664|Polyunsaturated fat (PUFA)|Prostate cancer",
+      "pmid": "1673664",
+      "pmcid": "",
+      "published_date": "1991-05-01",
+      "title": "Dietary n-3 (omega-3) polyunsaturated fatty acid effects on animal tumorigenesis.",
+      "authors": [
+        "Cave WT"
+      ],
+      "journal": "FASEB journal : official publication of the Federation of American Societies for Experimental Biology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1673664/",
+      "exposure": "Polyunsaturated fat (PUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "This report reviews dietary n-3 polyunsaturated fatty acid effects exclusively in carcinogen-induced and transplant animal tumor models, with no human prostate-cancer incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1745489|Dairy|Prostate cancer",
+      "pmid": "1745489",
+      "pmcid": "",
+      "published_date": "1991",
+      "title": "Dairy products and the risk of prostatic cancer.",
+      "authors": [
+        "La Vecchia C",
+        "Negri E",
+        "D'Avanzo B",
+        "Franceschi S",
+        "Boyle P"
+      ],
+      "journal": "Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study in Northern Italy reporting milk/dairy consumption and histologically confirmed incident prostatic cancer risk with a quantitative relative risk estimate.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 5,
+        "effect_type": "RR",
+        "ci_lower": 1.5,
+        "ci_upper": 16.6,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 388,
+        "cases": 96,
+        "comparison_type": "2 or more glasses of milk per day vs nondrinkers or occasional milk drinkers",
+        "design": "case_control",
+        "timing": null,
+        "continent": "Europe",
+        "country": "Italy",
+        "location": "Northern Italy",
+        "ethnicity": "NA",
+        "population": "Histologically confirmed prostatic cancer cases and hospital controls with acute, nonneoplastic or genital tract diseases",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Dietary indicators of prostatic cancer risk were analyzed in a case-control study conducted in Northern Italy on 96 histologically confirmed cases and 292 controls in hospital for acute, nonneoplastic or genital tract diseases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract; total_n derived from reported group counts 96 + 292 = 388"
+          },
+          "cases": {
+            "excerpt": "Dietary indicators of prostatic cancer risk were analyzed in a case-control study conducted in Northern Italy on 96 histologically confirmed cases and 292 controls in hospital for acute, nonneoplastic or genital tract diseases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "There was a significant trend in risk as regards frequency of milk consumption: compared with nondrinkers or occasional milk drinkers, the relative risk (RR) was 1.2 (95% confidence interval, Cl, 0.7-1.9) for 1 or 2 glasses per day and 5.0 (95% Cl 1.5-16.6) for 2 or more glasses per day.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "There was a significant trend in risk as regards frequency of milk consumption: compared with nondrinkers or occasional milk drinkers, the relative risk (RR) was 1.2 (95% confidence interval, Cl, 0.7-1.9) for 1 or 2 glasses per day and 5.0 (95% Cl 1.5-16.6) for 2 or more glasses per day.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "compared with nondrinkers or occasional milk drinkers",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a case-control study conducted in Northern Italy",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "conducted in Northern Italy",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Northern Italy",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "a significant trend in risk as regards frequency of milk consumption",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 50.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1745489|Eggs|Prostate cancer",
+      "pmid": "1745489",
+      "pmcid": "",
+      "published_date": "1991",
+      "title": "Dairy products and the risk of prostatic cancer.",
+      "authors": [
+        "La Vecchia C",
+        "Negri E",
+        "D'Avanzo B",
+        "Franceschi S",
+        "Boyle P"
+      ],
+      "journal": "Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1745489/",
+      "exposure": "Eggs",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Eggs are mentioned only incidentally as another animal-fat source stated to be unrelated to prostatic cancer, with no egg-specific risk estimate reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1855198|Antioxidants|Prostate cancer",
+      "pmid": "1855198",
+      "pmcid": "",
+      "published_date": "1991-07-04",
+      "title": "Lack of modification by naturally occurring antioxidants of 3,2'-dimethyl-4-aminobiphenyl-initiated rat prostate carcinogenesis.",
+      "authors": [
+        "Nakamura A",
+        "Shirai T",
+        "Takahashi S",
+        "Ogawa K",
+        "Hirose M",
+        "Ito N"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1855198/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study tested naturally occurring antioxidants on DMAB-initiated prostate carcinogenesis exclusively in male F344 rats.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1855198|Selenium|Prostate cancer",
+      "pmid": "1855198",
+      "pmcid": "",
+      "published_date": "1991-07-04",
+      "title": "Lack of modification by naturally occurring antioxidants of 3,2'-dimethyl-4-aminobiphenyl-initiated rat prostate carcinogenesis.",
+      "authors": [
+        "Nakamura A",
+        "Shirai T",
+        "Takahashi S",
+        "Ogawa K",
+        "Hirose M",
+        "Ito N"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1855198/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Dietary selenium was administered only to carcinogen-treated F344 rats, providing no human prostate-cancer incidence evidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1855198|Vitamin E|Prostate cancer",
+      "pmid": "1855198",
+      "pmcid": "",
+      "published_date": "1991-07-04",
+      "title": "Lack of modification by naturally occurring antioxidants of 3,2'-dimethyl-4-aminobiphenyl-initiated rat prostate carcinogenesis.",
+      "authors": [
+        "Nakamura A",
+        "Shirai T",
+        "Takahashi S",
+        "Ogawa K",
+        "Hirose M",
+        "Ito N"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1855198/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Alpha-tocopherol was fed to rats in an animal prostate carcinogenesis model, so the study is exclusively preclinical.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1873441|Beta-carotene|Prostate cancer",
+      "pmid": "1873441",
+      "pmcid": "",
+      "published_date": "1991-03-01",
+      "title": "Adult dietary intake and prostate cancer risk in Utah: a case-control study with special emphasis on aggressive tumors.",
+      "authors": [
+        "West DW",
+        "Slattery ML",
+        "Robison LM",
+        "French TK",
+        "Mahoney AW"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Population-based case-control study in Utah reporting dietary beta-carotene intake in relation to incident prostate cancer with an odds ratio and confidence interval.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.6,
+        "effect_type": "OR",
+        "ci_lower": 0.3,
+        "ci_upper": 1.6,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 1037,
+        "cases": 358,
+        "comparison_type": "Higher versus lower dietary beta-carotene intake in younger males (aggressive tumors)",
+        "design": "case_control",
+        "timing": null,
+        "continent": "North America",
+        "country": "United States",
+        "location": "Utah",
+        "ethnicity": "NA",
+        "population": "Men diagnosed with prostate cancer between 1984 and 1985 and age- and county-matched population controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A population-based case-control study in Utah of 358 cases diagnosed with prostate cancer between 1984 and 1985, and 679 controls categorically matched by age and county of residence, were interviewed to investigate the association between dietary intake of energy (kcal), fat, protein, vitamin A, beta-carotene, vitamin C, zinc, cadmium, selenium, and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract; total_n derived from reported group counts 358 + 679 = 1037"
+          },
+          "cases": {
+            "excerpt": "A population-based case-control study in Utah of 358 cases diagnosed with prostate cancer between 1984 and 1985, and 679 controls categorically matched by age and county of residence, were interviewed to investigate the association between dietary intake of energy (kcal), fat, protein, vitamin A, beta-carotene, vitamin C, zinc, cadmium, selenium, and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "No associations were found in younger males, with the exception of physical activity which showed active males to be at an increased but nonsignificant risk for aggressive tumors (OR = 2.0, CI = 0.8-5.2) and beta-carotene which showed a nonsignificant protective effect (OR = 0.6, CI = 0.3-1.6).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "No associations were found in younger males, with the exception of physical activity which showed active males to be at an increased but nonsignificant risk for aggressive tumors (OR = 2.0, CI = 0.8-5.2) and beta-carotene which showed a nonsignificant protective effect (OR = 0.6, CI = 0.3-1.6).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A population-based case-control study in Utah",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "case-control study in Utah",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Utah",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary data were ascertained using a quantitative food-frequency questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "1873441|Monounsaturated fat (MUFA)|Prostate cancer",
+      "pmid": "1873441",
+      "pmcid": "",
+      "published_date": "1991-03-01",
+      "title": "Adult dietary intake and prostate cancer risk in Utah: a case-control study with special emphasis on aggressive tumors.",
+      "authors": [
+        "West DW",
+        "Slattery ML",
+        "Robison LM",
+        "French TK",
+        "Mahoney AW"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+      "exposure": "Monounsaturated fat (MUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The Utah case-control study reports a specific odds ratio for dietary monounsaturated fat intake and incident aggressive prostate cancer in older men.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 3.6,
+        "effect_type": "OR",
+        "ci_lower": 1.3,
+        "ci_upper": 9.7,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 1037,
+        "cases": 358,
+        "comparison_type": "Higher versus lower dietary monounsaturated fat intake in older males with aggressive tumors",
+        "design": "case_control",
+        "timing": null,
+        "continent": "North America",
+        "country": "United States",
+        "location": "Utah",
+        "ethnicity": "NA",
+        "population": "Men diagnosed with prostate cancer between 1984 and 1985 and age- and county-matched population controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A population-based case-control study in Utah of 358 cases diagnosed with prostate cancer between 1984 and 1985, and 679 controls categorically matched by age and county of residence, were interviewed to investigate the association between dietary intake of energy (kcal), fat, protein, vitamin A, beta-carotene, vitamin C, zinc, cadmium, selenium, and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract; total_n derived from reported group counts 358 + 679 = 1037"
+          },
+          "cases": {
+            "excerpt": "A population-based case-control study in Utah of 358 cases diagnosed with prostate cancer between 1984 and 1985, and 679 controls categorically matched by age and county of residence, were interviewed to investigate the association between dietary intake of energy (kcal), fat, protein, vitamin A, beta-carotene, vitamin C, zinc, cadmium, selenium, and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Dietary fat was the strongest risk factor for these males, with an odds ratio (OR) of 2.9 (95 percent confidence interval [CI] 1.0-8.4) for total fat; OR = 2.2 (CI = 0.7-6.6) for saturated fat; OR = 3.6 (CI = 1.3-9.7) for monounsaturated fat; and OR = 2.7 (CI = 1.1-6.8) for polyunsaturated fat.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Dietary fat was the strongest risk factor for these males, with an odds ratio (OR) of 2.9 (95 percent confidence interval [CI] 1.0-8.4) for total fat; OR = 2.2 (CI = 0.7-6.6) for saturated fat; OR = 3.6 (CI = 1.3-9.7) for monounsaturated fat; and OR = 2.7 (CI = 1.1-6.8) for polyunsaturated fat.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Dietary fat was the strongest risk factor for these males",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A population-based case-control study in Utah",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "timing": null,
+          "continent": {
+            "excerpt": "case-control study in Utah",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Utah",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary data were ascertained using a quantitative food-frequency questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/1873441/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

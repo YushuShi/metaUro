@@ -1,0 +1,369 @@
+{
+  "schema_version": 1,
+  "receipt_id": "4666dc3d6f3300e469dcc04ecf7da1aa458a2be90ad2bfe6bb3e5167d018c383",
+  "requested_at": "2026-09-02T08:50:35.576734+08:00",
+  "received_at": "2026-09-02T08:51:08.707597+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "8b2016ff1cff52de9603e7504cae1a6c6efc91141af639ebfb641605425cc88b",
+  "attempt": 2,
+  "context_ids": [
+    "28103838|Calcium|Prostate cancer",
+    "28103838|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "cca7addcf4cd810f650ca0e9deeaca2bf040568eb2fc3897132c8b2935b00299",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 33375,
+    "cached_input_tokens": 0,
+    "output_tokens": 5775,
+    "reasoning_tokens": 2075
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.04668750000000001",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "82463191-8546-426c-9aba-ce85bbd10ce8",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.04668750000000001"
+  },
+  "output_sha256": "0ee1641fbebe2271c4e3ec58f235c171c68c9de084874b3779091e1e83904cbe",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"28103838|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This multiethnic case-control study evaluated the association between dietary and total calcium intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.98,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.01,\n        \"ci_upper\": 3.91,\n        \"p_value\": 0.03,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1657,\n        \"cases\": 699,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Multiethnic prostate cancer patients and controls from Chicago, IL and Washington, D.C.\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After removing these individuals, a total of 1,657 men (699 PCa patients and 958 controls) were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After removing these individuals, a total of 1,657 men (699 PCa patients and 958 controls) were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Compared to men in the lowest total calcium intake quartile, the men in the highest quartile were almost two times more likely to have high risk PCa (OR = 1.98, 95% C.I.: 1.01–3.91).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Results/Paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Compared to men in the lowest total calcium intake quartile, the men in the highest quartile were almost two times more likely to have high risk PCa (OR = 1.98, 95% C.I.: 1.01–3.91).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Results/Paragraph 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Quartile 4 (>1033.3) ... Adjusted OR (95% C.I.) 1.98 (1.01–3.91) ... P for Trend 0.03\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Quartile 1 (<368.8) ... Quartile 4 (>1033.3)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"We recruited a total of 2,322 study participants for cross-sectional studies among controls and men who underwent PCa biopsy\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants were asked about the amount of consumption (serving size) and frequency of food consumption (never, 2–3 times per month, 1–2 times per week, 3–4 times per week, 5–6 times per week, or every day) in the past year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Dietary assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"from six public and academic hospitals in Chicago, IL ... and Washington, D.C.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"888 African Americans, 620 European Americans, 111 Hispanic Americans, and 38 others\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Abstract/Methods\"\n          },\n          \"location\": {\n            \"excerpt\": \"from six public and academic hospitals in Chicago, IL (Cook County Health and Hospital System, Northwestern Memorial Hospital, Jesse Brown Veterans Affairs Medical Center, University of Illinois Hospital and Health Science System, and University of Chicago Hospital) between 2009 and 2014 [ 18 ] and Washington, D.C. (Howard University Hospital) between 2000 and 2004\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Self-reported calcium and vitamin D intake were evaluated using the Block calcium and vitamin D screener, a food frequency questionnaire (FFQ) developed from the National Health and Nutrition Examination Survey (NHANES) 1999–2001 dietary recall data.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"28103838|Vitamin D|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This multiethnic case-control study evaluated the association between dietary and total vitamin D intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.38,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.18,\n        \"ci_upper\": 0.79,\n        \"p_value\": 0.01,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1657,\n        \"cases\": 699,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Multiethnic prostate cancer patients and controls from Chicago, IL and Washington, D.C.\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After removing these individuals, a total of 1,657 men (699 PCa patients and 958 controls) were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After removing these individuals, a total of 1,657 men (699 PCa patients and 958 controls) were available for analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total vitamin D intake showed an inverse association for high risk PCa (OR = 0.38, 95% C.I.: 0.18–0.79).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Results/Paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total vitamin D intake showed an inverse association for high risk PCa (OR = 0.38, 95% C.I.: 0.18–0.79).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Results/Paragraph 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Quartile 4 (>510.2) ... Adjusted OR (95% C.I.) 0.38 (0.18–0.79) ... P for Trend 0.01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Quartile 1 (<63.5) ... Quartile 4 (>510.2)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"We recruited a total of 2,322 study participants for cross-sectional studies among controls and men who underwent PCa biopsy\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants were asked about the amount of consumption (serving size) and frequency of food consumption (never, 2–3 times per month, 1–2 times per week, 3–4 times per week, 5–6 times per week, or every day) in the past year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Dietary assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"from six public and academic hospitals in Chicago, IL ... and Washington, D.C.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"888 African Americans, 620 European Americans, 111 Hispanic Americans, and 38 others\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Abstract/Methods\"\n          },\n          \"location\": {\n            \"excerpt\": \"from six public and academic hospitals in Chicago, IL (Cook County Health and Hospital System, Northwestern Memorial Hospital, Jesse Brown Veterans Affairs Medical Center, University of Illinois Hospital and Health Science System, and University of Chicago Hospital) between 2009 and 2014 [ 18 ] and Washington, D.C. (Howard University Hospital) between 2000 and 2004\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Study participants, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Self-reported calcium and vitamin D intake were evaluated using the Block calcium and vitamin D screener, a food frequency questionnaire (FFQ) developed from the National Health and Nutrition Examination Survey (NHANES) 1999–2001 dietary recall data.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/\",\n            \"location\": \"Methods/Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "28103838|Calcium|Prostate cancer",
+      "pmid": "28103838",
+      "pmcid": "PMC5248493",
+      "published_date": "2017-01-19",
+      "title": "Race and BMI modify associations of calcium and vitamin D intake with prostate cancer.",
+      "authors": [
+        "Batai K",
+        "Murphy AB",
+        "Ruden M",
+        "Newsome J",
+        "Shah E",
+        "Dixon MA",
+        "Jacobs ET",
+        "Hollowell CM",
+        "Ahaghotu C",
+        "Kittles RA"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This multiethnic case-control study evaluated the association between dietary and total calcium intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.98,
+        "effect_type": "OR",
+        "ci_lower": 1.01,
+        "ci_upper": 3.91,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": 1657,
+        "cases": 699,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Chicago, IL and Washington, D.C.",
+        "ethnicity": "NA",
+        "population": "Multiethnic prostate cancer patients and controls from Chicago, IL and Washington, D.C.",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After removing these individuals, a total of 1,657 men (699 PCa patients and 958 controls) were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 699)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Compared to men in the lowest total calcium intake quartile, the men in the highest quartile were almost two times more likely to have high risk PCa (OR = 1.98, 95% C.I.: 1.01–3.91).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Results/Paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Quartile 4 = 1.98, 95% C.I.: 1.01–3.91), while high vitamin D intake was associated with lower odds of aggressive prostate cancer (OR Quartile 1 vs.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Results/Paragraph 2"
+          },
+          "p_value": {
+            "excerpt": "P 0.03",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "We recruited a total of 2,322 study participants for cross-sectional studies among controls and men who underwent PCa biopsy",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Participants were asked about the amount of consumption (serving size) and frequency of food consumption (never, 2–3 times per month, 1–2 times per week, 3–4 times per week, 5–6 times per week, or every day) in the past year.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Dietary assessment, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "from Chicago, IL and Washington, D.C.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Self-reported calcium and vitamin D intake were evaluated using the Block calcium and vitamin D screener, a food frequency questionnaire (FFQ) developed from the National Health and Nutrition Examination Survey (NHANES) 1999–2001 dietary recall data.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Dietary assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 71986,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "36c38704d03be658532acc851786c87c86ef49e76379fd5e5a2992dde88e6afc",
+      "pmc_source_receipt_digest": "aae145588a67a7968583a3ff7171fec4d014789038e773fea12b832ac2875ef8",
+      "pmc_source_raw_sha256": "98b31f51da111f1323cdf4e0fa46bb8db8d170b1de2cc5bc5c9044006d28ed26",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "60dd4772a0debb71503a7f9457e5f9a3631e753164a280c2507dd94f8d5a30be"
+    },
+    {
+      "context_id": "28103838|Vitamin D|Prostate cancer",
+      "pmid": "28103838",
+      "pmcid": "PMC5248493",
+      "published_date": "2017-01-19",
+      "title": "Race and BMI modify associations of calcium and vitamin D intake with prostate cancer.",
+      "authors": [
+        "Batai K",
+        "Murphy AB",
+        "Ruden M",
+        "Newsome J",
+        "Shah E",
+        "Dixon MA",
+        "Jacobs ET",
+        "Hollowell CM",
+        "Ahaghotu C",
+        "Kittles RA"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This multiethnic case-control study evaluated the association between dietary and total vitamin D intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.38,
+        "effect_type": "OR",
+        "ci_lower": 0.18,
+        "ci_upper": 0.79,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 1657,
+        "cases": 699,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Chicago, IL and Washington, D.C.",
+        "ethnicity": "NA",
+        "population": "Multiethnic prostate cancer patients and controls from Chicago, IL and Washington, D.C.",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After removing these individuals, a total of 1,657 men (699 PCa patients and 958 controls) were available for analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Cases ( n = 699)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Total vitamin D intake showed an inverse association for high risk PCa (OR = 0.38, 95% C.I.: 0.18–0.79).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Results/Paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Quartile 4 = 0.38, 95% C.I.: 0.18–0.79).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Results/Paragraph 2"
+          },
+          "p_value": {
+            "excerpt": "Controls Unadjusted Adjusted Unadjusted Adjusted Unadjusted Adjusted n (%) n (%) OR (95% C.I.) OR (95% C.I.) n (%) OR (95% C.I.) OR (95% C.I.) n (%) OR (95% C.I.) OR (95% C.I.) Dietary Calcium, mg/day <800 719 (75.1) 508 (72.7) 1.00 1.00 101 (64.3) 1.00 1.00 99 (63.9) 1.00 1.00 800–1000 93 (9.7) 73 (10.4) 1.11 (0.80–1.54) 1.04 (0.72–1.51) 20 (12.7) 1.53 (0.91–2.59) 1.18 (0.62–2.26) 23 (14.8) 1.80 (1.09–2.97) 1.82 (1.03–3.20 ) ≥1000 146 (15.2) 118 (16.9) 1.14 (0.88–1.50) 1.13 (0.83–1.55) 36 (22.9) 1.76 (1.15–2.67) 1.50 (0.88–1.55) 33 (21.3) 1.64 (1.07–2.53) 1.60 (0.97–2.65) P 0.55 0.74 0.02 0.32 0.009 0.04 Dietary Vitamin D, IU/day <400 940 (98.1) 683 (97.7) 1.00 1.00 148 (94.3) 1.00 1.00 149 (96.1) 1.00 1.00 ≥400 18 (1.9) 16 (2.3) 1.22 (0.62–2.42) 1.20 (0.53–2.74) 9 (5.7) 3.18 (1.40–7.20) 2.56 (0.84–7.85) 6 (3.9) 2.10 (0.82–5.38) 2.22 (0.71–6.96) P 0.56 0.66 0.006 0.10 0.12 0.17 Supplemental Calcium, mg/day <800 908 (94.8) 656 (93.8) 1.00 1.00 145 (92.4) 1.00 1.00 144 (92.9) 1.00 1.00 ≥800 50 (5.2) 43 (6.2) 1.19 (0.78–1.81) 1.07 (0.66–1.74) 12 (7.6) 1.50 (0.78–2.89) 1.90 (0.81–4.47) 11 (7.1) 1.39 (0.71–2.73) 1.46 (0.67–3.21) P 0.42 0.79 0.22 0.14 0.34 0.35 Supplemental Vitamin D, IU/day <400 567 (59.2) 425 (60.8) 1.00 1.00 102 (65.0) 1.00 1.00 94 (60.6) 1.00 1.00 400–600 246 (25.7) 199 (28.5) 1.08 (0.86–1.35) 1.05 (0.81–1.36) 46 (29.3) 1.04 (0.71–1.52) 0.94 (0.59–1.49) 47 (30.3) 1.15 (0.79–1.69) 1.06 (0.69–1.64) ≥600 145 (15.1) 75 (10.7) 0.69 (0.51–0.94) 0.70 (0.50–0.98) 9 (5.7) 0.35 (0.17–0.70) 0.35 (0.16–0.77) 14 (9.0) 0.58 (0.32–1.05) 0.47 (0.25–0.90) P 0.03 0.08 0.01 0.03 0.11 0.047 Total Calcium, mg/day <800 623 (65.0) 422 (60.4) 1.00 1.00 85 (54.1) 1.00 1.00 81 (52.3) 1.00 1.00 800–1000 85 (8.9) 92 (13.2) 1.60 (1.16–2.20) 1.61 (1.12–2.29) 19 (12.1) 1.64 (0.95–2.83) 1.55 (0.82–2.95) 24 (15.5) 2.17 (1.31–3.61) 2.26 (1.30–3.95) ≥1000 250 (26.1) 185 (26.5) 1.01 (0.87–1.37) 1.05 (0.80–1.38) 53 (33.8) 1.55 (1.07–2.26) 1.48 (0.91–2.40) 50 (32.3) 1.54 (1.05–2.25) 1.54 (0.98–2.43) P 0.02 0.03 0.02 0.18 0.004 0.009 Total Vitamin D, IU/day <400 545 (56.9) 406 (58.1) 1.00 1.00 93 (59.2) 1.00 1.00 87 (56.1) 1.00 1.00 400–600 210 (21.9) 178 (25.5) 1.14 (0.90–1.44) 1.11 (0.85–1.46) 46 (29.3) 1.28 (0.87–1.89) 1.14 (0.71–1.83) 42 (27.1) 1.25 (0.84–1.87) 1.24 (0.80–1.95) ≥600 203 (21.2) 115 (16.5) 0.76 (0.59–0.99) 0.74 (0.54–1.01) 18 (11.5) 0.52 (0.31–0.88) 0.44 (0.23–0.84) 26 (16.8) 0.80 (0.50–1.28) 0.60 (0.35–1.05) P 0.03 0.06 0.009 0.02 0.25 0.06 NOTE: Model adjusted for age, family history of PCa, race/ethnicity, BMI, education, smoking, alcohol use, and marital status, as well as mutually adjustment for total calcium or vitamin D intake.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "We recruited a total of 2,322 study participants for cross-sectional studies among controls and men who underwent PCa biopsy",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Participants were asked about the amount of consumption (serving size) and frequency of food consumption (never, 2–3 times per month, 1–2 times per week, 3–4 times per week, 5–6 times per week, or every day) in the past year.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Dietary assessment, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Study participants, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "from Chicago, IL and Washington, D.C.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/28103838/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Self-reported calcium and vitamin D intake were evaluated using the Block calcium and vitamin D screener, a food frequency questionnaire (FFQ) developed from the National Health and Nutrition Examination Survey (NHANES) 1999–2001 dietary recall data.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5248493/",
+            "location": "Methods/Dietary assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.01",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 71986,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "36c38704d03be658532acc851786c87c86ef49e76379fd5e5a2992dde88e6afc",
+      "pmc_source_receipt_digest": "aae145588a67a7968583a3ff7171fec4d014789038e773fea12b832ac2875ef8",
+      "pmc_source_raw_sha256": "98b31f51da111f1323cdf4e0fa46bb8db8d170b1de2cc5bc5c9044006d28ed26",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "6ad7527648376909dffcc663bb42e27e628896d77d0242d431b83933b864ae76"
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:08:25.733408-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "e53b079a9c8052f5ed66b61c58817d0e41baddc8499b8177feeae1d842562f36",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "8813431",
+      "title": "Nutritional factors and prostate cancer: a case-control study of French Canadians in Montreal, Canada.",
+      "abstract": "The relationship between the risk of prostate cancer and dietary intake of energy, fat, vitamin A, and other nutrients was investigated in a case-control study conducted in Montreal (Quebec), Canada. French Canadians aged 35 to 84 years with a recent, histologically confirmed diagnosis of adenocarcinoma of the prostate were identified through the admission offices of five major francophone teaching-hospitals in Montreal from 1989 to 1993. Population-based controls matched for age (+/- five years), language, and place of residence were selected by a modified random-digit dialing method. The study included 232 cases and 231 controls. Information on dietary intake was collected by means of a quantitative dietary history. No association was evident between energy intake and the risk of prostate cancer. In contrast, there was some evidence of an inverse association with intake of total fat, animal fat, monounsaturated fat, and particularly saturated fat (odds ratio = 0.69, 95 percent confidence interval = 0.40-1.18, P = 0.05), while a nonsignificant positive association was found with polyunsaturated fat. In addition, high intake of retinol and vegetable protein (highest cf lowest quartile) was associated with reduced risk, but was not statistically significant. No associations were established between intake of other nutrients and risk. These patterns persisted after adjustment for a number of potential confounding factors.",
+      "mesh": [
+        "Adenocarcinoma / epidemiology",
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Case-Control Studies",
+        "Confounding Factors, Epidemiologic",
+        "Dietary Carbohydrates / administration & dosage",
+        "Dietary Fats / administration & dosage",
+        "Energy Intake",
+        "Ethnicity",
+        "Fatty Acids / administration & dosage",
+        "Fatty Acids, Monounsaturated / administration & dosage",
+        "Fatty Acids, Unsaturated / administration & dosage",
+        "France / ethnology",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Nutritional Physiological Phenomena",
+        "Plant Proteins, Dietary / administration & dosage",
+        "Prostatic Neoplasms / epidemiology",
+        "Quebec / epidemiology",
+        "Risk Factors",
+        "Vitamin A / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "8813431",
+      "contexts": [
+        {
+          "context_id": "8813431|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest vs lowest quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "463",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest versus lowest quartile of intake"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

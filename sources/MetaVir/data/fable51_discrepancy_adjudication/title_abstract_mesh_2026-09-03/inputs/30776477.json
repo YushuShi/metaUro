@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:35:50.189111-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c5460610820171b4bfa09e939287e149396cbc786768582c5c3b79866af110f7",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "30776477",
+      "title": "Blood and dietary magnesium levels are not linked with lower prostate cancer risk in black or white men.",
+      "abstract": "Recent studies suggest a diet low in dietary magnesium intake or lower blood magnesium levels is linked with increased prostate cancer risk. This study investigates the race-specific link between blood magnesium and calcium levels, or dietary magnesium intake, and the diagnosis of low-grade and high-grade prostate cancer. The study included 637 prostate cancer cases and 715 biopsy-negative controls (50% black) recruited from Nashville, TN or Durham, NC. Blood was collected at the time of recruitment, and dietary intake was assessed by food frequency questionnaire. Percent genetic African ancestry was determined as a compliment to self-reported race. Blood magnesium levels and dietary magnesium intake were significantly lower in black compared to white men. However, magnesium levels or intake were not associated with risk of total prostate cancer or aggressive prostate cancer. Indeed, a higher calcium-to-magnesium diet intake was significantly protective for high-grade prostate cancer in black (OR = 0.66 (0.45, 0.96), p = 0.03) but not white (OR = 1.00 (0.79, 1.26), p = 0.99) men. In summary, there was a statistically significant difference in magnesium intake between black and white men, but the biological impact was unclear, and we did not confirm a lower prostate cancer risk associated with magnesium levels.",
+      "mesh": [
+        "Black or African American",
+        "Aged",
+        "Calcium, Dietary / administration & dosage, blood",
+        "Case-Control Studies",
+        "Diet Surveys",
+        "Humans",
+        "Magnesium / administration & dosage, blood",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Grading",
+        "Prostatic Neoplasms / ethnology, pathology",
+        "Risk Factors",
+        "United States / ethnology",
+        "White People"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "30776477",
+      "contexts": [
+        {
+          "context_id": "30776477|Magnesium|Prostate cancer",
+          "exposure": "Magnesium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "683",
+              "effect_measure_type": "OR",
+              "effect_size": "1.14",
+              "ci_lower": "0.96",
+              "ci_upper": "1.35",
+              "p_value": "0.14",
+              "comparison": "Black men; serum magnesium increase from the 25th to 75th percentile among controls, for all prostate cancer"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1352",
+              "effect_measure_type": "OR",
+              "effect_size": "1.04",
+              "ci_lower": "0.64",
+              "ci_upper": "1.69",
+              "p_value": "0.89",
+              "comparison": "IQR (75th vs 25th percentile)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,117 @@
+name: MetaPee monthly evidence update
+
+on:
+  schedule:
+    # On the 28th, screen records published during the previous calendar month.
+    - cron: "23 06 28 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: metapee-monthly-evidence-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 360
+
+    steps:
+      - name: Check out main
+        uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4.3.1
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5.6.0
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Install fonts for localized plots
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes fonts-noto-cjk
+
+      - name: Freeze the previous publication month
+        id: window
+        run: |
+          python - <<'PY' >> "$GITHUB_OUTPUT"
+          from scripts.validate_monthly_artifacts import previous_month_window
+          start_date, end_date = previous_month_window()
+          print(f"start_date={start_date}")
+          print(f"end_date={end_date}")
+          PY
+
+      - name: Run ChatGPT primary screening
+        env:
+          CHATGPT_FIRST_SCREEN_MODEL: gpt-5.6-luna
+          CHATGPT_SECOND_SCREEN_MODEL: gpt-5.6-sol
+          CHATGPT_FULL_TEXT_MODEL: gpt-5.6-luna
+          MONTHLY_REQUIRE_VALID_NCBI_KEY: "true"
+          NCBI_API_KEY: ${{ secrets.NCBI_API_KEY }}
+          NCBI_EMAIL: ${{ secrets.NCBI_EMAIL }}
+          CORNELL_API_KEY: ${{ secrets.CORNELL_API_KEY }}
+          CORNELL_API_BASE_URL: ${{ secrets.CORNELL_API_BASE_URL }}
+        run: |
+          set -o pipefail
+          python scripts/monthly_evidence_update.py \
+            --start-date "${{ steps.window.outputs.start_date }}" \
+            --end-date "${{ steps.window.outputs.end_date }}" \
+            --stage all \
+            --report-dir data/monthly_reports \
+            --monthly-report-subdir \
+            2>&1 | tee monthly_update.log
+
+      - name: Validate audit artifacts
+        run: |
+          set -o pipefail
+          python scripts/validate_monthly_artifacts.py \
+            --start-date "${{ steps.window.outputs.start_date }}" \
+            --end-date "${{ steps.window.outputs.end_date }}" \
+            --updates-root data/monthly_updates \
+            --reports-root data/monthly_reports \
+            2>&1 | tee -a monthly_update.log
+
+      - name: Run regression tests
+        run: |
+          set -o pipefail
+          python -m unittest discover -s tests -p 'test_*.py' \
+            2>&1 | tee -a monthly_update.log
+
+      - name: Commit monthly evidence and audits
+        run: |
+          set -o pipefail
+          run_dir="${{ steps.window.outputs.start_date }}_${{ steps.window.outputs.end_date }}"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- Cached_results static Plot cost.txt \
+            "data/monthly_updates/$run_dir" "data/monthly_reports/$run_dir"
+          if git diff --cached --quiet; then
+            echo "No repository changes for this month." | tee -a monthly_update.log
+          else
+            git commit -m "Monthly MetaPee evidence update $(date -u +%Y-%m)" \
+              2>&1 | tee -a monthly_update.log
+            git push origin HEAD:main 2>&1 | tee -a monthly_update.log
+          fi
+
+      - name: Email maintainers when the update fails
+        if: failure()
+        env:
+          SMTP_HOST: ${{ secrets.SMTP_HOST }}
+          SMTP_PORT: ${{ secrets.SMTP_PORT }}
+          SMTP_USERNAME: ${{ secrets.SMTP_USERNAME }}
+          SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
+          SMTP_FROM: ${{ secrets.SMTP_FROM }}
+          SMTP_USE_SSL: ${{ secrets.SMTP_USE_SSL }}
+          SMTP_USE_TLS: ${{ secrets.SMTP_USE_TLS }}
+        run: |
+          python scripts/send_monthly_failure_email.py \
+            --log monthly_update.log \
+            --workflow-url "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"

@@ -1,0 +1,359 @@
+{
+  "schema_version": 1,
+  "receipt_id": "732697ca56aaf11b8701784000195cc8eb7c6f5c34b435169ed288d5225268fe",
+  "requested_at": "2026-09-02T08:37:03.869374+08:00",
+  "received_at": "2026-09-02T08:37:26.813869+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "77978e98c2dacccaac20fe968c2ae27713e2e2ac692545d2e988ecdfb279aea1",
+  "attempt": 2,
+  "context_ids": [
+    "10584888|Docosahexaenoic acid|Prostate cancer",
+    "10584888|Eicosapentaenoic acid|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Docosahexaenoic acid": 1,
+    "Eicosapentaenoic acid": 1
+  },
+  "input_digest": "007b2752d8b9497b74f907d6010fa9f3d42d6b730834a6c6e3efb56759d83ae4",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9901,
+    "cached_input_tokens": 0,
+    "output_tokens": 3982,
+    "reasoning_tokens": 810
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.022358250000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "96ba8114-595c-4825-aa03-ddec805664a3",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.022358250000000003"
+  },
+  "output_sha256": "97911882ab461ba91e553f17ebbbf9ed8798702e72c5aee20e3d9c08a6a6d39e",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"10584888|Docosahexaenoic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study evaluates erythrocyte docosahexaenoic acid levels and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.62,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.39,\n        \"ci_upper\": 0.98,\n        \"p_value\": 0.01,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 797,\n        \"cases\": 317,\n        \"comparison_type\": \"top_vs_bottom_quartile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Oceania\",\n        \"country\": \"NZL\",\n        \"location\": \"Auckland\",\n        \"ethnicity\": null,\n        \"population\": \"Population-based case-control study of men aged 40-80 years resident in Auckland, New Zealand\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"involving 317 prostate cancer cases and 480 age-matched community controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"cases\": {\n            \"excerpt\": \"involving 317 prostate cancer cases and 480 age-matched community controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"multivariate relative risk = 0.62; 95% confidence interval 0.39-0.98, upper vs lowest quartile\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"multivariate relative risk = 0.62; 95% confidence interval 0.39-0.98, upper vs lowest quartile\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Docosahexaenoic acid (C22:6n-3) Total cancers: multivariate RR Q4 > 1.70: 0.62 (0.39-0.98), P for trend 0.01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"upper vs lowest quartile\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"fatty acid composition of erythrocyte phosphatidylcholine was determined using gas-liquid chromatography\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, Blood sample processing and erythrocyte fatty acid analysis, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"10584888|Eicosapentaenoic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This population-based case-control study evaluates erythrocyte eicosapentaenoic acid levels and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.59,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.37,\n        \"ci_upper\": 0.95,\n        \"p_value\": 0.03,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 797,\n        \"cases\": 317,\n        \"comparison_type\": \"top_vs_bottom_quartile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Oceania\",\n        \"country\": \"NZL\",\n        \"location\": \"Auckland\",\n        \"ethnicity\": null,\n        \"population\": \"Population-based case-control study of men aged 40-80 years resident in Auckland, New Zealand\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"involving 317 prostate cancer cases and 480 age-matched community controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"cases\": {\n            \"excerpt\": \"involving 317 prostate cancer cases and 480 age-matched community controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"multivariate relative risk = 0.59; 95% confidence interval 0.37-0.95, upper vs lowest quartile\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"multivariate relative risk = 0.59; 95% confidence interval 0.37-0.95, upper vs lowest quartile\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Eicosapentaenoic acid (C20:5n-3) Total cancers: multivariate RR Q4 > 0.83: 0.59 (0.37-0.95), P for trend 0.03\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"upper vs lowest quartile\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"Summary\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"ethnicity\": null,\n          \"location\": {\n            \"excerpt\": \"The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, The study participants, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"fatty acid composition of erythrocyte phosphatidylcholine was determined using gas-liquid chromatography\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/\",\n            \"location\": \"MATERIALS AND METHODS, Blood sample processing and erythrocyte fatty acid analysis, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "10584888|Docosahexaenoic acid|Prostate cancer",
+      "pmid": "10584888",
+      "pmcid": "PMC2374335",
+      "published_date": "1999-12-01",
+      "title": "Prostate cancer risk and consumption of fish oils: a dietary biomarker-based case-control study.",
+      "authors": [
+        "Norrish AE",
+        "Skeaff CM",
+        "Arribas GL",
+        "Sharpe SJ",
+        "Jackson RT"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10584888/",
+      "exposure": "Docosahexaenoic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study evaluates erythrocyte docosahexaenoic acid levels and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.62,
+        "effect_type": "RR",
+        "ci_lower": 0.39,
+        "ci_upper": 0.98,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 797,
+        "cases": 317,
+        "comparison_type": "top_vs_bottom_quartile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Oceania",
+        "country": "NZL",
+        "location": "Auckland, New Zealand",
+        "ethnicity": "NA",
+        "population": "Population-based case-control study of men aged 40-80 years resident in Auckland, New Zealand",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "RESULTS Participants in the Auckland Prostate Study included a total of 317 prostate cancer cases (77% response rate) and 480 controls (71% response rate).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary; total_n derived from reported group counts 317 + 480 = 797"
+          },
+          "cases": {
+            "excerpt": "RESULTS Participants in the Auckland Prostate Study included a total of 317 prostate cancer cases (77% response rate) and 480 controls (71% response rate).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "effect_size": {
+            "excerpt": "Reduced prostate cancer risk was associated with high erythrocyte phosphatidylcholine levels of EPA (multivariate relative risk = 0.59; 95% confidence interval 0.37–0.95, upper vs lowest quartile) and DHA (multivariate relative risk = 0.62; 95% confidence interval 0.39–0.98, upper vs lowest quartile).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "confidence_interval": {
+            "excerpt": "Reduced prostate cancer risk was associated with high erythrocyte phosphatidylcholine levels of EPA (multivariate relative risk = 0.59; 95% confidence interval 0.37–0.95, upper vs lowest quartile) and DHA (multivariate relative risk = 0.62; 95% confidence interval 0.39–0.98, upper vs lowest quartile).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "p_value": {
+            "excerpt": "Although differences in plasma fatty acids observed 1240 AE Norrish et al British Journal of Cancer (1999) 81(7), 1238-1242 (c) 1999 Cancer Research Campaign Table 2 Prostate cancer relative risk and eicosapentaenoic acid and docosahexaenoic acid levels in erythrocyte phosphatidylcholine, by quartile, total and advanced cancers Quartile - relative risk (95% confidence interval) Fatty acid Q1 Q2 Q3 Q4 (high) P for trend Eicosapentaenoic - mol %a < 0.44 0.44-0.62 0.62-0.83 > 0.83 acid (C20:5n-3) Total cancers: - age-adjusted RR 1.00 0.65 (0.43-0.99) 0.70 (0.46-1.05) 0.60 (0.39-0.92) 0.02 - multivariate RRb 1.00 0.74 (0.47-1.14) 0.72 (0.46-1.12) 0.59 (0.37-0.95) 0.03 Advanced cancers: - age-adjusted RR 1.00 0.66 (0.41-1.07) 0.68 (0.42-1.10) 0.57 (0.34-0.94) 0.03 - multivariate RRb 1.00 0.73 (0.43-1.22) 0.65 (0.38-1.11) 0.54 (0.31-0.96) 0.03 Docosahexaenoic - mol %a < 1.13 1.13-1.42 1.42-1.70 > 1.70 acid (C22:6n-3) Total cancers: - age-adjusted RR 1.00 0.80 (0.53-1.20) 0.53 (0.34-0.83) 0.66 (0.43-1.00) 0.02 - multivariate RRb 1.00 0.83 (0.53-1.28) 0.54 (0.33-0.87) 0.62 (0.39-0.98) 0.01 Advanced cancers: - age-adjusted RR 1.00 0.83 (0.52-1.32) 0.44 (0.26-0.76) 0.73 (0.45-1.18) 0.06 - multivariate RRb 1.00 0.84 (0.51-1.39) 0.46 (0.25-0.82) 0.66 (0.39-1.13) 0.04 a Based upon percentage of total peak areas.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "upper vs lowest quartile",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "design": {
+            "excerpt": "The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, The study participants, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, The study participants, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, The study participants, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Auckland, New Zealand",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10584888/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "fatty acid composition of erythrocyte phosphatidylcholine was determined using gas-liquid chromatography",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, Blood sample processing and erythrocyte fatty acid analysis, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.01",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 30861,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "773da2c4b616d01a81747888da7d629daa669e1e020f4d64e3c2c5c3c384cdcf",
+      "pmc_source_receipt_digest": "2e16a5731e39224aa081b1d866032c76084a031d197325eefbc5b334adab2653",
+      "pmc_source_raw_sha256": "ff4afd9f74582739b94e538ddfcbb1cf0fa71fa66d82fcd673730f1eaa43f48b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "52254a5b506c017b861903246e4efb9b3bf01b91dd53e1c9cd3d195cb78e5419"
+    },
+    {
+      "context_id": "10584888|Eicosapentaenoic acid|Prostate cancer",
+      "pmid": "10584888",
+      "pmcid": "PMC2374335",
+      "published_date": "1999-12-01",
+      "title": "Prostate cancer risk and consumption of fish oils: a dietary biomarker-based case-control study.",
+      "authors": [
+        "Norrish AE",
+        "Skeaff CM",
+        "Arribas GL",
+        "Sharpe SJ",
+        "Jackson RT"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10584888/",
+      "exposure": "Eicosapentaenoic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This population-based case-control study evaluates erythrocyte eicosapentaenoic acid levels and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.59,
+        "effect_type": "RR",
+        "ci_lower": 0.37,
+        "ci_upper": 0.95,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": 797,
+        "cases": 317,
+        "comparison_type": "top_vs_bottom_quartile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Oceania",
+        "country": "NZL",
+        "location": "Auckland, New Zealand",
+        "ethnicity": "NA",
+        "population": "Population-based case-control study of men aged 40-80 years resident in Auckland, New Zealand",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "RESULTS Participants in the Auckland Prostate Study included a total of 317 prostate cancer cases (77% response rate) and 480 controls (71% response rate).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary; total_n derived from reported group counts 317 + 480 = 797"
+          },
+          "cases": {
+            "excerpt": "RESULTS Participants in the Auckland Prostate Study included a total of 317 prostate cancer cases (77% response rate) and 480 controls (71% response rate).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "effect_size": {
+            "excerpt": "Reduced prostate cancer risk was associated with high erythrocyte phosphatidylcholine levels of EPA (multivariate relative risk = 0.59; 95% confidence interval 0.37–0.95, upper vs lowest quartile) and DHA (multivariate relative risk = 0.62; 95% confidence interval 0.39–0.98, upper vs lowest quartile).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "confidence_interval": {
+            "excerpt": "Reduced prostate cancer risk was associated with high erythrocyte phosphatidylcholine levels of EPA (multivariate relative risk = 0.59; 95% confidence interval 0.37–0.95, upper vs lowest quartile) and DHA (multivariate relative risk = 0.62; 95% confidence interval 0.39–0.98, upper vs lowest quartile).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "p_value": {
+            "excerpt": "Although differences in plasma fatty acids observed 1240 AE Norrish et al British Journal of Cancer (1999) 81(7), 1238-1242 (c) 1999 Cancer Research Campaign Table 2 Prostate cancer relative risk and eicosapentaenoic acid and docosahexaenoic acid levels in erythrocyte phosphatidylcholine, by quartile, total and advanced cancers Quartile - relative risk (95% confidence interval) Fatty acid Q1 Q2 Q3 Q4 (high) P for trend Eicosapentaenoic - mol %a < 0.44 0.44-0.62 0.62-0.83 > 0.83 acid (C20:5n-3) Total cancers: - age-adjusted RR 1.00 0.65 (0.43-0.99) 0.70 (0.46-1.05) 0.60 (0.39-0.92) 0.02 - multivariate RRb 1.00 0.74 (0.47-1.14) 0.72 (0.46-1.12) 0.59 (0.37-0.95) 0.03 Advanced cancers: - age-adjusted RR 1.00 0.66 (0.41-1.07) 0.68 (0.42-1.10) 0.57 (0.34-0.94) 0.03 - multivariate RRb 1.00 0.73 (0.43-1.22) 0.65 (0.38-1.11) 0.54 (0.31-0.96) 0.03 Docosahexaenoic - mol %a < 1.13 1.13-1.42 1.42-1.70 > 1.70 acid (C22:6n-3) Total cancers: - age-adjusted RR 1.00 0.80 (0.53-1.20) 0.53 (0.34-0.83) 0.66 (0.43-1.00) 0.02 - multivariate RRb 1.00 0.83 (0.53-1.28) 0.54 (0.33-0.87) 0.62 (0.39-0.98) 0.01 Advanced cancers: - age-adjusted RR 1.00 0.83 (0.52-1.32) 0.44 (0.26-0.76) 0.73 (0.45-1.18) 0.06 - multivariate RRb 1.00 0.84 (0.51-1.39) 0.46 (0.25-0.82) 0.66 (0.39-1.13) 0.04 a Based upon percentage of total peak areas.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "upper vs lowest quartile",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "Summary"
+          },
+          "design": {
+            "excerpt": "The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, The study participants, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, The study participants, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Auckland Prostate Study is a population based case-control study which was carried out in the greater metropolitan area of Auckland, New Zealand.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, The study participants, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Auckland, New Zealand",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10584888/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "fatty acid composition of erythrocyte phosphatidylcholine was determined using gas-liquid chromatography",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2374335/",
+            "location": "MATERIALS AND METHODS, Blood sample processing and erythrocyte fatty acid analysis, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 30861,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "773da2c4b616d01a81747888da7d629daa669e1e020f4d64e3c2c5c3c384cdcf",
+      "pmc_source_receipt_digest": "2e16a5731e39224aa081b1d866032c76084a031d197325eefbc5b334adab2653",
+      "pmc_source_raw_sha256": "ff4afd9f74582739b94e538ddfcbb1cf0fa71fa66d82fcd673730f1eaa43f48b",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "53c53294184d6e20780426f41fc0595f238065c26d3e4f6958ed35cbfaf46981"
+    }
+  ]
+}

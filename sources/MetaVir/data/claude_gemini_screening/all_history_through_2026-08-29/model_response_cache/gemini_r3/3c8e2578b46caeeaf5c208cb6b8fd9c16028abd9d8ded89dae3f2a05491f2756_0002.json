@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "receipt_id": "dc1aa60a44d1be78cc582d0e8a35f4085b20acb690fa43db67b34e18a684341d",
+  "requested_at": "2026-09-02T08:41:10.939095+08:00",
+  "received_at": "2026-09-02T08:41:46.018188+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "3c8e2578b46caeeaf5c208cb6b8fd9c16028abd9d8ded89dae3f2a05491f2756",
+  "attempt": 2,
+  "context_ids": [
+    "21541018|Calcium|Prostate cancer",
+    "21541018|Magnesium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Magnesium": 1
+  },
+  "input_digest": "f0354b281bc7eb983c5302fcb8b47bd30e8d1ddfea58b5cd30a93e3461a4a1fc",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12223,
+    "cached_input_tokens": 0,
+    "output_tokens": 5200,
+    "reasoning_tokens": 1737
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02866725",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "44cac073-9d99-41c7-9d26-6d776269c885",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02866725"
+  },
+  "output_sha256": "b833a2efe51638c285efafb27ffcbdbb7a79d1923217c364679487d62f403824",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"21541018|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study evaluates the association between serum calcium levels and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.19,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.86,\n        \"ci_upper\": 1.63,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 261,\n        \"cases\": 98,\n        \"comparison_type\": \"continuous\",\n        \"design\": \"case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men undergoing diagnostic prostate biopsy in the Nashville Men's Health Study\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Thus, the final analytic study population included 494 participants (99 high-grade cancer and 99 low-grade cancer, 133 PIN, and 163 negatives).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Data Analysis, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"High-Grade ... 98/163\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 4\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Ca (ng/ml) continuous 98/163 ... 1.19\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 4\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.86, 1.63\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"In contrast, blood Ca levels were not significantly associated with prostate cancer or PIN.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Ca (ng/ml) continuous\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"In this biomarker sub-study of the Nashville Men's Health Study (NMHS), we included 494 NMHS participants, consisting of 98 high-grade (Gleason≥7) and 100 low-grade cancer cases, 133 prostate intraepithelial neoplasia (PIN) cases, and 163 controls without cancer or PIN at biopsy.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Abstract, Study Design\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Blood was collected prior to diagnosis and treatment, and body size measures were ascertained by trained staff.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Discussion, paragraph 5\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Men scheduled for a diagnostic prostate biopsy between 2002 and 2008 at a Vanderbilt University Medical Center (Nashville, TN), the Tennessee Valley Veteran's Administration Hospital (Nashville, TN), or a large private urology practice in Nashville, were approached for recruitment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 147 90.2% ... Black 15 9.2% ... Asian or Hispanic 1 0.6%\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Men scheduled for a diagnostic prostate biopsy between 2002 and 2008 at a Vanderbilt University Medical Center (Nashville, TN), the Tennessee Valley Veteran's Administration Hospital (Nashville, TN), or a large private urology practice in Nashville, were approached for recruitment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Study Population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum concentration of magnesium and calcium were determined by standard analytic method on the Beckman DXC 800 chemistry analyzer provided by the Vanderbilt Pathology Laboratory Services with an intra-assay coefficient of variation of 2.0.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Biomarker Assays, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"21541018|Magnesium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study evaluates the association between serum magnesium levels and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.26,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.09,\n        \"ci_upper\": 0.85,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 261,\n        \"cases\": 98,\n        \"comparison_type\": \"continuous\",\n        \"design\": \"case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men undergoing diagnostic prostate biopsy in the Nashville Men's Health Study\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Thus, the final analytic study population included 494 participants (99 high-grade cancer and 99 low-grade cancer, 133 PIN, and 163 negatives).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Data Analysis, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"High-Grade ... 98/163\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 4\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Elevated Mg was significantly associated with a lower risk of high-grade prostate cancer (OR = 0.26 (0.09, 0.85)).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.09, 0.85\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Serum Mg levels were significantly lower, while the Ca/Mg ratio was significantly higher, among high-grade cases vs. controls (p = 0.04, p = 0.01, respectively).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Mg (ng/ml) continuous\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"In this biomarker sub-study of the Nashville Men's Health Study (NMHS), we included 494 NMHS participants, consisting of 98 high-grade (Gleason≥7) and 100 low-grade cancer cases, 133 prostate intraepithelial neoplasia (PIN) cases, and 163 controls without cancer or PIN at biopsy.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Abstract, Study Design\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Blood was collected prior to diagnosis and treatment, and body size measures were ascertained by trained staff.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Discussion, paragraph 5\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Men scheduled for a diagnostic prostate biopsy between 2002 and 2008 at a Vanderbilt University Medical Center (Nashville, TN), the Tennessee Valley Veteran's Administration Hospital (Nashville, TN), or a large private urology practice in Nashville, were approached for recruitment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 147 90.2% ... Black 15 9.2% ... Asian or Hispanic 1 0.6%\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Men scheduled for a diagnostic prostate biopsy between 2002 and 2008 at a Vanderbilt University Medical Center (Nashville, TN), the Tennessee Valley Veteran's Administration Hospital (Nashville, TN), or a large private urology practice in Nashville, were approached for recruitment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Study Population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum concentration of magnesium and calcium were determined by standard analytic method on the Beckman DXC 800 chemistry analyzer provided by the Vanderbilt Pathology Laboratory Services with an intra-assay coefficient of variation of 2.0.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/\",\n            \"location\": \"Methods, Biomarker Assays, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "21541018|Calcium|Prostate cancer",
+      "pmid": "21541018",
+      "pmcid": "PMC3081812",
+      "published_date": "2011-04-25",
+      "title": "Blood magnesium, and the interaction with calcium, on the risk of high-grade prostate cancer.",
+      "authors": [
+        "Dai Q",
+        "Motley SS",
+        "Smith JA",
+        "Concepcion R",
+        "Barocas D",
+        "Byerly S",
+        "Fowke JH"
+      ],
+      "journal": "PloS one",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21541018/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study evaluates the association between serum calcium levels and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.19,
+        "effect_type": "OR",
+        "ci_lower": 0.86,
+        "ci_upper": 1.63,
+        "p_value": 0.28622507031288613,
+        "ci_confidence_level": 95,
+        "total_n": 261,
+        "cases": 98,
+        "comparison_type": "continuous",
+        "design": "case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Nashville",
+        "ethnicity": "NA",
+        "population": "Men undergoing diagnostic prostate biopsy in the Nashville Men's Health Study",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In this biomarker sub-study of the Nashville Men's Health Study (NMHS), we included 494 NMHS participants, consisting of 98 high-grade (Gleason≥7) and 100 low-grade cancer cases, 133 prostate intraepithelial neoplasia (PIN) cases, and 163 controls without cancer or PIN at biopsy.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Methods, Data Analysis, paragraph 1; total_n derived from reported group counts 98 + 163 = 261"
+          },
+          "cases": {
+            "excerpt": "High-Grade cancer 98",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Table 4"
+          },
+          "effect_size": {
+            "excerpt": "1.19 0.86, 1.63",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Table 4"
+          },
+          "confidence_interval": {
+            "excerpt": "1.19 0.86, 1.63",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Table 4"
+          },
+          "p_value": {
+            "excerpt": "In contrast, blood Ca levels were not significantly associated with prostate cancer or PIN.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Abstract, Results"
+          },
+          "comparison": {
+            "excerpt": "Ca (ng/ml) continuous",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Table 4"
+          },
+          "design": {
+            "excerpt": "In this biomarker sub-study of the Nashville Men's Health Study (NMHS), we included 494 NMHS participants, consisting of 98 high-grade (Gleason≥7) and 100 low-grade cancer cases, 133 prostate intraepithelial neoplasia (PIN) cases, and 163 controls without cancer or PIN at biopsy.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Abstract, Study Design"
+          },
+          "timing": {
+            "excerpt": "Blood was collected prior to diagnosis and treatment, and body size measures were ascertained by trained staff.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Discussion, paragraph 5"
+          },
+          "continent": {
+            "excerpt": "Men scheduled for a diagnostic prostate biopsy between 2002 and 2008 at a Vanderbilt University Medical Center (Nashville, TN), the Tennessee Valley Veteran's Administration Hospital (Nashville, TN), or a large private urology practice in Nashville, were approached for recruitment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Methods, Study Population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "biomarker sub-study of the Nashville Men's Health Study (NMHS)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21541018/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Serum concentration of magnesium and calcium were determined by standard analytic method on the Beckman DXC 800 chemistry analyzer provided by the Vanderbilt Pathology Laboratory Services with an intra-assay coefficient of variation of 2.0.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Methods, Biomarker Assays, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.19,
+            "effect_type": "OR",
+            "ci_lower": 0.86,
+            "ci_upper": 1.63,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 32272,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "6dfb5a81f0d976b49d7f71035d45dbe8c51622b5722ebf5f167556c91bb4c11a",
+      "pmc_source_receipt_digest": "31ef32ad5fc8ba6b53bbdc0a594bcb6f946c9232ec922cdcc1f6f61d0ada5a3c",
+      "pmc_source_raw_sha256": "a957fe362292def24eca59506e20478d5b438fcd1ea54dc57b00eeb66aeaa5bd",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "2998efbba15a29cefbc19a9e0403e7572df49aee89901e420d00045a1bb66a15"
+    },
+    {
+      "context_id": "21541018|Magnesium|Prostate cancer",
+      "pmid": "21541018",
+      "pmcid": "PMC3081812",
+      "published_date": "2011-04-25",
+      "title": "Blood magnesium, and the interaction with calcium, on the risk of high-grade prostate cancer.",
+      "authors": [
+        "Dai Q",
+        "Motley SS",
+        "Smith JA",
+        "Concepcion R",
+        "Barocas D",
+        "Byerly S",
+        "Fowke JH"
+      ],
+      "journal": "PloS one",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21541018/",
+      "exposure": "Magnesium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study evaluates the association between serum magnesium levels and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.26,
+        "effect_type": "OR",
+        "ci_lower": 0.09,
+        "ci_upper": 0.85,
+        "p_value": 0.018690933445362816,
+        "ci_confidence_level": 95,
+        "total_n": 261,
+        "cases": 98,
+        "comparison_type": "continuous",
+        "design": "case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Nashville",
+        "ethnicity": "NA",
+        "population": "Men undergoing diagnostic prostate biopsy in the Nashville Men's Health Study",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In this biomarker sub-study of the Nashville Men's Health Study (NMHS), we included 494 NMHS participants, consisting of 98 high-grade (Gleason≥7) and 100 low-grade cancer cases, 133 prostate intraepithelial neoplasia (PIN) cases, and 163 controls without cancer or PIN at biopsy.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Methods, Data Analysis, paragraph 1; total_n derived from reported group counts 98 + 163 = 261"
+          },
+          "cases": {
+            "excerpt": "High-Grade cancer 98",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Table 4"
+          },
+          "effect_size": {
+            "excerpt": "Elevated Mg was significantly associated with a lower risk of high-grade prostate cancer (OR = 0.26 (0.09, 0.85)).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Abstract, Results"
+          },
+          "confidence_interval": {
+            "excerpt": "0.26 0.09, 0.85",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Abstract, Results"
+          },
+          "p_value": {
+            "excerpt": "Serum Mg levels were significantly lower, while the Ca/Mg ratio was significantly higher, among high-grade cases vs. controls (p = 0.04, p = 0.01, respectively).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Abstract, Results"
+          },
+          "comparison": {
+            "excerpt": "Mg (ng/ml) continuous",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Table 4"
+          },
+          "design": {
+            "excerpt": "In this biomarker sub-study of the Nashville Men's Health Study (NMHS), we included 494 NMHS participants, consisting of 98 high-grade (Gleason≥7) and 100 low-grade cancer cases, 133 prostate intraepithelial neoplasia (PIN) cases, and 163 controls without cancer or PIN at biopsy.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Abstract, Study Design"
+          },
+          "timing": {
+            "excerpt": "Blood was collected prior to diagnosis and treatment, and body size measures were ascertained by trained staff.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Discussion, paragraph 5"
+          },
+          "continent": {
+            "excerpt": "Men scheduled for a diagnostic prostate biopsy between 2002 and 2008 at a Vanderbilt University Medical Center (Nashville, TN), the Tennessee Valley Veteran's Administration Hospital (Nashville, TN), or a large private urology practice in Nashville, were approached for recruitment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Methods, Study Population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "biomarker sub-study of the Nashville Men's Health Study (NMHS)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/21541018/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Serum concentration of magnesium and calcium were determined by standard analytic method on the Beckman DXC 800 chemistry analyzer provided by the Vanderbilt Pathology Laboratory Services with an intra-assay coefficient of variation of 2.0.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3081812/",
+            "location": "Methods, Biomarker Assays, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.26,
+            "effect_type": "OR",
+            "ci_lower": 0.09,
+            "ci_upper": 0.85,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 32272,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "6dfb5a81f0d976b49d7f71035d45dbe8c51622b5722ebf5f167556c91bb4c11a",
+      "pmc_source_receipt_digest": "31ef32ad5fc8ba6b53bbdc0a594bcb6f946c9232ec922cdcc1f6f61d0ada5a3c",
+      "pmc_source_raw_sha256": "a957fe362292def24eca59506e20478d5b438fcd1ea54dc57b00eeb66aeaa5bd",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "13fb586a9a02a407b346750688af2a677d98e9e40c7e2d171d580f294d331579"
+    }
+  ]
+}

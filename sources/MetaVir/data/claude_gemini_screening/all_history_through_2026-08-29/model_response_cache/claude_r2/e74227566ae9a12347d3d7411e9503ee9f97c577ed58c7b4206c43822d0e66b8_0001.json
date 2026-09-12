@@ -1,0 +1,807 @@
+{
+  "schema_version": 1,
+  "receipt_id": "7bbcaa0634b5301a8ca5ab047a67b07ad465b08ec62385e2e082f184647ee9a9",
+  "requested_at": "2026-09-02T08:12:08.006421+08:00",
+  "received_at": "2026-09-02T08:13:44.845137+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "e74227566ae9a12347d3d7411e9503ee9f97c577ed58c7b4206c43822d0e66b8",
+  "attempt": 1,
+  "context_ids": [
+    "30122987|Vitamin D|Prostate cancer",
+    "30133114|Alcohol|Prostate cancer",
+    "30139875|Alcohol|Prostate cancer",
+    "30176879|Iron|Prostate cancer",
+    "30202928|Omega-3 fatty acids|Prostate cancer",
+    "30233396|Vitamin C|Prostate cancer",
+    "30235016|Mediterranean diet|Prostate cancer",
+    "30235016|Western pattern diet|Prostate cancer",
+    "30245752|Manganese|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 2,
+    "Iron": 1,
+    "Manganese": 1,
+    "Mediterranean diet": 1,
+    "Omega-3 fatty acids": 1,
+    "Vitamin C": 1,
+    "Vitamin D": 1,
+    "Western pattern diet": 1
+  },
+  "input_digest": "92ae8d3508173032bbeff87934f3f3bdd070ed2c91c14004fb65ce5c2efd248c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10307,
+    "cached_input_tokens": 0,
+    "output_tokens": 10335,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.30991",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "5111f1d4-1737-4e4c-8096-08bf852e62a3",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.30991"
+  },
+  "output_sha256": "3d76dbf900aada84cbb1bc2adb571d784cdba5d40b43cc8f57b64752f6c928b5",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"30122987|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a meta-analysis pooling 27 published studies of the vitamin D receptor Bsm I polymorphism rather than an original human study of vitamin D intake or status.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"30133114|Alcohol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENOTYPE-INTERACTION\",\"reason\":\"Alcohol appears only as a lifestyle modifier of CYP1B1 genotype risks, with results stratified by drinker status rather than a population-wide alcohol effect on prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"30139875|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original human biopsy cohort reporting lifetime and current alcohol intake in relation to prostate cancer diagnosis, providing an alcohol-specific incidence estimate.\",\"extraction\":{\"effect_size\":3.2,\"effect_type\":\"OR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":0.003,\"ci_confidence_level\":null,\"total_n\":650,\"cases\":325,\"comparison_type\":\"upper tertile of cumulative lifetime alcohol intake versus lower intake (trend across tertiles)\",\"design\":\"cohort\",\"timing\":\"retrospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Durham Veterans Affairs Medical Center\",\"ethnicity\":\"Racially diverse\",\"population\":\"Men undergoing prostate biopsy at an equal-access medical center\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Of 650 men ages 49-89 who underwent biopsy\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Results\"},\"cases\":{\"excerpt\":\"325 were diagnosed with prostate cancer, 238 with low-grade and 88 with high-grade disease\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Results\"},\"effect_size\":{\"excerpt\":\"men in the upper tertile of cumulative lifetime intake had increased odds of high-grade prostate cancer diagnosis (OR = 3.20\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Results\"},\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"(OR = 3.20, Ptrend = 0.003)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Results\"},\"comparison\":{\"excerpt\":\"men in the upper tertile of cumulative lifetime intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Results\"},\"design\":{\"excerpt\":\"We examined lifetime alcohol intake in association with prostate cancer diagnosis in an equal-access, racially diverse prostate biopsy cohort.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Background/Methods\"},\"timing\":{\"excerpt\":\"completed a survey indicating average number of alcoholic beverages consumed per week [categorized as none (ref), 1-6, ≥7] during each decade of life\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Methods\"},\"continent\":{\"excerpt\":\"Men undergoing prostate biopsy at the Durham Veterans Affairs Medical Center from 2007 to 2018\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Methods\"},\"ethnicity\":{\"excerpt\":\"an equal-access, racially diverse prostate biopsy cohort\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Background\"},\"location\":{\"excerpt\":\"Durham Veterans Affairs Medical Center\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Methods\"},\"exposure_measurement\":{\"excerpt\":\"a survey indicating average number of alcoholic beverages consumed per week\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30139875/\",\"location\":\"abstract - Methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"No\",\"q7\":\"Yes\",\"q8\":\"No\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"30176879|Iron|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The prostate cancer incidence estimate concerns the haematological parameter MCHC, with serum iron used only as a covariate, so no iron-specific exposure effect is reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"30202928|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a commentary-style piece with no abstract or original results on omega-3 intake and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"30233396|Vitamin C|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Population-based case-control study reporting an estimate for dietary vitamin C intake and prostate cancer incidence.\",\"extraction\":{\"effect_size\":0.95,\"effect_type\":\"OR\",\"ci_lower\":0.77,\"ci_upper\":1.18,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":3901,\"cases\":1916,\"comparison_type\":\"upper versus lower tertile of dietary vitamin C intake\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"North America\",\"country\":\"Canada\",\"location\":\"Montreal, Canada\",\"ethnicity\":\"NA\",\"population\":\"Histologically confirmed prostate cancer cases and population controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"In-person interviews, conducted with 1,916 histologically confirmed prostate cancer cases and 1,985 population controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Methods\"},\"cases\":{\"excerpt\":\"1,916 histologically confirmed prostate cancer cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Methods\"},\"effect_size\":{\"excerpt\":\"no association between dietary intakes of vitamin C (OR for upper vs. lower tertile: 0.95, 95%CI 0.77, 1.18)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Results\"},\"confidence_interval\":{\"excerpt\":\"OR for upper vs. lower tertile: 0.95, 95%CI 0.77, 1.18\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Results\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"OR for upper vs. lower tertile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Results\"},\"design\":{\"excerpt\":\"The Prostate Cancer and Environment Study (PROtEuS) is a population-based case-control study conducted in Montreal, Canada.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Methods\"},\"timing\":{\"excerpt\":\"Usual frequency of consumption of 63 food items two years prior to diagnosis/interview was collected\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Methods\"},\"continent\":{\"excerpt\":\"population-based case-control study conducted in Montreal, Canada\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"conducted in Montreal, Canada\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Methods\"},\"exposure_measurement\":{\"excerpt\":\"Usual frequency of consumption of 63 food items two years prior to diagnosis/interview was collected, along with use of dietary supplements.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30233396/\",\"location\":\"abstract - Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"30235016|Mediterranean diet|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting a Mediterranean dietary pattern-specific odds ratio for newly diagnosed prostate cancer.\",\"extraction\":{\"effect_size\":0.62,\"effect_type\":\"OR\",\"ci_lower\":0.22,\"ci_upper\":1.77,\"p_value\":0.37,\"ci_confidence_level\":95,\"total_n\":120,\"cases\":60,\"comparison_type\":\"higher versus lower adherence scores for Mediterranean dietary pattern\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Iran\",\"location\":\"two main hospitals of Shiraz, Iran\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer cases and hospital-based controls\",\"exposure_subtype\":\"mixed_or_unclear\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected from two main hospitals of Shiraz, Iran\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"cases\":{\"excerpt\":\"60 newly diagnosed prostate cancer cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"effect_size\":{\"excerpt\":\"A nonsignificant inverse association was found for MD pattern (OR = 0.62; 95% CI (0.22-1.77); P = 0.37)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"confidence_interval\":{\"excerpt\":\"OR = 0.62; 95% CI (0.22-1.77)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"p_value\":{\"excerpt\":\"(OR = 0.62; 95% CI (0.22-1.77); P = 0.37)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"comparison\":{\"excerpt\":\"men who had higher scores for WD pattern (above the median) ... compared with men who had lower scores\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"design\":{\"excerpt\":\"In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"timing\":{\"excerpt\":\"Data on dietary intakes, anthropometric features, and demographic characteristics were collected.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"continent\":{\"excerpt\":\"two main hospitals of Shiraz, Iran\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"selected from two main hospitals of Shiraz, Iran\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"exposure_measurement\":{\"excerpt\":\"To determine the dietary patterns factor analysis, and to estimate the odds ratios (ORs), multivariable logistic regression was performed.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"30235016|Western pattern diet|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study reporting a Western dietary pattern-specific odds ratio for newly diagnosed prostate cancer.\",\"extraction\":{\"effect_size\":5.15,\"effect_type\":\"OR\",\"ci_lower\":1.44,\"ci_upper\":18.47,\"p_value\":0.01,\"ci_confidence_level\":95,\"total_n\":120,\"cases\":60,\"comparison_type\":\"higher (above median) versus lower Western dietary pattern scores\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Iran\",\"location\":\"two main hospitals of Shiraz, Iran\",\"ethnicity\":\"NA\",\"population\":\"Newly diagnosed prostate cancer cases and hospital-based controls\",\"exposure_subtype\":\"mixed_or_unclear\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected from two main hospitals of Shiraz, Iran\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"cases\":{\"excerpt\":\"60 newly diagnosed prostate cancer cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"effect_size\":{\"excerpt\":\"men who had higher scores for WD pattern (above the median) were more likely to have prostate cancer (OR = 5.15\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"confidence_interval\":{\"excerpt\":\"OR = 5.15; 95% CI (1.44-18.47)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"p_value\":{\"excerpt\":\"(OR = 5.15; 95% CI (1.44-18.47); P = 0.01)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"comparison\":{\"excerpt\":\"men who had higher scores for WD pattern (above the median) ... compared with men who had lower scores\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Results\"},\"design\":{\"excerpt\":\"In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"timing\":{\"excerpt\":\"Data on dietary intakes, anthropometric features, and demographic characteristics were collected.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"continent\":{\"excerpt\":\"two main hospitals of Shiraz, Iran\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"selected from two main hospitals of Shiraz, Iran\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"},\"exposure_measurement\":{\"excerpt\":\"To determine the dietary patterns factor analysis, and to estimate the odds ratios (ORs), multivariable logistic regression was performed.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/30235016/\",\"location\":\"abstract - Methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"30245752|Manganese|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a meta-analysis of 88 studies on the MnSOD Val16Ala genetic polymorphism, not an original study of manganese as a nutritional exposure.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "30122987|Vitamin D|Prostate cancer",
+      "pmid": "30122987",
+      "pmcid": "PMC6078094",
+      "published_date": "2018",
+      "title": "Lack of association between the risk of prostate cancer and vitamin D receptor <i>Bsm I</i> polymorphism: a meta-analysis of 27 published studies.",
+      "authors": [
+        "Kang S",
+        "Zhao Y",
+        "Wang L",
+        "Liu J",
+        "Chen X",
+        "Liu X",
+        "Shi Z",
+        "Gao W",
+        "Cao F"
+      ],
+      "journal": "Cancer management and research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30122987/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a meta-analysis pooling 27 published studies of the vitamin D receptor Bsm I polymorphism rather than an original human study of vitamin D intake or status.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30133114|Alcohol|Prostate cancer",
+      "pmid": "30133114",
+      "pmcid": "PMC6156244",
+      "published_date": "2018-10-01",
+      "title": "Influence of lifestyle choices on risks of CYP1B1 polymorphisms for prostate cancer.",
+      "authors": [
+        "Kato T",
+        "Hashimoto Y",
+        "Wong RK",
+        "Mitsui Y",
+        "Maekawa S",
+        "Chang I",
+        "Shahryari V",
+        "Yamamura S",
+        "Majid S",
+        "Saini S",
+        "Tabatabai ZL",
+        "Dahiya R",
+        "Deguchi T",
+        "Tanaka Y"
+      ],
+      "journal": "Journal of cellular and molecular medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30133114/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30139875|Alcohol|Prostate cancer",
+      "pmid": "30139875",
+      "pmcid": "",
+      "published_date": "2018-10-01",
+      "title": "Early-Life Alcohol Intake and High-Grade Prostate Cancer: Results from an Equal-Access, Racially Diverse Biopsy Cohort.",
+      "authors": [
+        "Michael J",
+        "Howard LE",
+        "Markt SC",
+        "De Hoedt A",
+        "Bailey C",
+        "Mucci LA",
+        "Freedland SJ",
+        "Allott EH"
+      ],
+      "journal": "Cancer prevention research (Philadelphia, Pa.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original human biopsy cohort reporting lifetime and current alcohol intake in relation to prostate cancer diagnosis, providing an alcohol-specific incidence estimate.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 3.2,
+        "effect_type": "OR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.003,
+        "ci_confidence_level": null,
+        "total_n": 650,
+        "cases": 325,
+        "comparison_type": "upper tertile of cumulative lifetime alcohol intake versus lower intake (trend across tertiles)",
+        "design": "cohort",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Durham Veterans Affairs Medical Center",
+        "ethnicity": "Racially diverse",
+        "population": "Men undergoing prostate biopsy at an equal-access medical center",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Of 650 men ages 49-89 who underwent biopsy, 325 were diagnosed with prostate cancer, 238 with low-grade and 88 with high-grade disease.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Results"
+          },
+          "cases": {
+            "excerpt": "Of 650 men ages 49-89 who underwent biopsy, 325 were diagnosed with prostate cancer, 238 with low-grade and 88 with high-grade disease.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Results"
+          },
+          "effect_size": {
+            "excerpt": "Consistent with these results, men in the upper tertile of cumulative lifetime intake had increased odds of high-grade prostate cancer diagnosis (OR = 3.20, <i>P</i> <sub>trend</sub> = 0.003).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Results"
+          },
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Consistent with these results, men in the upper tertile of cumulative lifetime intake had increased odds of high-grade prostate cancer diagnosis (OR = 3.20, <i>P</i> <sub>trend</sub> = 0.003).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Results"
+          },
+          "comparison": {
+            "excerpt": "men in the upper tertile of cumulative lifetime intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Results"
+          },
+          "design": {
+            "excerpt": "We examined lifetime alcohol intake in association with prostate cancer diagnosis in an equal-access, racially diverse prostate biopsy cohort.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Background/Methods"
+          },
+          "timing": {
+            "excerpt": "completed a survey indicating average number of alcoholic beverages consumed per week [categorized as none (ref), 1-6, ≥7] during each decade of life",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Methods"
+          },
+          "continent": {
+            "excerpt": "Men undergoing prostate biopsy at the Durham Veterans Affairs Medical Center from 2007 to 2018",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Methods"
+          },
+          "ethnicity": {
+            "excerpt": "an equal-access, racially diverse prostate biopsy cohort",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Background"
+          },
+          "location": {
+            "excerpt": "Durham Veterans Affairs Medical Center",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "a survey indicating average number of alcoholic beverages consumed per week",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30139875/",
+            "location": "abstract - Methods"
+          }
+        },
+        "p_value_reported_as": "0.003",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "No",
+          "q7": "Yes",
+          "q8": "No",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30176879|Iron|Prostate cancer",
+      "pmid": "30176879",
+      "pmcid": "PMC6122556",
+      "published_date": "2018-09-03",
+      "title": "A prospective cohort examination of haematological parameters in relation to cancer death and incidence: the Busselton Health Study.",
+      "authors": [
+        "Adris N",
+        "Chua ACG",
+        "Knuiman MW",
+        "Divitini ML",
+        "Trinder D",
+        "Olynyk JK"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30176879/",
+      "exposure": "Iron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The prostate cancer incidence estimate concerns the haematological parameter MCHC, with serum iron used only as a covariate, so no iron-specific exposure effect is reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30202928|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "30202928",
+      "pmcid": "",
+      "published_date": "2019-01-01",
+      "title": "Omega-3 Fatty Acids and Prostate Cancer: G Protein-Coupled Receptors to the Rescue.",
+      "authors": [
+        "Meier KE"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30202928/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a commentary-style piece with no abstract or original results on omega-3 intake and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30233396|Vitamin C|Prostate cancer",
+      "pmid": "30233396",
+      "pmcid": "PMC6131535",
+      "published_date": "2018",
+      "title": "Vitamin C Intake and Risk of Prostate Cancer: The Montreal PROtEuS Study.",
+      "authors": [
+        "Parent ME",
+        "Richard H",
+        "Rousseau MC",
+        "Trudeau K"
+      ],
+      "journal": "Frontiers in physiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+      "exposure": "Vitamin C",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Population-based case-control study reporting an estimate for dietary vitamin C intake and prostate cancer incidence.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.95,
+        "effect_type": "OR",
+        "ci_lower": 0.77,
+        "ci_upper": 1.18,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 3901,
+        "cases": 1916,
+        "comparison_type": "upper versus lower tertile of dietary vitamin C intake",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "Canada",
+        "location": "Montreal, Canada",
+        "ethnicity": "NA",
+        "population": "Histologically confirmed prostate cancer cases and population controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In-person interviews, conducted with 1,916 histologically confirmed prostate cancer cases and 1,985 population controls, elicited information on a wide range of socio-demographic, lifestyle, and medical factors, including PSA screening.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Methods; total_n derived from reported group counts 1916 + 1985 = 3901"
+          },
+          "cases": {
+            "excerpt": "In-person interviews, conducted with 1,916 histologically confirmed prostate cancer cases and 1,985 population controls, elicited information on a wide range of socio-demographic, lifestyle, and medical factors, including PSA screening.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Methods"
+          },
+          "effect_size": {
+            "excerpt": "<b>Results:</b> We observed no association between dietary intakes of vitamin C (OR for upper vs. lower tertile: 0.95, 95%CI 0.77, 1.18), estimated using the residual method to account for energy intake, or between regular use of vitamin C supplements and/or multivitamins (OR 0.90, 95%CI 0.76-1.05), and overall prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Results"
+          },
+          "confidence_interval": {
+            "excerpt": "lower tertile: 0.95, 95%CI 0.77, 1.18), estimated using the residual method to account for energy intake, or between regular use of vitamin C supplements and/or multivitamins (OR 0.90, 95%CI 0.76-1.05), and overall prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Results"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "OR for upper vs. lower tertile",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Results"
+          },
+          "design": {
+            "excerpt": "The Prostate Cancer and Environment Study (PROtEuS) is a population-based case-control study conducted in Montreal, Canada.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Methods"
+          },
+          "timing": {
+            "excerpt": "Usual frequency of consumption of 63 food items two years prior to diagnosis/interview was collected",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Methods"
+          },
+          "continent": {
+            "excerpt": "population-based case-control study conducted in Montreal, Canada",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in Montreal, Canada",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Usual frequency of consumption of 63 food items two years prior to diagnosis/interview was collected, along with use of dietary supplements.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30233396/",
+            "location": "abstract - Methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30235016|Mediterranean diet|Prostate cancer",
+      "pmid": "30235016",
+      "pmcid": "",
+      "published_date": "2018",
+      "title": "Western Dietary Pattern, But not Mediterranean Dietary Pattern, Increases the Risk of Prostate Cancer.",
+      "authors": [
+        "Jalilpiran Y",
+        "Dianatinasab M",
+        "Zeighami S",
+        "Bahmanpour S",
+        "Ghiasvand R",
+        "Mohajeri SAR",
+        "Faghih S"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+      "exposure": "Mediterranean diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting a Mediterranean dietary pattern-specific odds ratio for newly diagnosed prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.62,
+        "effect_type": "OR",
+        "ci_lower": 0.22,
+        "ci_upper": 1.77,
+        "p_value": 0.37,
+        "ci_confidence_level": 95,
+        "total_n": 120,
+        "cases": 60,
+        "comparison_type": "higher versus lower adherence scores for Mediterranean dietary pattern",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Iran",
+        "location": "two main hospitals of Shiraz, Iran",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer cases and hospital-based controls",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected from two main hospitals of Shiraz, Iran.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods; total_n derived from reported group counts 60 + 60 = 120"
+          },
+          "cases": {
+            "excerpt": "In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected from two main hospitals of Shiraz, Iran.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "effect_size": {
+            "excerpt": "A nonsignificant inverse association was found for MD pattern (OR = 0.62; 95% CI (0.22-1.77); P = 0.37).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "confidence_interval": {
+            "excerpt": "A nonsignificant inverse association was found for MD pattern (OR = 0.62; 95% CI (0.22-1.77); P = 0.37).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "p_value": {
+            "excerpt": "(OR = 0.62; 95% CI (0.22-1.77); P = 0.37)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "design": {
+            "excerpt": "In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "timing": {
+            "excerpt": "Data on dietary intakes, anthropometric features, and demographic characteristics were collected.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "continent": {
+            "excerpt": "two main hospitals of Shiraz, Iran",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "selected from two main hospitals of Shiraz, Iran",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "To determine the dietary patterns factor analysis, and to estimate the odds ratios (ORs), multivariable logistic regression was performed.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          }
+        },
+        "p_value_reported_as": "0.37",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30235016|Western pattern diet|Prostate cancer",
+      "pmid": "30235016",
+      "pmcid": "",
+      "published_date": "2018",
+      "title": "Western Dietary Pattern, But not Mediterranean Dietary Pattern, Increases the Risk of Prostate Cancer.",
+      "authors": [
+        "Jalilpiran Y",
+        "Dianatinasab M",
+        "Zeighami S",
+        "Bahmanpour S",
+        "Ghiasvand R",
+        "Mohajeri SAR",
+        "Faghih S"
+      ],
+      "journal": "Nutrition and cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+      "exposure": "Western pattern diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study reporting a Western dietary pattern-specific odds ratio for newly diagnosed prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 5.15,
+        "effect_type": "OR",
+        "ci_lower": 1.44,
+        "ci_upper": 18.47,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 120,
+        "cases": 60,
+        "comparison_type": "higher (above median) versus lower Western dietary pattern scores",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Iran",
+        "location": "two main hospitals of Shiraz, Iran",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer cases and hospital-based controls",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected from two main hospitals of Shiraz, Iran.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods; total_n derived from reported group counts 60 + 60 = 120"
+          },
+          "cases": {
+            "excerpt": "In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected from two main hospitals of Shiraz, Iran.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "effect_size": {
+            "excerpt": "After adjusting for potential confounders, men who had higher scores for WD pattern (above the median) were more likely to have prostate cancer (OR = 5.15; 95% CI (1.44-18.47); P = 0.01) compared with men who had lower scores. A nonsignificant inverse association was found for MD pattern (OR = 0.62; 95% CI (0.22-1.77); P = 0.37).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "confidence_interval": {
+            "excerpt": "After adjusting for potential confounders, men who had higher scores for WD pattern (above the median) were more likely to have prostate cancer (OR = 5.15; 95% CI (1.44-18.47); P = 0.01) compared with men who had lower scores.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "p_value": {
+            "excerpt": "(OR = 5.15; 95% CI (1.44-18.47); P = 0.01)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Results"
+          },
+          "design": {
+            "excerpt": "In a case-control study, 60 newly diagnosed prostate cancer cases and 60 hospital-based controls were selected",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "timing": {
+            "excerpt": "Data on dietary intakes, anthropometric features, and demographic characteristics were collected.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "continent": {
+            "excerpt": "two main hospitals of Shiraz, Iran",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "selected from two main hospitals of Shiraz, Iran",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "To determine the dietary patterns factor analysis, and to estimate the odds ratios (ORs), multivariable logistic regression was performed.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/30235016/",
+            "location": "abstract - Methods"
+          }
+        },
+        "p_value_reported_as": "0.01",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "30245752|Manganese|Prostate cancer",
+      "pmid": "30245752",
+      "pmcid": "PMC6139213",
+      "published_date": "2018",
+      "title": "Association between <i>MnSOD</i> Val16Ala Polymorphism and Cancer Risk: Evidence from 33,098 Cases and 37,831 Controls.",
+      "authors": [
+        "Wang P",
+        "Zhu Y",
+        "Xi S",
+        "Li S",
+        "Zhang Y"
+      ],
+      "journal": "Disease markers",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/30245752/",
+      "exposure": "Manganese",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a meta-analysis of 88 studies on the MnSOD Val16Ala genetic polymorphism, not an original study of manganese as a nutritional exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

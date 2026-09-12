@@ -1,0 +1,848 @@
+{
+  "schema_version": 1,
+  "receipt_id": "c383a178ce9edc16ffa3e9f2f43a32ad8fabb463c21344d72d07a3503efecfe9",
+  "requested_at": "2026-09-02T08:49:10.970834+08:00",
+  "received_at": "2026-09-02T08:50:12.199521+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "a54a3804aa216c55059b7b592e011ecd2afe9a7d33645e6fbf43b6f56207ead7",
+  "attempt": 2,
+  "context_ids": [
+    "26243447|Alcohol|Prostate cancer",
+    "26243447|Calcium|Prostate cancer",
+    "26243447|Legumes|Prostate cancer",
+    "26243447|Lycopene|Prostate cancer",
+    "26243447|Selenium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Calcium": 1,
+    "Legumes": 1,
+    "Lycopene": 1,
+    "Selenium": 1
+  },
+  "input_digest": "c995b7be697a238fc53002cfe83eba3b83233330485dbb6156e9a319d7a59d5c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13954,
+    "cached_input_tokens": 0,
+    "output_tokens": 10580,
+    "reasoning_tokens": 2012
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.050140500000000005",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "f117dbba-6457-47c1-826a-82d88225766c",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.050140500000000005"
+  },
+  "output_sha256": "3ab808efbdda603e65c38aaf01ef55602d16169793eacbf777d70f4458ed6d92",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"26243447|Alcohol|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between dietary alcohol intake and incident prostate cancer risk in the Multiethnic Cohort.\",\n      \"extraction\": {\n        \"effect_size\": 1.02,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.93,\n        \"ci_upper\": 1.1,\n        \"p_value\": 0.2,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 75216,\n        \"cases\": 7115,\n        \"comparison_type\": \"highest_vs_lowest\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Hawaii and California\",\n        \"ethnicity\": \"Multiethnic\",\n        \"population\": \"Multiethnic Cohort (MEC)\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"leaving a total of 75,216 men for the analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During the mean follow-up period of 13.9 years, a total of 7,115 incident cases among the 75,216 eligible men were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Case identification, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"≥35 1.02 (0.93-1.10)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Alcohol, g/d\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"≥35 1.02 (0.93-1.10)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Alcohol, g/d\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.20\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Alcohol, g/d\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"daily intakes of alcohol (0, >0-4.9, 5-14.9, 15-34.9, ≥35 g)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The cohort mainly consists of African Americans, Native Hawaiians, Japanese Americans, Latinos, and whites aged 45-75 years at baseline\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"26243447|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between dietary calcium intake and incident prostate cancer risk in the Multiethnic Cohort.\",\n      \"extraction\": {\n        \"effect_size\": 1.06,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.97,\n        \"ci_upper\": 1.15,\n        \"p_value\": 0.12,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 75216,\n        \"cases\": 7115,\n        \"comparison_type\": \"highest_vs_lowest\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Hawaii and California\",\n        \"ethnicity\": \"Multiethnic\",\n        \"population\": \"Multiethnic Cohort (MEC)\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"leaving a total of 75,216 men for the analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During the mean follow-up period of 13.9 years, a total of 7,115 incident cases among the 75,216 eligible men were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Case identification, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"≥436 1.06 (0.97-1.15)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Calcium, mg/1000kcal/d\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"≥436 1.06 (0.97-1.15)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Calcium, mg/1000kcal/d\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.12\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Calcium, mg/1000kcal/d\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"calcium (quintile cutpoints: 241, 301, 360, 436 mg/1000kcal)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The cohort mainly consists of African Americans, Native Hawaiians, Japanese Americans, Latinos, and whites aged 45-75 years at baseline\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"26243447|Legumes|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between dietary legume intake and incident prostate cancer risk in the Multiethnic Cohort.\",\n      \"extraction\": {\n        \"effect_size\": 0.94,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.86,\n        \"ci_upper\": 1.02,\n        \"p_value\": 0.015,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 75216,\n        \"cases\": 7115,\n        \"comparison_type\": \"highest_vs_lowest\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Hawaii and California\",\n        \"ethnicity\": \"Multiethnic\",\n        \"population\": \"Multiethnic Cohort (MEC)\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"leaving a total of 75,216 men for the analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During the mean follow-up period of 13.9 years, a total of 7,115 incident cases among the 75,216 eligible men were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Case identification, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"≥28.2 0.94 (0.86-1.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Legume, g/1000kcal/d\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"≥28.2 0.94 (0.86-1.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Legume, g/1000kcal/d\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.015\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Legume, g/1000kcal/d\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"legume (quintile cutpoints: 6.4, 10.8, 16.5, 28.2 g/1000kcal)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The cohort mainly consists of African Americans, Native Hawaiians, Japanese Americans, Latinos, and whites aged 45-75 years at baseline\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"26243447|Lycopene|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between dietary lycopene intake and incident prostate cancer risk in the Multiethnic Cohort.\",\n      \"extraction\": {\n        \"effect_size\": 1.1,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.93,\n        \"ci_upper\": 1.31,\n        \"p_value\": 0.83,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 75216,\n        \"cases\": 7115,\n        \"comparison_type\": \"highest_vs_lowest\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Hawaii and California\",\n        \"ethnicity\": \"Multiethnic\",\n        \"population\": \"Multiethnic Cohort (MEC)\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"leaving a total of 75,216 men for the analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During the mean follow-up period of 13.9 years, a total of 7,115 incident cases among the 75,216 eligible men were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Case identification, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"≥2022 1.10 (0.93-1.31)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Lycopene, μg/1000kcal/d\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"≥2022 1.10 (0.93-1.31)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Lycopene, μg/1000kcal/d\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.83\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Lycopene, μg/1000kcal/d\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"lycopene (quintile cutpoints: 748, 1073, 1435, 2022 μg/1000kcal)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The cohort mainly consists of African Americans, Native Hawaiians, Japanese Americans, Latinos, and whites aged 45-75 years at baseline\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"26243447|Selenium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between dietary selenium intake and incident prostate cancer risk in the Multiethnic Cohort.\",\n      \"extraction\": {\n        \"effect_size\": 1.01,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.84,\n        \"ci_upper\": 1.2,\n        \"p_value\": 0.71,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 75216,\n        \"cases\": 7115,\n        \"comparison_type\": \"highest_vs_lowest\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Hawaii and California\",\n        \"ethnicity\": \"Multiethnic\",\n        \"population\": \"Multiethnic Cohort (MEC)\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"leaving a total of 75,216 men for the analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During the mean follow-up period of 13.9 years, a total of 7,115 incident cases among the 75,216 eligible men were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Case identification, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"≥60.1 1.01 (0.84-1.20)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Selenium, μg/1000kcal/d\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"≥60.1 1.01 (0.84-1.20)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Selenium, μg/1000kcal/d\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.71\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Table 1, Selenium, μg/1000kcal/d\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"selenium (quintile cutpoints: 44.0, 49.5, 54.4, 60.1 μg/1000kcal)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The cohort mainly consists of African Americans, Native Hawaiians, Japanese Americans, Latinos, and whites aged 45-75 years at baseline\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/\",\n            \"location\": \"Materials and methods, Risk factor assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "26243447|Alcohol|Prostate cancer",
+      "pmid": "26243447",
+      "pmcid": "PMC4567936",
+      "published_date": "2015-10-01",
+      "title": "Racial/ethnic differences in lifestyle-related factors and prostate cancer risk: the Multiethnic Cohort Study.",
+      "authors": [
+        "Park SY",
+        "Haiman CA",
+        "Cheng I",
+        "Park SL",
+        "Wilkens LR",
+        "Kolonel LN",
+        "Le Marchand L",
+        "Henderson BE"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between dietary alcohol intake and incident prostate cancer risk in the Multiethnic Cohort.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.02,
+        "effect_type": "RR",
+        "ci_lower": 0.93,
+        "ci_upper": 1.1,
+        "p_value": 0.2,
+        "ci_confidence_level": 95,
+        "total_n": 75216,
+        "cases": 7115,
+        "comparison_type": "highest_vs_lowest",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "white, African-American, Native Hawaiian, Japanese American, and Latino",
+        "population": "Multiethnic Cohort (MEC)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Case identification, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.02 (0.93-1.10)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Alcohol, g/d"
+          },
+          "confidence_interval": {
+            "excerpt": "1.02 (0.93-1.10)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Alcohol, g/d"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.20",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Alcohol, g/d"
+          },
+          "comparison": {
+            "excerpt": "daily intakes of alcohol (0, >0-4.9, 5-14.9, 15-34.9, ≥35 g)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "white, African-American, Native Hawaiian, Japanese American, and Latino men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+            "location": "abstract"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.2",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29349,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "61978d51465e66dbdc662bca38f8d822da9da5842715cb41b6dec449aed9580d",
+      "pmc_source_receipt_digest": "eb8c4004e58e134dab3c3f1b9b22eb2da0f89396ceb00b81d9400767b0620530",
+      "pmc_source_raw_sha256": "9e9ef665bf11ffa3e99f3f28e35f8462f0eb74686024f14c189ea07b1516c290",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "96885c0678edf5e7d89c0dbbe2ce4f8117d8c8ba541833cc4df0284640b23180"
+    },
+    {
+      "context_id": "26243447|Calcium|Prostate cancer",
+      "pmid": "26243447",
+      "pmcid": "PMC4567936",
+      "published_date": "2015-10-01",
+      "title": "Racial/ethnic differences in lifestyle-related factors and prostate cancer risk: the Multiethnic Cohort Study.",
+      "authors": [
+        "Park SY",
+        "Haiman CA",
+        "Cheng I",
+        "Park SL",
+        "Wilkens LR",
+        "Kolonel LN",
+        "Le Marchand L",
+        "Henderson BE"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between dietary calcium intake and incident prostate cancer risk in the Multiethnic Cohort.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.06,
+        "effect_type": "RR",
+        "ci_lower": 0.97,
+        "ci_upper": 1.15,
+        "p_value": 0.12,
+        "ci_confidence_level": 95,
+        "total_n": 75216,
+        "cases": 7115,
+        "comparison_type": "highest_vs_lowest",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "white, African-American, Native Hawaiian, Japanese American, and Latino",
+        "population": "Multiethnic Cohort (MEC)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Case identification, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.06 (0.97-1.15)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Calcium, mg/1000kcal/d"
+          },
+          "confidence_interval": {
+            "excerpt": "1.06 (0.97-1.15)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Calcium, mg/1000kcal/d"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.12",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Calcium, mg/1000kcal/d"
+          },
+          "comparison": {
+            "excerpt": "calcium (quintile cutpoints: 241, 301, 360, 436 mg/1000kcal)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "white, African-American, Native Hawaiian, Japanese American, and Latino men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+            "location": "abstract"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.12",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29349,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "61978d51465e66dbdc662bca38f8d822da9da5842715cb41b6dec449aed9580d",
+      "pmc_source_receipt_digest": "eb8c4004e58e134dab3c3f1b9b22eb2da0f89396ceb00b81d9400767b0620530",
+      "pmc_source_raw_sha256": "9e9ef665bf11ffa3e99f3f28e35f8462f0eb74686024f14c189ea07b1516c290",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e400cecc190f549e15c689b33e23eb7edb1d62a2cc3bf78171b29ab5b4bf25a6"
+    },
+    {
+      "context_id": "26243447|Legumes|Prostate cancer",
+      "pmid": "26243447",
+      "pmcid": "PMC4567936",
+      "published_date": "2015-10-01",
+      "title": "Racial/ethnic differences in lifestyle-related factors and prostate cancer risk: the Multiethnic Cohort Study.",
+      "authors": [
+        "Park SY",
+        "Haiman CA",
+        "Cheng I",
+        "Park SL",
+        "Wilkens LR",
+        "Kolonel LN",
+        "Le Marchand L",
+        "Henderson BE"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+      "exposure": "Legumes",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between dietary legume intake and incident prostate cancer risk in the Multiethnic Cohort.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.94,
+        "effect_type": "RR",
+        "ci_lower": 0.86,
+        "ci_upper": 1.02,
+        "p_value": 0.015,
+        "ci_confidence_level": 95,
+        "total_n": 75216,
+        "cases": 7115,
+        "comparison_type": "highest_vs_lowest",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "white, African-American, Native Hawaiian, Japanese American, and Latino",
+        "population": "Multiethnic Cohort (MEC)",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Case identification, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.94 (0.86-1.02)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Legume, g/1000kcal/d"
+          },
+          "confidence_interval": {
+            "excerpt": "0.94 (0.86-1.02)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Legume, g/1000kcal/d"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.015",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Legume, g/1000kcal/d"
+          },
+          "comparison": {
+            "excerpt": "legume (quintile cutpoints: 6.4, 10.8, 16.5, 28.2 g/1000kcal)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "white, African-American, Native Hawaiian, Japanese American, and Latino men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+            "location": "abstract"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.015",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29349,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "61978d51465e66dbdc662bca38f8d822da9da5842715cb41b6dec449aed9580d",
+      "pmc_source_receipt_digest": "eb8c4004e58e134dab3c3f1b9b22eb2da0f89396ceb00b81d9400767b0620530",
+      "pmc_source_raw_sha256": "9e9ef665bf11ffa3e99f3f28e35f8462f0eb74686024f14c189ea07b1516c290",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b4f52e62c91c140358b983b921fe585478c77bee4060be6583f4326ec69a826c"
+    },
+    {
+      "context_id": "26243447|Lycopene|Prostate cancer",
+      "pmid": "26243447",
+      "pmcid": "PMC4567936",
+      "published_date": "2015-10-01",
+      "title": "Racial/ethnic differences in lifestyle-related factors and prostate cancer risk: the Multiethnic Cohort Study.",
+      "authors": [
+        "Park SY",
+        "Haiman CA",
+        "Cheng I",
+        "Park SL",
+        "Wilkens LR",
+        "Kolonel LN",
+        "Le Marchand L",
+        "Henderson BE"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between dietary lycopene intake and incident prostate cancer risk in the Multiethnic Cohort.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.1,
+        "effect_type": "RR",
+        "ci_lower": 0.93,
+        "ci_upper": 1.31,
+        "p_value": 0.83,
+        "ci_confidence_level": 95,
+        "total_n": 75216,
+        "cases": 7115,
+        "comparison_type": "highest_vs_lowest",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "white, African-American, Native Hawaiian, Japanese American, and Latino",
+        "population": "Multiethnic Cohort (MEC)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Case identification, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.10 (0.93-1.31)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Lycopene, μg/1000kcal/d"
+          },
+          "confidence_interval": {
+            "excerpt": "1.10 (0.93-1.31)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Lycopene, μg/1000kcal/d"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.83",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Lycopene, μg/1000kcal/d"
+          },
+          "comparison": {
+            "excerpt": "lycopene (quintile cutpoints: 748, 1073, 1435, 2022 μg/1000kcal)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "white, African-American, Native Hawaiian, Japanese American, and Latino men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+            "location": "abstract"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.83",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29349,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "61978d51465e66dbdc662bca38f8d822da9da5842715cb41b6dec449aed9580d",
+      "pmc_source_receipt_digest": "eb8c4004e58e134dab3c3f1b9b22eb2da0f89396ceb00b81d9400767b0620530",
+      "pmc_source_raw_sha256": "9e9ef665bf11ffa3e99f3f28e35f8462f0eb74686024f14c189ea07b1516c290",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "6b851d3276d3518cbe307d9c0ac0766ee363eaf68216d690cede873ba53f28e2"
+    },
+    {
+      "context_id": "26243447|Selenium|Prostate cancer",
+      "pmid": "26243447",
+      "pmcid": "PMC4567936",
+      "published_date": "2015-10-01",
+      "title": "Racial/ethnic differences in lifestyle-related factors and prostate cancer risk: the Multiethnic Cohort Study.",
+      "authors": [
+        "Park SY",
+        "Haiman CA",
+        "Cheng I",
+        "Park SL",
+        "Wilkens LR",
+        "Kolonel LN",
+        "Le Marchand L",
+        "Henderson BE"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between dietary selenium intake and incident prostate cancer risk in the Multiethnic Cohort.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.01,
+        "effect_type": "RR",
+        "ci_lower": 0.84,
+        "ci_upper": 1.2,
+        "p_value": 0.71,
+        "ci_confidence_level": 95,
+        "total_n": 75216,
+        "cases": 7115,
+        "comparison_type": "highest_vs_lowest",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "white, African-American, Native Hawaiian, Japanese American, and Latino",
+        "population": "Multiethnic Cohort (MEC)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up of 13.9 years, 7,115 incident cases were identified among 75,216 white, African American, Native Hawaiian, Japanese American, and Latino men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Case identification, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.01 (0.84-1.20)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Selenium, μg/1000kcal/d"
+          },
+          "confidence_interval": {
+            "excerpt": "8th grade or less = 1.20; 95% CI: 1.08-1.32; P for trend = 0.0019).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Selenium, μg/1000kcal/d"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.71",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Table 1, Selenium, μg/1000kcal/d"
+          },
+          "comparison": {
+            "excerpt": "selenium (quintile cutpoints: 44.0, 49.5, 54.4, 60.1 μg/1000kcal)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Statistical analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The Multiethnic Cohort (MEC) is an ongoing study to prospectively investigate the associations between lifestyle and genetic factors and cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "All cohort members completed a 26-page self-administered questionnaire at baseline that included information regarding demographics, medical history, family history of cancer, cigarette smoking, dietary habits, height/weight, and physical activity.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Multiethnic Cohort was assembled in Hawaii and California between 1993 and 1996",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Study population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "white, African-American, Native Hawaiian, Japanese American, and Latino men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/26243447/",
+            "location": "abstract"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed by a quantitative food frequency questionnaire (QFFQ) asking about the frequency and amount of consumption for more than 180 food items during the previous year.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4567936/",
+            "location": "Materials and methods, Risk factor assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.71",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 29349,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "61978d51465e66dbdc662bca38f8d822da9da5842715cb41b6dec449aed9580d",
+      "pmc_source_receipt_digest": "eb8c4004e58e134dab3c3f1b9b22eb2da0f89396ceb00b81d9400767b0620530",
+      "pmc_source_raw_sha256": "9e9ef665bf11ffa3e99f3f28e35f8462f0eb74686024f14c189ea07b1516c290",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "807ca6192b004c4af84aa08a6b96a900c8425373cbeafe71653faf1362342a46"
+    }
+  ]
+}

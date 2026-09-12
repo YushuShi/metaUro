@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:31.432015-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "8c64e681c6b9a7cb548893a66ca0ed66611ca148df2190cba3747b16e3b4da16",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "23881471",
+      "title": "Aspirin use is associated with lower prostate cancer risk in male carriers of BRCA mutations.",
+      "abstract": "Previous studies have shown that male BRCA mutation carriers stand at increased risk of developing prostate cancer and have concerns about developing cancer. Genetic counseling practitioners often discuss strategies for reducing the risk of cancer for patients at high risk due to their genetic background. Addressing modifiable health habits is one such strategy. Unfortunately, modifiable risk factors for prostate cancer have only been documented in the general population and have not yet been studied in the BRCA carrier subpopulation. Therefore, this study aimed to identify modifiable risk factors for prostate cancer in BRCA carriers. We examined prostate cancer risk factors in 74 men who were part of families with a BRCA mutation. This study examined nine dichotomous variables including: exercise, history of vasectomy, smoking history, alcohol use, finasteride use, statin use, aspirin use, coffee use, and vitamin use. The survey was sent to all cases of prostate cancer in the Hereditary Cancer Center Database at Creighton University with a known BRCA status. This study confirmed the protective benefits of daily aspirin use, which have been observed in previous studies of the general population, and suggests its benefit in BRCA carriers. Protective benefits from regular vigorous exercise and daily coffee use trended towards significance, but neither factor withstood the Bonferroni Correction for multiple comparisons.",
+      "mesh": [
+        "Aspirin / administration & dosage",
+        "Genes, BRCA1",
+        "Genes, BRCA2",
+        "Genetic Carrier Screening",
+        "Humans",
+        "Male",
+        "Mutation",
+        "Prostatic Neoplasms / genetics, prevention & control"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "23881471",
+      "contexts": [
+        {
+          "context_id": "23881471|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

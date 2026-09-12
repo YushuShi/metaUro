@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:35:54.109362-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "567f0ccf84127eb0b4ba0f14a9c7a1b3fcd0f5655515c571f88bac38250ba0ff",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "30807653",
+      "title": "Intake of individual fatty acids and risk of prostate cancer in the European prospective investigation into cancer and nutrition.",
+      "abstract": "The associations of individual dietary fatty acids with prostate cancer risk have not been examined comprehensively. We examined the prospective association of individual dietary fatty acids with prostate cancer risk overall, by tumor subtypes, and prostate cancer death. 142,239 men from the European Prospective Investigation into Cancer and Nutrition who were free from cancer at recruitment were included. Dietary intakes of individual fatty acids were estimated using center-specific validated dietary questionnaires at baseline and calibrated with 24-h recalls. Multivariable Cox regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs). After an average follow-up of 13.9 years, 7,036 prostate cancer cases and 936 prostate cancer deaths were ascertained. Intakes of individual fatty acids were not related to overall prostate cancer risk. There was evidence of heterogeneity in the association of some short chain saturated fatty acids with prostate cancer risk by tumor stage (p<sub>heterogeneity</sub> < 0.015), with a positive association with risk of advanced stage disease for butyric acid (4:0; HR<sub>1SD</sub> = 1.08; 95%CI = 1.01-1.15; p-trend = 0.026). There were no associations with fatal prostate cancer, with the exception of a slightly higher risk for those who consumed more eicosenoic acid (22:1n-9c; HR<sub>1SD</sub> = 1.05; 1.00-1.11; p-trend = 0.048) and eicosapentaenoic acid (20:5n-3c; HR<sub>1SD</sub> = 1.07; 1.00-1.14; p-trend = 0.045). There was no evidence that dietary intakes of individual fatty acids were associated with overall prostate cancer risk. However, a higher intake of butyric acid might be associated with a higher risk of advanced, whereas intakes of eicosenoic and eicosapentaenoic acids might be positively associated with fatal prostate cancer risk.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Dietary Fats / administration & dosage",
+        "Fatty Acids / administration & dosage",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "30807653",
+      "contexts": [
+        {
+          "context_id": "30807653|Alpha-linolenic acid|Prostate cancer",
+          "exposure": "Alpha-linolenic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "30807653|Docosahexaenoic acid|Prostate cancer",
+          "exposure": "Docosahexaenoic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "30807653|Docosapentaenoic acid (omega-3)|Prostate cancer",
+          "exposure": "Docosapentaenoic acid (omega-3)",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "30807653|Eicosapentaenoic acid|Prostate cancer",
+          "exposure": "Eicosapentaenoic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "142239",
+              "effect_measure_type": "HR",
+              "effect_size": "1.07",
+              "ci_lower": "1",
+              "ci_upper": "1.14",
+              "p_value": "0.045",
+              "comparison": "Per 1-SD increase in calibrated dietary eicosapentaenoic acid intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "142239",
+              "effect_measure_type": "HR",
+              "effect_size": "1.02",
+              "ci_lower": "0.99",
+              "ci_upper": "1.04",
+              "p_value": "0.272",
+              "comparison": "continuous"
+            }
+          }
+        },
+        {
+          "context_id": "30807653|Gondoic acid|Prostate cancer",
+          "exposure": "Gondoic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

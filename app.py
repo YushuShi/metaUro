@@ -1,0 +1,218 @@
+"""metaUro: one interface over two immutable evidence collections."""
+from __future__ import annotations
+
+import json
+import os
+from pathlib import Path
+import re
+from urllib.parse import urlencode
+
+from bs4 import BeautifulSoup
+from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_from_directory
+from source_worker import SOURCES, workers
+
+ROOT = Path(__file__).resolve().parent
+app = Flask(__name__)
+app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
+LABELS = {'metaPee': 'Urinary tract', 'MetaVir': 'Prostate'}
+
+
+def scope_catalog():
+    result = []
+    for source in SOURCES:
+        catalog = json.loads((ROOT / 'sources' / source / 'static/seer-baseline.json').read_text())
+        for disease in catalog['diseases']:
+            result.append({'source': source, 'group': LABELS[source], 'id': disease['id'], 'label': disease['label']})
+    return result
+
+
+def context(source, page='evidence'):
+    scopes = scope_catalog()
+    selected = request.args.get('scope', '')
+    current = next((s for s in scopes if s['source'] == source and selected in {s['id'], s['label']}), next(s for s in scopes if s['source'] == source))
+    track = 'chatgpt' if source == 'MetaVir' and (request.args.get('track') == 'chatgpt' or request.path.endswith('/chatgpt')) else 'combined'
+    return dict(source=source, prefix=f'/evidence/{source}', scopes=scopes, current=current, track=track,
+                page=page, source_label=LABELS[source], include_subexposures=request.args.get('include_subexposures', 'yes'))
+
+
+def prefix_text(value, prefix):
+    # Rebase only the source apps' known local routes; external citations stay intact.
+    paths = r'(?:static|api|analyze|reanalyze|verify|exclude|summary|about|chatgpt|combined|provisional-assets)'
+    return re.sub(r'([\'"`(=])/(' + paths + r')(?=[/\'"`?\s)])', lambda m: m[1] + prefix + '/' + m[2], value)
+
+
+def prefix_json(value, prefix):
+    if isinstance(value, dict):
+        return {k: prefix_json(v, prefix) for k, v in value.items()}
+    if isinstance(value, list):
+        return [prefix_json(v, prefix) for v in value]
+    if isinstance(value, str) and re.match(r'^/?(?:static|provisional-assets|summary)/', value):
+        return prefix + '/' + value.lstrip('/')
+    return value
+
+
+def decorate_html(body, source, path):
+    ctx = context(source, 'summary' if path.startswith('summary') else 'evidence')
+    soup = BeautifulSoup(prefix_text(body, ctx['prefix']), 'html.parser')
+    if not soup.head or not soup.body:
+        return body
+    soup.title.string = f"metaUro · {'Evidence summary' if ctx['page'] == 'summary' else 'Explore evidence'}"
+    old_header = soup.find('header')
+    old_controls = []
+    if old_header:
+        for selector in ['.language-picker']:
+            control = old_header.select_one(selector)
+            if control:
+                old_controls.append(str(control))
+        old_header.replace_with(BeautifulSoup(render_template('_header.html', **ctx), 'html.parser'))
+    # Remove duplicate source-brand navigation, while preserving the source study UI.
+    for node in soup.select('.hero h1'):
+        node.string = 'Explore nutrition & urologic cancer evidence'
+    for node in soup.select('.hero > p'):
+        node.string = 'Choose an exposure and disease scope to view the saved studies and analysis.'
+    for node in soup.select('#loading p'):
+        node.string = 'Loading saved evidence and calculating the selected view…'
+    disease = soup.select_one('#disease')
+    if disease:
+        selected = next((o for o in disease.find_all('option') if o.get('selected') is not None), disease.find('option'))
+        selected_label = ctx['current']['label'] if request.args.get('scope') else (selected.get('value') if selected else '')
+        for option in disease.find_all('option'):
+            option['data-source'] = source
+            option.attrs.pop('selected', None)
+            if option.get('value') == selected_label:
+                option['selected'] = ''
+        group = soup.new_tag('optgroup', label=LABELS[next(s for s in SOURCES if s != source)])
+        for item in ctx['scopes']:
+            if item['source'] != source:
+                option = soup.new_tag('option', value=item['label'])
+                option['data-source'], option['data-scope-key'] = item['source'], item['id']
+                option.string = item['label']
+                group.append(option)
+        disease.append(group)
+    if ctx['page'] == 'summary' and soup.main:
+        notice = soup.new_tag('div', attrs={'class': 'uro-summary-notice'})
+        notice.string = 'These are saved summary plots and workbooks. Settings apply to the interactive evidence analysis.'
+        soup.main.insert(0, notice)
+        picker = soup.new_tag('nav', attrs={'class': 'uro-summary-notice', 'aria-label': 'Evidence collections'})
+        for collection in SOURCES:
+            link = soup.new_tag('a', href=f'/evidence/{collection}/summary?include_subexposures={ctx["include_subexposures"]}')
+            link.string = LABELS[collection] + ' summaries'
+            picker.append(link)
+            picker.append('   ·   ' if collection == SOURCES[0] else '')
+        soup.main.insert(0, picker)
+    config = dict(source=source, prefix=ctx['prefix'], current=ctx['current'], scopes=ctx['scopes'], page=ctx['page'], track=ctx['track'])
+    bootstrap = soup.new_tag('script')
+    bootstrap.string = 'window.MetaUro = ' + json.dumps(config).replace('<', '\\u003c') + ';'
+    soup.head.insert(0, bootstrap)
+    for href in ['/static/analysis-settings.css', '/static/metauro.css']:
+        node = soup.new_tag('link', rel='stylesheet', href=href)
+        soup.head.append(node)
+    # Initialize settings before the source script uses AnalysisSettings.
+    for src in ['/static/metauro.js', '/static/analysis-settings.js']:
+        node = soup.new_tag('script', src=src)
+        soup.head.append(node)
+    # Relative downloads/links produced by source templates must stay with their source.
+    for node in soup.select('[href], [src], [action], [data]'):
+        for attr in ('href', 'src', 'action', 'data'):
+            value = node.get(attr)
+            if value == '/' or (isinstance(value, str) and value.startswith('/?')):
+                node[attr] = ctx['prefix'] + value
+    if old_controls:
+        controls = soup.select_one('#source-controls')
+        if controls:
+            controls.append(BeautifulSoup(''.join(old_controls), 'html.parser'))
+    return str(soup)
+
+
+@app.get('/')
+def index():
+    return redirect('/evidence/metaPee/')
+
+
+@app.get('/health')
+def health():
+    return jsonify(status='ok', application='metaUro', sources=list(SOURCES))
+
+
+@app.get('/api/scopes')
+def scopes():
+    return jsonify(scope_catalog())
+
+
+@app.get('/settings')
+def settings():
+    source = request.args.get('source', 'metaPee')
+    if source not in SOURCES:
+        abort(404)
+    return render_template('settings.html', **context(source, 'settings'))
+
+
+@app.get('/about')
+def about():
+    return render_template('about.html', **context('metaPee', 'about'))
+
+
+@app.route('/evidence/<source>/', defaults={'path': ''}, methods=['GET', 'POST', 'HEAD'])
+@app.route('/evidence/<source>/<path:path>', methods=['GET', 'POST', 'HEAD'])
+def evidence(source, path):
+    if source not in SOURCES:
+        abort(404)
+    if path in {'verify', 'exclude'}:
+        return jsonify(error='Saved evidence is read-only in metaUro. Interactive study selection is available for this view.'), 403
+    if request.method == 'POST' and path not in {'analyze', 'reanalyze'}:
+        abort(405)
+    if path in {'analyze', 'reanalyze'} and request.method == 'POST':
+        payload = request.get_json(silent=True)
+        if not isinstance(payload, dict):
+            return jsonify(error='An analysis request must be a JSON object.'), 400
+        settings = payload.get('analysis_settings')
+        if isinstance(settings, dict) and settings.get('baseline_source') == 'manual':
+            risk = settings.get('manual_risk_percent')
+            try:
+                valid = not isinstance(risk, bool) and 0 < float(risk) < 100
+            except (TypeError, ValueError):
+                valid = False
+            if not valid:
+                return jsonify(error='Manual reference risk must be greater than 0% and less than 100%.'), 400
+    if path == 'about':
+        return redirect('/about')
+    prefix = f'/evidence/{source}'
+    try:
+        if path.startswith('static/'):
+            # Settings catalogs and UI assets do not need the scientific engine.
+            asset = send_from_directory(ROOT / 'sources' / source / 'static', path[len('static/'):])
+            asset.direct_passthrough = False
+            status, response_headers, body = asset.status_code, list(asset.headers), asset.get_data()
+        else:
+            headers = {k: v for k, v in request.headers if k.lower() not in {'host', 'content-length', 'connection'}}
+            status, response_headers, body = workers[source].request(
+                path='/' + path + ('?' + request.query_string.decode() if request.query_string else ''),
+                method=request.method, data=request.get_data(), headers=headers)
+    except (RuntimeError, TimeoutError, EOFError, BrokenPipeError):
+        app.logger.exception('Source engine failed: %s', source)
+        return jsonify(error='This evidence source is temporarily unavailable. Please try again.'), 503
+    content_type = next((v for k, v in response_headers if k.lower() == 'content-type'), '')
+    outgoing = [(k, v) for k, v in response_headers if k.lower() not in {'content-length', 'content-encoding', 'etag', 'set-cookie'}]
+    if 'text/html' in content_type and status == 200:
+        body = decorate_html(body.decode('utf-8'), source, path).encode()
+    elif ('javascript' in content_type or path.endswith('.js')) and body:
+        body = prefix_text(body.decode('utf-8'), prefix).encode()
+        if path == 'static/script.js':
+            body = body.replace(b"setSelectedExposure('Vitamin A');", b"setSelectedExposure(new URL(location.href).searchParams.get('exposure') || 'Vitamin A');")
+    elif 'text/css' in content_type:
+        body = prefix_text(body.decode('utf-8'), prefix).encode()
+    elif 'application/json' in content_type and body and request.method != 'HEAD' and status not in {204, 304}:
+        payload = json.loads(body)
+        body = json.dumps(prefix_json(payload, prefix), ensure_ascii=False).encode()
+    for index, (key, value) in enumerate(outgoing):
+        if key.lower() == 'location' and value.startswith('/'):
+            outgoing[index] = (key, prefix + value)
+    response = Response(body, status=status, headers=outgoing)
+    if path in {'analyze', 'reanalyze'}:
+        response.headers['Cache-Control'] = 'no-store'
+    response.headers['X-metaUro-Source'] = source
+    return response
+
+
+if __name__ == '__main__':
+    app.run(host='127.0.0.1' if 'PORT' not in os.environ else '0.0.0.0', port=int(os.environ.get('PORT', '5012')), debug=False, use_reloader=False)

@@ -1,0 +1,772 @@
+{
+  "schema_version": 1,
+  "receipt_id": "2f070f65a788bab42318a4b1a6ee89ceab0825f0ead5800a2a4ac7c3a1833277",
+  "requested_at": "2026-09-03T17:23:08.142780-04:00",
+  "received_at": "2026-09-03T17:23:44.648577-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "b61175195adf825f8865a129d946b5780572cb717dc2bf362b70d832d9bbddf3",
+  "dispatch_work_unit_key": "b854afa5853dd8f5c348c5685a6a8ed652d22ecdd8244241ee505efcb3d4f43b",
+  "attempt": 2,
+  "context_ids": [
+    "25302685|Beta-carotene|Renal cell carcinoma",
+    "25302685|Lutein|Renal cell carcinoma",
+    "25302685|Vitamin C|Renal cell carcinoma",
+    "25302685|Vitamin E|Renal cell carcinoma"
+  ],
+  "exposure_weights": {
+    "Beta-carotene": 1,
+    "Lutein": 1,
+    "Vitamin C": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "9368908c9ba7d0e3683e007adbe84c788cc8adc1ee2221a1590c21f2b17dd2b6",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15767,
+    "cached_input_tokens": 0,
+    "output_tokens": 7891,
+    "reasoning_tokens": 990
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0414165",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "26e63005-c8b8-4cfd-b8b2-937dd1e3d74b",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.0414165"
+  },
+  "output_sha256": "e1206a8416754258ecccca9550668cbca935907f2598852088e9b865276ad2bf",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"25302685|Beta-carotene|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study provides multivariable-adjusted hazard ratios for beta-carotene intake and renal cell carcinoma risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.9,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.53,\n        \"ci_upper\": 1.52,\n        \"p_value\": 0.8,\n        \"total_n\": 96196,\n        \"cases\": 240,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Postmenopausal women enrolled in the Women's Health Initiative\",\n        \"gender\": \"Female\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in an inclusive total of 96,196 women in our analytic cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Two hundred forty women with RCC were identified during follow-up.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"RESULTS (Abstract), paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total β-carotene intake, mcg ... Multivariable adjusted HR [95% CI] ... 0.90 [0.53–1.52]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.90 [0.53–1.52]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for Linear Trend ... .80\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Quartile 1 ... ≤2462.1 ... Quartile 4 ... ≥7875.3\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"INTRODUCTION, paragraph 3\"\n          },\n          \"timing\": {\n            \"excerpt\": \"who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"enrolled from 1993 to 1998 in 40 clinical centers throughout the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Race/ethnicity White 80,295 (84) Black or African American 7398 (8) Hispanic/Latino 3832 (4) Asian or Pacific Islander 2670 (3) American Indian or Alaska Native 405 (<1) Other 1104 (1)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire, and data on supplement use were collected using an interview-based inventory procedure.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Smoking status Never smoked 48,094 (51) Past smoker 39,905 (42) Current smoker 6625 (7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"25302685|Lutein|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluates dietary lutein plus zeaxanthin intake and risk of renal cell carcinoma.\",\n      \"extraction\": {\n        \"effect_size\": 0.69,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.41,\n        \"ci_upper\": 1.15,\n        \"p_value\": 0.51,\n        \"total_n\": 96196,\n        \"cases\": 240,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Postmenopausal women enrolled in the Women's Health Initiative\",\n        \"gender\": \"Female\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in an inclusive total of 96,196 women in our analytic cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Two hundred forty women with RCC were identified during follow-up.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"RESULTS (Abstract), paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Dietary lutein + zeaxanthin intake, mcg ... Multivariable adjusted HR [95% CI] ... 0.69 [0.41–1.15]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.69 [0.41–1.15]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for Linear Trend ... .51\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Quartile 1 ... ≤915.6 ... Quartile 4 ... ≥2183.3\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"INTRODUCTION, paragraph 3\"\n          },\n          \"timing\": {\n            \"excerpt\": \"who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"enrolled from 1993 to 1998 in 40 clinical centers throughout the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Race/ethnicity White 80,295 (84) Black or African American 7398 (8) Hispanic/Latino 3832 (4) Asian or Pacific Islander 2670 (3) American Indian or Alaska Native 405 (<1) Other 1104 (1)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Smoking status Never smoked 48,094 (51) Past smoker 39,905 (42) Current smoker 6625 (7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"25302685|Vitamin C|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study reports multivariable-adjusted hazard ratios for vitamin C intake and renal cell carcinoma risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.12,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.65,\n        \"ci_upper\": 1.91,\n        \"p_value\": 0.42,\n        \"total_n\": 96196,\n        \"cases\": 240,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Postmenopausal women enrolled in the Women's Health Initiative\",\n        \"gender\": \"Female\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in an inclusive total of 96,196 women in our analytic cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Two hundred forty women with RCC were identified during follow-up.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"RESULTS (Abstract), paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total vitamin C intake, mg ... Multivariable adjusted HR [95% CI] ... 1.12 [0.65–1.91]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.12 [0.65–1.91]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for Linear Trend ... .42\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Quartile 1 ... ≤96.3 ... Quartile 4 ... ≥585.7\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"INTRODUCTION, paragraph 3\"\n          },\n          \"timing\": {\n            \"excerpt\": \"who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"enrolled from 1993 to 1998 in 40 clinical centers throughout the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Race/ethnicity White 80,295 (84) Black or African American 7398 (8) Hispanic/Latino 3832 (4) Asian or Pacific Islander 2670 (3) American Indian or Alaska Native 405 (<1) Other 1104 (1)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire, and data on supplement use were collected using an interview-based inventory procedure.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Smoking status Never smoked 48,094 (51) Past smoker 39,905 (42) Current smoker 6625 (7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"25302685|Vitamin E|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study analyzes total vitamin E intake and risk of renal cell carcinoma.\",\n      \"extraction\": {\n        \"effect_size\": 0.81,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.49,\n        \"ci_upper\": 1.33,\n        \"p_value\": 0.33,\n        \"total_n\": 96196,\n        \"cases\": 240,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"Postmenopausal women enrolled in the Women's Health Initiative\",\n        \"gender\": \"Female\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This resulted in an inclusive total of 96,196 women in our analytic cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Two hundred forty women with RCC were identified during follow-up.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"RESULTS (Abstract), paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total vitamin E intake, IU ... Multivariable adjusted HR [95% CI] ... 0.81 [0.49–1.33]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.81 [0.49–1.33]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for Linear Trend ... .33\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Quartile 1 ... ≤8.5 ... Quartile 4 ... ≥405.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"INTRODUCTION, paragraph 3\"\n          },\n          \"timing\": {\n            \"excerpt\": \"who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"enrolled from 1993 to 1998 in 40 clinical centers throughout the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"MATERIALS AND METHODS, Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Race/ethnicity White 80,295 (84) Black or African American 7398 (8) Hispanic/Latino 3832 (4) Asian or Pacific Islander 2670 (3) American Indian or Alaska Native 405 (<1) Other 1104 (1)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire, and data on supplement use were collected using an interview-based inventory procedure.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"METHODS (Abstract), paragraph 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Smoking status Never smoked 48,094 (51) Past smoker 39,905 (42) Current smoker 6625 (7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "25302685|Beta-carotene|Renal cell carcinoma",
+      "pmid": "25302685",
+      "pmcid": "PMC5078985",
+      "published_date": "2015-02-15",
+      "title": "Antioxidant micronutrients and the risk of renal cell carcinoma in the Women's Health Initiative cohort.",
+      "authors": [
+        "Ho WJ",
+        "Simon MS",
+        "Yildiz VO",
+        "Shikany JM",
+        "Kato I",
+        "Beebe-Dimmer JL",
+        "Cetnar JP",
+        "Bock CH"
+      ],
+      "journal": "Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25302685/",
+      "exposure": "Beta-carotene",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study provides multivariable-adjusted hazard ratios for beta-carotene intake and renal cell carcinoma risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.9,
+        "effect_type": "HR",
+        "ci_lower": 0.53,
+        "ci_upper": 1.52,
+        "p_value": 0.8,
+        "total_n": 96196,
+        "cases": 240,
+        "comparison_type": "extreme_quantile",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Postmenopausal women enrolled in the Women's Health Initiative",
+        "gender": "Female",
+        "smoking_status": "mixed",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 0.9,
+        "reported_ci_lower": 0.53,
+        "reported_ci_upper": 1.52,
+        "reported_p_value": 0.8,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In the current analysis, we included all participants in the clinical trials and the observational study except for women who enrolled in the Dietary Modification clinical trial (n = 48,835) who had a history of any cancer other than nonmelanoma skin cancers at study entry 7 , 10 , 12 or who had implausible energy intakes (<600 or >5000 kcal daily) at baseline (n = 4067). This resulted in an inclusive total of 96,196 women in our analytic cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "In total, 240 women in the study population were diagnosed with RCC during follow-up. The median follow-up for the entire sample was 4339 days (approximately 12 years), and the median time to kidney cancer diagnosis was 2518 days (approximately 7 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "RESULTS (Abstract), paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.90 [0.53–1.52]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.90 [0.53–1.52]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": ".80",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "INTRODUCTION, paragraph 3"
+          },
+          "timing": {
+            "excerpt": "who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "continent": {
+            "excerpt": "enrolled from 1993 to 1998 in 40 clinical centers throughout the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire, and data on supplement use were collected using an interview-based inventory procedure.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "gender": {
+            "excerpt": "In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "United States"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 38216,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "079e60cdf1097ce4494eeffe39990ad435f3aad9ea0e4cd3b30dc9a49fa6be6c",
+      "pmc_source_receipt_digest": "ae47f4e9169605750ca9728c192207c766f93f2a3dc7a10204e544d4855e9538",
+      "pmc_source_raw_sha256": "355cfbeb2b8e21944cda66af05789937537ca3f64004031ebefab61521715280",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "c1b431b446f860bba6990fe31a2f8450acb49c56b8620ca9426bf1ff7e0cec91"
+    },
+    {
+      "context_id": "25302685|Lutein|Renal cell carcinoma",
+      "pmid": "25302685",
+      "pmcid": "PMC5078985",
+      "published_date": "2015-02-15",
+      "title": "Antioxidant micronutrients and the risk of renal cell carcinoma in the Women's Health Initiative cohort.",
+      "authors": [
+        "Ho WJ",
+        "Simon MS",
+        "Yildiz VO",
+        "Shikany JM",
+        "Kato I",
+        "Beebe-Dimmer JL",
+        "Cetnar JP",
+        "Bock CH"
+      ],
+      "journal": "Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25302685/",
+      "exposure": "Lutein",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluates dietary lutein plus zeaxanthin intake and risk of renal cell carcinoma.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.69,
+        "effect_type": "HR",
+        "ci_lower": 0.41,
+        "ci_upper": 1.15,
+        "p_value": 0.51,
+        "total_n": 96196,
+        "cases": 240,
+        "comparison_type": "extreme_quantile",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Postmenopausal women enrolled in the Women's Health Initiative",
+        "gender": "Female",
+        "smoking_status": "mixed",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 0.69,
+        "reported_ci_lower": 0.41,
+        "reported_ci_upper": 1.15,
+        "reported_p_value": 0.51,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In the current analysis, we included all participants in the clinical trials and the observational study except for women who enrolled in the Dietary Modification clinical trial (n = 48,835) who had a history of any cancer other than nonmelanoma skin cancers at study entry 7 , 10 , 12 or who had implausible energy intakes (<600 or >5000 kcal daily) at baseline (n = 4067). This resulted in an inclusive total of 96,196 women in our analytic cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "In total, 240 women in the study population were diagnosed with RCC during follow-up. The median follow-up for the entire sample was 4339 days (approximately 12 years), and the median time to kidney cancer diagnosis was 2518 days (approximately 7 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "RESULTS (Abstract), paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.69 [0.41–1.15]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.69 [0.41–1.15]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": ".51",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "INTRODUCTION, paragraph 3"
+          },
+          "timing": {
+            "excerpt": "who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "continent": {
+            "excerpt": "enrolled from 1993 to 1998 in 40 clinical centers throughout the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "gender": {
+            "excerpt": "In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "United States"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 38216,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "079e60cdf1097ce4494eeffe39990ad435f3aad9ea0e4cd3b30dc9a49fa6be6c",
+      "pmc_source_receipt_digest": "ae47f4e9169605750ca9728c192207c766f93f2a3dc7a10204e544d4855e9538",
+      "pmc_source_raw_sha256": "355cfbeb2b8e21944cda66af05789937537ca3f64004031ebefab61521715280",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "f09a9b1015f11e23f20d77a461ad235360584fb1577b6e43fd5025d686450657"
+    },
+    {
+      "context_id": "25302685|Vitamin C|Renal cell carcinoma",
+      "pmid": "25302685",
+      "pmcid": "PMC5078985",
+      "published_date": "2015-02-15",
+      "title": "Antioxidant micronutrients and the risk of renal cell carcinoma in the Women's Health Initiative cohort.",
+      "authors": [
+        "Ho WJ",
+        "Simon MS",
+        "Yildiz VO",
+        "Shikany JM",
+        "Kato I",
+        "Beebe-Dimmer JL",
+        "Cetnar JP",
+        "Bock CH"
+      ],
+      "journal": "Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25302685/",
+      "exposure": "Vitamin C",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study reports multivariable-adjusted hazard ratios for vitamin C intake and renal cell carcinoma risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 1.12,
+        "effect_type": "HR",
+        "ci_lower": 0.65,
+        "ci_upper": 1.91,
+        "p_value": 0.42,
+        "total_n": 96196,
+        "cases": 240,
+        "comparison_type": "extreme_quantile",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Postmenopausal women enrolled in the Women's Health Initiative",
+        "gender": "Female",
+        "smoking_status": "mixed",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 1.12,
+        "reported_ci_lower": 0.65,
+        "reported_ci_upper": 1.91,
+        "reported_p_value": 0.42,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In the current analysis, we included all participants in the clinical trials and the observational study except for women who enrolled in the Dietary Modification clinical trial (n = 48,835) who had a history of any cancer other than nonmelanoma skin cancers at study entry 7 , 10 , 12 or who had implausible energy intakes (<600 or >5000 kcal daily) at baseline (n = 4067). This resulted in an inclusive total of 96,196 women in our analytic cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "In total, 240 women in the study population were diagnosed with RCC during follow-up. The median follow-up for the entire sample was 4339 days (approximately 12 years), and the median time to kidney cancer diagnosis was 2518 days (approximately 7 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "RESULTS (Abstract), paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.12 [0.65–1.91]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.12 [0.65–1.91]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Likewise, results from the time-varying analysis were similar, suggesting that lycopene was associated with a decreased risk of RCC (fourth quartile: HR, 0.64; 95% CI, 0.42–0.98; P trend = .05), and no other micronutrients were associated with risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "INTRODUCTION, paragraph 3"
+          },
+          "timing": {
+            "excerpt": "who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "continent": {
+            "excerpt": "enrolled from 1993 to 1998 in 40 clinical centers throughout the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire, and data on supplement use were collected using an interview-based inventory procedure.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "gender": {
+            "excerpt": "In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "United States"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 38216,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "079e60cdf1097ce4494eeffe39990ad435f3aad9ea0e4cd3b30dc9a49fa6be6c",
+      "pmc_source_receipt_digest": "ae47f4e9169605750ca9728c192207c766f93f2a3dc7a10204e544d4855e9538",
+      "pmc_source_raw_sha256": "355cfbeb2b8e21944cda66af05789937537ca3f64004031ebefab61521715280",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "dbec75361a6d1d7340c5b6d264866f4d1a28b8f2a6f50ee9e13f74a46a4a4116"
+    },
+    {
+      "context_id": "25302685|Vitamin E|Renal cell carcinoma",
+      "pmid": "25302685",
+      "pmcid": "PMC5078985",
+      "published_date": "2015-02-15",
+      "title": "Antioxidant micronutrients and the risk of renal cell carcinoma in the Women's Health Initiative cohort.",
+      "authors": [
+        "Ho WJ",
+        "Simon MS",
+        "Yildiz VO",
+        "Shikany JM",
+        "Kato I",
+        "Beebe-Dimmer JL",
+        "Cetnar JP",
+        "Bock CH"
+      ],
+      "journal": "Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25302685/",
+      "exposure": "Vitamin E",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study analyzes total vitamin E intake and risk of renal cell carcinoma.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.81,
+        "effect_type": "HR",
+        "ci_lower": 0.49,
+        "ci_upper": 1.33,
+        "p_value": 0.33,
+        "total_n": 96196,
+        "cases": 240,
+        "comparison_type": "extreme_quantile",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "Postmenopausal women enrolled in the Women's Health Initiative",
+        "gender": "Female",
+        "smoking_status": "mixed",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 0.81,
+        "reported_ci_lower": 0.49,
+        "reported_ci_upper": 1.33,
+        "reported_p_value": 0.33,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In the current analysis, we included all participants in the clinical trials and the observational study except for women who enrolled in the Dietary Modification clinical trial (n = 48,835) who had a history of any cancer other than nonmelanoma skin cancers at study entry 7 , 10 , 12 or who had implausible energy intakes (<600 or >5000 kcal daily) at baseline (n = 4067). This resulted in an inclusive total of 96,196 women in our analytic cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "In total, 240 women in the study population were diagnosed with RCC during follow-up. The median follow-up for the entire sample was 4339 days (approximately 12 years), and the median time to kidney cancer diagnosis was 2518 days (approximately 7 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "RESULTS (Abstract), paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.81 [0.49–1.33]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.81 [0.49–1.33]",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": ".33",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The Women’s Health Initiative (WHI) is a large, multisite clinical trial and observational cohort",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "INTRODUCTION, paragraph 3"
+          },
+          "timing": {
+            "excerpt": "who enrolled in the Women’s Health Initiative (WHI) between 1993 and 1998 and were followed through July 2013 were included in this analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "continent": {
+            "excerpt": "enrolled from 1993 to 1998 in 40 clinical centers throughout the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "MATERIALS AND METHODS, Study Population, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary micronutrient intake was estimated from the baseline WHI food frequency questionnaire, and data on supplement use were collected using an interview-based inventory procedure.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "gender": {
+            "excerpt": "In total, 96,196 postmenopausal women who enrolled in the Women’s Health Initiative (WHI)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "METHODS (Abstract), paragraph 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5078985/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "United States"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 38216,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "079e60cdf1097ce4494eeffe39990ad435f3aad9ea0e4cd3b30dc9a49fa6be6c",
+      "pmc_source_receipt_digest": "ae47f4e9169605750ca9728c192207c766f93f2a3dc7a10204e544d4855e9538",
+      "pmc_source_raw_sha256": "355cfbeb2b8e21944cda66af05789937537ca3f64004031ebefab61521715280",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "1a37d9ac3c0a4f7db28c8eaad4013cfeaa76dc44d85f98f18b5d8d1f795ee6ad"
+    }
+  ]
+}

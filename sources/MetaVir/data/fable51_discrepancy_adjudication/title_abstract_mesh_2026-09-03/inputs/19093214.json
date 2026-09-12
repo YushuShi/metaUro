@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:54.182053-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "fb2580eef49aee614dee167e4f3eb7ca45a12819a850f971fbeade60f4146604",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19093214",
+      "title": "Vitamin and mineral use and risk of prostate cancer: the case-control surveillance study.",
+      "abstract": "Many studies have evaluated the association between vitamin and mineral supplement use and the risk of prostate cancer, with inconclusive results. The authors examined the relation of use of multivitamins as well as several single vitamin and mineral supplements to the risk of prostate cancer risk among 1,706 prostate cancer cases and 2,404 matched controls using data from the hospital-based case-control surveillance study conducted in the United States. Odds ratios (OR) and 95% confidence intervals (CI) for risk of prostate cancer were estimated using conditional logistic regression model. For use of multivitamins that did not contain zinc, the multivariable odds ratios of prostate cancer were 0.6 for 1-4 years, 0.8 for 5-9 years, and 1.2 for 10 years or more, respectively (p for trend = 0.70). Men who used zinc for ten years or more, either in a multivitamin or as a supplement, had an approximately two-fold (OR = 1.9, 95% CI: 1.0, 3.6) increased risk of prostate cancer. Vitamin E, beta-carotene, folate, and selenium use were not significantly associated with increased risk of prostate cancer. The finding that long-term zinc intake from multivitamins or single supplements was associated with a doubling in risk of prostate cancer adds to the growing evidence for an unfavorable effect of zinc on prostate cancer carcinogenesis.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Case-Control Studies",
+        "Dietary Supplements",
+        "Folic Acid / therapeutic use",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors",
+        "Vitamin E / therapeutic use",
+        "Vitamins / therapeutic use",
+        "Zinc / therapeutic use",
+        "beta Carotene / therapeutic use"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19093214",
+      "contexts": [
+        {
+          "context_id": "19093214|Mineral supplements|Prostate cancer",
+          "exposure": "Mineral supplements",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-COMPOUND"
+            }
+          }
+        },
+        {
+          "context_id": "19093214|Multivitamin|Prostate cancer",
+          "exposure": "Multivitamin",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "4110",
+              "effect_measure_type": "OR",
+              "effect_size": "1.2",
+              "ci_lower": "0.8",
+              "ci_upper": "1.9",
+              "p_value": "0.40867328119291924",
+              "comparison": "10 or more years of multivitamin use without zinc versus never or less than 1 year"
+            },
+            "Claude+Gemini": {
+              "sample_size": "4110",
+              "effect_measure_type": "OR",
+              "effect_size": "1.3",
+              "ci_lower": "1",
+              "ci_upper": "1.6",
+              "p_value": "0.089",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

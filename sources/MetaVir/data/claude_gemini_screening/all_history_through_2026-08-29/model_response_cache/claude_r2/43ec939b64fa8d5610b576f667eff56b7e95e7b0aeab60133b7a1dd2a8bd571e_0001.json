@@ -1,0 +1,996 @@
+{
+  "schema_version": 1,
+  "receipt_id": "cd3ceb7994044c2e940b655fa6e15e4dca081b19629ccbdd6ff311886dd671aa",
+  "requested_at": "2026-09-02T07:47:55.198858+08:00",
+  "received_at": "2026-09-02T07:49:28.855646+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "43ec939b64fa8d5610b576f667eff56b7e95e7b0aeab60133b7a1dd2a8bd571e",
+  "attempt": 1,
+  "context_ids": [
+    "18395333|Fisetin|Prostate cancer",
+    "18395333|Green tea|Prostate cancer",
+    "18395333|Pomegranate|Prostate cancer",
+    "18395333|Tea|Prostate cancer",
+    "18398033|Calcium|Prostate cancer",
+    "18398033|Dairy|Prostate cancer",
+    "18398033|Fermented foods|Prostate cancer",
+    "18398033|Yogurt|Prostate cancer",
+    "18400723|Dairy|Prostate cancer",
+    "18400723|Vitamin K1|Prostate cancer",
+    "18400723|Vitamin K2|Prostate cancer",
+    "18400723|Vitamin K|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Dairy": 2,
+    "Fermented foods": 1,
+    "Fisetin": 1,
+    "Green tea": 1,
+    "Pomegranate": 1,
+    "Tea": 1,
+    "Vitamin K": 1,
+    "Vitamin K1": 1,
+    "Vitamin K2": 1,
+    "Yogurt": 1
+  },
+  "input_digest": "7258b32e5554da98e25848302736a5fb54230412fe261ab2900f77c730a5094b",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 7061,
+    "cached_input_tokens": 0,
+    "output_tokens": 10609,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.30052999999999996",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "6b3753ec-cd9a-4c53-ab0a-73381a240548",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.30052999999999996"
+  },
+  "output_sha256": "fa321889e1cb941658173e8ebbd465f3d5588f583ad77118ed6abcd057fe8f7f",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"18395333|Fisetin|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review summarizing clinical and preclinical findings on dietary chemopreventive agents, not an original human study of fisetin and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"18395333|Green tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a review (\\\"In this review, we have summarized the findings\\\") without original human incidence data on green tea.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"18395333|Pomegranate|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of dietary chemopreventive agents including pomegranate, providing no original human incidence analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"18395333|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The publication is a review of chemopreventive dietary agents rather than an original human study of tea intake and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"18398033|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Population-based prospective cohort of Japanese men reporting dietary calcium intake in relation to incident prostate cancer, although no numeric calcium-specific estimate is given in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":43435,\"cases\":329,\"comparison_type\":\"quartiles of dietary calcium intake (highest vs lowest)\",\"design\":\"prospective cohort\",\"timing\":\"pre-diagnosis dietary assessment at baseline with 7.5 years of follow-up\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men ages 45 to 74 years\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"we conducted a population-based prospective study in 43,435 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"A statistically significant increase in risk was observed for both calcium and saturated fatty acid\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"we conducted a population-based prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"prostate cancer in Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"43,435 Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"To investigate the association between dairy products, calcium, and saturated fatty acid and prostate cancer in Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Participants responded to a validated questionnaire that included 138 food items.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"18398033|Dairy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort providing a dairy-specific relative risk for incident prostate cancer comparing highest with lowest intake quartiles.\",\"extraction\":{\"effect_size\":1.63,\"effect_type\":\"RR\",\"ci_lower\":1.14,\"ci_upper\":2.32,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":43435,\"cases\":329,\"comparison_type\":\"highest versus lowest quartile of total dairy product intake\",\"design\":\"prospective cohort\",\"timing\":\"pre-diagnosis dietary assessment at baseline with 7.5 years of follow-up\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men ages 45 to 74 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"we conducted a population-based prospective study in 43,435 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"The relative risks (95% confidence intervals) comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt were 1.63 (1.14-2.32)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"1.63 (1.14-2.32)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"comparing the highest with the lowest quartiles of total dairy products\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"we conducted a population-based prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"prostate cancer in Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"43,435 Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"prostate cancer in Japan, where both the intake of these items and the incidence of prostate cancer are low\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Participants responded to a validated questionnaire that included 138 food items.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"18398033|Fermented foods|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The cohort analyzed dairy products, calcium, and saturated fatty acids, with no fermented-food exposure category assessed or estimated.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"18398033|Yogurt|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting a yogurt-specific relative risk for incident prostate cancer comparing extreme intake quartiles.\",\"extraction\":{\"effect_size\":1.52,\"effect_type\":\"RR\",\"ci_lower\":1.1,\"ci_upper\":2.12,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":43435,\"cases\":329,\"comparison_type\":\"highest versus lowest quartile of yogurt intake\",\"design\":\"prospective cohort\",\"timing\":\"pre-diagnosis dietary assessment at baseline with 7.5 years of follow-up\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men ages 45 to 74 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"we conducted a population-based prospective study in 43,435 Japanese men ages 45 to 74 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt were 1.63 (1.14-2.32), 1.53 (1.07-2.19), and 1.52 (1.10-2.12), respectively\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"1.52 (1.10-2.12)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"we conducted a population-based prospective study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"prostate cancer in Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"43,435 Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"prostate cancer in Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Participants responded to a validated questionnaire that included 138 food items.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18398033/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"18400723|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Dairy appears only incidentally as a dietary source of menaquinones, with no dairy-intake estimate for prostate cancer incidence reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"18400723|Vitamin K1|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective EPIC-Heidelberg cohort reporting a phylloquinone (vitamin K1) intake estimate for incident prostate cancer.\",\"extraction\":{\"effect_size\":1.02,\"effect_type\":\"RR\",\"ci_lower\":0.7,\"ci_upper\":1.48,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":11319,\"cases\":268,\"comparison_type\":\"highest compared with lowest quartile of dietary phylloquinone intake\",\"design\":\"prospective cohort\",\"timing\":\"baseline dietary assessment with mean 8.6 years of follow-up before diagnosis\",\"continent\":\"Europe\",\"country\":null,\"location\":\"Heidelberg\",\"ethnicity\":\"NA\",\"population\":\"11 319 men in the Heidelberg cohort of EPIC\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"were calculated in 11 319 men by means of Cox proportional hazards regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During a mean follow-up time of 8.6 y, 268 incident cases of prostate cancer, including 113 advanced cases, were identified.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Phylloquinone intake was unrelated to prostate cancer incidence (1.02; 0.70, 1.48).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"(1.02; 0.70, 1.48)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"multivariate relative risk (highest compared with lowest quartile)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"Multivariate-adjusted relative risks of total and advanced prostate cancer ... by means of Cox proportional hazards regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"At baseline, habitual dietary intake was assessed by means of a food-frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"European Prospective Investigation into Cancer and Nutrition\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Dietary intake of phylloquinone and menaquinones (MK-4-14) was estimated by using previously published HPLC-based food-content data.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"18400723|Vitamin K2|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective EPIC-Heidelberg cohort reporting a menaquinone (vitamin K2) intake estimate for total incident prostate cancer.\",\"extraction\":{\"effect_size\":0.65,\"effect_type\":\"RR\",\"ci_lower\":0.39,\"ci_upper\":1.06,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":11319,\"cases\":268,\"comparison_type\":\"highest compared with lowest quartile of total menaquinone intake\",\"design\":\"prospective cohort\",\"timing\":\"baseline dietary assessment with mean 8.6 years of follow-up before diagnosis\",\"continent\":\"Europe\",\"country\":null,\"location\":\"Heidelberg\",\"ethnicity\":\"NA\",\"population\":\"11 319 men in the Heidelberg cohort of EPIC\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"were calculated in 11 319 men by means of Cox proportional hazards regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"During a mean follow-up time of 8.6 y, 268 incident cases of prostate cancer, including 113 advanced cases, were identified.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"nonsignificant inverse association between total prostate cancer and total menaquinone intake [multivariate relative risk (highest compared with lowest quartile): 0.65; 95% CI: 0.39, 1.06]\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.65; 95% CI: 0.39, 1.06\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"multivariate relative risk (highest compared with lowest quartile)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"Multivariate-adjusted relative risks of total and advanced prostate cancer ... by means of Cox proportional hazards regression\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"At baseline, habitual dietary intake was assessed by means of a food-frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"European Prospective Investigation into Cancer and Nutrition\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"Dietary intake of phylloquinone and menaquinones (MK-4-14) was estimated by using previously published HPLC-based food-content data.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/18400723/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"18400723|Vitamin K|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NO-TARGET-ESTIMATE\",\"reason\":\"Results are reported only separately for phylloquinone and menaquinones, so an estimate for total dietary vitamin K and prostate cancer incidence cannot be separated.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "18395333|Fisetin|Prostate cancer",
+      "pmid": "18395333",
+      "pmcid": "PMC3220618",
+      "published_date": "2008-07-08",
+      "title": "Dietary agents for chemoprevention of prostate cancer.",
+      "authors": [
+        "Syed DN",
+        "Suh Y",
+        "Afaq F",
+        "Mukhtar H"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18395333/",
+      "exposure": "Fisetin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review summarizing clinical and preclinical findings on dietary chemopreventive agents, not an original human study of fisetin and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18395333|Green tea|Prostate cancer",
+      "pmid": "18395333",
+      "pmcid": "PMC3220618",
+      "published_date": "2008-07-08",
+      "title": "Dietary agents for chemoprevention of prostate cancer.",
+      "authors": [
+        "Syed DN",
+        "Suh Y",
+        "Afaq F",
+        "Mukhtar H"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18395333/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a review (\"In this review, we have summarized the findings\") without original human incidence data on green tea.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18395333|Pomegranate|Prostate cancer",
+      "pmid": "18395333",
+      "pmcid": "PMC3220618",
+      "published_date": "2008-07-08",
+      "title": "Dietary agents for chemoprevention of prostate cancer.",
+      "authors": [
+        "Syed DN",
+        "Suh Y",
+        "Afaq F",
+        "Mukhtar H"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18395333/",
+      "exposure": "Pomegranate",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of dietary chemopreventive agents including pomegranate, providing no original human incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18395333|Tea|Prostate cancer",
+      "pmid": "18395333",
+      "pmcid": "PMC3220618",
+      "published_date": "2008-07-08",
+      "title": "Dietary agents for chemoprevention of prostate cancer.",
+      "authors": [
+        "Syed DN",
+        "Suh Y",
+        "Afaq F",
+        "Mukhtar H"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18395333/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The publication is a review of chemopreventive dietary agents rather than an original human study of tea intake and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18398033|Calcium|Prostate cancer",
+      "pmid": "18398033",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dairy product, saturated fatty acid, and calcium intake and prostate cancer in a prospective cohort of Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Inoue M",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Tsugane AS",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Population-based prospective cohort of Japanese men reporting dietary calcium intake in relation to incident prostate cancer, although no numeric calcium-specific estimate is given in the abstract.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 43435,
+        "cases": 329,
+        "comparison_type": "quartiles of dietary calcium intake (highest vs lowest)",
+        "design": "prospective cohort",
+        "timing": "pre-diagnosis dietary assessment at baseline with 7.5 years of follow-up",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men ages 45 to 74 years",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "To investigate the association between dairy products, calcium, and saturated fatty acid and prostate cancer in Japan, where both the intake of these items and the incidence of prostate cancer are low, we conducted a population-based prospective study in 43,435 Japanese men ages 45 to 74 years. Participants responded to a validated questionnaire that included 138 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "A statistically significant increase in risk was observed for both calcium and saturated fatty acid",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "we conducted a population-based prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "prostate cancer in Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "43,435 Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "To investigate the association between dairy products, calcium, and saturated fatty acid and prostate cancer in Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Participants responded to a validated questionnaire that included 138 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18398033|Dairy|Prostate cancer",
+      "pmid": "18398033",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dairy product, saturated fatty acid, and calcium intake and prostate cancer in a prospective cohort of Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Inoue M",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Tsugane AS",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort providing a dairy-specific relative risk for incident prostate cancer comparing highest with lowest intake quartiles.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.63,
+        "effect_type": "RR",
+        "ci_lower": 1.14,
+        "ci_upper": 2.32,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 43435,
+        "cases": 329,
+        "comparison_type": "highest versus lowest quartile of total dairy product intake",
+        "design": "prospective cohort",
+        "timing": "pre-diagnosis dietary assessment at baseline with 7.5 years of follow-up",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men ages 45 to 74 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "To investigate the association between dairy products, calcium, and saturated fatty acid and prostate cancer in Japan, where both the intake of these items and the incidence of prostate cancer are low, we conducted a population-based prospective study in 43,435 Japanese men ages 45 to 74 years. Participants responded to a validated questionnaire that included 138 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Dairy products were associated with a dose-dependent increase in the risk of prostate cancer. The relative risks (95% confidence intervals) comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt were 1.63 (1.14-2.32), 1.53 (1.07-2.19), and 1.52 (1.10-2.12), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The relative risks (95% confidence intervals) comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt were 1.63 (1.14-2.32), 1.53 (1.07-2.19), and 1.52 (1.10-2.12), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "comparing the highest with the lowest quartiles of total dairy products",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "we conducted a population-based prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "prostate cancer in Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "43,435 Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "prostate cancer in Japan, where both the intake of these items and the incidence of prostate cancer are low",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Participants responded to a validated questionnaire that included 138 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18398033|Fermented foods|Prostate cancer",
+      "pmid": "18398033",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dairy product, saturated fatty acid, and calcium intake and prostate cancer in a prospective cohort of Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Inoue M",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Tsugane AS",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+      "exposure": "Fermented foods",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The cohort analyzed dairy products, calcium, and saturated fatty acids, with no fermented-food exposure category assessed or estimated.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18398033|Yogurt|Prostate cancer",
+      "pmid": "18398033",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dairy product, saturated fatty acid, and calcium intake and prostate cancer in a prospective cohort of Japanese men.",
+      "authors": [
+        "Kurahashi N",
+        "Inoue M",
+        "Iwasaki M",
+        "Sasazuki S",
+        "Tsugane AS",
+        "Japan Public Health Center-Based Prospective Study Group"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+      "exposure": "Yogurt",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting a yogurt-specific relative risk for incident prostate cancer comparing extreme intake quartiles.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.52,
+        "effect_type": "RR",
+        "ci_lower": 1.1,
+        "ci_upper": 2.12,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 43435,
+        "cases": 329,
+        "comparison_type": "highest versus lowest quartile of yogurt intake",
+        "design": "prospective cohort",
+        "timing": "pre-diagnosis dietary assessment at baseline with 7.5 years of follow-up",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men ages 45 to 74 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "To investigate the association between dairy products, calcium, and saturated fatty acid and prostate cancer in Japan, where both the intake of these items and the incidence of prostate cancer are low, we conducted a population-based prospective study in 43,435 Japanese men ages 45 to 74 years. Participants responded to a validated questionnaire that included 138 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Dairy products were associated with a dose-dependent increase in the risk of prostate cancer. The relative risks (95% confidence intervals) comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt were 1.63 (1.14-2.32), 1.53 (1.07-2.19), and 1.52 (1.10-2.12), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The relative risks (95% confidence intervals) comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt were 1.63 (1.14-2.32), 1.53 (1.07-2.19), and 1.52 (1.10-2.12), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "comparing the highest with the lowest quartiles of total dairy products, milk, and yogurt",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "we conducted a population-based prospective study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "During 7.5 years of follow-up, 329 men were newly diagnosed with prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "prostate cancer in Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "43,435 Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "prostate cancer in Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Participants responded to a validated questionnaire that included 138 food items.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18398033/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18400723|Dairy|Prostate cancer",
+      "pmid": "18400723",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dietary intake of vitamin K and risk of prostate cancer in the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg).",
+      "authors": [
+        "Nimptsch K",
+        "Rohrmann S",
+        "Linseisen J"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Dairy appears only incidentally as a dietary source of menaquinones, with no dairy-intake estimate for prostate cancer incidence reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18400723|Vitamin K1|Prostate cancer",
+      "pmid": "18400723",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dietary intake of vitamin K and risk of prostate cancer in the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg).",
+      "authors": [
+        "Nimptsch K",
+        "Rohrmann S",
+        "Linseisen J"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+      "exposure": "Vitamin K1",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective EPIC-Heidelberg cohort reporting a phylloquinone (vitamin K1) intake estimate for incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.02,
+        "effect_type": "RR",
+        "ci_lower": 0.7,
+        "ci_upper": 1.48,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 11319,
+        "cases": 268,
+        "comparison_type": "highest compared with lowest quartile of dietary phylloquinone intake",
+        "design": "prospective cohort",
+        "timing": "baseline dietary assessment with mean 8.6 years of follow-up before diagnosis",
+        "continent": "Europe",
+        "country": null,
+        "location": "Heidelberg",
+        "ethnicity": "NA",
+        "population": "11 319 men in the Heidelberg cohort of EPIC",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Multivariate-adjusted relative risks of total and advanced prostate cancer in relation to intakes of phylloquinone and menaquinones were calculated in 11 319 men by means of Cox proportional hazards regression. During a mean follow-up time of 8.6 y, 268 incident cases of prostate cancer, including 113 advanced cases, were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up time of 8.6 y, 268 incident cases of prostate cancer, including 113 advanced cases, were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Phylloquinone intake was unrelated to prostate cancer incidence (1.02; 0.70, 1.48). Our results suggest an inverse association between the intake of menaquinones, but not that of phylloquinone, and prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Phylloquinone intake was unrelated to prostate cancer incidence (1.02; 0.70, 1.48).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "multivariate relative risk (highest compared with lowest quartile)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "At baseline, habitual dietary intake was assessed by means of a food-frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "European Prospective Investigation into Cancer and Nutrition",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary intake of phylloquinone and menaquinones (MK-4-14) was estimated by using previously published HPLC-based food-content data.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18400723|Vitamin K2|Prostate cancer",
+      "pmid": "18400723",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dietary intake of vitamin K and risk of prostate cancer in the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg).",
+      "authors": [
+        "Nimptsch K",
+        "Rohrmann S",
+        "Linseisen J"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+      "exposure": "Vitamin K2",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective EPIC-Heidelberg cohort reporting a menaquinone (vitamin K2) intake estimate for total incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.65,
+        "effect_type": "RR",
+        "ci_lower": 0.39,
+        "ci_upper": 1.06,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 11319,
+        "cases": 268,
+        "comparison_type": "highest compared with lowest quartile of total menaquinone intake",
+        "design": "prospective cohort",
+        "timing": "baseline dietary assessment with mean 8.6 years of follow-up before diagnosis",
+        "continent": "Europe",
+        "country": null,
+        "location": "Heidelberg",
+        "ethnicity": "NA",
+        "population": "11 319 men in the Heidelberg cohort of EPIC",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Multivariate-adjusted relative risks of total and advanced prostate cancer in relation to intakes of phylloquinone and menaquinones were calculated in 11 319 men by means of Cox proportional hazards regression. During a mean follow-up time of 8.6 y, 268 incident cases of prostate cancer, including 113 advanced cases, were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up time of 8.6 y, 268 incident cases of prostate cancer, including 113 advanced cases, were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "We observed a nonsignificant inverse association between total prostate cancer and total menaquinone intake [multivariate relative risk (highest compared with lowest quartile): 0.65; 95% CI: 0.39, 1.06].",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "We observed a nonsignificant inverse association between total prostate cancer and total menaquinone intake [multivariate relative risk (highest compared with lowest quartile): 0.65; 95% CI: 0.39, 1.06].",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "multivariate relative risk (highest compared with lowest quartile)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "At baseline, habitual dietary intake was assessed by means of a food-frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "European Prospective Investigation into Cancer and Nutrition",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary intake of phylloquinone and menaquinones (MK-4-14) was estimated by using previously published HPLC-based food-content data.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "18400723|Vitamin K|Prostate cancer",
+      "pmid": "18400723",
+      "pmcid": "",
+      "published_date": "2008-04-01",
+      "title": "Dietary intake of vitamin K and risk of prostate cancer in the Heidelberg cohort of the European Prospective Investigation into Cancer and Nutrition (EPIC-Heidelberg).",
+      "authors": [
+        "Nimptsch K",
+        "Rohrmann S",
+        "Linseisen J"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/18400723/",
+      "exposure": "Vitamin K",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "Results are reported only separately for phylloquinone and menaquinones, so an estimate for total dietary vitamin K and prostate cancer incidence cannot be separated.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

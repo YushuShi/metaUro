@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "f482fa0497b725ce76c00de941d803dc2abcb9ce21dd9f1b5ab6e434b12ccb6d",
+  "requested_at": "2026-09-02T08:33:37.036860+08:00",
+  "received_at": "2026-09-02T08:34:00.022179+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "00f1f7d863176edc58654802d1bed49901477cebc231088aa42795ccd48014b7",
+  "attempt": 1,
+  "context_ids": [
+    "40885251|DASH diet|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "DASH diet": 1
+  },
+  "input_digest": "0b14f34e939ee8c209a4159e1ac1be1b698e33fd2103b12df20134a1bc40aad2",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 40492,
+    "cached_input_tokens": 0,
+    "output_tokens": 2885,
+    "reasoning_tokens": 869
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.04118775",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "eceed8a6-900f-47dc-a056-5972149d61b0",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.04118775"
+  },
+  "output_sha256": "da1489f1153315bc3362c5ea581a3eb5119f78b2c007db6b980e2f2f9e636769",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"40885251|DASH diet|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between the DASH dietary pattern and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.99,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.85,\n        \"ci_upper\": 1.16,\n        \"p_value\": 0.86,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 72784,\n        \"cases\": 1408,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Southeastern United States\",\n        \"ethnicity\": \"Multiethnic\",\n        \"population\": \"Community Health Center and general population participants in the Southern Community Cohort Study\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After excluding those who reported having had missing dietary data ( N = 6693), cancer other than nonmelanoma skin cancer at baseline ( N = 5014), and those who died <1 month after enrollment ( N = 16), 72,784 participants were available for the analyses\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Methods, paragraph 5\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Prostate DASH 1408 1.0 (ref) 0.89 (0.77, 1.04) 0.88 (0.75, 1.02) 0.99 (0.85, 1.16)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Table 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Prostate DASH 1408 1.0 (ref) 0.89 (0.77, 1.04) 0.88 (0.75, 1.02) 0.99 (0.85, 1.16) 0.86\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Prostate DASH 1408 1.0 (ref) 0.89 (0.77, 1.04) 0.88 (0.75, 1.02) 0.99 (0.85, 1.16)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Prostate DASH 1408 1.0 (ref) 0.89 (0.77, 1.04) 0.88 (0.75, 1.02) 0.99 (0.85, 1.16) 0.86\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The dietary scores were analyzed using quartiles derived from the entire cohort, and linear trends in the scores were assessed by treating the quartiles as a linear variable using the median value for each quartile.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Methods, paragraph 5\"\n          },\n          \"design\": {\n            \"excerpt\": \"Cox proportional hazards models were used to test the associations between the dietary scores and cancer incidence using a cohort study design following participants from age (in months) at enrollment through age (in months) at cancer diagnosis, death, or date through which state-specific cancer registry data are complete\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Methods, paragraph 7\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In the SCCS, 84,507 adults aged 40–79 were enrolled between 2002 and 2009 in 12 Southeastern states in the United States.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In the SCCS, 84,507 adults aged 40–79 were enrolled between 2002 and 2009 in 12 Southeastern states in the United States.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic Black 48,073 (66.0) Non-Hispanic White 21,549 (29.6) All other/unknown 3162 (4.3)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"In the SCCS, 84,507 adults aged 40–79 were enrolled between 2002 and 2009 in 12 Southeastern states in the United States.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Participants completed a food frequency questionnaire (FFQ) containing 89 food and 5 alcohol questions, which asked about the frequency of consumption of certain types of foods and alcohol over the last year\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12799364/\",\n            \"location\": \"Methods, paragraph 3\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

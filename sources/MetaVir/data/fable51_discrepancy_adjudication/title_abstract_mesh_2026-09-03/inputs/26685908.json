@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:13.438365-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "19e6ce671976eadcf9692ce496d459c8e64ed58c6970bd44cb4aa1678f9a1734",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "26685908",
+      "title": "Associations between unprocessed red and processed meat, poultry, seafood and egg intake and the risk of prostate cancer: A pooled analysis of 15 prospective cohort studies.",
+      "abstract": "Reports relating meat intake to prostate cancer risk are inconsistent. Associations between these dietary factors and prostate cancer were examined in a consortium of 15 cohort studies. During follow-up, 52,683 incident prostate cancer cases, including 4,924 advanced cases, were identified among 842,149 men. Cox proportional hazard models were used to calculate study-specific relative risks (RR) and then pooled using random effects models. Results do not support a substantial effect of total red, unprocessed red and processed meat for all prostate cancer outcomes, except for a modest positive association for tumors identified as advanced stage at diagnosis (advanced(r)). For seafood, no substantial effect was observed for prostate cancer regardless of stage or grade. Poultry intake was inversely associated with risk of advanced and fatal cancers (pooled multivariable RR [MVRR], 95% confidence interval, comparing ≥ 45 vs. <5 g/day: advanced 0.83, 0.70-0.99; trend test p value 0.29), fatal, 0.69, 0.59-0.82, trend test p value 0.16). Participants who ate ≥ 25 versus <5 g/day of eggs (1 egg ∼ 50 g) had a significant 14% increased risk of advanced and fatal cancers (advanced 1.14, 1.01-1.28, trend test p value 0.01; fatal 1.14, 1.00-1.30, trend test p value 0.01). When associations were analyzed separately by geographical region (North America vs. other continents), positive associations between unprocessed red meat and egg intake, and inverse associations between poultry intake and advanced, advanced(r) and fatal cancers were limited to North American studies. However, differences were only statistically significant for eggs. Observed differences in associations by geographical region warrant further investigation.",
+      "mesh": [
+        "Cohort Studies",
+        "Diet",
+        "Eggs",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Meat",
+        "Odds Ratio",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk",
+        "Seafood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "26685908",
+      "contexts": [
+        {
+          "context_id": "26685908|Eggs|Prostate cancer",
+          "exposure": "Eggs",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "842149",
+              "effect_measure_type": "RR",
+              "effect_size": "1.14",
+              "ci_lower": "1.01",
+              "ci_upper": "1.28",
+              "p_value": "0.01",
+              "comparison": "≥25 versus <5 g/day of eggs"
+            },
+            "Claude+Gemini": {
+              "sample_size": "842149",
+              "effect_measure_type": "RR",
+              "effect_size": "0.99",
+              "ci_lower": "0.96",
+              "ci_upper": "1.02",
+              "p_value": "0.65",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

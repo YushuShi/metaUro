@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:26.401546-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "073d422ff4b87caf32053c5fdffc68e361a3199288bec573dbac90246065adfb",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "18505967",
+      "title": "Serum vitamin D concentration and prostate cancer risk: a nested case-control study.",
+      "abstract": "Epidemiological studies have yielded inconsistent associations between vitamin D status and prostate cancer risk, and few studies have evaluated whether the associations vary by disease aggressiveness. We investigated the association between vitamin D status, as determined by serum 25-hydroxyvitamin D [25(OH)D] level, and risk of prostate cancer in a case-control study nested within the Prostate, Lung, Colorectal, and Ovarian (PLCO) Cancer Screening Trial. The study included 749 case patients with incident prostate cancer who were diagnosed 1-8 years after blood draw and 781 control subjects who were frequency matched by age at cohort entry, time since initial screening, and calendar year of cohort entry. All study participants were selected from the trial screening arm (which includes annual standardized prostate cancer screening). Conditional logistic regression was used to estimate adjusted odds ratios (ORs) with 95% confidence intervals (CIs) by quintile of season-standardized serum 25(OH)D concentration. Statistical tests were two-sided. No statistically significant trend in overall prostate cancer risk was observed with increasing season-standardized serum 25(OH)D level. However, serum 25(OH)D concentrations greater than the lowest quintile (Q1) were associated with increased risk of aggressive (Gleason sum > or = 7 or clinical stage III or IV) disease (in a model adjusting for matching factors, study center, and history of diabetes, ORs for Q2 vs Q1 = 1.20, 95% CI = 0.80 to 1.81, for Q3 vs Q1 =1.96, 95% CI = 1.34 to 2.87, for Q4 vs Q1 = 1.61, 95% CI = 1.09 to 2.38, and for Q5 vs Q1 = 1.37, 95% CI = 0.92 to 2.05; P(trend) = .05). The rates of aggressive prostate cancer for increasing quintiles of serum 25(OH)D were 406, 479, 780, 633, and 544 per 100 000 person-years. In exploratory analyses, these associations with aggressive disease were consistent across subgroups defined by age, family history of prostate cancer, diabetes, body mass index, vigorous physical activity, calcium intake, study center, season of blood collection, and assay batch. The findings of this large prospective study do not support the hypothesis that vitamin D is associated with decreased risk of prostate cancer; indeed, higher circulating 25(OH)D concentrations may be associated with increased risk of aggressive disease.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "Clinical Trials as Topic",
+        "Humans",
+        "Incidence",
+        "Logistic Models",
+        "Male",
+        "Mass Screening / methods",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, chemically induced, epidemiology, pathology",
+        "Risk Assessment",
+        "Risk Factors",
+        "United States / epidemiology",
+        "Vitamin D / adverse effects, analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "18505967",
+      "contexts": [
+        {
+          "context_id": "18505967|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "1530",
+              "effect_measure_type": "OR",
+              "effect_size": "1.96",
+              "ci_lower": "1.34",
+              "ci_upper": "2.87",
+              "p_value": "0.05",
+              "comparison": "Q3 versus Q1 of season-standardized serum 25(OH)D for aggressive prostate cancer"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1530",
+              "effect_measure_type": "OR",
+              "effect_size": "1.18",
+              "ci_lower": "0.83",
+              "ci_upper": "1.68",
+              "p_value": "0.2",
+              "comparison": "highest vs lowest quintile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

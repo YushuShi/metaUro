@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:52.085249-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "fa12dcd6ccb33149ea34af8e1854598e8d7628a90246d07866cbddef340679a8",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "22190107",
+      "title": "Milk intake in early life and risk of advanced prostate cancer.",
+      "abstract": "The authors investigated whether early-life residency in certain areas of Iceland marked by distinct differences in milk intake was associated with risk of prostate cancer in a population-based cohort of 8,894 men born between 1907 and 1935. Through linkage to cancer and mortality registers, the men were followed for prostate cancer diagnosis and mortality from study entry (in waves from 1967 to 1987) through 2009. In 2002-2006, a subgroup of 2,268 participants reported their milk intake in early, mid-, and current life. During a mean follow-up period of 24.3 years, 1,123 men were diagnosed with prostate cancer, including 371 with advanced disease (stage 3 or higher or prostate cancer death). Compared with early-life residency in the capital area, rural residency in the first 20 years of life was marginally associated with increased risk of advanced prostate cancer (hazard ratio = 1.29, 95% confidence interval (CI): 0.97, 1.73), particularly among men born before 1920 (hazard ratio = 1.64, 95% CI: 1.06, 2.56). Daily milk consumption in adolescence (vs. less than daily), but not in midlife or currently, was associated with a 3.2-fold risk of advanced prostate cancer (95% CI: 1.25, 8.28). These data suggest that frequent milk intake in adolescence increases risk of advanced prostate cancer.",
+      "mesh": [
+        "Adolescent",
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Animals",
+        "Humans",
+        "Iceland / epidemiology",
+        "Male",
+        "Middle Aged",
+        "Milk / adverse effects, statistics & numerical data",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Residence Characteristics"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "22190107",
+      "contexts": [
+        {
+          "context_id": "22190107|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_MEASURE_TYPE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2268",
+              "effect_measure_type": null,
+              "effect_size": "3.2",
+              "ci_lower": "1.25",
+              "ci_upper": "8.28",
+              "p_value": null,
+              "comparison": "Daily milk consumption in adolescence versus less than daily"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2267",
+              "effect_measure_type": "OR",
+              "effect_size": "3.22",
+              "ci_lower": "1.25",
+              "ci_upper": "8.28",
+              "p_value": "0.015331940632505708",
+              "comparison": "high_vs_low"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

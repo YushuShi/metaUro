@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "207101ab6c136feb1eea917929cf556c76b6bf20339d5eb43bf460791529bc4e",
+  "requested_at": "2026-09-02T08:28:47.900113+08:00",
+  "received_at": "2026-09-02T08:29:11.342735+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "8201a4bf71e44980c8de09ec58787a4370688fd456b49723a92336ad76bf890d",
+  "attempt": 1,
+  "context_ids": [
+    "36716122|Glucosamine|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Glucosamine": 1
+  },
+  "input_digest": "02e6d78217e544dbc14b8ff608f8a7cb09fc9bf1829453311dc07e3e70db8175",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 18633,
+    "cached_input_tokens": 0,
+    "output_tokens": 2938,
+    "reasoning_tokens": 982
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02499225",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "9e789967-7e66-45a5-9d40-704e04ff202e",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02499225"
+  },
+  "output_sha256": "54098108b41d5a1dd41ec7766cc1d459d886a0e49e56c71aae8c302e3bc6730b",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"36716122|Glucosamine|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study investigating regular glucosamine supplement use and incident prostate cancer risk in UK Biobank participants.\",\n      \"extraction\": {\n        \"effect_size\": 1.07,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.01,\n        \"ci_upper\": 1.13,\n        \"p_value\": \"<=0.05\",\n        \"ci_confidence_level\": 95,\n        \"total_n\": 450207,\n        \"cases\": 9111,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"UK Biobank participants free of cancer at baseline\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 450,207 eligible participants (mean age: 56.2 years; females: 53.3%) were included, of whom 84,895 (18.9%) reported regular glucosamine use at baseline.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"cases\": {\n            \"excerpt\": \"For gender-specific cancers, we identified 9,111 (4.8%) prostate cancers and 475 (3%) other site-specific cancers in males\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Results, Glucosamine use and risk of cancer, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"In the full-adjusted model, glucosamine use was statistically significantly associated with increased risk for overall cancer (HR, 1.04; 95% CI, 1.01–1.06), prostate cancer (HR, 1.07; 95% CI, 1.01–1.13), and skin cancer (HR, 1.11; 95% CI, 1.07–1.15)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Results, Glucosamine use and risk of cancer, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"prostate cancer (HR, 1.07; 95% CI, 1.01–1.13)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Results, Glucosamine use and risk of cancer, paragraph 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Prostate (male) ... 1.07 (1.01–1.13)* ... * P ≤ 0.05.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Table 2, Model 4\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Participants indicating regular use of glucosamine supplements were defined as glucosamine users, and otherwise as nonusers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Materials and Methods, Exposure assessment, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The UK Biobank is a population-based prospective cohort study with over 500,000 participants aged 40 to 69 years enrolled between 2006 and 2010 in the United Kingdom.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Materials and Methods, Participants and setting, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"All participants from the UK Biobank who were free of cancers and had complete information on glucosamine use at baseline were included and followed up from 2006 until 2021.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The UK Biobank is a population-based prospective cohort study with over 500,000 participants aged 40 to 69 years enrolled between 2006 and 2010 in the United Kingdom.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Materials and Methods, Participants and setting, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 407,183 (90.5) ... Others 41,451 (9.2) ... Unknown 1,573 (0.3)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The UK Biobank is a population-based prospective cohort study with over 500,000 participants aged 40 to 69 years enrolled between 2006 and 2010 in the United Kingdom.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Materials and Methods, Participants and setting, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Participants were asked “do you regularly take any of the following” (data-field 6179) at baseline. Each participant could make multiple selections from a list of supplements including glucosamine\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10068435/\",\n            \"location\": \"Materials and Methods, Exposure assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

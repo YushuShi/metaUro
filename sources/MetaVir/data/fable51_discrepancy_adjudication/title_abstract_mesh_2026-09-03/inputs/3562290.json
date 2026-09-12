@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:18:44.388456-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "35dd4e6f29cb17d63eb732fba639c8d73e80743200e1505c672e0ffe9b42acd4",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "3562290",
+      "title": "The role of diet in prostate cancer.",
+      "abstract": "This is a one-to-one, age- and race-matched case-control study involving 55 histologically confirmed black prostate cancer patients and 55 controls who were seen at three major hospitals in Washington, DC from 1982 to 1984. Personal interviews were conducted to obtain the number of times food items of specified serving size were consumed per week by cases and controls; the subjects were grouped according to the age periods 30-49 and 50 years and older. We then calculated the average daily consumption of each of 18 nutrients per 1,000 calories. There was a significant negative association between linoleic acid (p less than 0.04) for the 50 years and older group, thiamin (p less than 0.05) for those 30-49 years old, riboflavin (p less than 0.03) for the 50 and older group, and iron (p less than 0.05) for those 30-49 years old. The results of this study suggest that the intake of thiamin and iron (in subjects 30-49 years old), linoleic acid and riboflavin (in subjects 50 years and over) could be protective because control subjects consumed more of these nutrients than did the cases.",
+      "mesh": [
+        "Adult",
+        "Age Factors",
+        "Aged",
+        "Diet",
+        "Dietary Fats / administration & dosage",
+        "Dietary Proteins / administration & dosage",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Minerals / administration & dosage",
+        "Prostatic Neoplasms / etiology",
+        "Vitamins / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "3562290",
+      "contexts": [
+        {
+          "context_id": "3562290|Iron|Prostate cancer",
+          "exposure": "Iron",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.05",
+              "comparison": "Controls versus cases, with higher iron intake in controls"
+            },
+            "Claude+Gemini": {
+              "sample_size": "110",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.05",
+              "comparison": "Average daily nutrient consumption per 1,000 calories compared between cases and controls (age group 30-49 years)"
+            }
+          }
+        },
+        {
+          "context_id": "3562290|Vitamin B1|Prostate cancer",
+          "exposure": "Vitamin B1",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.05",
+              "comparison": "Controls versus cases, with higher thiamin intake in controls"
+            },
+            "Claude+Gemini": {
+              "sample_size": "110",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.05",
+              "comparison": "Average daily nutrient consumption per 1,000 calories compared between cases and controls (age group 30-49 years)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,10 @@
+<header class="uro-header">
+  <div class="uro-brand"><a href="/" aria-label="metaUro home">meta<span>Uro</span></a><span class="uro-brand-caption">Nutrition &amp; urologic cancer</span></div>
+  <nav class="uro-nav" aria-label="Main navigation">
+    <a data-uro-nav="evidence" href="{{ prefix }}/?scope={{ current.id }}" {% if page == 'evidence' %}aria-current="page"{% endif %}>Evidence</a>
+    <a data-uro-nav="summary" href="{{ prefix }}/summary?scope={{ current.id }}" {% if page == 'summary' %}aria-current="page"{% endif %}>Summary</a>
+    <a data-uro-nav="settings" href="/settings?source={{ source }}&amp;scope={{ current.id }}" {% if page == 'settings' %}aria-current="page"{% endif %}>Settings</a>
+    <a href="/about" {% if page == 'about' %}aria-current="page"{% endif %}>About</a>
+  </nav>
+  {% if page != 'about' %}<div class="uro-context"><span class="uro-source">{{ source_label }} · {{ source }} · {{ 'Saved ChatGPT evidence' if track == 'chatgpt' else 'Saved combined evidence' }} {% if page == 'evidence' %}<span class="uro-updated">· Updated <span id="last-updated">—</span></span>{% endif %}</span><span id="source-controls"><label class="uro-subexposure">Related exposures<select id="include-subexposures"><option value="yes" {% if include_subexposures != 'no' %}selected{% endif %}>Include</option><option value="no" {% if include_subexposures == 'no' %}selected{% endif %}>Exclude</option></select></label></span></div>{% endif %}
+</header>

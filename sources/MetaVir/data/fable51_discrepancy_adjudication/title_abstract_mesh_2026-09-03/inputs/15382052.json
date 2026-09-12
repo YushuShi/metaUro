@@ -1,0 +1,153 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:34.240577-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9fbd3be6a6e9126094bd7fa010442766f0c9ba1e75391a8ec092efeb45533b2b",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15382052",
+      "title": "Retinol, carotenoids and the risk of prostate cancer: a case-control study from Italy.",
+      "abstract": "Several studies have evaluated the possible association between intakes of retinoids and carotenoids and the risk of prostate cancer, but the evidence is still inconsistent. Further, only a few studies have investigated the role of specific carotenoids other than beta-carotene. We have thus considered the association between retinol and various carotenoids using data from a multicentric case-control study conducted in Italy between 1991 and 2002. This included 1,294 incident, histologically confirmed prostate cancer cases below age 75 years admitted to major teaching and general hospitals in the areas under study, and 1,451 controls below age 75 years selected among patients admitted to the same hospitals as cases for a wide spectrum of acute nonneoplastic conditions not related to long-term modifications of diet. Subjects' usual diet was investigated by means of a validated food-frequency questionnaire. Multivariate odds ratios and the corresponding 95% confidence intervals were estimated using unconditional logistic regression models. The risk of prostate cancer tended to decrease with increasing intake of retinol (OR=0.79 for the highest versus the lowest quintile of intake), carotene (OR=0.70), alpha-carotene (OR=0.85) and beta-carotene (OR=0.72), although the estimates were significant for carotene and beta-carotene only. No meaningful associations emerged for nonprovitamin A carotenoids, such as lycopene (OR=0.94) and lutein/zeaxanthin (OR=0.91). No systematic heterogeneity was observed across strata of age, education and body mass index. Thus, our study supports the hypothesis of a weak protective effect of carotene, particularly beta-carotene, on the risk of prostate cancer, while it indicates that other carotenoids, including lycopene, and retinol are not appreciably related to the risk of this neoplasm.",
+      "mesh": [
+        "Aged",
+        "Carotenoids / pharmacology",
+        "Case-Control Studies",
+        "Diet",
+        "Humans",
+        "Italy",
+        "Male",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Odds Ratio",
+        "Prostatic Neoplasms / etiology, prevention & control",
+        "Risk Factors",
+        "Vitamin A / pharmacology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15382052",
+      "contexts": [
+        {
+          "context_id": "15382052|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.72",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest versus lowest quintile of intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2745",
+              "effect_measure_type": "OR",
+              "effect_size": "0.72",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest versus lowest quintile of intake"
+            }
+          }
+        },
+        {
+          "context_id": "15382052|Lutein|Prostate cancer",
+          "exposure": "Lutein",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-COMPOUND"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "15382052|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.94",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest versus lowest quintile of intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2745",
+              "effect_measure_type": "OR",
+              "effect_size": "0.94",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest versus lowest quintile of intake"
+            }
+          }
+        },
+        {
+          "context_id": "15382052|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.79",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest versus lowest quintile of intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2745",
+              "effect_measure_type": "OR",
+              "effect_size": "0.79",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "highest versus lowest quintile of intake"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

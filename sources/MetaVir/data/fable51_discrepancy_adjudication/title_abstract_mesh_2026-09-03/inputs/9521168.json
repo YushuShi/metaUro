@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:19:03.201883-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "ce5f5181078f8271ac934c41072cdd590568046a27989dcc1ae26fa354ce20f3",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "9521168",
+      "title": "Prostate cancer and supplementation with alpha-tocopherol and beta-carotene: incidence and mortality in a controlled trial.",
+      "abstract": "Epidemiologic studies have suggested that vitamin E and beta-carotene may each influence the development of prostate cancer. In the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study, a controlled trial, we studied the effect of alpha-tocopherol (a form of vitamin E) and beta-carotene supplementation, separately or together, on prostate cancer in male smokers. A total of 29133 male smokers aged 50-69 years from southwestern Finland were randomly assigned to receive alpha-tocopherol (50 mg), beta-carotene (20 mg), both agents, or placebo daily for 5-8 years (median, 6.1 years). The supplementation effects were estimated by a proportional hazards model, and two-sided P values were calculated. We found 246 new cases of and 62 deaths from prostate cancer during the follow-up period. A 32% decrease (95% confidence interval [CI] = -47% to -12%) in the incidence of prostate cancer was observed among the subjects receiving alpha-tocopherol (n = 14564) compared with those not receiving it (n = 14569). The reduction was evident in clinical prostate cancer but not in latent cancer. Mortality from prostate cancer was 41% lower (95% CI = -65% to -1%) among men receiving alpha-tocopherol. Among subjects receiving beta-carotene (n = 14560), prostate cancer incidence was 23% higher (95% CI = -4%-59%) and mortality was 15% higher (95% CI = -30%-89%) compared with those not receiving it (n = 14573). Neither agent had any effect on the time interval between diagnosis and death. Long-term supplementation with alpha-tocopherol substantially reduced prostate cancer incidence and mortality in male smokers. Other controlled trials are required to confirm the findings.",
+      "mesh": [
+        "Anticarcinogenic Agents / therapeutic use",
+        "Double-Blind Method",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Prostatic Neoplasms / epidemiology, mortality, prevention & control",
+        "Treatment Outcome",
+        "Vitamin E / therapeutic use",
+        "beta Carotene / therapeutic use"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "9521168",
+      "contexts": [
+        {
+          "context_id": "9521168|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_MEASURE_TYPE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "29133",
+              "effect_measure_type": "HR",
+              "effect_size": "1.23",
+              "ci_lower": "0.96",
+              "ci_upper": "1.59",
+              "p_value": "0.10776810211560695",
+              "comparison": "beta-carotene supplementation versus no beta-carotene supplementation"
+            },
+            "Claude+Gemini": {
+              "sample_size": "29133",
+              "effect_measure_type": "RR",
+              "effect_size": "1.23",
+              "ci_lower": "0.96",
+              "ci_upper": "1.59",
+              "p_value": null,
+              "comparison": "Beta-carotene supplementation (20 mg daily) versus no beta-carotene"
+            }
+          }
+        },
+        {
+          "context_id": "9521168|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_MEASURE_TYPE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "29133",
+              "effect_measure_type": "HR",
+              "effect_size": "0.68",
+              "ci_lower": "0.53",
+              "ci_upper": "0.88",
+              "p_value": "0.002868127538742131",
+              "comparison": "alpha-tocopherol supplementation versus no alpha-tocopherol supplementation"
+            },
+            "Claude+Gemini": {
+              "sample_size": "29133",
+              "effect_measure_type": "RR",
+              "effect_size": "0.68",
+              "ci_lower": "0.53",
+              "ci_upper": "0.88",
+              "p_value": null,
+              "comparison": "Alpha-tocopherol supplementation (50 mg daily) versus no alpha-tocopherol"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:52.696893-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "cc8ce443a5811d2f0d9de8e7384357e1f50f6d321e37854ef8314c5f2cd40cba",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "28417981",
+      "title": "Reduced prostate cancer risk with green tea and epigallocatechin 3-gallate intake among Hong Kong Chinese men.",
+      "abstract": "In vitro and in vivo studies suggested that polyphenol epigallocatechin 3-gallate (EGCG) in tea may have anti-carcinogenic effect on prostate cells, but this protective effect has less been examined in epidemiology studies. We aimed to investigate the association between prostate cancer (PCA) risk and habitual green tea intake among Chinese men in Hong Kong; meanwhile, the relationship with EGCG was also explored. We consecutively recruited 404 PCA cases and 395 controls from the same hospital who had complete data on habitual tea consumption, including green, oolong, black and pu'er tea. We reconstructed the level of EGCG intake according to a standard questionnaire and the analytic values for EGCG extracted from the literature published by Lin et al. in 2003. We calculated odds ratios (ORs) for tea consumption and EGCG intake using unconditional multiple logistic regression, and examined their exposure--response relationships with PCA risk. A total of 32 cases and 50 controls reported habitual green tea drinking, showing an adjusted OR of 0.60 (95% confidence interval (CI): 0.37, 0.98). A moderate excess risk was observed among the habitual pu'er tea drinkers (OR=1.44, 95% CI: 1.02, 1.91). A significantly lower intake of EGCG was observed among cases (54.4 mg) than the controls (72.5 mg), which resulted in an inverse gradient of PCA risk with the increasing intake of EGCG (test for trend, P=0.015). PCA risk among Chinese men in Hong Kong was inversely associated with green tea consumption and EGCG intake, but these results need to be replicated in larger studies.",
+      "mesh": [
+        "Administration, Oral",
+        "Aged",
+        "Asian People",
+        "Case-Control Studies",
+        "Catechin / administration & dosage, analogs & derivatives",
+        "Hong Kong",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, prevention & control",
+        "Risk",
+        "Tea"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "28417981",
+      "contexts": [
+        {
+          "context_id": "28417981|Green tea|Prostate cancer",
+          "exposure": "Green tea",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.6",
+              "ci_lower": "0.37",
+              "ci_upper": "0.98",
+              "p_value": "0.03980689155982891",
+              "comparison": "habitual green tea drinking"
+            },
+            "Claude+Gemini": {
+              "sample_size": "799",
+              "effect_measure_type": "OR",
+              "effect_size": "0.6",
+              "ci_lower": "0.37",
+              "ci_upper": "0.98",
+              "p_value": null,
+              "comparison": "Habitual green tea drinkers vs non-drinkers"
+            }
+          }
+        },
+        {
+          "context_id": "28417981|Tea|Prostate cancer",
+          "exposure": "Tea",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.6",
+              "ci_lower": "0.37",
+              "ci_upper": "0.98",
+              "p_value": "0.03980689155982891",
+              "comparison": "habitual green tea drinking"
+            },
+            "Claude+Gemini": {
+              "sample_size": "799",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Habitual tea consumption (green, oolong, black and pu'er tea) versus non-consumption; no total-tea estimate reported"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

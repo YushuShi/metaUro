@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:35:29.013077-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "e2a56afac5dee643343cec34b17c581266cacb5959d5e873cef6f0475b793b06",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "30139875",
+      "title": "Early-Life Alcohol Intake and High-Grade Prostate Cancer: Results from an Equal-Access, Racially Diverse Biopsy Cohort.",
+      "abstract": "Epidemiologic evidence for an association between alcohol and prostate cancer is mixed. Moreover, there is a lack of research investigating early-life alcohol intake as a risk factor for either overall or high-grade prostate cancer. We examined lifetime alcohol intake in association with prostate cancer diagnosis in an equal-access, racially diverse prostate biopsy cohort. Men undergoing prostate biopsy at the Durham Veterans Affairs Medical Center from 2007 to 2018 completed a survey indicating average number of alcoholic beverages consumed per week [categorized as none (ref), 1-6, ≥7] during each decade of life. Multivariable logistic regression was used to test the association between alcohol intake across decades and diagnosis of overall, low-grade [grade group (GG) 1-2] and high-grade prostate cancer (GG 3-5). Of 650 men ages 49-89 who underwent biopsy, 325 were diagnosed with prostate cancer, 238 with low-grade and 88 with high-grade disease. Relative to nondrinkers, men who consumed ≥7 drinks/week at ages 15 to 19 had increased odds of high-grade prostate cancer diagnosis (OR = 3.21, <i>P</i> <sub>trend</sub> = 0.020), with similar findings for ages 20 to 29, 30 to 39, and 40 to 49. Consistent with these results, men in the upper tertile of cumulative lifetime intake had increased odds of high-grade prostate cancer diagnosis (OR = 3.20, <i>P</i> <sub>trend</sub> = 0.003). In contrast, current alcohol intake was not associated with prostate cancer. In conclusion, among men undergoing prostate biopsy, heavier alcohol intake earlier in life and higher cumulative lifetime intake were positively associated with high-grade prostate cancer diagnosis, while current intake was unrelated to prostate cancer. Our findings suggest that earlier-life alcohol intake should be explored as a potential risk factor for high-grade prostate cancer. <i>Cancer Prev Res; 11(10); 621-8. ©2018 AACR</i>.",
+      "mesh": [
+        "Age Factors",
+        "Aged",
+        "Aged, 80 and over",
+        "Alcohol Drinking / adverse effects, epidemiology",
+        "Biopsy",
+        "Cohort Studies",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Grading",
+        "Prostate / pathology",
+        "Prostatic Neoplasms / diagnosis, epidemiology, pathology",
+        "Risk Factors",
+        "Surveys and Questionnaires / statistics & numerical data"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "30139875",
+      "contexts": [
+        {
+          "context_id": "30139875|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "650",
+              "effect_measure_type": "OR",
+              "effect_size": "3.21",
+              "ci_lower": "1.2016308804037605",
+              "ci_upper": "8.575095870154161",
+              "p_value": "0.02",
+              "comparison": "≥7 drinks/week at ages 15 to 19 versus nondrinkers"
+            },
+            "Claude+Gemini": {
+              "sample_size": "650",
+              "effect_measure_type": "OR",
+              "effect_size": "3.2",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.003",
+              "comparison": "upper tertile of cumulative lifetime alcohol intake versus lower intake (trend across tertiles)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

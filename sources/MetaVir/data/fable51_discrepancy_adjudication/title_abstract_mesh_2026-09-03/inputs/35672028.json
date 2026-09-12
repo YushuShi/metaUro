@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:04.311256-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "be2f8f99b6ebe59280b7a56cd71bc5e9443da1a58ed20c6babbdea8d9a8a7228",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "35672028",
+      "title": "Dairy foods, calcium intakes, and risk of incident prostate cancer in Adventist Health Study-2.",
+      "abstract": "Prostate cancer is the most common noncutaneous cancer in American males. Causal links between dairy, or dietary calcium, and this cancer are considered suggestive but limited. To evaluate these associations in a large North American cohort, including many with no (or very low) dairy intake and much calcium from nondairy sources. A prospective cohort study of 28,737 Seventh-day Adventist men in the United States and Canada, of whom 6389 were of black ethnicity. Diet was measured by FFQ, and 275 male participants also provided repeated 24-h dietary recalls as a calibration substudy. Incident cancers were mainly found by matching with cancer registries. Analyses used multivariable proportional hazards regressions and regression calibration for some analyses. In total, 1254 (190 advanced) incident prostate cancer cases were found during an average 7.8 y of follow-up. Men at the 90th percentile of dairy intake (430 g/d) compared with the 10th percentile (20.2 g/d) had higher prostate cancer risk (HR: 1.27; 95% CI: 1.12, 1.43). Similar findings, comparing the same g/d intakes, were demonstrated for advanced prostate cancers (HR: 1.38; 95% CI: 1.02, 1.88), for nonadvanced cases (HR: 1.27; 95% CI: 1.11, 1.45), in black participants (HR: 1.24; 95% CI: 0.98, 1.58), and when excluding vegan participants (HR: 1.22; 95% CI: 1.03, 1.43). Calibrated dairy (g/d) regressions (all participants and all prostate cancers), adjusting for dietary measurement error, found a HR of 1.75 (95% CI: 1.32, 2.32). Comparing 90th percentile intake to zero intakes (uncalibrated), the HR was 1.62 (95% CI: 1.26, 2.05). There was no evidence of an effect of higher (905 mg/d) compared with lower (349 mg/d) intakes of nondairy calcium (HR: 1.16; 95% CI: 0.94, 1.44). Men with higher intake of dairy foods, but not nondairy calcium, had a higher risk of prostate cancer compared with men having lower intakes. Associations were nonlinear, suggesting greatest increases in risk at relatively low doses.",
+      "mesh": [
+        "Calcium",
+        "Calcium, Dietary",
+        "Dairy Products",
+        "Humans",
+        "Male",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "35672028",
+      "contexts": [
+        {
+          "context_id": "35672028|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "28737",
+              "effect_measure_type": "HR",
+              "effect_size": "1.16",
+              "ci_lower": "0.94",
+              "ci_upper": "1.44",
+              "p_value": "0.17254950863295765",
+              "comparison": "905 mg/day versus 349 mg/day nondairy calcium intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "28737",
+              "effect_measure_type": "HR",
+              "effect_size": "1.08",
+              "ci_lower": "0.92",
+              "ci_upper": "1.28",
+              "p_value": "0.34",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

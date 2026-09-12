@@ -1,0 +1,750 @@
+{
+  "schema_version": 1,
+  "receipt_id": "68d08dcfb8f7813a6e2d17951d74e28ec5466960cff05264ae170dbe2bbbd606",
+  "requested_at": "2026-09-02T07:29:11.560136+08:00",
+  "received_at": "2026-09-02T07:30:10.824848+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "4b0309824324074247885629a5c963c3bad12497e4ffa152588cd73f1c256638",
+  "attempt": 1,
+  "context_ids": [
+    "10325506|Vitamin A|Prostate cancer",
+    "10325506|Vitamin E|Prostate cancer",
+    "10325617|Vitamin A|Prostate cancer",
+    "10325617|Vitamin B1|Prostate cancer",
+    "10325617|Vitamin C|Prostate cancer",
+    "10332429|Selenium|Prostate cancer",
+    "10332429|Soy|Prostate cancer",
+    "10332429|Vitamin A|Prostate cancer",
+    "10332429|Vitamin D|Prostate cancer",
+    "10332429|Vitamin E|Prostate cancer",
+    "10332919|Green tea|Prostate cancer",
+    "10332919|Tea|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Green tea": 1,
+    "Selenium": 1,
+    "Soy": 1,
+    "Tea": 1,
+    "Vitamin A": 3,
+    "Vitamin B1": 1,
+    "Vitamin C": 1,
+    "Vitamin D": 1,
+    "Vitamin E": 2
+  },
+  "input_digest": "4feca84df1f9c5c8fe3eff71e85b078921f33bf9fda9a2a3e4fe2ab20b4d55b0",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 7885,
+    "cached_input_tokens": 0,
+    "output_tokens": 6240,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.19542500000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "e7ae752e-a1ff-4e8a-af42-90387f0d6b8b",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.19542500000000002"
+  },
+  "output_sha256": "750f0e4d9a1f359d22d0a0efb2b63cad6d0ae6388bed21f0eb6ca8b54488bb5d",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"10325506|Vitamin A|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"This is an exclusively preclinical chemoprevention study of 9-cis-retinoic acid in prostate cancers induced in Wistar-Unilever rats, with no human participants.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10325506|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Vitamin E (DL-alpha-tocopherol acetate) was tested only in a rat prostate carcinogenesis model, so the evidence is entirely animal-based.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10325617|Vitamin A|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Matched case-control study in humans reporting a multivariable-adjusted odds ratio for dietary retinol (vitamin A) intake and histologically confirmed incident prostate cancer.\",\"extraction\":{\"effect_size\":3.21,\"effect_type\":\"OR\",\"ci_lower\":2.18,\"ci_upper\":4.75,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":204,\"cases\":102,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"retrospective dietary assessment based on mean food intakes in the latest 3 days\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men with histologically confirmed prostate cancer and healthy matched controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"102 patients suffered from histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"The multivariable adjusted ORs were ... 3.21 (95% CI 2.18-4.75) for retinol\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"3.21 (95% CI 2.18-4.75) for retinol\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"1 : 1 matched case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Total calories and 11 nutrients including protein, lipid and carbohydrates were calculated based on the mean food intakes in the latest 3 days\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"China / epidemiology\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"MeSH terms\"},\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"calculated based on the mean food intakes in the latest 3 days\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"No\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"10325617|Vitamin B1|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Same human matched case-control study reports a multivariable-adjusted odds ratio for dietary vitamin B1 intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":0.029,\"effect_type\":\"OR\",\"ci_lower\":0.009,\"ci_upper\":0.09,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":204,\"cases\":102,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"retrospective dietary assessment based on mean food intakes in the latest 3 days\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men with histologically confirmed prostate cancer and healthy matched controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"102 patients suffered from histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"0.029 (95% CI 0.009-0.09) for vitamin B1\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.029 (95% CI 0.009-0.09) for vitamin B1\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"1 : 1 matched case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"calculated based on the mean food intakes in the latest 3 days\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"China / epidemiology\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"MeSH terms\"},\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Total calories and 11 nutrients ... were calculated based on the mean food intakes in the latest 3 days\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"No\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"10325617|Vitamin C|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Same human matched case-control study reports a multivariable-adjusted odds ratio for dietary vitamin C intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":0.61,\"effect_type\":\"OR\",\"ci_lower\":0.6,\"ci_upper\":0.8,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":204,\"cases\":102,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"retrospective dietary assessment based on mean food intakes in the latest 3 days\",\"continent\":\"Asia\",\"country\":\"China\",\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men with histologically confirmed prostate cancer and healthy matched controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"102 patients suffered from histologically confirmed prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"0.61 (95% CI 0.6-0.80) for vitamin C\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"0.61 (95% CI 0.6-0.80) for vitamin C\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":null,\"design\":{\"excerpt\":\"1 : 1 matched case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"calculated based on the mean food intakes in the latest 3 days\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"China / epidemiology\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"MeSH terms\"},\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"calculated based on the mean food intakes in the latest 3 days\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10325617/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"No\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"10332429|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative literature review based on a MEDLINE search and bibliographic review rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10332429|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of chemoprevention evidence for urological cancers with no original data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10332429|Vitamin A|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review summarizing prior epidemiological and experimental reports rather than primary research.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10332429|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of chemopreventive agents and reports no original human incidence analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10332429|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of chemoprevention literature without original participant-level results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10332919|Green tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is an explicitly stated review of experimental and epidemiological evidence on green tea and prostate cancer chemoprevention rather than an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10332919|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The publication is a narrative review of laboratory and epidemiological tea studies with no primary incidence data of its own.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "10325506|Vitamin A|Prostate cancer",
+      "pmid": "10325506",
+      "pmcid": "",
+      "published_date": "1999",
+      "title": "Chemoprevention of hormone-dependent prostate cancer in the Wistar-Unilever rat.",
+      "authors": [
+        "McCormick DL",
+        "Rao KV"
+      ],
+      "journal": "European urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10325506/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "This is an exclusively preclinical chemoprevention study of 9-cis-retinoic acid in prostate cancers induced in Wistar-Unilever rats, with no human participants.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10325506|Vitamin E|Prostate cancer",
+      "pmid": "10325506",
+      "pmcid": "",
+      "published_date": "1999",
+      "title": "Chemoprevention of hormone-dependent prostate cancer in the Wistar-Unilever rat.",
+      "authors": [
+        "McCormick DL",
+        "Rao KV"
+      ],
+      "journal": "European urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10325506/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Vitamin E (DL-alpha-tocopherol acetate) was tested only in a rat prostate carcinogenesis model, so the evidence is entirely animal-based.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10325617|Vitamin A|Prostate cancer",
+      "pmid": "10325617",
+      "pmcid": "",
+      "published_date": "1997-03-01",
+      "title": "[Relationship between dietary nutrients intakes and human prostate cancer].",
+      "authors": [
+        "Du S",
+        "Shi L",
+        "Zhang H",
+        "He S"
+      ],
+      "journal": "Wei sheng yan jiu = Journal of hygiene research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Matched case-control study in humans reporting a multivariable-adjusted odds ratio for dietary retinol (vitamin A) intake and histologically confirmed incident prostate cancer.",
+      "missing_key_fields": [
+        "comparison_type"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 3.21,
+        "effect_type": "OR",
+        "ci_lower": 2.18,
+        "ci_upper": 4.75,
+        "p_value": 4.3570677211598895e-09,
+        "ci_confidence_level": 95,
+        "total_n": 204,
+        "cases": 102,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "retrospective dietary assessment based on mean food intakes in the latest 3 days",
+        "continent": "Asia",
+        "country": "China",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men with histologically confirmed prostate cancer and healthy matched controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In order to study the relationship between dietary nutrients intakes and prostate cancer, 1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract; total_n derived from reported group counts 102 + 102 = 204"
+          },
+          "cases": {
+            "excerpt": "In order to study the relationship between dietary nutrients intakes and prostate cancer, 1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "The multivariable adjusted ORs were 1.65 (95% confident interval (CI) 1.39-1.96) for lipid, 1.22 (95% CI 1.13-1.31) for carbohydrates, 3.21 (95% CI 2.18-4.75) for retinol, 0.61 (95% CI 0.6-0.80) for vitamin C, and 0.029 (95% CI 0.009-0.09) for vitamin B1. The authors discussed the possible mechanism of dietary nutrients contributing to the risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The multivariable adjusted ORs were 1.65 (95% confident interval (CI) 1.39-1.96) for lipid, 1.22 (95% CI 1.13-1.31) for carbohydrates, 3.21 (95% CI 2.18-4.75) for retinol, 0.61 (95% CI 0.6-0.80) for vitamin C, and 0.029 (95% CI 0.009-0.09) for vitamin B1.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "1 : 1 matched case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Total calories and 11 nutrients including protein, lipid and carbohydrates were calculated based on the mean food intakes in the latest 3 days",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "MeSH terms"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "calculated based on the mean food intakes in the latest 3 days",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 3.21,
+            "effect_type": "OR",
+            "ci_lower": 2.18,
+            "ci_upper": 4.75,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "No",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: comparison_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10325617|Vitamin B1|Prostate cancer",
+      "pmid": "10325617",
+      "pmcid": "",
+      "published_date": "1997-03-01",
+      "title": "[Relationship between dietary nutrients intakes and human prostate cancer].",
+      "authors": [
+        "Du S",
+        "Shi L",
+        "Zhang H",
+        "He S"
+      ],
+      "journal": "Wei sheng yan jiu = Journal of hygiene research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+      "exposure": "Vitamin B1",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Same human matched case-control study reports a multivariable-adjusted odds ratio for dietary vitamin B1 intake and incident prostate cancer.",
+      "missing_key_fields": [
+        "comparison_type"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.029,
+        "effect_type": "OR",
+        "ci_lower": 0.009,
+        "ci_upper": 0.09,
+        "p_value": 1.6673261271294457e-09,
+        "ci_confidence_level": 95,
+        "total_n": 204,
+        "cases": 102,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "retrospective dietary assessment based on mean food intakes in the latest 3 days",
+        "continent": "Asia",
+        "country": "China",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men with histologically confirmed prostate cancer and healthy matched controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In order to study the relationship between dietary nutrients intakes and prostate cancer, 1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract; total_n derived from reported group counts 102 + 102 = 204"
+          },
+          "cases": {
+            "excerpt": "In order to study the relationship between dietary nutrients intakes and prostate cancer, 1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "The multivariable adjusted ORs were 1.65 (95% confident interval (CI) 1.39-1.96) for lipid, 1.22 (95% CI 1.13-1.31) for carbohydrates, 3.21 (95% CI 2.18-4.75) for retinol, 0.61 (95% CI 0.6-0.80) for vitamin C, and 0.029 (95% CI 0.009-0.09) for vitamin B1. The authors discussed the possible mechanism of dietary nutrients contributing to the risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The multivariable adjusted ORs were 1.65 (95% confident interval (CI) 1.39-1.96) for lipid, 1.22 (95% CI 1.13-1.31) for carbohydrates, 3.21 (95% CI 2.18-4.75) for retinol, 0.61 (95% CI 0.6-0.80) for vitamin C, and 0.029 (95% CI 0.009-0.09) for vitamin B1.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "1 : 1 matched case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "calculated based on the mean food intakes in the latest 3 days",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "MeSH terms"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.029,
+            "effect_type": "OR",
+            "ci_lower": 0.009,
+            "ci_upper": 0.09,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "No",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: comparison_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10325617|Vitamin C|Prostate cancer",
+      "pmid": "10325617",
+      "pmcid": "",
+      "published_date": "1997-03-01",
+      "title": "[Relationship between dietary nutrients intakes and human prostate cancer].",
+      "authors": [
+        "Du S",
+        "Shi L",
+        "Zhang H",
+        "He S"
+      ],
+      "journal": "Wei sheng yan jiu = Journal of hygiene research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+      "exposure": "Vitamin C",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Same human matched case-control study reports a multivariable-adjusted odds ratio for dietary vitamin C intake and incident prostate cancer.",
+      "missing_key_fields": [
+        "comparison_type"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.61,
+        "effect_type": "OR",
+        "ci_lower": 0.6,
+        "ci_upper": 0.8,
+        "p_value": 1.636667084174124e-11,
+        "ci_confidence_level": 95,
+        "total_n": 204,
+        "cases": 102,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "retrospective dietary assessment based on mean food intakes in the latest 3 days",
+        "continent": "Asia",
+        "country": "China",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men with histologically confirmed prostate cancer and healthy matched controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In order to study the relationship between dietary nutrients intakes and prostate cancer, 1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract; total_n derived from reported group counts 102 + 102 = 204"
+          },
+          "cases": {
+            "excerpt": "In order to study the relationship between dietary nutrients intakes and prostate cancer, 1 : 1 matched case-control study was carried out with 102 patients suffered from histologically confirmed prostate cancer and 102 healthy controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "The multivariable adjusted ORs were 1.65 (95% confident interval (CI) 1.39-1.96) for lipid, 1.22 (95% CI 1.13-1.31) for carbohydrates, 3.21 (95% CI 2.18-4.75) for retinol, 0.61 (95% CI 0.6-0.80) for vitamin C, and 0.029 (95% CI 0.009-0.09) for vitamin B1. The authors discussed the possible mechanism of dietary nutrients contributing to the risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The multivariable adjusted ORs were 1.65 (95% confident interval (CI) 1.39-1.96) for lipid, 1.22 (95% CI 1.13-1.31) for carbohydrates, 3.21 (95% CI 2.18-4.75) for retinol, 0.61 (95% CI 0.6-0.80) for vitamin C, and 0.029 (95% CI 0.009-0.09) for vitamin B1.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": null,
+          "design": {
+            "excerpt": "1 : 1 matched case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "calculated based on the mean food intakes in the latest 3 days",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "MeSH terms"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "calculated based on the mean food intakes in the latest 3 days",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10325617/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.61,
+            "effect_type": "OR",
+            "ci_lower": 0.6,
+            "ci_upper": 0.8,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "No",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: comparison_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10332429|Selenium|Prostate cancer",
+      "pmid": "10332429",
+      "pmcid": "",
+      "published_date": "1999-06-01",
+      "title": "Chemoprevention of urological cancer.",
+      "authors": [
+        "Kamat AM",
+        "Lamm DL"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10332429/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative literature review based on a MEDLINE search and bibliographic review rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10332429|Soy|Prostate cancer",
+      "pmid": "10332429",
+      "pmcid": "",
+      "published_date": "1999-06-01",
+      "title": "Chemoprevention of urological cancer.",
+      "authors": [
+        "Kamat AM",
+        "Lamm DL"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10332429/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of chemoprevention evidence for urological cancers with no original data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10332429|Vitamin A|Prostate cancer",
+      "pmid": "10332429",
+      "pmcid": "",
+      "published_date": "1999-06-01",
+      "title": "Chemoprevention of urological cancer.",
+      "authors": [
+        "Kamat AM",
+        "Lamm DL"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10332429/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review summarizing prior epidemiological and experimental reports rather than primary research.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10332429|Vitamin D|Prostate cancer",
+      "pmid": "10332429",
+      "pmcid": "",
+      "published_date": "1999-06-01",
+      "title": "Chemoprevention of urological cancer.",
+      "authors": [
+        "Kamat AM",
+        "Lamm DL"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10332429/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of chemopreventive agents and reports no original human incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10332429|Vitamin E|Prostate cancer",
+      "pmid": "10332429",
+      "pmcid": "",
+      "published_date": "1999-06-01",
+      "title": "Chemoprevention of urological cancer.",
+      "authors": [
+        "Kamat AM",
+        "Lamm DL"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10332429/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of chemoprevention literature without original participant-level results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10332919|Green tea|Prostate cancer",
+      "pmid": "10332919",
+      "pmcid": "",
+      "published_date": "1999-05-01",
+      "title": "Prostate cancer chemoprevention by green tea.",
+      "authors": [
+        "Gupta S",
+        "Ahmad N",
+        "Mukhtar H"
+      ],
+      "journal": "Seminars in urologic oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10332919/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is an explicitly stated review of experimental and epidemiological evidence on green tea and prostate cancer chemoprevention rather than an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10332919|Tea|Prostate cancer",
+      "pmid": "10332919",
+      "pmcid": "",
+      "published_date": "1999-05-01",
+      "title": "Prostate cancer chemoprevention by green tea.",
+      "authors": [
+        "Gupta S",
+        "Ahmad N",
+        "Mukhtar H"
+      ],
+      "journal": "Seminars in urologic oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10332919/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The publication is a narrative review of laboratory and epidemiological tea studies with no primary incidence data of its own.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

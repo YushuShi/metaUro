@@ -1,0 +1,320 @@
+{
+  "schema_version": 1,
+  "receipt_id": "4fdf93119c5d7f4d0c13e783443515e4e0358801f0dc75c903744ae6a8c2c76f",
+  "requested_at": "2026-09-02T08:46:57.867605+08:00",
+  "received_at": "2026-09-02T08:47:24.980938+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "9b6ed6a658b6940a894b3db9db49ee06403113e30d78068efdc42f78cd812b3a",
+  "attempt": 2,
+  "context_ids": [
+    "24568894|Alcohol|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1
+  },
+  "input_digest": "19dc8547ca28bab725754636e74ef6cabe42cfe56fb9b49e60c6247ccab3b59a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10048,
+    "cached_input_tokens": 0,
+    "output_tokens": 3485,
+    "reasoning_tokens": 1642
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02060475",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "95c4e649-05e5-4b9b-ac3f-c80cfdb4e950",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02060475"
+  },
+  "output_sha256": "e9798c470e7bc39dca3093c38ba1615ad4f52daaec5bac1db312e7313d46bdca",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"24568894|Alcohol|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort analysis within the REDUCE trial evaluated the association between alcohol consumption and prostate cancer risk with complete risk estimates and multivariable adjustment.\",\n      \"extraction\": {\n        \"effect_size\": 1.86,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.2,\n        \"ci_upper\": 2.87,\n        \"p_value\": 0.01,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 6374,\n        \"cases\": 61,\n        \"comparison_type\": \"extreme_categories\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": null,\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men aged 50-75 with PSA 2.5-10.0 ng/ml and a prior negative prostate biopsy enrolled in the REDUCE trial\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Analysis included 6374 REDUCE participants, including 998 and 435 men diagnosed with low-grade or high-grade PCa, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Section 3. Results, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Dutasteride ... Heavy ** ... Cases: 61\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Table 2, Dutasteride arm, High-grade PCa\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Similarly, moderate and heavy alcohol consumption were significantly associated with increased risk of a high-grade PCa diagnosis by 57% and 86% ( p < 0.02), respectively, compared with nondrinkers.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Section 3. Results, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Dutasteride ... Heavy ** ... High-grade PCa ... OR: 1.86, 95% CI: 1.20–2.87, p: 0.01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"In contrast, men randomized to dutasteride and reporting more than seven drinks per week were 86% more likely to be diagnosed with high-grade PCa ( p = 0.01).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Abstract, Results and limitations\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Alcohol intake was analyzed as a continuous variable (units per week) and also categorized to represent nondrinkers (0 U/wk), moderate drinkers ( 7 U/wk) and heavy drinkers (>7 U/wk).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Section 2.3. Data collection, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"Reduction by Dutasteride of Prostate Cancer Events was a 4-yr, multicenter, randomized, double-blind, placebo-controlled trial to compare PCa after dutasteride administration (0.5 mg/d) with placebo.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Abstract, Design, settings, and participants\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants had a baseline prostate-specific antigen between 2.5 and 10.0 ng/ml and a recent negative prostate biopsy. Alcohol intake was determined by baseline questionnaire, and participants underwent a prostate biopsy to determine PCa status at 2 yr and 4 yr of follow-up.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Abstract, Design, settings, and participants\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Geographic region, no. (%) ... Canada, United States, and Puerto Rico ... Europe ... Other\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Table 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Race, no. (%) ... White ... Black ... Other\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Geographic region, no. (%) ... Europe ... Canada, United States, and Puerto Rico ... Other\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"All REDUCE participants in this analysis completed a medical history questionnaire prior to randomization, including age, race, smoking, medication use, and alcohol use. Intake of beer, wine, and liquor was converted to standard units of alcoholic drinks per week\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/\",\n            \"location\": \"Section 2.3. Data collection, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:22:43.206306+08:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "e9798c470e7bc39dca3093c38ba1615ad4f52daaec5bac1db312e7313d46bdca"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "field": "results[0].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4127165/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    }
+  ],
+  "validated_results": [
+    {
+      "context_id": "24568894|Alcohol|Prostate cancer",
+      "pmid": "24568894",
+      "pmcid": "PMC4127165",
+      "published_date": "2014-12-01",
+      "title": "Alcohol intake increases high-grade prostate cancer risk among men taking dutasteride in the REDUCE trial.",
+      "authors": [
+        "Fowke JH",
+        "Howard L",
+        "Andriole GL",
+        "Freedland SJ"
+      ],
+      "journal": "European urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/24568894/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort analysis within the REDUCE trial evaluated the association between alcohol consumption and prostate cancer risk with complete risk estimates and multivariable adjustment.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.86,
+        "effect_type": "OR",
+        "ci_lower": 1.2,
+        "ci_upper": 2.87,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 6374,
+        "cases": 61,
+        "comparison_type": "extreme_categories",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 50-75 with PSA 2.5-10.0 ng/ml and a prior negative prostate biopsy enrolled in the REDUCE trial",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Analysis included 6374 REDUCE participants, including 998 and 435 men diagnosed with low-grade or high-grade PCa, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Section 3. Results, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "61",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Table 2, Dutasteride arm, High-grade PCa"
+          },
+          "effect_size": {
+            "excerpt": "1.86 1.20–2.87",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Section 3. Results, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "1.86 1.20–2.87",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "In contrast, men randomized to dutasteride and reporting more than seven drinks per week were 86% more likely to be diagnosed with high-grade PCa ( p = 0.01).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Abstract, Results and limitations"
+          },
+          "comparison": {
+            "excerpt": "Alcohol intake was analyzed as a continuous variable (units per week) and also categorized to represent nondrinkers (0 U/wk), moderate drinkers ( 7 U/wk) and heavy drinkers (>7 U/wk).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Section 2.3. Data collection, paragraph 1"
+          },
+          "design": {
+            "excerpt": "Reduction by Dutasteride of Prostate Cancer Events was a 4-yr, multicenter, randomized, double-blind, placebo-controlled trial to compare PCa after dutasteride administration (0.5 mg/d) with placebo.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Abstract, Design, settings, and participants"
+          },
+          "timing": {
+            "excerpt": "Participants had a baseline prostate-specific antigen between 2.5 and 10.0 ng/ml and a recent negative prostate biopsy. Alcohol intake was determined by baseline questionnaire, and participants underwent a prostate biopsy to determine PCa status at 2 yr and 4 yr of follow-up.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Abstract, Design, settings, and participants"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Table 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "All REDUCE participants in this analysis completed a medical history questionnaire prior to randomization, including age, race, smoking, medication use, and alcohol use. Intake of beer, wine, and liquor was converted to standard units of alcoholic drinks per week",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4127165/",
+            "location": "Section 2.3. Data collection, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.01",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 28270,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "e1ca2a24242b1ec582a40f9e241481aaec2c8baaf3a3ad4f910b1847714d9f89",
+      "pmc_source_receipt_digest": "bdd6c82d01bc339fa2bf5a927fbdd797426dd5280a3b7ae9403ee16f16f53fcb",
+      "pmc_source_raw_sha256": "78225820435038b2cc966eb10130433ab5aa161823fd4e5a7be88417ba2a63ed",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "14dd71389fc2613617370b1f6a3636040350c5bdefdacfb93ee96dbaaea6b0c8"
+    }
+  ]
+}

@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:39:07.417062-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "97bbf490acce1753f6688848585c8fb46cc8798495376fe1cb73822454e72d3d",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "40885251",
+      "title": "Cancer incidence and mortality risk: associations with diet quality scores in a predominantly low-income and Black cohort study.",
+      "abstract": "Diet quality is a modifiable risk factor for cancer incidence and mortality. However, a substantial research gap exists regarding diet quality metrics' relationships with cancer risk among Black individuals or those with low socioeconomic status. This study aimed to investigate the associations of dietary approaches to stop hypertension (DASH), empirical dietary inflammatory pattern (EDIP), and empirical dietary index for hyperinsulinemia (EDIH) scores with total, colorectal, prostate, and breast cancer incidence and mortality within the prospective Southern Community Cohort Study (SCCS). The SCCS enrolled 84,507 adults, focusing on Black individuals and those with low socioeconomic status. DASH, EDIP, and EDIH scores were calculated based on a food frequency questionnaire and analyzed using cohort-specific quartiles. Chi-square and analysis of variance tests were used to test univariate associations between dietary scores and baseline characteristics. Cox proportional hazards models with adjustment for confounders were used to derive hazard ratios (HRs) and 95% confidence intervals (95% CIs). Spearman correlation tests were performed to calculate the correlations between dietary scores and biomarkers of inflammation and metabolic dysregulation (e.g., C-peptide, high-sensitivity C-reactive protein). Diet quality was better in females and White individuals compared with males and Black individuals. Generally, DASH, EDIP, and EDIH showed mostly null or modest associations with cancer incidence and mortality. Notably, higher diet quality measured by DASH was associated with lower colorectal (HR = 0.79; 95% CI: 0.65, 0.97) and prostate cancer mortality (HR = 0.56; 95% CI: 0.38, 0.83) among White participants. Overall, Pearson's correlation test did not show any strong correlations between the biomarkers and dietary scores. Our study suggests that dietary indices are at most weakly related to cancer risk among the generally low-income SCCS participants. It highlights the need for more research on nutrition and cancer prevention in socioeconomically and racially diverse populations.",
+      "mesh": [
+        "Humans",
+        "Female",
+        "Male",
+        "Middle Aged",
+        "Neoplasms / mortality, epidemiology",
+        "Incidence",
+        "Black or African American",
+        "Diet",
+        "Poverty",
+        "Risk Factors",
+        "Adult",
+        "Prospective Studies",
+        "Aged",
+        "Cohort Studies",
+        "White"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "40885251",
+      "contexts": [
+        {
+          "context_id": "40885251|DASH diet|Prostate cancer",
+          "exposure": "DASH diet",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "72784",
+              "effect_measure_type": "HR",
+              "effect_size": "1.02",
+              "ci_lower": "0.96",
+              "ci_upper": "1.08",
+              "p_value": null,
+              "comparison": "1-SD decrease in DASH score"
+            },
+            "Claude+Gemini": {
+              "sample_size": "72784",
+              "effect_measure_type": "HR",
+              "effect_size": "0.99",
+              "ci_lower": "0.85",
+              "ci_upper": "1.16",
+              "p_value": "0.86",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:13.944118-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "8f1c90739c3a21838f4414ccdb46ffade1062a6dd475c876f74a2ef083d4760b",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19276452",
+      "title": "Folic acid and risk of prostate cancer: results from a randomized clinical trial.",
+      "abstract": "Data regarding the association between folate status and risk of prostate cancer are sparse and conflicting. We studied prostate cancer occurrence in the Aspirin/Folate Polyp Prevention Study, a placebo-controlled randomized trial of aspirin and folic acid supplementation for the chemoprevention of colorectal adenomas conducted between July 6, 1994, and December 31, 2006. Participants were followed for up to 10.8 (median = 7.0, interquartile range = 6.0-7.8) years and asked periodically to report all illnesses and hospitalizations. Aspirin alone had no statistically significant effect on prostate cancer incidence, but there were marked differences according to folic acid treatment. Among the 643 men who were randomly assigned to placebo or supplementation with folic acid, the estimated probability of being diagnosed with prostate cancer over a 10-year period was 9.7% (95% confidence interval [CI] = 6.5% to 14.5%) in the folic acid group and 3.3% (95% CI = 1.7% to 6.4%) in the placebo group (age-adjusted hazard ratio = 2.63, 95% CI = 1.23 to 5.65, Wald test P = .01). In contrast, baseline dietary folate intake and plasma folate in nonmultivitamin users were inversely associated with risk of prostate cancer, although these associations did not attain statistical significance in adjusted analyses. These findings highlight the potential complex role of folate in prostate cancer and the possibly different effects of folic acid-containing supplements vs natural sources of folate.",
+      "mesh": [
+        "Adenoma / prevention & control",
+        "Aged",
+        "Aged, 80 and over",
+        "Anti-Inflammatory Agents, Non-Steroidal / therapeutic use",
+        "Aspirin / therapeutic use",
+        "Colorectal Neoplasms / prevention & control",
+        "Cyclooxygenase Inhibitors / therapeutic use",
+        "Dietary Supplements",
+        "Double-Blind Method",
+        "Folic Acid / blood, therapeutic use",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Kaplan-Meier Estimate",
+        "Male",
+        "Middle Aged",
+        "Proportional Hazards Models",
+        "Prostatic Neoplasms / chemically induced, epidemiology, mortality, prevention & control",
+        "Research Design",
+        "Surveys and Questionnaires",
+        "United States / epidemiology",
+        "Vitamin B Complex / blood, therapeutic use"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19276452",
+      "contexts": [
+        {
+          "context_id": "19276452|Folic acid|Prostate cancer",
+          "exposure": "Folic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "643",
+              "effect_measure_type": "HR",
+              "effect_size": "2.63",
+              "ci_lower": "1.23",
+              "ci_upper": "5.65",
+              "p_value": "0.01",
+              "comparison": "folic acid supplementation versus placebo"
+            },
+            "Claude+Gemini": {
+              "sample_size": "643",
+              "effect_measure_type": "HR",
+              "effect_size": "2.58",
+              "ci_lower": "1.14",
+              "ci_upper": "5.86",
+              "p_value": "0.02",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

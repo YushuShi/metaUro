@@ -1,0 +1,755 @@
+{
+  "schema_version": 1,
+  "receipt_id": "86eed1bad416bfc6f9ca2ccc77e137538f4cab391a2b9d8bf3ec896bebc2b440",
+  "requested_at": "2026-09-02T07:24:15.936146+08:00",
+  "received_at": "2026-09-02T07:25:23.815725+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "e780ec8090726f25e3a5df4394494cc4de4b7e7f6930527e7a2c027b4d254625",
+  "attempt": 1,
+  "context_ids": [
+    "7549805|Fermented foods|Prostate cancer",
+    "7549805|Genistein|Prostate cancer",
+    "7549805|Legumes|Prostate cancer",
+    "7549805|Miso|Prostate cancer",
+    "7549805|Soy|Prostate cancer",
+    "7585644|Vitamin D|Prostate cancer",
+    "7612803|Vitamin D|Prostate cancer",
+    "7621463|Beta-carotene|Prostate cancer",
+    "7656220|Genistein|Prostate cancer",
+    "7701667|Alcohol|Prostate cancer",
+    "7732201|Dietary protein intake|Prostate cancer",
+    "7749054|Beta-carotene|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Beta-carotene": 2,
+    "Dietary protein intake": 1,
+    "Fermented foods": 1,
+    "Genistein": 2,
+    "Legumes": 1,
+    "Miso": 1,
+    "Soy": 1,
+    "Vitamin D": 2
+  },
+  "input_digest": "0495ea501d487c7a7e1252e2920c2a2a1c825f3355e46f0d4a3846de96ed878c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10684,
+    "cached_input_tokens": 0,
+    "output_tokens": 7119,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.23139500000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "618b721d-455e-4c55-96d0-ced4fe78dda1",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.23139500000000002"
+  },
+  "output_sha256": "bfab81a09aa0368d3875925ea98934c343f23d542e128539834480b2b0b1fd64",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"7549805|Fermented foods|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"This is an analytical method-development and urinary isoflavone excretion study with no prostate cancer incidence results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7549805|Genistein|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"The study quantifies genistein in soy products and urine without any measurement of prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7549805|Legumes|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"Legume consumption is discussed only as background; no prostate cancer incidence outcome is reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7549805|Miso|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"Miso is analyzed only for isoflavone content, with no prostate cancer incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7549805|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"Soymilk ingestion is assessed for urinary isoflavone excretion only, without prostate cancer incidence results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7585644|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The chemoprevention experiment with a vitamin D analogue was conducted exclusively in Lobund-Wistar rats.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7612803|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective nested case-control analysis of prediagnostic serum vitamin D metabolites and subsequent prostate cancer incidence in humans.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":183,\"cases\":61,\"comparison_type\":\"quintiles of serum vitamin D metabolite level, cases vs matched controls\",\"design\":\"case_control\",\"timing\":\"prediagnostic serum collected 1974, cancers diagnosed 1980-1992\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"Washington County, Maryland\",\"ethnicity\":\"NA\",\"population\":\"Male county residents who donated blood in a 1974 collection campaign\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Each prostate cancer case was matched to two controls on age (+/- 1 yr) and race.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"We studied sera obtained from 61 residents who were diagnosed with prostate cancer during the period 1980 through 1992.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, methods\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"Serum levels of vitamin D metabolites did not differ significantly between cases and controls.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"No statistically significant trends or differences between cases and controls were found in an analysis by quintile of serum level.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We sought to test this hypothesis using sera obtained in a large, prospective cohort study.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"stored sera obtained from 20,305 county residents during a blood collection campaign undertaken in August through November 1974\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"A serum bank in Washington County, Maryland (United States)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Washington County, Maryland (United States)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, methods\"},\"exposure_measurement\":{\"excerpt\":\"Mean 25-hydroxyvitamin D (25-D) levels were 34.3 ng/ml and 33.2 ng/ml\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7612803/\",\"location\":\"abstract, results\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7621463|Beta-carotene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative overview of prostate cancer descriptive epidemiology and treatment in Japan that only summarizes previously reported risk factors including beta-carotene intake.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7656220|Genistein|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Genotoxicity of genistein and daidzein was studied exclusively in female ICR mice.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7701667|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Cohort of alcohol abusers followed for incident cancer reports a prostate cancer relative risk, providing a population-level alcohol exposure estimate.\",\"extraction\":{\"effect_size\":1.4,\"effect_type\":\"RR\",\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":18307,\"cases\":null,\"comparison_type\":\"alcohol abusers versus the total Danish population\",\"design\":\"cohort\",\"timing\":\"entered an out-patient clinic between 1954-1987 and followed for cancer incidence\",\"continent\":\"Europe\",\"country\":\"Denmark\",\"location\":\"Copenhagen\",\"ethnicity\":\"NA\",\"population\":\"Non-hospitalized alcoholic men and women attending an out-patient clinic\",\"exposure_subtype\":\"mixed_or_unclear\",\"exposure_measurement_type\":\"unclear\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Of 18,368 alcohol abusers who entered an out-patient clinic in Copenhagen between 1954-1987, 18,307 were followed.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, methods\"},\"cases\":null,\"effect_size\":{\"excerpt\":\"The men developed prostatic cancer significantly more frequently than expected (RR = 1.4).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Their cancer incidence was compared to that of the total Danish population.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, methods\"},\"design\":{\"excerpt\":\"large cohorts of non-hospitalized alcoholic men an women\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, background\"},\"timing\":{\"excerpt\":\"who entered an out-patient clinic in Copenhagen between 1954-1987, 18,307 were followed\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"an out-patient clinic in Copenhagen\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Copenhagen\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, methods\"},\"exposure_measurement\":{\"excerpt\":\"18,368 alcohol abusers who entered an out-patient clinic\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7701667/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"No\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"No\",\"q5\":\"No\",\"q6\":\"Unclear\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Unclear\",\"q11\":\"Unclear\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7732201|Dietary protein intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a critical review of 75 previously published epidemiological studies on cooked food mutagens and protein intake.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7749054|Beta-carotene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study of dietary intake reporting the association between dietary beta-carotene intake and incident prostate cancer risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":414,\"cases\":207,\"comparison_type\":\"quartile levels of dietary intake from a quantitative diet history\",\"design\":\"case_control\",\"timing\":\"diagnosis notified between April 1990 and April 1992 with retrospective diet history\",\"continent\":\"North America\",\"country\":\"Canada\",\"location\":\"Ontario, Canada\",\"ethnicity\":\"NA\",\"population\":\"Men with histologically confirmed adenocarcinoma of the prostate and randomly selected male controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"The study included 207 cases (51.4 percent of those eligible) and 207 controls (39.4 percent of those eligible)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"The study included 207 cases (51.4 percent of those eligible)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, methods\"},\"effect_size\":{\"excerpt\":\"there was essentially no association between dietary beta-carotene intake and risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"men at the uppermost quartile level of energy intake had a 75 percent increase in risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"was investigated in a case-control study conducted in Ontario, Canada\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"notified to the Ontario Cancer Registry between April 1990 and April 1992\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"a case-control study conducted in Ontario, Canada\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, methods\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"Ontario, Canada\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, title/methods\"},\"exposure_measurement\":{\"excerpt\":\"information on dietary intake was collected from them by means of a quantitative diet history\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7749054/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "7549805|Fermented foods|Prostate cancer",
+      "pmid": "7549805",
+      "pmcid": "",
+      "published_date": "1995",
+      "title": "A simplified method to quantify isoflavones in commercial soybean diets and human urine after legume consumption.",
+      "authors": [
+        "Lu LJ",
+        "Broemeling LD",
+        "Marshall MV",
+        "Ramanujam VM"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7549805/",
+      "exposure": "Fermented foods",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "This is an analytical method-development and urinary isoflavone excretion study with no prostate cancer incidence results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7549805|Genistein|Prostate cancer",
+      "pmid": "7549805",
+      "pmcid": "",
+      "published_date": "1995",
+      "title": "A simplified method to quantify isoflavones in commercial soybean diets and human urine after legume consumption.",
+      "authors": [
+        "Lu LJ",
+        "Broemeling LD",
+        "Marshall MV",
+        "Ramanujam VM"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7549805/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "The study quantifies genistein in soy products and urine without any measurement of prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7549805|Legumes|Prostate cancer",
+      "pmid": "7549805",
+      "pmcid": "",
+      "published_date": "1995",
+      "title": "A simplified method to quantify isoflavones in commercial soybean diets and human urine after legume consumption.",
+      "authors": [
+        "Lu LJ",
+        "Broemeling LD",
+        "Marshall MV",
+        "Ramanujam VM"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7549805/",
+      "exposure": "Legumes",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "Legume consumption is discussed only as background; no prostate cancer incidence outcome is reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7549805|Miso|Prostate cancer",
+      "pmid": "7549805",
+      "pmcid": "",
+      "published_date": "1995",
+      "title": "A simplified method to quantify isoflavones in commercial soybean diets and human urine after legume consumption.",
+      "authors": [
+        "Lu LJ",
+        "Broemeling LD",
+        "Marshall MV",
+        "Ramanujam VM"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7549805/",
+      "exposure": "Miso",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "Miso is analyzed only for isoflavone content, with no prostate cancer incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7549805|Soy|Prostate cancer",
+      "pmid": "7549805",
+      "pmcid": "",
+      "published_date": "1995",
+      "title": "A simplified method to quantify isoflavones in commercial soybean diets and human urine after legume consumption.",
+      "authors": [
+        "Lu LJ",
+        "Broemeling LD",
+        "Marshall MV",
+        "Ramanujam VM"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7549805/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "Soymilk ingestion is assessed for urinary isoflavone excretion only, without prostate cancer incidence results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7585644|Vitamin D|Prostate cancer",
+      "pmid": "7585644",
+      "pmcid": "",
+      "published_date": "1995-12-01",
+      "title": "Chemopreventive activity of tamoxifen, N-(4-hydroxyphenyl)retinamide, and the vitamin D analogue Ro24-5531 for androgen-promoted carcinomas of the rat seminal vesicle and prostate.",
+      "authors": [
+        "Lucia MS",
+        "Anzano MA",
+        "Slayter MV",
+        "Anver MR",
+        "Green DM",
+        "Shrader MW",
+        "Logsdon DL",
+        "Driver CL",
+        "Brown CC",
+        "Peer CW"
+      ],
+      "journal": "Cancer research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7585644/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The chemoprevention experiment with a vitamin D analogue was conducted exclusively in Lobund-Wistar rats.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7612803|Vitamin D|Prostate cancer",
+      "pmid": "7612803",
+      "pmcid": "",
+      "published_date": "1995-05-01",
+      "title": "Prostate cancer and prediagnostic levels of serum vitamin D metabolites (Maryland, United States).",
+      "authors": [
+        "Braun MM",
+        "Helzlsouer KJ",
+        "Hollis BW",
+        "Comstock GW"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective nested case-control analysis of prediagnostic serum vitamin D metabolites and subsequent prostate cancer incidence in humans.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 183,
+        "cases": 61,
+        "comparison_type": "quintiles of serum vitamin D metabolite level, cases vs matched controls",
+        "design": "case_control",
+        "timing": "prediagnostic serum collected 1974, cancers diagnosed 1980-1992",
+        "continent": "North America",
+        "country": "United States",
+        "location": "Washington County, Maryland",
+        "ethnicity": "NA",
+        "population": "Male county residents who donated blood in a 1974 collection campaign",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "We studied sera obtained from 61 residents who were diagnosed with prostate cancer during the period 1980 through 1992.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, methods"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Serum levels of vitamin D metabolites did not differ significantly between cases and controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "No statistically significant trends or differences between cases and controls were found in an analysis by quintile of serum level.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We sought to test this hypothesis using sera obtained in a large, prospective cohort study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "stored sera obtained from 20,305 county residents during a blood collection campaign undertaken in August through November 1974",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "A serum bank in Washington County, Maryland (United States)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Washington County, Maryland (United States)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Mean 25-hydroxyvitamin D (25-D) levels were 34.3 ng/ml and 33.2 ng/ml",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7612803/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7621463|Beta-carotene|Prostate cancer",
+      "pmid": "7621463",
+      "pmcid": "",
+      "published_date": "1995",
+      "title": "The geography of prostate cancer and its treatment in Japan.",
+      "authors": [
+        "Oishi K",
+        "Yoshida O",
+        "Schroeder FH"
+      ],
+      "journal": "Cancer surveys",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7621463/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative overview of prostate cancer descriptive epidemiology and treatment in Japan that only summarizes previously reported risk factors including beta-carotene intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7656220|Genistein|Prostate cancer",
+      "pmid": "7656220",
+      "pmcid": "",
+      "published_date": "1995-08-16",
+      "title": "Genetic damage and the inhibition of 7,12-dimethylbenz[a]anthracene-induced genetic damage by the phytoestrogens, genistein and daidzein, in female ICR mice.",
+      "authors": [
+        "Giri AK",
+        "Lu LJ"
+      ],
+      "journal": "Cancer letters",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7656220/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Genotoxicity of genistein and daidzein was studied exclusively in female ICR mice.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7701667|Alcohol|Prostate cancer",
+      "pmid": "7701667",
+      "pmcid": "",
+      "published_date": "1995-02-27",
+      "title": "[Cancer morbidity among alcoholics].",
+      "authors": [
+        "Tønnesen H",
+        "Møller H",
+        "Andersen JR",
+        "Jensen E",
+        "Juel K"
+      ],
+      "journal": "Ugeskrift for laeger",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Cohort of alcohol abusers followed for incident cancer reports a prostate cancer relative risk, providing a population-level alcohol exposure estimate.",
+      "missing_key_fields": [
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.4,
+        "effect_type": "RR",
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 18307,
+        "cases": null,
+        "comparison_type": "alcohol abusers versus the total Danish population",
+        "design": "cohort",
+        "timing": "entered an out-patient clinic between 1954-1987 and followed for cancer incidence",
+        "continent": "Europe",
+        "country": "Denmark",
+        "location": "Copenhagen",
+        "ethnicity": "NA",
+        "population": "Non-hospitalized alcoholic men and women attending an out-patient clinic",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "unclear",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Of 18,368 alcohol abusers who entered an out-patient clinic in Copenhagen between 1954-1987, 18,307 were followed.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, methods"
+          },
+          "cases": null,
+          "effect_size": {
+            "excerpt": "The women had a significantly increased risk of cervical cancer (RR = 2.0). The men developed prostatic cancer significantly more frequently than expected (RR = 1.4).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Their cancer incidence was compared to that of the total Danish population.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, methods"
+          },
+          "design": {
+            "excerpt": "large cohorts of non-hospitalized alcoholic men an women",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, background"
+          },
+          "timing": {
+            "excerpt": "who entered an out-patient clinic in Copenhagen between 1954-1987, 18,307 were followed",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "an out-patient clinic in Copenhagen",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Copenhagen",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "18,368 alcohol abusers who entered an out-patient clinic",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7701667/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "No",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "No",
+          "q5": "No",
+          "q6": "Unclear",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Unclear",
+          "q11": "Unclear",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 27.3,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7732201|Dietary protein intake|Prostate cancer",
+      "pmid": "7732201",
+      "pmcid": "",
+      "published_date": "1995",
+      "title": "The role of cooked food mutagens as possible etiological agents in human cancer. A critical appraisal of recent epidemiological investigations.",
+      "authors": [
+        "de Meester C",
+        "Gerber GB"
+      ],
+      "journal": "Revue d'epidemiologie et de sante publique",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7732201/",
+      "exposure": "Dietary protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a critical review of 75 previously published epidemiological studies on cooked food mutagens and protein intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7749054|Beta-carotene|Prostate cancer",
+      "pmid": "7749054",
+      "pmcid": "",
+      "published_date": "1995-03-01",
+      "title": "Dietary factors and risk of prostate cancer: a case-control study in Ontario, Canada.",
+      "authors": [
+        "Rohan TE",
+        "Howe GR",
+        "Burch JD",
+        "Jain M"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study of dietary intake reporting the association between dietary beta-carotene intake and incident prostate cancer risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 414,
+        "cases": 207,
+        "comparison_type": "quartile levels of dietary intake from a quantitative diet history",
+        "design": "case_control",
+        "timing": "diagnosis notified between April 1990 and April 1992 with retrospective diet history",
+        "continent": "North America",
+        "country": "Canada",
+        "location": "Ontario, Canada",
+        "ethnicity": "NA",
+        "population": "Men with histologically confirmed adenocarcinoma of the prostate and randomly selected male controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 207 cases (51.4 percent of those eligible) and 207 controls (39.4 percent of those eligible), and information on dietary intake was collected from them by means of a quantitative diet history. There was a positive association between energy intake and risk of prostate cancer, such that men at the uppermost quartile level of energy intake had a 75 percent increase in risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, methods; total_n derived from reported group counts 207 + 207 = 414"
+          },
+          "cases": {
+            "excerpt": "The study included 207 cases (51.4 percent of those eligible) and 207 controls (39.4 percent of those eligible), and information on dietary intake was collected from them by means of a quantitative diet history.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, methods"
+          },
+          "effect_size": {
+            "excerpt": "there was essentially no association between dietary beta-carotene intake and risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "men at the uppermost quartile level of energy intake had a 75 percent increase in risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "was investigated in a case-control study conducted in Ontario, Canada",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "notified to the Ontario Cancer Registry between April 1990 and April 1992",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "a case-control study conducted in Ontario, Canada",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "Ontario, Canada",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, title/methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "information on dietary intake was collected from them by means of a quantitative diet history",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7749054/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:44.687573-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "275da4260fca3e37527ac4e8ee6b03a8e6a49b98aa7c54f99135cc64d686083a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "24089626",
+      "title": "Comparing statistical methods for removing seasonal variation from vitamin D measurements in case-control studies.",
+      "abstract": "Vitamin D deficiency has been shown to be associated with multiple clinical outcomes, including osteoporosis, multiple sclerosis and colorectal cancer. In studies of vitamin D effect on disease outcome, vitamin D status is usually measured by a serum biomarker, namely 25-hydroxy vitamin D [25(OH)D]. Since the circulating 25(OH)D concentration varies from season to season and not all blood samples are collected at the same time, the disease-vitamin D relationship can be obscured if the seasonal variation is not adjusted properly. In the literature, a two-step procedure is usually adopted, with the vitamin D level adjusted for the seasonal variation being obtained in the first step, and the effect of vitamin D being assessed based on the adjusted vitamin D level at the second step. This two-step method can generate misleading results as the estimation variance arising from the first step is not taken into account in the second step analysis. We consider three alternative procedures that unify the two steps into a single model. We conduct an extensive simulation study to evaluate the performance of these methods and demonstrate their applications in a study of 25(OH)D effect on prostate cancer risk.",
+      "mesh": []
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "24089626",
+      "contexts": [
+        {
+          "context_id": "24089626|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NONPRIMARY"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

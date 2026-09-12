@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "revision_date": "2026-08-29",
+  "description": "Revision-aware exposure scope for the 2026-08-29 catalog update. This file is data, not executable instructions.",
+  "additional_catalog_files": [
+    "data/additionalExposure.json",
+    "data/additionalExposureV2.json"
+  ],
+  "sets": {
+    "alias_expanded_existing": [
+      "Flaxseed",
+      "Mushrooms",
+      "Omega-6 fatty acids",
+      "Omega-7 fatty acids",
+      "St. John wort",
+      "Vitamin B2",
+      "Vitamin B3",
+      "Vitamin B5",
+      "Vitamin B6",
+      "Vitamin B7"
+    ],
+    "alias_narrowed_or_reclassified": [
+      "Fish oil",
+      "Omega-3 fatty acids",
+      "Tomato"
+    ],
+    "new_in_modified_synonyms": [
+      "Pyridoxal 5′-phosphate (PLP)",
+      "Vitamin K1",
+      "Vitamin K2",
+      "Vitamin K3"
+    ]
+  },
+  "screening_scope": {
+    "alias_expanded_existing": "all-history NCBI discovery followed by Luna-Sol-conditional-Luna screening",
+    "new_in_modified_synonyms": "all-history NCBI discovery followed by Luna-Sol-conditional-Luna screening",
+    "additional_catalog": "all atomic and searchable-parent entries in the collision-checked additionalExposure.json plus additionalExposureV2.json union receive all-history NCBI discovery and full screening",
+    "alias_narrowed_or_reclassified": "included-record reclassification review only; do not launch a new NCBI discovery search",
+    "unchanged_existing": "do not rescreen"
+  },
+  "reclassification_targets": {
+    "Fish oil": [
+      "Eicosapentaenoic acid",
+      "Docosahexaenoic acid",
+      "Omega-3 fatty acids"
+    ],
+    "Omega-3 fatty acids": [
+      "Alpha-linolenic acid",
+      "Stearidonic acid",
+      "Eicosatetraenoic acid (omega-3)",
+      "Eicosapentaenoic acid",
+      "Docosapentaenoic acid (omega-3)",
+      "Docosahexaenoic acid"
+    ],
+    "Tomato": [
+      "Lycopene"
+    ]
+  },
+  "transactional_reclassification_policy": {
+    "review_scope": "Inspect included source records only; do not launch ESearch for narrowed/reclassified sources.",
+    "target_acceptance": "Add a target record only after the same PMID/effect passes the current classification review for that target.",
+    "source_removal": "Remove the source record only in the same committed transaction after target acceptance succeeds.",
+    "failed_or_ambiguous": "Retain the source record and place it in the adjudication ledger with a one-sentence reason."
+  },
+  "non_inheriting_relationships": [
+    {
+      "exposure": "Nicotinamide riboside",
+      "related_to": [
+        "Vitamin B3",
+        "NAD+ precursors"
+      ],
+      "relationship": "biochemically related",
+      "evidence_rollup": false,
+      "note": "Nicotinamide riboside is related to vitamin B3 and NAD+ precursor metabolism, but its evidence must not be unioned into Vitamin B3."
+    }
+  ],
+  "hierarchy_policy": {
+    "direct_search": "Search each configured exposure only with its own bounded vocabulary.",
+    "inherited_membership": "After direct screening, add child evidence to all ancestors in data/exposure_hierarchy.json.",
+    "duplicate_avoidance": "Do not inflate parent aliases with child vocabularies or create duplicate model contexts for inherited memberships."
+  }
+}

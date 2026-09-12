@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:07:16.883320-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "eeff4a13e95b0d8b8de5b9e0feff03ddfd6ed759e50aafef394694f9265ee326",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "2434937",
+      "title": "Medical, life-style, and occupational risk factors for prostate cancer.",
+      "abstract": "Information on suspected risk factors for prostate cancer was obtained from in-person interviews as part of a case-control study of tissue sex hormone receptors and serum hormone levels. The risk factors examined were medical history (including venereal disease), sexual history, smoking, alcohol consumption, and occupational exposures. Study subjects were 40 prostate cancer patients and 64 benign prostatic hyperplasia controls who were newly diagnosed during 1984-1985 at North Carolina Memorial Hospital in Chapel Hill. Subjects were white and black men aged 50 years and older. Comparisons of cases' and controls' past medical histories did not support a venereal disease hypothesis of prostate cancer etiology. The most prominent finding is an association with farming employment: 75% of cases compared to 38% of controls reported farmwork occupations. Exposures to pesticides and herbicides, while more common among the patients, did not account for the association detected for farming. No relationship was observed with cadmium exposure, the most frequently cited occupational risk factor for prostate cancer.",
+      "mesh": [
+        "Adenocarcinoma / epidemiology, etiology",
+        "Agriculture",
+        "Alcohol Drinking",
+        "Humans",
+        "Life Style",
+        "Male",
+        "Middle Aged",
+        "North Carolina",
+        "Occupational Diseases / epidemiology, etiology",
+        "Prostatic Hyperplasia / epidemiology, etiology",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk",
+        "Sexual Behavior",
+        "Smoking"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "2434937",
+      "contexts": [
+        {
+          "context_id": "2434937|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Prostate cancer cases versus benign prostatic hyperplasia controls"
+            },
+            "Claude+Gemini": {
+              "sample_size": "104",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

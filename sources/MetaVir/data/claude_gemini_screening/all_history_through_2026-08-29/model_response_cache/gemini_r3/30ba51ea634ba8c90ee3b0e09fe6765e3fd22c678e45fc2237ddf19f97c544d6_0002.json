@@ -1,0 +1,349 @@
+{
+  "schema_version": 1,
+  "receipt_id": "2888a755cb1075e96c527a8847d044c4af68fdebc7e5142e3eb45a64e332c3ee",
+  "requested_at": "2026-09-02T08:42:15.274066+08:00",
+  "received_at": "2026-09-02T08:42:46.214152+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "30ba51ea634ba8c90ee3b0e09fe6765e3fd22c678e45fc2237ddf19f97c544d6",
+  "attempt": 2,
+  "context_ids": [
+    "21930800|Processed meat intake|Prostate cancer",
+    "21930800|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Processed meat intake": 1,
+    "Red meat": 1
+  },
+  "input_digest": "d585d55ad5670b07defe14c80a47e65ead30134ba58d21e322aab31908f6221a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 18592,
+    "cached_input_tokens": 0,
+    "output_tokens": 4563,
+    "reasoning_tokens": 1186
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.03105525",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "cb7292b5-b0c5-4b57-8bb9-bd83a2a05940",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.03105525"
+  },
+  "output_sha256": "b90277b1ca59f3fdc5a7d3b184b1ae553c84b18d1eb3cdb35342b50473d4077c",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"21930800|Processed meat intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study provides multivariable-adjusted hazard ratios for incident lethal prostate cancer according to processed red meat intake.\",\n      \"extraction\": {\n        \"effect_size\": 1.52,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.89,\n        \"ci_upper\": 2.61,\n        \"p_value\": 0.2,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 27607,\n        \"cases\": 199,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Male health professionals free of diagnosed cancer at baseline in 1994\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"leaving 27,607 men eligible for the incidence analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Inclusion/exclusion criteria / Paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We observed 199 events of lethal prostate cancer among 27,607 men during 306,715 person-years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"RESULTS / Incidence of lethal prostate cancer / Paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total processed red meat... Model 2 HR (95% CI)... ≥ 3: 1.52 (0.89, 2.61)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total processed red meat... Model 2 HR (95% CI)... ≥ 3: 1.52 (0.89, 2.61)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total processed red meat... Model 2 HR (95% CI)... P - trend: 0.20\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Total processed red meat... < 0.5... ≥ 3\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Therefore, we prospectively examined total, unprocessed, and processed red meat, poultry, and eggs in relation to risk of lethal prostate cancer\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Abstract / Paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Additionally, our study population was predominately Caucasian, and therefore our findings may not be generalizable to populations with different racial distributions.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"DISCUSSION / Limitations / Paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Participants completed a baseline questionnaire on medical diagnoses, physical activity, weight, medications, and smoking, as well as a semi-quantitative food frequency questionnaire (FFQ)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"21930800|Red meat|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluates the multivariable-adjusted association between total red meat intake and risk of lethal prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.07,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.66,\n        \"ci_upper\": 1.75,\n        \"p_value\": 0.99,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 27607,\n        \"cases\": 199,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Male health professionals free of diagnosed cancer at baseline in 1994\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"leaving 27,607 men eligible for the incidence analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Inclusion/exclusion criteria / Paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We observed 199 events of lethal prostate cancer among 27,607 men during 306,715 person-years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"RESULTS / Incidence of lethal prostate cancer / Paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total red meat... Model 2 HR (95% CI)... ≥ 8: 1.07 (0.66, 1.75)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total red meat... Model 2 HR (95% CI)... ≥ 8: 1.07 (0.66, 1.75)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total red meat... Model 2 HR (95% CI)... P - trend: 0.99\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Total red meat... < 3... ≥ 8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Therefore, we prospectively examined total, unprocessed, and processed red meat, poultry, and eggs in relation to risk of lethal prostate cancer\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"Abstract / Paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Additionally, our study population was predominately Caucasian, and therefore our findings may not be generalizable to populations with different racial distributions.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"DISCUSSION / Limitations / Paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Participants completed a baseline questionnaire on medical diagnoses, physical activity, weight, medications, and smoking, as well as a semi-quantitative food frequency questionnaire (FFQ)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/\",\n            \"location\": \"SUBJECTS AND METHODS / Study population / Paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "21930800|Processed meat intake|Prostate cancer",
+      "pmid": "21930800",
+      "pmcid": "PMC3232297",
+      "published_date": "2011-12-01",
+      "title": "Egg, red meat, and poultry intake and risk of lethal prostate cancer in the prostate-specific antigen-era: incidence and survival.",
+      "authors": [
+        "Richman EL",
+        "Kenfield SA",
+        "Stampfer MJ",
+        "Giovannucci EL",
+        "Chan JM"
+      ],
+      "journal": "Cancer prevention research (Philadelphia, Pa.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21930800/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study provides multivariable-adjusted hazard ratios for incident lethal prostate cancer according to processed red meat intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.52,
+        "effect_type": "HR",
+        "ci_lower": 0.89,
+        "ci_upper": 2.61,
+        "p_value": 0.2,
+        "ci_confidence_level": 95,
+        "total_n": 27607,
+        "cases": 199,
+        "comparison_type": "extreme_quantiles",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Male health professionals free of diagnosed cancer at baseline in 1994",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We observed 199 events of lethal prostate cancer among 27,607 men during 306,715 person-years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Inclusion/exclusion criteria / Paragraph 1"
+          },
+          "cases": {
+            "excerpt": "We also performed a case-only survival analysis to examine post-diagnostic consumption of these foods and risk of lethal prostate cancer among the 3,127 men initially diagnosed with non-metastatic prostate cancer during follow-up. In the incidence analysis, we observed 199 events during 306,715 person-years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "RESULTS / Incidence of lethal prostate cancer / Paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.52 (0.89, 2.61)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.52 (0.89, 2.61)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "0.20",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Study population / Paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Therefore, we prospectively examined total, unprocessed, and processed red meat, poultry, and eggs in relation to risk of lethal prostate cancer",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Abstract / Paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Study population / Paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Participants completed a baseline questionnaire on medical diagnoses, physical activity, weight, medications, and smoking, as well as a semi-quantitative food frequency questionnaire (FFQ)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Study population / Paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.2",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52710,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "3d2b59e397fcad320a31479aa4442fb016acbcf84063ecc3c9b3df07676bae95",
+      "pmc_source_receipt_digest": "03aa47656d471127e0f4ae74d9db56f83eaefa7670b834871e5eacf46261ebd8",
+      "pmc_source_raw_sha256": "ad009ebdc47c48183ff286b4f57cace9ac9d0d4ff46394acd1c87566f65a289c",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "98436e607d8c60fbd9642f3a1cb666925aa85b49a7864165a741f0320b55c664"
+    },
+    {
+      "context_id": "21930800|Red meat|Prostate cancer",
+      "pmid": "21930800",
+      "pmcid": "PMC3232297",
+      "published_date": "2011-12-01",
+      "title": "Egg, red meat, and poultry intake and risk of lethal prostate cancer in the prostate-specific antigen-era: incidence and survival.",
+      "authors": [
+        "Richman EL",
+        "Kenfield SA",
+        "Stampfer MJ",
+        "Giovannucci EL",
+        "Chan JM"
+      ],
+      "journal": "Cancer prevention research (Philadelphia, Pa.)",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/21930800/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluates the multivariable-adjusted association between total red meat intake and risk of lethal prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.07,
+        "effect_type": "HR",
+        "ci_lower": 0.66,
+        "ci_upper": 1.75,
+        "p_value": 0.99,
+        "ci_confidence_level": 95,
+        "total_n": 27607,
+        "cases": 199,
+        "comparison_type": "extreme_quantiles",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Male health professionals free of diagnosed cancer at baseline in 1994",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We observed 199 events of lethal prostate cancer among 27,607 men during 306,715 person-years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Inclusion/exclusion criteria / Paragraph 1"
+          },
+          "cases": {
+            "excerpt": "We also performed a case-only survival analysis to examine post-diagnostic consumption of these foods and risk of lethal prostate cancer among the 3,127 men initially diagnosed with non-metastatic prostate cancer during follow-up. In the incidence analysis, we observed 199 events during 306,715 person-years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "RESULTS / Incidence of lethal prostate cancer / Paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Epidemiologic evidence for choline and prostate cancer is limited; however a nested case-control study reported that men in the highest quartile of plasma choline had a 48% increased risk of prostate cancer compared to men in the lowest quartile (odds ratio: 1.48; 95% CI: 1.07, 2.04) ( 21 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.07 (0.66, 1.75)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "0.99",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Study population / Paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Therefore, we prospectively examined total, unprocessed, and processed red meat, poultry, and eggs in relation to risk of lethal prostate cancer",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "Abstract / Paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The HPFS is an on-going prospective cohort study initiated in 1986 among 51,529 US male health professionals",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Study population / Paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Participants completed a baseline questionnaire on medical diagnoses, physical activity, weight, medications, and smoking, as well as a semi-quantitative food frequency questionnaire (FFQ)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3232297/",
+            "location": "SUBJECTS AND METHODS / Study population / Paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.99",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 52710,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "3d2b59e397fcad320a31479aa4442fb016acbcf84063ecc3c9b3df07676bae95",
+      "pmc_source_receipt_digest": "03aa47656d471127e0f4ae74d9db56f83eaefa7670b834871e5eacf46261ebd8",
+      "pmc_source_raw_sha256": "ad009ebdc47c48183ff286b4f57cace9ac9d0d4ff46394acd1c87566f65a289c",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "a33da977f236e1acb065903479998bbf84a1e5105ac623426a25942df550f97f"
+    }
+  ]
+}

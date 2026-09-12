@@ -1,0 +1,798 @@
+{
+  "schema_version": 1,
+  "receipt_id": "b9daac2867d9a1da65ad15afcd943e2c354968f340c288883f52705165d5ef7b",
+  "requested_at": "2026-09-02T08:31:03.341399+08:00",
+  "received_at": "2026-09-02T08:32:18.830397+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "bcd8ede0817ec4252066a78acdd063da41f62d2b700633758c44cbbb47440ab4",
+  "attempt": 2,
+  "context_ids": [
+    "37139178|Copper|Prostate cancer",
+    "37139178|Iron|Prostate cancer",
+    "37139178|Magnesium|Prostate cancer",
+    "37139178|Selenium|Prostate cancer",
+    "37139178|Vitamin B6|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Copper": 1,
+    "Iron": 1,
+    "Magnesium": 1,
+    "Selenium": 1,
+    "Vitamin B6": 1
+  },
+  "input_digest": "dd520800282d662106232014b13dcde10351f5dfb6cc8e7321c3a11d2d57ea5d",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15775,
+    "cached_input_tokens": 0,
+    "output_tokens": 11425,
+    "reasoning_tokens": 2582
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.054675",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3d5d9d27-3fbd-425a-b482-a9d05ff1c1bc",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.054675"
+  },
+  "output_sha256": "fb40f575d90a84ef0d4df9d7342abc4021f189ddbb64f3406245fa0ce21c728f",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"37139178|Copper|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary copper intake.\",\n      \"extraction\": {\n        \"effect_size\": 1.055,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.003,\n        \"ci_upper\": 1.11,\n        \"p_value\": 0.04,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 43112,\n        \"cases\": 6058,\n        \"comparison_type\": \"high vs low\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"United States\",\n        \"ethnicity\": \"Multi-ethnic\",\n        \"population\": \"PLCO trial participants (41,830 European Americans and 1,282 African Americans)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"In II and III, the information of aggressive cases (ie, Gleason score ⩾7 and/or T-stage III-IV) and benign cases (i.e., Gleason score <7 and T-stage I-II) was used.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"sup_copper whole RR 1.055\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"sup_copper whole 95% CI 1.003-1.110\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"sup_copper whole P-value .04\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Two-level discretization was established using the mean as the cutoff.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"timing\": {\n            \"excerpt\": \"A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The first set included 29 metrics for dietary nutrients (dt_x, x is protein or others), 21 supplementary nutrients (sup_y_dhq, y is selenium or others)... The dt_x and sup_y metrics were calculated from the questionnaire responses by DietCalc software\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Diet metrics, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Unclear\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37139178|Iron|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary iron intake.\",\n      \"extraction\": {\n        \"effect_size\": 1.058,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.006,\n        \"ci_upper\": 1.113,\n        \"p_value\": 0.03,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 43112,\n        \"cases\": 6058,\n        \"comparison_type\": \"high vs low\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"United States\",\n        \"ethnicity\": \"Multi-ethnic\",\n        \"population\": \"PLCO trial participants (41,830 European Americans and 1,282 African Americans)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"In II and III, the information of aggressive cases (ie, Gleason score ⩾7 and/or T-stage III-IV) and benign cases (i.e., Gleason score <7 and T-stage I-II) was used.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"sup_iron whole RR 1.058\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"sup_iron whole 95% CI 1.006-1.113\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"sup_iron whole P-value .03\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Two-level discretization was established using the mean as the cutoff.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"timing\": {\n            \"excerpt\": \"A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The first set included 29 metrics for dietary nutrients (dt_x, x is protein or others), 21 supplementary nutrients (sup_y_dhq, y is selenium or others)... The dt_x and sup_y metrics were calculated from the questionnaire responses by DietCalc software\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Diet metrics, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Unclear\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37139178|Magnesium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary magnesium intake.\",\n      \"extraction\": {\n        \"effect_size\": 1.056,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.003,\n        \"ci_upper\": 1.11,\n        \"p_value\": 0.04,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 43112,\n        \"cases\": 6058,\n        \"comparison_type\": \"high vs low\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"United States\",\n        \"ethnicity\": \"Multi-ethnic\",\n        \"population\": \"PLCO trial participants (41,830 European Americans and 1,282 African Americans)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"In II and III, the information of aggressive cases (ie, Gleason score ⩾7 and/or T-stage III-IV) and benign cases (i.e., Gleason score <7 and T-stage I-II) was used.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"sup_mag whole RR 1.056\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"sup_mag whole 95% CI 1.003-1.110\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"sup_mag whole P-value .04\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Two-level discretization was established using the mean as the cutoff.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"timing\": {\n            \"excerpt\": \"A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The first set included 29 metrics for dietary nutrients (dt_x, x is protein or others), 21 supplementary nutrients (sup_y_dhq, y is selenium or others)... The dt_x and sup_y metrics were calculated from the questionnaire responses by DietCalc software\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Diet metrics, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Unclear\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37139178|Selenium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary selenium intake.\",\n      \"extraction\": {\n        \"effect_size\": 1.129,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.023,\n        \"ci_upper\": 1.246,\n        \"p_value\": 0.02,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 43112,\n        \"cases\": 6058,\n        \"comparison_type\": \"high vs low\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"United States\",\n        \"ethnicity\": \"Multi-ethnic\",\n        \"population\": \"PLCO trial participants (41,830 European Americans and 1,282 African Americans)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"In II and III, the information of aggressive cases (ie, Gleason score ⩾7 and/or T-stage III-IV) and benign cases (i.e., Gleason score <7 and T-stage I-II) was used.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"sup_selen whole RR 1.129\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"sup_selen whole 95% CI 1.023-1.246\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"sup_selen whole P-value .02\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Two-level discretization was established using the mean as the cutoff.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"timing\": {\n            \"excerpt\": \"A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The first set included 29 metrics for dietary nutrients (dt_x, x is protein or others), 21 supplementary nutrients (sup_y_dhq, y is selenium or others)... The dt_x and sup_y metrics were calculated from the questionnaire responses by DietCalc software\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Diet metrics, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Unclear\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"37139178|Vitamin B6|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary vitamin B6 intake.\",\n      \"extraction\": {\n        \"effect_size\": 0.894,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.823,\n        \"ci_upper\": 0.971,\n        \"p_value\": 0.01,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 43112,\n        \"cases\": 6058,\n        \"comparison_type\": \"high vs low\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"United States\",\n        \"ethnicity\": \"Multi-ethnic\",\n        \"population\": \"PLCO trial participants (41,830 European Americans and 1,282 African Americans)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"In II and III, the information of aggressive cases (ie, Gleason score ⩾7 and/or T-stage III-IV) and benign cases (i.e., Gleason score <7 and T-stage I-II) was used.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"sup_b6 whole RR 0.894\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"sup_b6 whole 95% CI 0.823-0.971\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"sup_b6 whole P-value .01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Results, Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Two-level discretization was established using the mean as the cutoff.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"timing\": {\n            \"excerpt\": \"A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Statistical methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Datasets, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The first set included 29 metrics for dietary nutrients (dt_x, x is protein or others), 21 supplementary nutrients (sup_y_dhq, y is selenium or others)... The dt_x and sup_y metrics were calculated from the questionnaire responses by DietCalc software\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/\",\n            \"location\": \"Material and Methods, Diet metrics, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Unclear\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "37139178|Copper|Prostate cancer",
+      "pmid": "37139178",
+      "pmcid": "PMC10150431",
+      "published_date": "2023",
+      "title": "Quantifying the Contributions of Environmental Factors to Prostate Cancer and Detecting Risk-Related Diet Metrics and Racial Disparities.",
+      "authors": [
+        "Zhang W",
+        "Zhang K"
+      ],
+      "journal": "Cancer informatics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37139178/",
+      "exposure": "Copper",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary copper intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.055,
+        "effect_type": "HR",
+        "ci_lower": 1.003,
+        "ci_upper": 1.11,
+        "p_value": 0.04,
+        "ci_confidence_level": 95,
+        "total_n": 43112,
+        "cases": 6058,
+        "comparison_type": "high vs low",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "PLCO trial participants (41,830 European Americans and 1,282 African Americans)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The subjects for whom the time from the date of trial entry, i.e., the date when a participant was randomized into the screening or control arm, to the DHQ entry date was longer than 6 years and those with a personal PCa history preceding the date of trial entry were also excluded. After this refinement, the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Datasets, paragraph 1; total_n derived from reported group counts 41830 + 1282 = 43112"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1"
+          },
+          "effect_size": {
+            "excerpt": "1.055 1.003-1.110",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "1.055 1.003-1.110",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "p_value": {
+            "excerpt": "An exception was dietary saturated fat, for which the correlation was significant ( P = .02) and relatively substantial ( r = .04) in cancer samples but not in noncancer samples.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "comparison": {
+            "excerpt": "Two-level discretization was established using the mean as the cutoff.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Abstract, Methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Diet metrics, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43532,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "500e1ead682f4edef14aa4d2feddfadfe8b5aae312813314a54727b27b593331",
+      "pmc_source_receipt_digest": "a7dc42f83b8616daf19cadc586f02efb175bf1060e7b04f7598fafc8a53b1841",
+      "pmc_source_raw_sha256": "1aba55c5913ddcbcc33b89e47f785c93925e7d80e7588d3e16f961a213a88bb7",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "100ff5645ebb2dc6e8df8cbd5266efdc17ccb6aa6667f136a3fd7aecf7f38a40"
+    },
+    {
+      "context_id": "37139178|Iron|Prostate cancer",
+      "pmid": "37139178",
+      "pmcid": "PMC10150431",
+      "published_date": "2023",
+      "title": "Quantifying the Contributions of Environmental Factors to Prostate Cancer and Detecting Risk-Related Diet Metrics and Racial Disparities.",
+      "authors": [
+        "Zhang W",
+        "Zhang K"
+      ],
+      "journal": "Cancer informatics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37139178/",
+      "exposure": "Iron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary iron intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.058,
+        "effect_type": "HR",
+        "ci_lower": 1.006,
+        "ci_upper": 1.113,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": 43112,
+        "cases": 6058,
+        "comparison_type": "high vs low",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "PLCO trial participants (41,830 European Americans and 1,282 African Americans)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The subjects for whom the time from the date of trial entry, i.e., the date when a participant was randomized into the screening or control arm, to the DHQ entry date was longer than 6 years and those with a personal PCa history preceding the date of trial entry were also excluded. After this refinement, the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Datasets, paragraph 1; total_n derived from reported group counts 41830 + 1282 = 43112"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1"
+          },
+          "effect_size": {
+            "excerpt": "1.058 1.006-1.113",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "1.058 1.006-1.113",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "p_value": {
+            "excerpt": ".03",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "comparison": {
+            "excerpt": "Two-level discretization was established using the mean as the cutoff.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Abstract, Methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Diet metrics, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43532,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "500e1ead682f4edef14aa4d2feddfadfe8b5aae312813314a54727b27b593331",
+      "pmc_source_receipt_digest": "a7dc42f83b8616daf19cadc586f02efb175bf1060e7b04f7598fafc8a53b1841",
+      "pmc_source_raw_sha256": "1aba55c5913ddcbcc33b89e47f785c93925e7d80e7588d3e16f961a213a88bb7",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "9ced662388fe4f2af7c7a979e30b7a7ebf4078a7904dbc25b8b06b3321c4d40b"
+    },
+    {
+      "context_id": "37139178|Magnesium|Prostate cancer",
+      "pmid": "37139178",
+      "pmcid": "PMC10150431",
+      "published_date": "2023",
+      "title": "Quantifying the Contributions of Environmental Factors to Prostate Cancer and Detecting Risk-Related Diet Metrics and Racial Disparities.",
+      "authors": [
+        "Zhang W",
+        "Zhang K"
+      ],
+      "journal": "Cancer informatics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37139178/",
+      "exposure": "Magnesium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary magnesium intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.056,
+        "effect_type": "HR",
+        "ci_lower": 1.003,
+        "ci_upper": 1.11,
+        "p_value": 0.04,
+        "ci_confidence_level": 95,
+        "total_n": 43112,
+        "cases": 6058,
+        "comparison_type": "high vs low",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "PLCO trial participants (41,830 European Americans and 1,282 African Americans)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The subjects for whom the time from the date of trial entry, i.e., the date when a participant was randomized into the screening or control arm, to the DHQ entry date was longer than 6 years and those with a personal PCa history preceding the date of trial entry were also excluded. After this refinement, the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Datasets, paragraph 1; total_n derived from reported group counts 41830 + 1282 = 43112"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1"
+          },
+          "effect_size": {
+            "excerpt": "1.056 1.003-1.110",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "1.056 1.003-1.110",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "p_value": {
+            "excerpt": "An exception was dietary saturated fat, for which the correlation was significant ( P = .02) and relatively substantial ( r = .04) in cancer samples but not in noncancer samples.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "comparison": {
+            "excerpt": "Two-level discretization was established using the mean as the cutoff.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Abstract, Methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Diet metrics, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43532,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "500e1ead682f4edef14aa4d2feddfadfe8b5aae312813314a54727b27b593331",
+      "pmc_source_receipt_digest": "a7dc42f83b8616daf19cadc586f02efb175bf1060e7b04f7598fafc8a53b1841",
+      "pmc_source_raw_sha256": "1aba55c5913ddcbcc33b89e47f785c93925e7d80e7588d3e16f961a213a88bb7",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "68493b5d5632d7069e4bd12cf95ca9d8ac0b14df0972a9f5711aca53a35451b8"
+    },
+    {
+      "context_id": "37139178|Selenium|Prostate cancer",
+      "pmid": "37139178",
+      "pmcid": "PMC10150431",
+      "published_date": "2023",
+      "title": "Quantifying the Contributions of Environmental Factors to Prostate Cancer and Detecting Risk-Related Diet Metrics and Racial Disparities.",
+      "authors": [
+        "Zhang W",
+        "Zhang K"
+      ],
+      "journal": "Cancer informatics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37139178/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary selenium intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.129,
+        "effect_type": "HR",
+        "ci_lower": 1.023,
+        "ci_upper": 1.246,
+        "p_value": 0.02,
+        "ci_confidence_level": 95,
+        "total_n": 43112,
+        "cases": 6058,
+        "comparison_type": "high vs low",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "PLCO trial participants (41,830 European Americans and 1,282 African Americans)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The subjects for whom the time from the date of trial entry, i.e., the date when a participant was randomized into the screening or control arm, to the DHQ entry date was longer than 6 years and those with a personal PCa history preceding the date of trial entry were also excluded. After this refinement, the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Datasets, paragraph 1; total_n derived from reported group counts 41830 + 1282 = 43112"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1"
+          },
+          "effect_size": {
+            "excerpt": "1.129 1.023-1.246",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "1.129 1.023-1.246",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "p_value": {
+            "excerpt": "An exception was dietary saturated fat, for which the correlation was significant ( P = .02) and relatively substantial ( r = .04) in cancer samples but not in noncancer samples.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "comparison": {
+            "excerpt": "Two-level discretization was established using the mean as the cutoff.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Abstract, Methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Diet metrics, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43532,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "500e1ead682f4edef14aa4d2feddfadfe8b5aae312813314a54727b27b593331",
+      "pmc_source_receipt_digest": "a7dc42f83b8616daf19cadc586f02efb175bf1060e7b04f7598fafc8a53b1841",
+      "pmc_source_raw_sha256": "1aba55c5913ddcbcc33b89e47f785c93925e7d80e7588d3e16f961a213a88bb7",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "9f3b78f077dd1cfbff5df273621894093e4a34192ac0e7db1b4ed89b3f8ce467"
+    },
+    {
+      "context_id": "37139178|Vitamin B6|Prostate cancer",
+      "pmid": "37139178",
+      "pmcid": "PMC10150431",
+      "published_date": "2023",
+      "title": "Quantifying the Contributions of Environmental Factors to Prostate Cancer and Detecting Risk-Related Diet Metrics and Racial Disparities.",
+      "authors": [
+        "Zhang W",
+        "Zhang K"
+      ],
+      "journal": "Cancer informatics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37139178/",
+      "exposure": "Vitamin B6",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis within the PLCO screening trial reporting risk of prostate cancer associated with supplementary vitamin B6 intake.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.894,
+        "effect_type": "HR",
+        "ci_lower": 0.823,
+        "ci_upper": 0.971,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 43112,
+        "cases": 6058,
+        "comparison_type": "high vs low",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "PLCO trial participants (41,830 European Americans and 1,282 African Americans)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The subjects for whom the time from the date of trial entry, i.e., the date when a participant was randomized into the screening or control arm, to the DHQ entry date was longer than 6 years and those with a personal PCa history preceding the date of trial entry were also excluded. After this refinement, the working dataset (WD) included the information of 41 830 Non-Hispanic European American (EA) males and 1282 Non-Hispanic African Americans (AA) males.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Datasets, paragraph 1; total_n derived from reported group counts 41830 + 1282 = 43112"
+          },
+          "cases": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Basic model analysis for the PCa risk, paragraph 2 / Table 1"
+          },
+          "effect_size": {
+            "excerpt": "0.894 0.823-0.971",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "0.894 0.823-0.971",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "p_value": {
+            "excerpt": "*, **, and *** denote significance levels with P -value less than .1, .05, and .01.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Results, Table 3"
+          },
+          "comparison": {
+            "excerpt": "Two-level discretization was established using the mean as the cutoff.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We pursued these goals by analyzing the data collected by the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial (PLCO) project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Introduction, paragraph 4"
+          },
+          "timing": {
+            "excerpt": "A series of Cox proportional hazards regression analyses, where the PCa indicator (1 or 0) and disease-free survival time from the date of trial entry to the end of the follow-up were dependent variables, were conducted",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Statistical methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "We performed a unique analysis of the Diet History Questionnaire data of 41 830 European Americans (EAs) and 1282 African Americans (AAs) in the PLCO project.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Abstract, Methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10150431/",
+            "location": "Material and Methods, Diet metrics, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.01",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43532,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "500e1ead682f4edef14aa4d2feddfadfe8b5aae312813314a54727b27b593331",
+      "pmc_source_receipt_digest": "a7dc42f83b8616daf19cadc586f02efb175bf1060e7b04f7598fafc8a53b1841",
+      "pmc_source_raw_sha256": "1aba55c5913ddcbcc33b89e47f785c93925e7d80e7588d3e16f961a213a88bb7",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "31ba0b8087adab41349cbfe09f6c63cf97ae0e34fa62e9bf5e226824925b6cbb"
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:25:31.591433-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9d6fd5964eb9e91cd58f88e7eb5d7e4924048b33a87415a8cf213dbe43a24cc0",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "16434593",
+      "title": "A prospective study of lycopene and tomato product intake and risk of prostate cancer.",
+      "abstract": "Dietary lycopene and tomato products may reduce risk of prostate cancer; however, uncertainty remains about this possible association. We evaluated the association between intake of lycopene and specific tomato products and prostate cancer risk in the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial, a multicenter study designed to investigate cancer early detection methods and etiologic determinants. Participants completed both a general risk factor and a 137-item food frequency questionnaire at baseline. A total of 1,338 cases of prostate cancer were identified among 29,361 men during an average of 4.2 years of follow-up. Lycopene intake was not associated with prostate cancer risk. Reduced risks were also not found for total tomato servings or for most tomato-based foods. Statistically nonsignificant inverse associations were noted for pizza [all prostate cancer: relative risk (RR), 0.83; 95% confidence interval (95% CI), 0.67-1.03 for >or=1 serving/wk versus < 0.5 serving/mo; P(trend)=0.06 and advanced prostate cancer: RR, 0.79; 95% CI, 0.56-1.10; P(trend)=0.12] and spaghetti/tomato sauce consumption (advanced prostate cancer: RR=0.81, 95% CI, 0.57-1.16 for >or=2 servings/wk versus<1 serving/mo; P(trend)=0.31). Among men with a family history of prostate cancer, risks were decreased in relation to increased consumption of lycopene (P(trend)=0.04) and specific tomato-based foods commonly eaten with fat (spaghetti, P(trend)=0.12; pizza, P(trend)=0.15; lasagna, P(trend)=0.02). This large study does not support the hypothesis that greater lycopene/tomato product consumption protects from prostate cancer. Evidence for protective associations in subjects with a family history of prostate cancer requires further corroboration.",
+      "mesh": [
+        "Aged",
+        "Anticarcinogenic Agents / administration & dosage",
+        "Antioxidants / administration & dosage",
+        "Carotenoids / administration & dosage",
+        "Diet",
+        "Genetic Predisposition to Disease",
+        "Humans",
+        "Lycopene",
+        "Solanum lycopersicum",
+        "Male",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, prevention & control",
+        "Risk Assessment",
+        "United States"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "16434593",
+      "contexts": [
+        {
+          "context_id": "16434593|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "29361",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "greater versus lower consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "29361",
+              "effect_measure_type": "RR",
+              "effect_size": "0.83",
+              "ci_lower": "0.67",
+              "ci_upper": "1.03",
+              "p_value": "0.06",
+              "comparison": "≥1 serving/wk versus <0.5 serving/mo of pizza"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

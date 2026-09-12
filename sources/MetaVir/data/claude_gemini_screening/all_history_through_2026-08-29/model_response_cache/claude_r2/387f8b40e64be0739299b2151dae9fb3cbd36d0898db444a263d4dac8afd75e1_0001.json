@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ce624af98ba7537b232473e8e47e64459542f85790af7e17feed891965520b57",
+  "requested_at": "2026-09-02T08:10:20.886583+08:00",
+  "received_at": "2026-09-02T08:10:39.072630+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "387f8b40e64be0739299b2151dae9fb3cbd36d0898db444a263d4dac8afd75e1",
+  "attempt": 1,
+  "context_ids": [
+    "28423352|Inositol|Prostate cancer",
+    "28423366|Legumes|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Inositol": 1,
+    "Legumes": 1
+  },
+  "input_digest": "e27a52106d9ccd9e211645e9cfa59c7d8c5d64d309d44768c74263943e5135db",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5638,
+    "cached_input_tokens": 0,
+    "output_tokens": 1438,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.06414",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "4d72a083-5b7c-401f-8b64-cef7cb84a70c",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.06414"
+  },
+  "output_sha256": "c04636f83edbd5435b6d4730a460c9f835a725077d3f36649a6156bc621c64cc",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"28423352|Inositol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Inositol appears only incidentally as the metabolomic compound \\\"inositol 1-phosphate\\\" among 625 identified serum metabolites in an untargeted biomarker profiling analysis, not as an assessed nutritional inositol exposure.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"28423366|Legumes|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a meta-analysis of prospective cohort studies rather than an original human study, as stated: \\\"We conducted a meta-analysis of prospective cohort studies.\\\"\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "28423352|Inositol|Prostate cancer",
+      "pmid": "28423352",
+      "pmcid": "PMC5542177",
+      "published_date": "2017-07-11",
+      "title": "Prospective serum metabolomic profile of prostate cancer by size and extent of primary tumor.",
+      "authors": [
+        "Huang J",
+        "Mondul AM",
+        "Weinstein SJ",
+        "Karoly ED",
+        "Sampson JN",
+        "Albanes D"
+      ],
+      "journal": "Oncotarget",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28423352/",
+      "exposure": "Inositol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Inositol appears only incidentally as the metabolomic compound \"inositol 1-phosphate\" among 625 identified serum metabolites in an untargeted biomarker profiling analysis, not as an assessed nutritional inositol exposure.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "28423366|Legumes|Prostate cancer",
+      "pmid": "28423366",
+      "pmcid": "PMC5546517",
+      "published_date": "2017-07-04",
+      "title": "Legume intake and risk of prostate cancer: a meta-analysis of prospective cohort studies.",
+      "authors": [
+        "Li J",
+        "Mao QQ"
+      ],
+      "journal": "Oncotarget",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/28423366/",
+      "exposure": "Legumes",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a meta-analysis of prospective cohort studies rather than an original human study, as stated: \"We conducted a meta-analysis of prospective cohort studies.\".",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

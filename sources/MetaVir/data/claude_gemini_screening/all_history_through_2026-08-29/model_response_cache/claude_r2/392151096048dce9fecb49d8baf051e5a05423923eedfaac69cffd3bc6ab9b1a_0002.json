@@ -1,0 +1,998 @@
+{
+  "schema_version": 1,
+  "receipt_id": "4d87124e5fdb6d80a62829dafd18f418f6b107dc7eddbac533db85386676d36b",
+  "requested_at": "2026-09-02T07:59:31.920812+08:00",
+  "received_at": "2026-09-02T08:01:10.589433+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "392151096048dce9fecb49d8baf051e5a05423923eedfaac69cffd3bc6ab9b1a",
+  "attempt": 2,
+  "context_ids": [
+    "22494720|Selenium|Prostate cancer",
+    "22494720|Vitamin E|Prostate cancer",
+    "22499501|Vitamin D|Prostate cancer",
+    "22504869|Calcium|Prostate cancer",
+    "22504869|Vitamin D|Prostate cancer",
+    "22527163|Folic acid|Prostate cancer",
+    "22527163|Vitamin B2|Prostate cancer",
+    "22527168|Animal protein intake|Prostate cancer",
+    "22527168|Dietary protein intake|Prostate cancer",
+    "22527172|Oats|Prostate cancer",
+    "22527172|Whole-grain intake|Prostate cancer",
+    "22532363|Dairy|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Animal protein intake": 1,
+    "Calcium": 1,
+    "Dairy": 1,
+    "Dietary protein intake": 1,
+    "Folic acid": 1,
+    "Oats": 1,
+    "Selenium": 1,
+    "Vitamin B2": 1,
+    "Vitamin D": 2,
+    "Vitamin E": 1,
+    "Whole-grain intake": 1
+  },
+  "input_digest": "1bbdf23b3efe454df22a68dcc60772e6c2d28413113f8af50bea8e32f943c413",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9408,
+    "cached_input_tokens": 0,
+    "output_tokens": 10888,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.31924",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3d47dcaf-e37c-445f-b09c-30f676e5d9fc",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.31924"
+  },
+  "output_sha256": "73dbedb7bc2be5554242dc272152b5c45d7633ebb15f3dad58b2bb0de8cb4e17",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"22494720|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a \\\"Re:\\\" correspondence/commentary item on the SELECT trial with no abstract or original results reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"22494720|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The record is a commentary letter responding to the SELECT vitamin E findings rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"22499501|Vitamin D|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective nested case-control study of prediagnostic plasma 25(OH)D and risk of (lethal) prostate cancer provides a population-wide biomarker estimate.\",\"extraction\":{\"effect_size\":0.43,\"effect_type\":\"OR\",\"ci_lower\":0.24,\"ci_upper\":0.76,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":2591,\"cases\":114,\"comparison_type\":\"highest vs lowest quartile of plasma 25(OH)D\",\"design\":\"prospective nested case-control\",\"timing\":\"prediagnostic blood sample provided in 1993-1995\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men in the Health Professionals Follow-up Study\",\"exposure_subtype\":\"human_biomarker\",\"exposure_measurement_type\":\"human_biospecimen\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We included 1260 men who were diagnosed with prostate cancer after providing a blood sample in 1993-1995 and 1331 control subjects.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Men with prostate cancer were followed through March 2011 for lethal outcomes (n = 114).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Higher 25(OH)D levels were associated with a 57% reduction in the risk of lethal prostate cancer (highest vs lowest quartile: odds ratio = 0.43\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% confidence interval = 0.24 to 0.76\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"highest vs lowest quartile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a prospective case-control study nested within the Health Professionals Follow-up Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"We assessed prediagnostic 25-hydroxyvitamin D [25(OH)D] levels in plasma\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"prediagnostic 25-hydroxyvitamin D [25(OH)D] levels in plasma\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22499501/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"22504869|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review discussing evidence on lifestyle and dietary factors including calcium.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"22504869|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review summarizing evidence on vitamin D and lethal prostate cancer rather than original data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"22527163|Folic acid|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting dietary folate intake and incident prostate cancer with a quantitative hazard ratio.\",\"extraction\":{\"effect_size\":1.21,\"effect_type\":\"HR\",\"ci_lower\":1.01,\"ci_upper\":1.46,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":14620,\"cases\":1230,\"comparison_type\":\"quintile 4 versus quintile 1 of dietary folate intake\",\"design\":\"prospective cohort\",\"timing\":\"dietary intake assessed at recruitment 1990-1994, before diagnosis\",\"continent\":\"Oceania\",\"country\":\"Australia\",\"location\":\"Melbourne, Australia\",\"ethnicity\":\"NA\",\"population\":\"Men aged 40-69 years in the Melbourne Collaborative Cohort Study\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"During follow-up of 14,620 men for 15 years on average\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"we ascertained 1,230 incident prostate cancers\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"The HR for folate intake and overall incidence was significantly increased for quintile 4, HR 1.21\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"HR 1.21 (1.01, 1.46)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"increased for quintile 4\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We investigated prospectively the relationship between dietary intakes of methionine, B vitamins ... The Melbourne Collaborative Cohort Study recruited 41,514 people\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"recruited 41,514 people aged 40-69 years between 1990 and 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"The Melbourne Collaborative Cohort Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"The Melbourne Collaborative Cohort Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary intakes were estimated using a 121-item food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"22527163|Vitamin B2|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting dietary riboflavin (vitamin B2) intake and incident prostate cancer with a quantitative hazard ratio.\",\"extraction\":{\"effect_size\":1.29,\"effect_type\":\"HR\",\"ci_lower\":1.07,\"ci_upper\":1.57,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":14620,\"cases\":1230,\"comparison_type\":\"quintile 3 versus quintile 1 of dietary riboflavin intake\",\"design\":\"prospective cohort\",\"timing\":\"dietary intake assessed at recruitment 1990-1994, before diagnosis\",\"continent\":\"Oceania\",\"country\":\"Australia\",\"location\":\"Melbourne, Australia\",\"ethnicity\":\"NA\",\"population\":\"Men aged 40-69 years in the Melbourne Collaborative Cohort Study\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"During follow-up of 14,620 men for 15 years on average\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"we ascertained 1,230 incident prostate cancers\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"HRs for riboflavin intake were significantly increased relative to quintile 1 (except quintile 5), with a peak for quintile 3, HR 1.29\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"HR 1.29 (1.07, 1.57)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"increased relative to quintile 1 (except quintile 5), with a peak for quintile 3\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We investigated prospectively the relationship between dietary intakes of methionine, B vitamins associated with one-carbon metabolism, and risk of incident and fatal prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"recruited 41,514 people aged 40-69 years between 1990 and 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"The Melbourne Collaborative Cohort Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"The Melbourne Collaborative Cohort Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Dietary intakes were estimated using a 121-item food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527163/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"22527168|Animal protein intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"The cross-sectional analysis relates animal protein intake to serum IGF/IGFBP levels in men screened negative for prostate cancer, with no prostate cancer incidence results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"22527168|Dietary protein intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-CANCER-MISMATCH\",\"reason\":\"Outcomes are circulating IGF-I, IGF-II, IGFBP-2 and IGFBP-3 concentrations rather than incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"22527172|Oats|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Cohort study reporting oatmeal intake in adolescence and risk of prostate cancer diagnosis with an odds ratio.\",\"extraction\":{\"effect_size\":0.99,\"effect_type\":\"OR\",\"ci_lower\":0.77,\"ci_upper\":1.27,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":2268,\"cases\":347,\"comparison_type\":\"high oatmeal intake in adolescence (≥5 vs ≤4 times/week)\",\"design\":\"cohort study\",\"timing\":\"dietary habits assessed for early life, midlife, and current life in 2002-2006 with follow-up through 2009\",\"continent\":\"Europe\",\"country\":\"Iceland\",\"location\":\"Reykjavik, Iceland\",\"ethnicity\":\"NA\",\"population\":\"Men aged 67-96 years in the AGES-Reykjavik cohort\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"From 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Of the 2,268 men, 347 had or were diagnosed with PCa during follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"High intake of oatmeal in adolescence (≥5 vs. ≤4 times/week) was not significantly associated with risk of PCa diagnosis (OR = 0.99\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95 % CI: 0.77-1.27\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"(≥5 vs. ≤4 times/week)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"the AGES-Reykjavik cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Dietary habits were assessed for early life, midlife, and current life using a validated food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"AGES-Reykjavik cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"AGES-Reykjavik cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"using a validated food frequency questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"22527172|Whole-grain intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Cohort study of whole-grain food consumption (rye bread, oatmeal, whole-wheat bread) and prostate cancer risk, with the rye bread estimate reported quantitatively.\",\"extraction\":{\"effect_size\":0.76,\"effect_type\":\"OR\",\"ci_lower\":0.59,\"ci_upper\":0.98,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":2268,\"cases\":347,\"comparison_type\":\"daily whole-grain rye bread consumption in adolescence versus less than daily\",\"design\":\"cohort study\",\"timing\":\"dietary habits assessed for early life, midlife, and current life in 2002-2006 with follow-up through 2009\",\"continent\":\"Europe\",\"country\":\"Iceland\",\"location\":\"Reykjavik, Iceland\",\"ethnicity\":\"NA\",\"population\":\"Men aged 67-96 years in the AGES-Reykjavik cohort\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"From 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"Of the 2,268 men, 347 had or were diagnosed with PCa during follow-up\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Daily rye bread consumption in adolescence (vs. less than daily) was associated with a decreased risk of PCa diagnosis (OR = 0.76\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95 % confidence interval (CI): 0.59-0.98\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Daily rye bread consumption in adolescence (vs. less than daily)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"the AGES-Reykjavik cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Dietary habits were assessed for early life, midlife, and current life using a validated food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"AGES-Reykjavik cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"AGES-Reykjavik cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"To determine whether consumption of whole-grain rye bread, oatmeal, and whole-wheat bread, during different periods of life, is associated with risk of prostate cancer (PCa).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/22527172/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"22532363|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of uro-oncological prevention evidence, including a general statement about dairy product consumption, with no original data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "22494720|Selenium|Prostate cancer",
+      "pmid": "22494720",
+      "pmcid": "",
+      "published_date": "2012-05-01",
+      "title": "Re: vitamin E and the risk of prostate cancer: the Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+      "authors": [
+        "Walsh PC"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22494720/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a \"Re:\" correspondence/commentary item on the SELECT trial with no abstract or original results reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22494720|Vitamin E|Prostate cancer",
+      "pmid": "22494720",
+      "pmcid": "",
+      "published_date": "2012-05-01",
+      "title": "Re: vitamin E and the risk of prostate cancer: the Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+      "authors": [
+        "Walsh PC"
+      ],
+      "journal": "The Journal of urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22494720/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The record is a commentary letter responding to the SELECT vitamin E findings rather than an original human study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22499501|Vitamin D|Prostate cancer",
+      "pmid": "22499501",
+      "pmcid": "PMC3341310",
+      "published_date": "2012-05-02",
+      "title": "Vitamin D-related genetic variation, plasma vitamin D, and risk of lethal prostate cancer: a prospective nested case-control study.",
+      "authors": [
+        "Shui IM",
+        "Mucci LA",
+        "Kraft P",
+        "Tamimi RM",
+        "Lindstrom S",
+        "Penney KL",
+        "Nimptsch K",
+        "Hollis BW",
+        "Dupre N",
+        "Platz EA",
+        "Stampfer MJ",
+        "Giovannucci E"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective nested case-control study of prediagnostic plasma 25(OH)D and risk of (lethal) prostate cancer provides a population-wide biomarker estimate.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.43,
+        "effect_type": "OR",
+        "ci_lower": 0.24,
+        "ci_upper": 0.76,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 2591,
+        "cases": 114,
+        "comparison_type": "highest vs lowest quartile of plasma 25(OH)D",
+        "design": "prospective nested case-control",
+        "timing": "prediagnostic blood sample provided in 1993-1995",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men in the Health Professionals Follow-up Study",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We included 1260 men who were diagnosed with prostate cancer after providing a blood sample in 1993-1995 and 1331 control subjects. Men with prostate cancer were followed through March 2011 for lethal outcomes (n = 114).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract; total_n derived from reported group counts 1260 + 1331 = 2591"
+          },
+          "cases": {
+            "excerpt": "We included 1260 men who were diagnosed with prostate cancer after providing a blood sample in 1993-1995 and 1331 control subjects. Men with prostate cancer were followed through March 2011 for lethal outcomes (n = 114).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Higher 25(OH)D levels were associated with a 57% reduction in the risk of lethal prostate cancer (highest vs lowest quartile: odds ratio = 0.43, 95% confidence interval = 0.24 to 0.76).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Higher 25(OH)D levels were associated with a 57% reduction in the risk of lethal prostate cancer (highest vs lowest quartile: odds ratio = 0.43, 95% confidence interval = 0.24 to 0.76).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "highest vs lowest quartile",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a prospective case-control study nested within the Health Professionals Follow-up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "We assessed prediagnostic 25-hydroxyvitamin D [25(OH)D] levels in plasma",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "prediagnostic 25-hydroxyvitamin D [25(OH)D] levels in plasma",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22499501/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22504869|Calcium|Prostate cancer",
+      "pmid": "22504869",
+      "pmcid": "PMC3720164",
+      "published_date": "2012-05-01",
+      "title": "Lifestyle and dietary factors in the prevention of lethal prostate cancer.",
+      "authors": [
+        "Wilson KM",
+        "Giovannucci EL",
+        "Mucci LA"
+      ],
+      "journal": "Asian journal of andrology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22504869/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review discussing evidence on lifestyle and dietary factors including calcium.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22504869|Vitamin D|Prostate cancer",
+      "pmid": "22504869",
+      "pmcid": "PMC3720164",
+      "published_date": "2012-05-01",
+      "title": "Lifestyle and dietary factors in the prevention of lethal prostate cancer.",
+      "authors": [
+        "Wilson KM",
+        "Giovannucci EL",
+        "Mucci LA"
+      ],
+      "journal": "Asian journal of andrology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22504869/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review summarizing evidence on vitamin D and lethal prostate cancer rather than original data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22527163|Folic acid|Prostate cancer",
+      "pmid": "22527163",
+      "pmcid": "",
+      "published_date": "2012-06-01",
+      "title": "Dietary intake of B vitamins and methionine and prostate cancer incidence and mortality.",
+      "authors": [
+        "Bassett JK",
+        "Severi G",
+        "Hodge AM",
+        "Baglietto L",
+        "Hopper JL",
+        "English DR",
+        "Giles GG"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+      "exposure": "Folic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting dietary folate intake and incident prostate cancer with a quantitative hazard ratio.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.21,
+        "effect_type": "HR",
+        "ci_lower": 1.01,
+        "ci_upper": 1.46,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 14620,
+        "cases": 1230,
+        "comparison_type": "quintile 4 versus quintile 1 of dietary folate intake",
+        "design": "prospective cohort",
+        "timing": "dietary intake assessed at recruitment 1990-1994, before diagnosis",
+        "continent": "Oceania",
+        "country": "Australia",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 40-69 years in the Melbourne Collaborative Cohort Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The Melbourne Collaborative Cohort Study recruited 41,514 people aged 40-69 years between 1990 and 1994. During follow-up of 14,620 men for 15 years on average, we ascertained 1,230 incident prostate cancers and 114 prostate cancer deaths.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During follow-up of 14,620 men for 15 years on average, we ascertained 1,230 incident prostate cancers and 114 prostate cancer deaths.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "The HR for folate intake and overall incidence was significantly increased for quintile 4, HR 1.21 (1.01, 1.46). No association was observed between prostate cancer mortality and the intake of either folate or any other B vitamin or methionine, and no observed association varied by tumor aggressiveness (all P(homogeneity) > 0.1).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The HR for folate intake and overall incidence was significantly increased for quintile 4, HR 1.21 (1.01, 1.46).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "increased for quintile 4",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "recruited 41,514 people aged 40-69 years between 1990 and 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "The Melbourne Collaborative Cohort Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intakes were estimated using a 121-item food frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22527163|Vitamin B2|Prostate cancer",
+      "pmid": "22527163",
+      "pmcid": "",
+      "published_date": "2012-06-01",
+      "title": "Dietary intake of B vitamins and methionine and prostate cancer incidence and mortality.",
+      "authors": [
+        "Bassett JK",
+        "Severi G",
+        "Hodge AM",
+        "Baglietto L",
+        "Hopper JL",
+        "English DR",
+        "Giles GG"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+      "exposure": "Vitamin B2",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting dietary riboflavin (vitamin B2) intake and incident prostate cancer with a quantitative hazard ratio.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.29,
+        "effect_type": "HR",
+        "ci_lower": 1.07,
+        "ci_upper": 1.57,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 14620,
+        "cases": 1230,
+        "comparison_type": "quintile 3 versus quintile 1 of dietary riboflavin intake",
+        "design": "prospective cohort",
+        "timing": "dietary intake assessed at recruitment 1990-1994, before diagnosis",
+        "continent": "Oceania",
+        "country": "Australia",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 40-69 years in the Melbourne Collaborative Cohort Study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The Melbourne Collaborative Cohort Study recruited 41,514 people aged 40-69 years between 1990 and 1994. During follow-up of 14,620 men for 15 years on average, we ascertained 1,230 incident prostate cancers and 114 prostate cancer deaths.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During follow-up of 14,620 men for 15 years on average, we ascertained 1,230 incident prostate cancers and 114 prostate cancer deaths.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "For overall prostate cancer incidence, HRs for riboflavin intake were significantly increased relative to quintile 1 (except quintile 5), with a peak for quintile 3, HR 1.29 (1.07, 1.57).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Hazard ratios (HR) and 95 % confidence intervals were estimated using Cox regression. For overall prostate cancer incidence, HRs for riboflavin intake were significantly increased relative to quintile 1 (except quintile 5), with a peak for quintile 3, HR 1.29 (1.07, 1.57).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "increased relative to quintile 1 (except quintile 5), with a peak for quintile 3",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "We investigated prospectively the relationship between dietary intakes of methionine, B vitamins associated with one-carbon metabolism, and risk of incident and fatal prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "recruited 41,514 people aged 40-69 years between 1990 and 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "The Melbourne Collaborative Cohort Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intakes were estimated using a 121-item food frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527163/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22527168|Animal protein intake|Prostate cancer",
+      "pmid": "22527168",
+      "pmcid": "",
+      "published_date": "2012-06-01",
+      "title": "A cross-sectional analysis of the association between diet and insulin-like growth factor (IGF)-I, IGF-II, IGF-binding protein (IGFBP)-2, and IGFBP-3 in men in the United Kingdom.",
+      "authors": [
+        "Young NJ",
+        "Metcalfe C",
+        "Gunnell D",
+        "Rowlands MA",
+        "Lane JA",
+        "Gilbert R",
+        "Avery KN",
+        "Davis M",
+        "Neal DE",
+        "Hamdy FC",
+        "Donovan J",
+        "Martin RM",
+        "Holly JM"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527168/",
+      "exposure": "Animal protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "The cross-sectional analysis relates animal protein intake to serum IGF/IGFBP levels in men screened negative for prostate cancer, with no prostate cancer incidence results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22527168|Dietary protein intake|Prostate cancer",
+      "pmid": "22527168",
+      "pmcid": "",
+      "published_date": "2012-06-01",
+      "title": "A cross-sectional analysis of the association between diet and insulin-like growth factor (IGF)-I, IGF-II, IGF-binding protein (IGFBP)-2, and IGFBP-3 in men in the United Kingdom.",
+      "authors": [
+        "Young NJ",
+        "Metcalfe C",
+        "Gunnell D",
+        "Rowlands MA",
+        "Lane JA",
+        "Gilbert R",
+        "Avery KN",
+        "Davis M",
+        "Neal DE",
+        "Hamdy FC",
+        "Donovan J",
+        "Martin RM",
+        "Holly JM"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527168/",
+      "exposure": "Dietary protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-CANCER-MISMATCH",
+      "reason": "Outcomes are circulating IGF-I, IGF-II, IGFBP-2 and IGFBP-3 concentrations rather than incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22527172|Oats|Prostate cancer",
+      "pmid": "22527172",
+      "pmcid": "PMC3568695",
+      "published_date": "2012-06-01",
+      "title": "Rye bread consumption in early life and reduced risk of advanced prostate cancer.",
+      "authors": [
+        "Torfadottir JE",
+        "Valdimarsdottir UA",
+        "Mucci L",
+        "Stampfer M",
+        "Kasperzyk JL",
+        "Fall K",
+        "Tryggvadottir L",
+        "Aspelund T",
+        "Olafsson O",
+        "Harris TB",
+        "Jonsson E",
+        "Tulinius H",
+        "Adami HO",
+        "Gudnason V",
+        "Steingrimsdottir L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+      "exposure": "Oats",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Cohort study reporting oatmeal intake in adolescence and risk of prostate cancer diagnosis with an odds ratio.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.99,
+        "effect_type": "OR",
+        "ci_lower": 0.77,
+        "ci_upper": 1.27,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 2268,
+        "cases": 347,
+        "comparison_type": "high oatmeal intake in adolescence (≥5 vs ≤4 times/week)",
+        "design": "cohort study",
+        "timing": "dietary habits assessed for early life, midlife, and current life in 2002-2006 with follow-up through 2009",
+        "continent": "Europe",
+        "country": "Iceland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 67-96 years in the AGES-Reykjavik cohort",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "From 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Of the 2,268 men, 347 had or were diagnosed with PCa during follow-up, 63 with advanced disease (stage 3+ or died of PCa).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "≤4 times/week) was not significantly associated with risk of PCa diagnosis (OR = 0.99, 95 % CI: 0.77-1.27) nor advanced PCa (OR = 0.67, 95 % CI: 0.37-1.20).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "≤4 times/week) was not significantly associated with risk of PCa diagnosis (OR = 0.99, 95 % CI: 0.77-1.27) nor advanced PCa (OR = 0.67, 95 % CI: 0.37-1.20).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "(≥5 vs. ≤4 times/week)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "the AGES-Reykjavik cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Dietary habits were assessed for early life, midlife, and current life using a validated food frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "AGES-Reykjavik cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "using a validated food frequency questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22527172|Whole-grain intake|Prostate cancer",
+      "pmid": "22527172",
+      "pmcid": "PMC3568695",
+      "published_date": "2012-06-01",
+      "title": "Rye bread consumption in early life and reduced risk of advanced prostate cancer.",
+      "authors": [
+        "Torfadottir JE",
+        "Valdimarsdottir UA",
+        "Mucci L",
+        "Stampfer M",
+        "Kasperzyk JL",
+        "Fall K",
+        "Tryggvadottir L",
+        "Aspelund T",
+        "Olafsson O",
+        "Harris TB",
+        "Jonsson E",
+        "Tulinius H",
+        "Adami HO",
+        "Gudnason V",
+        "Steingrimsdottir L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+      "exposure": "Whole-grain intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Cohort study of whole-grain food consumption (rye bread, oatmeal, whole-wheat bread) and prostate cancer risk, with the rye bread estimate reported quantitatively.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.76,
+        "effect_type": "OR",
+        "ci_lower": 0.59,
+        "ci_upper": 0.98,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 2268,
+        "cases": 347,
+        "comparison_type": "daily whole-grain rye bread consumption in adolescence versus less than daily",
+        "design": "cohort study",
+        "timing": "dietary habits assessed for early life, midlife, and current life in 2002-2006 with follow-up through 2009",
+        "continent": "Europe",
+        "country": "Iceland",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men aged 67-96 years in the AGES-Reykjavik cohort",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "From 2002 to 2006, 2,268 men, aged 67-96 years, reported their dietary habits in the AGES-Reykjavik cohort study.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Of the 2,268 men, 347 had or were diagnosed with PCa during follow-up, 63 with advanced disease (stage 3+ or died of PCa).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "less than daily) was associated with a decreased risk of PCa diagnosis (OR = 0.76, 95 % confidence interval (CI): 0.59-0.98) and of advanced PCa (OR = 0.47, 95 % CI: 0.27-0.84).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "less than daily) was associated with a decreased risk of PCa diagnosis (OR = 0.76, 95 % confidence interval (CI): 0.59-0.98) and of advanced PCa (OR = 0.47, 95 % CI: 0.27-0.84).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Daily rye bread consumption in adolescence (vs. less than daily)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "the AGES-Reykjavik cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Dietary habits were assessed for early life, midlife, and current life using a validated food frequency questionnaire.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "AGES-Reykjavik cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "To determine whether consumption of whole-grain rye bread, oatmeal, and whole-wheat bread, during different periods of life, is associated with risk of prostate cancer (PCa).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22527172/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "22532363|Dairy|Prostate cancer",
+      "pmid": "22532363",
+      "pmcid": "",
+      "published_date": "2012-05-01",
+      "title": "[Prevention of uro-oncological diseases].",
+      "authors": [
+        "Schmitz-Dräger BJ",
+        "Lümmen G",
+        "Bismarck E",
+        "Fischer C",
+        "Mitglieder des Arbeitskreises Prävention, Umwelt und Komplementärmedizin (PUK) der Deutschen Gesellschaft für Urologie e. V. (DGU)"
+      ],
+      "journal": "Der Urologe. Ausg. A",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22532363/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of uro-oncological prevention evidence, including a general statement about dairy product consumption, with no original data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

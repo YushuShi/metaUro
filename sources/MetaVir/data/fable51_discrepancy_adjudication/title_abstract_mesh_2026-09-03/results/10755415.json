@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:21:04.166951-04:00",
+  "pmid": "10755415",
+  "work_key": "a726751886843789bdfb3b434f1eb2f68d34d5e57d38a42109650983e5aae246",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/10755415_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "10755415",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "10755415|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "alcohol consumption was not related to the risk of prostate cancer",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "No CI or p value for the alcohol-prostate cancer estimate appears in title, abstract, or MeSH; the Claude+Gemini CI 0.64-1.25 and p 0.862 may derive from full text.",
+        "one_sentence_explanation": "The allowed record gives no confidence interval or p value for the alcohol estimate, so the Claude+Gemini CI 0.64-1.25 / p 0.862 cannot be verified against the ChatGPT null claim."
+      },
+      {
+        "context_id": "10755415|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "alcohol consumption was not related to the risk of prostate cancer",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports alcohol as unrelated to prostate cancer risk without any numeric RR; the Claude+Gemini value of 0.9 may derive from full text and cannot be verified.",
+        "one_sentence_explanation": "The abstract states only that alcohol consumption was not related to prostate cancer risk and provides no numeric effect size, so neither the null (ChatGPT) nor RR 0.9 (Claude+Gemini) claim can be confirmed or rejected."
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:48.225263-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "66ca97c7c019340b37bfd0540549128b27a595a79a0f9357137387f782f285d5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "27824905",
+      "title": "Zinc Intake and Risk of Prostate Cancer: Case-Control Study and Meta-Analysis.",
+      "abstract": "Zinc is an essential dietary element that has been implicated in the pathogenesis of prostate cancer, a cancer that disproportionately affects men of African descent. Studies assessing the association of zinc intake and prostate cancer have yielded inconsistent results. Furthermore, very little is known about the relationship between zinc intake and prostate cancer among African Americans. We examined the association between self-reported zinc intake and prostate cancer in a hospital-based case-control study of African Americans. We then compared our results with previous studies by performing a meta-analysis to summarize the evidence regarding the association between zinc and prostate cancer. Newly diagnosed African American men with histologically confirmed prostate cancer (n = 127) and controls (n = 81) were recruited from an urban academic urology clinic in Washington, DC. Controls had higher zinc intake, with a mean of 14 mg/day versus 11 mg/day for cases. We observed a non-significant, non-linear increase in prostate cancer when comparing tertiles of zinc intake (OR <6.5 vs 6.5-12.5mg/day 1.8, 95% CI: 0.6,5.6; OR <6.5 vs >12.5mg/day 1.3, 95% CI: 0.2,6.5). The pooled estimate from 17 studies (including 3 cohorts, 2 nested case-control, 11 case-control studies, and 1 randomized clinical trial, with a total of 111,199 participants and 11,689 cases of prostate cancer) was 1.07hi vs lo 95% CI: 0.98-1.16. Using a dose-response meta-analysis, we observed a non-linear trend in the relationship between zinc intake and prostate cancer (p for nonlinearity = 0.0022). This is the first study to examine the relationship between zinc intake in black men and risk of prostate cancer and systematically evaluate available epidemiologic evidence about the magnitude of the relationship between zinc intake and prostate cancer. Despite of the lower intake of zinc by prostate cancer patients, our meta-analysis indicated that there is no evidence for an association between zinc intake and prostate cancer.",
+      "mesh": [
+        "Black or African American / statistics & numerical data",
+        "Case-Control Studies",
+        "Humans",
+        "Male",
+        "Prostate / drug effects",
+        "Prostatic Neoplasms / prevention & control",
+        "Risk Factors",
+        "Zinc / therapeutic use"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "27824905",
+      "contexts": [
+        {
+          "context_id": "27824905|Zinc|Prostate cancer",
+          "exposure": "Zinc",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "248",
+              "effect_measure_type": "OR",
+              "effect_size": "1.3",
+              "ci_lower": "0.2",
+              "ci_upper": "6.5",
+              "p_value": "0.7676684337194688",
+              "comparison": "Highest zinc-intake tertile (>12.5 mg/day) versus lowest tertile (≤6.5 mg/day)"
+            },
+            "Claude+Gemini": {
+              "sample_size": "208",
+              "effect_measure_type": "OR",
+              "effect_size": "1.3",
+              "ci_lower": "0.2",
+              "ci_upper": "6.5",
+              "p_value": "0.6",
+              "comparison": "extreme_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

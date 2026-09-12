@@ -1,0 +1,377 @@
+{
+  "schema_version": 1,
+  "receipt_id": "3281049650fa3d5725ec62fc30da77adc79cb346359b5f2bcb353da59f1d3444",
+  "requested_at": "2026-09-02T08:45:24.014503+08:00",
+  "received_at": "2026-09-02T08:45:58.714543+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "66fda9ada2a879c55409f698d7a22a01fe65e98444fdcd388aea0c9b854880b9",
+  "attempt": 2,
+  "context_ids": [
+    "22864870|Green tea|Prostate cancer",
+    "22864870|Tea|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Green tea": 1,
+    "Tea": 1
+  },
+  "input_digest": "e3ad1c021092399b407896cdbb0f198a861ee39d5f0e4099375ac12ad041336b",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9227,
+    "cached_input_tokens": 0,
+    "output_tokens": 5527,
+    "reasoning_tokens": 2201
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0276465",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "8ed66063-6eec-43e4-8b54-815e6ff35080",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0276465"
+  },
+  "output_sha256": "2a90a52bc446a2696a3bef61ba4dc1b4b6caa84b7b55055309aa7974f588e4c6",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22864870|Green tea|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study evaluating the association between green tea intake and incident prostate cancer risk among Singapore Chinese men.\",\n      \"extraction\": {\n        \"effect_size\": 1.08,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.79,\n        \"ci_upper\": 1.48,\n        \"p_value\": \"0.6\",\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 27293,\n        \"cases\": 298,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": \"Singapore\",\n        \"ethnicity\": \"Chinese\",\n        \"population\": \"Singapore Chinese Health Study\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Tea consumption data for 27,293 men were collected at baseline (between 1993 and 1998) using a validated food frequency questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Daily: HR (95 % CI) = 1.08 (0.79, 1.48)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Daily: HR (95 % CI) = 1.08 (0.79, 1.48)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"p for trend d 0.6\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"There was no association between daily green tea intake and prostate cancer risk, compared with no green tea intake [hazard ratio (HR) = 1.08; 95 % confidence interval (CI) 0.79, 1.47].\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Purpose, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Purpose, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"We restricted the study to individuals belonging to the two major dialect groups of Chinese in Singapore, the Hokkiens and the Cantonese.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Purpose, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"We used a 165-item quantitative food frequency questionnaire (FFQ), developed for and validated in this population, to assess usual diet over the past year\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Materials and methods, Exposure assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"22864870|Tea|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study evaluating the association between black tea intake and incident prostate cancer risk among Singapore Chinese men.\",\n      \"extraction\": {\n        \"effect_size\": 1.41,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.03,\n        \"ci_upper\": 1.93,\n        \"p_value\": \"<0.01\",\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 27293,\n        \"cases\": 298,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Singapore\",\n        \"location\": \"Singapore\",\n        \"ethnicity\": \"Chinese\",\n        \"population\": \"Singapore Chinese Health Study\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Tea consumption data for 27,293 men were collected at baseline (between 1993 and 1998) using a validated food frequency questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Daily: HR (95 % CI) = 1.41 (1.03, 1.93)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Daily: HR (95 % CI) = 1.41 (1.03, 1.93)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"p for trend d <0.01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"For black tea, a statistically significant positive association and trend were observed for daily intake compared with no black tea intake (HR = 1.41, 95 % CI 1.03, 1.92; p for trend <0.01)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Purpose, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Purpose, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"We restricted the study to individuals belonging to the two major dialect groups of Chinese in Singapore, the Hokkiens and the Cantonese.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Materials and methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Purpose, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"We used a 165-item quantitative food frequency questionnaire (FFQ), developed for and validated in this population, to assess usual diet over the past year\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/\",\n            \"location\": \"Materials and methods, Exposure assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "22864870|Green tea|Prostate cancer",
+      "pmid": "22864870",
+      "pmcid": "PMC3695613",
+      "published_date": "2012-10-01",
+      "title": "Green and black tea intake in relation to prostate cancer risk among Singapore Chinese.",
+      "authors": [
+        "Montague JA",
+        "Butler LM",
+        "Wu AH",
+        "Genkinger JM",
+        "Koh WP",
+        "Wong AS",
+        "Wang R",
+        "Yuan JM",
+        "Yu MC"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22864870/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study evaluating the association between green tea intake and incident prostate cancer risk among Singapore Chinese men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.08,
+        "effect_type": "HR",
+        "ci_lower": 0.79,
+        "ci_upper": 1.48,
+        "p_value": 0.6,
+        "ci_confidence_level": 95,
+        "total_n": 27293,
+        "cases": 298,
+        "comparison_type": "categorical",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "Chinese",
+        "population": "Singapore Chinese Health Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We investigated the relationship between black and green tea intake and prostate cancer risk among 27,293 men in the Singapore Chinese Health Study, a population-based prospective cohort study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Methods, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Methods, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "There was no association between daily green tea intake and prostate cancer risk, compared with no green tea intake [hazard ratio (HR) = 1.08; 95 % confidence interval (CI) 0.79, 1.47].",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.08 (0.79, 1.48)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "p for trend d 0.6",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "There was no association between daily green tea intake and prostate cancer risk, compared with no green tea intake [hazard ratio (HR) = 1.08; 95 % confidence interval (CI) 0.79, 1.47].",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Results, paragraph 1"
+          },
+          "design": {
+            "excerpt": "In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Purpose, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Purpose, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "prostate cancer risk among Singapore Chinese",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22864870/",
+            "location": "title"
+          },
+          "location": {
+            "excerpt": "prospective cohort study of Chinese men in Singapore",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22864870/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "We used a 165-item quantitative food frequency questionnaire (FFQ), developed for and validated in this population, to assess usual diet over the past year",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Materials and methods, Exposure assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.6",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 28769,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "d752500d544e26030198b70bb3fc8e158d85078f59a636bddb879ce7725008f0",
+      "pmc_source_receipt_digest": "75ed1076f9a1869370ca6972b190709c9258c271f06dc26e70138b88f00893b0",
+      "pmc_source_raw_sha256": "666bb8a8082e3576e6a30b1b889e40a1d7fd2ffa6e8e9fc1eeca7960bb8e126a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "041f71b2bc5d169b2a7c33871e50b8328b9063bd6f6395eda24ad1772a3f023d"
+    },
+    {
+      "context_id": "22864870|Tea|Prostate cancer",
+      "pmid": "22864870",
+      "pmcid": "PMC3695613",
+      "published_date": "2012-10-01",
+      "title": "Green and black tea intake in relation to prostate cancer risk among Singapore Chinese.",
+      "authors": [
+        "Montague JA",
+        "Butler LM",
+        "Wu AH",
+        "Genkinger JM",
+        "Koh WP",
+        "Wong AS",
+        "Wang R",
+        "Yuan JM",
+        "Yu MC"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22864870/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study evaluating the association between black tea intake and incident prostate cancer risk among Singapore Chinese men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.41,
+        "effect_type": "HR",
+        "ci_lower": 1.03,
+        "ci_upper": 1.93,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 27293,
+        "cases": 298,
+        "comparison_type": "categorical",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "Asia",
+        "country": "Singapore",
+        "location": "Singapore",
+        "ethnicity": "Chinese",
+        "population": "Singapore Chinese Health Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We investigated the relationship between black and green tea intake and prostate cancer risk among 27,293 men in the Singapore Chinese Health Study, a population-based prospective cohort study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Methods, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Methods, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "For black tea, a statistically significant positive association and trend were observed for daily intake compared with no black tea intake (HR = 1.41, 95 % CI 1.03, 1.92; p for trend <0.01)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "<0.01 p for trend e",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "For black tea, a statistically significant positive association and trend were observed for daily intake compared with no black tea intake (HR = 1.41, 95 % CI 1.03, 1.92; p for trend <0.01)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Results, paragraph 1"
+          },
+          "design": {
+            "excerpt": "In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Purpose, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "After an average of 11.2 years of follow-up, 298 men had developed prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "In a population-based, prospective cohort study of Chinese men in Singapore, we investigated the relationship between green and black tea intake and prostate cancer risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Purpose, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "prostate cancer risk among Singapore Chinese",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22864870/",
+            "location": "title"
+          },
+          "location": {
+            "excerpt": "prospective cohort study of Chinese men in Singapore",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/22864870/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "We used a 165-item quantitative food frequency questionnaire (FFQ), developed for and validated in this population, to assess usual diet over the past year",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3695613/",
+            "location": "Materials and methods, Exposure assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "<0.01",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 28769,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "d752500d544e26030198b70bb3fc8e158d85078f59a636bddb879ce7725008f0",
+      "pmc_source_receipt_digest": "75ed1076f9a1869370ca6972b190709c9258c271f06dc26e70138b88f00893b0",
+      "pmc_source_raw_sha256": "666bb8a8082e3576e6a30b1b889e40a1d7fd2ffa6e8e9fc1eeca7960bb8e126a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "ee4cd729527ee1327a5ddcba0544cf90952cdd0b8a276b869e60c83601d13f8a"
+    }
+  ]
+}

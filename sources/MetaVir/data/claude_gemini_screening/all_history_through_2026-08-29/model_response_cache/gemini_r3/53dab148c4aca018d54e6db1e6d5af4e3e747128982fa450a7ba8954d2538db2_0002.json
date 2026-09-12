@@ -1,0 +1,651 @@
+{
+  "schema_version": 1,
+  "receipt_id": "224b3e343a45822d3362a54c582e7df00e60fbcc5031abb7bf37f85e1052621c",
+  "requested_at": "2026-09-02T08:33:48.990221+08:00",
+  "received_at": "2026-09-02T08:34:45.066245+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "53dab148c4aca018d54e6db1e6d5af4e3e747128982fa450a7ba8954d2538db2",
+  "attempt": 2,
+  "context_ids": [
+    "40584099|Vitamin A|Prostate cancer",
+    "40584099|Vitamin B12|Prostate cancer",
+    "40584099|Vitamin B1|Prostate cancer",
+    "40584099|Vitamin B2|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin A": 1,
+    "Vitamin B1": 1,
+    "Vitamin B12": 1,
+    "Vitamin B2": 1
+  },
+  "input_digest": "09110bb9f2c491fee3df3f2fbd3666af3753283ce951aa3d8f3181f997bd6fcc",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13904,
+    "cached_input_tokens": 0,
+    "output_tokens": 10107,
+    "reasoning_tokens": 2190
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.04832925",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "d0f2d52d-81a8-4aa3-979b-7ef54b6986c9",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.04832925"
+  },
+  "output_sha256": "f33fb0e8713a58111529986b620d6e9259d23f1908905947ebbb9aa0a8e966d2",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"40584099|Vitamin A|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This cross-sectional study using NHANES data evaluated the association between dietary vitamin A (retinol) intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.76,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.07,\n        \"ci_upper\": 2.88,\n        \"p_value\": 0.027,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 14977,\n        \"cases\": 498,\n        \"comparison_type\": \"categorical_high_vs_low\",\n        \"design\": \"cross_sectional\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"NHANES adult male participants (2007–2018)\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After removing those with missing dietary and cancer essential information, 14,977 participants were finally included.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Regarding the analysis dividing vitamin intake into quartiles, a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Based on the 1997 guidelines established by the United States Office of Management and Budget, we divided the population into Mexican American, Non-Hispanic White, Non-Hispanic Black, Other Hispanic, and Other/multiracial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Covariates, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"During each NHANES cycle, participants provided detailed dietary intake data for two 24-h periods, which were subsequently utilized to estimate their vitamin intake\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Data on vitamin intake and prostate cancer, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cross_sectional\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"No\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"NA\",\n          \"q10\": \"NA\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"40584099|Vitamin B12|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This cross-sectional study using NHANES data examined total and supplemental vitamin B12 intake in relation to prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.82,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.68,\n        \"ci_upper\": 0.99,\n        \"p_value\": 0.037,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 14977,\n        \"cases\": 498,\n        \"comparison_type\": \"continuous\",\n        \"design\": \"cross_sectional\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"NHANES adult male participants (2007–2018)\",\n        \"exposure_subtype\": \"mixed_or_unclear\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After removing those with missing dietary and cancer essential information, 14,977 participants were finally included.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"and all vitamin B12 intake (mcg) (OR = 0.82, 95% CI: 0.68, 0.99, p = 0.037) with PCa risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"and all vitamin B12 intake (mcg) (OR = 0.82, 95% CI: 0.68, 0.99, p = 0.037) with PCa risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"and all vitamin B12 intake (mcg) (OR = 0.82, 95% CI: 0.68, 0.99, p = 0.037) with PCa risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"In the continuous variable analysis, supplement intake of vitamin B9 (OR = 0.65, p = 0.049), vitamin B12 (OR = 0.83, p = 0.030), and total vitamin B12 (OR = 0.82, p = 0.037) were inversely associated with PCa risk after full adjustment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Abstract, Results, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Based on the 1997 guidelines established by the United States Office of Management and Budget, we divided the population into Mexican American, Non-Hispanic White, Non-Hispanic Black, Other Hispanic, and Other/multiracial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Covariates, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Total vitamin intake was calculated as the sum of dietary and supplemental sources.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Data on vitamin intake and prostate cancer, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cross_sectional\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"No\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"NA\",\n          \"q10\": \"NA\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"40584099|Vitamin B1|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This cross-sectional study using NHANES data evaluated the relationship between vitamin B1 supplement intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.38,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.16,\n        \"ci_upper\": 0.94,\n        \"p_value\": 0.036,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 14977,\n        \"cases\": 498,\n        \"comparison_type\": \"categorical_high_vs_low\",\n        \"design\": \"cross_sectional\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"NHANES adult male participants (2007–2018)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After removing those with missing dietary and cancer essential information, 14,977 participants were finally included.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, p = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, p = 0.036) and vitamin B2 (OR = 0.35, p = 0.016) was associated with a lower risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Abstract, Results, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Based on the 1997 guidelines established by the United States Office of Management and Budget, we divided the population into Mexican American, Non-Hispanic White, Non-Hispanic Black, Other Hispanic, and Other/multiracial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Covariates, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Additionally, participants were queried about their use of dietary supplements during the same two 24-h periods. Supplement-derived vitamin intake was similarly averaged over the 2 days when possible.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Data on vitamin intake and prostate cancer, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cross_sectional\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"No\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"NA\",\n          \"q10\": \"NA\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"40584099|Vitamin B2|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This cross-sectional study using NHANES data examined the association between vitamin B2 supplement intake and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.35,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.15,\n        \"ci_upper\": 0.82,\n        \"p_value\": 0.016,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 14977,\n        \"cases\": 498,\n        \"comparison_type\": \"categorical_high_vs_low\",\n        \"design\": \"cross_sectional\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"NHANES adult male participants (2007–2018)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After removing those with missing dietary and cancer essential information, 14,977 participants were finally included.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Characteristics of participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Results, Multivariate weighted logistic regression, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, p = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, p = 0.036) and vitamin B2 (OR = 0.35, p = 0.016) was associated with a lower risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Abstract, Results, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Based on the 1997 guidelines established by the United States Office of Management and Budget, we divided the population into Mexican American, Non-Hispanic White, Non-Hispanic Black, Other Hispanic, and Other/multiracial.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Covariates, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Cross-sectional study design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Additionally, participants were queried about their use of dietary supplements during the same two 24-h periods. Supplement-derived vitamin intake was similarly averaged over the 2 days when possible.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/\",\n            \"location\": \"Methods, Data on vitamin intake and prostate cancer, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cross_sectional\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"No\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"NA\",\n          \"q10\": \"NA\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "40584099|Vitamin A|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This cross-sectional study using NHANES data evaluated the association between dietary vitamin A (retinol) intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.76,
+        "effect_type": "OR",
+        "ci_lower": 1.07,
+        "ci_upper": 2.88,
+        "p_value": 0.027,
+        "ci_confidence_level": 95,
+        "total_n": 14977,
+        "cases": 498,
+        "comparison_type": "categorical_high_vs_low",
+        "design": "cross_sectional",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NHANES adult male participants (2007–2018)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Interaction test for the association between dietary vitamin intake and prostate cancer among US adults in the cross-sectional study. Regarding the analysis dividing vitamin intake into quartiles, a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "Regarding the analysis dividing vitamin intake into quartiles, a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "Regarding the analysis dividing vitamin intake into quartiles, a higher incidence of PCa was observed among individuals in the maximal quartile of dietary retinol intake (OR = 1.76, 95% CI = 1.07–2.88, p = 0.027, p for trend = 0.018) after adjustment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "design": {
+            "excerpt": "We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "During each NHANES cycle, participants provided detailed dietary intake data for two 24-h periods, which were subsequently utilized to estimate their vitamin intake",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Data on vitamin intake and prostate cancer, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.027",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "No",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43803,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "8f01d0f9c8ec71e18f4dd693de61e9a13fd6d5c01e61fdb34b9de468ce4e2f93",
+      "pmc_source_receipt_digest": "f396e1cf9ba1429571d050e1e6e65f3543c0f7ea62d264a6a5a1c29634ffd139",
+      "pmc_source_raw_sha256": "77838aa8c83bbb6bef739759cabf5d7241768377c16b5a5c16f015dcde0a6957",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "c92b8c0f0a9fa4b8fa2e083a9f29c3fb47686aaa9bed16b5be36e5651622d7bf"
+    },
+    {
+      "context_id": "40584099|Vitamin B12|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin B12",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This cross-sectional study using NHANES data examined total and supplemental vitamin B12 intake in relation to prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.82,
+        "effect_type": "OR",
+        "ci_lower": 0.68,
+        "ci_upper": 0.99,
+        "p_value": 0.037,
+        "ci_confidence_level": 95,
+        "total_n": 14977,
+        "cases": 498,
+        "comparison_type": "continuous",
+        "design": "cross_sectional",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NHANES adult male participants (2007–2018)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Following adjustments, the results revealed negative associations between supplement vitamin B9 (mcg) intake (OR = 0.65, 95% CI: 0.43, 1.00, p = 0.049), supplement vitamin B12 intake (mcg) (OR = 0.83, 95% CI: 0.70, 0.98, p = 0.030), and all vitamin B12 intake (mcg) (OR = 0.82, 95% CI: 0.68, 0.99, p = 0.037) with PCa risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "Following adjustments, the results revealed negative associations between supplement vitamin B9 (mcg) intake (OR = 0.65, 95% CI: 0.43, 1.00, p = 0.049), supplement vitamin B12 intake (mcg) (OR = 0.83, 95% CI: 0.70, 0.98, p = 0.030), and all vitamin B12 intake (mcg) (OR = 0.82, 95% CI: 0.68, 0.99, p = 0.037) with PCa risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 1"
+          },
+          "p_value": {
+            "excerpt": "and all vitamin B12 intake (mcg) (OR = 0.82, 95% CI: 0.68, 0.99, p = 0.037) with PCa risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "In the continuous variable analysis, supplement intake of vitamin B9 (OR = 0.65, p = 0.049), vitamin B12 (OR = 0.83, p = 0.030), and total vitamin B12 (OR = 0.82, p = 0.037) were inversely associated with PCa risk after full adjustment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Abstract, Results, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Total vitamin intake was calculated as the sum of dietary and supplemental sources.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Data on vitamin intake and prostate cancer, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.037",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "No",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43803,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "8f01d0f9c8ec71e18f4dd693de61e9a13fd6d5c01e61fdb34b9de468ce4e2f93",
+      "pmc_source_receipt_digest": "f396e1cf9ba1429571d050e1e6e65f3543c0f7ea62d264a6a5a1c29634ffd139",
+      "pmc_source_raw_sha256": "77838aa8c83bbb6bef739759cabf5d7241768377c16b5a5c16f015dcde0a6957",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "dcba34b661b429a6856ff1df74e3dabcd6747c9aaf52236b932e837d907b9425"
+    },
+    {
+      "context_id": "40584099|Vitamin B1|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin B1",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This cross-sectional study using NHANES data evaluated the relationship between vitamin B1 supplement intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.38,
+        "effect_type": "OR",
+        "ci_lower": 0.16,
+        "ci_upper": 0.94,
+        "p_value": 0.036,
+        "ci_confidence_level": 95,
+        "total_n": 14977,
+        "cases": 498,
+        "comparison_type": "categorical_high_vs_low",
+        "design": "cross_sectional",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NHANES adult male participants (2007–2018)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, p = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, p = 0.036) and vitamin B2 (OR = 0.35, p = 0.016) was associated with a lower risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Abstract, Results, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Additionally, participants were queried about their use of dietary supplements during the same two 24-h periods. Supplement-derived vitamin intake was similarly averaged over the 2 days when possible.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Data on vitamin intake and prostate cancer, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.036",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "No",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43803,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "8f01d0f9c8ec71e18f4dd693de61e9a13fd6d5c01e61fdb34b9de468ce4e2f93",
+      "pmc_source_receipt_digest": "f396e1cf9ba1429571d050e1e6e65f3543c0f7ea62d264a6a5a1c29634ffd139",
+      "pmc_source_raw_sha256": "77838aa8c83bbb6bef739759cabf5d7241768377c16b5a5c16f015dcde0a6957",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b920fc675a037b40fbdc662e4c499643e8c0fcb04edb8874f94593fe11599c16"
+    },
+    {
+      "context_id": "40584099|Vitamin B2|Prostate cancer",
+      "pmid": "40584099",
+      "pmcid": "PMC12202377",
+      "published_date": "2025",
+      "title": "Association between vitamin intake and prostate cancer: a cross-sectional study.",
+      "authors": [
+        "Pan S",
+        "Wang C",
+        "Sun W",
+        "Zhang X"
+      ],
+      "journal": "Frontiers in nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/40584099/",
+      "exposure": "Vitamin B2",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This cross-sectional study using NHANES data examined the association between vitamin B2 supplement intake and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.35,
+        "effect_type": "OR",
+        "ci_lower": 0.15,
+        "ci_upper": 0.82,
+        "p_value": 0.016,
+        "ci_confidence_level": 95,
+        "total_n": 14977,
+        "cases": 498,
+        "comparison_type": "categorical_high_vs_low",
+        "design": "cross_sectional",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NHANES adult male participants (2007–2018)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "After removing those with missing dietary and cancer essential information, 14,977 participants were finally included. Baseline characteristics of the participants are shown in Table 1 , including 498 PCa patients (weighted to approximately 2.2%).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Characteristics of participants, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "In the fully adjusted model (Model 3), supplement intake of vitamin B1 (OR = 0.38; 95% CI: 0.16–0.94; p = 0.036) and vitamin B2 (OR = 0.35; 95% CI: 0.15–0.82; p = 0.016) was significantly associated with a reduced risk of PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Results, Multivariate weighted logistic regression, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "In the fully adjusted model, the quartile-based analysis showed that individuals in the highest quartile of dietary retinol intake had a significantly increased risk of PCa (OR = 1.76, p = 0.027), while higher supplement intake of vitamin B1 (OR = 0.38, p = 0.036) and vitamin B2 (OR = 0.35, p = 0.016) was associated with a lower risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Abstract, Results, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We performed a cross-sectional analysis of male individuals aged 18 years and above within the combined group, utilizing data from six cycles spanning from 2007 to 2018",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "utilizing data from six cycles spanning from 2007 to 2018, including information on vitamin intake and PCa status.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "NHANES is a cross-sectional survey designed to gather a sample that represents non-institutionalized residents of the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Cross-sectional study design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Additionally, participants were queried about their use of dietary supplements during the same two 24-h periods. Supplement-derived vitamin intake was similarly averaged over the 2 days when possible.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12202377/",
+            "location": "Methods, Data on vitamin intake and prostate cancer, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.016",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cross_sectional",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "No",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "NA",
+          "q10": "NA",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 75.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 43803,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "8f01d0f9c8ec71e18f4dd693de61e9a13fd6d5c01e61fdb34b9de468ce4e2f93",
+      "pmc_source_receipt_digest": "f396e1cf9ba1429571d050e1e6e65f3543c0f7ea62d264a6a5a1c29634ffd139",
+      "pmc_source_raw_sha256": "77838aa8c83bbb6bef739759cabf5d7241768377c16b5a5c16f015dcde0a6957",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "bf6eca6233b1a0877a7292c274eda1795d597524aa8f32ad542cf02da16aef79"
+    }
+  ]
+}

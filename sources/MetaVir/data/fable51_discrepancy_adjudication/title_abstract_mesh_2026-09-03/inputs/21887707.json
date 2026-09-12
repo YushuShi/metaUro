@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:32.064391-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "4ef6b514a19716bc57b616077e13321813d84a247d0847b9e7ae968ec61f48a7",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "21887707",
+      "title": "Calcium intake and prostate cancer among African Americans: effect modification by vitamin D receptor calcium absorption genotype.",
+      "abstract": "High dietary intake of calcium has been classified as a probable cause of prostate cancer, although the mechanism underlying the association between dietary calcium and prostate cancer risk is unclear. The vitamin D receptor (VDR) is a key regulator of calcium absorption. In the small intestine, VDR expression is regulated by the CDX-2 transcription factor, which binds a polymorphic site in the VDR gene promoter. We examined VDR Cdx2 genotype and calcium intake, assessed by a food frequency questionnaire, in 533 African-American prostate cancer cases (256 with advanced stage at diagnosis, 277 with localized stage) and 250 African-American controls who participated in the California Collaborative Prostate Cancer Study. We examined the effects of genotype, calcium intake, and diet-gene interactions by conditional logistic regression. Compared with men in the lowest quartile of calcium intake, men in the highest quartile had an approximately twofold increased risk of localized and advanced prostate cancer (odds ratio [OR] = 2.20, 95% confidence interval [CI] = 1.40, 3.46), with a significant dose-response. Poor absorbers of calcium (VDR Cdx2 GG genotype) had a significantly lower risk of advanced prostate cancer (OR = 0.41, 95% CI = 0.19, 0.90). The gene-calcium interaction was statistically significant (p = 0.03). Among men with calcium intake below the median (680 mg/day), carriers of the G allele had an approximately 50% decreased risk compared with men with the AA genotype. These findings suggest a link between prostate cancer risk and high intestinal absorption of calcium.",
+      "mesh": [
+        "Black or African American / genetics",
+        "Aged",
+        "Aged, 80 and over",
+        "CDX2 Transcription Factor",
+        "Calcium / metabolism",
+        "Calcium, Dietary / pharmacology",
+        "Case-Control Studies",
+        "Dietary Supplements",
+        "Homeodomain Proteins / metabolism",
+        "Humans",
+        "Intestinal Absorption / drug effects, genetics",
+        "Male",
+        "Middle Aged",
+        "Obesity / complications",
+        "Polymorphism, Genetic",
+        "Prostatic Neoplasms / complications, genetics",
+        "Receptors, Calcitriol / genetics",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "21887707",
+      "contexts": [
+        {
+          "context_id": "21887707|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-GENOTYPE-INTERACTION"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

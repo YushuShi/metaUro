@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "216bde01dbf3db60e0403e6c43dd34fb88f9746005e589160e86eedfc83f1716",
+  "requested_at": "2026-09-02T08:34:30.661777+08:00",
+  "received_at": "2026-09-02T08:34:49.508533+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "32ec05d433ca92521ae49be4713e09383366364e10c8225f1b164a587e1dc9c6",
+  "attempt": 1,
+  "context_ids": [
+    "38636793|Total dietary fiber intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Total dietary fiber intake": 1
+  },
+  "input_digest": "7b53899e30da02c04ee776fe358ab8784796c8c701b1d806213fc66598e7a572",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 20120,
+    "cached_input_tokens": 0,
+    "output_tokens": 2792,
+    "reasoning_tokens": 1086
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02556",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "b0ac9a30-89e5-4c05-af4b-e5b75ef6ad5a",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02556"
+  },
+  "output_sha256": "2249500c82b884073c2b2e1d482b464b87c342b14325c8c17f91cd154d33891d",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"38636793|Total dietary fiber intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective pooled analysis of 15 cohort studies evaluating total dietary fiber intake and incident prostate cancer risk with multivariable-adjusted hazard ratios.\",\n      \"extraction\": {\n        \"effect_size\": 0.97,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.95,\n        \"ci_upper\": 1.0,\n        \"p_value\": 0.11,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 842149,\n        \"cases\": 52683,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Intercontinental\",\n        \"country\": \"Multiple\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Male participants across 15 prospective cohort studies in North America, Europe, Australia, and Asia\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"During follow up of 842,149 men in 15 cohorts, 52,683 were diagnosed with incident PC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During follow up of 842,149 men in 15 cohorts, 52,683 were diagnosed with incident PC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Dietary Fiber Total N Cases 52683 Q1 1 ... Q5 0.97 (0.95–1.00)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Table 5\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Dietary Fiber Total N Cases 52683 Q1 1 ... Q5 0.97 (0.95–1.00)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Table 5\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Dietary Fiber Total ... P-value, test for trend 0.11\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Table 5\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Total dietary fiber intake and dietary fiber intake from fruits, vegetables, and grains were modeled according to study-specific quintiles\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Statistical Analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"Pooled analysis of the primary data in 15 cohorts in three continents.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Design\"\n          },\n          \"timing\": {\n            \"excerpt\": \"842,149 men were followed for up to 9–22 years between 1985–2009 across studies.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Participants/setting\"\n          },\n          \"continent\": {\n            \"excerpt\": \"These analyses were conducted using data from 15 cohort studies from North America, Europe, Australia, and Asia\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Study Population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Even though geographically diverse, the study population was primarily composed of White men (> 90%); thus, preventing examination of whether associations differed by race or ethnicity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Discussion, paragraph 6\"\n          },\n          \"location\": {\n            \"excerpt\": \"These analyses were conducted using data from 15 cohort studies from North America, Europe, Australia, and Asia (Table 1)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Study Population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary information was collected in each cohort at baseline using detailed self-administered food frequency questionnaires (FFQs) or diet histories generally inquiring about the last year\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12912202/\",\n            \"location\": \"Dietary Assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

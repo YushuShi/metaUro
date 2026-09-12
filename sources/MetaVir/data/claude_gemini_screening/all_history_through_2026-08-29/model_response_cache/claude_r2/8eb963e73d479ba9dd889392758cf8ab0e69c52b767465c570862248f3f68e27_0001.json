@@ -1,0 +1,824 @@
+{
+  "schema_version": 1,
+  "receipt_id": "8cc6b04a2da94c4b2dfe04f20d05686a52c61f94e35d6b8641dc9304bd5f78df",
+  "requested_at": "2026-09-02T07:32:27.159968+08:00",
+  "received_at": "2026-09-02T07:33:37.782457+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "8eb963e73d479ba9dd889392758cf8ab0e69c52b767465c570862248f3f68e27",
+  "attempt": 1,
+  "context_ids": [
+    "11480666|Soy|Prostate cancer",
+    "11493363|Antioxidants|Prostate cancer",
+    "11493765|Soy|Prostate cancer",
+    "11502457|Selenium|Prostate cancer",
+    "11504910|Green tea|Prostate cancer",
+    "11504910|Tea|Prostate cancer",
+    "11511598|Alcohol|Prostate cancer",
+    "11519764|Dairy|Prostate cancer",
+    "11519764|Processed meat intake|Prostate cancer",
+    "11519764|Red meat|Prostate cancer",
+    "11520423|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Antioxidants": 1,
+    "Dairy": 1,
+    "Green tea": 1,
+    "Processed meat intake": 1,
+    "Red meat": 1,
+    "Selenium": 1,
+    "Soy": 2,
+    "Tea": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "8ba033d531756ac86310568f6e5005b8d82ab73ea4ea6680f6642fe3671241f3",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10466,
+    "cached_input_tokens": 0,
+    "output_tokens": 7422,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.23788000000000004",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "6750dc71-b4ae-44e5-a66b-a3fe1028abf1",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.23788000000000004"
+  },
+  "output_sha256": "619cf5cfc34013e87e1f8ba3c48f6a4f8e544833c821699d68a28e17b91f18be",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"11480666|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The title indicates a broad narrative review of soy and hormone-related cancer risk rather than an original human study with prostate-cancer incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11493363|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is an overview/review article on prostate cancer and antioxidants with no original comparative human incidence analysis reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11493765|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The abstract is a narrative review summarizing existing case-control and prospective evidence on dietary fat and soy rather than reporting original data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11502457|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review of androgen deprivation chemoprevention in which selenium is mentioned only incidentally as a potential combination agent.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11504910|Green tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study administered green tea polyphenols exclusively to TRAMP transgenic mice, providing only preclinical animal evidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11504910|Tea|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Tea polyphenol infusion was tested only in transgenic mouse prostate carcinogenesis, an exclusively animal experiment.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"11511598|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort of Harvard alumni reporting multivariate relative risks for alcohol consumption and incident prostate cancer.\",\"extraction\":{\"effect_size\":1.85,\"effect_type\":\"RR\",\"ci_lower\":1.29,\"ci_upper\":2.64,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":7612,\"cases\":366,\"comparison_type\":\"1 to <3 drinks/day versus almost never drinking alcohol\",\"design\":\"prospective cohort\",\"timing\":\"1988 through 1993\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Harvard alumni men (mean age 66.6 years)\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We prospectively followed 7612 Harvard alumni (mean age 66.6 years) from 1988 through 1993\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"during which 366 cases of incident prostate cancer occurred\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"the multivariate relative risks (95% CI) for ... 1 to < 3 drinks/day ... were ... 1.85 (1.29-2.64)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"1.85 (1.29-2.64)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Compared to men reporting almost never drinking alcohol in 1988\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"We prospectively followed 7612 Harvard alumni\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"from 1988 through 1993\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"The Harvard Alumni Health Study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"title\"},\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Self-reported alcohol consumption was assessed at baseline from wine, beer, and liquor intake.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11511598/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11519764|Dairy|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort of 51,529 men reporting relative risks for dairy product intake and incident (metastatic) prostate cancer.\",\"extraction\":{\"effect_size\":1.4,\"effect_type\":\"RR\",\"ci_lower\":0.91,\"ci_upper\":2.2,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":51529,\"cases\":249,\"comparison_type\":\"top vs. bottom quintile of dairy product intake, metastatic prostate cancer\",\"design\":\"prospective cohort\",\"timing\":\"Between 1986 and 1996\",\"continent\":null,\"country\":null,\"location\":null,\"ethnicity\":\"NA\",\"population\":\"Participants of the Health Professionals Follow-Up Study\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We examine these associations among 51,529 men who contributed detailed dietary data.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"1897 total cases of prostate cancer (excluding stage A1) and 249 metastatic cancers were identified\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Dairy product intake increased risk of metastatic prostate cancer (RR = 1.4, 95% CI = 0.91-2.2 for top vs. bottom quintile comparison)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% CI = 0.91-2.2\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"for top vs. bottom quintile comparison\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A prospective study on intake of animal products and risk of prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"title\"},\"timing\":{\"excerpt\":\"Between 1986 and 1996\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"completed a semiquantitative food-frequency questionnaire in 1986, and subsequently in 1990 and 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11519764|Processed meat intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The prospective cohort reports that processed meats contributed to elevated risk of incident metastatic prostate cancer, though no processed-meat-specific estimate is given in the abstract.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":51529,\"cases\":249,\"comparison_type\":\"processed meat intake and metastatic prostate cancer (levels not specified)\",\"design\":\"prospective cohort\",\"timing\":\"Between 1986 and 1996\",\"continent\":null,\"country\":null,\"location\":null,\"ethnicity\":\"NA\",\"population\":\"Participants of the Health Professionals Follow-Up Study\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We examine these associations among 51,529 men who contributed detailed dietary data.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"1897 total cases of prostate cancer (excluding stage A1) and 249 metastatic cancers were identified\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Processed meats, bacon and beef, pork or lamb as a main dish each contributed to an elevated risk of metastatic prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A prospective study on intake of animal products and risk of prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"title\"},\"timing\":{\"excerpt\":\"Between 1986 and 1996\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"completed a semiquantitative food-frequency questionnaire in 1986, and subsequently in 1990 and 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11519764|Red meat|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting a relative risk for red meat intake and incident metastatic prostate cancer.\",\"extraction\":{\"effect_size\":1.6,\"effect_type\":\"RR\",\"ci_lower\":1.0,\"ci_upper\":2.5,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":51529,\"cases\":249,\"comparison_type\":\"top vs. bottom quintile of red meat intake, metastatic prostate cancer\",\"design\":\"prospective cohort\",\"timing\":\"Between 1986 and 1996\",\"continent\":null,\"country\":null,\"location\":null,\"ethnicity\":\"NA\",\"population\":\"Participants of the Health Professionals Follow-Up Study\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"We examine these associations among 51,529 men who contributed detailed dietary data.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"1897 total cases of prostate cancer (excluding stage A1) and 249 metastatic cancers were identified\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"An elevated risk for metastatic prostate cancer was observed with intake of red meat (relative risk (RR)= 1.6 for top vs. bottom quintile comparison, 95% confidence interval (CI) = 1.0-2.5)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% confidence interval (CI) = 1.0-2.5\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"for top vs. bottom quintile comparison\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A prospective study on intake of animal products and risk of prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"title\"},\"timing\":{\"excerpt\":\"Between 1986 and 1996\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"completed a semiquantitative food-frequency questionnaire in 1986, and subsequently in 1990 and 1994\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/11519764/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"11520423|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a critical review of biomarker application in diet-and-health epidemiology, using vitamin D only as an illustrative example without original prostate-cancer incidence data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "11480666|Soy|Prostate cancer",
+      "pmid": "11480666",
+      "pmcid": "",
+      "published_date": "2001",
+      "title": "Soy and risk of hormone-related and other cancers.",
+      "authors": [
+        "Wu AH"
+      ],
+      "journal": "Advances in experimental medicine and biology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11480666/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The title indicates a broad narrative review of soy and hormone-related cancer risk rather than an original human study with prostate-cancer incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11493363|Antioxidants|Prostate cancer",
+      "pmid": "11493363",
+      "pmcid": "",
+      "published_date": "2001-08-01",
+      "title": "Prostate cancer and antioxidants.",
+      "authors": [
+        "George J",
+        "Nuttall SL",
+        "Kendall MJ"
+      ],
+      "journal": "Journal of clinical pharmacy and therapeutics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11493363/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is an overview/review article on prostate cancer and antioxidants with no original comparative human incidence analysis reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11493765|Soy|Prostate cancer",
+      "pmid": "11493765",
+      "pmcid": "",
+      "published_date": "2001-09-01",
+      "title": "Fat reduction to prevent prostate cancer: waiting for more evidence?",
+      "authors": [
+        "Moyad MA"
+      ],
+      "journal": "Current opinion in urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11493765/",
+      "exposure": "Soy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The abstract is a narrative review summarizing existing case-control and prospective evidence on dietary fat and soy rather than reporting original data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11502457|Selenium|Prostate cancer",
+      "pmid": "11502457",
+      "pmcid": "",
+      "published_date": "2001-08-01",
+      "title": "Androgen deprivation therapy for prostate cancer chemoprevention: current status and future directions for agent development.",
+      "authors": [
+        "Lieberman R"
+      ],
+      "journal": "Urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11502457/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review of androgen deprivation chemoprevention in which selenium is mentioned only incidentally as a potential combination agent.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11504910|Green tea|Prostate cancer",
+      "pmid": "11504910",
+      "pmcid": "PMC56964",
+      "published_date": "2001-08-28",
+      "title": "Inhibition of prostate carcinogenesis in TRAMP mice by oral infusion of green tea polyphenols.",
+      "authors": [
+        "Gupta S",
+        "Hastak K",
+        "Ahmad N",
+        "Lewin JS",
+        "Mukhtar H"
+      ],
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11504910/",
+      "exposure": "Green tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study administered green tea polyphenols exclusively to TRAMP transgenic mice, providing only preclinical animal evidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11504910|Tea|Prostate cancer",
+      "pmid": "11504910",
+      "pmcid": "PMC56964",
+      "published_date": "2001-08-28",
+      "title": "Inhibition of prostate carcinogenesis in TRAMP mice by oral infusion of green tea polyphenols.",
+      "authors": [
+        "Gupta S",
+        "Hastak K",
+        "Ahmad N",
+        "Lewin JS",
+        "Mukhtar H"
+      ],
+      "journal": "Proceedings of the National Academy of Sciences of the United States of America",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11504910/",
+      "exposure": "Tea",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Tea polyphenol infusion was tested only in transgenic mouse prostate carcinogenesis, an exclusively animal experiment.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11511598|Alcohol|Prostate cancer",
+      "pmid": "11511598",
+      "pmcid": "",
+      "published_date": "2001-08-01",
+      "title": "Alcohol consumption and risk of prostate cancer: The Harvard Alumni Health Study.",
+      "authors": [
+        "Sesso HD",
+        "Paffenbarger RS",
+        "Lee IM"
+      ],
+      "journal": "International journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort of Harvard alumni reporting multivariate relative risks for alcohol consumption and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.85,
+        "effect_type": "RR",
+        "ci_lower": 1.29,
+        "ci_upper": 2.64,
+        "p_value": 0.0007589411612379406,
+        "ci_confidence_level": 95,
+        "total_n": 7612,
+        "cases": 366,
+        "comparison_type": "1 to <3 drinks/day versus almost never drinking alcohol",
+        "design": "prospective cohort",
+        "timing": "1988 through 1993",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Harvard alumni men (mean age 66.6 years)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We prospectively followed 7612 Harvard alumni (mean age 66.6 years) from 1988 through 1993, during which 366 cases of incident prostate cancer occurred.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "We prospectively followed 7612 Harvard alumni (mean age 66.6 years) from 1988 through 1993, during which 366 cases of incident prostate cancer occurred.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Compared to men reporting almost never drinking alcohol in 1988, the multivariate relative risks (95% CI) for 1 drink/month to < 3 drinks/week, 3 drinks/week to < 1 drink/ day, 1 to < 3 drinks/day, and > or = 3 drinks/day were 1.33 (0.88-2.01), 1.65 (1.12-2.44), 1.85 (1.29-2.64), and 1.33 (0.86-2.05), respectively. Wine or beer consumption was unassociated with prostate cancer; however, moderate liquor consumption was associated with a significant 61-67% increased risk of prostate cancer (P, non-linear trend < 0.001).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Compared to men reporting almost never drinking alcohol in 1988, the multivariate relative risks (95% CI) for 1 drink/month to < 3 drinks/week, 3 drinks/week to < 1 drink/ day, 1 to < 3 drinks/day, and > or = 3 drinks/day were 1.33 (0.88-2.01), 1.65 (1.12-2.44), 1.85 (1.29-2.64), and 1.33 (0.86-2.05), respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Compared to men reporting almost never drinking alcohol in 1988",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "We prospectively followed 7612 Harvard alumni",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "from 1988 through 1993",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "The Harvard Alumni Health Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Self-reported alcohol consumption was assessed at baseline from wine, beer, and liquor intake.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11511598/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.85,
+            "effect_type": "RR",
+            "ci_lower": 1.29,
+            "ci_upper": 2.64,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 63.6,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11519764|Dairy|Prostate cancer",
+      "pmid": "11519764",
+      "pmcid": "",
+      "published_date": "2001-08-01",
+      "title": "A prospective study on intake of animal products and risk of prostate cancer.",
+      "authors": [
+        "Michaud DS",
+        "Augustsson K",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Willet WC",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort of 51,529 men reporting relative risks for dairy product intake and incident (metastatic) prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.4,
+        "effect_type": "RR",
+        "ci_lower": 0.91,
+        "ci_upper": 2.2,
+        "p_value": 0.13514853583755393,
+        "ci_confidence_level": 95,
+        "total_n": 51529,
+        "cases": 249,
+        "comparison_type": "top vs. bottom quintile of dairy product intake, metastatic prostate cancer",
+        "design": "prospective cohort",
+        "timing": "Between 1986 and 1996",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants of the Health Professionals Follow-Up Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We examine these associations among 51,529 men who contributed detailed dietary data.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1996, 1897 total cases of prostate cancer (excluding stage A1) and 249 metastatic cancers were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Processed meats, bacon and beef, pork or lamb as a main dish each contributed to an elevated risk of metastatic prostate cancer. Dairy product intake increased risk of metastatic prostate cancer (RR = 1.4, 95% CI = 0.91-2.2 for top vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Dairy product intake increased risk of metastatic prostate cancer (RR = 1.4, 95% CI = 0.91-2.2 for top vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for top vs. bottom quintile comparison",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A prospective study on intake of animal products and risk of prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "title"
+          },
+          "timing": {
+            "excerpt": "Between 1986 and 1996",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "completed a semiquantitative food-frequency questionnaire in 1986, and subsequently in 1990 and 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.4,
+            "effect_type": "RR",
+            "ci_lower": 0.91,
+            "ci_upper": 2.2,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11519764|Processed meat intake|Prostate cancer",
+      "pmid": "11519764",
+      "pmcid": "",
+      "published_date": "2001-08-01",
+      "title": "A prospective study on intake of animal products and risk of prostate cancer.",
+      "authors": [
+        "Michaud DS",
+        "Augustsson K",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Willet WC",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The prospective cohort reports that processed meats contributed to elevated risk of incident metastatic prostate cancer, though no processed-meat-specific estimate is given in the abstract.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 51529,
+        "cases": 249,
+        "comparison_type": "processed meat intake and metastatic prostate cancer (levels not specified)",
+        "design": "prospective cohort",
+        "timing": "Between 1986 and 1996",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants of the Health Professionals Follow-Up Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We examine these associations among 51,529 men who contributed detailed dietary data.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1996, 1897 total cases of prostate cancer (excluding stage A1) and 249 metastatic cancers were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Processed meats, bacon and beef, pork or lamb as a main dish each contributed to an elevated risk of metastatic prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A prospective study on intake of animal products and risk of prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "title"
+          },
+          "timing": {
+            "excerpt": "Between 1986 and 1996",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "completed a semiquantitative food-frequency questionnaire in 1986, and subsequently in 1990 and 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11519764|Red meat|Prostate cancer",
+      "pmid": "11519764",
+      "pmcid": "",
+      "published_date": "2001-08-01",
+      "title": "A prospective study on intake of animal products and risk of prostate cancer.",
+      "authors": [
+        "Michaud DS",
+        "Augustsson K",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Willet WC",
+        "Giovannucci E"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting a relative risk for red meat intake and incident metastatic prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.6,
+        "effect_type": "RR",
+        "ci_lower": 1,
+        "ci_upper": 2.5,
+        "p_value": 0.04435777722376389,
+        "ci_confidence_level": 95,
+        "total_n": 51529,
+        "cases": 249,
+        "comparison_type": "top vs. bottom quintile of red meat intake, metastatic prostate cancer",
+        "design": "prospective cohort",
+        "timing": "Between 1986 and 1996",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Participants of the Health Professionals Follow-Up Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We examine these associations among 51,529 men who contributed detailed dietary data.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1996, 1897 total cases of prostate cancer (excluding stage A1) and 249 metastatic cancers were identified.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Intakes of total meat, red meat, and dairy products were not associated with risk of total or advanced prostate cancer. An elevated risk for metastatic prostate cancer was observed with intake of red meat (relative risk (RR)= 1.6 for top vs.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "An elevated risk for metastatic prostate cancer was observed with intake of red meat (relative risk (RR)= 1.6 for top vs. bottom quintile comparison, 95% confidence interval (CI) = 1.0-2.5); this association was slightly attenuated after controlling for saturated and alpha-linolenic fatty acids (RR = 1.5, 95% CI = 0.88-2.5).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for top vs. bottom quintile comparison",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A prospective study on intake of animal products and risk of prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "title"
+          },
+          "timing": {
+            "excerpt": "Between 1986 and 1996",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "completed a semiquantitative food-frequency questionnaire in 1986, and subsequently in 1990 and 1994",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/11519764/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.6,
+            "effect_type": "RR",
+            "ci_lower": 1,
+            "ci_upper": 2.5,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ]
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "11520423|Vitamin D|Prostate cancer",
+      "pmid": "11520423",
+      "pmcid": "",
+      "published_date": "2001-08-01",
+      "title": "A critical evaluation of the application of biomarkers in epidemiological studies on diet and health.",
+      "authors": [
+        "Wild CP",
+        "Andersson C",
+        "O'Brien NM",
+        "Wilson L",
+        "Woods JA"
+      ],
+      "journal": "The British journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/11520423/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a critical review of biomarker application in diet-and-health epidemiology, using vitamin D only as an illustrative example without original prostate-cancer incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:55.366951-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "b8fc37abb8650f29b08cf325f95da0155173d458b90cd70e9e7c56f14aba9618",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "14977640",
+      "title": "Alcohol intake, drinking patterns, and risk of prostate cancer in a large prospective cohort study.",
+      "abstract": "Alcohol drinking has been extensively studied in relation to prostate cancer, yet findings on the direction of the association are equivocal. Previous studies have not examined drinking patterns. Thus, the authors prospectively evaluated the associations between these factors and risk of incident prostate cancer (n = 2,479) in a cohort study of 47,843 US men (1986-1998). The men completed a questionnaire at baseline that included information on consumption of specific types of alcohol and frequency of use. The authors estimated hazard ratios using Cox proportional hazards regression for average alcohol intake and number of days per week on which alcohol was consumed stratified by average weekly intake (<105 g/week vs. > or = 105 g/week). Compared with nondrinking, the hazard ratio for consumption increased slightly from an average of 5.0-14.9 g/day (hazard ratio (HR) = 1.05, 95% confidence interval (CI): 0.94, 1.18) to 30.0-49.9 g/day (HR = 1.13, 95% CI: 0.96, 1.33), but it was not increased at > or = 50 g/day (HR = 1.00, 95% CI: 0.77, 1.31) after adjustment for recent smoking and other factors. Compared with abstainers, risk was greatest among men who consumed an average of > or = 105 g/week but who drank on only 1-2 days per week (HR = 1.64, 95% CI: 1.13, 2.38). These results suggest that moderate or greater alcohol consumption is not a strong contributor to prostate cancer risk, except possibly in men who consume large amounts infrequently.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Alcohol Drinking / adverse effects",
+        "Cohort Studies",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "14977640",
+      "contexts": [
+        {
+          "context_id": "14977640|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "47843",
+              "effect_measure_type": "HR",
+              "effect_size": "1.64",
+              "ci_lower": "1.13",
+              "ci_upper": "2.38",
+              "p_value": "0.009232385409300353",
+              "comparison": ">=105 g/week consumed on 1-2 days per week versus abstainers"
+            },
+            "Claude+Gemini": {
+              "sample_size": "47843",
+              "effect_measure_type": "HR",
+              "effect_size": "1",
+              "ci_lower": "0.77",
+              "ci_upper": "1.31",
+              "p_value": null,
+              "comparison": "average alcohol intake >=50 g/day versus nondrinking"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

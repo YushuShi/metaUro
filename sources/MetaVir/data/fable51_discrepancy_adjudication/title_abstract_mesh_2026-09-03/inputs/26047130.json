@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:01.589843-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9e2d71fc31acc391ba387be2b4243391bf05c3b8ef9c6e8093867be399b89104",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "26047130",
+      "title": "Risk of prostate cancer in African-American men: Evidence of mixed effects of dietary quercetin by serum vitamin D status.",
+      "abstract": "African-American (AA) men experience higher rates of prostate cancer (PCa) and vitamin D (vitD) deficiency than white men. VitD is promoted for PCa prevention, but there is conflicting data on the association between vitD and PCa. We examined the association between serum vitD and dietary quercetin and their interaction with PCa risk in AA men. Participants included 90 AA men with PCa undergoing treatment at Howard University Hospital (HUH) and 62 controls participating in HUH's free PCa screening program. We measured serum 25-hydroxy vitD [25(OH)D] and used the 98.2 item Block Brief 2000 Food Frequency Questionnaires to measure dietary intake of quercetin and other nutrients. Case and control groups were compared using a two-sample t-test for continuous risk factors and a Fisher exact test for categorical factors. Associations between risk factors and PCa risk were examined via age-adjusted logistic regression models. Interaction effects of dietary quercetin and serum vitD on PCa status were observed. AA men (age 40-70) with normal levels of serum vitD (>30 ng/ml) had a 71% lower risk of PCa compared to AA men with vitD deficiency (OR = 0.29, 95%CI: 0.08-1.03; P = 0.055). In individuals with vitD deficiency, increased dietary quercetin showed a tendency toward lower risk of PCa (OR = 0.91, 95%CI: 0.82-1.00; P = 0.054, age-adjusted) while men with normal vitD were at elevated risk (OR = 1.23, 95%CI: 1.04-1.45). These findings suggest that AA men who are at a higher risk of PCa may benefit more from vitD intake, and supplementation with dietary quercetin may increase the risk of PCa in AA men with normal vitD levels. Further studies with larger populations are needed to better understand the impact of the interaction between sera vitD levels and supplementation with quercetin on PCa in AA men.",
+      "mesh": [
+        "Adult",
+        "Black or African American",
+        "Aged",
+        "Diet",
+        "Dietary Supplements",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / blood, ethnology, prevention & control",
+        "Quercetin / administration & dosage",
+        "Risk",
+        "Vitamin D / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "26047130",
+      "contexts": [
+        {
+          "context_id": "26047130|Quercetin|Prostate cancer",
+          "exposure": "Quercetin",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "26047130|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,776 @@
+{
+  "schema_version": 1,
+  "receipt_id": "56f0072eb4dbf788029e524a4214fa4472779b5bee8b23ffeeba23ebb92ee44c",
+  "requested_at": "2026-09-02T07:51:43.784836+08:00",
+  "received_at": "2026-09-02T07:52:38.106177+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "29a1f793cf25b11c919ad8c6d98f0188b3fad941532e805b69a07326d54543b6",
+  "attempt": 1,
+  "context_ids": [
+    "19768259|Calcium|Prostate cancer",
+    "19768259|Dairy|Prostate cancer",
+    "19768259|Vitamin D|Prostate cancer",
+    "19776642|Omega-3 fatty acids|Prostate cancer",
+    "19776642|Polyunsaturated fat (PUFA)|Prostate cancer",
+    "19806380|Curcumin|Prostate cancer",
+    "19808637|Iron|Prostate cancer",
+    "19808637|Processed meat intake|Prostate cancer",
+    "19808637|Red meat|Prostate cancer",
+    "19814618|Folic acid|Prostate cancer",
+    "19816598|Resveratrol|Prostate cancer",
+    "19817700|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Curcumin": 1,
+    "Dairy": 1,
+    "Folic acid": 1,
+    "Iron": 1,
+    "Omega-3 fatty acids": 1,
+    "Polyunsaturated fat (PUFA)": 1,
+    "Processed meat intake": 1,
+    "Red meat": 1,
+    "Resveratrol": 1,
+    "Vitamin D": 2
+  },
+  "input_digest": "c0f28b3411a03827035615055a4f1cf569f045c30c250471704a4801f2276184",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9224,
+    "cached_input_tokens": 0,
+    "output_tokens": 6077,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.198045",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "5449fb36-1658-44ae-a6e5-66a567b8eb15",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.198045"
+  },
+  "output_sha256": "ec8f6a571fbc4e13f9929355209d0a73dcfba54857c2a93d50ad2ebcc4b8244e",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"19768259|Calcium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review summarizing current evidence on milk/dairy, calcium and disease risk rather than an original human study of calcium intake and incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19768259|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative evidence review of milk/dairy products and health outcomes, presenting no original prostate-cancer incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19768259|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"Vitamin D in dairy is discussed only within a narrative review of existing evidence, with no original incidence analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19776642|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The abstract is a narrative literature review of fish/omega-3 PUFAs, COX-2 variation and prostate cancer rather than an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19776642|Polyunsaturated fat (PUFA)|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"PUFA evidence is summarized in a narrative review of the literature, providing no original human incidence estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19806380|Curcumin|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article explicitly presents an overview of curcumin's chemopreventive potential, i.e., a narrative review without original human data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19808637|Iron|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort of 175,343 US men reporting an adjusted hazard ratio for dietary heme iron and incident total prostate cancer.\",\"extraction\":{\"effect_size\":1.09,\"effect_type\":\"HR\",\"ci_lower\":1.02,\"ci_upper\":1.17,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":175343,\"cases\":10313,\"comparison_type\":\"highest vs lowest intake quintile (fifth vs first)\",\"design\":\"prospective cohort\",\"timing\":\"9 years of follow-up (1995-2003)\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"US men aged 50-71 years\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 175,343 US men aged 50-71 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"Heme iron, barbecued/grilled meat, and benzo[a]pyrene were all positively associated with total (HR = 1.09 (95% CI: 1.02, 1.17)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"HR = 1.09 (95% CI: 1.02, 1.17)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Hazard ratios comparing the fifth intake quintile with the first\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a large prospective cohort study in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"title\"},\"timing\":{\"excerpt\":\"During 9 years of follow-up (1995-2003)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"a cohort of 175,343 US men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"a large prospective cohort study in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"19808637|Processed meat intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting a hazard ratio for processed meat intake and incident total prostate cancer.\",\"extraction\":{\"effect_size\":1.07,\"effect_type\":\"HR\",\"ci_lower\":1.0,\"ci_upper\":1.14,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":175343,\"cases\":10313,\"comparison_type\":\"highest vs lowest intake quintile (fifth vs first)\",\"design\":\"prospective cohort\",\"timing\":\"9 years of follow-up (1995-2003)\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"US men aged 50-71 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 175,343 US men aged 50-71 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"processed meat: HR = 1.07, 95% CI: 1.00, 1.14\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"HR = 1.07, 95% CI: 1.00, 1.14\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Hazard ratios comparing the fifth intake quintile with the first\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a large prospective cohort study in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"title\"},\"timing\":{\"excerpt\":\"During 9 years of follow-up (1995-2003)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"a cohort of 175,343 US men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"a large prospective cohort study in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"The authors examined associations between meat consumption (type, cooking method, and related mutagens)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"19808637|Red meat|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting a hazard ratio for red meat intake and incident total prostate cancer.\",\"extraction\":{\"effect_size\":1.12,\"effect_type\":\"HR\",\"ci_lower\":1.04,\"ci_upper\":1.21,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":175343,\"cases\":10313,\"comparison_type\":\"highest vs lowest intake quintile (fifth vs first)\",\"design\":\"prospective cohort\",\"timing\":\"9 years of follow-up (1995-2003)\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"United States\",\"ethnicity\":\"NA\",\"population\":\"US men aged 50-71 years\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 175,343 US men aged 50-71 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"95% confidence interval (CI): 1.04, 1.21\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"Hazard ratios comparing the fifth intake quintile with the first\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"a large prospective cohort study in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"title\"},\"timing\":{\"excerpt\":\"During 9 years of follow-up (1995-2003)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"a cohort of 175,343 US men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"a large prospective cohort study in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"title\"},\"exposure_measurement\":{\"excerpt\":\"associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/19808637/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Unclear\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"19814618|Folic acid|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENETIC-FOCUS\",\"reason\":\"The study evaluates MTHFR A1298C and C677T genotype frequencies in prostate cancer patients versus BPH controls, with no population-wide folic acid exposure estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19816598|Resveratrol|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Resveratrol effects on androgen receptor transcriptional activity were tested exclusively in engineered HeLa cell lines, a preclinical in vitro model.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"19817700|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative documentation/review of epidemiological literature on vitamin D deficiency and cancer without original prostate-cancer incidence analysis.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "19768259|Calcium|Prostate cancer",
+      "pmid": "19768259",
+      "pmcid": "",
+      "published_date": "2009-07-01",
+      "title": "Milk intake and the risk of type 2 diabetes mellitus, hypertension and prostate cancer.",
+      "authors": [
+        "Martini LA",
+        "Wood RJ"
+      ],
+      "journal": "Arquivos brasileiros de endocrinologia e metabologia",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19768259/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review summarizing current evidence on milk/dairy, calcium and disease risk rather than an original human study of calcium intake and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19768259|Dairy|Prostate cancer",
+      "pmid": "19768259",
+      "pmcid": "",
+      "published_date": "2009-07-01",
+      "title": "Milk intake and the risk of type 2 diabetes mellitus, hypertension and prostate cancer.",
+      "authors": [
+        "Martini LA",
+        "Wood RJ"
+      ],
+      "journal": "Arquivos brasileiros de endocrinologia e metabologia",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19768259/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative evidence review of milk/dairy products and health outcomes, presenting no original prostate-cancer incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19768259|Vitamin D|Prostate cancer",
+      "pmid": "19768259",
+      "pmcid": "",
+      "published_date": "2009-07-01",
+      "title": "Milk intake and the risk of type 2 diabetes mellitus, hypertension and prostate cancer.",
+      "authors": [
+        "Martini LA",
+        "Wood RJ"
+      ],
+      "journal": "Arquivos brasileiros de endocrinologia e metabologia",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19768259/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "Vitamin D in dairy is discussed only within a narrative review of existing evidence, with no original incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19776642|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "19776642",
+      "pmcid": "PMC2820568",
+      "published_date": "2009",
+      "title": "Omega-3 fatty acids, genetic variants in COX-2 and prostate cancer.",
+      "authors": [
+        "Reese AC",
+        "Fradet V",
+        "Witte JS"
+      ],
+      "journal": "Journal of nutrigenetics and nutrigenomics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19776642/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The abstract is a narrative literature review of fish/omega-3 PUFAs, COX-2 variation and prostate cancer rather than an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19776642|Polyunsaturated fat (PUFA)|Prostate cancer",
+      "pmid": "19776642",
+      "pmcid": "PMC2820568",
+      "published_date": "2009",
+      "title": "Omega-3 fatty acids, genetic variants in COX-2 and prostate cancer.",
+      "authors": [
+        "Reese AC",
+        "Fradet V",
+        "Witte JS"
+      ],
+      "journal": "Journal of nutrigenetics and nutrigenomics",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19776642/",
+      "exposure": "Polyunsaturated fat (PUFA)",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "PUFA evidence is summarized in a narrative review of the literature, providing no original human incidence estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19806380|Curcumin|Prostate cancer",
+      "pmid": "19806380",
+      "pmcid": "PMC2820199",
+      "published_date": "2010-03-01",
+      "title": "Chemopreventive potential of curcumin in prostate cancer.",
+      "authors": [
+        "Teiten MH",
+        "Gaascht F",
+        "Eifes S",
+        "Dicato M",
+        "Diederich M"
+      ],
+      "journal": "Genes & nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19806380/",
+      "exposure": "Curcumin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article explicitly presents an overview of curcumin's chemopreventive potential, i.e., a narrative review without original human data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19808637|Iron|Prostate cancer",
+      "pmid": "19808637",
+      "pmcid": "PMC2781742",
+      "published_date": "2009-11-01",
+      "title": "Meat and meat-related compounds and risk of prostate cancer in a large prospective cohort study in the United States.",
+      "authors": [
+        "Sinha R",
+        "Park Y",
+        "Graubard BI",
+        "Leitzmann MF",
+        "Hollenbeck A",
+        "Schatzkin A",
+        "Cross AJ"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+      "exposure": "Iron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort of 175,343 US men reporting an adjusted hazard ratio for dietary heme iron and incident total prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.09,
+        "effect_type": "HR",
+        "ci_lower": 1.02,
+        "ci_upper": 1.17,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 175343,
+        "cases": 10313,
+        "comparison_type": "highest vs lowest intake quintile (fifth vs first)",
+        "design": "prospective cohort",
+        "timing": "9 years of follow-up (1995-2003)",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "US men aged 50-71 years",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer in a cohort of 175,343 US men aged 50-71 years. During 9 years of follow-up (1995-2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During 9 years of follow-up (1995-2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Heme iron, barbecued/grilled meat, and benzo[a]pyrene were all positively associated with total (HR = 1.09 (95% CI: 1.02, 1.17), HR = 1.11 (95% CI: 1.03, 1.19), and HR = 1.09 (95% CI: 1.00, 1.18), respectively) and advanced (HR = 1.28 (95% CI: 1.03, 1.58), HR = 1.36 (95% CI: 1.10, 1.69), and HR = 1.28 (95% CI: 1.00, 1.65), respectively) disease.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Heme iron, barbecued/grilled meat, and benzo[a]pyrene were all positively associated with total (HR = 1.09 (95% CI: 1.02, 1.17), HR = 1.11 (95% CI: 1.03, 1.19), and HR = 1.09 (95% CI: 1.00, 1.18), respectively) and advanced (HR = 1.28 (95% CI: 1.03, 1.58), HR = 1.36 (95% CI: 1.10, 1.69), and HR = 1.28 (95% CI: 1.00, 1.65), respectively) disease.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "timing": {
+            "excerpt": "During 9 years of follow-up (1995-2003)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "a cohort of 175,343 US men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 45.5,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19808637|Processed meat intake|Prostate cancer",
+      "pmid": "19808637",
+      "pmcid": "PMC2781742",
+      "published_date": "2009-11-01",
+      "title": "Meat and meat-related compounds and risk of prostate cancer in a large prospective cohort study in the United States.",
+      "authors": [
+        "Sinha R",
+        "Park Y",
+        "Graubard BI",
+        "Leitzmann MF",
+        "Hollenbeck A",
+        "Schatzkin A",
+        "Cross AJ"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting a hazard ratio for processed meat intake and incident total prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.07,
+        "effect_type": "HR",
+        "ci_lower": 1,
+        "ci_upper": 1.14,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 175343,
+        "cases": 10313,
+        "comparison_type": "highest vs lowest intake quintile (fifth vs first)",
+        "design": "prospective cohort",
+        "timing": "9 years of follow-up (1995-2003)",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "US men aged 50-71 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer in a cohort of 175,343 US men aged 50-71 years. During 9 years of follow-up (1995-2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During 9 years of follow-up (1995-2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "timing": {
+            "excerpt": "During 9 years of follow-up (1995-2003)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "a cohort of 175,343 US men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 45.5,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19808637|Red meat|Prostate cancer",
+      "pmid": "19808637",
+      "pmcid": "PMC2781742",
+      "published_date": "2009-11-01",
+      "title": "Meat and meat-related compounds and risk of prostate cancer in a large prospective cohort study in the United States.",
+      "authors": [
+        "Sinha R",
+        "Park Y",
+        "Graubard BI",
+        "Leitzmann MF",
+        "Hollenbeck A",
+        "Schatzkin A",
+        "Cross AJ"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting a hazard ratio for red meat intake and incident total prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.12,
+        "effect_type": "HR",
+        "ci_lower": 1.04,
+        "ci_upper": 1.21,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 175343,
+        "cases": 10313,
+        "comparison_type": "highest vs lowest intake quintile (fifth vs first)",
+        "design": "prospective cohort",
+        "timing": "9 years of follow-up (1995-2003)",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "US men aged 50-71 years",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The authors examined associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer in a cohort of 175,343 US men aged 50-71 years. During 9 years of follow-up (1995-2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "cases": {
+            "excerpt": "During 9 years of follow-up (1995-2003), they ascertained 10,313 prostate cancer cases (1,102 advanced) and 419 fatal cases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first revealed elevated risks associated with red and processed meat for total (red meat: hazard ratio (HR) = 1.12, 95% confidence interval (CI): 1.04, 1.21; processed meat: HR = 1.07, 95% CI: 1.00, 1.14) and advanced (red meat: HR = 1.31, 95% CI: 1.05, 1.65; processed meat: HR = 1.32, 95% CI: 1.08, 1.61) prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Hazard ratios comparing the fifth intake quintile with the first",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "timing": {
+            "excerpt": "During 9 years of follow-up (1995-2003)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "a cohort of 175,343 US men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "a large prospective cohort study in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "title"
+          },
+          "exposure_measurement": {
+            "excerpt": "associations between meat consumption (type, cooking method, and related mutagens), heme iron, nitrite/nitrate, and prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19808637/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 45.5,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19814618|Folic acid|Prostate cancer",
+      "pmid": "19814618",
+      "pmcid": "",
+      "published_date": "2009-10-01",
+      "title": "The analysis of the relationship between A1298C and C677T polymorphisms of the MTHFR gene with prostate cancer in Eskisehir population.",
+      "authors": [
+        "Muslumanoglu MH",
+        "Tepeli E",
+        "Demir S",
+        "Uludag A",
+        "Uzun D",
+        "Atli E",
+        "Canturk KM",
+        "Ozdemir M",
+        "Turgut M"
+      ],
+      "journal": "Genetic testing and molecular biomarkers",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19814618/",
+      "exposure": "Folic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENETIC-FOCUS",
+      "reason": "The study evaluates MTHFR A1298C and C677T genotype frequencies in prostate cancer patients versus BPH controls, with no population-wide folic acid exposure estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19816598|Resveratrol|Prostate cancer",
+      "pmid": "19816598",
+      "pmcid": "PMC2754655",
+      "published_date": "2009-10-09",
+      "title": "Repressive effects of resveratrol on androgen receptor transcriptional activity.",
+      "authors": [
+        "Shi WF",
+        "Leong M",
+        "Cho E",
+        "Farrell J",
+        "Chen HC",
+        "Tian J",
+        "Zhang D"
+      ],
+      "journal": "PloS one",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19816598/",
+      "exposure": "Resveratrol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "19817700|Vitamin D|Prostate cancer",
+      "pmid": "19817700",
+      "pmcid": "",
+      "published_date": "2009",
+      "title": "Scientific documentation of the relationship of vitamin D deficiency and the development of cancer.",
+      "authors": [
+        "Edlich R",
+        "Mason SS",
+        "Chase ME",
+        "Fisher AL",
+        "Gubler K",
+        "Long WB",
+        "Giesy JD",
+        "Foley ML"
+      ],
+      "journal": "Journal of environmental pathology, toxicology and oncology : official organ of the International Society for Environmental Toxicology and Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19817700/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative documentation/review of epidemiological literature on vitamin D deficiency and cancer without original prostate-cancer incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:19.070346-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "44ea91a56676e95f119fc103637486a4b228c30d0f3d3a2e41bf28fdf1573351",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19521962",
+      "title": "Red wine consumption and risk of prostate cancer: the California men's health study.",
+      "abstract": "Red wine contains polyphenol antioxidants that inhibit prostate cancer development in animal studies. We investigated the effect of red wine intake on the risk of prostate cancer using data prospectively collected in the California Men's Health Study (CMHS). CMHS is a multiethnic cohort of 84,170 men aged 45-69 years who were members of the Kaiser Permanente Southern and Northern California Health Plans. Information on demographic and lifestyle factors was collected using mailed questionnaires between 2002 and 2003. We used Cox models to estimate the effect of red wine on prostate cancer risk, adjusting for potential confounders. A total of 1,340 incident prostate cancer cases identified from Surveillance, Epidemiology and End Result-affiliated cancer registries were included in the analyses. We did not find a clear association between red wine intake and risk of prostate cancer. Hazard ratio (HR) estimates for consuming <1 drink/week, > or =1 drink/week but <1 drink/day and > or =1 drink/day were 0.89, 95% confidence interval (0.74-1.07), 0.99 (0.83-1.17) and 0.88 (0.70-1.12), respectively. Further, we observed no linear dose response. The lack of association for red wine intake was consistently observed when we restricted the analyses to those with and without a history of PSA screening. In addition, we also did not observe any association with prostate cancer for beer, white wine, liquor or combined alcoholic beverage intake (HR for combined alcoholic beverage intake of > or =5 drinks/day = 1.16 (0.83-1.63). Neither red wine nor total alcohol consumption were associated with prostate cancer risk in this population of moderate drinkers.",
+      "mesh": [
+        "Aged",
+        "California / epidemiology",
+        "Cohort Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Proportional Hazards Models",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "Wine"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19521962",
+      "contexts": [
+        {
+          "context_id": "19521962|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "84170",
+              "effect_measure_type": "HR",
+              "effect_size": "0.88",
+              "ci_lower": "0.7",
+              "ci_upper": "1.12",
+              "p_value": "0.28635272550901336",
+              "comparison": "≥1 drink/day versus an unspecified reference category"
+            },
+            "Claude+Gemini": {
+              "sample_size": "84170",
+              "effect_measure_type": "HR",
+              "effect_size": "1.16",
+              "ci_lower": "0.83",
+              "ci_upper": "1.63",
+              "p_value": null,
+              "comparison": "Combined alcoholic beverage intake of >=5 drinks/day versus lower/no intake reference"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

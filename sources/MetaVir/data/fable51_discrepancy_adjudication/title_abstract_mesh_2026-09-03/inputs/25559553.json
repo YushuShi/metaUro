@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:46.110156-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "2e64cbf92b8e747bf87604abb64c81f2961f4e9a6bc4c31983daa3e85f75eb1b",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "25559553",
+      "title": "Concordance with World Cancer Research Fund/American Institute for Cancer Research (WCRF/AICR) guidelines for cancer prevention and obesity-related cancer risk in the Framingham Offspring cohort (1991-2008).",
+      "abstract": "This prospective cohort study evaluates associations between healthful behaviors consistent with WCRF/AICR cancer prevention guidelines and obesity-related cancer risk, as a third of cancers are estimated to be preventable. The study sample consisted of adults from the Framingham Offspring cohort (n = 2,983). From 1991 to 2008, 480 incident doctor-diagnosed obesity-related cancers were identified. Data on diet, measured by a food frequency questionnaire, anthropometric measures, and self-reported physical activity, collected in 1991 was used to construct a 7-component score based on recommendations for body fatness, physical activity, foods that promote weight gain, plant foods, animal foods, alcohol, and food preservation, processing, and preparation. Multivariable Cox regression models were used to estimate associations between the computed score, its components, and subcomponents in relation to obesity-related cancer risk. The overall score was not associated with obesity-related cancer risk after adjusting for age, sex, smoking, energy, and preexisting conditions (HR 0.94, 95 % CI 0.86-1.02). When score components were evaluated separately, for every unit increment in the alcohol score, there was 29 % lower risk of obesity-related cancers (HR 0.71, 95 % CI 0.51-0.99) and 49-71 % reduced risk of breast, prostate, and colorectal cancers. Every unit increment in the subcomponent score for non-starchy plant foods (fruits, vegetables, and legumes) among participants who consume starchy vegetables was associated with 66 % reduced risk of colorectal cancer (HR 0.44, 95 % CI 0.22-0.88). Lower alcohol consumption and a plant-based diet consistent with the cancer prevention guidelines were associated with reduced risk of obesity-related cancers in this population.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Animals",
+        "Anthropometry",
+        "Breast Neoplasms / complications, prevention & control",
+        "Cohort Studies",
+        "Colorectal Neoplasms / complications, prevention & control",
+        "Diet",
+        "Family Health",
+        "Feeding Behavior",
+        "Female",
+        "Fruit",
+        "Guidelines as Topic",
+        "Humans",
+        "International Cooperation",
+        "Male",
+        "Middle Aged",
+        "Obesity / complications",
+        "Preventive Medicine / standards",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / complications, prevention & control",
+        "Risk",
+        "Risk Reduction Behavior",
+        "Surveys and Questionnaires",
+        "United States",
+        "Vegetables"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "25559553",
+      "contexts": [
+        {
+          "context_id": "25559553|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

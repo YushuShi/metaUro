@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:33.500643-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "0cf97676784bd4a4c62a24e31118cff913985d383729ad1cda402b23de680e62",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17823432",
+      "title": "Plasma carotenoids, retinol, and tocopherols and the risk of prostate cancer in the European Prospective Investigation into Cancer and Nutrition study.",
+      "abstract": "Previous studies suggest that high plasma concentrations of carotenoids, retinol, or tocopherols may reduce the risk of prostate cancer. We aimed to examine the associations between plasma concentrations of 7 carotenoids, retinol, alpha-tocopherol, and gamma-tocopherol and prostate cancer risk. A total of 137,001 men in 8 European countries participated. After a mean of 6 y, 966 incident cases of prostate cancer with plasma were available. A total of 1064 control subjects were selected and were matched for study center, age, and date of recruitment. The relative risk of prostate cancer was estimated by conditional logistic regression, which was adjusted for smoking status, alcohol intake, body mass index, marital status, physical activity, and education level. Overall, none of the micronutrients examined were significantly associated with prostate cancer risk. For lycopene and the sum of carotenoids, there was evidence of heterogeneity between the associations with risks of localized and advanced disease. These carotenoids were not associated with the risk of localized disease but were inversely associated with the risk of advanced disease. The risk of advanced disease for men in the highest fifth of plasma concentrations compared with men in the lowest fifth was 0.40 (95% CI: 0.19, 0.88) for lycopene and 0.35 (95% CI: 0.17, 0.78) for the sum of carotenoids. We observed no associations between plasma concentrations of carotenoids, retinol, or tocopherols and overall prostate cancer risk. The inverse associations of lycopene and the sum of carotenoids with the risk of advanced disease may involve a protective effect, an association of dietary choice with delayed detection of prostate cancer, reverse causality, or other factors.",
+      "mesh": [
+        "Carotenoids / administration & dosage, blood",
+        "Case-Control Studies",
+        "Cohort Studies",
+        "Diet",
+        "Europe / epidemiology",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Staging",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, epidemiology, pathology",
+        "Risk Factors",
+        "Severity of Illness Index",
+        "Tocopherols / administration & dosage, blood",
+        "Vitamin A / administration & dosage, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17823432",
+      "contexts": [
+        {
+          "context_id": "17823432|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "137001",
+              "effect_measure_type": "RR",
+              "effect_size": "0.4",
+              "ci_lower": "0.19",
+              "ci_upper": "0.88",
+              "p_value": "0.01912222516191684",
+              "comparison": "highest fifth versus lowest fifth of plasma concentrations"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2030",
+              "effect_measure_type": "RR",
+              "effect_size": "0.4",
+              "ci_lower": "0.19",
+              "ci_upper": "0.88",
+              "p_value": "0.01912222516191684",
+              "comparison": "highest fifth vs lowest fifth of plasma concentration (advanced disease)"
+            }
+          }
+        },
+        {
+          "context_id": "17823432|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "137001",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "2030",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

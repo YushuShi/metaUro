@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:32.512405-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "e22498bbd4f6a5f30d04e8bc9ab379b765ffa2ebd33e6cda8be354f27f87e8a1",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15280622",
+      "title": "Lifestyle and prostate cancer among older African-American and Caucasian men in South Carolina.",
+      "abstract": "We investigated the association between lifestyle and prostate cancer risk among Caucasian and African-American men, separately. This population-based case-control study of prostate cancer among men aged 65-79 years was conducted between 2000 and 2002 in South Carolina. Telephone interviews were completed with 416 incident prostate cancer cases ascertained through the South Carolina Central Cancer Registry, and 429 controls identified through the Health Care Financing Administration Medicare beneficiary file (with respective response rates of 71% and 64%). Caucasian men working in production, transportation, and material moving had increased prostate cancer risk (odds ratio [OR] = 2.04, 95% confidence interval [CI] 1.17-3.54), while African-American men in the military had reduced prostate cancer risk (OR = 0.19, 95% CI 0.05-0.76). Having five or more prostate specific antigen (PSA) tests within the past five years was associated with prostate cancer among Caucasian men; however, African-American men with prostate cancer tended to have fewer PSA tests. Increasing lycopene consumption was associated with a reduced risk of prostate cancer among Caucasian men (p = 0.03), but not among African-American men. In this population-based case-control study conducted in South Carolina we did not find marked differences in lifestyle factors associated with prostate cancer by race.",
+      "mesh": [
+        "Black or African American",
+        "Aged",
+        "Case-Control Studies",
+        "Humans",
+        "Life Style",
+        "Male",
+        "Prostatic Neoplasms / ethnology, etiology",
+        "Registries / statistics & numerical data",
+        "South Carolina",
+        "White People"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15280622",
+      "contexts": [
+        {
+          "context_id": "15280622|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.03",
+              "comparison": "Increasing lycopene consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "800",
+              "effect_measure_type": "OR",
+              "effect_size": "0.71",
+              "ci_lower": "0.46",
+              "ci_upper": "1.08",
+              "p_value": "0.11571940487329367",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

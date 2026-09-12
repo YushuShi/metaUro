@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:25:53.513134-04:00",
+  "pmid": "16434593",
+  "work_key": "9d6fd5964eb9e91cd58f88e7eb5d7e4924048b33a87415a8cf213dbe43a24cc0",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/16434593_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "16434593",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "16434593|Tomato|Prostate cancer",
+        "exposure": "Tomato",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "95% confidence interval (95% CI), 0.67-1.03 for >or=1 serving/wk versus < 0.5 serving/mo; P(trend)=0.06",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "The CI 0.67-1.03 and P(trend)=0.06 belong to the pizza estimate, not to total tomato servings; whether pizza should represent the 'Tomato' exposure cannot be resolved from title/abstract/MeSH.",
+        "one_sentence_explanation": "Claude+Gemini's CI 0.67-1.03 and p=0.06 appear verbatim in the abstract but are attached to pizza consumption, while no CI or p value is given for total tomato servings, so the correct mapping to the Tomato exposure is ambiguous."
+      },
+      {
+        "context_id": "16434593|Tomato|Prostate cancer",
+        "exposure": "Tomato",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Reduced risks were also not found for total tomato servings or for most tomato-based foods. Statistically nonsignificant inverse associations were noted for pizza [all prostate cancer: relative risk (RR), 0.83",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives no numeric estimate for total tomato servings; the only numeric RR (0.83) is for pizza, a specific tomato-based food, so mapping to the 'Tomato' exposure is not unique.",
+        "one_sentence_explanation": "The RR 0.83 claimed by Claude+Gemini is verbatim in the abstract but pertains to pizza rather than total tomato intake, for which no estimate is given, so neither pipeline's value can be uniquely mapped to the Tomato exposure."
+      }
+    ]
+  }
+}

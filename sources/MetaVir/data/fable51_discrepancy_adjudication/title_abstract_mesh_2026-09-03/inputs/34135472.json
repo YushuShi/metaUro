@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:36:35.037658-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "95437659a663b712bd55687cb6ba68a7e2b42a1385d3df56ad31314f7f9857fd",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "34135472",
+      "title": "Adolescent animal product intake in relation to later prostate cancer risk and mortality in the NIH-AARP Diet and Health Study.",
+      "abstract": "Adolescent intake of animal products has been proposed to contribute to prostate cancer (PCa) development because of its potentially carcinogenic constituents and influence on hormone levels during adolescence. We used data from 159,482 participants in the NIH-AARP Diet and Health Study to investigate associations for recalled adolescent intake of red meat (unprocessed beef and processed red meat), poultry, egg, canned tuna, animal fat and animal protein at ages 12-13 years with subsequent PCa risk and mortality over 14 years of follow-up. Cox proportional hazard regression was used to calculate hazard ratios (HRs) and 95% confidence intervals (CIs) of total (n = 17,349), advanced (n = 2,297) and fatal (n = 804) PCa. Suggestive inverse trends were observed for adolescent unprocessed beef intake with risks of total, advanced and fatal PCa (multivariable-adjusted P-trends = 0.01, 0.02 and 0.04, respectively). No consistent patterns of association were observed for other animal products by PCa outcome. We found evidence to suggest that adolescent unprocessed beef intake, or possibly a correlate of beef intake, such as early-life socioeconomic status, may be associated with reduced risk and mortality from PCa. Additional studies with further early-life exposure information are warranted to better understand this association.",
+      "mesh": [
+        "Adolescent",
+        "Aged",
+        "Child",
+        "Diet / adverse effects, classification",
+        "Diet Surveys",
+        "Food / adverse effects, classification",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology, mortality",
+        "Red Meat / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "34135472",
+      "contexts": [
+        {
+          "context_id": "34135472|Animal protein intake|Prostate cancer",
+          "exposure": "Animal protein intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "159482",
+              "effect_measure_type": "HR",
+              "effect_size": "0.99",
+              "ci_lower": "0.94",
+              "ci_upper": "1.03",
+              "p_value": "0.52",
+              "comparison": "Per continuous increase in adolescent animal protein intake expressed as percentage of energy intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "159482",
+              "effect_measure_type": "HR",
+              "effect_size": "0.99",
+              "ci_lower": "0.93",
+              "ci_upper": "1.05",
+              "p_value": "0.7454659990438812",
+              "comparison": "categorical_extreme"
+            }
+          }
+        },
+        {
+          "context_id": "34135472|Eggs|Prostate cancer",
+          "exposure": "Eggs",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "159482",
+              "effect_measure_type": "HR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "159482",
+              "effect_measure_type": "HR",
+              "effect_size": "0.94",
+              "ci_lower": "0.89",
+              "ci_upper": "0.99",
+              "p_value": "0.022739025909346088",
+              "comparison": "categorical_extreme"
+            }
+          }
+        },
+        {
+          "context_id": "34135472|Red meat|Prostate cancer",
+          "exposure": "Red meat",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "159482",
+              "effect_measure_type": "HR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.01",
+              "comparison": "inverse trend across unprocessed beef intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "159482",
+              "effect_measure_type": "HR",
+              "effect_size": "0.97",
+              "ci_lower": "0.89",
+              "ci_upper": "1.05",
+              "p_value": "0.4701680999962025",
+              "comparison": "categorical_extreme"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

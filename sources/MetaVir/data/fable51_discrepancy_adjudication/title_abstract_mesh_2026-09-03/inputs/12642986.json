@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:17.216225-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "2a6c8f79245c4c17ec74eccabe23c8fd843c9b875120de0972510ba9de731f79",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12642986",
+      "title": "Environmental exposure to lead as a risk for prostate cancer.",
+      "abstract": "To evaluate the possible role of environmental exposure to lead as a risk factor for prostate pathology in patients suffering from prostate cancer (PCA) and benign prostate hyperplasia (BPH). Blood lead (BPb) level was determined in PCA and BPH cases using a graphite furnace Atomic Absorption Spectrophotometer and compared with those in a control group living in the similar socioeconomic environment. BPb was significantly higher in PCA and BPH cases than in normals (P < 0.05). Blood levels of zinc and copper were significantly lower in PCA and BPH cases when compared with controls (P < 0.05). In all the three groups, a statistically significant positive correlation between lead and thiobarbituric acid reactive substances (TBARS) measured as malondialdehyde, and negative correlation between blood lead and antioxidant GSH level, indicative of possible generation of reactive oxygen species, were also observed after adjusting for age as a possible confounders. However, positive association between blood lead and TBARS was relatively higher in PCA patients (r = 0.77, P < 0.05) than in BPH (r = 0.32, P < 0.05) and normal (r = 0.30, P < 0.05). These results with limited power seem to suggest for the first time that environmental exposure of aging males to lead may be a risk factor for prostate cancer and/or benign prostate hyperplasia possibly through generation of reactive oxygen species and/or reducing the level of zinc which acts as a cellular growth protector.",
+      "mesh": [
+        "Aged",
+        "Aging",
+        "Environmental Exposure",
+        "Environmental Pollutants / adverse effects",
+        "Humans",
+        "Lead / adverse effects",
+        "Male",
+        "Middle Aged",
+        "Prostatic Hyperplasia / etiology",
+        "Prostatic Neoplasms / etiology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12642986",
+      "contexts": [
+        {
+          "context_id": "12642986|Copper|Prostate cancer",
+          "exposure": "Copper",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "12642986|Zinc|Prostate cancer",
+          "exposure": "Zinc",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-POSTDIAGNOSIS"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,644 @@
+{
+  "schema_version": 1,
+  "receipt_id": "52cb5745600c8b4839710869eedcba196027d3cd071164c7e636deacc3e17f14",
+  "requested_at": "2026-09-02T07:41:45.359871+08:00",
+  "received_at": "2026-09-02T07:42:50.140057+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "18e16a873ff7019bf62a45b6ea2ea924d6b7059b3d166cccd379737870716c71",
+  "attempt": 1,
+  "context_ids": [
+    "16489323|Fish oil|Prostate cancer",
+    "16489323|Omega-3 fatty acids|Prostate cancer",
+    "16489323|Omega-6 fatty acids|Prostate cancer",
+    "16492906|Calcium|Prostate cancer",
+    "16492906|Dairy|Prostate cancer",
+    "16492906|Vitamin D|Prostate cancer",
+    "16492907|Processed meat intake|Prostate cancer",
+    "16492907|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Dairy": 1,
+    "Fish oil": 1,
+    "Omega-3 fatty acids": 1,
+    "Omega-6 fatty acids": 1,
+    "Processed meat intake": 1,
+    "Red meat": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "c679793c7e42a254b18c11ab9d199626335c014541ff64d25d773d51a10a96ad",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 7378,
+    "cached_input_tokens": 0,
+    "output_tokens": 6928,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.21009000000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "d4172242-ebff-478d-a1a3-a4fd76b76fc3",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.21009000000000003"
+  },
+  "output_sha256": "e4c6d8e3c9c1abb1b20e95c8ce061f2e30895ff3cb495a07b8b10007149963b8",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"16489323|Fish oil|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a narrative review of PUFA dietary sources and biological functions (\\\"In this review, a critical evaluation of PUFAs dietary sources and biological functions\\\"), not an original human study of fish oil and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"16489323|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review discussing possible omega-3 prevention of hormone-dependent tumours based on in vitro observations, with no original human incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"16489323|Omega-6 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review citing in vitro mechanisms for omega-6-derived prostaglandins rather than reporting an original human study of prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"16492906|Calcium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort of 47,750 men assessing total, dietary, and supplementary calcium intake with incident prostate cancer outcomes, including a high versus low calcium intake relative risk for incident high-grade disease.\",\"extraction\":{\"effect_size\":1.89,\"effect_type\":\"RR\",\"ci_lower\":1.32,\"ci_upper\":2.71,\"p_value\":0.005,\"ci_confidence_level\":95,\"total_n\":47750,\"cases\":3544,\"comparison_type\":\"high versus low calcium intake (incident high-grade prostate cancer, Gleason >=7)\",\"design\":\"prospective cohort\",\"timing\":\"dietary assessment in 1986, 1990, 1994, and 1998 with 16 years of follow-up\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"male health professionals with no history of cancer other than nonmelanoma skin cancer at baseline\",\"exposure_subtype\":\"mixed_or_unclear\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a prospective cohort study of 47,750 male health professionals\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"we identified 3,544 total cases of prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"an association was observed for high versus low calcium intake (RR, 1.89\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI, 1.32-2.71\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P(trend) = 0.005\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"For high-grade prostate cancer (Gleason > or = 7), an association was observed for high versus low calcium intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"using data from the Health Professionals Follow-up Study, a prospective cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"We assessed total, dietary, and supplementary calcium intake in 1986, 1990, 1994, and 1998\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"the second leading cause of cancer mortality in U.S. males\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, background\"},\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"using a validated food frequency questionnaire\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492906/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"16492906|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Milk/dairy is mentioned only as background context (\\\"Higher milk intake has been relatively consistently associated with an increased risk\\\") while the analyzed exposure is calcium intake, with no dairy-specific incidence estimate.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"16492906|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Vitamin D appears only as a hypothesized mechanism/correlate of calcium intake (\\\"higher calcium intake was associated with lower circulating 1,25(OH)2 vitamin D levels\\\"), not as an exposure analyzed against prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"16492907|Processed meat intake|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting incident prostate cancer risk for cooked processed meat consumption among Black men with a quartile-based rate ratio and confidence interval.\",\"extraction\":{\"effect_size\":2.7,\"effect_type\":\"RR\",\"ci_lower\":1.3,\"ci_upper\":5.3,\"p_value\":0.008,\"ci_confidence_level\":95,\"total_n\":692,\"cases\":85,\"comparison_type\":\"highest versus lowest quartile of cooked processed meat intake (Black men)\",\"design\":\"prospective cohort\",\"timing\":\"questionnaire in 1992 to 1993 with follow-up through August 31, 2001\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"NA\",\"ethnicity\":\"Black\",\"population\":\"Black and White men in the Cancer Prevention Study II Nutrition Cohort without a history of cancer\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"692 Black and 64,856 White men were included in the cohort\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"we documented 85 and 5,028 cases of incident prostate cancer among Black and White men, respectively\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"consumption of cooked processed meats (sausages, bacon, and hot dogs; RR, 2.7\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI, 1.3-5.3 for highest versus lowest quartile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P(trend) = 0.008\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"for highest versus lowest quartile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"incident prostate cancer among Black and White men in the Cancer Prevention Study II Nutrition Cohort\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"completed a detailed questionnaire on diet, medical history, and lifestyle in 1992 to 1993\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"among Black men in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, conclusion\"},\"ethnicity\":{\"excerpt\":\"Among Black men, total red meat intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"location\":null,\"exposure_measurement\":{\"excerpt\":\"completed a detailed questionnaire on diet\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"16492907|Red meat|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting incident prostate cancer risk associated with total red meat intake, with a quartile rate ratio and confidence interval among Black men.\",\"extraction\":{\"effect_size\":2.0,\"effect_type\":\"RR\",\"ci_lower\":1.0,\"ci_upper\":4.2,\"p_value\":0.05,\"ci_confidence_level\":95,\"total_n\":692,\"cases\":85,\"comparison_type\":\"highest versus lowest quartile of total red meat intake (processed plus unprocessed red meat), Black men\",\"design\":\"prospective cohort\",\"timing\":\"questionnaire in 1992 to 1993 with follow-up through August 31, 2001\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"NA\",\"ethnicity\":\"Black\",\"population\":\"Black and White men in the Cancer Prevention Study II Nutrition Cohort without a history of cancer\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"692 Black and 64,856 White men were included in the cohort\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"we documented 85 and 5,028 cases of incident prostate cancer among Black and White men, respectively\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"total red meat intake (processed plus unprocessed red meat) was associated with higher risk of prostate cancer (RR, 2.0\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI, 1.0-4.2 for highest versus lowest quartile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P(trend) = 0.05\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"for highest versus lowest quartile\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We examined intake of red meat, processed meat, and poultry in relation to incident prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"During follow-up through August 31, 2001\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"continent\":{\"excerpt\":\"among Black men in the United States\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, conclusion\"},\"ethnicity\":{\"excerpt\":\"Among Black men, total red meat intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, results\"},\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Participants in the study completed a detailed questionnaire on diet\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/16492907/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "16489323|Fish oil|Prostate cancer",
+      "pmid": "16489323",
+      "pmcid": "",
+      "published_date": "2005-12-01",
+      "title": "Omega 3 fatty acids: biological activity and effects on human health.",
+      "authors": [
+        "La Guardia M",
+        "Giammanco S",
+        "Di Majo D",
+        "Tabacchi G",
+        "Tripoli E",
+        "Giammanco M"
+      ],
+      "journal": "Panminerva medica",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16489323/",
+      "exposure": "Fish oil",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a narrative review of PUFA dietary sources and biological functions (\"In this review, a critical evaluation of PUFAs dietary sources and biological functions\"), not an original human study of fish oil and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "16489323|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "16489323",
+      "pmcid": "",
+      "published_date": "2005-12-01",
+      "title": "Omega 3 fatty acids: biological activity and effects on human health.",
+      "authors": [
+        "La Guardia M",
+        "Giammanco S",
+        "Di Majo D",
+        "Tabacchi G",
+        "Tripoli E",
+        "Giammanco M"
+      ],
+      "journal": "Panminerva medica",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16489323/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review discussing possible omega-3 prevention of hormone-dependent tumours based on in vitro observations, with no original human incidence data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "16489323|Omega-6 fatty acids|Prostate cancer",
+      "pmid": "16489323",
+      "pmcid": "",
+      "published_date": "2005-12-01",
+      "title": "Omega 3 fatty acids: biological activity and effects on human health.",
+      "authors": [
+        "La Guardia M",
+        "Giammanco S",
+        "Di Majo D",
+        "Tabacchi G",
+        "Tripoli E",
+        "Giammanco M"
+      ],
+      "journal": "Panminerva medica",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16489323/",
+      "exposure": "Omega-6 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review citing in vitro mechanisms for omega-6-derived prostaglandins rather than reporting an original human study of prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "16492906|Calcium|Prostate cancer",
+      "pmid": "16492906",
+      "pmcid": "",
+      "published_date": "2006-02-01",
+      "title": "A prospective study of calcium intake and incident and fatal prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Liu Y",
+        "Stampfer MJ",
+        "Willett WC"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort of 47,750 men assessing total, dietary, and supplementary calcium intake with incident prostate cancer outcomes, including a high versus low calcium intake relative risk for incident high-grade disease.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.89,
+        "effect_type": "RR",
+        "ci_lower": 1.32,
+        "ci_upper": 2.71,
+        "p_value": 0.005,
+        "ci_confidence_level": 95,
+        "total_n": 47750,
+        "cases": 3544,
+        "comparison_type": "high versus low calcium intake (incident high-grade prostate cancer, Gleason >=7)",
+        "design": "prospective cohort",
+        "timing": "dietary assessment in 1986, 1990, 1994, and 1998 with 16 years of follow-up",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male health professionals with no history of cancer other than nonmelanoma skin cancer at baseline",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We examined calcium intake in relation to prostate cancer risk using data from the Health Professionals Follow-up Study, a prospective cohort study of 47,750 male health professionals with no history of cancer other than nonmelanoma skin cancer at baseline.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Over 16 years of follow-up, we identified 3,544 total cases of prostate cancer, 523 advanced (extraprostatic) cases, and 312 fatal cases.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "For high-grade prostate cancer (Gleason > or = 7), an association was observed for high versus low calcium intake (RR, 1.89; 95% CI, 1.32-2.71; P(trend) = 0.005), but a nonsignificant, inverse association was observed for organ-confined, low-grade prostate cancer (RR, 0.79; 95% CI, 0.50-1.25; P(trend) = 0.09).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "For high-grade prostate cancer (Gleason > or = 7), an association was observed for high versus low calcium intake (RR, 1.89; 95% CI, 1.32-2.71; P(trend) = 0.005), but a nonsignificant, inverse association was observed for organ-confined, low-grade prostate cancer (RR, 0.79; 95% CI, 0.50-1.25; P(trend) = 0.09).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P(trend) = 0.005",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "For high-grade prostate cancer (Gleason > or = 7), an association was observed for high versus low calcium intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "using data from the Health Professionals Follow-up Study, a prospective cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "We assessed total, dietary, and supplementary calcium intake in 1986, 1990, 1994, and 1998",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "the second leading cause of cancer mortality in U.S. males",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, background"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "using a validated food frequency questionnaire",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.005",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "16492906|Dairy|Prostate cancer",
+      "pmid": "16492906",
+      "pmcid": "",
+      "published_date": "2006-02-01",
+      "title": "A prospective study of calcium intake and incident and fatal prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Liu Y",
+        "Stampfer MJ",
+        "Willett WC"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Milk/dairy is mentioned only as background context (\"Higher milk intake has been relatively consistently associated with an increased risk\") while the analyzed exposure is calcium intake, with no dairy-specific incidence estimate.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "16492906|Vitamin D|Prostate cancer",
+      "pmid": "16492906",
+      "pmcid": "",
+      "published_date": "2006-02-01",
+      "title": "A prospective study of calcium intake and incident and fatal prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Liu Y",
+        "Stampfer MJ",
+        "Willett WC"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16492906/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Vitamin D appears only as a hypothesized mechanism/correlate of calcium intake (\"higher calcium intake was associated with lower circulating 1,25(OH)2 vitamin D levels\"), not as an exposure analyzed against prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "16492907|Processed meat intake|Prostate cancer",
+      "pmid": "16492907",
+      "pmcid": "",
+      "published_date": "2006-02-01",
+      "title": "Meat consumption among Black and White men and risk of prostate cancer in the Cancer Prevention Study II Nutrition Cohort.",
+      "authors": [
+        "Rodriguez C",
+        "McCullough ML",
+        "Mondul AM",
+        "Jacobs EJ",
+        "Chao A",
+        "Patel AV",
+        "Thun MJ",
+        "Calle EE"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting incident prostate cancer risk for cooked processed meat consumption among Black men with a quartile-based rate ratio and confidence interval.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 2.7,
+        "effect_type": "RR",
+        "ci_lower": 1.3,
+        "ci_upper": 5.3,
+        "p_value": 0.008,
+        "ci_confidence_level": 95,
+        "total_n": 692,
+        "cases": 85,
+        "comparison_type": "highest versus lowest quartile of cooked processed meat intake (Black men)",
+        "design": "prospective cohort",
+        "timing": "questionnaire in 1992 to 1993 with follow-up through August 31, 2001",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "Black",
+        "population": "Black and White men in the Cancer Prevention Study II Nutrition Cohort without a history of cancer",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After excluding men with a history of cancer and incomplete dietary information, 692 Black and 64,856 White men were included in the cohort. During follow-up through August 31, 2001, we documented 85 and 5,028 cases of incident prostate cancer among Black and White men, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During follow-up through August 31, 2001, we documented 85 and 5,028 cases of incident prostate cancer among Black and White men, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Among Black men, total red meat intake (processed plus unprocessed red meat) was associated with higher risk of prostate cancer (RR, 2.0; 95% CI, 1.0-4.2 for highest versus lowest quartile; P(trend) = 0.05); this increase in risk was mainly due to risk associated with consumption of cooked processed meats (sausages, bacon, and hot dogs; RR, 2.7; 95% CI, 1.3-5.3 for highest versus lowest quartile; P(trend) = 0.008).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "Among Black men, total red meat intake (processed plus unprocessed red meat) was associated with higher risk of prostate cancer (RR, 2.0; 95% CI, 1.0-4.2 for highest versus lowest quartile; P(trend) = 0.05); this increase in risk was mainly due to risk associated with consumption of cooked processed meats (sausages, bacon, and hot dogs; RR, 2.7; 95% CI, 1.3-5.3 for highest versus lowest quartile; P(trend) = 0.008).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P(trend) = 0.008",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "for highest versus lowest quartile",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "incident prostate cancer among Black and White men in the Cancer Prevention Study II Nutrition Cohort",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "completed a detailed questionnaire on diet, medical history, and lifestyle in 1992 to 1993",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "among Black men in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, conclusion"
+          },
+          "ethnicity": {
+            "excerpt": "Among Black men, total red meat intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "completed a detailed questionnaire on diet",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.008",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "16492907|Red meat|Prostate cancer",
+      "pmid": "16492907",
+      "pmcid": "",
+      "published_date": "2006-02-01",
+      "title": "Meat consumption among Black and White men and risk of prostate cancer in the Cancer Prevention Study II Nutrition Cohort.",
+      "authors": [
+        "Rodriguez C",
+        "McCullough ML",
+        "Mondul AM",
+        "Jacobs EJ",
+        "Chao A",
+        "Patel AV",
+        "Thun MJ",
+        "Calle EE"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting incident prostate cancer risk associated with total red meat intake, with a quartile rate ratio and confidence interval among Black men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 2,
+        "effect_type": "RR",
+        "ci_lower": 1,
+        "ci_upper": 4.2,
+        "p_value": 0.05,
+        "ci_confidence_level": 95,
+        "total_n": 692,
+        "cases": 85,
+        "comparison_type": "highest versus lowest quartile of total red meat intake (processed plus unprocessed red meat), Black men",
+        "design": "prospective cohort",
+        "timing": "questionnaire in 1992 to 1993 with follow-up through August 31, 2001",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "Black",
+        "population": "Black and White men in the Cancer Prevention Study II Nutrition Cohort without a history of cancer",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After excluding men with a history of cancer and incomplete dietary information, 692 Black and 64,856 White men were included in the cohort. During follow-up through August 31, 2001, we documented 85 and 5,028 cases of incident prostate cancer among Black and White men, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During follow-up through August 31, 2001, we documented 85 and 5,028 cases of incident prostate cancer among Black and White men, respectively.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Among Black men, total red meat intake (processed plus unprocessed red meat) was associated with higher risk of prostate cancer (RR, 2.0; 95% CI, 1.0-4.2 for highest versus lowest quartile; P(trend) = 0.05); this increase in risk was mainly due to risk associated with consumption of cooked processed meats (sausages, bacon, and hot dogs; RR, 2.7; 95% CI, 1.3-5.3 for highest versus lowest quartile; P(trend) = 0.008).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "Among Black men, total red meat intake (processed plus unprocessed red meat) was associated with higher risk of prostate cancer (RR, 2.0; 95% CI, 1.0-4.2 for highest versus lowest quartile; P(trend) = 0.05); this increase in risk was mainly due to risk associated with consumption of cooked processed meats (sausages, bacon, and hot dogs; RR, 2.7; 95% CI, 1.3-5.3 for highest versus lowest quartile; P(trend) = 0.008).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P(trend) = 0.05",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "for highest versus lowest quartile",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We examined intake of red meat, processed meat, and poultry in relation to incident prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "During follow-up through August 31, 2001",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "continent": {
+            "excerpt": "among Black men in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, conclusion"
+          },
+          "ethnicity": {
+            "excerpt": "Among Black men, total red meat intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, results"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Participants in the study completed a detailed questionnaire on diet",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/16492907/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.05",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

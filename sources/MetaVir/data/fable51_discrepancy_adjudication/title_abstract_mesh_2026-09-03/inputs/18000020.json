@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:43.804440-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c30b0d252739fb743d846c2db477fe00a749e36bcc8d4f58621185e5307ed050",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "18000020",
+      "title": "Calcium, dairy foods, and risk of incident and fatal prostate cancer: the NIH-AARP Diet and Health Study.",
+      "abstract": "Calcium and dairy foods in relation to prostate cancer were examined in the National Institutes of Health (NIH)-AARP (formerly known as the American Association of Retired Persons) Diet and Health Study (1995/1996-2001). Diet was assessed with a food frequency questionnaire at baseline. Multivariate relative risks and 95% confidence intervals were estimated by Cox regression. During up to 6 years of follow-up (n = 293,888), the authors identified 10,180 total prostate cancer cases (8,754 nonadvanced, 1,426 advanced, and 178 fatal cases). Total and supplemental calcium were unrelated to total and nonadvanced prostate cancer. However, a statistically nonsignificant positive association with total calcium was observed for advanced (> or = 2,000 vs. 500-<750 mg/day: relative risk (RR) = 1.25, 95% confidence interval (CI): 0.91, 1.71; p(trend) = 0.06) and fatal (> or = 1,000 vs. 500-<750 mg/day: RR = 1.39, 95% CI: 0.92, 2.09; p(trend) = 0.10) prostate cancer. Skim milk, but not other dairy foods, was associated with increased risk of advanced prostate cancer (> or = 2 vs. zero servings/day: RR = 1.23, 95% CI: 0.99, 1.54; p(trend) = 0.01). In contrast, calcium from nondairy foods was associated with lower risk of nonadvanced prostate cancer (> or = 600 vs. < 250 mg/day: RR = 0.82, 95% CI: 0.68, 0.99; p(trend) = 0.04). Although the authors cannot definitively rule out a weak association for aggressive prostate cancer, their findings do not provide strong support for the hypothesis that calcium and dairy foods increase prostate cancer risk.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Calcium, Dietary / administration & dosage, adverse effects",
+        "Dairy Products",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Neoplasm Staging",
+        "Proportional Hazards Models",
+        "Prostatic Neoplasms / epidemiology, etiology, mortality",
+        "Registries",
+        "Risk Assessment",
+        "SEER Program",
+        "Surveys and Questionnaires",
+        "United States / epidemiology",
+        "Vitamin D / administration & dosage, adverse effects, analogs & derivatives"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "18000020",
+      "contexts": [
+        {
+          "context_id": "18000020|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "293888",
+              "effect_measure_type": "RR",
+              "effect_size": "0.82",
+              "ci_lower": "0.68",
+              "ci_upper": "0.99",
+              "p_value": "0.04",
+              "comparison": ">=600 versus <250 mg/day of calcium from nondairy foods"
+            },
+            "Claude+Gemini": {
+              "sample_size": "293888",
+              "effect_measure_type": "RR",
+              "effect_size": "1.25",
+              "ci_lower": "0.91",
+              "ci_upper": "1.71",
+              "p_value": "0.06",
+              "comparison": "highest vs reference intake category (>=2,000 vs 500-<750 mg/day total calcium)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,428 @@
+{
+  "schema_version": 1,
+  "receipt_id": "0c8c21220aad0d91889afb4c065b81b8b13cc4884ac6defce3088862be395020",
+  "requested_at": "2026-09-03T17:28:30.807290-04:00",
+  "received_at": "2026-09-03T17:28:56.349900-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "f5e565d561f62b16c79a58cad93283c1da5d9f5455d242a1976b48e6a494dfad",
+  "dispatch_work_unit_key": "bc67a3b64b8c50981bd365330637fa35a406daaed3c7dc897870a81ff45a6a53",
+  "attempt": 2,
+  "context_ids": [
+    "34036467|Processed meat intake|Bladder cancer",
+    "34036467|Red meat|Bladder cancer"
+  ],
+  "exposure_weights": {
+    "Processed meat intake": 1,
+    "Red meat": 1
+  },
+  "input_digest": "f8852ec25bdf3ea5d46f22a8765c868038e7f97331902e403200caf7d3c27b60",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 19902,
+    "cached_input_tokens": 0,
+    "output_tokens": 5104,
+    "reasoning_tokens": 1170
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0340665",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "ed5f36b3-ddd1-4f28-9965-64a421d7774a",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.0340665"
+  },
+  "output_sha256": "45c7ee2a802a0babbf3b22f077a931b2b9b89d6a88032793beaada9e9e58386f",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"34036467|Processed meat intake|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This pooled prospective cohort study reported fully adjusted hazard ratios for the association between processed meat intake and incident bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.95,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.73,\n        \"ci_upper\": 1.24,\n        \"p_value\": 0.304,\n        \"total_n\": 446784,\n        \"cases\": 1635,\n        \"comparison_type\": \"tertile 3 vs tertile 1\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Denmark, France, Germany, Italy, Netherlands, Norway, Spain, Sweden, United Kingdom, United States\",\n        \"population\": \"BLadder cancer Epidemiology and Nutritional Determinants (BLEND) consortium cohort participants\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Processed meats Participants (cases/non-cases) (505/148,425) (561/148,365) (569/148,359)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Processed meats Participants (cases/non-cases) (505/148,425) (561/148,365) (569/148,359)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"dietary meat consumptions were divided into 3 groups based on a tertile ordered distribution: low consumption (tertile 1), medium consumption (tertile 2) and high consumption (tertile 3).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Methods, Dietary meat consumption\"\n          },\n          \"design\": {\n            \"excerpt\": \"Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"These studies originated from 11 countries [i.e. Europe: European Prospective Investigation into Cancer and Nutrition cohort studies (EPIC)... and North America: VITamins and Lifestyle cohort study (VITAL)]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Methods, Study sample\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Caucasian 2834 (99.6) 511,934 (99.3)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary data were obtained using self-administered or trained interviewer administered food frequency questionnaire (FFQ)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Methods, Data collection and pre-processing\"\n          },\n          \"gender\": {\n            \"excerpt\": \"In total, 167,095 (32%) men and 351,444 (68%) women were included.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Results, Baseline characteristics\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Current 1118 (39.3) 107,108 (20.8) Former 1183 (41.5) 154,474 (30.0) Never 547 (19.2) 254,115 (49.2)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"34036467|Red meat|Bladder cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This pooled prospective cohort study reported fully adjusted hazard ratios for the association between red meat intake and incident bladder cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.03,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.88,\n        \"ci_upper\": 1.21,\n        \"p_value\": 0.721,\n        \"total_n\": 446784,\n        \"cases\": 1635,\n        \"comparison_type\": \"tertile 3 vs tertile 1\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Denmark, France, Germany, Italy, Netherlands, Norway, Spain, Sweden, United Kingdom, United States\",\n        \"population\": \"BLadder cancer Epidemiology and Nutritional Determinants (BLEND) consortium cohort participants\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Red meats Participants (cases/non-cases) (445/148,483) (577/148,350) (613/148,316)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Red meats Participants (cases/non-cases) (445/148,483) (577/148,350) (613/148,316)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"dietary meat consumptions were divided into 3 groups based on a tertile ordered distribution: low consumption (tertile 1), medium consumption (tertile 2) and high consumption (tertile 3).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Methods, Dietary meat consumption\"\n          },\n          \"design\": {\n            \"excerpt\": \"Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"These studies originated from 11 countries [i.e. Europe: European Prospective Investigation into Cancer and Nutrition cohort studies (EPIC)... and North America: VITamins and Lifestyle cohort study (VITAL)]\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Methods, Study sample\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Caucasian 2834 (99.6) 511,934 (99.3)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary data were obtained using self-administered or trained interviewer administered food frequency questionnaire (FFQ)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Methods, Data collection and pre-processing\"\n          },\n          \"gender\": {\n            \"excerpt\": \"In total, 167,095 (32%) men and 351,444 (68%) women were included.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Results, Baseline characteristics\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Current 1118 (39.3) 107,108 (20.8) Former 1183 (41.5) 154,474 (30.0) Never 547 (19.2) 254,115 (49.2)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "34036467|Processed meat intake|Bladder cancer",
+      "pmid": "34036467",
+      "pmcid": "PMC8416827",
+      "published_date": "2021-08-01",
+      "title": "The association between meat and fish consumption and bladder cancer risk: a pooled analysis of 11 cohort studies.",
+      "authors": [
+        "Dianatinasab M",
+        "Wesselius A",
+        "de Loeij T",
+        "Salehi-Abargouei A",
+        "Yu EYW",
+        "Fararouei M",
+        "Brinkman M",
+        "van den Brandt P",
+        "White E",
+        "Weiderpass E",
+        "Le Calvez-Kelm F",
+        "Gunter MJ",
+        "Huybrechts I",
+        "Liedberg F",
+        "Skeie G",
+        "Tjonneland A",
+        "Riboli E",
+        "Zeegers MP"
+      ],
+      "journal": "European journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34036467/",
+      "exposure": "Processed meat intake",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This pooled prospective cohort study reported fully adjusted hazard ratios for the association between processed meat intake and incident bladder cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.95,
+        "effect_type": "HR",
+        "ci_lower": 0.73,
+        "ci_upper": 1.24,
+        "p_value": 0.304,
+        "total_n": 446784,
+        "cases": 1635,
+        "comparison_type": "tertile 3 vs tertile 1",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Denmark, France, Germany, Italy, Netherlands, Norway, Spain, Sweden, United Kingdom, United States",
+        "population": "BLadder cancer Epidemiology and Nutritional Determinants (BLEND) consortium cohort participants",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 0.95,
+        "reported_ci_lower": 0.73,
+        "reported_ci_upper": 1.24,
+        "reported_p_value": 0.304,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "cases": {
+            "excerpt": "The study population consisted of 1088 NMIBC cases (63%) and 648 MIBC cases (37%). Table 1 Baseline characteristics meat sources among non-cases and bladder cancer cases in the END international study Categories of data Cases Non-cases P value n = 2848 n = 515,697 Baseline age year (mean (SD)) 60.6 (7.28) 52.5 (10.09) < 0.001^ Person-year Total: 21,210.08 Total: 5,476,815 < 0.001^ Median: 7.45 Median: 10.62 Sex n (%) < 0.001^ Men 2144 (75.3) 164,953 (32.0) Women 704 (24.7) 350,744 (68.0) Smoking status n (%) < 0.001* Current 1118 (39.3) 107,108 (20.8) Former 1183 (41.5) 154,474 (30.0) Never 547 (19.2) 254,115 (49.2) Dietary meat sources, g/1000 kcal/day (mean (SD)) Total meat and meat products 49.06 (28.4) 49.38 (30.65) 0.571^ Total red meats and products 39.98 (26.37) 39.21 (27.40) 0.135^ Red meats 17.38 (17.96) 15.62 (17.15) < 0.001^ Processed meats 16.34 (13.93) 15.42 (13.08) < 0.001^ Organ meats 3.11 (4.43) 2.54 (4.53) < 0.001^ Poultry 8.87 (9.95) 9.99 (11.56) 0.731^ Fish and fish products 3.58 (5.42) 5.76 (6.83) < 0.001^ Potential confounders Energy intake, kcal/day (mean (SD) 2179.13 (630.32) 2051.59 (642.12) < 0.001^ Fruits, g/1000 kcal/day (mean (SD)) 77.39 (77.63) 91.74 (222.40) 0.776^ Vegetables, g/1000 kcal/day (mean (SD)) 135.88 (103.18) 151.51 (380.96) < 0.001^ Ethnicity (%) Caucasian 2834 (99.6) 511,934 (99.3) 0.094* Non-Caucasian 12 (0.4) 3507 (0.7) SD standard deviation, g gram, mg milligram, ml milliliters, kcal kilocalorie ^Based on independent sample t-test.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2; cases derived from reported group counts 1088 + 547 = 1635"
+          },
+          "effect_size": {
+            "excerpt": "Table 2 Hazard ratio (HR) and 95% confidence interval (CI) of the association of meat and meat types, and risk of BC based on tertiles of meat and meat types Meat and meat types Tertile 1 Tertile 2 Tertile 3 P trend HR (95%CI)* HR (95%CI) HR (95%CI) Total red meats and products Participants (856/171,991) (1103/171,741) (889/171,959) – (cases/non-cases) Person-years 1,790,142 1,845,531 1,862,353 – Crude 1 (reference) 1.25 (1.15, 1.36) 1.13 (1.04, 1.23) 0.007 Model 1 a 1 (reference) 1.13 (1.04, 1.24) 0.96 (0.87, 1.05) 0.222 Model 2 b 1 (reference) 1.12 (1.02, 1.23) 0.94 (0.85, 1.03) 0.085 Model 3 c† 1 (reference) 1.08 (0.94, 1.23) 1.01 (0.84, 1.21) 0.248 Red meats Participants (445/148,483) (577/148,350) (613/148,316) – (cases/non-cases) Person year 1,671,793 1,636,671 1,666,877 – Crude 1 (reference) 1.18 (1.04, 1.38) 1.13 (0.99, 1.29) 0.079 Model 1 a 1 (reference) 1.08 (0.95, 1.23) 0.99 (0.86, 1.13) 0.750 Model 2 b 1 (reference) 1.09 (0.96, 1.24) 1.02 (0.89, 1.17) 0.868 Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721 Processed meats Participants (505/148,425) (561/148,365) (569/148,359) – (cases/non-cases) Person year 1,665,703 1,658,865 1,650,773 – Crude 1 (reference) 1.16 (1.04, 1.30) 1.30 (1.16, 1.45) < 0.001 Model 1 a 1 (reference) 0.95 (0.84, 1.07) 0.99 (0.88, 1.11) 0.895 Model 2 b 1 (reference) 0.94 (0.84, 1.06) 0.98 (0.88, 1.11) 0.822 Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304 Organ meats Participants (389/149,366) (541/147,560) (705/148,223) – (cases/non-cases) Person year 1,658,709 1,676,021 1,640,611 – Crude 1 (reference) 1.31 (1.15, 1.49) 1.48 (1.29, 1.69) < 0.001 Model 1 a 1 (reference) 1.25 (1.09, 1.43) 1.20 (1.05, 1.39) 0.015 Model 2 b 1 (reference) 1.21 (1.06, 1.39) 1.18 (1.03, 1.36) 0.032 Model 3 c† 1 (reference) 1.22 (1.06, 1.40) 1.21 (1.05, 1.38) 0.014 Poultry Participants (1022/171,827) (977/171,867) (849/171,997) – (cases/non-cases) Person year 1,891,568 1,858,982 1,747,476 – Crude 1 (reference) 0.77 (0.71, 0.84) 0.62 (0.57, 0.68) < 0.001 Model 1 a 1 (reference) 0.82 (0.75, 0.89) 0.73 (0.67, 0.81) < 0.001 Model 2 b 1 (reference) 0.81 (0.74, 0.89) 0.71 (0.65, 0.78) < 0.001 Model 3 c‡ 1 (reference) 0.91 (0.81, 1.04) 0.98 (0.84, 1.12) 0.54 Total fish and fish products Participants (252/61,489) (473/61,269) (812/60,929) – (cases/non-cases) Person year 666,381.6 603,304.3 497,419.5 – Crude 1 (reference) 0.73 (0.61, 0.85) 0.54 (0.47, 0.63) < 0.001 Model 1 a 1 (reference) 0.85 (0.73, 0.96) 0.88 (0.75, 1.03) 0.257 Model 2 b 1 (reference) 0.85 (0.73, 1.00) 0.84 (0.72, 1.00) 0.080 Model 3 c‡ 1 (reference) 0.92 (0.76, 1.11) 0.89 (0.63, 1.25) 0.369 * HR hazard ratio, CI confidence interval a Adjusted for age, sex, smoking status and total energy intake b Adjusted for model 1 + vegetables and fruits intakes c Adjusted for †model 2 + poultry and fish intake ‡model 2 + red meat intake",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Table 2 Hazard ratio (HR) and 95% confidence interval (CI) of the association of meat and meat types, and risk of BC based on tertiles of meat and meat types Meat and meat types Tertile 1 Tertile 2 Tertile 3 P trend HR (95%CI)* HR (95%CI) HR (95%CI) Total red meats and products Participants (856/171,991) (1103/171,741) (889/171,959) – (cases/non-cases) Person-years 1,790,142 1,845,531 1,862,353 – Crude 1 (reference) 1.25 (1.15, 1.36) 1.13 (1.04, 1.23) 0.007 Model 1 a 1 (reference) 1.13 (1.04, 1.24) 0.96 (0.87, 1.05) 0.222 Model 2 b 1 (reference) 1.12 (1.02, 1.23) 0.94 (0.85, 1.03) 0.085 Model 3 c† 1 (reference) 1.08 (0.94, 1.23) 1.01 (0.84, 1.21) 0.248 Red meats Participants (445/148,483) (577/148,350) (613/148,316) – (cases/non-cases) Person year 1,671,793 1,636,671 1,666,877 – Crude 1 (reference) 1.18 (1.04, 1.38) 1.13 (0.99, 1.29) 0.079 Model 1 a 1 (reference) 1.08 (0.95, 1.23) 0.99 (0.86, 1.13) 0.750 Model 2 b 1 (reference) 1.09 (0.96, 1.24) 1.02 (0.89, 1.17) 0.868 Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721 Processed meats Participants (505/148,425) (561/148,365) (569/148,359) – (cases/non-cases) Person year 1,665,703 1,658,865 1,650,773 – Crude 1 (reference) 1.16 (1.04, 1.30) 1.30 (1.16, 1.45) < 0.001 Model 1 a 1 (reference) 0.95 (0.84, 1.07) 0.99 (0.88, 1.11) 0.895 Model 2 b 1 (reference) 0.94 (0.84, 1.06) 0.98 (0.88, 1.11) 0.822 Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304 Organ meats Participants (389/149,366) (541/147,560) (705/148,223) – (cases/non-cases) Person year 1,658,709 1,676,021 1,640,611 – Crude 1 (reference) 1.31 (1.15, 1.49) 1.48 (1.29, 1.69) < 0.001 Model 1 a 1 (reference) 1.25 (1.09, 1.43) 1.20 (1.05, 1.39) 0.015 Model 2 b 1 (reference) 1.21 (1.06, 1.39) 1.18 (1.03, 1.36) 0.032 Model 3 c† 1 (reference) 1.22 (1.06, 1.40) 1.21 (1.05, 1.38) 0.014 Poultry Participants (1022/171,827) (977/171,867) (849/171,997) – (cases/non-cases) Person year 1,891,568 1,858,982 1,747,476 – Crude 1 (reference) 0.77 (0.71, 0.84) 0.62 (0.57, 0.68) < 0.001 Model 1 a 1 (reference) 0.82 (0.75, 0.89) 0.73 (0.67, 0.81) < 0.001 Model 2 b 1 (reference) 0.81 (0.74, 0.89) 0.71 (0.65, 0.78) < 0.001 Model 3 c‡ 1 (reference) 0.91 (0.81, 1.04) 0.98 (0.84, 1.12) 0.54 Total fish and fish products Participants (252/61,489) (473/61,269) (812/60,929) – (cases/non-cases) Person year 666,381.6 603,304.3 497,419.5 – Crude 1 (reference) 0.73 (0.61, 0.85) 0.54 (0.47, 0.63) < 0.001 Model 1 a 1 (reference) 0.85 (0.73, 0.96) 0.88 (0.75, 1.03) 0.257 Model 2 b 1 (reference) 0.85 (0.73, 1.00) 0.84 (0.72, 1.00) 0.080 Model 3 c‡ 1 (reference) 0.92 (0.76, 1.11) 0.89 (0.63, 1.25) 0.369 * HR hazard ratio, CI confidence interval a Adjusted for age, sex, smoking status and total energy intake b Adjusted for model 1 + vegetables and fruits intakes c Adjusted for †model 2 + poultry and fish intake ‡model 2 + red meat intake",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "dietary meat consumptions were divided into 3 groups based on a tertile ordered distribution: low consumption (tertile 1), medium consumption (tertile 2) and high consumption (tertile 3).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Methods, Dietary meat consumption"
+          },
+          "design": {
+            "excerpt": "Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Abstract"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Methods, Study sample"
+          },
+          "ethnicity": {
+            "excerpt": "Caucasian 2834 (99.6) 511,934 (99.3)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary data were obtained using self-administered or trained interviewer administered food frequency questionnaire (FFQ)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Methods, Data collection and pre-processing"
+          },
+          "gender": {
+            "excerpt": "In total, 167,095 (32%) men and 351,444 (68%) women were included.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Results, Baseline characteristics"
+          },
+          "smoking_status": {
+            "excerpt": "Current 1118 (39.3) 107,108 (20.8) Former 1183 (41.5) 154,474 (30.0) Never 547 (19.2) 254,115 (49.2)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "White",
+        "ethnicity_basis": "Country imputation: Sweden -> White",
+        "ethnicity_supporting_text": "Caucasian 2834 (99.6) 511,934 (99.3)"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 48731,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "cdc9690f83c3817cd635214afdb2c942e2d4e9c1b0c16ddaac08a41f4e6fc243",
+      "pmc_source_receipt_digest": "3f314b6547626a56914f50c5b69e550b9b5dfea35cdbf0be234f9bf16aa4b3df",
+      "pmc_source_raw_sha256": "81d644b4b4c14abc75b7c779612657fa4024a61f4f4f6d544139c0be8ec633e0",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "78c544f5b4d8fb01d0671b45cad001a59aca84deae050027a8faa70a2b9f2306"
+    },
+    {
+      "context_id": "34036467|Red meat|Bladder cancer",
+      "pmid": "34036467",
+      "pmcid": "PMC8416827",
+      "published_date": "2021-08-01",
+      "title": "The association between meat and fish consumption and bladder cancer risk: a pooled analysis of 11 cohort studies.",
+      "authors": [
+        "Dianatinasab M",
+        "Wesselius A",
+        "de Loeij T",
+        "Salehi-Abargouei A",
+        "Yu EYW",
+        "Fararouei M",
+        "Brinkman M",
+        "van den Brandt P",
+        "White E",
+        "Weiderpass E",
+        "Le Calvez-Kelm F",
+        "Gunter MJ",
+        "Huybrechts I",
+        "Liedberg F",
+        "Skeie G",
+        "Tjonneland A",
+        "Riboli E",
+        "Zeegers MP"
+      ],
+      "journal": "European journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34036467/",
+      "exposure": "Red meat",
+      "cancer": "Bladder cancer",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This pooled prospective cohort study reported fully adjusted hazard ratios for the association between red meat intake and incident bladder cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 1.03,
+        "effect_type": "HR",
+        "ci_lower": 0.88,
+        "ci_upper": 1.21,
+        "p_value": 0.721,
+        "total_n": 446784,
+        "cases": 1635,
+        "comparison_type": "tertile 3 vs tertile 1",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Denmark, France, Germany, Italy, Netherlands, Norway, Spain, Sweden, United Kingdom, United States",
+        "population": "BLadder cancer Epidemiology and Nutritional Determinants (BLEND) consortium cohort participants",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 1.03,
+        "reported_ci_lower": 0.88,
+        "reported_ci_upper": 1.21,
+        "reported_p_value": 0.721,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "cases": {
+            "excerpt": "The study population consisted of 1088 NMIBC cases (63%) and 648 MIBC cases (37%). Table 1 Baseline characteristics meat sources among non-cases and bladder cancer cases in the END international study Categories of data Cases Non-cases P value n = 2848 n = 515,697 Baseline age year (mean (SD)) 60.6 (7.28) 52.5 (10.09) < 0.001^ Person-year Total: 21,210.08 Total: 5,476,815 < 0.001^ Median: 7.45 Median: 10.62 Sex n (%) < 0.001^ Men 2144 (75.3) 164,953 (32.0) Women 704 (24.7) 350,744 (68.0) Smoking status n (%) < 0.001* Current 1118 (39.3) 107,108 (20.8) Former 1183 (41.5) 154,474 (30.0) Never 547 (19.2) 254,115 (49.2) Dietary meat sources, g/1000 kcal/day (mean (SD)) Total meat and meat products 49.06 (28.4) 49.38 (30.65) 0.571^ Total red meats and products 39.98 (26.37) 39.21 (27.40) 0.135^ Red meats 17.38 (17.96) 15.62 (17.15) < 0.001^ Processed meats 16.34 (13.93) 15.42 (13.08) < 0.001^ Organ meats 3.11 (4.43) 2.54 (4.53) < 0.001^ Poultry 8.87 (9.95) 9.99 (11.56) 0.731^ Fish and fish products 3.58 (5.42) 5.76 (6.83) < 0.001^ Potential confounders Energy intake, kcal/day (mean (SD) 2179.13 (630.32) 2051.59 (642.12) < 0.001^ Fruits, g/1000 kcal/day (mean (SD)) 77.39 (77.63) 91.74 (222.40) 0.776^ Vegetables, g/1000 kcal/day (mean (SD)) 135.88 (103.18) 151.51 (380.96) < 0.001^ Ethnicity (%) Caucasian 2834 (99.6) 511,934 (99.3) 0.094* Non-Caucasian 12 (0.4) 3507 (0.7) SD standard deviation, g gram, mg milligram, ml milliliters, kcal kilocalorie ^Based on independent sample t-test.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2; cases derived from reported group counts 1088 + 547 = 1635"
+          },
+          "effect_size": {
+            "excerpt": "Table 2 Hazard ratio (HR) and 95% confidence interval (CI) of the association of meat and meat types, and risk of BC based on tertiles of meat and meat types Meat and meat types Tertile 1 Tertile 2 Tertile 3 P trend HR (95%CI)* HR (95%CI) HR (95%CI) Total red meats and products Participants (856/171,991) (1103/171,741) (889/171,959) – (cases/non-cases) Person-years 1,790,142 1,845,531 1,862,353 – Crude 1 (reference) 1.25 (1.15, 1.36) 1.13 (1.04, 1.23) 0.007 Model 1 a 1 (reference) 1.13 (1.04, 1.24) 0.96 (0.87, 1.05) 0.222 Model 2 b 1 (reference) 1.12 (1.02, 1.23) 0.94 (0.85, 1.03) 0.085 Model 3 c† 1 (reference) 1.08 (0.94, 1.23) 1.01 (0.84, 1.21) 0.248 Red meats Participants (445/148,483) (577/148,350) (613/148,316) – (cases/non-cases) Person year 1,671,793 1,636,671 1,666,877 – Crude 1 (reference) 1.18 (1.04, 1.38) 1.13 (0.99, 1.29) 0.079 Model 1 a 1 (reference) 1.08 (0.95, 1.23) 0.99 (0.86, 1.13) 0.750 Model 2 b 1 (reference) 1.09 (0.96, 1.24) 1.02 (0.89, 1.17) 0.868 Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721 Processed meats Participants (505/148,425) (561/148,365) (569/148,359) – (cases/non-cases) Person year 1,665,703 1,658,865 1,650,773 – Crude 1 (reference) 1.16 (1.04, 1.30) 1.30 (1.16, 1.45) < 0.001 Model 1 a 1 (reference) 0.95 (0.84, 1.07) 0.99 (0.88, 1.11) 0.895 Model 2 b 1 (reference) 0.94 (0.84, 1.06) 0.98 (0.88, 1.11) 0.822 Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304 Organ meats Participants (389/149,366) (541/147,560) (705/148,223) – (cases/non-cases) Person year 1,658,709 1,676,021 1,640,611 – Crude 1 (reference) 1.31 (1.15, 1.49) 1.48 (1.29, 1.69) < 0.001 Model 1 a 1 (reference) 1.25 (1.09, 1.43) 1.20 (1.05, 1.39) 0.015 Model 2 b 1 (reference) 1.21 (1.06, 1.39) 1.18 (1.03, 1.36) 0.032 Model 3 c† 1 (reference) 1.22 (1.06, 1.40) 1.21 (1.05, 1.38) 0.014 Poultry Participants (1022/171,827) (977/171,867) (849/171,997) – (cases/non-cases) Person year 1,891,568 1,858,982 1,747,476 – Crude 1 (reference) 0.77 (0.71, 0.84) 0.62 (0.57, 0.68) < 0.001 Model 1 a 1 (reference) 0.82 (0.75, 0.89) 0.73 (0.67, 0.81) < 0.001 Model 2 b 1 (reference) 0.81 (0.74, 0.89) 0.71 (0.65, 0.78) < 0.001 Model 3 c‡ 1 (reference) 0.91 (0.81, 1.04) 0.98 (0.84, 1.12) 0.54 Total fish and fish products Participants (252/61,489) (473/61,269) (812/60,929) – (cases/non-cases) Person year 666,381.6 603,304.3 497,419.5 – Crude 1 (reference) 0.73 (0.61, 0.85) 0.54 (0.47, 0.63) < 0.001 Model 1 a 1 (reference) 0.85 (0.73, 0.96) 0.88 (0.75, 1.03) 0.257 Model 2 b 1 (reference) 0.85 (0.73, 1.00) 0.84 (0.72, 1.00) 0.080 Model 3 c‡ 1 (reference) 0.92 (0.76, 1.11) 0.89 (0.63, 1.25) 0.369 * HR hazard ratio, CI confidence interval a Adjusted for age, sex, smoking status and total energy intake b Adjusted for model 1 + vegetables and fruits intakes c Adjusted for †model 2 + poultry and fish intake ‡model 2 + red meat intake",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "Table 2 Hazard ratio (HR) and 95% confidence interval (CI) of the association of meat and meat types, and risk of BC based on tertiles of meat and meat types Meat and meat types Tertile 1 Tertile 2 Tertile 3 P trend HR (95%CI)* HR (95%CI) HR (95%CI) Total red meats and products Participants (856/171,991) (1103/171,741) (889/171,959) – (cases/non-cases) Person-years 1,790,142 1,845,531 1,862,353 – Crude 1 (reference) 1.25 (1.15, 1.36) 1.13 (1.04, 1.23) 0.007 Model 1 a 1 (reference) 1.13 (1.04, 1.24) 0.96 (0.87, 1.05) 0.222 Model 2 b 1 (reference) 1.12 (1.02, 1.23) 0.94 (0.85, 1.03) 0.085 Model 3 c† 1 (reference) 1.08 (0.94, 1.23) 1.01 (0.84, 1.21) 0.248 Red meats Participants (445/148,483) (577/148,350) (613/148,316) – (cases/non-cases) Person year 1,671,793 1,636,671 1,666,877 – Crude 1 (reference) 1.18 (1.04, 1.38) 1.13 (0.99, 1.29) 0.079 Model 1 a 1 (reference) 1.08 (0.95, 1.23) 0.99 (0.86, 1.13) 0.750 Model 2 b 1 (reference) 1.09 (0.96, 1.24) 1.02 (0.89, 1.17) 0.868 Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721 Processed meats Participants (505/148,425) (561/148,365) (569/148,359) – (cases/non-cases) Person year 1,665,703 1,658,865 1,650,773 – Crude 1 (reference) 1.16 (1.04, 1.30) 1.30 (1.16, 1.45) < 0.001 Model 1 a 1 (reference) 0.95 (0.84, 1.07) 0.99 (0.88, 1.11) 0.895 Model 2 b 1 (reference) 0.94 (0.84, 1.06) 0.98 (0.88, 1.11) 0.822 Model 3 c† 1 (reference) 0.89 (0.72, 1.10) 0.95 (0.73, 1.24) 0.304 Organ meats Participants (389/149,366) (541/147,560) (705/148,223) – (cases/non-cases) Person year 1,658,709 1,676,021 1,640,611 – Crude 1 (reference) 1.31 (1.15, 1.49) 1.48 (1.29, 1.69) < 0.001 Model 1 a 1 (reference) 1.25 (1.09, 1.43) 1.20 (1.05, 1.39) 0.015 Model 2 b 1 (reference) 1.21 (1.06, 1.39) 1.18 (1.03, 1.36) 0.032 Model 3 c† 1 (reference) 1.22 (1.06, 1.40) 1.21 (1.05, 1.38) 0.014 Poultry Participants (1022/171,827) (977/171,867) (849/171,997) – (cases/non-cases) Person year 1,891,568 1,858,982 1,747,476 – Crude 1 (reference) 0.77 (0.71, 0.84) 0.62 (0.57, 0.68) < 0.001 Model 1 a 1 (reference) 0.82 (0.75, 0.89) 0.73 (0.67, 0.81) < 0.001 Model 2 b 1 (reference) 0.81 (0.74, 0.89) 0.71 (0.65, 0.78) < 0.001 Model 3 c‡ 1 (reference) 0.91 (0.81, 1.04) 0.98 (0.84, 1.12) 0.54 Total fish and fish products Participants (252/61,489) (473/61,269) (812/60,929) – (cases/non-cases) Person year 666,381.6 603,304.3 497,419.5 – Crude 1 (reference) 0.73 (0.61, 0.85) 0.54 (0.47, 0.63) < 0.001 Model 1 a 1 (reference) 0.85 (0.73, 0.96) 0.88 (0.75, 1.03) 0.257 Model 2 b 1 (reference) 0.85 (0.73, 1.00) 0.84 (0.72, 1.00) 0.080 Model 3 c‡ 1 (reference) 0.92 (0.76, 1.11) 0.89 (0.63, 1.25) 0.369 * HR hazard ratio, CI confidence interval a Adjusted for age, sex, smoking status and total energy intake b Adjusted for model 1 + vegetables and fruits intakes c Adjusted for †model 2 + poultry and fish intake ‡model 2 + red meat intake",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Model 3 c† 1 (reference) 1.06 (0.93, 1.20) 1.03 (0.88, 1.21) 0.721",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "dietary meat consumptions were divided into 3 groups based on a tertile ordered distribution: low consumption (tertile 1), medium consumption (tertile 2) and high consumption (tertile 3).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Methods, Dietary meat consumption"
+          },
+          "design": {
+            "excerpt": "Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "Individual data from 11 prospective cohorts comprising 2848 BC cases and 515,697 non-cases with a total of 5,498,025 person-years of follow-up was pooled and analysed",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Abstract"
+          },
+          "continent": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Methods, Study sample"
+          },
+          "ethnicity": {
+            "excerpt": "Caucasian 2834 (99.6) 511,934 (99.3)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Dietary data were obtained using self-administered or trained interviewer administered food frequency questionnaire (FFQ)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Methods, Data collection and pre-processing"
+          },
+          "gender": {
+            "excerpt": "In total, 167,095 (32%) men and 351,444 (68%) women were included.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Results, Baseline characteristics"
+          },
+          "smoking_status": {
+            "excerpt": "Current 1118 (39.3) 107,108 (20.8) Former 1183 (41.5) 154,474 (30.0) Never 547 (19.2) 254,115 (49.2)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8416827/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "White",
+        "ethnicity_basis": "Country imputation: Sweden -> White",
+        "ethnicity_supporting_text": "Caucasian 2834 (99.6) 511,934 (99.3)"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 48731,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "cdc9690f83c3817cd635214afdb2c942e2d4e9c1b0c16ddaac08a41f4e6fc243",
+      "pmc_source_receipt_digest": "3f314b6547626a56914f50c5b69e550b9b5dfea35cdbf0be234f9bf16aa4b3df",
+      "pmc_source_raw_sha256": "81d644b4b4c14abc75b7c779612657fa4024a61f4f4f6d544139c0be8ec633e0",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b665ddec6fc66497d6a13fda39974b4df69e4ab6369a282c6e704b187541602c"
+    }
+  ]
+}

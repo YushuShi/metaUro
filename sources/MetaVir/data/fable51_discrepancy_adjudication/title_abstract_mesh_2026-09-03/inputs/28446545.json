@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:35:10.496092-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "9a22e40b85b4db6959d4156f885f53267b7fec70aa3b2efba8dc2544f506a0c8",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "28446545",
+      "title": "A Pooled Analysis of 15 Prospective Cohort Studies on the Association between Fruit, Vegetable, and Mature Bean Consumption and Risk of Prostate Cancer.",
+      "abstract": "<b>Background:</b> Relationships between fruit, vegetable, and mature bean consumption and prostate cancer risk are unclear.<b>Methods:</b> We examined associations between fruit and vegetable groups, specific fruits and vegetables, and mature bean consumption and prostate cancer risk overall, by stage and grade, and for prostate cancer mortality in a pooled analysis of 15 prospective cohorts, including 52,680 total cases and 3,205 prostate cancer-related deaths among 842,149 men. Diet was measured by a food frequency questionnaire or similar instrument at baseline. We calculated study-specific relative risks using Cox proportional hazards regression, and then pooled these estimates using a random effects model.<b>Results:</b> We did not observe any statistically significant associations for advanced prostate cancer or prostate cancer mortality with any food group (including total fruits and vegetables, total fruits, total vegetables, fruit and vegetable juice, cruciferous vegetables, and tomato products), nor specific fruit and vegetables. In addition, we observed few statistically significant results for other prostate cancer outcomes. Pooled multivariable relative risks comparing the highest versus lowest quantiles across all fruit and vegetable exposures and prostate cancer outcomes ranged from 0.89 to 1.09. There was no evidence of effect modification for any association by age or body mass index.<b>Conclusions:</b> Results from this large, international, pooled analysis do not support a strong role of collective groupings of fruits, vegetables, or mature beans in prostate cancer.<b>Impact:</b> Further investigation of other dietary exposures, especially indicators of bioavailable nutrient intake or specific phytochemicals, should be considered for prostate cancer risk. <i>Cancer Epidemiol Biomarkers Prev; 26(8); 1276-87. ©2017 AACR</i>.",
+      "mesh": [
+        "Cohort Studies",
+        "Fruit / chemistry",
+        "Humans",
+        "Male",
+        "Phaseolus / chemistry",
+        "Prospective Studies",
+        "Prostatic Neoplasms / pathology, prevention & control",
+        "Risk Factors",
+        "Vegetables / chemistry"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "28446545",
+      "contexts": [
+        {
+          "context_id": "28446545|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "842149",
+              "effect_measure_type": "RR",
+              "effect_size": "0.96",
+              "ci_lower": "0.91",
+              "ci_upper": "1.02",
+              "p_value": "0.22",
+              "comparison": "Highest versus lowest study-specific quantile of tomato-product intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "842149",
+              "effect_measure_type": "RR",
+              "effect_size": "0.95",
+              "ci_lower": "0.89",
+              "ci_upper": "1.02",
+              "p_value": "0.09",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

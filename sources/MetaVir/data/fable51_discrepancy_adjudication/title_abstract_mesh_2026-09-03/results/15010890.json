@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:24:14.828193-04:00",
+  "pmid": "15010890",
+  "work_key": "7e40de9921ca165e8b6e50c15e105b7eee7063b724d48c52d063ff1012f6f1e4",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/15010890_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "15010890",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "15010890|Boron|Prostate cancer",
+        "exposure": "Boron",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Cross-sectional case-control study design was employed by comparing boron intake of 95 prostate cancer cases with that of 8,720 male controls.",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract describes a cross-sectional case-control design in NHANES III (likely prevalent cases) yet frames the outcome as prostate cancer risk with an adjusted odds ratio; whether this constitutes a prevalence-only (S2-WRONG-OUTCOME) or an includable case-control incidence-risk estimate cannot be resolved from title, abstract, and MeSH.",
+        "one_sentence_explanation": "The abstract evaluates dietary boron intake versus prostate cancer risk with an odds ratio, supporting inclusion, but its explicitly cross-sectional design implies prevalent cases, so neither ChatGPT's S2-WRONG-OUTCOME exclusion nor Claude+Gemini's inclusion is unambiguously supported."
+      }
+    ]
+  }
+}

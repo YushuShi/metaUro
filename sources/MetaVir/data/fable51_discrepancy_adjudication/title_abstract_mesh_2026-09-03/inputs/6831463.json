@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:07:57.484544-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "03090476f88c22e5f331c7b77c6750211276ed04ad207d54f54cf5e559be7c74",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "6831463",
+      "title": "Role of diet in cancer incidence in Hawaii.",
+      "abstract": "Incidence rates for many sites of cancer show wide variations among the main ethnic groups in Hawaii (Caucasians, Japanese, Chinese, Filipinos, and Hawaiians). Major shifts in cancer rates among migrants to the islands suggest that environmental factors are at least in part responsible for these variations. One prominent area of difference among these ethnic populations is their diets, which can vary substantially, not only in the consumption of particular food items but also in mean nutrient intakes. In aggregate correlational analyses based on data from representative samples of these ethnic groups and corresponding population-based cancer incidence rates, we found significant associations between ethnic-sex-specific intakes of dietary fat (including total fat, as well as animal, saturated, and unsaturated fats) and breast, endometrial, and prostate cancers. Animal protein intake showed associations similar to those for dietary fat, but these two nutrients were highly correlated in the data. Cholesterol intake showed significant correlations with lung and laryngeal cancers. Analyses of both nutrient and food item data suggested an association of stomach cancer incidence with the consumption of fish products, particularly dried/salted fish, and with a lower intake of vitamin C. Preliminary findings from ongoing case-control studies showed the following relationships: an inverse association between lung cancer risk and the intake of food sources of vitamin A, especially foods containing carotenes; an inverse association between cancers of the lower urinary tract and vitamin A consumption, especially from supplements; a positive association between prostate cancer risk and dietary fat intake in men above age 69, but not in younger men; and a positive association between breast cancer risk and the intake of dietary fat (particularly saturated fat) and animal protein in postmenopausal women, especially the Japanese. Two large cohorts (50,000 and 5,000 subjects) on whom dietary information was collected between 1975 and 1980 are being followed prospectively for their occurrence of cancer.",
+      "mesh": [
+        "Age Factors",
+        "Aged",
+        "Ascorbic Acid / physiology",
+        "Breast Neoplasms / epidemiology, etiology",
+        "Diet",
+        "Dietary Fats / adverse effects",
+        "Ethnicity",
+        "Female",
+        "Hawaii",
+        "Humans",
+        "Lung Neoplasms / epidemiology, etiology",
+        "Male",
+        "Middle Aged",
+        "Neoplasms / etiology",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk",
+        "Urologic Neoplasms / epidemiology, etiology",
+        "Vitamin A / physiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "6831463",
+      "contexts": [
+        {
+          "context_id": "6831463|Animal protein intake|Prostate cancer",
+          "exposure": "Animal protein intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        },
+        {
+          "context_id": "6831463|Dietary protein intake|Prostate cancer",
+          "exposure": "Dietary protein intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

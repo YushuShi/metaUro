@@ -1,0 +1,200 @@
+{
+  "schema_version": 1,
+  "receipt_id": "68d86a5d9c73c5235fa98a170cfc643d8223fc1a8bee14630a2b43fcb0cd2d43",
+  "requested_at": "2026-09-02T08:30:27.778401+08:00",
+  "received_at": "2026-09-02T08:30:54.094547+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "f0259a8c081491739cf56d7764ee51e8ef7a6eaed4bd865a5bc3ed46da4b89de",
+  "attempt": 2,
+  "context_ids": [
+    "37407836|Dietary protein intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Dietary protein intake": 1
+  },
+  "input_digest": "6d1f60fd3a696b3d1805b15769051409777a17029682264f1381468e01404506",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 27290,
+    "cached_input_tokens": 0,
+    "output_tokens": 3412,
+    "reasoning_tokens": 1345
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0332625",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3d54e9f3-a948-41de-9a6c-a9c8487fc495",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0332625"
+  },
+  "output_sha256": "3ab54a02fde49b7676cb2664fb7d06c568f1b3f17293593d9a25879d954edb5e",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"37407836|Dietary protein intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort analysis of UK Biobank evaluating dietary total protein intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.98,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.87,\n        \"ci_upper\": 1.11,\n        \"p_value\": 0.68,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 51278,\n        \"cases\": 2422,\n        \"comparison_type\": \"highest_vs_lowest\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"UK Biobank male participants completing at least two 24-h dietary assessments\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"In total, this left 114,217 participants who completed ≥2 (maximum 5) valid 24-h dietary assessments, of which 51,278 were men and 62,939 were women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Methods, Exclusions, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After a median of 9.4 years of follow-up, 1193 colorectal, 2024 female breast, and 2422 prostate cancer cases were identified.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total protein intake Fully adjusted model 1 (ref) 1.06 (0.95–1.19) 1.05 (0.93–1.17) 0.98 (0.87–1.11)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Table 2, Prostate cancer, Total protein intake\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total protein intake Fully adjusted model 1 (ref) 1.06 (0.95–1.19) 1.05 (0.93–1.17) 0.98 (0.87–1.11)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Table 2, Prostate cancer, Total protein intake\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total protein intake Fully adjusted model 1 (ref) 1.06 (0.95–1.19) 1.05 (0.93–1.17) 0.98 (0.87–1.11) 0.99 (0.96–1.03) 0.18 0.68\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Table 2, Prostate cancer, Total protein intake\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Participants were classified into quartiles of percentage of energy intake from total protein, protein from all dairy products, protein from milk, protein from cheese, except for total dietary calcium intake which was expressed in quartiles of mg/day.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Methods, Statistical analyses, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"Using a subsample of UK Biobank participants who completed ≥2 (maximum of 5) 24-h dietary assessments, we estimated intakes of total protein, protein from total dairy products, milk, and cheese, and dietary calcium in 114,217 participants. Hazard ratios (HRs) and 95% confidence intervals (CI) were estimated using multivariable-adjusted Cox regression.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants contributed follow-up time from date of completion of their last 24-h dietary assessment until the date of first cancer registration (excluding non-melanoma skin cancer (International Statistical Classification of Disease (ICD-10) code: C44)), date of death, or last date of follow-up available from HES and SMR data or the Welsh cancer registry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Methods, Outcome ascertainment: cancer diagnoses, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In total, over 500,000 individuals (5.5% response rate) aged 37–73 years consented to take part in the UK Biobank study from 2006 to 2010\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Methods, Study design and participants, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"ethnicity (White, mixed race or other, Asian or British Asian, Black or Black British, or missing/unknown (0.33%))\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Methods, Statistical analyses, paragraph 3\"\n          },\n          \"location\": {\n            \"excerpt\": \"using the National Health Service patient registries a total of 9.2 million people, living within 40 km of an assessment centre, were invited to participate by attending a visit at one of the 22 assessment centres around the United Kingdom (UK).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Methods, Study design and participants, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed in a subsample of participants using a validated web-based 24-h dietary assessment, the Oxford WebQ\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/\",\n            \"location\": \"Methods, Assessment of diet: 24-h dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "37407836|Dietary protein intake|Prostate cancer",
+      "pmid": "37407836",
+      "pmcid": "PMC10421858",
+      "published_date": "2023-09-01",
+      "title": "Associations of intakes of total protein, protein from dairy sources, and dietary calcium with risks of colorectal, breast, and prostate cancer: a prospective analysis in UK Biobank.",
+      "authors": [
+        "Watling CZ",
+        "Kelly RK",
+        "Dunneram Y",
+        "Knuppel A",
+        "Piernas C",
+        "Schmidt JA",
+        "Travis RC",
+        "Key TJ",
+        "Perez-Cornago A"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/37407836/",
+      "exposure": "Dietary protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort analysis of UK Biobank evaluating dietary total protein intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.98,
+        "effect_type": "HR",
+        "ci_lower": 0.87,
+        "ci_upper": 1.11,
+        "p_value": 0.68,
+        "ci_confidence_level": 95,
+        "total_n": 51278,
+        "cases": 2422,
+        "comparison_type": "highest_vs_lowest",
+        "design": "prospective_cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "UK Biobank male participants completing at least two 24-h dietary assessments",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In total, this left 114,217 participants who completed ≥2 (maximum 5) valid 24-h dietary assessments, of which 51,278 were men and 62,939 were women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Methods, Exclusions, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "Over a median of 9.4 years of follow-up (IQR: 9.3–9.8 years), 1193 incident colorectal cancer, 2024 breast cancer and 2422 prostate cancer cases were observed.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "However, a positive association was suggested for men in the highest quartile of protein from milk and dietary calcium intake in comparison to the lowest quartile (HR Q4 vs Q1 : 1.12, 95% CI: 1.00–1.26; 1.16, 1.01–1.33, respectively), although these associations were not statistically significant when milk protein or calcium intake were modelled as continuous variables (HR per 2.5% energy increment : 1.11, 95% CI: 0.98–1.26; HR per 300 mg/day : 1.04, 0.99–1.09, respectively; Fig.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Table 2, Prostate cancer, Total protein intake"
+          },
+          "confidence_interval": {
+            "excerpt": "Table 2 Hazard ratios (95% CI) for intake of total protein, protein from dairy products and dairy sources, and calcium with colorectal, breast, and prostate cancer with additional adjustments for circulating insulin-like growth factor-I (IGF-I). Colorectal cancer Intakes of total protein, protein from dairy products, and calcium Q1 Q2 Q3 Q4 Per 2.5% energy intake or 300 mg/day a χ 2 P-trend Total protein intake Fully adjusted model 1 (ref) 1.13 (0.96–1.32) 1.00 (0.85–1.18) 0.99 (0.83–1.18) 0.98 (0.93–1.03) 0.79 0.37 Fully adjusted model + IGF-I concentrations 1 (ref) 1.13 (0.96–1.32) 1.00 (0.85–1.18) 0.99 (0.83–1.18) 0.98 (0.93–1.03) 0.78 0.38 Protein from dairy products Fully adjusted model 1 (ref) 0.91 (0.78–1.06) 0.88 (0.75–1.03) 0.80 (0.67–0.94) 0.82 (0.74–0.92) 11.61 0.001 Fully adjusted model + IGF-I concentrations 1 (ref) 0.91 (0.78–1.06) 0.88 (0.75–1.03) 0.80 (0.67–0.94) 0.82 (0.74–0.92) 11.58 0.001 Protein from milk Fully adjusted model 1 (ref) 0.87 (0.74–1.01) 0.80 (0.68–0.93) 0.79 (0.67–0.94) 0.76 (0.63–0.91) 9.01 0.003 Fully adjusted model + IGF-I concentrations 1 (ref) 0.87 (0.74–1.01) 0.80 (0.68–0.93) 0.79 (0.67–0.94) 0.76 (0.63–0.91) 9.02 0.003 Protein from cheese Fully adjusted model 1 (ref) 0.91 (0.77–1.07) 0.95 (0.82–1.12) 0.89 (0.76–1.05) 0.91 (0.76–1.08) 1.25 0.26 Fully adjusted model + IGF-I concentrations 1 (ref) 0.91 (0.77–1.07) 0.96 (0.82–1.12) 0.89 (0.76–1.05) 0.91 (0.76–1.08) 1.24 0.26 Total dietary calcium Fully adjusted model 1 (ref) 0.89 (0.76–1.06) 0.85 (0.72–1.01) 0.71 (0.58–0.86) 0.89 (0.83–0.97) 8.39 0.004 Fully adjusted model + IGF-I concentrations 1 (ref) 0.89 (0.76–1.06) 0.85 (0.72–1.01) 0.71 (0.58–0.86) 0.89 (0.83–0.97) 8.38 0.004 Breast cancer Intakes of total protein, protein from dairy products, and calcium Q1 Q2 Q3 Q4 Per 2.5% energy intake or 300 mg/day a χ 2 P-trend Total protein intake Fully adjusted model 1 (ref) 1.02 (0.90–1.15) 0.96 (0.84–1.08) 0.99 (0.86–1.12) 0.99 (0.95–1.02) 0.47 0.49 Fully adjusted model + IGF-I concentrations 1 (ref) 1.01 (0.89–1.14) 0.95 (0.84–1.08) 0.97 (0.85–1.11) 0.98 (0.95–1.02) 0.77 0.38 Protein from dairy products Fully adjusted model 1 (ref) 1.04 (0.92–1.17) 0.99 (0.87–1.12) 0.93 (0.82–1.06) 0.94 (0.86–1.01) 2.72 0.10 Fully adjusted model + IGF-I concentrations 1 (ref) 1.04 (0.92–1.17) 0.99 (0.87–1.12) 0.93 (0.82–1.05) 0.93 (0.86–1.01) 3.02 0.08 Protein from milk Fully adjusted model 1 (ref) 1.00 (0.88–1.13) 0.99 (0.88–1.12) 0.94 (0.83–1.07) 0.91 (0.80–1.03) 2.09 0.15 Fully adjusted model + IGF-I concentrations 1 (ref) 0.99 (0.88–1.12) 0.99 (0.88–1.12) 0.92 (0.81–1.05) 0.90 (0.79–1.02) 2.77 0.10 Protein from cheese Fully adjusted model 1 (ref) 1.00 (0.88–1.14) 1.04 (0.92–1.18) 1.04 (0.92–1.18) 1.03 (0.91–1.16) 0.21 0.65 Fully adjusted model + IGF-I concentrations 1 (ref) 0.99 (0.87–1.13) 1.04 (0.92–1.18) 1.04 (0.92–1.18) 1.03 (0.91–1.17) 0.27 0.60 Total dietary calcium Fully adjusted model 1 (ref) 0.96 (0.84–1.09) 0.96 (0.84–1.10) 0.91 (0.79–1.06) 0.96 (0.90–1.01) 2.22 0.14 Fully adjusted model + IGF-I concentrations 1 (ref) 0.95 (0.84–1.08) 0.96 (0.84–1.09) 0.90 (0.78–1.05) 0.95 (0.89–1.01) 2.79 0.09 Prostate cancer Intakes of total protein, protein from dairy products, and calcium Q1 Q2 Q3 Q4 Per 2.5% energy intake or 300 mg/day a χ 2 P-trend Total protein intake Fully adjusted model 1 (ref) 1.06 (0.95–1.19) 1.05 (0.93–1.17) 0.98 (0.87–1.11) 0.99 (0.96–1.03) 0.18 0.68 Fully adjusted model + IGF-I concentrations 1 (ref) 1.06 (0.95–1.19) 1.04 (0.93–1.17) 0.97 (0.86–1.10) 0.99 (0.95–1.03) 0.30 0.59 Protein from dairy products Fully adjusted model 1 (ref) 1.00 (0.89–1.12) 1.08 (0.96–1.21) 1.04 (0.93–1.17) 1.04 (0.96–1.12) 0.85 0.36 Fully adjusted model + IGF-I concentrations 1 (ref) 1.00 (0.89–1.12) 1.07 (0.96–1.20) 1.03 (0.92–1.16) 1.03 (0.96–1.12) 0.67 0.41 Protein from milk Fully adjusted model 1 (ref) 1.03 (0.92–1.15) 0.99 (0.88–1.11) 1.12 (1.00–1.26) 1.11 (0.98–1.26) 2.74 0.10 Fully adjusted model + IGF-I concentrations 1 (ref) 1.03 (0.91–1.15) 0.99 (0.88–1.11) 1.11 (0.99–1.25) 1.11 (0.97–1.26) 2.40 0.12 Protein from cheese Fully adjusted model 1 (ref) 0.99 (0.88–1.11) 1.03 (0.92–1.15) 0.97 (0.86–1.08) 0.96 (0.85–1.08) 0.52 0.47 Fully adjusted model + IGF-I concentrations 1 (ref) 0.99 (0.88–1.11) 1.03 (0.92–1.15) 0.97 (0.86–1.08) 0.96 (0.85–1.08) 0.53 0.47 Total dietary calcium Fully adjusted model 1 (ref) 1.12 (1.00–1.27) 1.13 (0.99–1.28) 1.16 (1.01–1.33) 1.04 (0.99–1.09) 2.05 0.15 Fully adjusted model + IGF-I concentrations 1 (ref) 1.12 (0.99–1.26) 1.12 (0.99–1.27) 1.15 (1.00–1.32) 1.03 (0.98–1.09) 1.67 0.20 Estimates in bold indicate statistically significant results.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Table 2, Prostate cancer, Total protein intake"
+          },
+          "p_value": {
+            "excerpt": "Total protein intake Fully adjusted model 1 (ref) 1.06 (0.95–1.19) 1.05 (0.93–1.17) 0.98 (0.87–1.11) 0.99 (0.96–1.03) 0.18 0.68",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Table 2, Prostate cancer, Total protein intake"
+          },
+          "comparison": {
+            "excerpt": "Participants were classified into quartiles of percentage of energy intake from total protein, protein from all dairy products, protein from milk, protein from cheese, except for total dietary calcium intake which was expressed in quartiles of mg/day.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Methods, Statistical analyses, paragraph 1"
+          },
+          "design": {
+            "excerpt": "Using a subsample of UK Biobank participants who completed ≥2 (maximum of 5) 24-h dietary assessments, we estimated intakes of total protein, protein from total dairy products, milk, and cheese, and dietary calcium in 114,217 participants. Hazard ratios (HRs) and 95% confidence intervals (CI) were estimated using multivariable-adjusted Cox regression.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "Participants contributed follow-up time from date of completion of their last 24-h dietary assessment until the date of first cancer registration (excluding non-melanoma skin cancer (International Statistical Classification of Disease (ICD-10) code: C44)), date of death, or last date of follow-up available from HES and SMR data or the Welsh cancer registry",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Methods, Outcome ascertainment: cancer diagnoses, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "In total, over 500,000 individuals (5.5% response rate) aged 37–73 years consented to take part in the UK Biobank study from 2006 to 2010",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Methods, Study design and participants, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Dietary intake was assessed in a subsample of participants using a validated web-based 24-h dietary assessment, the Oxford WebQ",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10421858/",
+            "location": "Methods, Assessment of diet: 24-h dietary assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.68",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 78671,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "8dd8fe973b5ffb8a06b5ceb63969fbff779cb91c6a931f315d57dddf054d5db1",
+      "pmc_source_receipt_digest": "a7e997a82c608c43fbc2b9362a34f68111d1cd3a9327f6fc5cf754ac50ab00f5",
+      "pmc_source_raw_sha256": "a36fa3dc26f9d3bdb5df3a8f0b0c12c28388d418bceb67c8c843d62cdb23dd62",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e0aa7cbad233440efeb9fa0da5ab8d9d337bf3bd4352e8e94f7e3ebcaf61903d"
+    }
+  ]
+}

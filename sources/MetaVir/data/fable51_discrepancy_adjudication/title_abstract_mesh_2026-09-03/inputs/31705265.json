@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:36:10.342016-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "50de7e880b9bd47ef31a3e48d12fc4506f395e1a9e37a9a006c59a9af04b9aa9",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "31705265",
+      "title": "A nutrient-wide association study for risk of prostate cancer in the European Prospective Investigation into Cancer and Nutrition and the Netherlands Cohort Study.",
+      "abstract": "The evidence from the literature regarding the association of dietary factors and risk of prostate cancer is inconclusive. A nutrient-wide association study was conducted to systematically and comprehensively evaluate the associations between 92 foods or nutrients and risk of prostate cancer in the European Prospective Investigation into Cancer and Nutrition (EPIC). Cox proportional hazard regression models adjusted for total energy intake, smoking status, body mass index, physical activity, diabetes and education were used to estimate hazard ratios and 95% confidence intervals for standardized dietary intakes. As in genome-wide association studies, correction for multiple comparisons was applied using the false discovery rate (FDR < 5%) method and suggested results were replicated in an independent cohort, the Netherlands Cohort Study (NLCS). A total of 5916 and 3842 incident cases of prostate cancer were diagnosed during a mean follow-up of 14 and 20 years in EPIC and NLCS, respectively. None of the dietary factors was associated with the risk of total prostate cancer in EPIC (minimum FDR-corrected P, 0.37). Null associations were also observed by disease stage, grade and fatality, except for positive associations observed for intake of dry cakes/biscuits with low-grade and butter with aggressive prostate cancer, respectively, out of which the intake of dry cakes/biscuits was replicated in the NLCS. Our findings provide little support for an association for the majority of the 92 examined dietary factors and risk of prostate cancer. The association of dry cakes/biscuits with low-grade prostate cancer warrants further replication given the scarcity in the literature.",
+      "mesh": [
+        "Cohort Studies",
+        "Diet",
+        "Europe / epidemiology",
+        "Genome-Wide Association Study",
+        "Humans",
+        "Male",
+        "Netherlands / epidemiology",
+        "Nutrients",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "31705265",
+      "contexts": [
+        {
+          "context_id": "31705265|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

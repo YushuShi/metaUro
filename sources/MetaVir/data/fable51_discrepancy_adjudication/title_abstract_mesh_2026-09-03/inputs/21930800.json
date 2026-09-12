@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:33.907826-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "dc407b14e8a17624c4fcc7f0fde75f413651d9f6937c30634374b78e8a36305b",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "21930800",
+      "title": "Egg, red meat, and poultry intake and risk of lethal prostate cancer in the prostate-specific antigen-era: incidence and survival.",
+      "abstract": "Red and processed meat may increase risk of advanced prostate cancer. Data on postdiagnostic diet and prostate cancer are sparse, but postdiagnostic intake of poultry with skin and eggs may increase risk of disease progression. Therefore, we prospectively examined total, unprocessed, and processed red meat, poultry, and eggs in relation to risk of lethal prostate cancer (e.g., men without cancer at baseline who developed distant organ metastases or died from prostate cancer during follow-up) among 27,607 men followed from 1994 to 2008. We also conducted a case-only survival analysis to examine postdiagnostic consumption of these foods and risk of lethal prostate cancer among the 3,127 men initially diagnosed with nonmetastatic prostate cancer during follow-up. In the incidence analysis, we observed 199 events during 306,715 person-years. Men who consumed 2.5 or more eggs per week had an 81% increased risk of lethal prostate cancer compared with men who consumed less than 0.5 eggs per week (HR: 1.81; 95% CI: 1.13-2.89; P(trend): 0.01). In the case-only survival analysis, we observed 123 events during 19,354 person-years. There were suggestive, but not statistically significant, positive associations between postdiagnostic poultry (HR ≥ 3.5 vs. <1.5 servings per week: 1.69; 95% CI: 0.96-2.99; P(trend): 0.07) and postdiagnostic processed red meat (HR ≥ 3 vs. <0.5 servings per week: 1.45; 95% CI: 0.73-2.87; P(trend): 0.08) and risk of progression of localized prostate cancer to lethal disease. In conclusion, consumption of eggs may increase risk of developing a lethal form of prostate cancer among healthy men.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Animals",
+        "Diet",
+        "Eggs / adverse effects",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Meat / adverse effects",
+        "Middle Aged",
+        "Poultry",
+        "Prospective Studies",
+        "Prostate-Specific Antigen / analysis",
+        "Prostatic Neoplasms / epidemiology, etiology, mortality",
+        "Risk Assessment",
+        "Risk Factors",
+        "Survival Rate"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "21930800",
+      "contexts": [
+        {
+          "context_id": "21930800|Processed meat intake|Prostate cancer",
+          "exposure": "Processed meat intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "3127",
+              "effect_measure_type": "HR",
+              "effect_size": "1.45",
+              "ci_lower": "0.73",
+              "ci_upper": "2.87",
+              "p_value": "0.08",
+              "comparison": "≥3 versus <0.5 servings per week of total processed red meat after diagnosis"
+            },
+            "Claude+Gemini": {
+              "sample_size": "27607",
+              "effect_measure_type": "HR",
+              "effect_size": "1.52",
+              "ci_lower": "0.89",
+              "ci_upper": "2.61",
+              "p_value": "0.2",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

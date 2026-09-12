@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:10.105166-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "81a43e793535274256e34636f9e30c0ffbc0333a1b34fc4ea8bb98c1e798f6b5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11696701",
+      "title": "Plasma selenium level before diagnosis and the risk of prostate cancer development.",
+      "abstract": "Epidemiological studies and a randomized intervention trial suggest that the risk of prostate cancer may be reduced by selenium intake. We investigated whether plasma selenium level before diagnosis correlated with the risk of later developing prostate cancer. A case control study was performed on men from the Baltimore Longitudinal Study of Aging registry, including 52 with known prostate cancer and 96 age matched controls with no detectable prostatic disease. Plasma selenium was measured at an average time plus or minus standard deviation of 3.83 +/- 1.85 years before the diagnosis of prostate cancer by graphite furnace atomic absorption spectrophotometry. Adjusted odds ratio and 95% confidence interval were computed with logistic regression. After correcting for years before diagnosis, body mass index, and smoking and alcohol use history, higher selenium was associated with a lower risk of prostate cancer. Compared with the lowest quartile of selenium (range 8.2 to 10.7 microg./dl.), the odds ratios of the second (10.8 to 11.8), third (11.9 to 13.2) and fourth (13.3 to 18.2) quartiles were 0.15 (95% confidence interval 0.05 to 0.50), 0.21 (0.07 to 0.68) and 0.24 (0.08 to 0.77, respectively, p =0.01). Furthermore, plasma selenium decreased significantly with patient age (p <0.001). Low plasma selenium is associated with a 4 to 5-fold increased risk of prostate cancer. These results support the hypothesis that supplemental selenium may reduce the risk of prostate cancer. Because plasma selenium decreases with patient age, supplementation may be particularly beneficial to older men.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / blood, diagnosis, epidemiology",
+        "Risk Factors",
+        "Selenium / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11696701",
+      "contexts": [
+        {
+          "context_id": "11696701|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.24",
+              "ci_lower": "0.08",
+              "ci_upper": "0.77",
+              "p_value": "0.01",
+              "comparison": "fourth (13.3 to 18.2 microg./dl.) versus lowest (8.2 to 10.7 microg./dl.) plasma selenium quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "148",
+              "effect_measure_type": "OR",
+              "effect_size": "0.24",
+              "ci_lower": "0.08",
+              "ci_upper": "0.77",
+              "p_value": "0.01",
+              "comparison": "highest (fourth) versus lowest quartile of plasma selenium"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

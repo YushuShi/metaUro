@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:27:58.084024-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "2961dd35e6ebbf35a213f09cb3fda37c8f6102d50c81a9c1939b92db68a35848",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19124480",
+      "title": "Serum undercarboxylated osteocalcin as biomarker of vitamin K intake and risk of prostate cancer: a nested case-control study in the Heidelberg cohort of the European prospective investigation into cancer and nutrition.",
+      "abstract": "From cell studies, Vitamin K is known to exert anticancer effects on a variety of cancer cell lines, including prostate cancer cells. Recently, we reported an inverse association between dietary intake of menaquinones (vitamin K(2)), but not phylloquinone (vitamin K(1)), and risk of prostate cancer. In this nested case-control study including 250 prostate cancer cases and 494 matched controls, we aimed to confirm this cancer-protective effect using serum undercarboxylated osteocalcin (ucOC), a biomarker of vitamin K status inversely associated with vitamin K intake. In addition, effect modification by a functionally relevant polymorphism in the vitamin K epoxide reductase gene (VKORC1) was assessed. Serum ucOC and intact total osteocalcin (iOC) were analyzed with the use of ELISA tests. Serum ucOC was expressed relative to iOC (i.e., as ucOC/iOC ratio). Conditional logistic regression was used to calculate multivariate adjusted odds ratios (OR) and 95% confidence intervals (95% CI). Serum ucOC/iOC ratio was positively associated with advanced-stage (OR per 0.1 increment, 1.38; 95% CI, 1.03-1.86) and high-grade prostate cancer (OR, 1.21; 95% CI, 1.00-1.46) but not with total prostate cancer. The significant association with advanced-stage prostate cancer was confirmed when serum ucOC/iOC ratio was jointly modeled with menaquinone intake data. There was indication of a lower prostate cancer risk in carriers of the A allele (compared with GG carriers) of the +2255 VKORC1 polymorphism with increasing menaquinone intake (P(interaction) = 0.14) whereas no distinct effect modification was observed for the ucOC/iOC ratio (P(interaction) = 0.37). The increased risks of advanced-stage and high-grade prostate cancer with higher serum ucOC/iOC ratio strengthen the findings for dietary menaquinone intake.",
+      "mesh": [
+        "Adult",
+        "Biomarkers / blood",
+        "Case-Control Studies",
+        "Chi-Square Distribution",
+        "Enzyme-Linked Immunosorbent Assay",
+        "Europe / epidemiology",
+        "Genotype",
+        "Germany / epidemiology",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Mixed Function Oxygenases / genetics",
+        "Osteocalcin / blood",
+        "Polymorphism, Genetic",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, epidemiology, genetics, pathology",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "Vitamin K 1 / administration & dosage, blood",
+        "Vitamin K 2 / administration & dosage, blood",
+        "Vitamin K Epoxide Reductases"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19124480",
+      "contexts": [
+        {
+          "context_id": "19124480|Vitamin K2|Prostate cancer",
+          "exposure": "Vitamin K2",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        },
+        {
+          "context_id": "19124480|Vitamin K|Prostate cancer",
+          "exposure": "Vitamin K",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "1.38",
+              "ci_lower": "1.03",
+              "ci_upper": "1.86",
+              "p_value": "0.0326614423522488",
+              "comparison": "Per 0.1 increment in serum ucOC/iOC ratio"
+            },
+            "Claude+Gemini": {
+              "sample_size": "744",
+              "effect_measure_type": "OR",
+              "effect_size": "1.38",
+              "ci_lower": "1.03",
+              "ci_upper": "1.86",
+              "p_value": null,
+              "comparison": "OR per 0.1 increment in serum ucOC/iOC ratio (advanced-stage prostate cancer)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

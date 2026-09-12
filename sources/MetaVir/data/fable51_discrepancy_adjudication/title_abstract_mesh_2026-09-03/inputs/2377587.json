@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:07:08.480012-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "72073ed4a5bedc4c7a032d3c41163e940faf15bfcd446d5ddae2dcb601295fb5",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "2377587",
+      "title": "Types of dietary fat and the incidence of cancer at five sites.",
+      "abstract": "The specificity of a statistical association increases the likelihood that it represents a causal relationship. In exploring the relationship between dietary fat and cancer, specificity applies both to cancer sites (outcome) and to component fats (exposure). In this study, Armstrong-Doll criteria were used to select female cancer incidence data for breast, cervix, lung, and colon, and male incidence data for lung, colon, and prostate for 1973-1977 from 20 countries with reliable registry data. Truncated age-standardized rates were correlated with estimates of per capita disappearance of total fat and of saturated, monounsaturated, and polyunsaturated (total, fish omega-3, omega-6) fats in 1975-1977. Multiple regression analyses were standardized for estimated total calorie intakes and used to assess the association between each fat and incidence at each cancer site. Estimates of per capita dietary and crude fiber intakes were also included in the analysis. Total calorie intake was not associated with cancer at any site when controlled for total fat intake, whereas total fat intake was strongly associated with cancers of the breast, colon, and prostate even after adjustment for total calorie intake. Cancers of the lung and cervix were not correlated with dietary fat intake. Monounsaturated fat had no positive association with cancer at any site. Saturated fat was positively associated with incidence of cancers of the breast, colon, and prostate and polyunsaturated fat was associated with incidence of breast and prostate cancers but not colon cancer. Fiber intake, when included in the analysis, affected the magnitude of the fat-cancer correlations, particularly between total fat and colon cancer. Fish omega-3 polyunsaturated fat had a nonsignificant negative association with the cancer sites studied. The findings supported hypotheses based on the results of animal experiments showing that different kinds of fatty acids have different tumor-promoting capabilities.",
+      "mesh": [
+        "Adult",
+        "Breast Neoplasms / epidemiology, etiology",
+        "Colonic Neoplasms / epidemiology, etiology",
+        "Dietary Fats / adverse effects",
+        "Epidemiologic Methods",
+        "Fats, Unsaturated / administration & dosage",
+        "Fatty Acids, Monounsaturated / administration & dosage",
+        "Fatty Acids, Omega-3 / administration & dosage",
+        "Female",
+        "Humans",
+        "Lung Neoplasms / epidemiology, etiology",
+        "Male",
+        "Middle Aged",
+        "Neoplasms / epidemiology, etiology",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Uterine Cervical Neoplasms / epidemiology, etiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "2377587",
+      "contexts": [
+        {
+          "context_id": "2377587|Monounsaturated fat (MUFA)|Prostate cancer",
+          "exposure": "Monounsaturated fat (MUFA)",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "20",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Country-level correlation"
+            },
+            "Claude+Gemini": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Per capita monounsaturated fat availability correlated with male prostate cancer incidence rates"
+            }
+          }
+        },
+        {
+          "context_id": "2377587|Omega-6 fatty acids|Prostate cancer",
+          "exposure": "Omega-6 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        },
+        {
+          "context_id": "2377587|Total dietary fiber intake|Prostate cancer",
+          "exposure": "Total dietary fiber intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

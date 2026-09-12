@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "receipt_id": "640afb386bb1b02056b58312aea1b115f7089f80c38a91eb6db3e99eb35248c8",
+  "requested_at": "2026-09-03T17:17:22.274232-04:00",
+  "received_at": "2026-09-03T17:17:48.778442-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "ea61d1434ba29ece4658961955cf7cd6b137e8b1ea48c7faec440e3f7e4cc74c",
+  "dispatch_work_unit_key": "5ca652170f8c5bc32fcb1baceaa79d1c6598636c10dc745e30fe505bdd953edb",
+  "attempt": 2,
+  "context_ids": [
+    "22170360|Iron|Renal cell carcinoma",
+    "22170360|Processed meat intake|Renal cell carcinoma"
+  ],
+  "exposure_weights": {
+    "Iron": 1,
+    "Processed meat intake": 1
+  },
+  "input_digest": "fc30a12925eef2178ad16c7a383ec58737091a57b884a39e0ac13924fc7e58dd",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 16870,
+    "cached_input_tokens": 0,
+    "output_tokens": 5274,
+    "reasoning_tokens": 1135
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.03243",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "543610ab-4a7a-4f77-a61c-30fc80142d35",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.03243"
+  },
+  "output_sha256": "b39fc47a7b745296f9b70530ecff69c139dceffd2b20a341b19db4fc3c08f877",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22170360|Iron|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study reporting multivariable-adjusted hazard ratios for dietary heme iron intake and incidence of renal cell carcinoma.\",\n      \"extraction\": {\n        \"effect_size\": 1.15,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.94,\n        \"ci_upper\": 1.4,\n        \"p_value\": 0.03,\n        \"total_n\": 302162,\n        \"cases\": 1089,\n        \"comparison_type\": \"Q5 vs Q1\",\n        \"design\": \"Prospective cohort study\",\n        \"timing\": \"Prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"NIH-AARP Diet and Health Study subcohort\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"Mixed\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The analysis of compounds in cooked and processed meats was restricted to a subcohort that responded to the second questionnaire and met the inclusion criteria above ( n = 302,162; 176,179 men and 125,983 women).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Over a mean follow-up of 9 y, we ascertained 1814 cases of RCC ( n = 498 clear cell; n = 115 papillary cell; n = 1071 NOS; n = 147 otherwise specified) in the baseline analysis and 1,089 cases of RCC ( n = 306 clear cell; n = 83 papillary cell; n = 617 NOS; n = 90, otherwise specified) in the subcohort analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Results, Paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Q5 (336.0) 258 1.15 0.94, 1.40 0.03\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Q5 (336.0) 258 1.15 0.94, 1.40 0.03\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"We observed a positive trend for heme iron intake and total RCC ( P -trend = 0.03)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Results, Paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"HRs, 95% CIs, and P values for linear trend (using the median value within quintiles) are reported across sex-specific quintiles of intake with the lowest intake quintile representing the referent group.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Statistical analysis, Paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In a large US cohort, we prospectively investigated intake of meat and meat-related compounds in relation to risk of RCC, as well as clear cell and papillary RCC histologic subtypes.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White, non-Hispanic (%) 87.5 90.7 92.0 93.1 92.8 Black, non-Hispanic (%) 5.7 4.3 3.7 3.7 2.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Meat intake, cooking method, and degree of doneness were linked to the Computerized Heterocyclic Amines Resource for Research In Epidemiology of Disease (CHARRED) database ( http://charred.cancer.gov/ ) to estimate values (ng/d) of 3 HCAs (PhIP, MeIQx, and DiMeIQx), one PAH (BaP), and heme iron by using an exposure index described in detail elsewhere ( 22 , 23 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Dietary assessment, Paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"The analysis of compounds in cooked and processed meats was restricted to a subcohort that responded to the second questionnaire and met the inclusion criteria above ( n = 302,162; 176,179 men and 125,983 women).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 2\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Never smoker (%) 40.8 40.1 37.0 37.5 33.8 Current smoker or quit <1 y ago (%) 7.4 11.3 13.0 16.0 18.6\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"22170360|Processed meat intake|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study reporting multivariable-adjusted hazard ratios for total processed meat intake and incidence of renal cell carcinoma.\",\n      \"extraction\": {\n        \"effect_size\": 1.09,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.93,\n        \"ci_upper\": 1.27,\n        \"p_value\": 0.5,\n        \"total_n\": 492186,\n        \"cases\": 1814,\n        \"comparison_type\": \"Q5 vs Q1\",\n        \"design\": \"Prospective cohort study\",\n        \"timing\": \"Prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"population\": \"NIH-AARP Diet and Health Study\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"Mixed\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After the exclusions, the baseline analytic cohort included 492,186 ( n = 293,466 men and 198,720 women) participants.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Over a mean follow-up of 9 y, we ascertained 1814 cases of RCC ( n = 498 clear cell; n = 115 papillary cell; n = 1071 NOS; n = 147 otherwise specified) in the baseline analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Results, Paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Q5 (23.6) 400 1.09 0.93, 1.27 0.50\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Q5 (23.6) 400 1.09 0.93, 1.27 0.50\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Q5 (23.6) 400 1.09 0.93, 1.27 0.50\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"HRs, 95% CIs, and P values for linear trend (using the median value within quintiles) are reported across sex-specific quintiles of intake with the lowest intake quintile representing the referent group.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Statistical analysis, Paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In a large US cohort, we prospectively investigated intake of meat and meat-related compounds in relation to risk of RCC, as well as clear cell and papillary RCC histologic subtypes.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White, non-Hispanic (%) 87.5 90.7 92.0 93.1 92.8 Black, non-Hispanic (%) 5.7 4.3 3.7 3.7 2.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Participants were asked to report their usual dietary intake of foods and beverages over the past year in both frequency of intake and portion size in a 124-item food-frequency questionnaire developed and validated by the National Cancer Institute ( 17 , 18 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Dietary assessment, Paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"After the exclusions, the baseline analytic cohort included 492,186 ( n = 293,466 men and 198,720 women) participants.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Section: Subjects and Methods, Paragraph 2\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Never smoker (%) 40.8 40.1 37.0 37.5 33.8 Current smoker or quit <1 y ago (%) 7.4 11.3 13.0 16.0 18.6\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "22170360|Iron|Renal cell carcinoma",
+      "pmid": "22170360",
+      "pmcid": "PMC3238458",
+      "published_date": "2012-01-01",
+      "title": "Large prospective investigation of meat intake, related mutagens, and risk of renal cell carcinoma.",
+      "authors": [
+        "Daniel CR",
+        "Cross AJ",
+        "Graubard BI",
+        "Park Y",
+        "Ward MH",
+        "Rothman N",
+        "Hollenbeck AR",
+        "Chow WH",
+        "Sinha R"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22170360/",
+      "exposure": "Iron",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study reporting multivariable-adjusted hazard ratios for dietary heme iron intake and incidence of renal cell carcinoma.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 1.15,
+        "effect_type": "HR",
+        "ci_lower": 0.94,
+        "ci_upper": 1.4,
+        "p_value": 0.03,
+        "total_n": 302162,
+        "cases": 1089,
+        "comparison_type": "Q5 vs Q1",
+        "design": "Prospective cohort study",
+        "timing": "Prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "NIH-AARP Diet and Health Study subcohort",
+        "gender": "Mixed",
+        "smoking_status": "Mixed",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 1.15,
+        "reported_ci_lower": 0.94,
+        "reported_ci_upper": 1.4,
+        "reported_p_value": 0.03,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After the exclusions, the baseline analytic cohort included 492,186 ( n = 293,466 men and 198,720 women) participants. The analysis of compounds in cooked and processed meats was restricted to a subcohort that responded to the second questionnaire and met the inclusion criteria above ( n = 302,162; 176,179 men and 125,983 women).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Over a mean follow-up of 9 y, we ascertained 1814 cases of RCC ( n = 498 clear cell; n = 115 papillary cell; n = 1071 NOS; n = 147 otherwise specified) in the baseline analysis and 1,089 cases of RCC ( n = 306 clear cell; n = 83 papillary cell; n = 617 NOS; n = 90, otherwise specified) in the subcohort analysis.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Results, Paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.15 0.94, 1.40",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "For participants in the highest compared with the lowest quintiles of total red meat intake, we observed a tendency toward an increased risk of total RCC (HR: 1.19; 95% CI: 1.01, 1.40; P -trend = 0.06).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "We observed a positive trend for heme iron intake and total RCC ( P -trend = 0.03)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Results, Paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "HRs, 95% CIs, and P values for linear trend (using the median value within quintiles) are reported across sex-specific quintiles of intake with the lowest intake quintile representing the referent group.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Statistical analysis, Paragraph 1"
+          },
+          "design": {
+            "excerpt": "The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 1"
+          },
+          "timing": {
+            "excerpt": "In a large US cohort, we prospectively investigated intake of meat and meat-related compounds in relation to risk of RCC, as well as clear cell and papillary RCC histologic subtypes.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Abstract"
+          },
+          "continent": {
+            "excerpt": "The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "White, non-Hispanic (%) 87.5 90.7 92.0 93.1 92.8 Black, non-Hispanic (%) 5.7 4.3 3.7 3.7 2.8",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Meat intake, cooking method, and degree of doneness were linked to the Computerized Heterocyclic Amines Resource for Research In Epidemiology of Disease (CHARRED) database ( http://charred.cancer.gov/ ) to estimate values (ng/d) of 3 HCAs (PhIP, MeIQx, and DiMeIQx), one PAH (BaP), and heme iron by using an exposure index described in detail elsewhere ( 22 , 23 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Dietary assessment, Paragraph 1"
+          },
+          "gender": {
+            "excerpt": "The analysis of compounds in cooked and processed meats was restricted to a subcohort that responded to the second questionnaire and met the inclusion criteria above ( n = 302,162; 176,179 men and 125,983 women).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 2"
+          },
+          "smoking_status": {
+            "excerpt": "Never smoker (%) 40.8 40.1 37.0 37.5 33.8 Current smoker or quit <1 y ago (%) 7.4 11.3 13.0 16.0 18.6",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "White, non-Hispanic (%) 87.5 90.7 92.0 93.1 92.8 Black, non-Hispanic (%) 5.7 4.3 3.7 3.7 2.8"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36859,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "c1e8838307365042fd73163f964906750026e511d5d6ab21e73b50d683a5c952",
+      "pmc_source_receipt_digest": "b6a479162b624cc2ba31cf4f8a866ef5d025933c3deeb809e1f097a9cf3dd3ba",
+      "pmc_source_raw_sha256": "ceecc5e6c150c32c18a96a569d0fe0ecd22672a5fee8b8285c38ee894cde9a61",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "4939ffc566d942461c3afe471df39bad315cc9e7236c4104a0f31272a0af50aa"
+    },
+    {
+      "context_id": "22170360|Processed meat intake|Renal cell carcinoma",
+      "pmid": "22170360",
+      "pmcid": "PMC3238458",
+      "published_date": "2012-01-01",
+      "title": "Large prospective investigation of meat intake, related mutagens, and risk of renal cell carcinoma.",
+      "authors": [
+        "Daniel CR",
+        "Cross AJ",
+        "Graubard BI",
+        "Park Y",
+        "Ward MH",
+        "Rothman N",
+        "Hollenbeck AR",
+        "Chow WH",
+        "Sinha R"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/22170360/",
+      "exposure": "Processed meat intake",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study reporting multivariable-adjusted hazard ratios for total processed meat intake and incidence of renal cell carcinoma.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 1.09,
+        "effect_type": "HR",
+        "ci_lower": 0.93,
+        "ci_upper": 1.27,
+        "p_value": 0.5,
+        "total_n": 492186,
+        "cases": 1814,
+        "comparison_type": "Q5 vs Q1",
+        "design": "Prospective cohort study",
+        "timing": "Prospective",
+        "continent": "North America",
+        "country": "United States",
+        "population": "NIH-AARP Diet and Health Study",
+        "gender": "Mixed",
+        "smoking_status": "Mixed",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "needs_inversion": false,
+        "reported_effect_type": "HR",
+        "reported_effect_type_label": "HR",
+        "reported_effect_size": 1.09,
+        "reported_ci_lower": 0.93,
+        "reported_ci_upper": 1.27,
+        "reported_p_value": 0.5,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After the exclusions, the baseline analytic cohort included 492,186 ( n = 293,466 men and 198,720 women) participants.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Over 9 (mean) y of follow-up, we identified 1814 cases of RCC (498 clear cell and 115 papillary adenocarcinomas).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Results, Paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "We found no association between intake of nitrate and/or nitrite from processed meats and risk of RCC in the multivariable-adjusted analysis. High intake of 2 meat-cooking compounds, BaP and PhIP, was associated with a significant increased risk of total RCC, but the excess risk was confined to the fifth quintile of BaP intake (HR: 1.23; 95% CI: 1.01, 1.48; P -trend = 0.03) and to the fourth (HR: 1.32; 95% CI: 1.09, 1.61) and fifth (HR: 1.30; 95% CI: 1.07, 1.58) quintiles of PhIP intake ( P -trend = 0.04).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.09 0.93, 1.27",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Q5 (23.6) 400 1.09 0.93, 1.27 0.50",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "HRs, 95% CIs, and P values for linear trend (using the median value within quintiles) are reported across sex-specific quintiles of intake with the lowest intake quintile representing the referent group.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Statistical analysis, Paragraph 1"
+          },
+          "design": {
+            "excerpt": "The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 1"
+          },
+          "timing": {
+            "excerpt": "In a large US cohort, we prospectively investigated intake of meat and meat-related compounds in relation to risk of RCC, as well as clear cell and papillary RCC histologic subtypes.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Abstract"
+          },
+          "continent": {
+            "excerpt": "The NIH-AARP Diet and Health Study is a large prospective cohort of US men and women, aged 50–71 y, residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta, GA, and Detroit, MI).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "White, non-Hispanic (%) 87.5 90.7 92.0 93.1 92.8 Black, non-Hispanic (%) 5.7 4.3 3.7 3.7 2.8",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "Participants were asked to report their usual dietary intake of foods and beverages over the past year in both frequency of intake and portion size in a 124-item food-frequency questionnaire developed and validated by the National Cancer Institute ( 17 , 18 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Dietary assessment, Paragraph 1"
+          },
+          "gender": {
+            "excerpt": "After the exclusions, the baseline analytic cohort included 492,186 ( n = 293,466 men and 198,720 women) participants.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Section: Subjects and Methods, Paragraph 2"
+          },
+          "smoking_status": {
+            "excerpt": "Never smoker (%) 40.8 40.1 37.0 37.5 33.8 Current smoker or quit <1 y ago (%) 7.4 11.3 13.0 16.0 18.6",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3238458/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Mixed",
+        "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
+        "ethnicity_supporting_text": "White, non-Hispanic (%) 87.5 90.7 92.0 93.1 92.8 Black, non-Hispanic (%) 5.7 4.3 3.7 3.7 2.8"
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36859,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "c1e8838307365042fd73163f964906750026e511d5d6ab21e73b50d683a5c952",
+      "pmc_source_receipt_digest": "b6a479162b624cc2ba31cf4f8a866ef5d025933c3deeb809e1f097a9cf3dd3ba",
+      "pmc_source_raw_sha256": "ceecc5e6c150c32c18a96a569d0fe0ecd22672a5fee8b8285c38ee894cde9a61",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "08befbd10b95d0fb373e97da21f65f9f42949c1e2f5faf203295482e8eb65fed"
+    }
+  ]
+}

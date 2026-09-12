@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:19:04.444835-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "01604a5f62b50328d6cb8ea501802de65b3d3c70cbed32621ddd105d2f923cda",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "9719083",
+      "title": "Study of prediagnostic selenium level in toenails and the risk of advanced prostate cancer.",
+      "abstract": "In a recent randomized intervention trial, the risk of prostate cancer for men receiving a daily supplement of 200 microg selenium was one third of that for men receiving placebo. By use of a nested case-control design within a prospective study, i.e., the Health Professionals Follow-Up Study, we investigated the association between risk of prostate cancer and prediagnostic level of selenium in toenails, a measure of long-term selenium intake. In 1986, 51,529 male health professionals aged 40-75 years responded to a mailed questionnaire to form the prospective study. In 1987, 33,737 cohort members provided toenail clippings. In 1988, 1990, 1992, and 1994, follow-up questionnaires were mailed. From 1989 through 1994, 181 new cases of advanced prostate cancer were reported. Case and control subjects were matched by age, smoking status, and month of toenail return. Selenium levels were determined by neutron activation. All P values are two-sided. The selenium level in toenails varied substantially among men, with quintile medians ranging from 0.66 to 1.14 microg/g for control subjects. When matched case-control data were analyzed, higher selenium levels were associated with a reduced risk of advanced prostate cancer (odds ratio [OR] for comparison of highest to lowest quintile = 0.49; 95% confidence interval [CI] = 0.25-0.96; P for trend = .11). After additionally controlling for family history of prostate cancer, body mass index, calcium intake, lycopene intake, saturated fat intake, vasectomy, and geographical region, the OR was 0.35 (95% CI = 0.16-0.78; P for trend = .03). Our results support earlier findings that higher selenium intakes may reduce the risk of prostate cancer. Further prospective studies and randomized trials of this relationship should be conducted.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Case-Control Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Nails / chemistry",
+        "Odds Ratio",
+        "Prostatic Neoplasms / chemistry, diagnosis",
+        "Risk",
+        "Selenium / administration & dosage, analysis",
+        "Surveys and Questionnaires",
+        "Toes"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "9719083",
+      "contexts": [
+        {
+          "context_id": "9719083|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "33737",
+              "effect_measure_type": "OR",
+              "effect_size": "0.35",
+              "ci_lower": "0.16",
+              "ci_upper": "0.78",
+              "p_value": "0.03",
+              "comparison": "highest versus lowest quintile of toenail selenium"
+            },
+            "Claude+Gemini": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.35",
+              "ci_lower": "0.16",
+              "ci_upper": "0.78",
+              "p_value": "0.03",
+              "comparison": "highest versus lowest quintile of toenail selenium"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

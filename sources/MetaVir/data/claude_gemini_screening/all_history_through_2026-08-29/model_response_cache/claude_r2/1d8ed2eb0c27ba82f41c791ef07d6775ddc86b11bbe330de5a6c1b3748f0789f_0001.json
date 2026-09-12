@@ -1,0 +1,915 @@
+{
+  "schema_version": 1,
+  "receipt_id": "0072fcc192163d49d84046c992c3c31a501764e7e8914259f974f9d4c1f700b0",
+  "requested_at": "2026-09-02T07:45:50.901590+08:00",
+  "received_at": "2026-09-02T07:47:18.728003+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "1d8ed2eb0c27ba82f41c791ef07d6775ddc86b11bbe330de5a6c1b3748f0789f",
+  "attempt": 1,
+  "context_ids": [
+    "17604736|Dairy|Prostate cancer",
+    "17607361|Omega-3 fatty acids|Prostate cancer",
+    "17607361|Omega-6 fatty acids|Prostate cancer",
+    "17609663|Arachidonic acid|Prostate cancer",
+    "17614829|Melatonin|Prostate cancer",
+    "17623560|Tomato|Prostate cancer",
+    "17623795|Lycopene|Prostate cancer",
+    "17623795|Tomato|Prostate cancer",
+    "17628187|Vitamin E|Prostate cancer",
+    "17634273|Genistein|Prostate cancer",
+    "17634273|Magnesium|Prostate cancer",
+    "17634273|Omega-6 fatty acids|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Arachidonic acid": 1,
+    "Dairy": 1,
+    "Genistein": 1,
+    "Lycopene": 1,
+    "Magnesium": 1,
+    "Melatonin": 1,
+    "Omega-3 fatty acids": 1,
+    "Omega-6 fatty acids": 2,
+    "Tomato": 2,
+    "Vitamin E": 1
+  },
+  "input_digest": "9bd5f4df93e20094f523a00dbbe51ba7ca375236e5141c9f69cd998b0ebb2c73",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 8818,
+    "cached_input_tokens": 0,
+    "output_tokens": 9421,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.279615",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "ef1a12de-6559-4ced-9ccf-e2f01fce4753",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.279615"
+  },
+  "output_sha256": "85862344a3e08213d9d07cf66e4bb5a6c929c9ffde3084563baf0b9451df3806",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"17604736|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The record \\\"Is dairy necessary?\\\" has no abstract and is a commentary-style non-primary publication without original comparative results on dairy intake and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17607361|Omega-3 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study is conducted exclusively in prostate-specific Pten-knockout mice and cell-death experiments, with no human participants.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17607361|Omega-6 fatty acids|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The omega-6 fatty acid comparison is entirely preclinical, using transgenic mouse prostate tumor models rather than human incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17609663|Arachidonic acid|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Arachidonic acid is mentioned only incidentally as a COX2 substrate, while the actual exposures studied are COX2 genetic variants and NSAID medication use.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17614829|Melatonin|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of scientific evidence on melatonin for prostate cancer prevention and treatment rather than an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17623560|Tomato|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Population-based case-control study of northeastern Ontario men reporting a tomato-intake odds ratio for incident prostate cancer identified through the Ontario Cancer Registry.\",\"extraction\":{\"effect_size\":1.6,\"effect_type\":\"OR\",\"ci_lower\":1.2,\"ci_upper\":2.0,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":2365,\"cases\":752,\"comparison_type\":\"highest versus lowest quartiles of tomato intake\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"North America\",\"country\":\"Canada\",\"location\":\"northeastern Ontario\",\"ethnicity\":\"NA\",\"population\":\"men aged 50 to 84 years residing in northeastern Ontario\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Cases were identified from the Ontario Cancer Registry and diagnosed between 1995 and 1998 at ages 50 to 84 years (N=752). Male controls were identified from telephone listings and were frequency matched to cases on age (N=1,613).\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, methods sentences\"},\"cases\":{\"excerpt\":\"diagnosed between 1995 and 1998 at ages 50 to 84 years (N=752)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":{\"excerpt\":\"Tomato intake had a significant positive association with prostate cancer risk for highest versus lowest quartiles (OR=1.6; 95 percent CI: 1.2-2.0)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, results sentence\"},\"confidence_interval\":{\"excerpt\":\"(OR=1.6; 95 percent CI: 1.2-2.0)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, results sentence\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"for highest versus lowest quartiles\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"based on data from a population-based case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, first sentence\"},\"timing\":{\"excerpt\":\"Logistic regression analyses investigated history of diet, physical activity and smoking as potential risk factors.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, methods sentence\"},\"continent\":{\"excerpt\":\"The study was conducted among residents of northeastern Ontario.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, methods sentence\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"residents of northeastern Ontario\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, methods sentence\"},\"exposure_measurement\":{\"excerpt\":\"Associations were observed for tomato or vegetable juices and ketchup\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17623560/\",\"location\":\"abstract, results sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17623795|Lycopene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This abstract-less item is an editorial/commentary questioning the influence of PSA screening on lycopene studies and reports no original results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17623795|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The record is a commentary on tomato and prostate cancer studies without original data or comparative analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17628187|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a review chapter summarizing epidemiological, animal, and mechanistic evidence on alpha-vitamin E and its analogues in prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"17634273|Genistein|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Case-control study of Japanese men explicitly reporting that dietary isoflavone aglycones genistein and daidzein were significantly associated with decreased prostate cancer risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":400,\"cases\":200,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"3 geographic areas of Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men, 200 patients and 200 age-matched controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":true,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Two hundred patients and 200 age-matched controls (+/-5 y) were selected from 3 geographic areas of Japan.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"Two hundred patients and 200 age-matched controls (+/-5 y)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Isoflavones and their aglycones (genistein and daidzein) were significantly associated with decreased risk.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"in a case-control study of Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"timing\":{\"excerpt\":\"We examined associations between nutritional and other lifestyle factors and the prevalence of prostate cancer in a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"continent\":{\"excerpt\":\"selected from 3 geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"ethnicity\":{\"excerpt\":\"a case-control study of Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"location\":{\"excerpt\":\"3 geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"exposure_measurement\":{\"excerpt\":\"the highest category (> or = 89.9 mg/d) compared with the lowest category (<30.5 mg/d) of isoflavone intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, results sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17634273|Magnesium|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The case-control study reports a magnesium-specific finding, stating magnesium was significantly associated with decreased prostate cancer risk before adjustment for isoflavone intake.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":400,\"cases\":200,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"3 geographic areas of Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men, 200 patients and 200 age-matched controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Two hundred patients and 200 age-matched controls (+/-5 y) were selected from 3 geographic areas of Japan.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"Two hundred patients and 200 age-matched controls (+/-5 y)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"PUFA, (n-6) fatty acids, and magnesium were significantly associated with decreased risk but not after adjustment for isoflavone intake.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"in a case-control study of Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"timing\":{\"excerpt\":\"We examined associations between nutritional and other lifestyle factors and the prevalence of prostate cancer in a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"continent\":{\"excerpt\":\"selected from 3 geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"ethnicity\":{\"excerpt\":\"a case-control study of Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"location\":{\"excerpt\":\"3 geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"exposure_measurement\":{\"excerpt\":\"Isoflavone intake was correlated with the intake of PUFA (r = 0.68, P < 0.001), (n-6) fatty acids (r = 0.69, P < 0.001), and magnesium (r = 0.56, P < 0.001)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, results sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"17634273|Omega-6 fatty acids|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"The case-control study reports an (n-6) fatty acid-specific dietary finding for prostate cancer risk in Japanese men, separable from the isoflavone results.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":400,\"cases\":200,\"comparison_type\":null,\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Japan\",\"location\":\"3 geographic areas of Japan\",\"ethnicity\":\"Japanese\",\"population\":\"Japanese men, 200 patients and 200 age-matched controls\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"Two hundred patients and 200 age-matched controls (+/-5 y) were selected from 3 geographic areas of Japan.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"cases\":{\"excerpt\":\"Two hundred patients and 200 age-matched controls (+/-5 y)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"PUFA, (n-6) fatty acids, and magnesium were significantly associated with decreased risk but not after adjustment for isoflavone intake.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, results sentence\"},\"design\":{\"excerpt\":\"in a case-control study of Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"timing\":{\"excerpt\":\"We examined associations between nutritional and other lifestyle factors and the prevalence of prostate cancer in a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"continent\":{\"excerpt\":\"selected from 3 geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"ethnicity\":{\"excerpt\":\"a case-control study of Japanese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, first sentence\"},\"location\":{\"excerpt\":\"3 geographic areas of Japan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, methods sentence\"},\"exposure_measurement\":{\"excerpt\":\"Isoflavone intake was correlated with the intake of PUFA (r = 0.68, P < 0.001), (n-6) fatty acids (r = 0.69, P < 0.001)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/17634273/\",\"location\":\"abstract, results sentence\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}",
+  "validated_results": [
+    {
+      "context_id": "17604736|Dairy|Prostate cancer",
+      "pmid": "17604736",
+      "pmcid": "",
+      "published_date": "2007-07-01",
+      "title": "Is dairy necessary?",
+      "authors": [
+        "Mills M"
+      ],
+      "journal": "Journal of the American Dietetic Association",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17604736/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The record \"Is dairy necessary?\" has no abstract and is a commentary-style non-primary publication without original comparative results on dairy intake and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17607361|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "17607361",
+      "pmcid": "PMC1890998",
+      "published_date": "2007-07-01",
+      "title": "Modulation of prostate cancer genetic risk by omega-3 and omega-6 fatty acids.",
+      "authors": [
+        "Berquin IM",
+        "Min Y",
+        "Wu R",
+        "Wu J",
+        "Perry D",
+        "Cline JM",
+        "Thomas MJ",
+        "Thornburg T",
+        "Kulik G",
+        "Smith A",
+        "Edwards IJ",
+        "D'Agostino R",
+        "Zhang H",
+        "Wu H",
+        "Kang JX",
+        "Chen YQ"
+      ],
+      "journal": "The Journal of clinical investigation",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17607361/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study is conducted exclusively in prostate-specific Pten-knockout mice and cell-death experiments, with no human participants.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17607361|Omega-6 fatty acids|Prostate cancer",
+      "pmid": "17607361",
+      "pmcid": "PMC1890998",
+      "published_date": "2007-07-01",
+      "title": "Modulation of prostate cancer genetic risk by omega-3 and omega-6 fatty acids.",
+      "authors": [
+        "Berquin IM",
+        "Min Y",
+        "Wu R",
+        "Wu J",
+        "Perry D",
+        "Cline JM",
+        "Thomas MJ",
+        "Thornburg T",
+        "Kulik G",
+        "Smith A",
+        "Edwards IJ",
+        "D'Agostino R",
+        "Zhang H",
+        "Wu H",
+        "Kang JX",
+        "Chen YQ"
+      ],
+      "journal": "The Journal of clinical investigation",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17607361/",
+      "exposure": "Omega-6 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The omega-6 fatty acid comparison is entirely preclinical, using transgenic mouse prostate tumor models rather than human incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17609663|Arachidonic acid|Prostate cancer",
+      "pmid": "17609663",
+      "pmcid": "PMC2360347",
+      "published_date": "2007-08-20",
+      "title": "COX2 genetic variation, NSAIDs, and advanced prostate cancer risk.",
+      "authors": [
+        "Cheng I",
+        "Liu X",
+        "Plummer SJ",
+        "Krumroy LM",
+        "Casey G",
+        "Witte JS"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17609663/",
+      "exposure": "Arachidonic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17614829|Melatonin|Prostate cancer",
+      "pmid": "17614829",
+      "pmcid": "",
+      "published_date": "2007-08-01",
+      "title": "Towards rational and evidence-based use of melatonin in prostate cancer prevention and treatment.",
+      "authors": [
+        "Shiu SY"
+      ],
+      "journal": "Journal of pineal research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17614829/",
+      "exposure": "Melatonin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review of scientific evidence on melatonin for prostate cancer prevention and treatment rather than an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17623560|Tomato|Prostate cancer",
+      "pmid": "17623560",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "Prostate cancer risk and diet, recreational physical activity and cigarette smoking.",
+      "authors": [
+        "Darlington GA",
+        "Kreiger N",
+        "Lightfoot N",
+        "Purdham J",
+        "Sass-Kortsak A"
+      ],
+      "journal": "Chronic diseases in Canada",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Population-based case-control study of northeastern Ontario men reporting a tomato-intake odds ratio for incident prostate cancer identified through the Ontario Cancer Registry.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 1.6,
+        "effect_type": "OR",
+        "ci_lower": 1.2,
+        "ci_upper": 2,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 2365,
+        "cases": 752,
+        "comparison_type": "highest versus lowest quartiles of tomato intake",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "Canada",
+        "location": "northeastern Ontario",
+        "ethnicity": "NA",
+        "population": "men aged 50 to 84 years residing in northeastern Ontario",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases were identified from the Ontario Cancer Registry and diagnosed between 1995 and 1998 at ages 50 to 84 years (N=752). Male controls were identified from telephone listings and were frequency matched to cases on age (N=1,613).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, methods sentences; total_n derived from reported group counts 752 + 1613 = 2365"
+          },
+          "cases": {
+            "excerpt": "Cases were identified from the Ontario Cancer Registry and diagnosed between 1995 and 1998 at ages 50 to 84 years (N=752).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": {
+            "excerpt": "Tomato intake had a significant positive association with prostate cancer risk for highest versus lowest quartiles (OR=1.6; 95 percent CI: 1.2-2.0).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, results sentence"
+          },
+          "confidence_interval": {
+            "excerpt": "Tomato intake had a significant positive association with prostate cancer risk for highest versus lowest quartiles (OR=1.6; 95 percent CI: 1.2-2.0).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, results sentence"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for highest versus lowest quartiles",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "based on data from a population-based case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, first sentence"
+          },
+          "timing": {
+            "excerpt": "Logistic regression analyses investigated history of diet, physical activity and smoking as potential risk factors.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, methods sentence"
+          },
+          "continent": {
+            "excerpt": "The study was conducted among residents of northeastern Ontario.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, methods sentence"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "residents of northeastern Ontario",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, methods sentence"
+          },
+          "exposure_measurement": {
+            "excerpt": "Associations were observed for tomato or vegetable juices and ketchup",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17623560/",
+            "location": "abstract, results sentence"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17623795|Lycopene|Prostate cancer",
+      "pmid": "17623795",
+      "pmcid": "",
+      "published_date": "2007-07-18",
+      "title": "Does prostate-specific antigen screening influence the results of studies of tomatoes, lycopene, and prostate cancer risk?",
+      "authors": [
+        "Giovannucci E"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17623795/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This abstract-less item is an editorial/commentary questioning the influence of PSA screening on lycopene studies and reports no original results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17623795|Tomato|Prostate cancer",
+      "pmid": "17623795",
+      "pmcid": "",
+      "published_date": "2007-07-18",
+      "title": "Does prostate-specific antigen screening influence the results of studies of tomatoes, lycopene, and prostate cancer risk?",
+      "authors": [
+        "Giovannucci E"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17623795/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The record is a commentary on tomato and prostate cancer studies without original data or comparative analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17628187|Vitamin E|Prostate cancer",
+      "pmid": "17628187",
+      "pmcid": "",
+      "published_date": "2007",
+      "title": "The roles of alpha-vitamin E and its analogues in prostate cancer.",
+      "authors": [
+        "Ni J",
+        "Yeh S"
+      ],
+      "journal": "Vitamins and hormones",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17628187/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a review chapter summarizing epidemiological, animal, and mechanistic evidence on alpha-vitamin E and its analogues in prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17634273|Genistein|Prostate cancer",
+      "pmid": "17634273",
+      "pmcid": "",
+      "published_date": "2007-08-01",
+      "title": "Dietary isoflavones may protect against prostate cancer in Japanese men.",
+      "authors": [
+        "Nagata Y",
+        "Sonoda T",
+        "Mori M",
+        "Miyanaga N",
+        "Okumura K",
+        "Goto K",
+        "Naito S",
+        "Fujimoto K",
+        "Hirao Y",
+        "Takahashi A",
+        "Tsukamoto T",
+        "Akaza H"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+      "exposure": "Genistein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Case-control study of Japanese men explicitly reporting that dietary isoflavone aglycones genistein and daidzein were significantly associated with decreased prostate cancer risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 400,
+        "cases": 200,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "3 geographic areas of Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men, 200 patients and 200 age-matched controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "cases": {
+            "excerpt": "Two hundred patients and 200 age-matched controls (+/-5 y) were selected from 3 geographic areas of Japan. BMI, physical activity, occupation, family history of prostate cancer, and medical history were not associated with prostate cancer risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Isoflavones and their aglycones (genistein and daidzein) were significantly associated with decreased risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "in a case-control study of Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "timing": {
+            "excerpt": "We examined associations between nutritional and other lifestyle factors and the prevalence of prostate cancer in a case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "continent": {
+            "excerpt": "selected from 3 geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "ethnicity": {
+            "excerpt": "a case-control study of Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "location": {
+            "excerpt": "3 geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "exposure_measurement": {
+            "excerpt": "the highest category (> or = 89.9 mg/d) compared with the lowest category (<30.5 mg/d) of isoflavone intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, results sentence"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17634273|Magnesium|Prostate cancer",
+      "pmid": "17634273",
+      "pmcid": "",
+      "published_date": "2007-08-01",
+      "title": "Dietary isoflavones may protect against prostate cancer in Japanese men.",
+      "authors": [
+        "Nagata Y",
+        "Sonoda T",
+        "Mori M",
+        "Miyanaga N",
+        "Okumura K",
+        "Goto K",
+        "Naito S",
+        "Fujimoto K",
+        "Hirao Y",
+        "Takahashi A",
+        "Tsukamoto T",
+        "Akaza H"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+      "exposure": "Magnesium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The case-control study reports a magnesium-specific finding, stating magnesium was significantly associated with decreased prostate cancer risk before adjustment for isoflavone intake.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 400,
+        "cases": 200,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "3 geographic areas of Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men, 200 patients and 200 age-matched controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "cases": {
+            "excerpt": "Two hundred patients and 200 age-matched controls (+/-5 y) were selected from 3 geographic areas of Japan. BMI, physical activity, occupation, family history of prostate cancer, and medical history were not associated with prostate cancer risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "PUFA, (n-6) fatty acids, and magnesium were significantly associated with decreased risk but not after adjustment for isoflavone intake.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "in a case-control study of Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "timing": {
+            "excerpt": "We examined associations between nutritional and other lifestyle factors and the prevalence of prostate cancer in a case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "continent": {
+            "excerpt": "selected from 3 geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "ethnicity": {
+            "excerpt": "a case-control study of Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "location": {
+            "excerpt": "3 geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "exposure_measurement": {
+            "excerpt": "Isoflavone intake was correlated with the intake of PUFA (r = 0.68, P < 0.001), (n-6) fatty acids (r = 0.69, P < 0.001), and magnesium (r = 0.56, P < 0.001)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, results sentence"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "17634273|Omega-6 fatty acids|Prostate cancer",
+      "pmid": "17634273",
+      "pmcid": "",
+      "published_date": "2007-08-01",
+      "title": "Dietary isoflavones may protect against prostate cancer in Japanese men.",
+      "authors": [
+        "Nagata Y",
+        "Sonoda T",
+        "Mori M",
+        "Miyanaga N",
+        "Okumura K",
+        "Goto K",
+        "Naito S",
+        "Fujimoto K",
+        "Hirao Y",
+        "Takahashi A",
+        "Tsukamoto T",
+        "Akaza H"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+      "exposure": "Omega-6 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The case-control study reports an (n-6) fatty acid-specific dietary finding for prostate cancer risk in Japanese men, separable from the isoflavone results.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "comparison_type"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 400,
+        "cases": 200,
+        "comparison_type": null,
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Japan",
+        "location": "3 geographic areas of Japan",
+        "ethnicity": "Japanese",
+        "population": "Japanese men, 200 patients and 200 age-matched controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "cases": {
+            "excerpt": "Two hundred patients and 200 age-matched controls (+/-5 y) were selected from 3 geographic areas of Japan. BMI, physical activity, occupation, family history of prostate cancer, and medical history were not associated with prostate cancer risk.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "PUFA, (n-6) fatty acids, and magnesium were significantly associated with decreased risk but not after adjustment for isoflavone intake.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, results sentence"
+          },
+          "design": {
+            "excerpt": "in a case-control study of Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "timing": {
+            "excerpt": "We examined associations between nutritional and other lifestyle factors and the prevalence of prostate cancer in a case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "continent": {
+            "excerpt": "selected from 3 geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "ethnicity": {
+            "excerpt": "a case-control study of Japanese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, first sentence"
+          },
+          "location": {
+            "excerpt": "3 geographic areas of Japan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, methods sentence"
+          },
+          "exposure_measurement": {
+            "excerpt": "Isoflavone intake was correlated with the intake of PUFA (r = 0.68, P < 0.001), (n-6) fatty acids (r = 0.69, P < 0.001)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/17634273/",
+            "location": "abstract, results sentence"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 40.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

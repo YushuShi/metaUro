@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:08:29.483716-04:00",
+  "pmid": "6831463",
+  "work_key": "03090476f88c22e5f331c7b77c6750211276ed04ad207d54f54cf5e559be7c74",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/6831463_0002.json",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "6831463",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "6831463|Animal protein intake|Prostate cancer",
+        "exposure": "Animal protein intake",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CHATGPT_CORRECT",
+        "adjudicated_value": "INCLUDE",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Animal protein intake showed associations similar to those for dietary fat, but these two nutrients were highly correlated in the data.",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Aggregate ecological correlational design and report-style abstract; confirm eligibility as original study",
+        "one_sentence_explanation": "The abstract reports animal protein intake associations with population-based prostate cancer incidence rates, so S2-NO-TARGET-ESTIMATE is not clearly established and ChatGPT's INCLUDE-equivalent status is supported, though the ecological design warrants manual review."
+      },
+      {
+        "context_id": "6831463|Dietary protein intake|Prostate cancer",
+        "exposure": "Dietary protein intake",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Animal protein intake showed associations similar to those for dietary fat",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract mentions only animal protein, not total dietary protein; unclear whether the target concept maps to animal protein or requires total protein",
+        "one_sentence_explanation": "Title, abstract, and MeSH mention only animal protein rather than total dietary protein, so whether the target exposure is absent (S2-EXPOSURE-MISMATCH) or represented by animal protein cannot be uniquely resolved."
+      }
+    ]
+  }
+}

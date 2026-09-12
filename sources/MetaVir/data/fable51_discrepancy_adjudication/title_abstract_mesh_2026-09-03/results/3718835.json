@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:07:57.482875-04:00",
+  "pmid": "3718835",
+  "work_key": "22032a2c256cc0458d548a01af979259c10a2d93dd09d983475a4f91f187509a",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/3718835_0001.json",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "3718835",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "3718835|Dairy|Prostate cancer",
+        "exposure": "Dairy",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "No CI or p value for the dairy-prostate cancer estimate appears in title/abstract/MeSH; claimed CI 1.29-4.69 and p value may come from full text.",
+        "one_sentence_explanation": "Title, abstract, and MeSH contain no confidence interval or p value for the dairy-prostate cancer estimate, so the Claude+Gemini CI of 1.29-4.69 cannot be confirmed or rejected."
+      },
+      {
+        "context_id": "3718835|Dairy|Prostate cancer",
+        "exposure": "Dairy",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Cases also reported more frequent consumption of milk and other dairy products and meat",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports dairy association only qualitatively; the OR 2.46 claimed by Claude+Gemini is absent from title/abstract/MeSH and may derive from full text.",
+        "one_sentence_explanation": "The abstract describes more frequent dairy consumption among cases only qualitatively, so neither ChatGPT's null nor Claude+Gemini's OR of 2.46 can be verified from title, abstract, or MeSH."
+      }
+    ]
+  }
+}

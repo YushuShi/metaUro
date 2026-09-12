@@ -1,0 +1,793 @@
+{
+  "schema_version": 1,
+  "receipt_id": "1f923285731326c2113f61a1b46a96de2f9e4f33ed479aae10eb6012dece650b",
+  "requested_at": "2026-09-02T08:54:13.200728+08:00",
+  "received_at": "2026-09-02T08:55:02.551865+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "d0008b1c79c9ca8db767e0accf5badb899acef48fda3643cc47869764351f902",
+  "attempt": 2,
+  "context_ids": [
+    "32398996|Copper|Prostate cancer",
+    "32398996|Iron|Prostate cancer",
+    "32398996|Manganese|Prostate cancer",
+    "32398996|Selenium|Prostate cancer",
+    "32398996|Zinc|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Copper": 1,
+    "Iron": 1,
+    "Manganese": 1,
+    "Selenium": 1,
+    "Zinc": 1
+  },
+  "input_digest": "4d38514601e2464d7e110b302e8ba2adb0653e3794266f9438de7ddfac451d3c",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 6693,
+    "cached_input_tokens": 0,
+    "output_tokens": 8592,
+    "reasoning_tokens": 1608
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.03723975",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "ad066c8b-959a-4b8b-b716-c3b08882018d",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.03723975"
+  },
+  "output_sha256": "3fcc2f336c1080f49783f00a5afe1b0ad52a9154fb0499c7631d93f9a65c91a6",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"32398996|Copper|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study evaluates serum copper concentrations in newly diagnosed prostate cancer patients compared to controls.\",\n      \"extraction\": {\n        \"effect_size\": null,\n        \"effect_type\": null,\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": \"< 0.005\",\n        \"ci_confidence_level\": null,\n        \"total_n\": 92,\n        \"cases\": 40,\n        \"comparison_type\": \"cases_vs_controls\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Saudi Arabia\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"effect_size\": null,\n          \"confidence_interval\": null,\n          \"p_value\": {\n            \"excerpt\": \"Serum Cu, µg/ml: PCa group 1.69 ± 0.31, Total control 1.02 ± 0.24, p < 0.005\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Serum Cu, µg/ml: PCa group (n=40) 1.69 ± 0.31 vs Total control group (n=52) 1.02 ± 0.24\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Patients and Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Backgrounds\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, Trace Elements Analysis\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"No\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"32398996|Iron|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study examines serum iron levels in newly diagnosed prostate cancer patients compared to controls.\",\n      \"extraction\": {\n        \"effect_size\": null,\n        \"effect_type\": null,\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": \"< 0.05\",\n        \"ci_confidence_level\": null,\n        \"total_n\": 92,\n        \"cases\": 40,\n        \"comparison_type\": \"cases_vs_controls\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Saudi Arabia\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"effect_size\": null,\n          \"confidence_interval\": null,\n          \"p_value\": {\n            \"excerpt\": \"Serum Fe, µg/ml: PCa group 1.96 ± 0.58, Total control 1.24 ± 0.22, p < 0.05\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Serum Fe, µg/ml: PCa group (n=40) 1.96 ± 0.58 vs Total control group (n=52) 1.24 ± 0.22\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Patients and Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Backgrounds\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, Trace Elements Analysis\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"No\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"32398996|Manganese|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study assesses serum manganese concentrations in newly diagnosed prostate cancer patients compared to controls.\",\n      \"extraction\": {\n        \"effect_size\": null,\n        \"effect_type\": null,\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": \"< 0.005\",\n        \"ci_confidence_level\": null,\n        \"total_n\": 92,\n        \"cases\": 40,\n        \"comparison_type\": \"cases_vs_controls\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Saudi Arabia\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"effect_size\": null,\n          \"confidence_interval\": null,\n          \"p_value\": {\n            \"excerpt\": \"Serum Mn, µg/ml: PCa group 0.001 ± 0.001, Total control 0.0024 ± 0.001, p < 0.005\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Serum Mn, µg/ml: PCa group (n=40) 0.001 ± 0.001 vs Total control group (n=52) 0.0024 ± 0.001\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Patients and Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Backgrounds\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, Trace Elements Analysis\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"No\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"32398996|Selenium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study evaluates serum selenium concentrations in newly diagnosed prostate cancer patients compared to controls.\",\n      \"extraction\": {\n        \"effect_size\": null,\n        \"effect_type\": null,\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": \"< 0.005\",\n        \"ci_confidence_level\": null,\n        \"total_n\": 92,\n        \"cases\": 40,\n        \"comparison_type\": \"cases_vs_controls\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Saudi Arabia\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"effect_size\": null,\n          \"confidence_interval\": null,\n          \"p_value\": {\n            \"excerpt\": \"Serum Se, µg/ml: PCa group 0.07 ± 0.01, Total control 0.13 ± 0.02, p < 0.005\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Serum Se, µg/ml: PCa group (n=40) 0.07 ± 0.01 vs Total control group (n=52) 0.13 ± 0.02\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Patients and Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Backgrounds\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, Trace Elements Analysis\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"No\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"32398996|Zinc|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study evaluates serum zinc concentrations in newly diagnosed prostate cancer patients compared to controls.\",\n      \"extraction\": {\n        \"effect_size\": null,\n        \"effect_type\": null,\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": \"< 0.05\",\n        \"ci_confidence_level\": null,\n        \"total_n\": 92,\n        \"cases\": 40,\n        \"comparison_type\": \"cases_vs_controls\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Saudi Arabia\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"effect_size\": null,\n          \"confidence_interval\": null,\n          \"p_value\": {\n            \"excerpt\": \"Serum Zn, µg/ml: PCa group 0.51 ± 0.09, Total control 0.82 ± 0.19, p < 0.05\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Serum Zn, µg/ml: PCa group (n=40) 0.51 ± 0.09 vs Total control group (n=52) 0.82 ± 0.19\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Table 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Fasting blood samples were collected from all subjects and before any intervention for the patients.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Patients and Methods\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Abstract, Backgrounds\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/\",\n            \"location\": \"Materials and Methods, Trace Elements Analysis\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"No\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Unclear\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "32398996|Copper|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Copper",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study evaluates serum copper concentrations in newly diagnosed prostate cancer patients compared to controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.005,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "cases_vs_controls",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Saudi Arabia",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Mean serum Se, Zn and Mn levels of PCa group were significantly lower as compared to BPH and healthy groups (p < 0.005) (Fig.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Patients and Methods"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Backgrounds"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, Trace Elements Analysis"
+          }
+        },
+        "p_value_reported_as": "< 0.005",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "No",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 16977,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "8040002626ad5176317cb588b3da41cd2982c12f18c3126948607bf257515443",
+      "pmc_source_receipt_digest": "7daed926b40f541dd04248928529f62f6ffc54e119dbf90ade02c836531007f1",
+      "pmc_source_raw_sha256": "a24b6cbc7c62401b7635d4eaae112ef6793c3d4091bfa6b4c79a40cca6b49d4c",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b58b184d193bce13f4f4fac1099349ac2fa25c40be413f5a20276bb7074feeb2"
+    },
+    {
+      "context_id": "32398996|Iron|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Iron",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study examines serum iron levels in newly diagnosed prostate cancer patients compared to controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.05,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "cases_vs_controls",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Saudi Arabia",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "The level of significance was set at p value of < 0.05.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Patients and Methods"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Backgrounds"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, Trace Elements Analysis"
+          }
+        },
+        "p_value_reported_as": "< 0.05",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "No",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 16977,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "8040002626ad5176317cb588b3da41cd2982c12f18c3126948607bf257515443",
+      "pmc_source_receipt_digest": "7daed926b40f541dd04248928529f62f6ffc54e119dbf90ade02c836531007f1",
+      "pmc_source_raw_sha256": "a24b6cbc7c62401b7635d4eaae112ef6793c3d4091bfa6b4c79a40cca6b49d4c",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e1f26c993946ead1f2abc5706c1df122b43655ab091fb5f31e3f1cf53fa9bbdc"
+    },
+    {
+      "context_id": "32398996|Manganese|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Manganese",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study assesses serum manganese concentrations in newly diagnosed prostate cancer patients compared to controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.005,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "cases_vs_controls",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Saudi Arabia",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Mean serum Se, Zn and Mn levels of PCa group were significantly lower as compared to BPH and healthy groups (p < 0.005) (Fig.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Patients and Methods"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Backgrounds"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, Trace Elements Analysis"
+          }
+        },
+        "p_value_reported_as": "< 0.005",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "No",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 16977,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "8040002626ad5176317cb588b3da41cd2982c12f18c3126948607bf257515443",
+      "pmc_source_receipt_digest": "7daed926b40f541dd04248928529f62f6ffc54e119dbf90ade02c836531007f1",
+      "pmc_source_raw_sha256": "a24b6cbc7c62401b7635d4eaae112ef6793c3d4091bfa6b4c79a40cca6b49d4c",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "7b9b2e4b964bae25dfcab0bdb20fc8ccd3bc3aa3e07068306d92081a032ceb4b"
+    },
+    {
+      "context_id": "32398996|Selenium|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study evaluates serum selenium concentrations in newly diagnosed prostate cancer patients compared to controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.005,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "cases_vs_controls",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Saudi Arabia",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "Mean serum Se, Zn and Mn levels of PCa group were significantly lower as compared to BPH and healthy groups (p < 0.005) (Fig.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Patients and Methods"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Backgrounds"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, Trace Elements Analysis"
+          }
+        },
+        "p_value_reported_as": "< 0.005",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "No",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 16977,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "8040002626ad5176317cb588b3da41cd2982c12f18c3126948607bf257515443",
+      "pmc_source_receipt_digest": "7daed926b40f541dd04248928529f62f6ffc54e119dbf90ade02c836531007f1",
+      "pmc_source_raw_sha256": "a24b6cbc7c62401b7635d4eaae112ef6793c3d4091bfa6b4c79a40cca6b49d4c",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "24903c49d6dfc66cbb3e8e8e0ba8ea77877fbaabadf5cafb64d78c0f40d0e5d9"
+    },
+    {
+      "context_id": "32398996|Zinc|Prostate cancer",
+      "pmid": "32398996",
+      "pmcid": "PMC7206590",
+      "published_date": "2020-03-01",
+      "title": "Serum Levels of Selenium, Zinc, Copper, Manganese, and Iron in Prostate Cancer Patients.",
+      "authors": [
+        "Saleh SAK",
+        "Adly HM",
+        "Abdelkhaliq AA",
+        "Nassir AM"
+      ],
+      "journal": "Current urology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/32398996/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study evaluates serum zinc concentrations in newly diagnosed prostate cancer patients compared to controls.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": 0.05,
+        "ci_confidence_level": null,
+        "total_n": 92,
+        "cases": 40,
+        "comparison_type": "cases_vs_controls",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Saudi Arabia",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Newly diagnosed prostate cancer patients, BPH patients, and healthy male controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1; total_n derived from reported group counts 40 + 22 + 30 = 92"
+          },
+          "cases": {
+            "excerpt": "The study included 40 newly diagnosed prostate cancer patients, 22 patients with BPH and 30 healthy male subjects.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "The level of significance was set at p value of < 0.05.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "The study included 40 newly diagnosed PCa patients (mean age 68.2 ± 5.2 years), 22 BPH patients (mean age 67.3 ± 6.4 years) and 30 healthy male subjects (mean age 65.8 ± 6.8 years).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Fasting blood samples were collected from all subjects and before any intervention for the patients.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Patients and Methods"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the second most common male cancer worldwide and stand fifth most common male cancer in Saudi Arabia.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Abstract, Backgrounds"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Serum trace elements Se, Zn, Cu, Mn and Fe concentrations were analyzed by ICP-MS (Perkin Elmer 7300, Perkin-Elmer Norwalk, USA).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7206590/",
+            "location": "Materials and Methods, Trace Elements Analysis"
+          }
+        },
+        "p_value_reported_as": "< 0.05",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "No",
+          "q7": "No",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 60.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 16977,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "8040002626ad5176317cb588b3da41cd2982c12f18c3126948607bf257515443",
+      "pmc_source_receipt_digest": "7daed926b40f541dd04248928529f62f6ffc54e119dbf90ade02c836531007f1",
+      "pmc_source_raw_sha256": "a24b6cbc7c62401b7635d4eaae112ef6793c3d4091bfa6b4c79a40cca6b49d4c",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "c5297295410704cc9926e002ea5100ec95a22e9d7ef7e57f08d7513eda2de426"
+    }
+  ]
+}

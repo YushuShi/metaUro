@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:18:57.814762-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "dca215e15acb8ba10d71e1d81848e7c4213d1be5be41bf2dd9b8dfa523a333cc",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "9232334",
+      "title": "Serum micronutrients and prostate cancer in Japanese Americans in Hawaii.",
+      "abstract": "Numerous dietary studies and several serum micronutrient studies have produced equivocal results on the relation of vitamins A and E to prostate cancer risk. To evaluate this association further, we conducted a nested case-control study in a cohort of 6860 Japanese-American men examined from 1971 to 1975. At the time of examination, a single blood specimen was obtained, and the serum was frozen. After a surveillance period of more than 20 years, 142 tissue-confirmed incident cases of prostate cancer were identified. Their stored sera and those of 142 matched controls were measured by high-performance liquid chromatography for the following: total carotenoids, lutein, zeaxanthin, beta-cryptoxanthin, lycopene, alpha-carotene, beta-carotene, total retinoids, retinol, total tocopherols, alpha-tocopherol, delta-tocopherol, and gamma-tocopherol. Odds ratios for prostate cancer, based on quartiles of serum micronutrient levels, were determined using conditional logistic regression analysis. The odds ratio for the highest quartiles were 1.8 (95% confidence interval, 0.9-3.9) for beta-cryptoxanthin, 1.6 (0.8-3.5) for beta-carotene, 0.8 (0.4-1.5) for retinol, and 0.7 (0.3-1.5) for gamma-tocopherol, but none of the differences was statistically significant. For the other micronutrients, the results were also unremarkable. The findings of this study indicate that none of the micronutrients is strongly associated with prostate cancer risk.",
+      "mesh": [
+        "Aged",
+        "Asian",
+        "Carotenoids / adverse effects, analysis",
+        "Causality",
+        "Cohort Studies",
+        "Cross-Sectional Studies",
+        "Feeding Behavior",
+        "Follow-Up Studies",
+        "Hawaii / epidemiology",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Micronutrients / adverse effects, analysis",
+        "Middle Aged",
+        "Odds Ratio",
+        "Population Surveillance",
+        "Prostatic Neoplasms / blood, epidemiology, etiology",
+        "Risk Factors",
+        "Vitamin A / adverse effects, analysis",
+        "Vitamin E / adverse effects, analysis"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "9232334",
+      "contexts": [
+        {
+          "context_id": "9232334|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "6860",
+              "effect_measure_type": "OR",
+              "effect_size": "1.6",
+              "ci_lower": "0.8",
+              "ci_upper": "3.5",
+              "p_value": "0.21191966073773794",
+              "comparison": "Highest serum quartile versus an unspecified reference quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "284",
+              "effect_measure_type": "OR",
+              "effect_size": "1.6",
+              "ci_lower": "0.8",
+              "ci_upper": "3.5",
+              "p_value": null,
+              "comparison": "highest versus lowest quartile of serum beta-carotene"
+            }
+          }
+        },
+        {
+          "context_id": "9232334|Lutein|Prostate cancer",
+          "exposure": "Lutein",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "6860",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Serum quartiles with reference and direction not specified for lutein"
+            },
+            "Claude+Gemini": {
+              "sample_size": "284",
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "quartiles of serum lutein (highest versus lowest)"
+            }
+          }
+        },
+        {
+          "context_id": "9232334|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "6860",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Serum quartiles with reference and direction not specified for lycopene"
+            },
+            "Claude+Gemini": {
+              "sample_size": "284",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "quartiles of serum micronutrient levels (highest vs lowest)"
+            }
+          }
+        },
+        {
+          "context_id": "9232334|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "6860",
+              "effect_measure_type": "OR",
+              "effect_size": "0.8",
+              "ci_lower": "0.4",
+              "ci_upper": "1.5",
+              "p_value": "0.508114617179418",
+              "comparison": "Highest serum quartile versus an unspecified reference quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "284",
+              "effect_measure_type": "OR",
+              "effect_size": "0.8",
+              "ci_lower": "0.4",
+              "ci_upper": "1.5",
+              "p_value": null,
+              "comparison": "highest versus lowest quartile of serum retinol"
+            }
+          }
+        },
+        {
+          "context_id": "9232334|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "6860",
+              "effect_measure_type": "OR",
+              "effect_size": "0.7",
+              "ci_lower": "0.3",
+              "ci_upper": "1.5",
+              "p_value": "0.38500397563895566",
+              "comparison": "Highest serum quartile versus an unspecified reference quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "284",
+              "effect_measure_type": "OR",
+              "effect_size": "0.7",
+              "ci_lower": "0.3",
+              "ci_upper": "1.5",
+              "p_value": null,
+              "comparison": "highest versus lowest quartile of serum gamma-tocopherol"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

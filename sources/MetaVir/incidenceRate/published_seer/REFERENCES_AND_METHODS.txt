@@ -1,0 +1,48 @@
+PUBLISHED SEER FIVE-YEAR RISK LOOKUP TABLES — MetaVir
+
+Source: NCI SEER Explorer: risk of diagnosis, November 2025 submission; release 2026-04-22; risk period 2021–2023.
+Official application: https://seer.cancer.gov/statistics-network/explorer/application.html?data_type=6&graph_type=7
+Official source definitions: https://seer.cancer.gov/statistics-network/explorer/cancer-sites.html
+Official revision history: https://seer.cancer.gov/statistics-network/explorer/revisions.html
+Method: direct published SEER Explorer values, calculated by NCI using DevCan.
+These files perform extraction and lookup only. No annual estimation, interpolation,
+subtype allocation, derived sex averages, or remaining-lifetime substitutions occur.
+
+Grid: starting ages 30,35,...,80; finite follow-up years 5,10,...,50.
+There are 11 data rows, 10 risk columns, a starting_age identifier and header.
+Units: percent. Risk strings retain the exact published precision.
+Maximum ending age: 90. Cells with starting_age + follow_up_years > 90 remain
+blank and requested longer durations must not be silently truncated.
+Each supported table contains 74 published values and 36 cutoff blanks.
+An unavailable disease or exact stratum remains blank; blank never means zero.
+Both Sexes values are direct SEER estimates and are not 50:50 sex averages.
+The estimates describe a hypothetical population subject to observed period rates,
+not a forecast of an actual cohort's future cancer incidence.
+
+Raw original JSON snapshots and URL/SHA-256 metadata are in sources/.
+Each SOURCE_VALUE_RECORDS.csv row records the JSON key, confidence limits,
+source bytes hash and source URL. TABLE_MANIFEST.csv records exact disease,
+sex and race definitions and unsupported reasons.
+
+Extraction flags: absolute difference >0.02 percentage point OR relative >1%.
+Historical flags: absolute difference >0.10 percentage point OR relative >5%.
+Every extracted value was compared exactly against the frozen source string;
+all extraction differences are zero. DISCREPANCIES.csv compares older vintages.
+Vintage and disease-definition differences are documented without claiming they
+explain each numerical change. Remaining-lifetime risk is not a finite interval.
+
+Disease mappings and app aliases:
+
+Prostate cancer: Prostate
+Definition: All malignant prostate cancers
+Official disease reference: https://seer.cancer.gov/statistics-network/explorer/application.html?site=66&data_type=6&graph_type=7&compareBy=sex
+
+Aggressive prostate cancer: UNSUPPORTED
+Definition: Aggressive prostate cancer; no grade/stage-specific risk series in workbook.
+No aggressive prostate endpoint; do not substitute all prostate cancers.
+
+Availability rechecked 2026-09-07 against the live SEER Explorer cancer-site
+definitions, application and Prostate Cancer Stat Facts. No matching published
+age-specific finite-interval aggressive-prostate probability was identified.
+Users must provide the aggressive-prostate cumulative incidence risk (%) for
+the selected starting age and follow-up. See docs/aggressive-prostate-incidence.md.

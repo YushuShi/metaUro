@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:02.170528-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "d68c636f68ade4496031420e2309ec8bb972cdf9ff8ac50983707fa95a4a45c6",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "34791008",
+      "title": "Association of plant-based diet index with prostate cancer risk.",
+      "abstract": "Plant-based diets are associated with multiple health benefits and a favorable environmental impact. For prostate cancer, previous studies suggest a beneficial role of specific plant-based foods (e.g., tomatoes) and a potentially harmful role of specific animal-based foods (e.g., meat, dairy). However, less is known about plant-based dietary patterns. We sought to examine the relation between plant-based diet indices and prostate cancer risk, including clinically relevant disease. This was a prospective cohort study including 47,239 men in the Health Professionals Follow-Up Study (1986-2014). Overall and healthful plant-based diet indices were calculated from FFQs. Cox proportional hazards models were used to estimate HRs and 95% CIs to examine the risk of incident prostate cancer (total and by clinical category), among men ages <65 and ≥65 y. Of the 47,239 men, 6655 men were diagnosed with prostate cancer over follow-up, including 515 with advanced-stage disease at diagnosis, 956 with lethal disease (metastasis or death), and 806 prostate cancer deaths. Greater overall plant-based consumption was associated with a significantly lower risk of fatal prostate cancer (HR: 0.81; 95% CI: 0.64, 1.01; P-trend = 0.04). In men aged <65, a higher plant-based diet index was associated with a lower risk of advanced, lethal, and fatal prostate cancer. Moreover, greater consumption of a healthful plant-based diet was associated with lower risks of total (HR: 0.84; 95% CI: 0.73, 0.98; P-trend = 0.046) and lethal prostate cancer (HR: 0.56; 95% CI: 0.34, 0.94; P-trend = 0.03) at age <65. There were no associations between overall or healthful plant-based diet indices with prostate cancer among men ≥65 y. Fewer than 1% of participants followed a strict vegetarian or vegan diet. This prospective study provides supportive evidence that greater consumption of healthful plant-based foods is associated with a lower risk of aggressive forms of prostate cancer, with stronger benefit among men aged <65 y.",
+      "mesh": [
+        "Animals",
+        "Diet",
+        "Diet, Vegetarian",
+        "Follow-Up Studies",
+        "Humans",
+        "Male",
+        "Plants",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "34791008",
+      "contexts": [
+        {
+          "context_id": "34791008|Plant-based diet|Prostate cancer",
+          "exposure": "Plant-based diet",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "47239",
+              "effect_measure_type": "HR",
+              "effect_size": "0.81",
+              "ci_lower": "0.64",
+              "ci_upper": "1.01",
+              "p_value": "0.04",
+              "comparison": "Greater versus lower overall plant-based consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "47239",
+              "effect_measure_type": "HR",
+              "effect_size": "0.84",
+              "ci_lower": "0.73",
+              "ci_upper": "0.98",
+              "p_value": "0.046",
+              "comparison": "Greater versus lower healthful plant-based diet index (unspecified quantile contrast), men aged <65 y"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

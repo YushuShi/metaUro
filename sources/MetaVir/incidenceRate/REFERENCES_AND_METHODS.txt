@@ -1,0 +1,51 @@
+SEER CUMULATIVE RISK REFERENCES AND METHODS — MetaVir
+Prepared 2026-09-06. Values are percentages, not annual incidence rates.
+
+SOURCE AND VINTAGE
+Official workbook: Risk of Diagnosis, November 2024.xlsx
+URL: https://seer.cancer.gov/archive/seer_explorer/Nov2024/Risk%20of%20Diagnosis%2C%20November%202024.xlsx
+SHA-256: a8ac45f69dc00fb7fc2b820b445024decf9a29795997e288f166d46c4eb98ea7
+Submission: November 2024. Workbook release label: April 2025.
+Associated Explorer release: April 16, 2025 (official revision history).
+Risk data period: 2019 and 2021-2022; 2020 is excluded.
+Workbook created: 2026-02-04 21:04:47 UTC; modified: 2026-02-04 21:11:08 UTC.
+HTTP Last-Modified: 2026-04-17 12:12:30 UTC. Download: 2026-09-06 20:02:11 UTC.
+These file timestamps are not the underlying data period. The archive file's separate publication day is not documented.
+This was the newest linked risk-of-diagnosis workbook in the official archive on the download date.
+The live Explorer moved to November 2025 on April 22, 2026; those live estimates are not mixed into these tables.
+See sources/WORKBOOK_METADATA.json for machine-readable provenance and sources/Risk of Diagnosis, November 2024.xlsx for the unchanged input.
+
+CONSTRUCTION
+Each *__risk_percent.csv has 61 rows for exact starting ages 30 through 90 and 50 follow-up columns labeled 1 through 50 (years), plus the starting_age identifier column and one header row. Physical CSV shape is 62 lines x 51 fields.
+Values are copied from column G, Risk of Being Diagnosed (%), with headers in row 5: Cancer Site, Risk Type, Starting Age, Risk Interval, Sex, Race / Ethnicity, Risk of Being Diagnosed (%), 95% C.I. Low, 95% C.I. High.
+Filter exact disease/site, Sex, Race / Ethnicity, Starting Age='Age a', Risk Interval='Next t Years', and Risk Type='Being Diagnosed with Cancer (2019,2021-2022)'. No interpolation, model fitting, annual-rate conversion, multiplication of risks, pooling of sex groups, or allocation from parent-site proportions is performed.
+In the source, ages are 0,5,...,80 and finite intervals are in five-year steps, with ending age at most 90. Thus within a supported matrix only ages 30,35,...,80 and durations 5,10,...,50 where age+duration<=90 can be filled: 74 cells of 3050. Ages 81-90 and non-five-year coordinates remain blank. Source suppression/nonnumeric values also remain blank; a published numeric 0 remains 0.
+Remaining Life is never substituted for a finite duration, including when age+duration=90. No zero is inserted for missing data. Divide risk_percent by 100 only when downstream software requires a probability (e.g. 3.5462 -> 0.035462).
+These are period-based age-conditional probabilities for a hypothetical population alive and free of the specified cancer at the starting age, accounting for competing mortality. A cohort with mixed recruitment ages needs risks matched to those ages; risk at the mean age is not necessarily the cohort-average risk.
+SEER's Sex labels are preserved; they are not a measured gender-identity classification. Non-Hispanic strata are not relabeled as Hispanic-inclusive races. AI/AN estimates use PRCDA counties. General respiratory risks are not smoking-specific.
+Sources in the workbook: SEER 21 incidence, November 2024 submission (1975-2022); NCHS mortality for the SEER 21 areas for diagnosis risks. DevCan generated the published values. The workbook does not identify its DevCan executable version; none is invented here.
+
+REPOSITORY COVERAGE
+16 matrices: 8 have directly supported cells; 8 are entirely blank.
+Exact sheet/site/sex/race mapping, original disease-list row, filename, default lookup, and reason for missing cells are in TABLE_MANIFEST.csv. Every populated cell and its original worksheet row/G-cell and confidence interval are in SOURCE_VALUES.csv.
+Sheets used: Prostate.
+Unsupported disease/subtype endpoints: Aggressive prostate cancer.
+All original root-level disease/reference files remain unchanged; their copies in sources/reference_inputs document the names and any older baseline estimates. Existing lifetime proportions/approximations were not used as cumulative risks.
+
+VALIDATION AND DISCREPANCIES
+DISCREPANCIES.csv compares 60 overlapping finite-horizon points against official CSR 1975-2017 values (November 2019 submission; 2015-2017 risk period; released 2020-04-15). 48 cross the requested historical threshold.
+Definitions: signed_difference_pp = new-old; absolute_difference_pp = abs(new-old); relative_difference_percent = 100*abs(new-old)/abs(old). Units for old/new are percent. Relative change is undefined and left blank when the rounded reference is zero. Historical threshold: >0.10 percentage point OR >5% relative. Same-vintage threshold: >0.02 percentage point OR >1% relative. Equality does not flag.
+Historical flags are review signals, not extraction errors. A different vintage is documented but not used to assert an unproven cause or automatically erase a material flag. Same-vintage checks compare exported numbers to the original workbook. They verify extraction, not the accuracy of SEER's underlying model; no independent same-vintage external web table was used.
+Every saved matrix will also be checked cell-by-cell by a separate validator reading the XLSX XML directly, independently of the source extraction library. See VALIDATION_RESULTS.json for the actual result.
+Additional comparison types distinguish verification of prior local melanoma lifetime values and cross-vintage lifetime comparisons outside the requested lookup grid. Non-equivalent broad API/AIAN race groups have no numerical comparison.
+
+REFERENCES
+1. National Cancer Institute. SEER*Explorer Data Archive. https://seer.cancer.gov/statistics-network/explorer/archive.html
+2. SEER*Explorer Revision History. https://seer.cancer.gov/statistics-network/explorer/revisions.html
+3. SEER*Explorer Cancer Site Definitions. https://seer.cancer.gov/statistics-network/explorer/cancer-sites.html
+4. Howlader N, Noone AM, Krapcho M, et al., eds. SEER Cancer Statistics Review, 1975-2017. NCI, Bethesda MD. November 2019 submission, released April 15, 2020. https://seer.cancer.gov/archive/csr/1975_2017/
+5. NCI. DevCan: Probability of Developing or Dying of Cancer. https://surveillance.cancer.gov/devcan/ and Methods: https://surveillance.cancer.gov/devcan/comparison.html
+6. Fay MP, Pfeiffer R, Cronin KA, Le C, Feuer EJ. Age-conditional probabilities of developing cancer. Statistics in Medicine. 2003;22:1837-1848. doi:10.1002/sim.1428. https://pubmed.ncbi.nlm.nih.gov/12754719/
+7. Fay MP. Estimating age conditional probability of developing disease from surveillance data. Population Health Metrics. 2004;2:6. Published July 27, 2004. doi:10.1186/1478-7954-2-6. https://pmc.ncbi.nlm.nih.gov/articles/PMC517510/
+8. NCI. Impact of COVID on SEER Cancer Incidence Data. https://seer.cancer.gov/data/covid-impact.html
+Exact CSR table numbers/download URLs/checksums are in sources/CSR_SOURCE_MANIFEST.json and individual discrepancy rows. The historical CSR footnotes identify DevCan 6.7.8, April 2020. CSR mortality footnotes describe total-US mortality, unlike the workbook's diagnosis-risk SEER-area mortality footnote; this is an additional documented input difference.

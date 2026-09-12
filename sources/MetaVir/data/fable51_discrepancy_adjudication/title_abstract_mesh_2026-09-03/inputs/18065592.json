@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:52.816047-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "03b6035cc9bd7975cfb27149a023976ea921475def06aab623c7b60fed15bb4c",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "18065592",
+      "title": "Childhood dairy intake and adult cancer risk: 65-y follow-up of the Boyd Orr cohort.",
+      "abstract": "Dairy consumption affects biological pathways associated with carcinogenesis. Evidence for a link between cancer risk and dairy consumption in adulthood is increasing, but associations with childhood dairy consumption have not been studied adequately. We investigated whether dairy consumption in childhood is associated with cancer incidence and mortality in adulthood. From 1937 through 1939, some 4,999 children living in England and Scotland participated in a study of family food consumption, assessed from 7-d household food inventories. The National Health Service central register was used to ascertain cancer registrations and deaths between 1948 and 2005 in the 4,383 traced cohort members. Per capita household intake estimates for dairy products and calcium were used as proxy for individual intake. During the follow-up period, 770 cancer registrations or cancer deaths occurred. High childhood total dairy intake was associated with a near-tripling in the odds of colorectal cancer [multivariate odds ratio: 2.90 (95% CI: 1.26, 6.65); 2-sided P for trend = 0.005] compared with low intake, independent of meat, fruit, and vegetable intakes and socioeconomic indicators. Milk intake showed a similar association with colorectal cancer risk. High milk intake was weakly inversely associated with prostate cancer risk (P for trend = 0.11). Childhood dairy intake was not associated with breast and stomach cancer risk; a positive association with lung cancer risk was confounded by smoking behavior during adulthood. A family diet rich in dairy products during childhood is associated with a greater risk of colorectal cancer in adulthood. Confirmation of possible underlying biological mechanisms is needed.",
+      "mesh": [
+        "Breast Neoplasms / epidemiology",
+        "Child",
+        "Cohort Studies",
+        "Colorectal Neoplasms / epidemiology",
+        "Dairy Products",
+        "Eating",
+        "Female",
+        "Follow-Up Studies",
+        "Fruit",
+        "Humans",
+        "Incidence",
+        "Male",
+        "Neoplasms / epidemiology",
+        "Proportional Hazards Models",
+        "Rural Population",
+        "Stomach Neoplasms / epidemiology",
+        "United Kingdom / epidemiology",
+        "Urban Population",
+        "Vegetables"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "18065592",
+      "contexts": [
+        {
+          "context_id": "18065592|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

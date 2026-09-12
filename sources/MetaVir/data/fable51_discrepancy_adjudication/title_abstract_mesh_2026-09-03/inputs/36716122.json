@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:37:28.753941-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c9141fca57b00e0870f700f9219173c2f24d4801baa8d11f7eadb1b05c1c5406",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "36716122",
+      "title": "Regular Glucosamine Use May Have Different Roles in the Risk of Site-Specific Cancers: Findings from a Large Prospective Cohort.",
+      "abstract": "Previous studies indicated that glucosamine supplements may have a general anticancer effect. This study aimed to assess whether the potential effect differs across different types of cancers in a large prospective cohort study. All participants from the UK Biobank who were free of cancers and had complete information on glucosamine use at baseline were included and followed up from 2006 until 2021. Cox proportional hazards models were used to assess the associations between regular glucosamine use and different site-specific cancers. Subgroup analyses were performed to explore potential interactions. Several sensitivity analyses were conducted to assess the robustness of the main findings. A total of 450,207 eligible participants (mean age: 56.2 years; females: 53.3%) were included, of whom 84,895 (18.9%) reported regular glucosamine use at baseline. During a median of 12.5 years follow-up, glucosamine use was significantly associated with an increased risk of overall cancer [HR, 1.04; 95% confidence interval (CI), 1.01-1.06], skin cancer (HR, 1.11; 95% CI, 1.07-1.15), and prostate cancer (HR, 1.07; 95% CI, 1.01-1.13), and with a reduced risk of lung cancer (HR, 0.88; 95% CI, 0.79-0.97) after adjusting for potential confounders. Statistical interaction was observed for gender, age, and education for the association of glucosamine use with overall cancer risk (all Pinteraction < 0.027). These results remained unchanged in the sensitivity analyses. Regular glucosamine use was associated with lower risk of lung cancer but higher risk of skin cancer, prostate cancer, and overall cancer. The roles of glucosamine use potentially differ in the development of different site-specific cancers.",
+      "mesh": [
+        "Male",
+        "Humans",
+        "Middle Aged",
+        "Glucosamine / therapeutic use",
+        "Prospective Studies",
+        "Risk Factors",
+        "Dietary Supplements",
+        "Lung Neoplasms / prevention & control",
+        "Prostatic Neoplasms",
+        "Skin Neoplasms"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "36716122",
+      "contexts": [
+        {
+          "context_id": "36716122|Glucosamine|Prostate cancer",
+          "exposure": "Glucosamine",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "418060",
+              "effect_measure_type": "HR",
+              "effect_size": "1.07",
+              "ci_lower": "1.01",
+              "ci_upper": "1.13",
+              "p_value": "0.01815845536668912",
+              "comparison": "Regular glucosamine users versus nonusers"
+            },
+            "Claude+Gemini": {
+              "sample_size": "450207",
+              "effect_measure_type": "HR",
+              "effect_size": "1.07",
+              "ci_lower": "1.01",
+              "ci_upper": "1.13",
+              "p_value": "0.05",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

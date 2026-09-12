@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:18.154427-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "dc4fdd4700939e38f7359f19ef7231295ad557c4d651150f11330113bc50758f",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15095309",
+      "title": "Food groups and risk of prostate cancer in Italy.",
+      "abstract": "Although several studies have been conducted, the relation between diet and prostate cancer remains unclear. The role of a wide range of foods on the risk of prostate cancer has thus been analyzed in a case-control study conducted in Italy between 1991 and 2002. Cases were 1,294 patients below age 75 years with incident, histologically confirmed carcinoma of the prostate; controls were 1,451 subjects below age 75 years admitted to the same hospitals as cases for a wide spectrum of acute, non-neoplastic conditions. Multivariate odds ratios (ORs) were obtained after allowance for major potential confounding factors, including calorie intake. Among the 19 food groups considered, 4 showed some significant association with prostate cancer risk. A significant trend of increasing risk with more frequent consumption was found for milk and dairy products (OR = 1.2 for highest vs. lowest quintile, p = 0.03) as well as bread (OR = 1.4, p = 0.01), whereas inverse associations were observed for soups (OR = 0.8, p = 0.02) and cooked vegetables (OR = 0.7, p = 0.01). This uniquely large study on prostate cancer and diet in a southern European population confirms that no strong association exists between any specific foods and prostate cancer, apart from an increased risk for milk and dairy products and a possible protective effect of vegetables.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "Diet",
+        "Food",
+        "Humans",
+        "Italy",
+        "Male",
+        "Middle Aged",
+        "Nutritional Physiological Phenomena",
+        "Odds Ratio",
+        "Prostatic Neoplasms / diagnosis, etiology, pathology",
+        "Risk",
+        "Vegetables"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15095309",
+      "contexts": [
+        {
+          "context_id": "15095309|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "1.2",
+              "ci_lower": "1.0178106570603696",
+              "ci_upper": "1.4148014564506461",
+              "p_value": "0.03",
+              "comparison": "highest vs. lowest quintile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2745",
+              "effect_measure_type": "OR",
+              "effect_size": "1.2",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.03",
+              "comparison": "highest vs lowest quintile of milk and dairy product consumption"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

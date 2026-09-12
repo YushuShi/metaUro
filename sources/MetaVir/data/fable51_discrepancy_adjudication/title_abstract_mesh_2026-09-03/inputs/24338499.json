@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:32:56.026480-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "37832424e27e35a29c9945e42fde92abe70c8614aa03aca496eeb099b377def7",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "24338499",
+      "title": "Effects of α-tocopherol and β-carotene supplementation on cancer incidence and mortality: 18-year postintervention follow-up of the Alpha-tocopherol, Beta-carotene Cancer Prevention Study.",
+      "abstract": "In the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study among 29,133 Finnish male smokers aged 50-69 years, daily α-tocopherol (50 mg) for a median of 6.1 years decreased the risk of prostate cancer, whereas β-carotene (20 mg) increased risk of lung cancer and overall mortality. To determine the postintervention effects of α-tocopherol and β-carotene, 25,563 men were followed 18 years for cancer incidence and all causes of mortality through national registers. Neither supplement had significant effects on post-trial cancer incidence. Relative risk (RR) for lung cancer (n = 2,881) was 1.04 (95% confidence interval [CI], 0.96-1.11) among β-carotene recipients compared with nonrecipients. For prostate cancer (n = 2,321), RR was 0.97 (95% CI, 0.89-1.05) among α-tocopherol recipients compared with nonrecipients with the preventive effect of α-tocopherol continuing ∼8 years postintervention. Body mass index significantly modified the effect of α-tocopherol on prostate cancer (p for interaction = 0.01) RR 1.00 (95% CI, 0.88-1.14) in normal-weight men, 0.87 (95% CI, 0.77-0.98) in overweight men, and 1.25 (95% CI, 1.01-1.55) in obese men. The post-trial relative mortality (based on 16,686 deaths) was 1.02 (95% CI, 0.98-1.05) for α-tocopherol recipients compared with nonrecipients and 1.02 (95% CI, 0.99-1.05) for β-carotene recipients compared with nonrecipients. α-Tocopherol decreased post-trial prostate cancer mortality (RR, 0.84; 95% CI, 0.70-0.99), whereas β-carotene increased it (RR, 1.20; 95% CI, 1.01-1.42). In conclusion, supplementation with α-tocopherol and β-carotene appeared to have no late effects on cancer incidence. The preventive effect of moderate-dose α-tocopherol on prostate cancer continued several years post-trial and resulted in lower prostate cancer mortality.",
+      "mesh": [
+        "Aged",
+        "Antioxidants / administration & dosage",
+        "Clinical Trials as Topic",
+        "Dietary Supplements",
+        "Female",
+        "Finland",
+        "Follow-Up Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Neoplasms / diet therapy, mortality, pathology, prevention & control",
+        "alpha-Tocopherol / administration & dosage",
+        "beta Carotene / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "24338499",
+      "contexts": [
+        {
+          "context_id": "24338499|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "INCLUDE_META",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

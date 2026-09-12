@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:06.636664-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "5008a71d1e8f9e3a5c5525217ae1447ef757ec3b7ecb2c1b4ccada3e55b7c467",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15067102",
+      "title": "Comparisons of percent equol producers between prostate cancer patients and controls: case-controlled studies of isoflavones in Japanese, Korean and American residents.",
+      "abstract": "Our previous case-control study revealed that the Japanese residents in Japan could be divided into those who are able to degrade daidzein, a soybean isoflavone, to equol and those without this ability, and that the incidence of prostate cancer is higher in the latter group. We recently conducted a similar case-control study involving not only Japanese residents in Japan but also Korean residents in Korea. The incidence of prostate cancer in Korean residents is known to be close to that of Japanese residents in Japan. On the other hand, American residents in the United States have a markedly higher incidence of prostate cancer as compared to Japanese residents in Japan. The number of subjects was 295 in Japan (133 patients and 162 controls), 122 in Korea (61 patients and 61 controls) and 45 in the United States (24 patients and 21 controls). The percentage of equol producers among patients and controls was 29% and 46% in Japan (P = 0.004) and 30% and 59% in Korea (P = 0.001), respectively. The active isoflavone level was markedly lower and the percentage of equol producers was also lower (17% for patients and 14% for controls) for Americans as compared to the Japanese and Koreans. These results suggest that the ability of producing equol or equol itself is closely related to the lower incidence of prostate cancer. The results also suggest that a diet based on soybean isoflavones will be useful in preventing prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Aged, 80 and over",
+        "Case-Control Studies",
+        "Diet",
+        "Equol",
+        "Genistein / metabolism",
+        "Humans",
+        "Incidence",
+        "Isoflavones / biosynthesis, metabolism",
+        "Japan / epidemiology",
+        "Korea / epidemiology",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, metabolism",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15067102",
+      "contexts": [
+        {
+          "context_id": "15067102|Soy isoflavones|Prostate cancer",
+          "exposure": "Soy isoflavones",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "462",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.004",
+              "comparison": "Equol-producer percentage among prostate cancer patients versus controls in Japan"
+            },
+            "Claude+Gemini": {
+              "sample_size": "295",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": "0.004",
+              "comparison": "equol producers versus non-producers (cases vs controls) in Japan"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

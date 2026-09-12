@@ -1,0 +1,502 @@
+{
+  "schema_version": 1,
+  "receipt_id": "86f63b8c104bd84654b3e035632859d52e80c5ac6626adc7d365dab40d20f0a9",
+  "requested_at": "2026-09-02T08:36:07.004648+08:00",
+  "received_at": "2026-09-02T08:36:43.909355+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "dfa09b536c3bbeeafe70fc27b7f1e8e29041b0f6a736104ab174fbfff0403961",
+  "attempt": 2,
+  "context_ids": [
+    "9303371|Garlic|Prostate cancer",
+    "9303371|Legumes|Prostate cancer",
+    "9303371|Lycopene|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Garlic": 1,
+    "Legumes": 1,
+    "Lycopene": 1
+  },
+  "input_digest": "64c1f184e02036160372cf54084f89ad9005a07c993c6f6b6ff5d181db8430f2",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 20685,
+    "cached_input_tokens": 0,
+    "output_tokens": 6258,
+    "reasoning_tokens": 1499
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.03898125",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "8ba7223d-8957-4cc2-b0a3-5256418e96e6",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.03898125"
+  },
+  "output_sha256": "1367114ccb1848f32efcab111b87293c1cb18b9c7c2ae41fad76bf21b50e59f7",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"9303371|Garlic|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This matched case-control study investigated the association between dietary garlic intake and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 0.64,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.38,\n        \"ci_upper\": 1.09,\n        \"p_value\": 0.129,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 656,\n        \"cases\": 328,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": \"Oxfordshire, West Berkshire and Leeds\",\n        \"ethnicity\": \"White\",\n        \"population\": \"Men under 75 years old diagnosed with prostate cancer and age-matched population controls\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We interviewed 328 men diagnosed with prostate cancer before the age of 75 years\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Garlic ... ? 2 per week ... 0.64\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Garlic ... ? 2 per week ... 0.38-1.09\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Garlic ... P for trend ... 0.129\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Garlic Never ... ? 2 per week\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"design\": {\n            \"excerpt\": \"We have investigated the relationship of dietary factors with risk using a population-based case-control study in England.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The interview took about 1 h and included questions on basic demographic details, smoking, family history of prostate cancer and usual food intake during the previous 5 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Data and dietary questionnaire, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The study was conducted in Oxfordshire, West Berkshire and Leeds\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The study was restricted to white men who could speak English\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"The study was conducted in Oxfordshire, West Berkshire and Leeds\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The food frequency questionnaire enquired about usual frequency of consumption of 83 groups of food items during the last 5 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Data and dietary questionnaire, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"9303371|Legumes|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This matched case-control study assessed the association between total legume consumption and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 0.83,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.53,\n        \"ci_upper\": 1.3,\n        \"p_value\": 0.093,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 656,\n        \"cases\": 328,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": \"Oxfordshire, West Berkshire and Leeds\",\n        \"ethnicity\": \"White\",\n        \"population\": \"Men under 75 years old diagnosed with prostate cancer and age-matched population controls\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We interviewed 328 men diagnosed with prostate cancer before the age of 75 years\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total legumesb ... ? 1 per day ... 0.83\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total legumesb ... ? 1 per day ... 0.53-1.30\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total legumesb ... P for trend ... 0.093\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Total legumesb < 3 per week ... ? 1 per day\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 5\"\n          },\n          \"design\": {\n            \"excerpt\": \"We have investigated the relationship of dietary factors with risk using a population-based case-control study in England.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The interview took about 1 h and included questions on basic demographic details, smoking, family history of prostate cancer and usual food intake during the previous 5 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Data and dietary questionnaire, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The study was conducted in Oxfordshire, West Berkshire and Leeds\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The study was restricted to white men who could speak English\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"The study was conducted in Oxfordshire, West Berkshire and Leeds\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The food frequency questionnaire enquired about usual frequency of consumption of 83 groups of food items during the last 5 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Data and dietary questionnaire, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"9303371|Lycopene|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This matched case-control study assessed the association between dietary lycopene intake and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 0.99,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.68,\n        \"ci_upper\": 1.45,\n        \"p_value\": 0.882,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 656,\n        \"cases\": 328,\n        \"comparison_type\": \"tertile\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": \"Oxfordshire, West Berkshire and Leeds\",\n        \"ethnicity\": \"White\",\n        \"population\": \"Men under 75 years old diagnosed with prostate cancer and age-matched population controls\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"We interviewed 328 men diagnosed with prostate cancer before the age of 75 years\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Lycopene (jig) ... ? 718 ... 0.99\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 4\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Lycopene (jig) ... ? 718 ... 0.68-1.45\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Lycopene (jig) ... P for trend ... 0.882\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 4\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Lycopene (jig) < 402 ... ? 718\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Table 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"We have investigated the relationship of dietary factors with risk using a population-based case-control study in England.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The interview took about 1 h and included questions on basic demographic details, smoking, family history of prostate cancer and usual food intake during the previous 5 years.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Data and dietary questionnaire, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The study was conducted in Oxfordshire, West Berkshire and Leeds\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The study was restricted to white men who could speak English\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"The study was conducted in Oxfordshire, West Berkshire and Leeds\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Selection of cases and controls, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Lycopene (jig) was estimated as carotene from tomatoes and tomato products (mg) multiplied by 1.68 x 10-3\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/\",\n            \"location\": \"Materials and Methods, Data and dietary questionnaire, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "9303371|Garlic|Prostate cancer",
+      "pmid": "9303371",
+      "pmcid": "PMC2228001",
+      "published_date": "1997",
+      "title": "A case-control study of diet and prostate cancer.",
+      "authors": [
+        "Key TJ",
+        "Silcocks PB",
+        "Davey GK",
+        "Appleby PN",
+        "Bishop DT"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9303371/",
+      "exposure": "Garlic",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This matched case-control study investigated the association between dietary garlic intake and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.64,
+        "effect_type": "OR",
+        "ci_lower": 0.38,
+        "ci_upper": 1.09,
+        "p_value": 0.129,
+        "ci_confidence_level": 95,
+        "total_n": 656,
+        "cases": 328,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men under 75 years old diagnosed with prostate cancer and age-matched population controls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Summary, paragraph 1; total_n derived from reported group counts 328 + 328 = 656"
+          },
+          "cases": {
+            "excerpt": "We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Summary, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Unadjusted Adjusted for social class Food and frequency of consumption Cases Control OR 95% Cl OR 95% Cl Raw green salad < 3 per month 92 102 1.00 1.00 1 per week 91 83 1.20 0.80-1.79 1.21 0.80-1.81 2-4 per week 115 100 1.26 0.86-1.84 1.35 0.91-1.99 5-6 per week 30 43 0.75 0.43-1.31 0.87 0.49-1.56 P for trend 0.670 0.817 Baked beans < 1 per month 92 76 1.00 1.00 1-3 per month 91 109 0.66 0.43-1.02 0.66 0.43-1.02 1 per week 103 84 1.02 0.66-1.58 0.98 0.63-1.52 ? 2 per week 42 59 0.57 0.34-0.95 0.52 0.31-0.88 P for trend 0.130 0.075 Garden peas <3 permonth 63 62 1.00 1.00 1 per week 107 93 1.17 0.74-1.87 1.14 0.71-1.83 2-4 per week 152 155 0.99 0.65-1.52 0.98 0.64-1.51 2 5 per week 6 18 0.35 0.13-0.91 0.35 0.13-0.94 Pfor trend 0.066 0.081 Green beans, broad beans, runner beans < 1 permonth 58 42 1.00 1.00 1-3 per month 68 75 0.60 0.35-1.06 0.62 0.35-1.09 1 perweek 96 99 0.65 0.38-1.10 0.68 0.40-1.16 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "confidence_interval": {
+            "excerpt": "The dietary questionnaire was an adaptation of the food frequency questionnaire developed for the British component of Table 2 Characteristics of cases and controls Cases Controls Variable (n = 328) (n = 328) Odds ratio 95% Confidence interval Height at age 25 years (m) < 1.73 1.73-1.78 1.79 + P for trend Body mass index at age 25 years (kg m-2) (three missing, 325 matched pairs) < 21.069 21.069-23.354 23.355 + P for trend Body mass index at age 45 years (kg m-2) (four missing, 325 matched pairs) < 22.754 22.754-25.167 25.168 + P for trend Age at leaving school (years) < 14 15-16 17 + P for trend Social class II IlIl non-manual IlIl manual IV V 1, 11, III non-manual IlIl manual, IV, V Cigarette smoking Never Previous Current Father had prostate cancer No Yes Brother had prostate cancer No Yes British Journal of Cancer (1997) 76(5), 678-687 102 122 104 86 126 113 87 115 123 190 79 59 35 89 24 121 44 15 148 180 79 193 56 321 7 319 9 100 110 118 109 105 111 108 108 109 190 74 64 32 113 38 87 43 15 183 145 82 191 55 324 4 325 3 1.00 1.09 0.87 0.173 1.00 1.53 1.30 0.465 1.00 1.32 1.39 0.073 1.00 1.08 0.92 0.751 1.00 0.68 0.59 1.31 0.95 0.89 1.00 1.63 1.00 1.05 1.06 1.00 1.75 1.00 3.00 0.73-1.63 0.59-1.28 1.04-2.26 0.879-1.90 0.89-1.95 0.95-2.02 0.72-1.63 0.60-1.41 0.38-1.22 0.29-1.21 0.74-2.33 0.48-1.88 0.37-2.14 1.17-2.27 0.72-1.55 0.66-1.70 0.51-5.98 0.81-11.08 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "p_value": {
+            "excerpt": "2 per week 32 48 0.56 0.33-0.93 0.64 0.38-1.09 P for trend 0.038 0.129 Garlic, including supplements Never 215 187 1.00 1.00 < 1 per month 30 31 0.84 0.45-1.54 0.95 0.51-1.78 1-4 per month 43 54 0.69 0.44-1.08 0.75 0.48-1.19 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "design": {
+            "excerpt": "We have investigated the relationship of dietary factors with risk using a population-based case-control study in England.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "The interview took about 1 h and included questions on basic demographic details, smoking, family history of prostate cancer and usual food intake during the previous 5 years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Data and dietary questionnaire, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The study was conducted in Oxfordshire, West Berkshire and Leeds",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Selection of cases and controls, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The food frequency questionnaire enquired about usual frequency of consumption of 83 groups of food items during the last 5 years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Data and dietary questionnaire, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.129",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50987,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "fe56ec5814f87c06caed54ac4db1c9ae703bf95db92599354125776d1b0f0f60",
+      "pmc_source_receipt_digest": "61e09c9fd9d6ec8ed1b831769e1463ae00a247ea1259ccb90fb9612c91f41a55",
+      "pmc_source_raw_sha256": "c1399b2e5e1ae64a98b8eab8cb67f4454b6606235dbdd8695e94d28be97a38ca",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "710df75dc03f0a1059e9b4cbacfc052ace2b768d7a1df7c830f336a54bbbffea"
+    },
+    {
+      "context_id": "9303371|Legumes|Prostate cancer",
+      "pmid": "9303371",
+      "pmcid": "PMC2228001",
+      "published_date": "1997",
+      "title": "A case-control study of diet and prostate cancer.",
+      "authors": [
+        "Key TJ",
+        "Silcocks PB",
+        "Davey GK",
+        "Appleby PN",
+        "Bishop DT"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9303371/",
+      "exposure": "Legumes",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This matched case-control study assessed the association between total legume consumption and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.83,
+        "effect_type": "OR",
+        "ci_lower": 0.53,
+        "ci_upper": 1.3,
+        "p_value": 0.093,
+        "ci_confidence_level": 95,
+        "total_n": 656,
+        "cases": 328,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men under 75 years old diagnosed with prostate cancer and age-matched population controls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Summary, paragraph 1; total_n derived from reported group counts 328 + 328 = 656"
+          },
+          "cases": {
+            "excerpt": "We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Summary, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1 per week 37 30 1.21 0.72-2.04 1.38 0.81-2.36 Pfor trend 0.319 0.144 Total legumesb < 3 per week 100 90 1.00 1.00 3-4 per week 92 85 0.96 0.64-1.45 0.96 0.64-1.46 5-6 per week 77 89 0.76 0.49-1.18 0.78 0.50-1.21 2 1 per day 59 64 0.82 0.53-1.29 0.83 0.53-1.30 P for trend 0.068 0.093 Citrus fruit Never 74 81 1.00 1.00 < 1 perweek 118 128 1.03 0.68-1.55 1.11 0.73-1.69 2-4 per week 87 75 1.29 0.82-2.03 1.41 0.89-2.24 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "confidence_interval": {
+            "excerpt": "The dietary questionnaire was an adaptation of the food frequency questionnaire developed for the British component of Table 2 Characteristics of cases and controls Cases Controls Variable (n = 328) (n = 328) Odds ratio 95% Confidence interval Height at age 25 years (m) < 1.73 1.73-1.78 1.79 + P for trend Body mass index at age 25 years (kg m-2) (three missing, 325 matched pairs) < 21.069 21.069-23.354 23.355 + P for trend Body mass index at age 45 years (kg m-2) (four missing, 325 matched pairs) < 22.754 22.754-25.167 25.168 + P for trend Age at leaving school (years) < 14 15-16 17 + P for trend Social class II IlIl non-manual IlIl manual IV V 1, 11, III non-manual IlIl manual, IV, V Cigarette smoking Never Previous Current Father had prostate cancer No Yes Brother had prostate cancer No Yes British Journal of Cancer (1997) 76(5), 678-687 102 122 104 86 126 113 87 115 123 190 79 59 35 89 24 121 44 15 148 180 79 193 56 321 7 319 9 100 110 118 109 105 111 108 108 109 190 74 64 32 113 38 87 43 15 183 145 82 191 55 324 4 325 3 1.00 1.09 0.87 0.173 1.00 1.53 1.30 0.465 1.00 1.32 1.39 0.073 1.00 1.08 0.92 0.751 1.00 0.68 0.59 1.31 0.95 0.89 1.00 1.63 1.00 1.05 1.06 1.00 1.75 1.00 3.00 0.73-1.63 0.59-1.28 1.04-2.26 0.879-1.90 0.89-1.95 0.95-2.02 0.72-1.63 0.60-1.41 0.38-1.22 0.29-1.21 0.74-2.33 0.48-1.88 0.37-2.14 1.17-2.27 0.72-1.55 0.66-1.70 0.51-5.98 0.81-11.08 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "p_value": {
+            "excerpt": "1 per week 37 30 1.21 0.72-2.04 1.38 0.81-2.36 Pfor trend 0.319 0.144 Total legumesb < 3 per week 100 90 1.00 1.00 3-4 per week 92 85 0.96 0.64-1.45 0.96 0.64-1.46 5-6 per week 77 89 0.76 0.49-1.18 0.78 0.50-1.21 2 1 per day 59 64 0.82 0.53-1.29 0.83 0.53-1.30 P for trend 0.068 0.093 Citrus fruit Never 74 81 1.00 1.00 < 1 perweek 118 128 1.03 0.68-1.55 1.11 0.73-1.69 2-4 per week 87 75 1.29 0.82-2.03 1.41 0.89-2.24 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 5"
+          },
+          "design": {
+            "excerpt": "We have investigated the relationship of dietary factors with risk using a population-based case-control study in England.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "The interview took about 1 h and included questions on basic demographic details, smoking, family history of prostate cancer and usual food intake during the previous 5 years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Data and dietary questionnaire, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The study was conducted in Oxfordshire, West Berkshire and Leeds",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Selection of cases and controls, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The food frequency questionnaire enquired about usual frequency of consumption of 83 groups of food items during the last 5 years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Data and dietary questionnaire, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.093",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50987,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "fe56ec5814f87c06caed54ac4db1c9ae703bf95db92599354125776d1b0f0f60",
+      "pmc_source_receipt_digest": "61e09c9fd9d6ec8ed1b831769e1463ae00a247ea1259ccb90fb9612c91f41a55",
+      "pmc_source_raw_sha256": "c1399b2e5e1ae64a98b8eab8cb67f4454b6606235dbdd8695e94d28be97a38ca",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b5a38356134f5c2a743de17f1e2bc3a782266fdb3f52150fc5c17f93f8b8c5aa"
+    },
+    {
+      "context_id": "9303371|Lycopene|Prostate cancer",
+      "pmid": "9303371",
+      "pmcid": "PMC2228001",
+      "published_date": "1997",
+      "title": "A case-control study of diet and prostate cancer.",
+      "authors": [
+        "Key TJ",
+        "Silcocks PB",
+        "Davey GK",
+        "Appleby PN",
+        "Bishop DT"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/9303371/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This matched case-control study assessed the association between dietary lycopene intake and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.99,
+        "effect_type": "OR",
+        "ci_lower": 0.68,
+        "ci_upper": 1.45,
+        "p_value": 0.882,
+        "ci_confidence_level": 95,
+        "total_n": 656,
+        "cases": 328,
+        "comparison_type": "tertile",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Europe",
+        "country": "United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men under 75 years old diagnosed with prostate cancer and age-matched population controls",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Summary, paragraph 1; total_n derived from reported group counts 328 + 328 = 656"
+          },
+          "cases": {
+            "excerpt": "We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Summary, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Unadjusted Adjusted for social class Food and frequency of consumption Cases Control OR 95% Cl OR 95% Cl Raw green salad < 3 per month 92 102 1.00 1.00 1 per week 91 83 1.20 0.80-1.79 1.21 0.80-1.81 2-4 per week 115 100 1.26 0.86-1.84 1.35 0.91-1.99 5-6 per week 30 43 0.75 0.43-1.31 0.87 0.49-1.56 P for trend 0.670 0.817 Baked beans < 1 per month 92 76 1.00 1.00 1-3 per month 91 109 0.66 0.43-1.02 0.66 0.43-1.02 1 per week 103 84 1.02 0.66-1.58 0.98 0.63-1.52 ? 2 per week 42 59 0.57 0.34-0.95 0.52 0.31-0.88 P for trend 0.130 0.075 Garden peas <3 permonth 63 62 1.00 1.00 1 per week 107 93 1.17 0.74-1.87 1.14 0.71-1.83 2-4 per week 152 155 0.99 0.65-1.52 0.98 0.64-1.51 2 5 per week 6 18 0.35 0.13-0.91 0.35 0.13-0.94 Pfor trend 0.066 0.081 Green beans, broad beans, runner beans < 1 permonth 58 42 1.00 1.00 1-3 per month 68 75 0.60 0.35-1.06 0.62 0.35-1.09 1 perweek 96 99 0.65 0.38-1.10 0.68 0.40-1.16 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 4"
+          },
+          "confidence_interval": {
+            "excerpt": "Cancer Research Campaign 1997 Diet and prostate cancer 681 Table 4 Odds ratios (ORs) and 95% confidence intervals (Cls) in relation to daily nutrient intakes Unadjusted Adjusted for social class Nutrient and daily intake Cases Controls OR 95% Cl OR 95% Cl Energy (mJ) < 10.2 111 109 1.00 1.00 10.2-12.3 112 110 1.00 0.69-1.44 1.02 0.70-1.48 2 12.4 105 109 0.95 0.65-1.38 0.90 0.62-1.32 P for trend 0.729 0.563 Total fat (g) < 103.0 111 109 1.00 1.00 103.0-134.1 115 110 1.02 0.71-1.47 1.00 0.69-1.45 > 134.2 102 109 0.92 0.62-1.35 0.85 0.57-1.25 P for trend 0.909 0.574 Saturated fatty acids (g) < 40.8 113 109 1.00 1.00 40.8-54.2 111 110 0.97 0.67-1.40 0.95 0.66-1.38 2 54.3 104 109 0.92 0.62-1.35 0.87 0.58-1.28 P for trend 0.796 0.481 Monounsaturated fatty acids (g) < 34.9 105 109 1.00 1.00 34.9-45.2 115 110 1.08 0.75-1.56 1.06 0.73-1.55 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 4"
+          },
+          "p_value": {
+            "excerpt": "3.48 103 109 0.76 0.53-1.10 0.83 0.57-1.21 P for trend 0.150 0.351 Lycopene (jig) < 402 117 109 1.00 1.00 402-717 103 110 0.89 0.62-1.26 0.90 0.63-1.29 2 718 108 109 0.93 0.64-1.35 0.99 0.68-1.45 P for trend 0.727 0.882 Vitamin B6, food only (mg) < 1.90 128 109 1.00 1.00 1.90-2.26 101 110 0.78 0.54-1.13 0.85 0.58-1.24 ?",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 4"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Table 4"
+          },
+          "design": {
+            "excerpt": "We have investigated the relationship of dietary factors with risk using a population-based case-control study in England.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Introduction, paragraph 2"
+          },
+          "timing": {
+            "excerpt": "The interview took about 1 h and included questions on basic demographic details, smoking, family history of prostate cancer and usual food intake during the previous 5 years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Data and dietary questionnaire, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The study was conducted in Oxfordshire, West Berkshire and Leeds",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Selection of cases and controls, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Lycopene (jig) was estimated as carotene from tomatoes and tomato products (mg) multiplied by 1.68 x 10-3",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2228001/",
+            "location": "Materials and Methods, Data and dietary questionnaire, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.882",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50987,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "fe56ec5814f87c06caed54ac4db1c9ae703bf95db92599354125776d1b0f0f60",
+      "pmc_source_receipt_digest": "61e09c9fd9d6ec8ed1b831769e1463ae00a247ea1259ccb90fb9612c91f41a55",
+      "pmc_source_raw_sha256": "c1399b2e5e1ae64a98b8eab8cb67f4454b6606235dbdd8695e94d28be97a38ca",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "3ac405b999594fb8032cddd780101740ff4d01148215914a714702ba18524805"
+    }
+  ]
+}

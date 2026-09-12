@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "receipt_id": "d1f12477469b8dea3e8c12fae7e92e51a4dd2f7768dea0c5d5e126f1a3d8875a",
+  "requested_at": "2026-09-02T07:59:18.848114+08:00",
+  "received_at": "2026-09-02T07:59:26.646990+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "d7648b930659021154a9f34dd3d6e3b612b6bdd3fabc13de245f16e5934faf8a",
+  "attempt": 1,
+  "context_ids": [
+    "23129590|Vitamin D|Prostate cancer",
+    "23133653|Selenium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Selenium": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "8ebc41283656905dab08c59af8f35f6fbee4403decbc790b0a89091607e0cd81",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5963,
+    "cached_input_tokens": 0,
+    "output_tokens": 590,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.044565",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "06c0485c-a796-4984-9c82-8a1b88071cfd",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.044565"
+  },
+  "output_sha256": "9b153aae139bd6f817831a3ced9deb5c224e5b4cbbbb83ff5561df10c6d693f0",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"23129590|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"The requested vitamin D exposure is absent because the study examines dietary calcium intake together with vitamin D receptor (VDR) genotype rather than vitamin D intake or status.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"23133653|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-GENOTYPE-INTERACTION\",\"reason\":\"Selenium is reported only as genotype-stratified SNP-by-selenium-status interactions in selenoprotein genes, with no population-wide selenium exposure estimate for prostate cancer incidence.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "23129590|Vitamin D|Prostate cancer",
+      "pmid": "23129590",
+      "pmcid": "PMC3763955",
+      "published_date": "2013-01-01",
+      "title": "Protective effects of low calcium intake and low calcium absorption vitamin D receptor genotype in the California Collaborative Prostate Cancer Study.",
+      "authors": [
+        "Rowland GW",
+        "Schwartz GG",
+        "John EM",
+        "Ingles SA"
+      ],
+      "journal": "Cancer epidemiology, biomarkers & prevention : a publication of the American Association for Cancer Research, cosponsored by the American Society of Preventive Oncology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23129590/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "The report centers on a genotype-stratified or gene-exposure interaction, which this protocol excludes.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "23133653|Selenium|Prostate cancer",
+      "pmid": "23133653",
+      "pmcid": "PMC3486803",
+      "published_date": "2012",
+      "title": "Polymorphisms in thioredoxin reductase and selenoprotein K genes and selenium status modulate risk of prostate cancer.",
+      "authors": [
+        "Méplan C",
+        "Rohrmann S",
+        "Steinbrecher A",
+        "Schomburg L",
+        "Jansen E",
+        "Linseisen J",
+        "Hesketh J"
+      ],
+      "journal": "PloS one",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23133653/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-GENOTYPE-INTERACTION",
+      "reason": "Selenium is reported only as genotype-stratified SNP-by-selenium-status interactions in selenoprotein genes, with no population-wide selenium exposure estimate for prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

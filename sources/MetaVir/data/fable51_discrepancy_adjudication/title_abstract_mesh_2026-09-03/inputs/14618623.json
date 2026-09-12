@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:34.183925-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "86c1683a858ac0f2cac38155fde6beeceb0004476014aaf544455ffea9d76156",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "14618623",
+      "title": "Both high and low levels of blood vitamin D are associated with a higher prostate cancer risk: a longitudinal, nested case-control study in the Nordic countries.",
+      "abstract": "Vitamin D inhibits the development and growth of prostate cancer cells. Epidemiologic results on serum vitamin D levels and prostate cancer risk have, however, been inconsistent. We conducted a longitudinal nested case-control study on Nordic men (Norway, Finland and Sweden) using serum banks of 200,000 samples. We studied serum 25(OH)-vitamin D levels of 622 prostate cancer cases and 1,451 matched controls and found that both low (</=19 nmol/l) and high (>/=80 nmol/l) 25(OH)-vitamin D serum concentrations are associated with higher prostate cancer risk. The normal average serum concentration of 25(OH)-vitamin D (40-60 nmol/l) comprises the lowest risk of prostate cancer. The U-shaped risk of prostate cancer might be due to similar 1,25-dihydroxyvitamin D(3) availability within the prostate: low vitamin D serum concentration apparently leads to a low tissue concentration and to weakened mitotic control of target cells, whereas a high vitamin D level might lead to vitamin D resistance through increased inactivation by enhanced expression of 24-hydroxylase. It is recommended that vitamin D deficiency be supplemented, but too high vitamin D serum level might also enhance cancer development.",
+      "mesh": [
+        "Adult",
+        "Calcifediol / blood",
+        "Case-Control Studies",
+        "Finland",
+        "Humans",
+        "Longitudinal Studies",
+        "Male",
+        "Middle Aged",
+        "Norway",
+        "Prostatic Neoplasms / blood",
+        "Risk",
+        "Sweden",
+        "Vitamin D Deficiency / complications"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "14618623",
+      "contexts": [
+        {
+          "context_id": "14618623|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Low (≤19 nmol/l) and high (≥80 nmol/l) versus 40–60 nmol/l serum 25(OH)-vitamin D"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2073",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Low (</=19 nmol/l) and high (>/=80 nmol/l) serum 25(OH)-vitamin D versus normal average concentration (40-60 nmol/l)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

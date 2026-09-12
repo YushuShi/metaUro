@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:24:00.058028-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "18b630980c60bcaed507de7e3ea0dbcbcf1b59abbcf0fd3e0e9f3b12e2c123b0",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "15016323",
+      "title": "A case-control study of diet and prostate cancer in Japan: possible protective effect of traditional Japanese diet.",
+      "abstract": "The age-adjusted incidence of prostate cancer is low in Japan, and it has been suggested that the traditional Japanese diet, which includes many soy products, plays a preventive role against prostate cancer. We performed a case-control study on dietary factors and prostate cancer in order to assess the hypothesis that the traditional Japanese diet reduces the risk of prostate cancer. Four geographical areas (Ibaraki, Fukuoka, Nara, and Hokkaido) of Japan were selected for the survey. Average daily intake of food from 5 years before the diagnosis was measured by means of a semi-quantitative food frequency questionnaire. We studied 140 cases and 140 individually age ( +/- 5 years)-matched hospital controls for analysis. Estimates of age-adjusted odds ratios (ORs) and linear trends were calculated by conditional logistic regression models with adjustment for cigarette smoking and total energy intake as confounding factors. Consumption of fish, all soybean products, tofu (bean curds), and natto (fermented soybeans) was associated with decreased risk. ORs of the fourth vs. first quartile and 95% confidence intervals (95%CIs) were 0.45 (0.20-1.02) for fish, 0.53 (0.24-1.14) for all soybean products, 0.47 (0.20-1.08) for tofu, and 0.25 (0.05-1.24) for natto. Consumption of fish and natto showed significantly decreasing linear trends for risk (P < 0.05). Consumption of meat was significantly associated with increased risk (the OR of the second vs. first quartile was 2.19, 95%CI 1.00-4.81). Consumption of milk, fruits, all vegetables, green-yellow vegetables, and tomatoes showed no association. Our results provide support to the hypothesis that the traditional Japanese diet, which is rich in soybean products and fish, might be protective against prostate cancer.",
+      "mesh": [
+        "Adenocarcinoma / epidemiology, prevention & control",
+        "Aged",
+        "Animals",
+        "Case-Control Studies",
+        "Diet",
+        "Fishes",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology, prevention & control",
+        "Risk Factors",
+        "Soy Foods",
+        "Surveys and Questionnaires"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "15016323",
+      "contexts": [
+        {
+          "context_id": "15016323|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "280",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "280",
+              "effect_measure_type": "OR",
+              "effect_size": "1.37",
+              "ci_lower": "0.69",
+              "ci_upper": "2.71",
+              "p_value": "0.7",
+              "comparison": "extreme_quantile"
+            }
+          }
+        },
+        {
+          "context_id": "15016323|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "280",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "280",
+              "effect_measure_type": "OR",
+              "effect_size": "0.86",
+              "ci_lower": "0.37",
+              "ci_upper": "2.01",
+              "p_value": "0.87",
+              "comparison": "extreme_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

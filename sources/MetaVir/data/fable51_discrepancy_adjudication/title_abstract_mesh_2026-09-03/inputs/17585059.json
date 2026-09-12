@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:14.335480-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "a31b2a66045e9ab778e818866768f9838988027f5b718615c7eddc7f4b9241f8",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17585059",
+      "title": "A prospective study of polyunsaturated fatty acid levels in blood and prostate cancer risk.",
+      "abstract": "Animal models suggest that n-3 fatty acids inhibit prostate cancer proliferation, whereas n-6 fatty acids promote it, but epidemiologic studies do not uniformly support these findings. A nested case-control study was conducted among 14,916 apparently healthy men who provided blood samples in 1982. Blood fatty acid levels were determined for 476 men diagnosed with prostate cancer during a 13-year follow-up and their matched controls. Conditional logistic regression was used to estimate the relative risks (RR) and 95% confidence intervals (95% CI) of total, non-aggressive (stage A/B and Gleason < 7) and aggressive (stage C/D, Gleason >or= 7, subsequent distant metastasis or death) prostate cancer associated with blood levels of specific fatty acids expressed as percentages of total fatty acids. Whole blood levels of all long-chain n-3 fatty acids examined and of linoleic acid were inversely related to overall prostate cancer risk (RR(Q5vs.Q1), 0.59; 95% CI, 0.38-0.93; P(trend) = 0.01 for total long-chain n-3 fatty acids and RR(Q5vs.Q1), 0.62; 95% CI, 0.41-0.95; P(trend) = 0.03 for linoleic). Blood levels of gamma-linolenic and dihomo-gamma-linolenic acids, fatty acids resulting from the metabolism of linoleic acid, were directly associated with prostate cancer (RR, 1.41; 95% CI, 0.94-2.12; P(trend) = 0.05 for gamma-linolenic and RR, 1.54; 95% CI, 1.03-2.30; P(trend) = 0.02 for dihomo-gamma-linolenic acid). Levels of arachidonic and alpha-linolenic acids were unrelated to prostate cancer. Higher blood levels of long-chain n-3 fatty acids, mainly found in marine foods, and of linoleic acid, mainly found in non-hydrogenated vegetable oils, are associated with a reduced risk of prostate cancer. The direct associations of linoleic acid metabolites with prostate cancer risk deserve further investigation.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Case-Control Studies",
+        "Double-Blind Method",
+        "Fatty Acids, Unsaturated / blood",
+        "Humans",
+        "Male",
+        "Medical Records",
+        "Middle Aged",
+        "Placebos",
+        "Prospective Studies",
+        "Prostate",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Risk Factors",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17585059",
+      "contexts": [
+        {
+          "context_id": "17585059|Dihomo-gamma-linolenic acid|Prostate cancer",
+          "exposure": "Dihomo-gamma-linolenic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "RR",
+              "effect_size": "1.54",
+              "ci_lower": "1.03",
+              "ci_upper": "2.3",
+              "p_value": "0.02",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "14916",
+              "effect_measure_type": "RR",
+              "effect_size": "1.54",
+              "ci_lower": "1.03",
+              "ci_upper": "2.3",
+              "p_value": "0.02",
+              "comparison": "highest vs lowest quintile of blood fatty acid level (percentage of total fatty acids); P for trend reported"
+            }
+          }
+        },
+        {
+          "context_id": "17585059|Gamma-linolenic acid|Prostate cancer",
+          "exposure": "Gamma-linolenic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "RR",
+              "effect_size": "1.41",
+              "ci_lower": "0.94",
+              "ci_upper": "2.12",
+              "p_value": "0.05",
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "14916",
+              "effect_measure_type": "RR",
+              "effect_size": "1.41",
+              "ci_lower": "0.94",
+              "ci_upper": "2.12",
+              "p_value": "0.05",
+              "comparison": "highest vs lowest quintile of blood fatty acid level (percentage of total fatty acids); P for trend reported"
+            }
+          }
+        },
+        {
+          "context_id": "17585059|Linoleic acid|Prostate cancer",
+          "exposure": "Linoleic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "RR",
+              "effect_size": "0.62",
+              "ci_lower": "0.41",
+              "ci_upper": "0.95",
+              "p_value": "0.03",
+              "comparison": "Highest versus lowest quintile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "14916",
+              "effect_measure_type": "RR",
+              "effect_size": "0.62",
+              "ci_lower": "0.41",
+              "ci_upper": "0.95",
+              "p_value": "0.03",
+              "comparison": "quintile 5 vs quintile 1 of whole blood linoleic acid; P for trend reported"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "3e4c23e52bc0e900e8c5075459dadfcef7af3cf1ac0834ac77799f68a35c59c1",
+  "requested_at": "2026-09-02T08:43:34.648320+08:00",
+  "received_at": "2026-09-02T08:44:05.601111+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "876df061aa4955790152fa2120f7d7a33456f07ba54f31088e09081c6ca64800",
+  "attempt": 1,
+  "context_ids": [
+    "23304521|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Vitamin D": 1
+  },
+  "input_digest": "388c95901d2104610e6af24a3b7aa444fd01f33902ada3d44a36bda5c7a47ece",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5770,
+    "cached_input_tokens": 0,
+    "output_tokens": 4274,
+    "reasoning_tokens": 2608
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.020354999999999998",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "7c3433b3-80ee-4ef1-930f-8e7198497b87",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.020354999999999998"
+  },
+  "output_sha256": "ef2050ca48d6382159d2db6c62148b0d9b7c0982aad1166d75b1fdb3e8f5c9ae",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"23304521|Vitamin D|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Retrospective case-control study evaluating serum vitamin D levels in men with prostate cancer compared to age-matched controls.\",\n      \"extraction\": {\n        \"effect_size\": null,\n        \"effect_type\": null,\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": 0.68,\n        \"ci_confidence_level\": null,\n        \"total_n\": 952,\n        \"cases\": 479,\n        \"comparison_type\": \"continuous\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Veterans Integrated Service Network (VISN-2) of Veterans Health Administration (VHA) patients\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Study subjects include 479 with prostate cancer and 473 subjects without prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 3. Results, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"479 subjects with a diagnosis of prostate cancer were identified from review of approximately 5,000 patient records.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 2. Materials and Methods, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"There is no significant difference in the vitamin D levels (both 25(OH) vitamin D and 1,25 (OH) vitamin D levels) between the subjects with prostate cancer compared to the age-matched subjects without prostate cancer\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 3. Results, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"The data is presented as ±SD.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 2.1. Statistical Analysis, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Vitamin D (ng/dL) 28.4 ± 0.53 vs 28.1 ± 0.63, P value 0.68\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"In this retrospective study, we compared vitamin D levels in subjects with PCa with those of age-matched men without PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Abstract\"\n          },\n          \"design\": {\n            \"excerpt\": \"This is a clinical, retrospective study to evaluate vitamin D levels in subjects with or without prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 2. Materials and Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"This is a clinical, retrospective study to evaluate vitamin D levels in subjects with or without prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 2. Materials and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Stratton VA Medical Center at Albany, NY, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 2. Materials and Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Stratton VA Medical Center at Albany, NY, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 2. Materials and Methods, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Stratton VA Medical Center at Albany, NY, USA.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Section 2. Materials and Methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Levels of 25 (OH) vitamin D were 28.4 ± 0.54 and 28.05 ± 0.62 in subjects with and without PCa.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3530178/\",\n            \"location\": \"Abstract\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"No\",\n          \"q7\": \"No\",\n          \"q8\": \"Yes\",\n          \"q9\": \"No\",\n          \"q10\": \"No\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:21:28.979708-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "39bd163e0621abb79f67812198e18266eab9149af13fa6c9bd92ec217fd24000",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11549558",
+      "title": "Energy restriction in childhood and adolescence and risk of prostate cancer: results from the Netherlands Cohort Study.",
+      "abstract": "This study investigated the association between prostate cancer risk and energy restriction during childhood. The authors examined the hypothesis among 58,279 men aged 55-69 years enrolled in the Netherlands Cohort Study on Diet and Cancer. Information on diet and risk factors was collected by questionnaire in 1986. Additional information was collected on residence during the Dutch Hunger Winter (1944-1945) and the World War II years (1940-1944) and father's employment status during the economic depression of 1932-1940, used as indicators of exposure. A case-cohort approach was used. After 7.3 years of follow-up (through December 1993), 903 prostate cancer cases were available for analysis. Analyses were carried out for all prostate cancer cases. The prostate cancer rate ratio for men who had lived in a western Netherlands city in 1944-1945 was 1.15 (95% confidence interval (CI): 0.80, 1.31), and the rate ratio for men who had lived in a western rural area in 1944-1945 was 1.30 (95% CI: 0.97, 1.73). Residence during the war years (1940-1944) and father's employment in 1932-1940 showed no relation to prostate cancer risk. In subgroup analyses in which exposure before, during, and after the adolescent growth spurt was evaluated, the same pattern as that of the overall data was shown. The authors found no evidence for the hypothesis that energy restriction early in life decreases prostate cancer risk later in life.",
+      "mesh": [
+        "Aged",
+        "Child",
+        "Child Welfare",
+        "Cohort Studies",
+        "Diet",
+        "Employment",
+        "Energy Intake",
+        "Food Deprivation",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Poverty",
+        "Prostatic Neoplasms / epidemiology, etiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11549558",
+      "contexts": [
+        {
+          "context_id": "11549558|Calorie-restricted diet|Prostate cancer",
+          "exposure": "Calorie-restricted diet",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "58279",
+              "effect_measure_type": "RR",
+              "effect_size": "1.15",
+              "ci_lower": "0.8",
+              "ci_upper": "1.31",
+              "p_value": null,
+              "comparison": "Residence in a western Netherlands city during the 1944-1945 Hunger Winter versus the reference residence category"
+            },
+            "Claude+Gemini": {
+              "sample_size": "58279",
+              "effect_measure_type": "RR",
+              "effect_size": "1.3",
+              "ci_lower": "0.97",
+              "ci_upper": "1.73",
+              "p_value": null,
+              "comparison": "Men who lived in a western rural area during the Dutch Hunger Winter (1944-1945) versus unexposed men"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

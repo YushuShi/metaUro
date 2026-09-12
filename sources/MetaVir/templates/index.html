@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MetaVir: Prostate Cancer & Nutrition</title>
+    <link rel="stylesheet" href="/static/style.css?v=plot-layout-20260907">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <script src="/static/i18n.js?v=1.4" defer></script>
+<script src="/static/subexposures.js" defer></script>
+</head>
+
+<body data-evidence-track="{{ evidence_track }}">
+
+    <header style="position: relative;">
+        <div class="logo">MetaVir</div>
+        <p>Advanced Meta-Analysis & Evidence Synthesis</p>
+        <div class="evidence-track-label notranslate" translate="no">
+            {{ 'Saved ChatGPT evidence' if evidence_track == 'chatgpt' else 'Combined evidence' }}
+        </div>
+        <div class="last-updated">Last updated: <span id="last-updated">—</span></div>
+        <nav class="header-actions" aria-label="Site navigation">
+            {% include '_language_picker.html' %}
+            {% include '_subexposure_toggle.html' %}
+            <a href="/summary?scope={{ selected_scope_key }}&include_subexposures={{ include_subexposures }}" class="header-action" data-disease-scope-link>Summary</a>
+            <a href="/about" class="header-action header-action--primary">
+                <svg class="header-action-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                About
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Main Content -->
+        <div id="tab-meta" class="active">
+            <section class="hero">
+            <h1>Synthesize Evidence on Prostate Cancer & Nutrition</h1>
+            <p>Explore associations between nutritional exposures and prostate cancer incidence</p>
+
+            <div class="search-box">
+                <div class="input-group">
+                    <label for="exposure">Nutritional Exposure</label>
+                    <div class="custom-dropdown" id="exposure-dropdown">
+                        <input type="text" id="exposure" placeholder="e.g. Coffee, Vitamin D, Fat..." value="Vitamin A"
+                            autocomplete="off">
+                        <div class="dropdown-options" id="exposure-options"></div>
+                    </div>
+                </div>
+                <input type="hidden" id="outcome" value="Incidence">
+
+                <div class="input-group">
+                    <label for="disease">Disease Scope</label>
+                    <select id="disease">
+                        {% set scope = scope_config['prostate'] %}
+                        <option value="{{ scope.disease }}" data-disease="{{ scope.disease }}"
+                            data-scope-key="prostate_cancer" {% if selected_scope_label == scope.label %}selected{% endif %}>{{ scope.label }}</option>
+                        {% for subtype in scope.subcategories %}
+                        <option value="{{ subtype.label }}" data-disease="{{ scope.disease }}"
+                            data-subcategory="{{ subtype.key }}" data-scope-key="{{ subtype.key }}"
+                            class="disease-subcategory" {% if selected_scope_label == subtype.label %}selected{% endif %}>&nbsp;&nbsp;&nbsp;&nbsp;{{ subtype.label }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button id="analyze-btn">Analyze Evidence</button>
+            </div>
+
+            <!-- Synonyms Info Box -->
+            <div id="synonyms-box" style="display:none; margin-top: 1.2rem; background: rgba(37,99,235,0.07); border: 1px solid rgba(37,99,235,0.25); border-radius: 10px; padding: 0.85rem 1.2rem; max-width: 700px; margin-left: auto; margin-right: auto;">
+                <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:0.4rem; margin-bottom: 0.5rem;">
+                    <div style="font-size: 0.78rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: #444;">
+                        🔎 Search terms used in PubMed query
+                    </div>
+                </div>
+                <div id="synonyms-pills" style="display: flex; flex-wrap: wrap; gap: 0.4rem;"></div>
+            </div>
+
+        </section>
+
+        <!-- Loading State -->
+        <div id="loading" class="hidden">
+            <div class="spinner"></div>
+            <p>Scanning PubMed & Extracting Data...</p>
+        </div>
+
+        <!-- Error State -->
+        <div id="error-message" class="hidden"></div>
+
+        <!-- Results -->
+        <div id="results" class="hidden">
+            <section class="card">
+                <div class="forest-toolbar"><div><h2>Forest Plot</h2><p id="forest-scale-label" class="forest-scale-label">RR · logarithmic axis</p></div><a id="download-forest-png" class="download-forest-png" aria-disabled="true" download>Download</a></div><p id="analysis-baseline-notice" class="analysis-baseline-notice" role="status"></p>
+                <div class="plot-container">
+                    <img id="forest-plot" src="" alt="Forest Plot will appear here">
+                </div>
+            </section>
+
+
+
+            <section class="card">
+                <h2>Extracted Studies</h2>
+                {% include '_poolability_help.html' %}
+
+
+                <!-- Filter Panel -->
+                <div class="filters-container"
+                    style="display: flex; gap: 1.5rem; margin-bottom: 1.5rem; flex-wrap: wrap; align-items: flex-end;">
+                    <div class="filter-group">
+                        <label for="filter-timing"
+                            style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Design</label>
+                        <select id="filter-timing"
+                            style="padding: 0.4rem; border-radius: 4px; border: 1px solid #ccc; width: 150px;">
+                            <option value="All">All</option>
+                            <option value="Prospective">Prospective</option>
+                            <option value="Retrospective">Retrospective</option>
+<option value="Clinical Trials">Clinical Trials</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-min-cases"
+                            style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Min. Cases</label>
+                        <input type="number" id="filter-min-cases" value="0" min="0" step="50"
+                            style="padding: 0.4rem; border-radius: 4px; border: 1px solid #ccc; width: 90px;" title="Studies at or below this case count are auto-deselected; missing cases are estimated from total sample size and the reference risk in Settings">
+                    </div>
+                    <div class="filter-group" id="stage-filter-container" style="display: none !important;">
+                        <label for="filter-stage"
+                            style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Stage</label>
+                        <select id="filter-stage"
+                            style="padding: 0.4rem; border-radius: 4px; border: 1px solid #ccc; width: 180px;">
+                            <option value="All">All</option>
+                            <option value="Early">Early</option>
+                            <option value="Advanced/Metastatic">Advanced/Metastatic</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-quality"
+                            style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Quality</label>
+                        <select id="filter-quality"
+                            style="padding: 0.4rem; border-radius: 4px; border: 1px solid #ccc; width: 190px;">
+                            <option value="All">All</option>
+                            <option value="Moderate+" selected>Moderate and above</option>
+                            <option value="Good">Good</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-measure"
+                            style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Effect Measure</label>
+                        <select id="filter-measure"
+                            style="padding: 0.4rem; border-radius: 4px; border: 1px solid #ccc; width: 165px;">
+                            <option value="All">All</option>
+                            <option value="RR">Relative Risk (RR)</option>
+                            <option value="IRR">Incidence Rate Ratio (IRR)</option>
+                            <option value="OR">Odds Ratio (OR)</option>
+                            <option value="HR">Hazard Ratio (HR)</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="filter-exposure-type"
+                            style="font-size: 0.85rem; font-weight: 600; display: block; margin-bottom: 0.25rem;">Exposure Measurement</label>
+                        <select id="filter-exposure-type"
+                            style="padding: 0.4rem; border-radius: 4px; border: 1px solid #ccc; width: 180px;">
+                            <option value="Anything">Anything</option>
+                            <option value="Dietary intake only">Dietary intake only</option>
+                            <option value="Human biospecimen only">Human biospecimen only</option>
+                        </select>
+                    </div>
+                    <div style="margin-left: auto; display: flex; gap: 0.5rem;">
+                        <button id="select-all-btn"
+                            style="padding: 0.5rem 1rem; font-size: 0.85rem; background-color: #6c757d;">Select
+                            All</button>
+                        <button id="deselect-all-btn"
+                            style="padding: 0.5rem 1rem; font-size: 0.85rem; background-color: #6c757d;">Deselect
+                            All</button>
+                        <button id="update-btn" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">Update
+                            Analysis</button>
+                        <button id="export-studies-btn"
+                            style="padding: 0.5rem 1rem; font-size: 0.85rem; background-color: var(--primary);">Export</button>
+                    </div>
+                </div>
+
+
+                <div class="table-responsive">
+                    <p id="pooling-status-notice" class="hidden">Eligible studies are listed below. No studies meet the default pooling criteria.</p>
+                    <table id="studies-table"
+                        style="table-layout: fixed; width: 100%; border-collapse: collapse; min-width: 1415px;">
+                        <thead style="background-color: rgba(37, 99, 235, 0.15);">
+                            <tr>
+                                <th style="width: 40px; padding: 0.75rem; vertical-align: middle;"></th>
+                                <th style="width: 40px; padding: 0.75rem; vertical-align: middle;">
+                                    <input type="checkbox" id="select-all-checkbox" title="Select/Deselect All">
+                                </th>
+                                <th style="width: 40px; padding: 0.75rem; vertical-align: middle;">#</th>
+                                <th class="sortable" id="th-study" onclick="handleSort('Study')"
+                                    style="width: 140px; padding: 0.75rem; vertical-align: middle;">Authors<span class="sort-icon"></span></th>
+                                <th class="sortable" id="th-es" onclick="handleSort('Effect Size')"
+                                    style="width: 110px; padding: 0.75rem; vertical-align: middle;">ES (Raw)<span class="sort-icon"></span></th>
+                                <th style="width: 130px; padding: 0.75rem; vertical-align: middle;">95% CI</th>
+                                <th class="sortable" id="th-n-cases" onclick="handleSort('Sample Size')"
+                                    style="width: 120px; padding: 0.75rem; vertical-align: middle;">N<span class="sort-icon"></span> / Cases</th>
+                                <th class="sortable" id="th-quality" onclick="handleSort('Quality Score')"
+                                    style="width: 100px; padding: 0.75rem; vertical-align: middle;">Quality<span class="sort-icon"></span></th>
+                                <th style="width: 110px; padding: 0.75rem; vertical-align: middle;">Verified</th>
+                                <th style="width: 80px; padding: 0.75rem; vertical-align: middle;">Exclude</th>
+                                <th style="width: 180px; padding: 0.75rem; vertical-align: middle;">Article</th>
+                                <th style="width: 150px; padding: 0.75rem; vertical-align: middle;">Details</th>
+                                <th class="sortable" id="th-journal" onclick="handleSort('Journal')"
+                                    style="width: 130px; padding: 0.75rem; vertical-align: middle;">Journal<span class="sort-icon"></span></th>
+                                <th class="sortable" id="th-year" onclick="handleSort('Year')"
+                                    style="width: 85px; padding: 0.75rem; vertical-align: middle;">Year<span class="sort-icon"></span></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Rows injected by JS -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Meta-Analysis Result</h2>
+
+                <div id="headline-result" class="hidden"
+                    style="margin-bottom: 2rem; padding: 1.5rem; border-radius: 8px; background: rgba(37,99,235,0.07); border: 1px solid rgba(37,99,235,0.25);">
+                    <div style="display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 0.5rem;">
+                        <h3 id="pooled-label" style="margin-bottom: 0; color: #1D4ED8;">Pooled Relative Risk (RR)</h3>
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <select id="display-measure" style="padding: 0.3rem 0.6rem; border-radius: 4px; border: 1px solid rgba(37,99,235,0.25); font-size: 0.85rem; background: white; color: #1D4ED8; font-weight: 600;">
+                                <option value="RR" selected>Relative Risk (RR)</option>
+                                <option value="OR">Odds Ratio (OR)</option>
+                                <option value="HR">Hazard Ratio (HR)</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="font-size: 2.5rem; font-weight: 800; color: #333;">
+                        <span id="pooled-es"></span> <span
+                            style="font-size: 1.2rem; font-weight: 400; opacity: 0.8; color: #555;">(95% CI: <span
+                                id="pooled-ci"></span><span id="pi-container" style="display: none;"> | 95% PI: <span id="pooled-pi"></span></span>)</span>
+                    </div>
+                    <div id="estimated-rr-container" style="font-size: 1.1rem; color: #1D4ED8; margin-top: 0.3rem; font-weight: 600; display: none;">
+                        Estimated Relative Risk <span style="font-size: 0.85em; font-weight: 400; opacity: 0.8;">(using the reference risk selected in Settings):</span>
+                        <div id="estimated-rr" style="font-size: 0.9em; margin-top: 0.3rem; margin-left: 0.5rem; font-weight: 400; color: #555;"></div>
+                    </div>
+                    <div id="interpretation"
+                        style="margin-top: 0.5rem; font-weight: 600; letter-spacing: 1px;">
+                    </div>
+
+                    <div id="heterogeneity-stats" class="hidden"
+                        style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(37,99,235,0.25); display: flex; gap: 2rem; font-size: 0.9rem;">
+                        <div><strong>Heterogeneity (I²):</strong> <span id="val-i2">-</span>%</div>
+                        <div><strong>τ²:</strong> <span id="val-tau2">-</span></div>
+                        <div><strong>Egger's Test (p):</strong> <span id="val-eggers">-</span></div>
+                    </div>
+
+                    <div id="results-interpretation"
+                        style="margin-top: 1.2rem; padding: 1rem 1.2rem; background: rgba(37,99,235,0.05); border-left: 4px solid #1D4ED8; border-radius: 4px; font-size: 0.92rem; color: #444; line-height: 1.6; font-style: italic;">
+                        Generating interpretation...
+                    </div>
+
+                    <!-- New Pooled Power Analysis Section -->
+                    <div id="pooled-power-analysis" class="hidden" style="margin-top: 1.5rem; padding: 1.2rem; background: rgba(37,99,235,0.07); border: 1px solid rgba(37,99,235,0.25); border-radius: 8px;">
+                        <h4 style="margin-top: 0; color: #1D4ED8; font-size: 0.95rem; margin-bottom: 0.8rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 20V10"></path><path d="M12 20V4"></path><path d="M6 20v-6"></path></svg>
+                            Required sample size to detect pooled <span id="power-title-measure">RR</span>
+                        </h4>
+                        {% include "_sample_size_controls.html" %}
+                        <div style="display: flex; align-items: center; gap: 1.5rem; flex-wrap: wrap;">
+                            <div id="pooled-incidence-field" class="input-group" style="margin-bottom: 0;">
+                                <label for="pooled-incidence" style="font-size: 0.8rem; font-weight: 700; color: #666;">Baseline Incidence (%)</label>
+                                <input type="number" id="pooled-incidence" value="" readonly step="0.1" min="0.01" max="99.9" style="width: 80px; padding: 0.3rem; border-radius: 4px; border: 1px solid #ccc; font-size: 0.9rem;">
+                            </div>
+                            <div class="input-group" style="margin-bottom: 0;">
+                                <label for="power-alpha" style="font-size: 0.8rem; font-weight: 700; color: #666;">Type I Error (α)</label>
+                                <input type="number" id="power-alpha" value="0.05" step="0.01" min="0.001" max="0.2" style="width: 80px; padding: 0.3rem; border-radius: 4px; border: 1px solid #ccc; font-size: 0.9rem;">
+                            </div>
+                            <div class="input-group" style="margin-bottom: 0;">
+                                <label for="power-value" style="font-size: 0.8rem; font-weight: 700; color: #666;">Power</label>
+                                <input type="number" id="power-value" value="0.80" step="0.05" min="0.5" max="0.99" style="width: 80px; padding: 0.3rem; border-radius: 4px; border: 1px solid #ccc; font-size: 0.9rem;">
+                            </div>
+                            <div class="input-group" style="margin-bottom: 0;">
+                                <label for="power-sides" style="font-size: 0.8rem; font-weight: 700; color: #666;">Test Sides</label>
+                                <select id="power-sides" style="padding: 0.3rem; border-radius: 4px; border: 1px solid #ccc; font-size: 0.9rem;">
+                                    <option value="2" selected>Two-sided</option>
+                                    <option value="1">One-sided</option>
+                                </select>
+                            </div>
+                            <div class="input-group" style="margin-bottom: 0;">
+                                <label for="power-effect" style="font-size: 0.8rem; font-weight: 700; color: #666;">Effect Size (Alt. Hyp.)</label>
+                                <select id="power-effect" style="padding: 0.3rem; border-radius: 4px; border: 1px solid #ccc; font-size: 0.9rem;">
+                                    <option value="pooled" selected>Pooled Estimate</option>
+                                    <option value="lower">Lower 95% CI</option>
+                                    <option value="upper">Upper 95% CI</option>
+                                    <option value="pi_lower">Lower 95% PI</option>
+                                    <option value="pi_upper">Upper 95% PI</option>
+                                </select>
+                            </div>
+                            <div id="power-arms-field" class="input-group" style="margin-bottom: 0;">
+                                <label for="power-arms" style="font-size: 0.8rem; font-weight: 700; color: #666;">Prospective groups</label>
+                                <select id="power-arms" style="padding: 0.3rem; border-radius: 4px; border: 1px solid #ccc; font-size: 0.9rem;">
+                                    <option value="2" selected>Double Arm</option>
+                                    <option value="1">Single Arm</option>
+                                </select>
+                            </div>
+                            <div style="flex-grow: 1; width: 100%; margin-top: 10px;">
+                                <div style="font-size: 0.85rem; color: #444;">
+                                    To detect a <strong id="pooled-power-es-text">0.00</strong> <span id="pooled-power-measure">RR</span> with <strong id="power-text-display">80% power</strong> (α=<span id="alpha-text-display">0.05</span>, <span id="sides-text-display">two-sided</span>), a future study would need approximately:
+                                </div>
+                                <div style="margin-top: 0.4rem; font-size: 1.1rem; font-weight: 800; color: #333;">
+                                    <span id="pooled-power-n-total">-</span> total participants <span id="pooled-power-per-group" style="font-size: 0.9rem; font-weight: 600; color: #555;"></span>
+                                    <span id="power-expected-cases" style="font-size: 0.85rem; font-weight: 400; color: #666; margin-left: 0.5rem;">(yielding ~<span id="pooled-power-cases">-</span> expected cases)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </section>
+
+            <section class="card">
+                <div class="forest-toolbar"><h2>Publication Bias (Funnel Plot)</h2><a id="download-funnel-png" class="download-forest-png" href="#" aria-disabled="true" download>Download</a></div>
+                <div class="plot-container">
+                    <img id="funnel-plot" src="" alt="Funnel Plot will appear here">
+                </div>
+                <div id="funnel-explanation"
+                    style="margin-top: 1rem; font-size: 0.9rem; color: #555; background: #f8f9fa; padding: 1rem; border-radius: 4px; border-left: 4px solid #2563eb;">
+                    <p style="margin-bottom: 0.5rem;"><strong>How to read:</strong> Studies should ideally be
+                        distributed symmetrically within the white triangle. Asymmetry (clusters on one side) can
+                        indicate publication bias, where smaller studies with negative results remain unpublished.</p>
+                    <div id="funnel-interpretation" style="font-style: italic; color: #333;">Generating
+                        interpretation...</div>
+                </div>
+            </section>
+
+            <section id="influence-section" class="card hidden">
+                <h2>Influence & Sensitivity Analysis</h2>
+                <div class="plot-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div>
+                        <div class="baujat-toolbar">
+                            <h3 style="font-size: 1rem; margin: 0;">Baujat Plot (Influence)</h3>
+                            <a id="download-baujat-png" class="download-baujat-png" download="baujat.png" aria-disabled="true">Download PNG</a>
+                        </div>
+                        <div class="plot-container">
+                            <img id="baujat-plot" src="" alt="Baujat Plot" style="width: 100%;">
+                        </div>
+                        <p style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Identifies studies that
+                            contribute most to overall heterogeneity vs. individual influence on the pooled estimate.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">Sensitivity (Leave-One-Out)</h3>
+                        <div id="loo-container" style="max-height: 400px; overflow-y: auto;">
+                            <!-- Dynamically populated table/list -->
+                            <table class="table table-striped" style="font-size: 0.8rem;">
+                                <thead>
+                                    <tr>
+                                        <th>Study Omitted</th>
+                                        <th>Pooled ES (95% CI)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="loo-tbody"></tbody>
+                            </table>
+                        </div>
+                        <p class="loo-significance-note" hidden style="font-size: 0.8rem; color: #666; margin-top: 0.5rem;">Red pooled estimates have an unrounded 95% CI excluding the null after the named study is omitted</p>
+                    </div>
+                </div>
+            </section>
+        </div> <!-- End of results -->
+        </div> <!-- End of tab-meta -->
+    </main>
+    <footer id="analysis-baseline-citation" class="analysis-baseline-citation" aria-live="polite">Loading baseline source…</footer>
+
+    <script src="/static/script.js?v=moderate-default-20260908"></script>
+    <script src="/static/plot_controls.js?v=20260907"></script>
+</body>
+
+</html>

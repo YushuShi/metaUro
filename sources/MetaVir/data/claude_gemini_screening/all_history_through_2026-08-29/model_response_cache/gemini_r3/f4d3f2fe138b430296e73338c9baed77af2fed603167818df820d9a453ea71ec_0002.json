@@ -1,0 +1,229 @@
+{
+  "schema_version": 1,
+  "receipt_id": "2bbf3862c7e23db2a1682f38d56d6698b4d27f13f422d02fb5a355916f50cd22",
+  "requested_at": "2026-09-02T08:45:04.515978+08:00",
+  "received_at": "2026-09-02T08:45:26.155143+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "f4d3f2fe138b430296e73338c9baed77af2fed603167818df820d9a453ea71ec",
+  "attempt": 2,
+  "context_ids": [
+    "19066370|Selenium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Selenium": 1
+  },
+  "input_digest": "66bce1da966d1a31915c7eaba456f1d204dee8f8636a6f3e2c0fed5b8722593a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 20993,
+    "cached_input_tokens": 0,
+    "output_tokens": 3340,
+    "reasoning_tokens": 1582
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.028269750000000003",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "07d3f8f2-c002-46a2-8e39-8d3b749fd357",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.028269750000000003"
+  },
+  "output_sha256": "4ee244673a84d01ae340cfc8da5658ff29052c1b8d7601453f2dd38ac45656bf",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"19066370|Selenium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This is a large randomized controlled trial evaluating the effect of selenium supplementation on incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.04,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.83,\n        \"ci_upper\": 1.3,\n        \"p_value\": \">0.15\",\n        \"ci_confidence_level\": 99,\n        \"total_n\": 35533,\n        \"cases\": 432,\n        \"comparison_type\": \"active_vs_placebo\",\n        \"design\": \"rct\",\n        \"timing\": \"prospective\",\n        \"continent\": \"north_america\",\n        \"country\": \"United States, Canada, Puerto Rico\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"relatively healthy men aged 50+ (African American) or 55+ (all others) with baseline PSA <= 4 ng/mL and non-suspicious DRE\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Between 2001 and 2004, 35,533 men (10% more than planned because of a faster-than-expected accrual rate) were randomly assigned to the four study arms\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Design, Setting, and Participants\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Hazard ratios (number of prostate cancers, 99% confidence intervals [CIs]) for prostate cancer were 1.13 for vitamin E (n=473; CI, 0.91–1.41), 1.04 for selenium (n=432; CI, 0.83–1.30)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Hazard ratios (number of prostate cancers, 99% confidence intervals [CIs]) for prostate cancer were 1.13 for vitamin E (n=473; CI, 0.91–1.41), 1.04 for selenium (n=432; CI, 0.83–1.30)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Hazard ratios (number of prostate cancers, 99% confidence intervals [CIs]) for prostate cancer were 1.13 for vitamin E (n=473; CI, 0.91–1.41), 1.04 for selenium (n=432; CI, 0.83–1.30)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"There were no significant differences (all p-values > 0.15) in any prespecified cancer endpoints.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Oral selenium (200 µg/day from L -selenomethionine) and matched vitamin E placebo, vitamin E (400 IU/day of all rac -α-tocopheryl acetate) and matched selenium placebo, or the two combined or placebo plus placebo\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Interventions\"\n          },\n          \"design\": {\n            \"excerpt\": \"SELECT is a phase III randomized, placebo-controlled trial of selenium (200 µg/day from L -selenomethionine) and/or vitamin E (400 IU/day of all rac -α-tocopheryl acetate) supplementation\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"METHODS, Study Design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The trial was activated in July 2001 and follow-up ended on October 23, 2008.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"METHODS, Study Design, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Participants were recruited and followed in community practices, local hospitals and HMOs, and tertiary cancer centers in the United States, Canada and Puerto Rico.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Design, Setting, and Participants\"\n          },\n          \"ethnicity\": null,\n          \"location\": null,\n          \"exposure_measurement\": {\n            \"excerpt\": \"Oral selenium (200 µg/day from L -selenomethionine) and matched vitamin E placebo, vitamin E (400 IU/day of all rac -α-tocopheryl acetate) and matched selenium placebo, or the two combined or placebo plus placebo\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/\",\n            \"location\": \"Abstract, Interventions\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"rct\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"Yes\",\n          \"q13\": \"Yes\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "19066370|Selenium|Prostate cancer",
+      "pmid": "19066370",
+      "pmcid": "PMC3682779",
+      "published_date": "2009-01-07",
+      "title": "Effect of selenium and vitamin E on risk of prostate cancer and other cancers: the Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+      "authors": [
+        "Lippman SM",
+        "Klein EA",
+        "Goodman PJ",
+        "Lucia MS",
+        "Thompson IM",
+        "Ford LG",
+        "Parnes HL",
+        "Minasian LM",
+        "Gaziano JM",
+        "Hartline JA",
+        "Parsons JK",
+        "Bearden JD",
+        "Crawford ED",
+        "Goodman GE",
+        "Claudio J",
+        "Winquist E",
+        "Cook ED",
+        "Karp DD",
+        "Walther P",
+        "Lieber MM",
+        "Kristal AR",
+        "Darke AK",
+        "Arnold KB",
+        "Ganz PA",
+        "Santella RM",
+        "Albanes D",
+        "Taylor PR",
+        "Probstfield JL",
+        "Jagpal TJ",
+        "Crowley JJ",
+        "Meyskens FL",
+        "Baker LH",
+        "Coltman CA"
+      ],
+      "journal": "JAMA",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This is a large randomized controlled trial evaluating the effect of selenium supplementation on incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.04,
+        "effect_type": "HR",
+        "ci_lower": 0.83,
+        "ci_upper": 1.3,
+        "p_value": 0.15,
+        "ci_confidence_level": 99,
+        "total_n": 35533,
+        "cases": 432,
+        "comparison_type": "active_vs_placebo",
+        "design": "rct",
+        "timing": "prospective",
+        "continent": "north_america",
+        "country": "United States, Canada, Puerto Rico",
+        "location": "427 participating sites in the United States, Canada, and Puerto Rico",
+        "ethnicity": "NA",
+        "population": "relatively healthy men aged 50+ (African American) or 55+ (all others) with baseline PSA <= 4 ng/mL and non-suspicious DRE",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Baseline eligibility included 50 years or older (African American) or 55 years or older (all others), a serum prostate-specific antigen (PSA) ≤ 4 ng/mL, and a digital rectal examination (DRE) not suspicious for prostate cancer. Between 2001 and 2004, 35,533 men (10% more than planned because of a faster-than-expected accrual rate) were randomly assigned to the four study arms, which were well balanced with respect to all potentially important risk factors.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Design, Setting, and Participants"
+          },
+          "cases": {
+            "excerpt": "Hazard ratios (number of prostate cancers, 99% confidence intervals [CIs]) for prostate cancer were 1.13 for vitamin E (n=473; CI, 0.91–1.41), 1.04 for selenium (n=432; CI, 0.83–1.30), and 1.05 for the combination (n=437; CI, 0.83–1.31) compared with placebo (n=416).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Results"
+          },
+          "effect_size": {
+            "excerpt": "Hazard ratios (number of prostate cancers, 99% confidence intervals [CIs]) for prostate cancer were 1.13 for vitamin E (n=473; CI, 0.91–1.41), 1.04 for selenium (n=432; CI, 0.83–1.30), and 1.05 for the combination (n=437; CI, 0.83–1.31) compared with placebo (n=416).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Results"
+          },
+          "confidence_interval": {
+            "excerpt": "Hazard ratios (number of prostate cancers, 99% confidence intervals [CIs]) for prostate cancer were 1.13 for vitamin E (n=473; CI, 0.91–1.41), 1.04 for selenium (n=432; CI, 0.83–1.30), and 1.05 for the combination (n=437; CI, 0.83–1.31) compared with placebo (n=416).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Results"
+          },
+          "p_value": {
+            "excerpt": "There were no significant differences (all p-values > 0.15) in any prespecified cancer endpoints.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Results"
+          },
+          "comparison": {
+            "excerpt": "Oral selenium (200 µg/day from L -selenomethionine) and matched vitamin E placebo, vitamin E (400 IU/day of all rac -α-tocopheryl acetate) and matched selenium placebo, or the two combined or placebo plus placebo",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Interventions"
+          },
+          "design": {
+            "excerpt": "SELECT is a phase III randomized, placebo-controlled trial of selenium (200 µg/day from L -selenomethionine) and/or vitamin E (400 IU/day of all rac -α-tocopheryl acetate) supplementation",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "METHODS, Study Design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The trial was activated in July 2001 and follow-up ended on October 23, 2008.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "METHODS, Study Design, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "Participants were recruited and followed in community practices, local hospitals and HMOs, and tertiary cancer centers in the United States, Canada and Puerto Rico.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Design, Setting, and Participants"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "427 participating sites in the United States, Canada, and Puerto Rico",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Oral selenium (200 µg/day from L -selenomethionine) and matched vitamin E placebo, vitamin E (400 IU/day of all rac -α-tocopheryl acetate) and matched selenium placebo, or the two combined or placebo plus placebo",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+            "location": "Abstract, Interventions"
+          }
+        },
+        "p_value_reported_as": ">0.15",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "rct",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "Yes",
+          "q13": "Yes"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 60258,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c4bbe31078debcef3d7a5206c97b3869bb1e8b6090b6fbbd278cd95178ec6433",
+      "pmc_source_receipt_digest": "20ea8e3155d261c53fe9eb12479f7c6340bc1c4b4f4d6badd4dbf3f065a9c5b2",
+      "pmc_source_raw_sha256": "0353ddb59965dacae7687c1dbf3698e74bf2e7eab14f749dca47bf84205b9a69",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "7ad208ac2811d8ad5642a56d79bc6db897527f041a0a8025b364390563f8cfa5"
+    }
+  ]
+}

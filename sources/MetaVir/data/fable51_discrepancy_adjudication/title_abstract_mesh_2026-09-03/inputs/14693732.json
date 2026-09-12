@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:42.273213-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "f99a8733286acba5bfd74d6553fe65caa00a25d845f57aa178f6057f1c801c6a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "14693732",
+      "title": "Fatty acids and risk of prostate cancer in a nested case-control study in male smokers.",
+      "abstract": "There is some evidence that alpha-linolenic acid might be positively related to prostate cancer risk. Associations between serum fatty acid composition as well as fatty acid intakes and prostate cancer risk were examined in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention Study. The cohort included 29,133 male smokers aged 50-69 years. During 5-8 years of follow-up, 246 prostate cancer cases were diagnosed. One control was selected and matched by age (+/- 1 month) for each case from the cohort subjects alive and free of prostate cancer at the time the case was diagnosed. This study included 198 case-control pairs with baseline serum sample available for both. Fatty acids of serum cholesterol esters were measured as a percentage of total fatty acids, using capillary gas chromatography. Intakes of fatty acids were assessed from a validated self-administered dietary questionnaire. Serum and dietary fatty acids had no consistent association with prostate cancer risk. Serum alpha-linolenic acid was not related to prostate cancer risk. Twofold risk was found in the highest quartile of serum myristic acid compared with the lowest quartile (odds ratio, 1.93; 95% confidence interval, 1.02-3.64). alpha-Tocopherol supplementation modified the association between serum linoleic acid and prostate cancer risk (P for interaction 0.03); odds ratio was 0.17 (95% confidence interval, 0.04-0.68) in the highest quartile of serum linoleic acid compared with the lowest quartile in men who received alpha-tocopherol, whereas no association was found in men who did not receive alpha-tocopherol. In conclusion, we found no overall association between serum or dietary alpha-linolenic acid or any other unsaturated fatty acid and prostate cancer risk, but high serum linoleic acid was associated with lower risk in men supplemented with alpha-tocopherol. High serum myristic acid associated with an increased risk of prostate cancer.",
+      "mesh": [
+        "Age Distribution",
+        "Aged",
+        "Case-Control Studies",
+        "Diet",
+        "Fatty Acids / adverse effects, metabolism",
+        "Follow-Up Studies",
+        "Humans",
+        "Incidence",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Probability",
+        "Prostatic Neoplasms / diagnosis, epidemiology",
+        "Reference Values",
+        "Risk Assessment",
+        "Sensitivity and Specificity",
+        "Smoking / adverse effects",
+        "Surveys and Questionnaires",
+        "alpha-Tocopherol / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "14693732",
+      "contexts": [
+        {
+          "context_id": "14693732|Alpha-linolenic acid|Prostate cancer",
+          "exposure": "Alpha-linolenic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "396",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "29133",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "quartiles of serum alpha-linolenic acid (highest vs lowest) and dietary intake"
+            }
+          }
+        },
+        {
+          "context_id": "14693732|Linoleic acid|Prostate cancer",
+          "exposure": "Linoleic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "396",
+              "effect_measure_type": "OR",
+              "effect_size": "0.17",
+              "ci_lower": "0.04",
+              "ci_upper": "0.68",
+              "p_value": "0.03",
+              "comparison": "highest quartile versus lowest quartile among men who received alpha-tocopherol"
+            },
+            "Claude+Gemini": {
+              "sample_size": "29133",
+              "effect_measure_type": "OR",
+              "effect_size": "0.17",
+              "ci_lower": "0.04",
+              "ci_upper": "0.68",
+              "p_value": null,
+              "comparison": "highest vs lowest quartile of serum linoleic acid, in men who received alpha-tocopherol"
+            }
+          }
+        },
+        {
+          "context_id": "14693732|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "83bbd0e455059094856b8cc4920b3268f68df13d7f7a81e6353796e01515cbee",
+  "requested_at": "2026-09-02T08:48:38.209356+08:00",
+  "received_at": "2026-09-02T08:49:04.805370+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "3f5083cd284dbd47be4680e7896cf4109b09f6d08d2a58635bbeb1bcfe7c0d6d",
+  "attempt": 1,
+  "context_ids": [
+    "26817443|Phosphatidylcholine|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Phosphatidylcholine": 1
+  },
+  "input_digest": "8c270f1f3e780ff8fa03d281aa6226d3c25bc27b8baa03c06c4e42e253ac4297",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 12520,
+    "cached_input_tokens": 0,
+    "output_tokens": 3181,
+    "reasoning_tokens": 1428
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.021318750000000004",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "73f5f47f-9303-4337-8eae-b1b9556fc5e7",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.021318750000000004"
+  },
+  "output_sha256": "45be0bdd8af567fb7044a755134bd150beed4845b1ca252748dc248fbdb87692",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"26817443|Phosphatidylcholine|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective case-cohort study within EPIC-Heidelberg examined pre-diagnostic plasma phosphatidylcholine levels in relation to incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.89,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.06,\n        \"ci_upper\": 3.36,\n        \"p_value\": 0.00194,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1084,\n        \"cases\": 310,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Germany\",\n        \"location\": \"Heidelberg\",\n        \"ethnicity\": null,\n        \"population\": \"EPIC-Heidelberg cohort participants aged 35–65 years free of diabetes and cancer at baseline\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"the subcohort comprised 774 individuals. The final numbers of incident cases of breast, prostate, and colorectal cancer were 362, 310, and 163, respectively\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Methods, Study population, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The final numbers of incident cases of breast, prostate, and colorectal cancer were 362, 310, and 163, respectively\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Methods, Study population, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"PC ae C30:0 ... Prostate cancer ... Quartile 4 ... 1.89 (1.06, 3.36)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"PC ae C30:0 ... Prostate cancer ... Quartile 4 ... 1.89 (1.06, 3.36)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"PC ae C30:0 ... Prostate cancer ... p trend (raw) 0.00194\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Hazard ratios (95 % CIs) of cancer across quartiles of lysoPC a C18:0 and PC ae C30:0 concentrations\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"A case-cohort design [ 9 ] was chosen for the present metabolomics study and metabolites were measured in pre-diagnostic blood samples of cancer cases and a random subcohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Methods, Study population, paragraph 2\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In a case-cohort subset of the prospective population-based EPIC-Heidelberg study, we analyzed pre-diagnostic levels of 120 plasma metabolites\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Background, paragraph 2\"\n          },\n          \"continent\": {\n            \"excerpt\": \"EPIC-Heidelberg was established as part of the European Prospective Investigation into Cancer and Nutrition (EPIC)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"The vast majority of participants are white.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"EPIC-Heidelberg was established as part of the European Prospective Investigation into Cancer and Nutrition (EPIC) between 1994 and 1998\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"we analyzed pre-diagnostic levels of 120 plasma metabolites by liquid chromatography-tandem mass spectrometry (LC-MS/MS) and flow injection analysis-tandem mass spectrometry (FIA-MS/MS)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4730724/\",\n            \"location\": \"Background, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

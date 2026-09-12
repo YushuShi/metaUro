@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:18:59.798637-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "dcd9e6e57687affe4e79a134ec364b66ff6734e12b8f9526c4ae96490c77e245",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "9303371",
+      "title": "A case-control study of diet and prostate cancer.",
+      "abstract": "We interviewed 328 men diagnosed with prostate cancer before the age of 75 years and 328 age-matched population controls. The principal hypotheses were that risk would increase with a high intake of total or saturated fat and would decrease with a high intake of carotene (beta-carotene equivalents) or lycopene. We also examined the associations of other nutrients and foods with risk. There was no evidence for an association between fat intake and risk, although the average fat intake was high and the range of fat intakes was narrow (medians of lower and upper thirds of percentage of energy from fat among controls were 34.3% and 42.9% respectively). Risk was lower in subjects with higher carotene intake: odds ratios 0.65 (95% CI 0.45-0.94) and 0.76 (0.53-1.10) in the middle and upper thirds of carotene intake respectively (P for trend = 0.150). Lycopene was not associated with risk. Among 13 other nutrients examined, the odds ratios in the top third of intake were below 0.8 for: potassium, 0.74 (0.51-1.09; P for trend = 0.054); zinc, 0.73 (0.49-1.08; P for trend = 0.126); iodine, 0.75 (0.51-1.11; P for trend = 0.077); vitamin B6 food only, 0.77 (0.53-1.12; P for trend = 0.077); and vitamin B6 including supplements, 0.70 (0.48-1.03; P for trend = 0.029). Among 18 foods examined, statistically significant associations were observed for: garlic as food, > or = 2/week vs never, 0.56 (0.33-0.93); garlic including supplements, > or = 2/week vs never, 0.60 (0.37-0.96); baked beans, > or = 2/week vs < 1/month, 0.57 (0.34-0.95); and garden peas, > or = 5/week vs < or = 3/month, 0.35 (0.13-0.91). This study does not support the hypothesis that fat increases risk and is equivocal in relation to carotene. The possible relationships of vitamin B6, garlic, beans and peas with risk for prostate cancer should be further investigated.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Body Height",
+        "Body Mass Index",
+        "Case-Control Studies",
+        "Confidence Intervals",
+        "Diet",
+        "Energy Intake",
+        "England / epidemiology",
+        "Humans",
+        "Interviews as Topic",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors",
+        "Smoking",
+        "Social Class",
+        "Vitamins"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "9303371",
+      "contexts": [
+        {
+          "context_id": "9303371|Garlic|Prostate cancer",
+          "exposure": "Garlic",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "656",
+              "effect_measure_type": "OR",
+              "effect_size": "0.56",
+              "ci_lower": "0.33",
+              "ci_upper": "0.93",
+              "p_value": "0.02825893729959374",
+              "comparison": "at least twice per week versus never"
+            },
+            "Claude+Gemini": {
+              "sample_size": "656",
+              "effect_measure_type": "OR",
+              "effect_size": "0.64",
+              "ci_lower": "0.38",
+              "ci_upper": "1.09",
+              "p_value": "0.129",
+              "comparison": "categorical"
+            }
+          }
+        },
+        {
+          "context_id": "9303371|Legumes|Prostate cancer",
+          "exposure": "Legumes",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "656",
+              "effect_measure_type": "OR",
+              "effect_size": "0.57",
+              "ci_lower": "0.34",
+              "ci_upper": "0.95",
+              "p_value": "0.03199620913061704",
+              "comparison": "baked beans at least twice per week versus less than once per month"
+            },
+            "Claude+Gemini": {
+              "sample_size": "656",
+              "effect_measure_type": "OR",
+              "effect_size": "0.83",
+              "ci_lower": "0.53",
+              "ci_upper": "1.3",
+              "p_value": "0.093",
+              "comparison": "categorical"
+            }
+          }
+        },
+        {
+          "context_id": "9303371|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "656",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "656",
+              "effect_measure_type": "OR",
+              "effect_size": "0.99",
+              "ci_lower": "0.68",
+              "ci_upper": "1.45",
+              "p_value": "0.882",
+              "comparison": "tertile"
+            }
+          }
+        },
+        {
+          "context_id": "9303371|Vitamin B6|Prostate cancer",
+          "exposure": "Vitamin B6",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "656",
+              "effect_measure_type": "OR",
+              "effect_size": "0.7",
+              "ci_lower": "0.48",
+              "ci_upper": "1.03",
+              "p_value": "0.029",
+              "comparison": "Highest third of vitamin B6 intake including supplements versus lowest third"
+            },
+            "Claude+Gemini": {
+              "sample_size": "656",
+              "effect_measure_type": "OR",
+              "effect_size": "0.77",
+              "ci_lower": "0.53",
+              "ci_upper": "1.12",
+              "p_value": "0.077",
+              "comparison": "top third vs bottom third of vitamin B6 intake from food only"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

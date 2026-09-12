@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:39:21.094673-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "4bd606b032b35b7ed4cbc930f3ce42bdb2a6cbe9ea07601a1663a0313eb7f8ad",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "41388067",
+      "title": "A U-shaped association between blood selenium levels and prostate cancer: findings of a case-control study among Nigerian men.",
+      "abstract": "The ability of selenium to both prevent and induce cancer at varying biological concentrations has been reported in previous studies. We studied the associations between selenium exposure and prostate diseases such as prostate cancer (PCa) and benign prostatic hyperplasia (BPH), and estimated the optimal range of selenium concentrations that may be needed to prevent these diseases among Nigerian men. Blood and urine samples from men with histologically diagnosed PCa (n = 90), BPH (n = 97), and controls (n = 98) were analyzed for trace elements, including selenium. The associations between selenium concentrations and prostate diseases were estimated using logistic regression and restricted cubic splines. Men in the lowest and highest blood selenium tertiles had increased odds of PCa {AOR (95% CI): 2.90 (1.13, 7.46) and 4.42 (1.68, 11.59), respectively}. Compared with the first tertile of blood selenium, men in the highest tertile had significantly higher odds of BPH (AOR: 3.92; 95% CI: 1.68, 9.11). We found that a putative range of blood selenium concentration associated with minimum odds of PCa may lie between 125.55 and 134.86 µg/L. No significant association was observed between urinary selenium levels and PCa. The narrow-ranged U-type relationship between blood selenium concentration and PCa needs to be confirmed in larger longitudinal cohort studies.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Selenium / blood, urine",
+        "Prostatic Neoplasms / blood, epidemiology, urine",
+        "Nigeria / epidemiology",
+        "Case-Control Studies",
+        "Middle Aged",
+        "Aged",
+        "Prostatic Hyperplasia / blood, epidemiology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "41388067",
+      "contexts": [
+        {
+          "context_id": "41388067|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "285",
+              "effect_measure_type": "OR",
+              "effect_size": "4.69",
+              "ci_lower": "1.75",
+              "ci_upper": "12.52",
+              "p_value": "0.0020790919934217337",
+              "comparison": "Highest blood selenium tertile (>135 µg/L) versus middle tertile (117–134 µg/L)"
+            },
+            "Claude+Gemini": {
+              "sample_size": "188",
+              "effect_measure_type": "OR",
+              "effect_size": "2.01",
+              "ci_lower": "0.88",
+              "ci_upper": "4.77",
+              "p_value": "0.10541710565143547",
+              "comparison": "highest_vs_lowest"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

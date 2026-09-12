@@ -1,0 +1,201 @@
+{
+  "schema_version": 1,
+  "receipt_id": "a73b357a05bfc252c514b3ef785f4841ccd1c3e08c9512dcf7a198527ab7a28c",
+  "requested_at": "2026-09-02T08:37:50.192973+08:00",
+  "received_at": "2026-09-02T08:38:15.826152+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "2161b4052abd2a238bd993e5486ac64293b69f878f946ce28f8312184b103cc2",
+  "attempt": 2,
+  "context_ids": [
+    "19276452|Folic acid|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Folic acid": 1
+  },
+  "input_digest": "2fef245a7e8b2749d5645e07428fac07f5b125d85c860b373035edc5ee41326b",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5941,
+    "cached_input_tokens": 0,
+    "output_tokens": 2856,
+    "reasoning_tokens": 1237
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.015165750000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "fc117502-787c-49a9-976d-1d0730015477",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.015165750000000002"
+  },
+  "output_sha256": "20bb88777381b238f7e784c76540ddb1660047a1b528ada02915913a32394e6a",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"19276452|Folic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Secondary analysis of a randomized controlled trial assessing the effect of folic acid supplementation on prostate cancer incidence.\",\n      \"extraction\": {\n        \"effect_size\": 2.58,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.14,\n        \"ci_upper\": 5.86,\n        \"p_value\": 0.02,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 643,\n        \"cases\": 34,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"rct\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men with a recent history of colorectal adenomas participating in the Aspirin/Folate Polyp Prevention Study\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Among the 643 men who were randomly assigned to placebo or supplementation with folic acid\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 34 subjects were diagnosed with prostate cancer after random assignment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The multiadjusted hazard ratio (with adjustment for aspirin treatment group, alcohol use, baseline multivitamin use and plasma levels of vitamins B 2 , B 6 , and B 12 ) was 2.58 (95% CI = 1.14–5.86, P = 0.02).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Figure 2 caption\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"2.58 (1.14 to 5.86)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Table 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P = 0.02\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Figure 2 caption\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Among the 643 men who were randomly assigned to placebo or supplementation with folic acid\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We studied prostate cancer occurrence in the Aspirin/Folate Polyp Prevention Study, a placebo-controlled randomized trial of aspirin and folic acid supplementation\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants were followed for up to 10.8 (median = 7.0, interquartile range = 6.0–7.8) years and asked periodically to report all illnesses and hospitalizations.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Supported in part by grants (R01-CA-059005 and U54-CA-100971) from the National Cancer Institute, National Institutes of Health\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Funding, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"41 (6.4%) of the 643 men were African American.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"institutional review boards at each institution approved the research.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Methods, paragraph 2\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"daily supplementation with 1 mg of folic acid\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/\",\n            \"location\": \"Discussion, paragraph 7\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"rct\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"Yes\",\n          \"q13\": \"Yes\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "19276452|Folic acid|Prostate cancer",
+      "pmid": "19276452",
+      "pmcid": "PMC2657096",
+      "published_date": "2009-03-18",
+      "title": "Folic acid and risk of prostate cancer: results from a randomized clinical trial.",
+      "authors": [
+        "Figueiredo JC",
+        "Grau MV",
+        "Haile RW",
+        "Sandler RS",
+        "Summers RW",
+        "Bresalier RS",
+        "Burke CA",
+        "McKeown-Eyssen GE",
+        "Baron JA"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19276452/",
+      "exposure": "Folic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Secondary analysis of a randomized controlled trial assessing the effect of folic acid supplementation on prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.58,
+        "effect_type": "HR",
+        "ci_lower": 1.14,
+        "ci_upper": 5.86,
+        "p_value": 0.02,
+        "ci_confidence_level": 95,
+        "total_n": 643,
+        "cases": 34,
+        "comparison_type": "categorical",
+        "design": "rct",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men with a recent history of colorectal adenomas participating in the Aspirin/Folate Polyp Prevention Study",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The mean age of men included in the secondary analysis was 57.4 (SD = 9.2) years; 41 (6.4%) of the 643 men were African American.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Abstract, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "A total of 34 subjects were diagnosed with prostate cancer after random assignment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Results, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "The multiadjusted hazard ratio (with adjustment for aspirin treatment group, alcohol use, baseline multivitamin use and plasma levels of vitamins B 2 , B 6 , and B 12 ) was 2.58 (95% CI = 1.14–5.86, P = 0.02). In contrast to the direct association of folic acid supplementation with risk of prostate cancer in the randomized analysis, there were possible indications of inverse associations of prostate cancer risk with dietary folate intake (multiadjusted HR = 0.65, 95% CI = 0.35 to 1.20), and with baseline plasma folate among subjects who did not use multivitamins (multiadjusted HR = 0.42, 95% CI = 0.17 to 1.04, Table 1 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Figure 2 caption"
+          },
+          "confidence_interval": {
+            "excerpt": "The multiadjusted hazard ratio (with adjustment for aspirin treatment group, alcohol use, baseline multivitamin use and plasma levels of vitamins B 2 , B 6 , and B 12 ) was 2.58 (95% CI = 1.14–5.86, P = 0.02).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Table 1"
+          },
+          "p_value": {
+            "excerpt": "P = 0.02",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Figure 2 caption"
+          },
+          "comparison": {
+            "excerpt": "Among the 643 men who were randomly assigned to placebo or supplementation with folic acid",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Abstract, paragraph 1"
+          },
+          "design": {
+            "excerpt": "We studied prostate cancer occurrence in the Aspirin/Folate Polyp Prevention Study, a placebo-controlled randomized trial of aspirin and folic acid supplementation",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Participants were followed for up to 10.8 (median = 7.0, interquartile range = 6.0–7.8) years and asked periodically to report all illnesses and hospitalizations.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Abstract, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Supported in part by grants (R01-CA-059005 and U54-CA-100971) from the National Cancer Institute, National Institutes of Health",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Funding, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "daily supplementation with 1 mg of folic acid",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2657096/",
+            "location": "Discussion, paragraph 7"
+          }
+        },
+        "p_value_reported_as": "0.02",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "rct",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "Yes",
+          "q13": "Yes"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: cases"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 15134,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "a1417c0b0c1dad7b533bace3ee6e55157f249663d485a9202ec06add76efd34e",
+      "pmc_source_receipt_digest": "74237e39bf5b10a404aec463f608b905cfe1b1f42ff731724b92e6930c2eb320",
+      "pmc_source_raw_sha256": "5fc300a0df2f53440b305afcc67785e891ef5a34313ff702c6a816d218175791",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "13e9e45e1f5b6bb5914336a6a1458b1d83d758c55c7522312af5fc91694853b1"
+    }
+  ]
+}

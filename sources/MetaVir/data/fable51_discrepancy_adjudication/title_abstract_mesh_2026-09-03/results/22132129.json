@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:31:03.929873-04:00",
+  "pmid": "22132129",
+  "work_key": "c32d84eb77889eb160f034ce240d54c43ab1ba30ea2aeb44a178cc71dd8097e1",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/22132129_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "22132129",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "22132129|Red meat|Prostate cancer",
+        "exposure": "Red meat",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "ground beef showing the strongest association (OR = 2.30, 95% CI:1.39-3.81; P-trend = 0.002)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "CI 1.39-3.81 and P-trend 0.002 belong to the ground-beef estimate only; Claude+Gemini CI 0.74-2.11 and p 0.43 are absent from allowed evidence.",
+        "one_sentence_explanation": "The abstract's CI 1.39-3.81 and P-trend 0.002 correspond to ground beef rather than an overall red-meat estimate, and Claude+Gemini's 0.74-2.11 / p 0.43 does not appear in title, abstract, or MeSH."
+      },
+      {
+        "context_id": "22132129|Red meat|Prostate cancer",
+        "exposure": "Red meat",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "ground beef showing the strongest association (OR = 2.30, 95% CI:1.39-3.81; P-trend = 0.002)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports OR 2.30 only for ground beef, not an overall red-meat estimate; Claude+Gemini value 1.25 is absent and may derive from full text.",
+        "one_sentence_explanation": "ChatGPT's 2.30 matches the abstract's ground-beef estimate, but the abstract gives no overall red-meat OR, so Claude+Gemini's 1.25 cannot be confirmed or rejected from title, abstract, or MeSH."
+      }
+    ]
+  }
+}

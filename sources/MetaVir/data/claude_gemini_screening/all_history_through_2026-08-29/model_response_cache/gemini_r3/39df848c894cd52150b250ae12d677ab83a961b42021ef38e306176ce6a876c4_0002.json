@@ -1,0 +1,927 @@
+{
+  "schema_version": 1,
+  "receipt_id": "5750aa16f9cd39828e0e8107a182bab407545476e9f0185d65e5284f1e32290c",
+  "requested_at": "2026-09-02T08:57:30.845645+08:00",
+  "received_at": "2026-09-02T08:58:48.013339+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "39df848c894cd52150b250ae12d677ab83a961b42021ef38e306176ce6a876c4",
+  "attempt": 2,
+  "context_ids": [
+    "36148781|Dairy|Prostate cancer",
+    "36148781|Dietary protein intake|Prostate cancer",
+    "36148781|Egg protein|Prostate cancer",
+    "36148781|Eggs|Prostate cancer",
+    "36148781|Yogurt|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Dairy": 1,
+    "Dietary protein intake": 1,
+    "Egg protein": 1,
+    "Eggs": 1,
+    "Yogurt": 1
+  },
+  "input_digest": "d3532a36eec648512c9fc84624b42c65954b09b763403231d992a4e439d298b4",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 18458,
+    "cached_input_tokens": 0,
+    "output_tokens": 13980,
+    "reasoning_tokens": 5779
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0662685",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "a7cd0eb1-ff61-42b4-b675-34e50b170218",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0662685"
+  },
+  "output_sha256": "25d4e0f8cfae062eb6391ce7bf7ade4112e655fbfe00f8daf0d94250eeee165c",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"36148781|Dairy|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study evaluating the association between dairy protein intake and prostate cancer risk in EPIC.\",\n      \"extraction\": {\n        \"effect_size\": 1.10,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.02,\n        \"ci_upper\": 1.19,\n        \"p_value\": 0.05,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 131425,\n        \"cases\": 6939,\n        \"comparison_type\": \"quantile\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Adult men from 19 centres in eight European countries in the EPIC study\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This left 131,425 men for the current analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During a mean follow‐up of 14.2 years, 6939 men were diagnosed with prostate cancer and 914 died of the disease.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"For dairy protein, the HRs (95% CIs) in the second to top fifths compared to the bottom fifth were 1.07 (0.98, 1.15), 1.14 (1.05, 1.23), 1.09 (1.01, 1.18), 1.10 (1.02, 1.19; p trend = 0.05), respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"For dairy protein, the HRs (95% CIs) in the second to top fifths compared to the bottom fifth were 1.07 (0.98, 1.15), 1.14 (1.05, 1.23), 1.09 (1.01, 1.18), 1.10 (1.02, 1.19; p trend = 0.05), respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"For dairy protein, the HRs (95% CIs) in the second to top fifths compared to the bottom fifth were 1.07 (0.98, 1.15), 1.14 (1.05, 1.23), 1.09 (1.01, 1.18), 1.10 (1.02, 1.19; p trend = 0.05), respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Statistical analysis, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"Abstract, Aims\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Information about food consumption over the past 12 months was collected using validated centre‐specific food frequency questionnaires (FFQs) or diet histories, as previously described.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"36148781|Dietary protein intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study analyzing total dietary protein intake in relation to high-grade prostate cancer risk in EPIC.\",\n      \"extraction\": {\n        \"effect_size\": 0.76,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.59,\n        \"ci_upper\": 1.0,\n        \"p_value\": 0.04,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 128914,\n        \"cases\": 724,\n        \"comparison_type\": \"quantile\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Adult men from 19 centres in eight European countries in the EPIC study\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Risk of high grade prostate cancer by fifths of intakes of proteins and amino acids in 128,914 male EPIC participants, including 724 high grade cases\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Table 2 title\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Risk of high grade prostate cancer by fifths of intakes of proteins and amino acids in 128,914 male EPIC participants, including 724 high grade cases\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Table 2 title\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total protein ... 0.76 (0.59, 1.00)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Total protein ... 0.76 (0.59, 1.00)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"except for an inverse trend for total protein intake and risk of high grade prostate cancer (HR Q5 = 0.76 [0.59–1.00], p trend = 0.04; Tables 2 and S5 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Subgroup analyses by tumour subtypes and follow‐up time, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Statistical analysis, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"Abstract, Aims\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Intakes of total protein and protein from ten food groups were estimated using the EPIC Nutrient Database (ENDB).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"36148781|Egg protein|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study analyzing dietary egg protein intake in relation to prostate cancer mortality in EPIC.\",\n      \"extraction\": {\n        \"effect_size\": 1.22,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.98,\n        \"ci_upper\": 1.53,\n        \"p_value\": 0.1,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 119383,\n        \"cases\": 860,\n        \"comparison_type\": \"quantile\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Adult men from 19 centres in eight European countries in the EPIC study\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"For animal protein, protein from eggs and plant protein data were missing for the recruitment centre Umeå, Sweden; there was a total of 119,383 men in the analyses for these exposures, including 860 deaths.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of prostate cancer mortality by fifths of protein anamino acid intakes in 131,425 male EPIC participants, figure legend\"\n          },\n          \"cases\": {\n            \"excerpt\": \"For animal protein, protein from eggs and plant protein data were missing for the recruitment centre Umeå, Sweden; there was a total of 119,383 men in the analyses for these exposures, including 860 deaths.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of prostate cancer mortality by fifths of protein anamino acid intakes in 131,425 male EPIC participants, figure legend\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The HRs (95% CIs) in the second to the top fifths compared to the lowest fifth were 1.09 (0.87, 1.36), 1.13 (0.90, 1.42), 1.07 (0.86, 1.34) and 1.22 (0.98, 1.53; p trend = 0.1), respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"The HRs (95% CIs) in the second to the top fifths compared to the lowest fifth were 1.09 (0.87, 1.36), 1.13 (0.90, 1.42), 1.07 (0.86, 1.34) and 1.22 (0.98, 1.53; p trend = 0.1), respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"The HRs (95% CIs) in the second to the top fifths compared to the lowest fifth were 1.09 (0.87, 1.36), 1.13 (0.90, 1.42), 1.07 (0.86, 1.34) and 1.22 (0.98, 1.53; p trend = 0.1), respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Statistical analysis, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"Abstract, Aims\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Intakes of total protein and protein from ten food groups were estimated using the EPIC Nutrient Database (ENDB).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"36148781|Eggs|Prostate cancer\",\n      \"status\": \"EXCLUDE\",\n      \"exclusion_code\": \"EXCLUDE_WRONG_EXPOSURE\",\n      \"reason\": \"The study evaluated dietary egg protein intake rather than whole egg food consumption.\",\n      \"extraction\": null,\n      \"jbi\": null\n    },\n    {\n      \"context_id\": \"36148781|Yogurt|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study analyzing yogurt protein intake in relation to prostate cancer risk in EPIC.\",\n      \"extraction\": {\n        \"effect_size\": 1.12,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.04,\n        \"ci_upper\": 1.21,\n        \"p_value\": 0.03,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 131425,\n        \"cases\": 6939,\n        \"comparison_type\": \"quantile\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Adult men from 19 centres in eight European countries in the EPIC study\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This left 131,425 men for the current analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During a mean follow‐up of 14.2 years, 6939 men were diagnosed with prostate cancer and 914 died of the disease.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"Abstract, Results\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"For protein from yogurt, the corresponding estimates were 1.04 (0.95, 1.14), 1.14 (1.05, 1.24), 1.09 (1.01, 1.18), 1.12 (1.04, 1.21; p trend = 0.03).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"For protein from yogurt, the corresponding estimates were 1.04 (0.95, 1.14), 1.14 (1.05, 1.24), 1.09 (1.01, 1.18), 1.12 (1.04, 1.21; p trend = 0.03).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"For protein from yogurt, the corresponding estimates were 1.04 (0.95, 1.14), 1.14 (1.05, 1.24), 1.09 (1.01, 1.18), 1.12 (1.04, 1.21; p trend = 0.03).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Statistical analysis, paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"Abstract, Aims\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Intakes of total protein and protein from ten food groups were estimated using the EPIC Nutrient Database (ENDB).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/\",\n            \"location\": \"MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:25:22.345416+08:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Invalid full-text exclusion code for 36148781|Eggs|Prostate cancer: 'EXCLUDE_WRONG_EXPOSURE'",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "25d4e0f8cfae062eb6391ce7bf7ade4112e655fbfe00f8daf0d94250eeee165c"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "exclusion_code_alias",
+      "context_id": "36148781|Eggs|Prostate cancer",
+      "field": "results[3].exclusion_code",
+      "before": "EXCLUDE_WRONG_EXPOSURE",
+      "after": "S2-EXPOSURE-MISMATCH",
+      "rule": "exact_exposure_mismatch_alias"
+    }
+  ],
+  "validated_results": [
+    {
+      "context_id": "36148781|Dairy|Prostate cancer",
+      "pmid": "36148781",
+      "pmcid": "PMC9972153",
+      "published_date": "2023-02-01",
+      "title": "Protein and amino acid intakes in relation to prostate cancer risk and mortality-A prospective study in the European Prospective Investigation into Cancer and Nutrition.",
+      "authors": [
+        "Schmidt JA",
+        "Huybrechts I",
+        "Overvad K",
+        "Eriksen AK",
+        "Tjønneland A",
+        "Kaaks R",
+        "Katzke V",
+        "Schulze MB",
+        "Pala V",
+        "Sacerdote C",
+        "Tumino R",
+        "Bueno-de-Mesquita B",
+        "Sánchez MJ",
+        "Huerta JM",
+        "Barricarte A",
+        "Amiano P",
+        "Agudo A",
+        "Bjartell A",
+        "Stocks T",
+        "Thysell E",
+        "Wennberg M",
+        "Weiderpass E",
+        "Travis RC",
+        "Key TJ",
+        "Perez-Cornago A"
+      ],
+      "journal": "Cancer medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study evaluating the association between dairy protein intake and prostate cancer risk in EPIC.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.1,
+        "effect_type": "HR",
+        "ci_lower": 1.02,
+        "ci_upper": 1.19,
+        "p_value": 0.05,
+        "ci_confidence_level": 95,
+        "total_n": 131425,
+        "cases": 6939,
+        "comparison_type": "quantile",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Adult men from 19 centres in eight European countries in the EPIC study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Risk of total prostate cancer incidence by fifths of protein and amino acid intakes in 131,425 male EPIC participants, including 6939 cases.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "During a mean follow‐up of 14.2 years, 6939 men were diagnosed with prostate cancer and 914 died of the disease.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "Abstract, Results"
+          },
+          "effect_size": {
+            "excerpt": "Dairy protein was positively associated with overall prostate cancer risk in the three highest fifths compared to the lowest (HR Q3 =1.14 (95% CI 1.05–1.23); HR Q 4=1.09 (1.01–1.18); HR Q5 =1.10 (1.02–1.19)); similar results were observed for yogurt protein (HR Q3 =1.14 (1.05–1.24); HR Q4 =1.09 (1.01–1.18); HR Q5 =1.12 (1.04–1.21)).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "Dairy protein was positively associated with overall prostate cancer risk in the three highest fifths compared to the lowest (HR Q3 =1.14 (95% CI 1.05–1.23); HR Q 4=1.09 (1.01–1.18); HR Q5 =1.10 (1.02–1.19)); similar results were observed for yogurt protein (HR Q3 =1.14 (1.05–1.24); HR Q4 =1.09 (1.01–1.18); HR Q5 =1.12 (1.04–1.21)).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1"
+          },
+          "p_value": {
+            "excerpt": "For dairy protein, the HRs (95% CIs) in the second to top fifths compared to the bottom fifth were 1.07 (0.98, 1.15), 1.14 (1.05, 1.23), 1.09 (1.01, 1.18), 1.10 (1.02, 1.19; p trend = 0.05), respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Statistical analysis, paragraph 2"
+          },
+          "design": {
+            "excerpt": "EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "Abstract, Aims"
+          },
+          "continent": {
+            "excerpt": "A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Information about food consumption over the past 12 months was collected using validated centre‐specific food frequency questionnaires (FFQs) or diet histories, as previously described.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.05",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 51535,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "79869cd99afbd8ba092e24dd816dee30ca756f6d2ced8fa4ad4f774f8d402882",
+      "pmc_source_receipt_digest": "ce04c7e528f9fba371f44dbd03e15ef8a036df10c9b9568b5f89c9669ef38863",
+      "pmc_source_raw_sha256": "6c9affdcbbabe041e524dc3015943a90d2d41d32a793171064a9f14d11e0ec33",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "e7ec90d46d84c29ec894016b1fc37751e99d9621130c9ac62f2df582ae400383"
+    },
+    {
+      "context_id": "36148781|Dietary protein intake|Prostate cancer",
+      "pmid": "36148781",
+      "pmcid": "PMC9972153",
+      "published_date": "2023-02-01",
+      "title": "Protein and amino acid intakes in relation to prostate cancer risk and mortality-A prospective study in the European Prospective Investigation into Cancer and Nutrition.",
+      "authors": [
+        "Schmidt JA",
+        "Huybrechts I",
+        "Overvad K",
+        "Eriksen AK",
+        "Tjønneland A",
+        "Kaaks R",
+        "Katzke V",
+        "Schulze MB",
+        "Pala V",
+        "Sacerdote C",
+        "Tumino R",
+        "Bueno-de-Mesquita B",
+        "Sánchez MJ",
+        "Huerta JM",
+        "Barricarte A",
+        "Amiano P",
+        "Agudo A",
+        "Bjartell A",
+        "Stocks T",
+        "Thysell E",
+        "Wennberg M",
+        "Weiderpass E",
+        "Travis RC",
+        "Key TJ",
+        "Perez-Cornago A"
+      ],
+      "journal": "Cancer medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+      "exposure": "Dietary protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study analyzing total dietary protein intake in relation to high-grade prostate cancer risk in EPIC.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.76,
+        "effect_type": "HR",
+        "ci_lower": 0.59,
+        "ci_upper": 1,
+        "p_value": 0.04,
+        "ci_confidence_level": 95,
+        "total_n": 128914,
+        "cases": 724,
+        "comparison_type": "quantile",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Adult men from 19 centres in eight European countries in the EPIC study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Risk of high grade prostate cancer by fifths of intakes of proteins and amino acids in 128,914 male EPIC participants, including 724 high grade cases a , b , c",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Table 2 title"
+          },
+          "cases": {
+            "excerpt": "After an average follow‐up time of 14.2 years, 6939 men were diagnosed with prostate cancer, including 724 with high grade and 1368 with advanced stage disease; the average age at diagnosis was 68.4 (SD = 6.6) years.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Table 2 title"
+          },
+          "effect_size": {
+            "excerpt": "There was little evidence of associations with high grade prostate cancer, except for an inverse trend for total protein intake and risk of high grade prostate cancer (HR Q5 = 0.76 [0.59–1.00], p trend = 0.04; Tables 2 and S5 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "The Pooling Project of Prospective Studies of Diet and Cancer, which combined data from ten prospective studies (including 29% of the prostate cancer deaths from the current analysis, in a total of 3199 fatal cases) reported a higher risk of prostate cancer death in men who consumed 25 g of eggs/day or more compared to those who consumed less than 5 g/day (RR = 1.14, 95% CI 1.00, 1.30, p trend = 0.01; 1 egg weighs ~50 g).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Table 2"
+          },
+          "p_value": {
+            "excerpt": "except for an inverse trend for total protein intake and risk of high grade prostate cancer (HR Q5 = 0.76 [0.59–1.00], p trend = 0.04; Tables 2 and S5 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Subgroup analyses by tumour subtypes and follow‐up time, paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Statistical analysis, paragraph 2"
+          },
+          "design": {
+            "excerpt": "EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "Abstract, Aims"
+          },
+          "continent": {
+            "excerpt": "A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Intakes of total protein and protein from ten food groups were estimated using the EPIC Nutrient Database (ENDB).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 51535,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "79869cd99afbd8ba092e24dd816dee30ca756f6d2ced8fa4ad4f774f8d402882",
+      "pmc_source_receipt_digest": "ce04c7e528f9fba371f44dbd03e15ef8a036df10c9b9568b5f89c9669ef38863",
+      "pmc_source_raw_sha256": "6c9affdcbbabe041e524dc3015943a90d2d41d32a793171064a9f14d11e0ec33",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b865e96b5dbce0eb7f617b2039634b9a560bf013c8bd7051669e8e3adc9717f9"
+    },
+    {
+      "context_id": "36148781|Egg protein|Prostate cancer",
+      "pmid": "36148781",
+      "pmcid": "PMC9972153",
+      "published_date": "2023-02-01",
+      "title": "Protein and amino acid intakes in relation to prostate cancer risk and mortality-A prospective study in the European Prospective Investigation into Cancer and Nutrition.",
+      "authors": [
+        "Schmidt JA",
+        "Huybrechts I",
+        "Overvad K",
+        "Eriksen AK",
+        "Tjønneland A",
+        "Kaaks R",
+        "Katzke V",
+        "Schulze MB",
+        "Pala V",
+        "Sacerdote C",
+        "Tumino R",
+        "Bueno-de-Mesquita B",
+        "Sánchez MJ",
+        "Huerta JM",
+        "Barricarte A",
+        "Amiano P",
+        "Agudo A",
+        "Bjartell A",
+        "Stocks T",
+        "Thysell E",
+        "Wennberg M",
+        "Weiderpass E",
+        "Travis RC",
+        "Key TJ",
+        "Perez-Cornago A"
+      ],
+      "journal": "Cancer medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+      "exposure": "Egg protein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study analyzing dietary egg protein intake in relation to prostate cancer mortality in EPIC.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.22,
+        "effect_type": "HR",
+        "ci_lower": 0.98,
+        "ci_upper": 1.53,
+        "p_value": 0.1,
+        "ci_confidence_level": 95,
+        "total_n": 119383,
+        "cases": 860,
+        "comparison_type": "quantile",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Adult men from 19 centres in eight European countries in the EPIC study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "For animal protein, protein from eggs and plant protein data were missing for the recruitment centre Umeå, Sweden; there was a total of 119,383 men in the analyses for these exposures, including 860 deaths. Full details of the number of participants and cases by fifth of intakes are shown in Table S1 .",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of prostate cancer mortality by fifths of protein anamino acid intakes in 131,425 male EPIC participants, figure legend"
+          },
+          "cases": {
+            "excerpt": "For animal protein, protein from eggs and plant protein data were missing for the recruitment centre Umeå, Sweden; there was a total of 119,383 men in the analyses for these exposures, including 860 deaths. Full details of the number of participants and cases by fifth of intakes are shown in Table S1 .",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of prostate cancer mortality by fifths of protein anamino acid intakes in 131,425 male EPIC participants, figure legend"
+          },
+          "effect_size": {
+            "excerpt": "For prostate cancer death, we observed no strong associations with protein or amino acid intakes, but the results suggested that men who consumed more protein from eggs might be at a higher risk of dying from prostate cancer (Figure 2 and Table S4 ). The HRs (95% CIs) in the second to the top fifths compared to the lowest fifth were 1.09 (0.87, 1.36), 1.13 (0.90, 1.42), 1.07 (0.86, 1.34) and 1.22 (0.98, 1.53; p trend = 0.1), respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "The HRs (95% CIs) in the second to the top fifths compared to the lowest fifth were 1.09 (0.87, 1.36), 1.13 (0.90, 1.42), 1.07 (0.86, 1.34) and 1.22 (0.98, 1.53; p trend = 0.1), respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 2"
+          },
+          "p_value": {
+            "excerpt": "The HRs (95% CIs) in the second to the top fifths compared to the lowest fifth were 1.09 (0.87, 1.36), 1.13 (0.90, 1.42), 1.07 (0.86, 1.34) and 1.22 (0.98, 1.53; p trend = 0.1), respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 2"
+          },
+          "comparison": {
+            "excerpt": "Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Statistical analysis, paragraph 2"
+          },
+          "design": {
+            "excerpt": "EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "Abstract, Aims"
+          },
+          "continent": {
+            "excerpt": "A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Intakes of total protein and protein from ten food groups were estimated using the EPIC Nutrient Database (ENDB).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.1",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 51535,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "79869cd99afbd8ba092e24dd816dee30ca756f6d2ced8fa4ad4f774f8d402882",
+      "pmc_source_receipt_digest": "ce04c7e528f9fba371f44dbd03e15ef8a036df10c9b9568b5f89c9669ef38863",
+      "pmc_source_raw_sha256": "6c9affdcbbabe041e524dc3015943a90d2d41d32a793171064a9f14d11e0ec33",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "f61907f5702ea1a76674c30378e0173e585e27804042d5200d8aa74fcfe73d4f"
+    },
+    {
+      "context_id": "36148781|Eggs|Prostate cancer",
+      "pmid": "36148781",
+      "pmcid": "PMC9972153",
+      "published_date": "2023-02-01",
+      "title": "Protein and amino acid intakes in relation to prostate cancer risk and mortality-A prospective study in the European Prospective Investigation into Cancer and Nutrition.",
+      "authors": [
+        "Schmidt JA",
+        "Huybrechts I",
+        "Overvad K",
+        "Eriksen AK",
+        "Tjønneland A",
+        "Kaaks R",
+        "Katzke V",
+        "Schulze MB",
+        "Pala V",
+        "Sacerdote C",
+        "Tumino R",
+        "Bueno-de-Mesquita B",
+        "Sánchez MJ",
+        "Huerta JM",
+        "Barricarte A",
+        "Amiano P",
+        "Agudo A",
+        "Bjartell A",
+        "Stocks T",
+        "Thysell E",
+        "Wennberg M",
+        "Weiderpass E",
+        "Travis RC",
+        "Key TJ",
+        "Perez-Cornago A"
+      ],
+      "journal": "Cancer medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+      "exposure": "Eggs",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "The study evaluated dietary egg protein intake rather than whole egg food consumption.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 131425,
+        "cases": 6939,
+        "comparison_type": "Fifths of egg protein intake and per standard deviation increment",
+        "design": "Prospective cohort study",
+        "timing": "Prospective, mean follow-up 14.2 years",
+        "continent": "Europe",
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "131,425 men in the European Prospective Investigation into Cancer and Nutrition",
+        "exposure_subtype": "mixed_or_unclear",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In 131,425 men from the European Prospective Investigation into Cancer and Nutrition, protein and amino acid intakes were estimated using validated dietary questionnaires.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "During a mean follow-up of 14.2 years, 6939 men were diagnosed with prostate cancer and 914 died of the disease.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+            "location": "abstract, results"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "For egg protein intake and prostate cancer mortality, no association was observed by fifths",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "A prospective study in the European Prospective Investigation into Cancer and Nutrition",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+            "location": "title/abstract"
+          },
+          "timing": {
+            "excerpt": "During a mean follow-up of 14.2 years",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+            "location": "abstract, results"
+          },
+          "continent": {
+            "excerpt": "European Prospective Investigation into Cancer and Nutrition",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "protein and amino acid intakes were estimated using validated dietary questionnaires",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 72.7,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "EXCLUDE",
+      "full_text_status": "EXCLUDE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 51535,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "79869cd99afbd8ba092e24dd816dee30ca756f6d2ced8fa4ad4f774f8d402882",
+      "pmc_source_receipt_digest": "ce04c7e528f9fba371f44dbd03e15ef8a036df10c9b9568b5f89c9669ef38863",
+      "pmc_source_raw_sha256": "6c9affdcbbabe041e524dc3015943a90d2d41d32a793171064a9f14d11e0ec33",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "fd7663160784d2f61bd47b0e8399b9a29f21036619e03d766e3a5b5972467f36"
+    },
+    {
+      "context_id": "36148781|Yogurt|Prostate cancer",
+      "pmid": "36148781",
+      "pmcid": "PMC9972153",
+      "published_date": "2023-02-01",
+      "title": "Protein and amino acid intakes in relation to prostate cancer risk and mortality-A prospective study in the European Prospective Investigation into Cancer and Nutrition.",
+      "authors": [
+        "Schmidt JA",
+        "Huybrechts I",
+        "Overvad K",
+        "Eriksen AK",
+        "Tjønneland A",
+        "Kaaks R",
+        "Katzke V",
+        "Schulze MB",
+        "Pala V",
+        "Sacerdote C",
+        "Tumino R",
+        "Bueno-de-Mesquita B",
+        "Sánchez MJ",
+        "Huerta JM",
+        "Barricarte A",
+        "Amiano P",
+        "Agudo A",
+        "Bjartell A",
+        "Stocks T",
+        "Thysell E",
+        "Wennberg M",
+        "Weiderpass E",
+        "Travis RC",
+        "Key TJ",
+        "Perez-Cornago A"
+      ],
+      "journal": "Cancer medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36148781/",
+      "exposure": "Yogurt",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study analyzing yogurt protein intake in relation to prostate cancer risk in EPIC.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.12,
+        "effect_type": "HR",
+        "ci_lower": 1.04,
+        "ci_upper": 1.21,
+        "p_value": 0.03,
+        "ci_confidence_level": 95,
+        "total_n": 131425,
+        "cases": 6939,
+        "comparison_type": "quantile",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Europe",
+        "country": "Denmark, Germany, Italy, Netherlands, Spain, Sweden, United Kingdom",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Adult men from 19 centres in eight European countries in the EPIC study",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Risk of total prostate cancer incidence by fifths of protein and amino acid intakes in 131,425 male EPIC participants, including 6939 cases.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "During a mean follow‐up of 14.2 years, 6939 men were diagnosed with prostate cancer and 914 died of the disease.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "Abstract, Results"
+          },
+          "effect_size": {
+            "excerpt": "Dairy protein was positively associated with overall prostate cancer risk in the three highest fifths compared to the lowest (HR Q3 =1.14 (95% CI 1.05–1.23); HR Q 4=1.09 (1.01–1.18); HR Q5 =1.10 (1.02–1.19)); similar results were observed for yogurt protein (HR Q3 =1.14 (1.05–1.24); HR Q4 =1.09 (1.01–1.18); HR Q5 =1.12 (1.04–1.21)).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "Dairy protein was positively associated with overall prostate cancer risk in the three highest fifths compared to the lowest (HR Q3 =1.14 (95% CI 1.05–1.23); HR Q 4=1.09 (1.01–1.18); HR Q5 =1.10 (1.02–1.19)); similar results were observed for yogurt protein (HR Q3 =1.14 (1.05–1.24); HR Q4 =1.09 (1.01–1.18); HR Q5 =1.12 (1.04–1.21)).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1"
+          },
+          "p_value": {
+            "excerpt": "For protein from yogurt, the corresponding estimates were 1.04 (0.95, 1.14), 1.14 (1.05, 1.24), 1.09 (1.01, 1.18), 1.12 (1.04, 1.21; p trend = 0.03).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "RESULTS, Risk of total prostate cancer and prostate cancer death, paragraph 1"
+          },
+          "comparison": {
+            "excerpt": "Cox proportional hazards regression models were used to estimate hazard ratios (HRs) and 95% confidence intervals (CIs) of prostate cancer incidence and mortality for fifths of observed intakes (g/1000 kcal).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Statistical analysis, paragraph 2"
+          },
+          "design": {
+            "excerpt": "EPIC is a multi‐centre prospective cohort study investigating the role of diet and lifestyle factors in cancer and other diseases in adult men and women.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "To prospectively investigate the associations of dietary intakes of total protein, protein from different dietary sources, and amino acids with prostate cancer risk and mortality.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "Abstract, Aims"
+          },
+          "continent": {
+            "excerpt": "A total of 153,426 men were recruited mostly from the general population between 1992 and 2000 from 19 centres in eight countries (Denmark, Germany, Greece, Italy, Netherlands, Spain, Sweden, and United Kingdom).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Intakes of total protein and protein from ten food groups were estimated using the EPIC Nutrient Database (ENDB).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9972153/",
+            "location": "MATERIALS AND METHODS, Dietary intake and co‐variates, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.03",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 51535,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "79869cd99afbd8ba092e24dd816dee30ca756f6d2ced8fa4ad4f774f8d402882",
+      "pmc_source_receipt_digest": "ce04c7e528f9fba371f44dbd03e15ef8a036df10c9b9568b5f89c9669ef38863",
+      "pmc_source_raw_sha256": "6c9affdcbbabe041e524dc3015943a90d2d41d32a793171064a9f14d11e0ec33",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "5d322ab254cab632a50b49d6bdfbff9f7f616da0bda4090e767428babfcec2aa"
+    }
+  ]
+}

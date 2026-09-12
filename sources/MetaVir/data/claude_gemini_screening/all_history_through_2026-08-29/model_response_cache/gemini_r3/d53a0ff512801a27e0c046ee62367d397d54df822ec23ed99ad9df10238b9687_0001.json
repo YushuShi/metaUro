@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "aa2100680d9a99f1d49109c0799c231e347826e0bd12813f77fc2659dec1aa04",
+  "requested_at": "2026-09-02T08:42:13.312765+08:00",
+  "received_at": "2026-09-02T08:42:35.650880+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "d53a0ff512801a27e0c046ee62367d397d54df822ec23ed99ad9df10238b9687",
+  "attempt": 1,
+  "context_ids": [
+    "22239754|Calcium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1
+  },
+  "input_digest": "b1380592c832c72f47f97587f057f5ac51c97d0f59dc3d43aa842475e25d332a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9985,
+    "cached_input_tokens": 0,
+    "output_tokens": 3727,
+    "reasoning_tokens": 1927
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.021464999999999998",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "07f2a8e7-3174-4fc0-846d-b1701c8a26c8",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.021464999999999998"
+  },
+  "output_sha256": "cac36da6011d28733f6c36cf92f866771aa188fb37f1ce069878c487c323ac52",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"22239754|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Eligible case-control study assessing dietary and total calcium intake in relation to incident prostate cancer among US veterans.\",\n      \"extraction\": {\n        \"effect_size\": 0.6,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.33,\n        \"ci_upper\": 1.08,\n        \"p_value\": 0.11,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 345,\n        \"cases\": 108,\n        \"comparison_type\": \"tertile 3 vs tertile 1\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"veterans screened for prostate cancer at Durham Veterans Affairs Medical Center\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Thus, the final sample consisted of 108 biopsy-positive cases, 161 biopsy-negative controls, and 237 healthy controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Study participants, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Among participants who received the biopsy (n = 533), 216 were biopsy-positive and considered cases for this study... Meeting this requirement were 50% of biopsy-positive cases... Thus, the final sample consisted of 108 biopsy-positive cases\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Study participants, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Cases vs Healthy Controls... Total calcium, mg/d... Tertile 3: 1,245.9... 0.60 (0.33-1.08)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Cases vs Healthy Controls... Total calcium, mg/d... Tertile 3: 1,245.9... 0.60 (0.33-1.08)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Cases vs Healthy Controls... Total calcium, mg/d... P value for linear trend... .11\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"We determined odds ratios (ORs) and corresponding 95% confidence intervals (CIs) through logistic regression to estimate relative risk for prostate cancer; we used the lowest tertile as the reference group.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Statistical analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"We used data from an ongoing case-control study of veterans screened for prostate cancer at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"This study includes participants enrolled between January 2007 and September 2010 who were aged at least 18 years, had a prostate-specific antigen (PSA) screening test done within 12 months prior to enrollment\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Study participants, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"We used data from an ongoing case-control study of veterans screened for prostate cancer at the Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Of cases, 56% of were black; of healthy controls, 35% were black.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Durham Veterans Affairs Medical Center (DVAMC) in Durham, North Carolina.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Study design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"We used the Harvard food frequency questionnaire (FFQ) for data on diet ( 13 ). Participants recalled their usual consumption of 61 foods and beverages in the previous 12 months.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3310142/\",\n            \"location\": \"Methods, Data collection, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

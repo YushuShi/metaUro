@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:28:39.077225-04:00",
+  "pmid": "19521962",
+  "work_key": "44ea91a56676e95f119fc103637486a4b228c30d0f3d3a2e41bf28fdf1573351",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/19521962_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "19521962",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "19521962|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "95% CI 0.83-1.63",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "HR for combined alcoholic beverage intake of > or =5 drinks/day = 1.16 (0.83-1.63)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT CI (0.70-1.12) belongs to the red wine estimate and its p value is not reported in the abstract; confirm exposure mapping.",
+        "one_sentence_explanation": "The abstract gives 0.83-1.63 as the CI for the combined alcoholic beverage estimate, supporting Claude+Gemini, while ChatGPT's 0.70-1.12 belongs to the red wine ≥1 drink/day estimate and its p value is absent from the abstract."
+      },
+      {
+        "context_id": "19521962|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "HR 1.16 (combined alcoholic beverage intake ≥5 drinks/day)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "HR for combined alcoholic beverage intake of > or =5 drinks/day = 1.16 (0.83-1.63)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT value (0.88) is the red-wine-specific estimate; confirm reviewer intends 'Alcohol' to mean total/combined alcohol rather than red wine.",
+        "one_sentence_explanation": "The abstract reports HR 1.16 for combined alcoholic beverage intake (the total-alcohol exposure), supporting Claude+Gemini, whereas ChatGPT's 0.88 is the red wine ≥1 drink/day estimate, a different exposure form."
+      }
+    ]
+  }
+}

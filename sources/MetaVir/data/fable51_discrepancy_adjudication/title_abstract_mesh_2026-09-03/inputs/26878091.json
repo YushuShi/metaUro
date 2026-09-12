@@ -1,0 +1,74 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:26.605654-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "701ab3c036e1b2508c9576b48be03dad1486f84853a511509ed51ce5714b42e9",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "26878091",
+      "title": "Longitudinal biobanks-based study on the joint effects of infections, nutrition and hormones on risk of prostate cancer.",
+      "abstract": "Background To evaluate the individual and combined effects of enterolactone, vitamin D, free testosterone, Chlamydia trachomatis and HPV-18 on the risk of prostate cancer in a large population-based biochemical material that combined three Nordic serum sample banks. Material and methods A joint cohort of 209 000 healthy men was followed using cancer registry linkages. From this cohort altogether 699 incident cases of prostate cancer were identified. Four controls were selected by incidence density sampling and matching for country, age and date of the blood sampling. Complete data for all investigated exposures was available for 483 eligible cases and 1055 eligible controls. Multivariate regression analyses were performed to investigate the solitary and combined effects. Results The solitary effects were small. Significantly increased risk [rate ratio 1.6 (95% CI 1.0-2.5)] was found in those seronegative for C. trachomatis infection. The joint effect in risk levels of enterolactone and vitamin D was antagonistic [observed rate ratio (RR) 1.4 (1.0-2.1), expected RR 2.0 (1.0-4.1)] as well as that of HPV-18 and C. trachomatis [observed RR 1.9 (0.8-4.5), expected RR 9.9 (1.1-87.0)]. Conclusion A large follow-up study combining data from several previously investigated exposures to investigate joint effects found no evidence that exposure to two risk factors would increase the risk of prostate cancer from that expected on basis of exposure to one risk factor. If anything, the results were consistent with antagonistic interactions.",
+      "mesh": [
+        "4-Butyrolactone / analogs & derivatives, blood",
+        "Adult",
+        "Blood Banks / statistics & numerical data",
+        "Case-Control Studies",
+        "Chlamydia Infections / complications",
+        "Chlamydia trachomatis / pathogenicity",
+        "Cohort Studies",
+        "Finland / epidemiology",
+        "Human papillomavirus 18 / pathogenicity",
+        "Humans",
+        "Lignans / blood",
+        "Longitudinal Studies",
+        "Male",
+        "Middle Aged",
+        "Norway / epidemiology",
+        "Papillomavirus Infections / complications, epidemiology",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors",
+        "Sweden / epidemiology",
+        "Testosterone / blood",
+        "Vitamin D / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "26878091",
+      "contexts": [
+        {
+          "context_id": "26878091|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

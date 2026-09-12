@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:07.972547-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "f884a87bbddc2b4a84cb7b104455446d90ae677a11dc63f7fff96b8b13de69f7",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17450530",
+      "title": "Risk factors for prostate cancer incidence and progression in the health professionals follow-up study.",
+      "abstract": "Risk factors for prostate cancer could differ for various sub-groups, such as for \"aggressive\" and \"non-aggressive\" cancers or by grade or stage. Determinants of mortality could differ from those for incidence. Using data from the Health Professionals Follow-Up Study, we re-examined 10 factors (cigarette smoking history, physical activity, BMI, family history of prostate cancer, race, height, total energy consumption, and intakes of calcium, tomato sauce and alpha-linolenic acid) using multivariable Cox regression in relation to multiple subcategories for prostate cancer risk. These were factors that we previously found to be predictors of prostate cancer incidence or advanced prostate cancer in this cohort, and that have some support in the literature. In this analysis, only 4 factors had a clear statistically significant association with overall incident prostate cancer: African-American race, positive family history, higher tomato sauce intake (inversely) and alpha-linolenic acid intake. In contrast, for fatal prostate cancer, recent smoking history, taller height, higher BMI, family history, and high intakes of total energy, calcium and alpha-linolenic acid were associated with a statistically significant increased risk. Higher vigorous physical activity level was associated with lower risk. In relation to these risk factors, advanced stage at diagnosis was a good surrogate for fatal prostate cancer, but high-grade (Gleason >/= 7 or Gleason >/= 8) was not. Only for high calcium intake was there a close correspondence for associations among high-grade cancer, advanced and fatal prostate cancer. Tomato sauce (inversely) and alpha-linolenic acid (positively) intakes were strong predictors of advanced cancer among those with low-grade cancers at diagnosis. Although the proportion of advanced stage cancers was much lower after PSA screening began, risk factors for advanced stage prostate cancers were similar in the pre-PSA and PSA era. The complexity of the clinical and pathologic manifestations of prostate cancer must be considered in the design and interpretation of studies.",
+      "mesh": [
+        "Adult",
+        "Black or African American / statistics & numerical data",
+        "Aged",
+        "Beverages / adverse effects",
+        "Body Mass Index",
+        "Cohort Studies",
+        "Dietary Fats / adverse effects",
+        "Disease Progression",
+        "Family Health",
+        "Follow-Up Studies",
+        "Health Personnel / statistics & numerical data",
+        "Humans",
+        "Incidence",
+        "Solanum lycopersicum",
+        "Male",
+        "Middle Aged",
+        "Multivariate Analysis",
+        "Proportional Hazards Models",
+        "Prostatic Neoplasms / epidemiology, etiology, genetics",
+        "Risk Factors",
+        "Smoking / adverse effects",
+        "Surveys and Questionnaires",
+        "United States / epidemiology",
+        "alpha-Linolenic Acid / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17450530",
+      "contexts": [
+        {
+          "context_id": "17450530|Alpha-linolenic acid|Prostate cancer",
+          "exposure": "Alpha-linolenic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "HR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "47750",
+              "effect_measure_type": "RR",
+              "effect_size": "1.13",
+              "ci_lower": "0.99",
+              "ci_upper": "1.28",
+              "p_value": "0.062210656521328664",
+              "comparison": "high_vs_low"
+            }
+          }
+        },
+        {
+          "context_id": "17450530|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "47750",
+              "effect_measure_type": "RR",
+              "effect_size": "1.01",
+              "ci_lower": "0.74",
+              "ci_upper": "1.39",
+              "p_value": "0.950664860941019",
+              "comparison": "high_vs_low"
+            }
+          }
+        },
+        {
+          "context_id": "17450530|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        },
+        {
+          "context_id": "17450530|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "higher versus lower tomato sauce intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "47750",
+              "effect_measure_type": "RR",
+              "effect_size": "0.86",
+              "ci_lower": "0.7",
+              "ci_upper": "1.04",
+              "p_value": "0.1353428947004629",
+              "comparison": "high_vs_low"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

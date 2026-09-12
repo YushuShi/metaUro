@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:36:28.159804-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "e69c268c7bb54dba1038cc0446ed39b2cb3f72dfa9b8a17b2fc9880275eb2b8a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "32743740",
+      "title": "Adolescent dairy product and calcium intake in relation to later prostate cancer risk and mortality in the NIH-AARP Diet and Health Study.",
+      "abstract": "Although a growing body of evidence supports an early-life contribution to prostate cancer (PCa) development, few studies have investigated early-life diet, and only three have examined early-life dairy product intake, a promising candidate risk factor because of its known/suspected influence on insulin-like growth factor levels and height. We used recalled dietary data from 162,816 participants in the NIH-AARP Diet and Health Study to investigate associations for milk, cheese, ice cream, total dairy, and calcium intake at ages 12-13 years with incident total (n = 17,729), advanced (n = 2,348), and fatal PCa (n = 827) over 14 years of follow-up. We calculated relative risks (RRs) and 95% confidence intervals (CIs) by Cox proportional hazards regression. We observed suggestive positive trends for milk, dairy, and calcium intake with total and/or advanced PCa (p-trends = 0.016-0.148). These trends attenuated after adjustment for additional components of adolescent diet, particularly red meat and vegetables/potatoes. In contrast, suggestive inverse trends were observed for cheese and ice cream intake with total and/or advanced PCa (p-trends = 0.043-0.153), and for milk, dairy, and calcium intake with fatal PCa (p-trend = 0.045-0.117). Although these findings provide some support for a role of adolescent diet in increasing PCa risk, particularly for correlates of milk intake or overall dietary patterns, our protective findings for cheese and ice cream intake with PCa risk and mortality, and for all dairy products with PCa mortality, suggest alternative explanations, such as the influence of early-life socioeconomic status, and increased PCa screening, earlier detection, and better PCa care.",
+      "mesh": [
+        "Adolescent",
+        "Aged",
+        "Animals",
+        "Calcium, Dietary",
+        "Child",
+        "Dairy Products",
+        "Diet",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prostatic Neoplasms / epidemiology",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "32743740",
+      "contexts": [
+        {
+          "context_id": "32743740|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "162816",
+              "effect_measure_type": "RR",
+              "effect_size": "1.01",
+              "ci_lower": "0.99",
+              "ci_upper": "1.03",
+              "p_value": "0.177",
+              "comparison": "Per time/day increase in adolescent total dairy intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "162816",
+              "effect_measure_type": "RR",
+              "effect_size": "1.04",
+              "ci_lower": "0.97",
+              "ci_upper": "1.12",
+              "p_value": "0.177",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

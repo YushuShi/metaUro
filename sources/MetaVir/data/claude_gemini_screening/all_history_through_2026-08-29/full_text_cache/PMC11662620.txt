@@ -1,0 +1,566 @@
+Machine learning algorithms that predict the risk of prostate cancer based on metabolic syndrome and sociodemographic characteristics: a prospective cohort study
+Background
+Given the rapid increase in the prevalence of prostate cancer (PCa), identifying its risk factors and developing suitable risk prediction models has important implications for public health. We used machine learning (ML) approach to screen participants with high risk of PCa and, specifically, investigated whether participants with metabolic syndrome (MetS) exhibited an elevated PCa risk.
+Methods
+A prospective cohort study was performed with 41,837 participants in South Korea. We predicted PCa based on MetS, its components, and sociodemographic factors using Cox proportional hazards and five ML models. Integrated Brier score (IBS) and C-index were used to assess model performance.
+Results
+A total of 210 incident PCa cases were identified. We found good calibration and discrimination for all models (C-index ≥ 0.800 and IBS = 0.01). Importantly, performance increased after excluding MetS and its components from the models; the highest C-index was 0.862 for survival support vector machine. In contrast, first-degree family history of PCa, alcohol consumption, age, and income were valuable for PCa prediction.
+Conclusion
+ML models are an effective approach to develop prediction models for survival analysis. Furthermore, MetS and its components do not seem to influence PCa susceptibility, in contrast to first-degree family history of PCa, age, alcohol consumption, and income.
+Supplementary Information
+The online version contains supplementary material available at 10.1186/s12889-024-20852-8.
+Keywords
+Introduction
+According to GLOBOCAN, which is a database to estimate cancer incidence and mortality in 185 countries indicated that prostate cancer (PCa) is the second-most frequent cancer and fifth-most common cause of cancer-related deaths among men [ 1 ]. PCa exhibits differences among countries due to economic development, Western lifestyle, and life expectancy [ 2 ]. The incidence rate of PCa is 3.0 times higher in countries with higher Human Development Indexes (HDIs) compared to those with lower HDIs (37.5/100,000 vs. 11.3/100,000) [ 1 ]. In Asia, PCa is one of the three most common cancers in 20 countries [ 2 ]. Although PCa incidence has experienced different trends since 1999, it has increased more rapidly than other major cancers among male Korean individuals [ 3 , 4 ]. Thus, identifying important risk factors for PCa and developing suitable risk prediction models has key implications for public health.
+Many factors have driven the rise in PCa incidence [ 5 ]. Although evidence has robustly indicated that age, family history, and race are risk factors for PCa, other factors may influence the development of PCa [ 6 ]. Notably, the HDI is used to assess national development in terms of three indicators: health, education, and income. The positive association between the HDI and PCa is likely related to age and Western lifestyle [ 2 ]. The Western diet is typically high in sugary beverages, red meat, and processed meat and low in vegetables and fruits; this diet has been implicated as an etiologic factor for metabolic syndrome (MetS) [ 7 ]. Due to the spread of the Western diet worldwide, MetS has been recognized as a global epidemic [ 8 ].
+MetS represents a cluster of risk factors for noncommunicable diseases, including dysglycemia, low levels of abdominal obesity, high-density lipoprotein (HDL), high blood pressure and high triglyceride levels [ 9 ]. Accumulating evidence has demonstrated that MetS and its components are linked to cancer development. For example, hypertension may block and subsequently modify apoptosis and affect cell turnover, whereas diabetes is hypothesized to increase the risk of cancer through hyperinsulinemia and increased bioavailability of insulin-like growth factor-1 [ 10 ]. Notably, Asian migrants exhibited a high risk of PCa, which suggests that Westernization has a detrimental effect [ 11 , 12 ]. Thus, MetS and its components are thought to increase PCa risk [ 13 ]. However, the roles of MetS and its components in the etiology of PCa remain ambiguous due to inconsistent results worldwide [ 11 , 14 , 15 ]. Indeed, contradictory results have been reported within Korea [ 14 , 16 ]. Thus, the link between MetS and PCa remains unclear.
+Machine learning (ML) has been widely used to accurately predict risks in medical fields. Notably, ML application for time-to-event data has received increased attention because it is expected to overcome the limitations of CPH model such as proportionality assumption, linear association [ 17 ]. We can classify survival analysis into statistical methods and ML-based methods. Both methods have a similar goal: to make predictions and estimate survival probability. However, statistical methods focus on the distribution of the event of interest and statistical properties of parameters, whereas ML-based methods combine traditional methods with various ML algorithms. Thus, ML is expected to be an effective algorithm for survival analysis [ 18 ]. Given this background, we proposed that the ML approach may be a feasible and promising method for predicting PCa risk in a prospective cohort study.
+To the best of our knowledge, ML survival models have not previously been used to predict PCa. In addition, PCa incidence is high in Korea; thus, it is important to identify individuals at greater risk. Our study aimed to use the ML approach to screen participants with a high risk of PCa and, specifically, investigate whether an elevated risk is observed in participants with MetS.
+Materials and methods
+Study population
+The information on establishment and recruitment of Cancer Screenee Cohort Study has been described [ 19 ]. Briefly, this cohort was designed by the National Cancer Center (NCC) to determine potential etiologic factors for cancer development in Korea. From August 2002 to December 2014, a baseline questionnaire was required to complete by 41,837 participants aged 16 and older who underwent health examinations at the Center for Cancer Prevention and Detection at the NCC. We followed participants until December 2019 to identify incident cancer cases. We excluded 1,754 participants for having an incomplete questionnaire and 2,100 participants due to a previous diagnosis of any cancer. Additionally, of the remaining participants, a total of 18,110 female participants, 5,780 participants who lacked information on individual characteristics, and 6 participants aged < 20 years were excluded. In total, we had 13,371 participants for final analysis (Fig. 1 ).
+Fig. 1 Flow chart of the study participants. Among 41,837 participants were recruited, 41,121 participants were linked to the Korea Central Cancer Registry. We excluded 1,754 participants for having an incomplete questionnaire, 2,100 participants due to a previous diagnosis of any cancer, 18,110 female participants, 5,780 participants who lacked information on individual characteristics, and 6 participants aged < 20. In total, we had 13,371 participants for final analysis
+Flow chart of the study participants. Among 41,837 participants were recruited, 41,121 participants were linked to the Korea Central Cancer Registry. We excluded 1,754 participants for having an incomplete questionnaire, 2,100 participants due to a previous diagnosis of any cancer, 18,110 female participants, 5,780 participants who lacked information on individual characteristics, and 6 participants aged < 20. In total, we had 13,371 participants for final analysis
+Outcome and risk factor measurement
+We ascertained potential incident PCa cases through linkage with the 2019 Korea National Cancer Incidence Database of the Korea Central Cancer Registry. The International Classification of Diseases, 10th Revision (C61) was used to identify PCa cases.
+MetS criteria are being widely used in Korea documented in a previous study [ 20 ]. In detail, Adult Treatment Panel III (ATP III) of the National Cholesterol Education Program (NCEP) and specific values of waist circumference from the World Health Organization and the Korean Society for the Study of Obesity are used as criteria for MetS diagnosis. MetS is presented if participants meet ≥ 3 criteria as follows:
+Waist circumference: males ≥ 90 cm. Blood pressure: ≥130/85 mmHg. Triglycerides: ≥150 mg/dL. High-density lipoprotein cholesterol (HDL cholesterol): males < 40 mg/dL. Fasting glucose: ≥100 mg/dL or a history of diabetes.
+Waist circumference: males ≥ 90 cm.
+Blood pressure: ≥130/85 mmHg.
+Triglycerides: ≥150 mg/dL.
+High-density lipoprotein cholesterol (HDL cholesterol): males < 40 mg/dL.
+Fasting glucose: ≥100 mg/dL or a history of diabetes.
+Blood-related components of MetS were determined based on blood samples taken from participants after they had fasted for 8 h. We measured height (m) and weight (kg) with automatic height and weight measurements (DS-102, Dong Shin Jenix Co., Ltd., Seoul, Korea) or InBody 3.0 (Biospace, Seoul, Korea). The measurement of waist circumference was performed with a tape measure 1 cm above the umbilicus with minimal respiration. We utilized a chemistry analyser (TBA-200FR, Toshiba, Tokyo, Japan) for measuring triglyceride, HDL cholesterol, and fasting glucose levels. The measurement of blood pressure was performed after the patients had 15 min of rest by trained personnel with an automatic blood pressure monitor (FT-200 S, Jawon Medical, Kyungsan, Korea) [ 21 ]. Furthermore, we collected information on demographic characteristics and behaviors related to health based on a self-administered questionnaire at baseline.
+Statistical analysis
+We calculated person-years from baseline to the date of cancer diagnosis, death, or end of follow-up (December 31, 2019), whichever came first. The comparison of baseline characteristics between the incident PCa cases and nonincident PCa cases was conducted with chi-square tests and t tests.
+We used the Cox proportional hazards (CPH) model and ML models involving survival trees (ST), random survival forest (RSF), extra survival trees (EST), survival support vector machine (SSVM), and gradient boosting (GB) to predict PCa. These ML models have been indicated for outcome prediction in right-censored time-to-event data [ 18 ].
+We developed models through many steps [ 22 ]. First, we randomly split the data into training and testing datasets using an 80:20 ratio. Second, we searched hyperparameters for c-index maximization with a 10-fold cross validation using grid search. Third, we used the training dataset to fit the models based on selected input variables, the optimal hyperparameters, and default values of other hyperparameters. Fourth, the performance of models was evaluated using testing dataset. Then, the predictor importance was explored using the ELI5 package [ 23 ]. The robustness of the models was assessed with bootstrapping and 10-fold cross validation (Fig. 2 ).
+Fig. 2 Machine learning analysis. We presented several steps for model development. We randomly split the data into training and testing datasets and used the Cox proportional hazards model and ML survival models including random survival forest, survival trees, survival support vector machine, extra survival trees, and gradient boosting to predict prostate cancer
+Machine learning analysis. We presented several steps for model development. We randomly split the data into training and testing datasets and used the Cox proportional hazards model and ML survival models including random survival forest, survival trees, survival support vector machine, extra survival trees, and gradient boosting to predict prostate cancer
+Additionally, a CPH model was used to investigate MetS and its components and sociodemographic factors in relation to PCa risk. Statistical analyses were performed using Python software (version 3.7.9) with the scikit-survival library [ 23 ] and SAS software (version 9.4, SAS Institute, Cary, NC, USA) with a two-sided P -value less than 0.05 was considered statistically significant. Furthermore, multivariate imputation by chained equations (MICE) has been considered a principled approach to handle missing values [ 24 ]. Thus, we applied this method to impute missing values in our data with “MICE” package in R software and performed sensitivity analysis to predict PCa.
+Models
+ML survival and CPH models were used to predict PCa. These models have been well documented to predict outcome in time-to-event analysis. The details were described as follows:
+ST is utilized to solve tasks related to regression and classification and specifically tailored to handle survival analysis. The implementation of ST is described as follows: data partition is performed based on splitting criteria, and objects have similar events grouped as the same node. Minimizing within-node homogeneity and maximizing between-node heterogeneity are criteria for splitting in ST [ 18 ].
+Random forest addresses problems in relation to regression and classification by building ensembles of decision trees and combining results to give a final decision. RSF adapts random forest to censored time-to-event data [ 25 ]. Thus, random forest and RSF share the same principles to implement. In detail, bootstrapped data and random feature selection are used to grow the tree and split tree nodes, respectively. Then, output is given based on combining the results of the individual trees. Notably, during the process of growing the tree, RSF incorporates censoring information into the log-rank splitting rules [ 26 ].
+Similar to RSF, GB model is an ensemble model. While RSF averages predictions from independent trees to obtain the final prediction, the GB model follows an additive approach. New base-learners are constructed, which are correlated with the negative gradient of the loss function maximally and related to the whole ensemble, which is a potential principle of this model [ 27 ].
+Support vector machine determines a hyperplane to maximize the separation between classes. SSVM is an extension of the support vector machine to deal with survival data. It uses an ordinal outcome to solve survival analysis as a classification task. Risk rank among participants is predicted rather than survival time estimation [ 26 ].
+EST is a slightly different version of RSF [ 28 ]. The splitting criteria of EST are more random compared to RSF. A subset of predictors is selected randomly, which is similar to RSF. However, EST exhibits a different splitting rule. In detail, thresholds are drawn randomly for each predictor, and the best of these randomly generated thresholds is picked as the splitting rule [ 23 ].
+Model evaluation
+The performance of model was evaluated based on C-index, Integrated Brier score (IBS), and time-dependent area under the curve (AUC), which were widely used in survival analysis [ 18 , 23 ]. C-index reflects the overall discriminative ability, whereas time-dependent AUC exhibits discriminative ability at an interested time. As the C-index approaches 1, the model’s performance improves [ 29 ]. We used IBS to assess calibration ability of models. IBS ranges from 0 to 1; a lower value of IBS indicates a greater accuracy [ 25 ]. Furthermore, we used D-index to evaluate the separation between two equal sized high risk and low risk groups divided according to the risk score obtained from different models [ 29 ].
+Results
+Participant characteristics
+Table 1 represents information on participant characteristics. We determined 210 incident PCa cases among 13,371 individuals over a median of 10.5 years of follow-up. Compared to participants without PCa, those with incident PCa were significantly older (58.7 ± 7.3 years vs. 49.4 ± 9.2 years, P < 0.001). Additionally, individuals with incident PCa had a higher proportion of first-degree relatives of PCa than those without PCa (3.8% vs. 1.2%, P < 0.001) and were more likely to be ex-smokers (45.2% vs. 39.2%, P < 0.001). Moreover, there was a higher percentage of participants with PCa who had high fasting glucose compared to that of participants without PCa (33.3% vs. 23.8%, P = 0.001).
+Table 1 Characteristics of the study subjects Characteristics Total Nonincident PCa ( n = 13,161) Incident PCa ( n = 210) P value a Age b 49.4 ± 9.2 58.7 ± 7.3 < 0.001 Follow-up duration (year) b 11.1 ± 3.9 7.6 ± 4.3 < 0.001 Educational level (n , %) High school graduate or less 4603 (35.0) 78 (37.1) 0.513 College or higher 8558 (65.0) 132 (62.9) Household income (10 , 000 won/month) (n , %) <200 1547 (11.8) 27 (12.9) 0.576 200–400 4306 (32.7) 74 (35.2) >400 7308 (55.5) 109 (51.9) Marital status (n , %) Married or cohabitating 12,357 (93.9) 203 (96.7) 0.095 Others 804 (6.1) 7 (3.3) First-degree family history of prostate cancer (n , %) Yes 152 (1.2) 8 (3.8) < 0.001 No 13,009 (98.8) 202 (96.2) Smoking status (n , %) Nonsmokers 2521 (19.2) 54 (25.7) < 0.001 Ex-smokers 5156 (39.2) 95 (45.2) Current smokers 5484 (41.6) 61 (29.1) Alcohol consumption (n , %) Nondrinkers 1523 (11.6) 19 (9.1) 0.080 Ex-drinkers 756 (5.7) 19 (9.1) Current drinkers 10,882 (82.7) 172 (81.8) Regular exercise (n , %) Yes 7960 (60.5) 138 (65.7) 0.124 No 5201 (39.5) 72 (34.3) BMI (kg/m 2 ) <23 3526 (26.8) 53 (25.2) 0.881 23–25 3926 (29.8) 64 (30.5) ≥25 5709 (43.4) 93 (44.3) Metabolic syndrome (n , %) No 10,054 (76.4) 155 (73.8) 0.382 Yes 3107 (23.6) 55 (26.2) Waist circumference (n , %) Men < 90 cm 7579 (57.6) 119 (56.7) 0.789 Men ≥ 90 cm 5582 (42.4) 91 (43.3) HDL (n , %) Men ≥ 40 mg/dL 11,276 (85.7) 176 (83.8) 0.444 Men < 40 mg/dL 1885 (14.3) 34 (16.2) Triglycerides (n , %) <150 mg/dL 8643 (65.7) 148 (70.5) 0.146 ≥150 mg/dL 4518 (34.3) 62 (29.5) Blood pressure (n , %) <130/85 mmHg 7468 (56.7) 109 (51.9) 0.160 ≥130/85 mmHg 5693 (43.3) 101 (48.1) Fasting glucose (n , %) <100 mg/dL or no history of diabetes 10,023 (76.2) 140 (66.7) 0.001 ≥100 mg/dL or history of diabetes 3138 (23.8) 70 (33.3) a Chi-square tests and t-tests were used for categorical variables and continuous variables, respectively; b values are presented as the mean ± SD
+Characteristics of the study subjects
+Characteristics
+Total
+Nonincident PCa ( n = 13,161)
+Incident PCa ( n = 210)
+P value a
+Age b
+49.4 ± 9.2
+58.7 ± 7.3
+< 0.001
+Follow-up duration (year) b
+11.1 ± 3.9
+7.6 ± 4.3
+< 0.001
+Educational level (n , %)
+High school graduate or less
+4603 (35.0)
+78 (37.1)
+0.513
+College or higher
+8558 (65.0)
+132 (62.9)
+Household income (10 , 000 won/month) (n , %)
+<200
+1547 (11.8)
+27 (12.9)
+0.576
+200–400
+4306 (32.7)
+74 (35.2)
+>400
+7308 (55.5)
+109 (51.9)
+Marital status (n , %)
+Married or cohabitating
+12,357 (93.9)
+203 (96.7)
+0.095
+Others
+804 (6.1)
+7 (3.3)
+First-degree family history of prostate cancer (n , %)
+Yes
+152 (1.2)
+8 (3.8)
+< 0.001
+No
+13,009 (98.8)
+202 (96.2)
+Smoking status (n , %)
+Nonsmokers
+2521 (19.2)
+54 (25.7)
+< 0.001
+Ex-smokers
+5156 (39.2)
+95 (45.2)
+Current smokers
+5484 (41.6)
+61 (29.1)
+Alcohol consumption (n , %)
+Nondrinkers
+1523 (11.6)
+19 (9.1)
+0.080
+Ex-drinkers
+756 (5.7)
+19 (9.1)
+Current drinkers
+10,882 (82.7)
+172 (81.8)
+Regular exercise (n , %)
+Yes
+7960 (60.5)
+138 (65.7)
+0.124
+No
+5201 (39.5)
+72 (34.3)
+BMI (kg/m 2 )
+<23
+3526 (26.8)
+53 (25.2)
+0.881
+23–25
+3926 (29.8)
+64 (30.5)
+≥25
+5709 (43.4)
+93 (44.3)
+Metabolic syndrome (n , %)
+No
+10,054 (76.4)
+155 (73.8)
+0.382
+Yes
+3107 (23.6)
+55 (26.2)
+Waist circumference (n , %)
+Men < 90 cm
+7579 (57.6)
+119 (56.7)
+0.789
+Men ≥ 90 cm
+5582 (42.4)
+91 (43.3)
+HDL (n , %)
+Men ≥ 40 mg/dL
+11,276 (85.7)
+176 (83.8)
+0.444
+Men < 40 mg/dL
+1885 (14.3)
+34 (16.2)
+Triglycerides (n , %)
+<150 mg/dL
+8643 (65.7)
+148 (70.5)
+0.146
+≥150 mg/dL
+4518 (34.3)
+62 (29.5)
+Blood pressure (n , %)
+<130/85 mmHg
+7468 (56.7)
+109 (51.9)
+0.160
+≥130/85 mmHg
+5693 (43.3)
+101 (48.1)
+Fasting glucose (n , %)
+<100 mg/dL or no history of diabetes
+10,023 (76.2)
+140 (66.7)
+0.001
+≥100 mg/dL or history of diabetes
+3138 (23.8)
+70 (33.3)
+a Chi-square tests and t-tests were used for categorical variables and continuous variables, respectively; b values are presented as the mean ± SD
+Model performance
+Table 2 shows the performance of the models. The CPH model had a slightly higher C-index than the other models (0.816 (0.815–0.818)). The RSF and GB models had a similar C-index: 0.808 (0.806–0.809) and 0.808 (0.806–0.810), respectively. We found a low C-index for ST and EST models of 0.795 (0.793–0.797) and 0.767 (0.765–0.769), respectively. Additionally, we found a good calibration for all models with an IBS = 0.01. Regarding the D-index, CPH and SSVM models exhibited the highest value, followed by RSF and GB models. Furthermore, the mean AUC of the CPH and SSVM models was similar (Fig. 3 ).
+Fig. 3 Time-dependent AUC. We presented time-dependent AUC of six models including CPH, RSF, ST, GB, EST, and SSVM
+Time-dependent AUC. We presented time-dependent AUC of six models including CPH, RSF, ST, GB, EST, and SSVM
+Table 2 Performance of models Models C-index IBS D-index Cox 0.816 (0.815–0.818) 0.010 5.60 (3.48-9.00) Random survival forest 0.808 (0.806–0.809) 0.010 5.57 (3.44-9.00) Survival support vector machine 0.806 (0.804–0.808) - 5.66 (3.49–9.16) Survival trees 0.795 (0.793–0.797) 0.010 5.01 (3.10–8.08) Gradient boosting 0.808 (0.806–0.810) 0.010 5.26 (3.30–8.38) Extra survival trees 0.767 (0.765–0.769) 0.010 4.36 (2.68–7.09) Note: C-index was estimated based on 100 bootstrapped data samples. Integrated brier score (IBS) applies for models that can estimate a survival function. Thus, it is impossible to estimate the integrated brier score for Survival Support Vector Machine
+Performance of models
+Models
+C-index
+IBS
+D-index
+Cox
+0.816 (0.815–0.818)
+0.010
+5.60 (3.48-9.00)
+Random survival forest
+0.808 (0.806–0.809)
+0.010
+5.57 (3.44-9.00)
+Survival support vector machine
+0.806 (0.804–0.808)
+-
+5.66 (3.49–9.16)
+Survival trees
+0.795 (0.793–0.797)
+0.010
+5.01 (3.10–8.08)
+Gradient boosting
+0.808 (0.806–0.810)
+0.010
+5.26 (3.30–8.38)
+Extra survival trees
+0.767 (0.765–0.769)
+0.010
+4.36 (2.68–7.09)
+Note: C-index was estimated based on 100 bootstrapped data samples. Integrated brier score (IBS) applies for models that can estimate a survival function. Thus, it is impossible to estimate the integrated brier score for Survival Support Vector Machine
+Furthermore, we used MICE package to impute missing values and performed a sensitivity analysis. Notably, the slightly higher performance concerning C-index was also observed for CPH model compared to the remaining models ( Supplementary Table 1 ).
+MetS and PCa risk
+We assessed the contribution of MetS and its components to predicting PCa by comparing the performance of models with and without MetS and its components. MetS and its individual components did not seem to contribute to predicting PCa. We found a higher performance in models that excluded MetS and its components compared to those that included MetS and its components. The highest C-index was found for the SSVM model, followed by the CPH model; the C-indexes were 0.862 (0.860–0.864) and 0.857 (0.855–0.858), respectively. All models were observed to have a good calibration with an IBS value of 0.02. The SSVM model showed a higher D-index with a value of 8.65 (Table 3 ). Similar results were observed for the time-dependent AUC, and a higher mean AUC was observed for the SSVM model (data not shown).
+Table 3 Performance of models after excluding MetS and its components from models Models C-index IBS D-index Cox 0.857 (0.855–0.858) 0.015 7.94 (4.90–12.90) Random survival forest 0.840 (0.839–0.842) 0.016 6.13 (3.78–9.95) Survival support vector machine 0.862 (0.860–0.864) - 8.65 (5.32–14.10) Survival trees 0.836 (0.834–0.837) 0.016 6.53 (3.97–10.70) Gradient boosting 0.836 (0.834–0.837) 0.015 7.21 (4.34-12.00) Extra survival trees 0.830 (0.828–0.831) 0.016 5.92 (3.64–9.62) Note: C-index was estimated based on 100 bootstrapped data samples. Integrated brier score (IBS) applies for models that can estimate a survival function. Thus, it is impossible to estimate the integrated brier score for Survival Support Vector Machine
+Performance of models after excluding MetS and its components from models
+Models
+C-index
+IBS
+D-index
+Cox
+0.857 (0.855–0.858)
+0.015
+7.94 (4.90–12.90)
+Random survival forest
+0.840 (0.839–0.842)
+0.016
+6.13 (3.78–9.95)
+Survival support vector machine
+0.862 (0.860–0.864)
+-
+8.65 (5.32–14.10)
+Survival trees
+0.836 (0.834–0.837)
+0.016
+6.53 (3.97–10.70)
+Gradient boosting
+0.836 (0.834–0.837)
+0.015
+7.21 (4.34-12.00)
+Extra survival trees
+0.830 (0.828–0.831)
+0.016
+5.92 (3.64–9.62)
+Note: C-index was estimated based on 100 bootstrapped data samples. Integrated brier score (IBS) applies for models that can estimate a survival function. Thus, it is impossible to estimate the integrated brier score for Survival Support Vector Machine
+Table 4 presents the top 5 most important predictors for PCa among the ML models. As MetS and its components did not contribute to prediction of PCa, their importance is not shown. Age, first-degree family history of PCa, alcohol consumption, and income were the factors that most contributed to prediction of PCa. The CPH model was utilized to analyze the association of MetS, its individual components, and the sociodemographic factors with PCa and found similar results. Specifically, MetS and its components were not significantly associated with PCa. Additionally, nonsignificant association was also observed for the combination of two components of MetS (data not shown). In contrast, participants with first-degree relatives of PCa had a 4.0-fold higher risk of PCa than those without first-degree relatives of PCa; the hazard ratio (HR) and 95% confidence interval (CI) were 4.00 (1.97–8.14) according to the multivariate analysis. Previous alcohol consumption (HR (95% CI) = 1.91 (1.18–3.10)), increased age (HR (95% CI) = 1.14 (1.12–1.16)), and higher household income (HR (95% CI) = 1.82 (1.15–2.88)) were risk factors for PCa ( Table 5 ).
+Table 4 Top 5 most important predictors for incident PCa of ML models Rank RSF model SSVM model ST model GB model EST model Variables Weight Variables Weight Variables Weight Variables Weight Variables Weight 1 Age 0.2843 ± 0.0661 Age 0.3180 ± 0.0906 Age 0.3057 ± 0.0799 Age 0.3091 ± 0.0895 Age 0.2273 ± 0.0622 2 Fasting glucose 0.1114 ± 0.0131 Income 0.0326 ± 0.0248 First-degree family history of PCa 0.0133 ± 0.0235 First-degree family history of PCa 0.0068 ± 0.0049 First-degree family history of PCa 0.0111 ± 0.0092 3 Income 0.0189 ± 0.0100 First-degree family history of PCa 0.0071 ± 0.0068 HDL cholesterol 0.0062 ± 0.0114 Alcohol consumption 0.0019 ± 0.0073 Income 0.0078 ± 0.0136 4 Blood pressure 0.0081 ± 0.0082 Alcohol consumption 0.0036 ± 0.0082 - - Education 0.0011 ± 0.0079 Alcohol consumption 0.0063 ± 0.0076 5 First-degree family history of PCa 0.0070 ± 0.0067 Smoking status 0.0015 ± 0.0031 - - Fasting glucose 0.0008 ± 0.0037 Smoking status 0.0056 ± 0.0087
+Top 5 most important predictors for incident PCa of ML models
+Rank
+RSF model
+SSVM model
+ST model
+GB model
+EST model
+Variables
+Weight
+Variables
+Weight
+Variables
+Weight
+Variables
+Weight
+Variables
+Weight
+1
+Age
+0.2843 ± 0.0661
+Age
+0.3180 ± 0.0906
+Age
+0.3057 ± 0.0799
+Age
+0.3091 ± 0.0895
+Age
+0.2273 ± 0.0622
+2
+Fasting glucose
+0.1114 ± 0.0131
+Income
+0.0326 ± 0.0248
+First-degree family history of PCa
+0.0133 ± 0.0235
+First-degree family history of PCa
+0.0068 ± 0.0049
+First-degree family history of PCa
+0.0111 ± 0.0092
+3
+Income
+0.0189 ± 0.0100
+First-degree family history of PCa
+0.0071 ± 0.0068
+HDL cholesterol
+0.0062 ± 0.0114
+Alcohol consumption
+0.0019 ± 0.0073
+Income
+0.0078 ± 0.0136
+4
+Blood pressure
+0.0081 ± 0.0082
+Alcohol consumption
+0.0036 ± 0.0082
+-
+Education
+0.0011 ± 0.0079
+Alcohol consumption
+0.0063 ± 0.0076
+5
+First-degree family history of PCa
+0.0070 ± 0.0067
+Smoking status
+0.0015 ± 0.0031
+-
+Fasting glucose
+0.0008 ± 0.0037
+Smoking status
+0.0056 ± 0.0087
+Table 5 Hazard ratios and 95% confidence intervals of incident PCa related to MetS and sociodemographic factors Variables Univariate Analysis Multivariate Analysis HR (95% CI) P value HR (95% CI) P value Age 1.13 (1.11–1.15) < 0.001 1.14 (1.12–1.16) < 0.001 Educational level High school graduate or less 1.00 0.453 1.00 0.612 College or higher 0.90 (0.68–1.19) 1.08 (0.80–1.46) First-degree family history of prostate cancer No 1.00 1.00 Yes 3.73 (1.84–7.57) < 0.001 4.00 (1.97–8.14) < 0.001 Alcohol consumption Nondrinkers 1.00 1.00 Ex-drinkers 1.18 (0.73–1.89) 0.504 1.91 (1.18–3.10) 0.009 Current drinkers 2.16 (1.14–4.07) 0.018 1.85 (0.98–3.51) 0.060 Smoking status Nonsmokers 1.00 1.00 Ex-smokers 0.51 (0.35–0.73) < 0.001 0.86 (0.59–1.26) 0.445 Current smokers 0.94 (0.68–1.32) 0.736 0.87 (0.62–1.22) 0.418 Household income (10 , 000 won/month) <200 1.00 1.00 200–400 0.95 (0.61–1.48) 0.821 1.74 (1.11–2.74) 0.016 >400 0.81 (0.53–1.23) 0.320 1.82 (1.15–2.88) 0.011 Marital status Married or cohabitating 1.00 0.173 1.00 0.990 Others 0.59 (0.28–1.26) 1.00 (0.47–2.12) Regular exercise No 1.00 0.344 1.00 0.331 Yes 1.15 (0.86–1.53) 0.86 (0.64–1.16) Metabolic syndrome No 1.00 0.192 1.00 0.860 Yes 1.23 (0.90–1.67) 0.95 (0.56–1.61) Waist circumference Men < 90 cm 1.00 0.594 1.00 0.332 Men ≥ 90 cm 1.08 (0.82–1.42) 1.17 (0.85–1.60) HDL Men ≥ 40 mg/dL 1.00 0.892 1.00 0.448 Men < 40 mg/dL 1.03 (0.71–1.48) 1.18 (0.78–1.78) Triglycerides <150 mg/dL 1.00 0.230 1.00 0.800 ≥150 mg/dL 0.83 (0.62–1.12) 0.96 (0.67–1.37) Blood pressure <130/85 mmHg 1.00 0.032 1.00 0.633 ≥130/85 mmHg 1.35 (1.03–1.77) 1.08 (0.79–1.47) Fasting glucose <100 mg/dL or no history of diabetes 1.00 < 0.001 1.00 0.370 ≥100 mg/dL or history of diabetes 1.77 (1.33–2.36) 1.17 (0.83–1.63) HR: hazard ratio; CI: confidence interval
+Hazard ratios and 95% confidence intervals of incident PCa related to MetS and sociodemographic factors
+Variables
+Univariate Analysis
+Multivariate Analysis
+HR (95% CI)
+P value
+HR (95% CI)
+P value
+Age
+1.13 (1.11–1.15)
+< 0.001
+1.14 (1.12–1.16)
+< 0.001
+Educational level
+High school graduate or less
+1.00
+0.453
+1.00
+0.612
+College or higher
+0.90 (0.68–1.19)
+1.08 (0.80–1.46)
+First-degree family history of prostate cancer
+No
+1.00
+Yes
+3.73 (1.84–7.57)
+< 0.001
+4.00 (1.97–8.14)
+< 0.001
+Alcohol consumption
+Nondrinkers
+1.00
+Ex-drinkers
+1.18 (0.73–1.89)
+0.504
+1.91 (1.18–3.10)
+0.009
+Current drinkers
+2.16 (1.14–4.07)
+0.018
+1.85 (0.98–3.51)
+0.060
+Smoking status
+Nonsmokers
+1.00
+Ex-smokers
+0.51 (0.35–0.73)
+< 0.001
+0.86 (0.59–1.26)
+0.445
+Current smokers
+0.94 (0.68–1.32)
+0.736
+0.87 (0.62–1.22)
+0.418
+Household income (10 , 000 won/month)
+<200
+1.00
+200–400
+0.95 (0.61–1.48)
+0.821
+1.74 (1.11–2.74)
+0.016
+>400
+0.81 (0.53–1.23)
+0.320
+1.82 (1.15–2.88)
+0.011
+Marital status
+Married or cohabitating
+1.00
+0.173
+1.00
+0.990
+Others
+0.59 (0.28–1.26)
+1.00 (0.47–2.12)
+Regular exercise
+No
+1.00
+0.344
+1.00
+0.331
+Yes
+1.15 (0.86–1.53)
+0.86 (0.64–1.16)
+Metabolic syndrome
+No
+1.00
+0.192
+1.00
+0.860
+Yes
+1.23 (0.90–1.67)
+0.95 (0.56–1.61)
+Waist circumference
+Men < 90 cm
+1.00
+0.594
+1.00
+0.332
+Men ≥ 90 cm
+1.08 (0.82–1.42)
+1.17 (0.85–1.60)
+HDL
+Men ≥ 40 mg/dL
+1.00
+0.892
+1.00
+0.448
+Men < 40 mg/dL
+1.03 (0.71–1.48)
+1.18 (0.78–1.78)
+Triglycerides
+<150 mg/dL
+1.00
+0.230
+1.00
+0.800
+≥150 mg/dL
+0.83 (0.62–1.12)
+0.96 (0.67–1.37)
+Blood pressure
+<130/85 mmHg
+1.00
+0.032
+1.00
+0.633
+≥130/85 mmHg
+1.35 (1.03–1.77)
+1.08 (0.79–1.47)
+Fasting glucose
+<100 mg/dL or no history of diabetes
+1.00
+< 0.001
+1.00
+0.370
+≥100 mg/dL or history of diabetes
+1.77 (1.33–2.36)
+1.17 (0.83–1.63)
+HR: hazard ratio; CI: confidence interval
+Discussion
+Our study found good discrimination and calibration performance of the CPH model and ML models for predicting PCa risk. MetS and its components did not contribute to predicting PCa. In contrast, first-degree family history of PCa, alcohol consumption, age, and income were risk factors for PCa.
+In recent years, digital medicine and computational science have demonstrated substantial value in constructing predictive models and exploring potential predictors for diseases. As a result, ML techniques are increasingly being used [ 30 ] to effectively predict cancer cases. A previous study used artificial neural networks, random forest, support vector machine, prostate-specific antigen (PSA) density, and PSA velocity to predict PCa; the authors found that ML models better predicted PCa (higher AUCs) than PSA density and PSA velocity [ 31 ]. Similarly, ML was suggested to be a promising approach for predicting PCa in another study that examined the use of five models in predicting PCa among 551 patients [ 32 ].
+Notably, in the present study, we emphasized the construction of ML models for PCa prediction in time-to-event data. All models in our study exhibited good calibration and discriminative ability. Although the ML approach has been suggested to be a useful survival analysis method in previous studies, it has not been identified as a common epidemiological tool. Our study provides evidence that ML should be considered a feasible and promising survival analysis approach for PCa prediction.
+To date, the association of MetS with PCa has been debated due to contradictory conclusions from previous studies. MetS was considered a risk factor for PCa in previous cohort studies [ 15 , 16 ]. This positive association was reinforced by the finding of a meta-analysis of 24 studies; the results indicated a slight association of MetS with PCa incidence [ 11 ]. However, some studies found a protective effect of MetS against PCa instead of a detrimental effect [ 33 , 34 ]; moreover, other studies did not report a significant association [ 10 , 35 , 36 ]. The latter set of findings is similar to our findings in the current study. Specifically, models that excluded MetS and its components exhibited better performance, indicating that these variables did not contribute to prediction of PCa. Importantly, this lack of a significant association is in agreement with the findings of a previous study in Korea, MetS was not found to contribute to PCa prediction in a cohort study based on a nationwide population with 1,917,430 participants [ 14 ].
+Thus, research has been unable to establish a link between MetS and PCa due to insufficient epidemiological evidence [ 36 ]. Furthermore, the impact of MetS on PCa has demonstrated differences across countries. For example, MetS is a risk factor for PCa in Europe but not in Asia or the US [ 35 ]. The key reasons for this discrepancy remain unclear, but the possible explanations are as follows. First, there prevalences of obesity and MetS are lower in the Scandinavian population than in the US. Thus, more prevalent and aggressive MetS features, especially insulin resistance and diabetes may be speculated for a lower association [ 35 ]. Second, differences in the detection of PCa among populations might partially explain the observed discrepancies [ 33 , 35 ]. Third, MetS includes at least 3 individual components, which may exert antagonistic effects, neutralizing the positive or negative effects. For example, diabetes and obesity were observed to have a negative association with localized PCa, whereas hypertension had a positive association with PCa [ 36 ]. Fourth, different cutoff values of MetS components may contribute to this variation [ 33 , 35 ]. For example, the World Health Organization uses the waist-to-hip ratio to determine abdominal obesity, whereas the NCEP uses waist circumference; in Korean men, waist circumference ≥ 90 cm is categorized as abdominal obesity [ 14 ].
+In contrast, age and family history are strong predictors for PCa. PCa incidence curves were drawn to increase sharply after 55 years of age, reach a peak at 70–74 years, and then decline slightly thereafter [ 6 ]. Regarding family history, participants with first-degree relatives of PCa had a 3-fold higher PCa risk than those without a first-degree family history of PCa [ 6 ]. The risk of PCa further increased for individuals with relatives diagnosed with PCa at an early age and those with multiple relatives diagnosed with PCa [ 6 ]. Furthermore, we found a strong association of alcohol consumption with PCa susceptibility, which aligns with the findings of other studies [ 37 , 38 ]. Alcohol is a known carcinogen for several cancers. Although the pathophysiological mechanisms by which alcohol affects the prostate are not fully understood, the main mechanisms proposed are as follows. Alcohol affects cell membrane composition and function, generates free radicals, affects the metabolism of detoxification enzymes, suppresses levels of enzymes responsible for DNA repair, and impairs the immune system [ 37 , 38 ]. Furthermore, drinkers were found to have lower intakes of fiber, retinol, calcium and iron and higher intakes of total fats and monosaturated fatty acids [ 39 ]. Thus, alcohol consumption may be related to sufficient intake of micronutrients and macronutrients as well as increased PCa risk [ 37 ]. Additionally, PCa incidence is influenced by socioeconomic factors [ 40 ]. In our study, participants with higher household incomes had an elevated risk of PCa.
+This study represents the first attempt to use ML approaches to predict PCa with time-to event-data and included MetS as a predictor to clarify its role in PCa susceptibility. We identified outcomes from the national cancer registry, which is a high-quality database with a long duration of follow-up. Furthermore, we performed the laboratory tests using standardized equipment and procedures, carried out by trained personnel following established protocols.
+However, this study also has some limitations. First, we only used baseline measurements to identify MetS. Second, external validation was not considered in our study. Third, information on medication, nutrient intake and other potential predictors for PCa was not available for inclusion in our analysis. Fourth, the role of screening in the validation of true prostate cancer risk factors was not considered in our study. PCa screening could affect the true association of risk factors with PCa because participants with PCa screening are more likely to have healthy behaviors [ 41 ]. However, PSA screening is currently not included in the national cancer screening program in Korea. Thus, development of simple and effective prediction model for PCa independent of PSA test is necessary to assess individual risk, which helps participants make decisions regarding PCa screening [ 41 , 42 ].
+Conclusions
+Our study found good performance of PCa prediction models, suggesting that ML models represent an effective approach for constructing prediction models in survival analysis. Furthermore, MetS and its components do not seem to contribute to the risk of PCa. In contrast, first-degree family history of PCa, age, alcohol consumption and income were risk factors for PCa.
+Electronic supplementary material
+Below is the link to the electronic supplementary material.
+Supplementary Material 1
+Publisher’s note
+Springer Nature remains neutral with regard to jurisdictional claims in published maps and institutional affiliations.
+Acknowledgements
+Not applicable.
+Author contributions
+Formal analysis, TT.T., J.L.; Preparation of original draft, TT.T.; Writing-review and editing, J.K., SY.K., H.C., J.K.; Data curation, J.L., J.K.; Investigation, J.L.; Methodology, J.L., J.K.; Funding acquisition, J.K.; Project administration, J.K.; Supervision, J.K. All authors have critically reviewed and approved the final version of the manuscript submitted for publication.
+Funding
+This work was supported by International Cooperation & Education Program (NCCRI•NCCI 52210-52211, 2020) of National Cancer Center, Korea, and grants from National Research Foundation of Korea (2021R1A4A1032861), and National Cancer Center, Korea (NCC 2210990).
+Data availability
+The datasets used and analyzed during the current study are available from the corresponding author on reasonable request.
+Declarations
+Ethics approval and consent to participate
+We obtained written informed consent from all participants and approval for the study protocol from the institutional review board of the National Cancer Center (No. NCCNCS-07-077).
+Consent for publication
+Not applicable.
+Competing interests
+The authors declare no competing interests.
+Abbreviations
+Adult Treatment Panel III
+Body mass index
+Confidence interval
+Cox proportional hazards
+Extra survival trees
+Gradient boosting
+High-density lipoprotein cholesterol
+Hazard ratio
+Integrated Brier score
+Metabolic syndrome
+Multivariate imputation by chained equations
+Machine learning
+National Cancer Center
+National Cholesterol Education Program
+Prostate cancer
+Random survival forest
+Survival support vector machine
+Survival trees
+References
+Global cancer statistics 2020: GLOBOCAN estimates of incidence and mortality worldwide for 36 cancers in 185 countries
+Epidemiology and genomics of prostate cancer in Asian men
+Cancer statistics in Korea: incidence, mortality, survival, and prevalence in 2018
+Epidemiology of prostate cancer in South Korea
+Risk factors for prostate cancer
+A western dietary pattern is prospectively associated with cardio-metabolic traits and incidence of the metabolic syndrome
+The global epidemic of the metabolic syndrome
+Metabolic syndrome and risk of cancer: a systematic review and meta-analysis
+Metabolic syndrome and cancer risk
+Meta-analysis of metabolic syndrome and prostate cancer
+Trends and patterns of prostate cancer: what do they suggest?
+Metabolic syndrome in prostate cancer: impact on risk and outcomes
+Impact of age and metabolic syndrome-like components on prostate cancer development: a nationwide population-based cohort study
+Metabolic syndrome and the risk of prostate cancer in Finnish men: a population-based study
+Effects of metabolic syndrome on the prevalence of prostate cancer: historical cohort study using the national health insurance service database
+Prediction of recurrent suicidal behavior among suicide attempters with Cox regression and machine learning: a 10-year prospective cohort study
+Machine learning for survival analysis: a survey
+Cancer screenee cohort study of the National Cancer Center in South Korea
+The prevalence of metabolic syndrome and its related risk complications among koreans
+Dietary patterns and the prevalence of metabolic syndrome in Korean women
+Scikit-survival: a library for time-to-event analysis built on top of scikit-learn
+Multiple imputation by chained equations: what is it and how does it work?
+A comparative study of forest methods for time-to-event data: variable selection and predictive performance
+Explainable machine learning can outperform Cox regression predictions and provide insights in breast cancer survival
+Gradient boosting machines, a tutorial
+The application and comparison of machine learning models for the prediction of breast cancer prognosis: retrospective cohort study
+Predicting the risk of cancer in adults using supervised machine learning: a scoping review
+Machine learning methods can more efficiently predict prostate cancer compared with prostate-specific antigen density and prostate-specific antigen velocity
+Machine learning-based models enhance the prediction of prostate cancer
+Parent M-É.Metabolic syndrome and prostate cancer risk in a population-based case-control study in Montreal, Canada
+The metabolic syndrome is associated with reduced risk of prostate cancer
+Effect of metabolic syndrome and its components on prostate cancer risk: meta-analysis
+The association between metabolic syndrome and the risk of prostate cancer, high-grade prostate cancer, advanced prostate cancer, prostate cancer-specific mortality and biochemical recurrence
+Alcohol consumption and risk of prostate cancer: the Harvard Alumni Health Study
+Is alcohol consumption a risk factor for prostate cancer? A systematic review and meta–analysis
+Alcohol consumption and dietary patterns: the FinDrink study
+A review of social determinants of prostate cancer risk, stage, and survival
+Personalized 5-year prostate cancer risk prediction model in Korea based on nationwide representative data
+Lifestyle risk prediction model for prostate cancer in a Korean population

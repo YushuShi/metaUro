@@ -1,0 +1,62 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:46.962067-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "69b263f74532393ef26518f6d4021fb5813f66856013bcacd3ffadb0d072f6cd",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "14744736",
+      "title": "Dietary patterns and prostate cancer risk in the National Health and Nutrition Examination Survey Epidemiological Follow-up Study cohort.",
+      "abstract": "Ecological studies implicate a \"Western\" diet in prostate cancer development, but whether dietary patterns measured in individuals are associated with risk has not been studied previously. We examined this issue using prospective data from the nationally representative United States Health Examination Epidemiological Follow-up Study. Among 3,779 men followed from 1982-84 to 1992, 136 incident cases were identified. Using principal component analysis on responses to a 105-item dietary questionnaire, the following three distinct patterns were identified: a vegetable-fruit pattern; a red meat-starch pattern characterized by red meats, potatoes, cheese, salty snacks, and desserts; and a Southern pattern characterized by such foods as cornbread, grits, sweet potatoes, okra, beans, and rice. In adjusted proportional hazards models, prostate cancer risk was not associated with the vegetable-fruit or red meat-starch pattern, but higher intake of the Southern pattern showed a reduction in risk (3rd versus 1st tertile relative risk, 0.6; 95% confidence interval, 0.4-1.1; trend P = 0.08) that approached statistical significance. The inverse association was observed in black and non-black men and was not attributable to intake of any individual foods or nutrients. A Southern dietary pattern may reflect a history of living in the South and serve as an integrative marker of sunlight exposure and protection through 1,25-dihydroxyvitamin D production. Further evaluation and better characterization of the pattern would offer more information on potentially beneficial features of the diet or its associated lifestyle.",
+      "mesh": [
+        "Diet",
+        "Follow-Up Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Nutrition Surveys",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Risk Factors",
+        "United States / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "14744736",
+      "contexts": [
+        {
+          "context_id": "14744736|Western pattern diet|Prostate cancer",
+          "exposure": "Western pattern diet",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

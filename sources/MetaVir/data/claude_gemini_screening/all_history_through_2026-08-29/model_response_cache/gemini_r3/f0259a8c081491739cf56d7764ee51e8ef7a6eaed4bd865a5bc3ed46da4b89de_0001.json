@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "5c2e2f26e5a5ddae7efed1e8ebfcdace318aaff75ab657f52c5b76a5793eb616",
+  "requested_at": "2026-09-02T08:29:58.716300+08:00",
+  "received_at": "2026-09-02T08:30:27.616459+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "f0259a8c081491739cf56d7764ee51e8ef7a6eaed4bd865a5bc3ed46da4b89de",
+  "attempt": 1,
+  "context_ids": [
+    "37407836|Dietary protein intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Dietary protein intake": 1
+  },
+  "input_digest": "eb9e319ff80c2c7c4a5d3f5cc22dbdb8ad99fe9fe709cb32b9d8c82f1fb09e03",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 27249,
+    "cached_input_tokens": 0,
+    "output_tokens": 3711,
+    "reasoning_tokens": 2033
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.034353",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "ab5b065d-9094-4954-bd6a-a97881bd060a",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.034353"
+  },
+  "output_sha256": "1466d34f073153871e89ca40334f8e984661750c16030aa0b50e7fa53522d460",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"37407836|Dietary protein intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study investigating total dietary protein intake and prostate cancer incidence in the UK Biobank.\",\n      \"extraction\": {\n        \"effect_size\": 0.98,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.87,\n        \"ci_upper\": 1.11,\n        \"p_value\": 0.68,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 51278,\n        \"cases\": 2422,\n        \"comparison_type\": \"extreme_quantile\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Europe\",\n        \"country\": \"United Kingdom\",\n        \"location\": \"United Kingdom\",\n        \"ethnicity\": \"predominantly White\",\n        \"population\": \"UK Biobank male participants aged 37-73 years\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"In total, this left 114,217 participants who completed ≥2 (maximum 5) valid 24-h dietary assessments, of which 51,278 were men and 62,939 were women.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Methods/Exclusions, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"After a median of 9.4 years of follow-up, 1193 colorectal, 2024 female breast, and 2422 prostate cancer cases were identified.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Abstract/Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Total protein intake Fully adjusted model ... Q4: 0.98 (0.87–1.11)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.98 (0.87–1.11)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P-trend 0.68\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Participants were classified into quartiles of percentage of energy intake from total protein\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Methods/Statistical analyses, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"a prospective analysis in UK Biobank\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Title\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Over a median of 9.4 years of follow-up (IQR: 9.3–9.8 years), 1193 incident colorectal cancer, 2024 breast cancer and 2422 prostate cancer cases were observed.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"large British cohort\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Introduction, paragraph 3\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White ethnicity, N (%) 26923 (94.3%) 27922 (97.8%)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"at one of the 22 assessment centres around the United Kingdom (UK)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Methods/Study design and participants, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Dietary intake was assessed in a subsample of participants using a validated web-based 24-h dietary assessment, the Oxford WebQ\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10421858/\",\n            \"location\": \"Methods/Assessment of diet: 24-h dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

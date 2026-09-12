@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:21:17.645248-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "79c7f66c75d3d0bec83df9ce3ada4f3b642ced77057bcbd927c02982df5d207d",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "11398173",
+      "title": "The association of fatty acids with prostate cancer risk.",
+      "abstract": "Animal studies indicate that omega-6 fatty acids promote and omega-3 fatty acids inhibit tumor development. This pilot study was designed to evaluate whether these fatty acids are associated with human prostate cancer. Levels of erythrocyte membrane omega-3 and omega-6 fatty acids were determined for 67 incident prostate cancer cases and 156 population-based controls. Prostate cancer risk was increased in the highest compared to the lowest quartile of alpha-linolenic acid (OR = 2.6, 95% CI = 1.1-5.8, trend P = 0.01). Positive associations were also observed with higher levels of linoleic acid (OR = 2.1, 95% CI = 0.9-4.8) and total omega-6 fatty acids (OR = 2.3, 95% CI = 1.0-5.4). Results are consistent with other studies showing that linoleic and total omega-6 fatty acids increase risk of prostate cancer. Contrary to animal studies, alpha-linolenic acid was also positively associated with risk. Further research will be required to clarify the role of these fatty acids in human prostate cancer.",
+      "mesh": [
+        "Adenocarcinoma / blood, epidemiology",
+        "Adult",
+        "Aged",
+        "Biomarkers, Tumor / blood",
+        "Case-Control Studies",
+        "Dietary Fats / adverse effects",
+        "Erythrocyte Membrane / metabolism",
+        "Fatty Acids, Omega-3 / blood",
+        "Fatty Acids, Omega-6",
+        "Fatty Acids, Unsaturated / blood",
+        "Humans",
+        "Interviews as Topic",
+        "Male",
+        "Middle Aged",
+        "Pilot Projects",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Risk Factors",
+        "Statistics, Nonparametric"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "11398173",
+      "contexts": [
+        {
+          "context_id": "11398173|Alpha-linolenic acid|Prostate cancer",
+          "exposure": "Alpha-linolenic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "2.6",
+              "ci_lower": "1.1",
+              "ci_upper": "5.8",
+              "p_value": "0.01",
+              "comparison": "highest versus lowest quartile"
+            },
+            "Claude+Gemini": {
+              "sample_size": "223",
+              "effect_measure_type": "OR",
+              "effect_size": "2.6",
+              "ci_lower": "1.1",
+              "ci_upper": "5.8",
+              "p_value": "0.01",
+              "comparison": "highest vs lowest quartile of alpha-linolenic acid"
+            }
+          }
+        },
+        {
+          "context_id": "11398173|Linoleic acid|Prostate cancer",
+          "exposure": "Linoleic acid",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "2.1",
+              "ci_lower": "0.9",
+              "ci_upper": "4.8",
+              "p_value": null,
+              "comparison": "higher levels"
+            },
+            "Claude+Gemini": {
+              "sample_size": "223",
+              "effect_measure_type": "OR",
+              "effect_size": "2.1",
+              "ci_lower": "0.9",
+              "ci_upper": "4.8",
+              "p_value": null,
+              "comparison": "higher versus lower levels of linoleic acid (quartile comparison)"
+            }
+          }
+        },
+        {
+          "context_id": "11398173|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:29:56.743264-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "ed0d237f0bd487ec5cd0f8d1b092746e9b4351f4d87767297eb7e760e29d1e52",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "21229632",
+      "title": "Nutrition and prostate cancer.",
+      "abstract": "since an association between prostate cancer and some foods or food groups like meat, milk and dairy products, tomato foods, and allium vegetables, has been suggested, we analyzed the possibility that some food items or some food groups could be related to prostate cancer in some other way and not only through their nutrients. The purpose of this study was to test some hypotheses about diet as risk factor for prostate cancer. this case-control study comprised 101 cases of prostate cancer and 202 hospital controls individually matched for age (± 2 years), hospital admission and place of residence. Dietary information of 150 food items was obtained by a quantitative history approach. multivariate logistic regression analysis indicated as risk factors for prostate cancer high intake of fruit, processed meat, fish (most frequently canned) and butter. High intake of chicken, potato and rice exhibited a protective effect. these results support the hypothesis that consumption of meat and fat play a role in the development of prostate cancer. The findings that consumption of processed meat only (not fresh) and fish increased the risk of prostate cancer, as well as the protective effect of chicken, potato and rice consumption should be corroborated by other investigators.",
+      "mesh": [
+        "Case-Control Studies",
+        "Diet",
+        "Humans",
+        "Male",
+        "Prognosis",
+        "Prostatic Neoplasms / etiology, prevention & control"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "21229632",
+      "contexts": [
+        {
+          "context_id": "21229632|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "303",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "high intake versus lower intake"
+            }
+          }
+        },
+        {
+          "context_id": "21229632|Tomato|Prostate cancer",
+          "exposure": "Tomato",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

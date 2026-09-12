@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:20:08.475889-04:00",
+  "pmid": "10408871",
+  "work_key": "1a97e74034280961ecb672d4f5f1aba47eaa2fe04ba2a372f31a27d13e4b3175",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/10408871_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "10408871",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "10408871|Red meat|Prostate cancer",
+        "exposure": "Red meat",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CHATGPT_CORRECT",
+        "adjudicated_value": "95% CI 1.1-3.8",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "red meat intake (OR 2.0, 95% CI 1.1-3.8)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": false,
+        "manual_review_reason": null,
+        "one_sentence_explanation": "The abstract gives 95% CI 1.1-3.8 for red meat intake, matching ChatGPT's CI and contradicting Claude+Gemini's 0.8-3.4; no p value is reported in the allowed evidence."
+      },
+      {
+        "context_id": "10408871|Red meat|Prostate cancer",
+        "exposure": "Red meat",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CHATGPT_CORRECT",
+        "adjudicated_value": "2.0",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "positive findings were obtained for red meat intake (OR 2.0, 95% CI 1.1-3.8)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": false,
+        "manual_review_reason": null,
+        "one_sentence_explanation": "The abstract reports OR 2.0 for highest versus lowest quartile of red meat intake, supporting ChatGPT's value of 2 over Claude+Gemini's 1.7."
+      }
+    ]
+  }
+}

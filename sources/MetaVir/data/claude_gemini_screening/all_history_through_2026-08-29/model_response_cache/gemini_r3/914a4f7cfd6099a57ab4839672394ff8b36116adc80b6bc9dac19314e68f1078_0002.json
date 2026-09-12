@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "receipt_id": "b53a8891904aac9fff65cfaf39e5319ec6b537c00197e9ce4e778363474ccb20",
+  "requested_at": "2026-09-02T08:36:09.160270+08:00",
+  "received_at": "2026-09-02T08:36:39.888355+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "914a4f7cfd6099a57ab4839672394ff8b36116adc80b6bc9dac19314e68f1078",
+  "attempt": 2,
+  "context_ids": [
+    "17106437|Calcium|Prostate cancer",
+    "17106437|Dairy|Prostate cancer",
+    "17106437|Mineral supplements|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Dairy": 1,
+    "Mineral supplements": 1
+  },
+  "input_digest": "6541574b3ec694762a3894e3e10d27b1d364bf3287b1b5c16ea1f291e29e9e6a",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 7238,
+    "cached_input_tokens": 0,
+    "output_tokens": 6657,
+    "reasoning_tokens": 1154
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.03039225",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c0d48262-900a-4501-a3cb-52bf92f7c620",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.03039225"
+  },
+  "output_sha256": "328c2299379923b8f0b5f08f2fd37684ed470a40aab1acf03e50e84a4360e1d7",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"17106437|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study examining the association between dietary calcium intake and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.91,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.7,\n        \"ci_upper\": 1.18,\n        \"p_value\": 0.64,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 10011,\n        \"cases\": 815,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Harvard University male undergraduate alumni (Harvard Alumni Health Study)\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Of the remaining 11 014 men, we successfully followed 10 011 (90.9%) for the development of prostate cancer; these men represent the subjects for the present analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During follow-up through 1998, 815 incident cases of prostate cancer developed, of which 99 cases were fatal.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"⩾600 c (201 cases) ... 0.91 (0.70–1.18)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.91 (0.70–1.18)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P trend=0.64\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Dairy calcium intake (mg/day) b: 0–199 (209 cases) 1.00 (referent) ... ⩾600 c (201 cases)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Further studies should include other populations, such as Blacks, in whom prostate cancer rates are higher ( Hayes et al , 1999 ; Gronberg, 2003 ), to extend the generalisability of the present findings.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"DISCUSSION, paragraph 7\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The 1988 questionnaire assessed diet using an abbreviated version (23 food items) of a validated semiquantitative food frequency questionnaire ( Willett et al , 1985 , 1987 ).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Assessment of calcium intake and other factors, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"17106437|Dairy|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study evaluating total dairy product consumption and the incidence of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.11,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.85,\n        \"ci_upper\": 1.46,\n        \"p_value\": 0.23,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 10011,\n        \"cases\": 815,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Harvard University male undergraduate alumni (Harvard Alumni Health Study)\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Of the remaining 11 014 men, we successfully followed 10 011 (90.9%) for the development of prostate cancer; these men represent the subjects for the present analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During follow-up through 1998, 815 incident cases of prostate cancer developed, of which 99 cases were fatal.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"In multivariate analyses, men in the highest quartile had an RR of prostate cancer of 1.11 (95% confidence interval, 0.85–1.46), compared with the lowest quartile.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"In multivariate analyses, men in the highest quartile had an RR of prostate cancer of 1.11 (95% confidence interval, 0.85–1.46), compared with the lowest quartile.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Table 2 shows no significant relation between higher intakes of dairy products and risk of prostate cancer, whether in age- or multivariate-adjusted analyses ( P trend=0.16 and 0.23, respectively).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Dairy product intake (servings/day) b: 0–<1.25 (189 cases) 1.00 (referent) ... ⩾3.25 (223 cases) 1.11 (0.85–1.46)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Further studies should include other populations, such as Blacks, in whom prostate cancer rates are higher ( Hayes et al , 1999 ; Gronberg, 2003 ), to extend the generalisability of the present findings.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"DISCUSSION, paragraph 7\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Men indicated their usual daily intake of seven different dairy products (whole milk, low fat milk, cream, ice cream, yogurt, cheese and butter) using pre- specified responses ranging from ‘almost never’ to ‘six or more times per day.’\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Assessment of calcium intake and other factors, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"17106437|Mineral supplements|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective cohort study analyzing the association between calcium supplement usage and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.05,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.84,\n        \"ci_upper\": 1.31,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 10011,\n        \"cases\": 815,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Harvard University male undergraduate alumni (Harvard Alumni Health Study)\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Of the remaining 11 014 men, we successfully followed 10 011 (90.9%) for the development of prostate cancer; these men represent the subjects for the present analysis.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During follow-up through 1998, 815 incident cases of prostate cancer developed, of which 99 cases were fatal.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Calcium supplement use was also not significantly related to risk (multivariate RR=1.05 (0.84–1.31)).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Calcium supplement use was also not significantly related to risk (multivariate RR=1.05 (0.84–1.31)).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Calcium supplement use was also not significantly related to risk (multivariate RR=1.05 (0.84–1.31)).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"RESULTS, paragraph 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"For supplements, because only 8% of men reported using supplemental calcium (with most taking an ordinary daily dose), we grouped men as non-users or users.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Data analyses, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Further studies should include other populations, such as Blacks, in whom prostate cancer rates are higher ( Hayes et al , 1999 ; Gronberg, 2003 ), to extend the generalisability of the present findings.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"DISCUSSION, paragraph 7\"\n          },\n          \"location\": {\n            \"excerpt\": \"The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Subjects, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"In addition to dairy products, we asked alumni about use of calcium supplements (occasional use, use of ordinary daily dose, or use of high daily dose).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/\",\n            \"location\": \"MATERIALS AND METHODS, Assessment of calcium intake and other factors, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "17106437|Calcium|Prostate cancer",
+      "pmid": "17106437",
+      "pmcid": "PMC2360740",
+      "published_date": "2006-12-04",
+      "title": "Dairy products, calcium and prostate cancer risk.",
+      "authors": [
+        "Koh KA",
+        "Sesso HD",
+        "Paffenbarger RS",
+        "Lee IM"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17106437/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study examining the association between dietary calcium intake and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.91,
+        "effect_type": "RR",
+        "ci_lower": 0.7,
+        "ci_upper": 1.18,
+        "p_value": 0.64,
+        "ci_confidence_level": 95,
+        "total_n": 10011,
+        "cases": 815,
+        "comparison_type": "categorical",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Harvard University male undergraduate alumni (Harvard Alumni Health Study)",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk (relative risk, 1.05; 95% confidence interval, 0.84–1.31).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During follow-up through 1998, 815 incident cases of prostate cancer developed, of which 99 cases were fatal.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "0.91 (0.70–1.18)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.91 (0.70–1.18)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "P trend=0.64",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Abstract, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The 1988 questionnaire assessed diet using an abbreviated version (23 food items) of a validated semiquantitative food frequency questionnaire ( Willett et al , 1985 , 1987 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Assessment of calcium intake and other factors, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.64",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 17891,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "64799a01a837cc5abff6bf4d0f74092587e13c7e005fc54cbef4a3607a7f969b",
+      "pmc_source_receipt_digest": "1c96c2daf76ddee940889db841a8c83c14742da6012580ba284062bb5df2887b",
+      "pmc_source_raw_sha256": "0a9577a7035c5b2f86c608604b368aa37f7cd87d2fcb74e024d636418f0374af",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "6482f6a651cfbee59d7ce1d83ef56728adc420d26fbe5c57d38198e487d49d0b"
+    },
+    {
+      "context_id": "17106437|Dairy|Prostate cancer",
+      "pmid": "17106437",
+      "pmcid": "PMC2360740",
+      "published_date": "2006-12-04",
+      "title": "Dairy products, calcium and prostate cancer risk.",
+      "authors": [
+        "Koh KA",
+        "Sesso HD",
+        "Paffenbarger RS",
+        "Lee IM"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17106437/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study evaluating total dairy product consumption and the incidence of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.11,
+        "effect_type": "RR",
+        "ci_lower": 0.85,
+        "ci_upper": 1.46,
+        "p_value": 0.23,
+        "ci_confidence_level": 95,
+        "total_n": 10011,
+        "cases": 815,
+        "comparison_type": "categorical",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Harvard University male undergraduate alumni (Harvard Alumni Health Study)",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk (relative risk, 1.05; 95% confidence interval, 0.84–1.31).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During follow-up through 1998, 815 incident cases of prostate cancer developed, of which 99 cases were fatal.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "Table 2 shows no significant relation between higher intakes of dairy products and risk of prostate cancer, whether in age- or multivariate-adjusted analyses ( P trend=0.16 and 0.23, respectively). In multivariate analyses, men in the highest quartile had an RR of prostate cancer of 1.11 (95% confidence interval, 0.85–1.46), compared with the lowest quartile.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "In multivariate analyses, men in the highest quartile had an RR of prostate cancer of 1.11 (95% confidence interval, 0.85–1.46), compared with the lowest quartile.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "p_value": {
+            "excerpt": "Table 2 shows no significant relation between higher intakes of dairy products and risk of prostate cancer, whether in age- or multivariate-adjusted analyses ( P trend=0.16 and 0.23, respectively).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Abstract, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Men indicated their usual daily intake of seven different dairy products (whole milk, low fat milk, cream, ice cream, yogurt, cheese and butter) using pre- specified responses ranging from ‘almost never’ to ‘six or more times per day.’",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Assessment of calcium intake and other factors, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.23",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 17891,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "64799a01a837cc5abff6bf4d0f74092587e13c7e005fc54cbef4a3607a7f969b",
+      "pmc_source_receipt_digest": "1c96c2daf76ddee940889db841a8c83c14742da6012580ba284062bb5df2887b",
+      "pmc_source_raw_sha256": "0a9577a7035c5b2f86c608604b368aa37f7cd87d2fcb74e024d636418f0374af",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "47ea10f01d174ff16f81531ff8f77070d7bfab632bad3f93447fa665d02af292"
+    },
+    {
+      "context_id": "17106437|Mineral supplements|Prostate cancer",
+      "pmid": "17106437",
+      "pmcid": "PMC2360740",
+      "published_date": "2006-12-04",
+      "title": "Dairy products, calcium and prostate cancer risk.",
+      "authors": [
+        "Koh KA",
+        "Sesso HD",
+        "Paffenbarger RS",
+        "Lee IM"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17106437/",
+      "exposure": "Mineral supplements",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort study analyzing the association between calcium supplement usage and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.05,
+        "effect_type": "RR",
+        "ci_lower": 0.84,
+        "ci_upper": 1.31,
+        "p_value": 0.6669168861486245,
+        "ci_confidence_level": 95,
+        "total_n": 10011,
+        "cases": 815,
+        "comparison_type": "categorical",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Harvard University male undergraduate alumni (Harvard Alumni Health Study)",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk (relative risk, 1.05; 95% confidence interval, 0.84–1.31).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During follow-up through 1998, 815 incident cases of prostate cancer developed, of which 99 cases were fatal.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 2"
+          },
+          "effect_size": {
+            "excerpt": "For calcium intake, Table 2 shows that levels of intake were not significantly associated with prostate cancer risk, either in age- or multivariate-adjusted analyses ( P trend=0.93 and 0.64, respectively). Calcium supplement use was also not significantly related to risk (multivariate RR=1.05 (0.84–1.31)).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk (relative risk, 1.05; 95% confidence interval, 0.84–1.31).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "Calcium supplement use was also not significantly related to risk (multivariate RR=1.05 (0.84–1.31)).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "RESULTS, paragraph 3"
+          },
+          "comparison": {
+            "excerpt": "For supplements, because only 8% of men reported using supplemental calcium (with most taking an ordinary daily dose), we grouped men as non-users or users.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Data analyses, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "In a prospective study of 10 011 men with 815 prostate cancer cases, despite plausible biological mechanisms, neither increasing intake levels of dairy products nor calcium from dairy products ( P trend; 0.23 and 0.64, respectively), or calcium supplements was associated with prostate cancer risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "Abstract, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The Harvard Alumni Health Study, initiated in the 1960s, is an ongoing cohort study of men who entered Harvard University, United States, as undergraduates between 1916 and 1950.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Subjects, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "In addition to dairy products, we asked alumni about use of calcium supplements (occasional use, use of ordinary daily dose, or use of high daily dose).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2360740/",
+            "location": "MATERIALS AND METHODS, Assessment of calcium intake and other factors, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 1.05,
+            "effect_type": "RR",
+            "ci_lower": 0.84,
+            "ci_upper": 1.31,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 17891,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "64799a01a837cc5abff6bf4d0f74092587e13c7e005fc54cbef4a3607a7f969b",
+      "pmc_source_receipt_digest": "1c96c2daf76ddee940889db841a8c83c14742da6012580ba284062bb5df2887b",
+      "pmc_source_raw_sha256": "0a9577a7035c5b2f86c608604b368aa37f7cd87d2fcb74e024d636418f0374af",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "35b1c6990f3dfd8a0a2fa9c14584902796e80b64efe9924e26d95c07bc0ade23"
+    }
+  ]
+}

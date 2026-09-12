@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:24.781851-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "1cddcbc283c3b6c554b76ce5e7dc1f8af4112adf2de2c77cf38d82849c45e49a",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17726648",
+      "title": "A prospective study on dietary fat and incidence of prostate cancer (Malmö, Sweden).",
+      "abstract": "To study the associations between intake of various types of fat and risk of prostate cancer (PCa) in a population-based cohort. We have studied 10,564 initially cancer-free men of the Malmö Diet and Cancer cohort, aged 45-73 years. Diet was assessed by a modified diet history method. Cases and clinical characteristics were ascertained via national and regional registry data. During a mean follow-up of 11.0 years, 817 incidental PCa cases were diagnosed. Out of these, 281 were classified as advanced. There were 202 cases occurring before 65 years of age. After adjustment for age and energy intake, there was no association between intake of any types of fat and risk of PCa, or between fat intake and advanced PCa or PCa occurring in persons aged <65 years. However, we observed positive associations between intakes of eicosapentaenoic acid (EPA) and docosahexaenoic acid (DHA) and risk of PCa. After adjustment for multiple confounders, the latter associations were weakened, but the results were otherwise virtually unchanged. This large study, with high-validity dietary data, does not support an association between intake of total, saturated, or mono-unsaturated fat and PCa risk. The observed associations between EPA/DHA intakes and PCa are difficult to interpret.",
+      "mesh": [
+        "Adult",
+        "Age Factors",
+        "Aged",
+        "Dietary Fats / administration & dosage, adverse effects",
+        "Docosahexaenoic Acids / administration & dosage",
+        "Eicosapentaenoic Acid / administration & dosage",
+        "Follow-Up Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Prospective Studies",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Sweden"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17726648",
+      "contexts": [
+        {
+          "context_id": "17726648|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,117 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:33:13.089132-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "5c3a46e60c3d5d6ba996082b49db8cd0bfc34f4519adfc88850526546b8d400b",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "24563519",
+      "title": "Baseline selenium status and effects of selenium and vitamin e supplementation on prostate cancer risk.",
+      "abstract": "The Selenium and Vitamin E Cancer Prevention Trial found no effect of selenium supplementation on prostate cancer (PCa) risk but a 17% increased risk from vitamin E supplementation. This case-cohort study investigates effects of selenium and vitamin E supplementation conditional upon baseline selenium status. There were 1739 total and 489 high-grade (Gleason 7-10) PCa cases and 3117 men in the randomly selected cohort. Proportional hazards models estimated hazard ratios (HRs) and 95% confidence intervals (CIs) for effects of supplementation within quintiles of baseline toenail selenium. Cox proportional hazards models were used to estimate hazard ratios, and all statistical tests are two-sided. Toenail selenium, in the absence of supplementation, was not associated with PCa risk. Selenium supplementation (combined selenium only and selenium + vitamin E arms) had no effect among men with low selenium status (<60th percentile of toenail selenium) but increased the risk of high-grade PCa among men with higher selenium status by 91% (P = .007). Vitamin E supplementation (alone) had no effect among men with high selenium status (≥40th percentile of toenail selenium) but increased the risks of total, low-grade, and high-grade PCa among men with lower selenium status (63%, P = .02; 46%, P = .09; 111%, P = .008, respectively). Selenium supplementation did not benefit men with low selenium status but increased the risk of high-grade PCa among men with high selenium status. Vitamin E increased the risk of PCa among men with low selenium status. Men should avoid selenium or vitamin E supplementation at doses that exceed recommended dietary intakes.",
+      "mesh": [
+        "Black or African American / statistics & numerical data",
+        "Aged",
+        "Antioxidants / administration & dosage, adverse effects, analysis",
+        "Canada / epidemiology",
+        "Cohort Studies",
+        "Dietary Supplements / adverse effects",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Nails / chemistry",
+        "Neoplasm Grading",
+        "Odds Ratio",
+        "Proportional Hazards Models",
+        "Prostatic Neoplasms / chemically induced, epidemiology, pathology",
+        "Puerto Rico / epidemiology",
+        "Randomized Controlled Trials as Topic",
+        "Risk",
+        "Selenium / administration & dosage, adverse effects, analysis",
+        "Trace Elements / adverse effects",
+        "United States / epidemiology",
+        "Vitamin E / administration & dosage, adverse effects, analysis",
+        "Vitamins / adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "24563519",
+      "contexts": [
+        {
+          "context_id": "24563519|Selenium|Prostate cancer",
+          "exposure": "Selenium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "3117",
+              "effect_measure_type": "RR",
+              "effect_size": "1.91",
+              "ci_lower": "1.1934081224928432",
+              "ci_upper": "3.0568754571400834",
+              "p_value": "0.007",
+              "comparison": "selenium supplementation versus no selenium supplementation among men with higher baseline selenium status"
+            },
+            "Claude+Gemini": {
+              "sample_size": "4661",
+              "effect_measure_type": "HR",
+              "effect_size": "0.76",
+              "ci_lower": "0.44",
+              "ci_upper": "1.31",
+              "p_value": "0.3241155331580288",
+              "comparison": "quintiles"
+            }
+          }
+        },
+        {
+          "context_id": "24563519|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_MEASURE_TYPE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "3117",
+              "effect_measure_type": "RR",
+              "effect_size": "1.63",
+              "ci_lower": "1.0799859295687995",
+              "ci_upper": "2.460124643531983",
+              "p_value": "0.02",
+              "comparison": "vitamin E supplementation alone versus no vitamin E supplementation among men with lower baseline selenium status"
+            },
+            "Claude+Gemini": {
+              "sample_size": "4661",
+              "effect_measure_type": "HR",
+              "effect_size": "1.63",
+              "ci_lower": "1.11",
+              "ci_upper": "2.4",
+              "p_value": "0.02",
+              "comparison": "supplement_vs_placebo"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

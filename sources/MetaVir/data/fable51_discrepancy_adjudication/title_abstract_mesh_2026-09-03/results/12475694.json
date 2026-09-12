@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:23:33.777077-04:00",
+  "pmid": "12475694",
+  "work_key": "12a4540e1434fa30809d82b14d06c0e41b591654a117c607f34fd9d3a841946a",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/12475694_0002.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "12475694",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "12475694|Dietary protein intake|Prostate cancer",
+        "exposure": "Dietary protein intake",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE (ELIGIBLE_NOT_POOLABLE)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "no significant trends were found for phosphorus, vitamin D, fructose, or animal protein intake",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Protein exposure is reported only as animal protein (a form of dietary protein) with a null, numerically unreported result; 68% of case FFQs were completed post-diagnosis, which may warrant reviewer confirmation.",
+        "one_sentence_explanation": "The abstract explicitly evaluates animal protein intake in relation to prostate cancer odds in this original human FFQ study, so exposure is present rather than mismatched, supporting Claude+Gemini's ELIGIBLE_NOT_POOLABLE over ChatGPT's S2-EXPOSURE-MISMATCH exclusion."
+      }
+    ]
+  }
+}

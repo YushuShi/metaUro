@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:19:35.810174-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "11d22687b48e8076ee6395dd52a55d70581b9e4cb6fa8b131b06056d0670abff",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "10189041",
+      "title": "Dairy products, calcium, phosphorous, vitamin D, and risk of prostate cancer (Sweden).",
+      "abstract": "Dairy products consistently have been associated with an increased risk of prostate cancer, yet the mechanism of this relationship remains unknown. Recent hypotheses propose that 1,25 dihydroxyvitamin D (1,25 D) is protective for prostate cancer. One study in the United States found that calcium consumption, which can lower circulating 1,25 D, was associated with higher risk of advanced prostate cancer, and we sought to address this hypothesis in a distinct population. We analyzed data from a population-based case-control study of prostate cancer conducted in Orebro, Sweden, with 526 cases and 536 controls. Using unconditional logistic regression models, we examined the relationship of dairy products, dietary calcium, phosphorous, and vitamin D with risk of total, extraprostatic, and metastatic prostate cancer. Calcium intake was an independent predictor of prostate cancer (relative risk (RR) = 1.91, 95 percent confidence interval (CI) 1.23-2.97 for intake > or = 1183 vs. < 825 mg/day), especially for metastatic tumors (RR = 2.64, 95 percent CI 1.24-5.61), controlling for age, family history of prostate cancer, smoking, and total energy and phosphorous intakes. High consumption of dairy products was associated with a 50 percent increased risk of prostate cancer. Our results support the hypothesis that high calcium intake may increase risk of prostate cancer, and this relation may underlie previously observed associations between dairy products and prostate cancer.",
+      "mesh": [
+        "Adult",
+        "Aged",
+        "Calcium, Dietary / administration & dosage",
+        "Case-Control Studies",
+        "Dairy Products",
+        "Diet",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Phosphorus, Dietary / administration & dosage",
+        "Prostatic Neoplasms / epidemiology, prevention & control",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "Sweden / epidemiology",
+        "Vitamin D / administration & dosage"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "10189041",
+      "contexts": [
+        {
+          "context_id": "10189041|Calcium|Prostate cancer",
+          "exposure": "Calcium",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "RR",
+              "effect_size": "1.91",
+              "ci_lower": "1.23",
+              "ci_upper": "2.97",
+              "p_value": "0.004009201175152511",
+              "comparison": ">=1183 vs <825 mg/day"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1062",
+              "effect_measure_type": "RR",
+              "effect_size": "1.91",
+              "ci_lower": "1.23",
+              "ci_upper": "2.97",
+              "p_value": null,
+              "comparison": "highest vs lowest intake category (>=1183 vs <825 mg/day)"
+            }
+          }
+        },
+        {
+          "context_id": "10189041|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "1062",
+              "effect_measure_type": "RR",
+              "effect_size": "1.5",
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "high versus low dairy product consumption"
+            }
+          }
+        },
+        {
+          "context_id": "10189041|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "1062",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

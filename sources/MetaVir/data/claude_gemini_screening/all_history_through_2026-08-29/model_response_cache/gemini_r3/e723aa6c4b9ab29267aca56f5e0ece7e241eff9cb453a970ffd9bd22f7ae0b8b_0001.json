@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "15850f6538e7448db9d39544cd503fc114cd9127d46a4e7f3778942cee8ff48e",
+  "requested_at": "2026-09-02T08:52:56.175610+08:00",
+  "received_at": "2026-09-02T08:53:35.120405+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "e723aa6c4b9ab29267aca56f5e0ece7e241eff9cb453a970ffd9bd22f7ae0b8b",
+  "attempt": 1,
+  "context_ids": [
+    "30776477|Magnesium|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Magnesium": 1
+  },
+  "input_digest": "6136ccd50dc1ee15f94f0bd50d69b373061fe1b2f9e108fef79399837eacadf8",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11324,
+    "cached_input_tokens": 0,
+    "output_tokens": 5227,
+    "reasoning_tokens": 3425
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02809425",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "42a7d93c-6a90-410f-88b0-e93be9341715",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.02809425"
+  },
+  "output_sha256": "17b697f0839f3d4701573814779bf44fae9a5f5e7d8e6e357e9dc0da0cf74108",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"30776477|Magnesium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"The study meets inclusion criteria as an observational case-control study investigating serum and dietary magnesium levels and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.14,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.96,\n        \"ci_upper\": 1.35,\n        \"p_value\": 0.14,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1352,\n        \"cases\": 637,\n        \"comparison_type\": \"75th vs 25th percentile\",\n        \"design\": \"case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"Nashville, TN and Durham, NC\",\n        \"ethnicity\": \"Black / African American and White\",\n        \"population\": \"Men undergoing diagnostic prostate biopsy at Vanderbilt University Medical Center or Durham VA / Duke University Medical Center\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The study included 637 prostate cancer cases and 715 biopsy-negative controls (50% black) recruited from Nashville, TN or Durham, NC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"The study included 637 prostate cancer cases and 715 biopsy-negative controls (50% black) recruited from Nashville, TN or Durham, NC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"All PC Mg 342/341 1.14 0.96–1.35 0.14\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Table 4\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"All PC Mg 342/341 1.14 0.96–1.35 0.14\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Table 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"All PC Mg 342/341 1.14 0.96–1.35 0.14\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Table 4\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"OR is effect prostate cancer association for difference between 25th and 75th percentile of magnesium (Mg), calcium (Ca), or Ca/Mg ratio within controls for each race group.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Table 4 footnote\"\n          },\n          \"design\": {\n            \"excerpt\": \"This case-control analysis investigated the link between magnesium and prostate cancer in black and white men, and also investigated the potential interaction between magnesium and calcium levels.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Introduction, paragraph 4\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Biospecimen and data collection occurred prior to prostate biopsy, such that patients, medical staff, and research staff had no knowledge of the patient prostate cancer status at time of recruitment and data collection.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Materials and methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Participants came from two separate, but similar pre-existing studies located at Vanderbilt University Medical Center (Nashville, TN, USA) and the Veterans Administrations Hospital in Durham, NC, and Duke University Medical Center.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Materials and methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This analysis included 708 black and 651 white men recruited from urology clinics in Nashville, TN or Durham, NC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Participants came from two separate, but similar pre-existing studies located at Vanderbilt University Medical Center (Nashville, TN, USA) and the Veterans Administrations Hospital in Durham, NC, and Duke University Medical Center.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Materials and methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"We used inductively coupled plasma optical emission spectroscopy (ICP-OES) with simultaneous detection of multiple wavelengths, in radial and axial plasma view to measure total serum calcium and magnesium levels.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6954048/\",\n            \"location\": \"Materials and methods, paragraph 5\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

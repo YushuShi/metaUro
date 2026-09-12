@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:38:40.558384-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "8ddf5b262d36610649c7d217feddad8049d25b0b20d873bec3e1314f593f2b2c",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "39180769",
+      "title": "Disentangling discordant vitamin D associations with prostate cancer incidence and fatality in a large, nested case-control study.",
+      "abstract": "Published analyses of prostate cancer nested case-control and survival data in the Alpha-Tocopherol, Beta-Carotene Cancer Prevention (ATBC) Study cohort suggested that men with higher baseline vitamin D [25(OH)D] concentrations have both (i) increased prostate cancer risk and (ii) decreased prostate cancer-specific fatality. To investigate possible factors responsible for a spurious association with prostate cancer fatality, we reanalysed baseline serum vitamin D associations with prostate cancer risk and prostate cancer-specific fatality in case-control data nested within the ATBC Study (1000 controls and 1000 incident prostate cancer cases). Conditional logistic regression and Cox proportion hazard models were used, respectively, to estimate odds ratios for risk and hazard ratios for prostate cancer-specific fatality, overall and by disease aggressiveness. We replicated these case-control analyses using baseline serum measurements of alpha-tocopherol (vitamin E), beta-carotene and retinol (vitamin A), and used the entire ATBC Study cohort (n = 29 085) to estimate marginal associations between these baseline vitamins and prostate cancer incidence and fatality following blood collection. Vitamin D analyses agreed closely with those originally published, with opposite risk and fatality associations. By contrast, the analyses of alpha-tocopherol, beta-carotene and retinol yielded concordant associations for prostate cancer incidence and prostate cancer-specific fatality. We found evidence of neither artefacts in the nested prostate cancer case-control data set nor detection or collider biases in the fatality analyses. The present findings therefore support a valid inverse (i.e. beneficial) association between vitamin D and prostate cancer-specific survival that warrants further evaluation, including possibly in controlled trials.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Prostatic Neoplasms / mortality, epidemiology, blood",
+        "Case-Control Studies",
+        "Vitamin D / blood, analogs & derivatives",
+        "Middle Aged",
+        "beta Carotene / blood",
+        "Aged",
+        "Incidence",
+        "alpha-Tocopherol / blood",
+        "Vitamin A / blood",
+        "Risk Factors",
+        "Proportional Hazards Models"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "39180769",
+      "contexts": [
+        {
+          "context_id": "39180769|Beta-carotene|Prostate cancer",
+          "exposure": "Beta-carotene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2000",
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "2000",
+              "effect_measure_type": "OR",
+              "effect_size": "0.92",
+              "ci_lower": "0.69",
+              "ci_upper": "1.23",
+              "p_value": "0.4",
+              "comparison": "extreme_quantile"
+            }
+          }
+        },
+        {
+          "context_id": "39180769|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2000",
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "2000",
+              "effect_measure_type": "OR",
+              "effect_size": "1.22",
+              "ci_lower": "0.91",
+              "ci_upper": "1.63",
+              "p_value": "0.1",
+              "comparison": "extreme_quantile"
+            }
+          }
+        },
+        {
+          "context_id": "39180769|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2000",
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "higher versus lower baseline serum concentration"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1998",
+              "effect_measure_type": "OR",
+              "effect_size": "1.44",
+              "ci_lower": "1.06",
+              "ci_upper": "1.96",
+              "p_value": "0.07",
+              "comparison": "extreme_quantile"
+            }
+          }
+        },
+        {
+          "context_id": "39180769|Vitamin E|Prostate cancer",
+          "exposure": "Vitamin E",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2000",
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "2000",
+              "effect_measure_type": "OR",
+              "effect_size": "0.66",
+              "ci_lower": "0.49",
+              "ci_upper": "0.91",
+              "p_value": "0.04",
+              "comparison": "extreme_quantile"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

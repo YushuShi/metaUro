@@ -1,0 +1,410 @@
+{
+  "schema_version": 1,
+  "receipt_id": "c940621758ed9ce08ed9ec252b8c5b86de53a2754c3b44cc0623ee7296dadf0b",
+  "requested_at": "2026-09-03T17:31:42.811200-04:00",
+  "received_at": "2026-09-03T17:32:08.790921-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "4b967d16737733599d3bca8bb98ea9b6aab33f903c516109dbfd3639cabdb861",
+  "dispatch_work_unit_key": "a77458ac5ca652e79b859f8c99a68494fc339037b7ee39441d98cbfec26c5aaa",
+  "attempt": 2,
+  "context_ids": [
+    "36839294|Folic acid|Renal cell carcinoma",
+    "36839294|Vitamin B12|Renal cell carcinoma"
+  ],
+  "exposure_weights": {
+    "Folic acid": 1,
+    "Vitamin B12": 1
+  },
+  "input_digest": "9ff85f47efc382bef7cdbf79e41507c2cf389bd38805ef41907c639acfb86ffa",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13003,
+    "cached_input_tokens": 0,
+    "output_tokens": 5144,
+    "reasoning_tokens": 1503
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.029042250000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "f2e0c6a4-de29-4d8e-b159-e538a1537bb2",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.029042250000000002"
+  },
+  "output_sha256": "902847f39db22bbf9b9b0471cfcfcdb27958699875a4381dc2e11d9e95c0ba05",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"36839294|Folic acid|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"The full text provides multivariable-adjusted odds ratios for plasma folate levels and risk of renal cell carcinoma in a hospital-based case-control study.\",\n      \"extraction\": {\n        \"effect_size\": 0.26,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.15,\n        \"ci_upper\": 0.44,\n        \"p_value\": \"<0.01\",\n        \"total_n\": 847,\n        \"cases\": 174,\n        \"comparison_type\": \"tertiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Taiwan\",\n        \"population\": \"Hospital-based case-control study in Taiwan\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 174 patients with pathologically confirmed RCC\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Plasma folate levels (ng/mL) ... ≥9.21 ... 0.26 (0.15–0.44) **\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.26 (0.15–0.44) **\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"** p < 0.01.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 2 footnote\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"We categorized 5mdC (%), plasma folate and vitamin B 12 levels, and blood cadmium concentrations into tertile based on the control distribution, and the lowest tertile was defined as the reference group.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.5 Statistical Analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The present study was a clinical-based case–control study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The present study was a clinical-based case–control study. A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The age-standardized incidence rates of RCC in Taiwan in 2002 and 2012 were 3.39/10 6 and 5.09/10 6 , respectively\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 1. Introduction, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This study was approved by the Institutional Review Board of National Taiwan University Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The methods used for measuring plasma vitamin B 12 and folate levels are described in detail in our previous study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.3 Measurements of Plasma Folate and Vitamin B 12 Levels and Blood Cadmium Concentrations, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Male 121 (69.54) 429 (63.74) ... Female 53 (30.46) 244 (36.26)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Cigarette smoking Non-smoker 104 (59.77) 462 (68.65) Former or current smoker 70 (40.23) 211 (31.35)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"36839294|Vitamin B12|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"The full text provides multivariable-adjusted odds ratios for plasma vitamin B12 levels and risk of renal cell carcinoma in a hospital-based case-control study.\",\n      \"extraction\": {\n        \"effect_size\": 0.57,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.35,\n        \"ci_upper\": 0.94,\n        \"p_value\": \"<0.05\",\n        \"total_n\": 847,\n        \"cases\": 174,\n        \"comparison_type\": \"tertiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"Asia\",\n        \"country\": \"Taiwan\",\n        \"population\": \"Hospital-based case-control study in Taiwan\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": \"mixed\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"A total of 174 patients with pathologically confirmed RCC\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Plasma vitamin B 12 levels (pg/mL) ... ≥622 ... 0.57 (0.35–0.94) *\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.57 (0.35–0.94) *\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"* p < 0.05, ** p < 0.01.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 2 footnote\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"We categorized 5mdC (%), plasma folate and vitamin B 12 levels, and blood cadmium concentrations into tertile based on the control distribution, and the lowest tertile was defined as the reference group.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.5 Statistical Analysis, paragraph 1\"\n          },\n          \"design\": {\n            \"excerpt\": \"The present study was a clinical-based case–control study.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"The present study was a clinical-based case–control study. A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"The age-standardized incidence rates of RCC in Taiwan in 2002 and 2012 were 3.39/10 6 and 5.09/10 6 , respectively\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 1. Introduction, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"This study was approved by the Institutional Review Board of National Taiwan University Hospital.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.1 Study Subjects, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The methods used for measuring plasma vitamin B 12 and folate levels are described in detail in our previous study\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Section 2.3 Measurements of Plasma Folate and Vitamin B 12 Levels and Blood Cadmium Concentrations, paragraph 1\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Male 121 (69.54) 429 (63.74) ... Female 53 (30.46) 244 (36.26)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 1\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"Cigarette smoking Non-smoker 104 (59.77) 462 (68.65) Former or current smoker 70 (40.23) 211 (31.35)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/\",\n            \"location\": \"Table 1\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "36839294|Folic acid|Renal cell carcinoma",
+      "pmid": "36839294",
+      "pmcid": "PMC9959822",
+      "published_date": "2023-02-13",
+      "title": "Possible Combined Effects of Plasma Folate Levels, Global DNA Methylation, and Blood Cadmium Concentrations on Renal Cell Carcinoma.",
+      "authors": [
+        "Huang CY",
+        "Chen WJ",
+        "Lee HL",
+        "Lin YC",
+        "Huang YL",
+        "Shiue HS",
+        "Pu YS",
+        "Hsueh YM"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36839294/",
+      "exposure": "Folic acid",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The full text provides multivariable-adjusted odds ratios for plasma folate levels and risk of renal cell carcinoma in a hospital-based case-control study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.26,
+        "effect_type": "OR",
+        "ci_lower": 0.15,
+        "ci_upper": 0.44,
+        "p_value": 0.01,
+        "total_n": 847,
+        "cases": 174,
+        "comparison_type": "tertiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Taiwan",
+        "population": "Hospital-based case-control study in Taiwan",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.26,
+        "reported_ci_lower": 0.15,
+        "reported_ci_upper": 0.44,
+        "reported_p_value": 0.01,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We recruited 174 RCC patients and 673 non-RCC controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1; total_n derived from reported group counts 174 + 673 = 847"
+          },
+          "cases": {
+            "excerpt": "The present study was a clinical-based case–control study. A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls from our previous study [ 5 ].",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.26 (0.15–0.44) **",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.26 (0.15–0.44) **",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "** p < 0.01.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 2 footnote"
+          },
+          "comparison": {
+            "excerpt": "We categorized 5mdC (%), plasma folate and vitamin B 12 levels, and blood cadmium concentrations into tertile based on the control distribution, and the lowest tertile was defined as the reference group.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.5 Statistical Analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The present study was a clinical-based case–control study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The present study was a clinical-based case–control study. A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The age-standardized incidence rates of RCC in Taiwan in 2002 and 2012 were 3.39/10 6 and 5.09/10 6 , respectively",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 1. Introduction, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "This study was approved by the Institutional Review Board of National Taiwan University Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "The methods used for measuring plasma vitamin B 12 and folate levels are described in detail in our previous study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.3 Measurements of Plasma Folate and Vitamin B 12 Levels and Blood Cadmium Concentrations, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Asian",
+        "ethnicity_basis": "Population imputation: stated Asian country/population -> Asian",
+        "ethnicity_supporting_text": "This study was approved by the Institutional Review Board of National Taiwan University Hospital."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 32810,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "02eb7287f8afc60cfe7ee8cfbfd6fac1847987343a82d30d6cf93063ea1f807c",
+      "pmc_source_receipt_digest": "ef4dc05c309c09becf268430dc9e1676351d1d930c7965f6432c2ae669244cfc",
+      "pmc_source_raw_sha256": "cd5314741e52dbf2f6f069b5172f5258758c23068c2963580c98a497e8af4bf1",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "4b4bad9ed0d93258b8a8e0d50effd19260df74bc80555d6a1e0451a209203ad6"
+    },
+    {
+      "context_id": "36839294|Vitamin B12|Renal cell carcinoma",
+      "pmid": "36839294",
+      "pmcid": "PMC9959822",
+      "published_date": "2023-02-13",
+      "title": "Possible Combined Effects of Plasma Folate Levels, Global DNA Methylation, and Blood Cadmium Concentrations on Renal Cell Carcinoma.",
+      "authors": [
+        "Huang CY",
+        "Chen WJ",
+        "Lee HL",
+        "Lin YC",
+        "Huang YL",
+        "Shiue HS",
+        "Pu YS",
+        "Hsueh YM"
+      ],
+      "journal": "Nutrients",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/36839294/",
+      "exposure": "Vitamin B12",
+      "cancer": "Renal cell carcinoma",
+      "outcome": "Incidence",
+      "reclassification_roles": [],
+      "approved_target_for_sources": [],
+      "classification_instruction": "",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "The full text provides multivariable-adjusted odds ratios for plasma vitamin B12 levels and risk of renal cell carcinoma in a hospital-based case-control study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "exposure_classification_ambiguous": false,
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "p_value_relation": null,
+        "effect_size": 0.57,
+        "effect_type": "OR",
+        "ci_lower": 0.35,
+        "ci_upper": 0.94,
+        "p_value": 0.05,
+        "total_n": 847,
+        "cases": 174,
+        "comparison_type": "tertiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Taiwan",
+        "population": "Hospital-based case-control study in Taiwan",
+        "gender": "NA",
+        "smoking_status": "mixed",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "needs_inversion": false,
+        "reported_effect_type": "OR",
+        "reported_effect_type_label": "OR",
+        "reported_effect_size": 0.57,
+        "reported_ci_lower": 0.35,
+        "reported_ci_upper": 0.94,
+        "reported_p_value": 0.05,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We recruited 174 RCC patients and 673 non-RCC controls.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1; total_n derived from reported group counts 174 + 673 = 847"
+          },
+          "cases": {
+            "excerpt": "The present study was a clinical-based case–control study. A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls from our previous study [ 5 ].",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.57 (0.35–0.94) *",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.57 (0.35–0.94) *",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "* p < 0.05, ** p < 0.01.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 2 footnote"
+          },
+          "comparison": {
+            "excerpt": "We categorized 5mdC (%), plasma folate and vitamin B 12 levels, and blood cadmium concentrations into tertile based on the control distribution, and the lowest tertile was defined as the reference group.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.5 Statistical Analysis, paragraph 1"
+          },
+          "design": {
+            "excerpt": "The present study was a clinical-based case–control study.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "The present study was a clinical-based case–control study. A total of 174 patients with pathologically confirmed RCC and 673 age- and sex-matched individuals without RCC or any other malignancy were recruited as controls",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "The age-standardized incidence rates of RCC in Taiwan in 2002 and 2012 were 3.39/10 6 and 5.09/10 6 , respectively",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 1. Introduction, paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "This study was approved by the Institutional Review Board of National Taiwan University Hospital.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.1 Study Subjects, paragraph 1"
+          },
+          "exposure_measurement": {
+            "excerpt": "The methods used for measuring plasma vitamin B 12 and folate levels are described in detail in our previous study",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Section 2.3 Measurements of Plasma Folate and Vitamin B 12 Levels and Blood Cadmium Concentrations, paragraph 1"
+          },
+          "gender": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 1"
+          },
+          "smoking_status": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9959822/",
+            "location": "Table 1"
+          }
+        },
+        "ethnicity": "Asian",
+        "ethnicity_basis": "Population imputation: stated Asian country/population -> Asian",
+        "ethnicity_supporting_text": "This study was approved by the Institutional Review Board of National Taiwan University Hospital."
+      },
+      "additional_extractions": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 32810,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "02eb7287f8afc60cfe7ee8cfbfd6fac1847987343a82d30d6cf93063ea1f807c",
+      "pmc_source_receipt_digest": "ef4dc05c309c09becf268430dc9e1676351d1d930c7965f6432c2ae669244cfc",
+      "pmc_source_raw_sha256": "cd5314741e52dbf2f6f069b5172f5258758c23068c2963580c98a497e8af4bf1",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "c53a159d084fed35eae204ad7b4cf28e4de30ab6b491e3263324e7502f83006b"
+    }
+  ]
+}

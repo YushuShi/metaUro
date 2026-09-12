@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:17.944406-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "bec755312cd09eea62b722b82f2dc283c7b6a91249d5d0040afe119dcecbeed7",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19336558",
+      "title": "Serum retinol and prostate cancer risk: a nested case-control study in the prostate, lung, colorectal, and ovarian cancer screening trial.",
+      "abstract": "Vitamin A (retinol) plays a key role in the regulation of cell growth and differentiation, and has been studied as a potential chemopreventive agent for prostate cancer. However, findings from epidemiologic studies on the association between circulating retinol concentrations and the risk of prostate cancer are inconsistent. We examined whether serum concentrations of retinol were associated with the risk of prostate cancer in a nested case-control study using 692 prostate cancer cases and 844 matched controls from the Prostate, Lung, Colorectal, and Ovarian Cancer Screening Trial. We estimated the risk of prostate cancer using multivariate, conditional logistic regression to calculate odds ratios and 95% confidence intervals for overall prostate cancer and aggressive disease (stage III or IV or Gleason >7; n = 269). Serum retinol concentrations were not associated with overall prostate cancer risk; however, the highest versus lowest concentrations of serum retinol were associated with a 42% reduction in aggressive prostate cancer risk (P(trend) = 0.02), with the strongest inverse association for high-grade disease (Gleason sum >7; odds ratio, 0.52; 95% confidence interval, 0.32-0.84; P(trend) = 0.01). Our results suggest that higher circulating concentrations of retinol are associated with a decreased risk of aggressive prostate cancer. Further research is needed to better understand the significance of elevations in serum retinol concentrations and the possible biological mechanisms through which retinol affects prostate cancer.",
+      "mesh": [
+        "Aged",
+        "Biomarkers, Tumor / blood",
+        "Case-Control Studies",
+        "Humans",
+        "Male",
+        "Mass Screening",
+        "Middle Aged",
+        "Neoplasm Staging",
+        "Odds Ratio",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "United States / epidemiology",
+        "Vitamin A / blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19336558",
+      "contexts": [
+        {
+          "context_id": "19336558|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "1536",
+              "effect_measure_type": "OR",
+              "effect_size": "0.8",
+              "ci_lower": "0.57",
+              "ci_upper": "1.11",
+              "p_value": "0.11",
+              "comparison": "Highest versus lowest quintile of serum retinol"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1536",
+              "effect_measure_type": "OR",
+              "effect_size": "0.52",
+              "ci_lower": "0.32",
+              "ci_upper": "0.84",
+              "p_value": "0.01",
+              "comparison": "highest versus lowest serum retinol concentration category (high-grade disease, Gleason sum >7)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

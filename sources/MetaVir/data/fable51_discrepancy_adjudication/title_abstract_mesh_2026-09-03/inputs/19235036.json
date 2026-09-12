@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:03.174948-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "b204e0ccbfaa1c6fcea6047e5cf3ff32efc7dcfdf49049fa70977f07d281cb24",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "19235036",
+      "title": "Zinc intake from supplements and diet and prostate cancer.",
+      "abstract": "Laboratory and animal studies suggest a beneficial effect of zinc on prostate cancer. We evaluated the association between dietary and supplemental zinc and prostate cancer within the VITamins And Lifestyle (VITAL) cohort, a study specifically designed to evaluate the impact of dietary supplements and cancer risk. Of 35,242 men who completed the baseline dietary and supplemental questionnaire, 832 men developed invasive prostate cancers between October 2000 and December 2004. Ten-year average intake of supplemental zinc was not associated with a reduced prostate cancer risk overall (adjusted hazard ratio (HR) = 0.82 (95% confidence interval (CI) 0.58-1.14) for >15 mg/day vs. nonuse, P for trend = 0.44); however, risk of advanced prostate cancer (regionally invasive or distant metastatic, n = 123) decreased with greater intake of supplemental zinc (adjusted HR = 0.34, 95% CI = 0.13-1.09 for 10-yr average intake > 15 mg/day vs. nonuse, P for trend = 0.04). Dietary zinc was not associated with prostate cancer. In this prospective cohort, long-term supplemental zinc intake was associated with reduced risk of clinically relevant advanced disease. This study had limited ability to study early-stage disease because detection of early-stage disease is highly related to having a PSA test, and information on PSA was only available at baseline. Because few other epidemiologic studies have investigated the association between zinc and prostate cancer, and these have not yielded consistent findings, further research is needed.",
+      "mesh": [
+        "Aged",
+        "Cohort Studies",
+        "Diet",
+        "Dietary Supplements",
+        "Humans",
+        "Intracellular Signaling Peptides and Proteins / administration & dosage",
+        "Male",
+        "Middle Aged",
+        "Neoplasm Invasiveness / prevention & control",
+        "Neoplasm Metastasis / prevention & control",
+        "Proportional Hazards Models",
+        "Prostate-Specific Antigen / blood",
+        "Prostatic Neoplasms / epidemiology, pathology, prevention & control",
+        "Risk Factors",
+        "Surveys and Questionnaires",
+        "Ubiquitin-Protein Ligases",
+        "Vegetables"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "19235036",
+      "contexts": [
+        {
+          "context_id": "19235036|Zinc|Prostate cancer",
+          "exposure": "Zinc",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "35242",
+              "effect_measure_type": "HR",
+              "effect_size": "0.82",
+              "ci_lower": "0.58",
+              "ci_upper": "1.14",
+              "p_value": "0.44",
+              "comparison": ">15 mg/day supplemental zinc versus nonuse"
+            },
+            "Claude+Gemini": {
+              "sample_size": "35244",
+              "effect_measure_type": "HR",
+              "effect_size": "0.82",
+              "ci_lower": "0.58",
+              "ci_upper": "1.14",
+              "p_value": "0.44",
+              "comparison": "extreme_quantiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

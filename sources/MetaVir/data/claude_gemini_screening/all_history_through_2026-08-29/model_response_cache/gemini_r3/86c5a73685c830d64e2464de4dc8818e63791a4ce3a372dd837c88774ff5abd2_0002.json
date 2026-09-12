@@ -1,0 +1,583 @@
+{
+  "schema_version": 1,
+  "receipt_id": "71d25ec4c8c06aff3408146be73cb0fb6cef516bedd6bbb93f66f5774ae1f3cf",
+  "requested_at": "2026-09-02T08:49:55.338465+08:00",
+  "received_at": "2026-09-02T08:50:34.005704+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "86c5a73685c830d64e2464de4dc8818e63791a4ce3a372dd837c88774ff5abd2",
+  "attempt": 2,
+  "context_ids": [
+    "26685908|Eggs|Prostate cancer",
+    "26685908|Processed meat intake|Prostate cancer",
+    "26685908|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Eggs": 1,
+    "Processed meat intake": 1,
+    "Red meat": 1
+  },
+  "input_digest": "b57821876a4d7fe1550770bf1a33c5d8e4a45c31426aed3a4e75f77947adbb13",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 21030,
+    "cached_input_tokens": 0,
+    "output_tokens": 6544,
+    "reasoning_tokens": 1187
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0403125",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "9d1b78a3-2f3c-4ed9-90d1-6893fd0902e3",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0403125"
+  },
+  "output_sha256": "bbdcdf32eafe6b2ba34e63ec867a644a20038fe9b4219598a468bf6aa2c376cb",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"26685908|Eggs|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective pooled analysis evaluating egg intake and prostate cancer risk across 15 cohort studies.\",\n      \"extraction\": {\n        \"effect_size\": 0.99,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.96,\n        \"ci_upper\": 1.02,\n        \"p_value\": 0.65,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 842149,\n        \"cases\": 52683,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Multi-continent\",\n        \"country\": null,\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Consortium of 15 cohort studies (DCPP) from North America, Europe, Australia, and Asia\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"During follow-up, 52, 683 incident prostate cancer cases, including 4,924 advanced cases, were identified among 842, 149 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During follow-up, 52, 683 incident prostate cancer cases, including 4,924 advanced cases, were identified among 842, 149 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Eggs | Total | 1.00 | 1.01 (0.99–1.03) | 0.99 (0.96–1.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Eggs | Total | 1.00 | 1.01 (0.99–1.03) | 0.99 (0.96–1.02)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Eggs | Total | 1.00 | 1.01 (0.99–1.03) | 0.99 (0.96–1.02) | 0.65\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Categories (g/d): <5 | 5–<25 | ≥25\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"Associations between these dietary factors and prostate cancer were examined in a consortium of 15 cohort studies.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"During follow-up ranging from 9 to a maximum of 22 years across studies, 52,683 incident prostate cancer cases... were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"All multivariable models were adjusted for marital status... race (Caucasian (ref), African-American, Asian, Hispanic, other)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3, footnote 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Each study provided their primary dietary data, which were collected using baseline self-administered food frequency questionnaires (FFQs)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"26685908|Processed meat intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective pooled analysis evaluating processed meat consumption and prostate cancer risk across 15 cohort studies.\",\n      \"extraction\": {\n        \"effect_size\": 1.04,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 1.01,\n        \"ci_upper\": 1.08,\n        \"p_value\": 0.29,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 842149,\n        \"cases\": 52683,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Multi-continent\",\n        \"country\": null,\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Consortium of 15 cohort studies (DCPP) from North America, Europe, Australia, and Asia\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"During follow-up, 52, 683 incident prostate cancer cases, including 4,924 advanced cases, were identified among 842, 149 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During follow-up, 52, 683 incident prostate cancer cases, including 4,924 advanced cases, were identified among 842, 149 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Processed meat | Total | 1.00 | 1.03 (1.00–1.06) | 1.03 (0.99–1.07) | 1.03 (0.98–1.08) | 1.04 (1.01–1.08)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Processed meat | Total | 1.00 | 1.03 (1.00–1.06) | 1.03 (0.99–1.07) | 1.03 (0.98–1.08) | 1.04 (1.01–1.08)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Processed meat | Total | 1.00 | 1.03 (1.00–1.06) | 1.03 (0.99–1.07) | 1.03 (0.98–1.08) | 1.04 (1.01–1.08) | 0.29\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Categories (g/d): <5 | 5–<10 | 10–<20 | 20–<40 | ≥40\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"Associations between these dietary factors and prostate cancer were examined in a consortium of 15 cohort studies.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"During follow-up ranging from 9 to a maximum of 22 years across studies, 52,683 incident prostate cancer cases... were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"All multivariable models were adjusted for marital status... race (Caucasian (ref), African-American, Asian, Hispanic, other)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3, footnote 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Each study provided their primary dietary data, which were collected using baseline self-administered food frequency questionnaires (FFQs)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"26685908|Red meat|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"Prospective pooled analysis evaluating unprocessed red meat consumption and prostate cancer risk across 15 cohort studies.\",\n      \"extraction\": {\n        \"effect_size\": 1.02,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": 0.98,\n        \"ci_upper\": 1.06,\n        \"p_value\": 0.93,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 842149,\n        \"cases\": 52683,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"Multi-continent\",\n        \"country\": null,\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Consortium of 15 cohort studies (DCPP) from North America, Europe, Australia, and Asia\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"During follow-up, 52, 683 incident prostate cancer cases, including 4,924 advanced cases, were identified among 842, 149 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"During follow-up, 52, 683 incident prostate cancer cases, including 4,924 advanced cases, were identified among 842, 149 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Unprocessed red meat | Total | 1.00 | 1.02 (0.98–1.06) | 1.02 (0.99–1.05) | 1.02 (0.99–1.06) | 1.02 (0.98–1.06)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Unprocessed red meat | Total | 1.00 | 1.02 (0.98–1.06) | 1.02 (0.99–1.05) | 1.02 (0.99–1.06) | 1.02 (0.98–1.06)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Unprocessed red meat | Total | 1.00 | 1.02 (0.98–1.06) | 1.02 (0.99–1.05) | 1.02 (0.99–1.06) | 1.02 (0.98–1.06) | 0.93\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Categories (g/d): <20 | 20–<40 | 40–<60 | 60–<100 | ≥100\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"Associations between these dietary factors and prostate cancer were examined in a consortium of 15 cohort studies.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Abstract, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"During follow-up ranging from 9 to a maximum of 22 years across studies, 52,683 incident prostate cancer cases... were identified\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"All multivariable models were adjusted for marital status... race (Caucasian (ref), African-American, Asian, Hispanic, other)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Table 3, footnote 2\"\n          },\n          \"location\": {\n            \"excerpt\": \"Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Study population, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Each study provided their primary dietary data, which were collected using baseline self-administered food frequency questionnaires (FFQs)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/\",\n            \"location\": \"Methods, Dietary assessment, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "26685908|Eggs|Prostate cancer",
+      "pmid": "26685908",
+      "pmcid": "PMC4837898",
+      "published_date": "2016-05-15",
+      "title": "Associations between unprocessed red and processed meat, poultry, seafood and egg intake and the risk of prostate cancer: A pooled analysis of 15 prospective cohort studies.",
+      "authors": [
+        "Wu K",
+        "Spiegelman D",
+        "Hou T",
+        "Albanes D",
+        "Allen NE",
+        "Berndt SI",
+        "van den Brandt PA",
+        "Giles GG",
+        "Giovannucci E",
+        "Alexandra Goldbohm R",
+        "Goodman GG",
+        "Goodman PJ",
+        "Håkansson N",
+        "Inoue M",
+        "Key TJ",
+        "Kolonel LN",
+        "Männistö S",
+        "McCullough ML",
+        "Neuhouser ML",
+        "Park Y",
+        "Platz EA",
+        "Schenk JM",
+        "Sinha R",
+        "Stampfer MJ",
+        "Stevens VL",
+        "Tsugane S",
+        "Visvanathan K",
+        "Wilkens LR",
+        "Wolk A",
+        "Ziegler RG",
+        "Smith-Warner SA"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26685908/",
+      "exposure": "Eggs",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective pooled analysis evaluating egg intake and prostate cancer risk across 15 cohort studies.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.99,
+        "effect_type": "RR",
+        "ci_lower": 0.96,
+        "ci_upper": 1.02,
+        "p_value": 0.65,
+        "ci_confidence_level": 95,
+        "total_n": 842149,
+        "cases": 52683,
+        "comparison_type": "categorical",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Multi-continent",
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Consortium of 15 cohort studies (DCPP) from North America, Europe, Australia, and Asia",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "842,149 52,683",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During follow-up ranging from 9 to a maximum of 22 years across studies, 52,683 incident prostate cancer cases (stage: 38,445 localized, 4,924 advanced which included 3,199 fatal; grade: 37,530 low and 9,746 high) were identified ( Table 1 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "lowest category: pooled MVRR: advanced 0.83, 95% CI 0.70–0.99, heterogeneity test for highest category p value 0.16; fatal 0.69, 95% CI 0.59–0.82, heterogeneity test for highest category p value 0.47). Seafood intake was not significantly associated with risk of prostate cancer regardless of stage or grade.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "0.99 (0.96–1.02)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.65",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "Associations between these dietary factors and prostate cancer were examined in a consortium of 15 cohort studies.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Results, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Each study provided their primary dietary data, which were collected using baseline self-administered food frequency questionnaires (FFQs)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Methods, Dietary assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.65",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 56016,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c03ea8a0a8ab1404493eca296b46217fdb9c8de5ec7cb8e172fb688d428e3ffd",
+      "pmc_source_receipt_digest": "f3d521b5b192ab4027900ea3cbc9ccc54e95de2de2be64fb1736232bf39d7cd8",
+      "pmc_source_raw_sha256": "7595b97ddeed949f904dd311b454686908d1615fbb383304def848a883d5c447",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "1c471575b47ec3b75aa1f65fe097540c9fa0499887758b38fe97b14495f6fb54"
+    },
+    {
+      "context_id": "26685908|Processed meat intake|Prostate cancer",
+      "pmid": "26685908",
+      "pmcid": "PMC4837898",
+      "published_date": "2016-05-15",
+      "title": "Associations between unprocessed red and processed meat, poultry, seafood and egg intake and the risk of prostate cancer: A pooled analysis of 15 prospective cohort studies.",
+      "authors": [
+        "Wu K",
+        "Spiegelman D",
+        "Hou T",
+        "Albanes D",
+        "Allen NE",
+        "Berndt SI",
+        "van den Brandt PA",
+        "Giles GG",
+        "Giovannucci E",
+        "Alexandra Goldbohm R",
+        "Goodman GG",
+        "Goodman PJ",
+        "Håkansson N",
+        "Inoue M",
+        "Key TJ",
+        "Kolonel LN",
+        "Männistö S",
+        "McCullough ML",
+        "Neuhouser ML",
+        "Park Y",
+        "Platz EA",
+        "Schenk JM",
+        "Sinha R",
+        "Stampfer MJ",
+        "Stevens VL",
+        "Tsugane S",
+        "Visvanathan K",
+        "Wilkens LR",
+        "Wolk A",
+        "Ziegler RG",
+        "Smith-Warner SA"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26685908/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective pooled analysis evaluating processed meat consumption and prostate cancer risk across 15 cohort studies.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.04,
+        "effect_type": "RR",
+        "ci_lower": 1.01,
+        "ci_upper": 1.08,
+        "p_value": 0.29,
+        "ci_confidence_level": 95,
+        "total_n": 842149,
+        "cases": 52683,
+        "comparison_type": "categorical",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Multi-continent",
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Consortium of 15 cohort studies (DCPP) from North America, Europe, Australia, and Asia",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "842,149 52,683",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During follow-up ranging from 9 to a maximum of 22 years across studies, 52,683 incident prostate cancer cases (stage: 38,445 localized, 4,924 advanced which included 3,199 fatal; grade: 37,530 low and 9,746 high) were identified ( Table 1 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.04 (1.01–1.08)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "lowest category (cutoffs same as for seafood): pooled MVRR, 95% CI: advanced 0.96, 0.83–1.12, trend test p value 0.83; advanced( r ) 1.08, 0.89–1.30, trend test p value 0.30; fatal 0.89, 0.74–1.07, trend test p value 0.46). Participants in the highest category of egg intake (≥25 g/day, 1 egg ~50 g) had a 14% increased risk of advanced and fatal cancers when compared with participants in the lowest category (<5 g/day) (pooled MVRR: advanced 1.14, 95% CI 1.01–1.28, heterogeneity test for highest category p value =0.24; fatal 1.14, 95% CI 1.00–1.30, heterogeneity test for highest category p value =0.33).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "<5 g/day: advanced 0.83, 0.70–0.99; trend test p value 0.29), fatal, 0.69, 0.59–0.82, trend test p value 0.16).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "Associations between these dietary factors and prostate cancer were examined in a consortium of 15 cohort studies.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Results, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Each study provided their primary dietary data, which were collected using baseline self-administered food frequency questionnaires (FFQs)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Methods, Dietary assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.29",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 56016,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c03ea8a0a8ab1404493eca296b46217fdb9c8de5ec7cb8e172fb688d428e3ffd",
+      "pmc_source_receipt_digest": "f3d521b5b192ab4027900ea3cbc9ccc54e95de2de2be64fb1736232bf39d7cd8",
+      "pmc_source_raw_sha256": "7595b97ddeed949f904dd311b454686908d1615fbb383304def848a883d5c447",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b6ee5c54a08aaea1ae96d1ee84f54137bb40b003f488da3347a62ab2395c9794"
+    },
+    {
+      "context_id": "26685908|Red meat|Prostate cancer",
+      "pmid": "26685908",
+      "pmcid": "PMC4837898",
+      "published_date": "2016-05-15",
+      "title": "Associations between unprocessed red and processed meat, poultry, seafood and egg intake and the risk of prostate cancer: A pooled analysis of 15 prospective cohort studies.",
+      "authors": [
+        "Wu K",
+        "Spiegelman D",
+        "Hou T",
+        "Albanes D",
+        "Allen NE",
+        "Berndt SI",
+        "van den Brandt PA",
+        "Giles GG",
+        "Giovannucci E",
+        "Alexandra Goldbohm R",
+        "Goodman GG",
+        "Goodman PJ",
+        "Håkansson N",
+        "Inoue M",
+        "Key TJ",
+        "Kolonel LN",
+        "Männistö S",
+        "McCullough ML",
+        "Neuhouser ML",
+        "Park Y",
+        "Platz EA",
+        "Schenk JM",
+        "Sinha R",
+        "Stampfer MJ",
+        "Stevens VL",
+        "Tsugane S",
+        "Visvanathan K",
+        "Wilkens LR",
+        "Wolk A",
+        "Ziegler RG",
+        "Smith-Warner SA"
+      ],
+      "journal": "International journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/26685908/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective pooled analysis evaluating unprocessed red meat consumption and prostate cancer risk across 15 cohort studies.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.02,
+        "effect_type": "RR",
+        "ci_lower": 0.98,
+        "ci_upper": 1.06,
+        "p_value": 0.93,
+        "ci_confidence_level": 95,
+        "total_n": 842149,
+        "cases": 52683,
+        "comparison_type": "categorical",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "Multi-continent",
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Consortium of 15 cohort studies (DCPP) from North America, Europe, Australia, and Asia",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "842,149 52,683",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "cases": {
+            "excerpt": "During follow-up ranging from 9 to a maximum of 22 years across studies, 52,683 incident prostate cancer cases (stage: 38,445 localized, 4,924 advanced which included 3,199 fatal; grade: 37,530 low and 9,746 high) were identified ( Table 1 ).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "1.02 (0.98–1.06)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "confidence_interval": {
+            "excerpt": "1.02 (0.98–1.06)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "p_value": {
+            "excerpt": "0.93",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Table 3"
+          },
+          "design": {
+            "excerpt": "Associations between these dietary factors and prostate cancer were examined in a consortium of 15 cohort studies.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Abstract, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Results, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Fifteen cohorts from North America, Europe, Australia and Asia were included in this pooled analysis",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Methods, Study population, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Each study provided their primary dietary data, which were collected using baseline self-administered food frequency questionnaires (FFQs)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4837898/",
+            "location": "Methods, Dietary assessment, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.93",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 56016,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "c03ea8a0a8ab1404493eca296b46217fdb9c8de5ec7cb8e172fb688d428e3ffd",
+      "pmc_source_receipt_digest": "f3d521b5b192ab4027900ea3cbc9ccc54e95de2de2be64fb1736232bf39d7cd8",
+      "pmc_source_raw_sha256": "7595b97ddeed949f904dd311b454686908d1615fbb383304def848a883d5c447",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "12f406d82c40467966d84f4af589f5a4e206f09276a71ac7b537f05ce245f4d0"
+    }
+  ]
+}

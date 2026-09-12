@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:05:42.395300-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "1da5e1869c9c9ce4af8fd10cc47f3b5d17fbe90fc9194b9c57c8dc3d01c96923",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "1296201",
+      "title": "Diet and prostatic cancer: a case-control study in northern Italy.",
+      "abstract": "The relationship between intake of various indicator foods and beverages and risk of prostatic cancer was assessed in 271 cases of prostatic cancer and 685 hospital controls recruited in two areas of northern Italy, the province of Pordenone and the greater Milan area. Increased risks were found for more frequent intake of meat [odds ratio (OR) in the highest vs. lowest consumption tertile = 1.4, 95% confidence interval (CI) 1.0-2.0], milk (OR = 1.6, 95% CI 1.1-2.4), fresh fruit (OR = 1.4, 95% CI 1.0-2.1), and vegetables (OR = 1.4, 95% CI 0.9-2.2). After allowance for the reciprocal confounding effect of various dietary habits, only frequent intake of milk seemed to be a significant independent indicator of prostatic cancer risk. There was also a clue that the unfavorable influence of frequent intake of a few food items (i.e. meat, fish, liver, ham and salami, milk and butter, and retinol) may be greater or restricted to older individuals (i.e., > or = 70 yrs of age). In conclusion, the present study confirms the presence of a moderate adverse effect of high intake of foods of animal origin, chiefly milk, while it suggests that a diet rich in fresh fruit and vegetables does not convey a protection.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "Confidence Intervals",
+        "Diet / adverse effects",
+        "Feeding Behavior",
+        "Humans",
+        "Italy / epidemiology",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / etiology, mortality"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "1296201",
+      "contexts": [
+        {
+          "context_id": "1296201|Processed meat intake|Prostate cancer",
+          "exposure": "Processed meat intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        },
+        {
+          "context_id": "1296201|Vitamin A|Prostate cancer",
+          "exposure": "Vitamin A",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

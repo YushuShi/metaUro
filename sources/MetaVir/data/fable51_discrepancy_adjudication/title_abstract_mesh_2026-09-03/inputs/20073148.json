@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:28:55.744446-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "241b53de0c4bbb921d3aaaf2608cb6ef8104fe66a30aeb59ff619e400d9cbb0f",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "20073148",
+      "title": "The association of plasma fatty acids with prostate cancer risk in Nigerians.",
+      "abstract": "To investigate the role of fatty acids (FAs) in prostate cancer (PCa) risk in Nigeria, a country in transition to westernized diet high in animal fats, and currently experiencing rising rates of prostate cancer. Men > or =40 years were recruited from surgery/urology clinics, University of Benin Teaching Hospital and from 2 rural and 2 urban communities. Personal information, urological symptom history and anthropometrics were recorded, digital rectal examination performed, and 30 mLs of fasting blood collected for prostatic specific antigen and fatty acid (FA) analysis. Odds ratio (OR) of PCa risk was determined by unconditional logistic regression with the plasma FA 1st quartile as reference, controlling for age, education, waist-to-hip ratio, and family history. Mean ages for 66 (22.6%) cases and 226 (77.4%) controls were 71.9+/-11.47 and 56.7+/-12.69 years, P<.001, and median (25th, 75th percentile) fasting plasma FA were 2,447 (2,087, 3,024) and 2,373 (2,014, 2,751) microg/mL, respectively. PCa risk trend was observed for total omega-6 FA, adjusted ORQ3vs.Q1 2.33 (95% CI, 0.77-7.07), P<0.05. Unadjusted ORQ4vs.Q1 for behenic and nervonic acids were 2.79 (95% CI, 1.27-6.10) and 2.40 (95% CI, 1.19-4.85), and unadjusted ORQ2vs.Q1 for erucic and arachidonic acids were 4.20 (95% CI, 1.79-9.82) and 3.81 (95% CI, 1.50-9.70) respectively. Unadjusted ORQ2vs.Q1 for omega-3 FAs eicosapentaenoic (EPA) and docosapentaenoic (DPA) were 0.39 (95% CI, 0.18-0.85) and 0.79 (95% CI, 0.35-1.79) respectively. In this population with high total plasma omega-3, we observed modest positive PCa risk trend with total plasma omega-6 (2.3), inverse risk reduction with EPA (0.4), and strong positive risk associations with behenic (2.8), erucic (4.2), and nervonic (2.4) acids. Total plasma omega-6 is highest in the educated high-income group. These findings should be confirmed in a larger study because of the potential serious implication of dietary transition particularly in a region designated as low-incidence for PCa.",
+      "mesh": [
+        "Aged",
+        "Diet",
+        "Educational Status",
+        "Fatty Acids / blood",
+        "Humans",
+        "Incidence",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Nigeria / epidemiology",
+        "Odds Ratio",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Risk Assessment"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "20073148",
+      "contexts": [
+        {
+          "context_id": "20073148|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.39",
+              "ci_lower": "0.18",
+              "ci_upper": "0.85",
+              "p_value": "0.017415433926668444",
+              "comparison": "second versus first quartile of plasma EPA"
+            },
+            "Claude+Gemini": {
+              "sample_size": "292",
+              "effect_measure_type": "OR",
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Plasma fatty acid quartiles with 1st quartile as reference"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

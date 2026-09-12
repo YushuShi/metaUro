@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:28:44.920848-04:00",
+  "pmid": "19235037",
+  "work_key": "54a01f1f5d398d3364b1239e7f8ddfe19413fb206c176a3c43b95dc08f3f51b7",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/19235037_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "19235037",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "19235037|Beta-carotene|Prostate cancer",
+        "exposure": "Beta-carotene",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "among 382 controls and 478 PC cases (373 incident and 105 prevalent cases)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives 860 total participants but the beta-carotene comparison is reported only in the Caucasian stratum with unstated analytic denominator",
+        "one_sentence_explanation": "The abstract totals 860 participants (382 controls, 478 cases), but the beta-carotene finding is restricted to Caucasians with no stratum size, so 860 cannot be uniquely mapped to the target estimate."
+      },
+      {
+        "context_id": "19235037|Folic acid|Prostate cancer",
+        "exposure": "Folic acid",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "INCLUDE",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "incident cases reported lower intake of fiber, vitamin C, vitamin A, alpha -carotene, beta -carotene, cryptoxanthin, folate, genistein",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports dietary folate rather than folic acid; confirm terminology equivalence for the review",
+        "one_sentence_explanation": "The abstract evaluates dietary folate intake in incident prostate cancer cases versus controls in an original human study, so an exposure-mismatch exclusion is not clearly established and inclusion (Claude+Gemini) is supported."
+      },
+      {
+        "context_id": "19235037|Genistein|Prostate cancer",
+        "exposure": "Genistein",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "among 382 controls and 478 PC cases (373 incident and 105 prevalent cases)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives 860 total participants but the genistein comparison is reported only in the Caucasian stratum with unstated analytic denominator",
+        "one_sentence_explanation": "The abstract totals 860 participants, but the genistein comparison is restricted to Caucasians without a stratum size, so 860 cannot be uniquely confirmed as the analyzed sample for this estimate."
+      },
+      {
+        "context_id": "19235037|Vitamin A|Prostate cancer",
+        "exposure": "Vitamin A",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "among 382 controls and 478 PC cases (373 incident and 105 prevalent cases)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract gives 860 total participants but the vitamin A comparison is reported only in the Caucasian stratum with unstated analytic denominator",
+        "one_sentence_explanation": "The abstract totals 860 participants, but the vitamin A finding is restricted to Caucasians with no stratum size given, so 860 cannot be uniquely mapped to the target estimate."
+      },
+      {
+        "context_id": "19235037|Vitamin C|Prostate cancer",
+        "exposure": "Vitamin C",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "among 382 controls and 478 PC cases (373 incident and 105 prevalent cases)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract does not state whether the vitamin C OR (0.60; 0.41-0.88) used all 478 cases or only the 373 incident cases",
+        "one_sentence_explanation": "The abstract reports 860 total participants but does not specify whether the vitamin C tertile OR was estimated among all cases or incident cases only, so the analyzed sample cannot be uniquely determined."
+      }
+    ]
+  }
+}

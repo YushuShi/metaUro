@@ -1,0 +1,1051 @@
+{
+  "schema_version": 1,
+  "receipt_id": "c382225a8a9d6fb74545fbe260036e15d177bcd361e2d3da8e195058969ea02f",
+  "requested_at": "2026-09-02T07:24:03.178834+08:00",
+  "received_at": "2026-09-02T07:25:29.259037+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "bf19aff3bc5c8b630e564817c3cfc4e34d96a59bce261cea01b8e4501b44d110",
+  "attempt": 1,
+  "context_ids": [
+    "7167179|Zinc|Prostate cancer",
+    "7284230|Dairy|Prostate cancer",
+    "7473833|Beta-carotene|Prostate cancer",
+    "7473833|Lutein|Prostate cancer",
+    "7473833|Lycopene|Prostate cancer",
+    "7473833|Tomato|Prostate cancer",
+    "7473833|Vitamin A|Prostate cancer",
+    "7495237|Beta-carotene|Prostate cancer",
+    "7497914|Antioxidants|Prostate cancer",
+    "7510134|Alcohol|Prostate cancer",
+    "7525054|Low-fat diet|Prostate cancer",
+    "7525054|Vegetable and seed oil intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Alcohol": 1,
+    "Antioxidants": 1,
+    "Beta-carotene": 2,
+    "Dairy": 1,
+    "Low-fat diet": 1,
+    "Lutein": 1,
+    "Lycopene": 1,
+    "Tomato": 1,
+    "Vegetable and seed oil intake": 1,
+    "Vitamin A": 1,
+    "Zinc": 1
+  },
+  "input_digest": "05de01689452078622f913d0ac5d464aeaa7622d8af8870197ffdc83f0e883e0",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 9460,
+    "cached_input_tokens": 0,
+    "output_tokens": 9955,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.296175",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "f38d454f-1db9-4db1-99eb-687cbcfe71dc",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.296175"
+  },
+  "output_sha256": "12d14b0521dd76ceef6afb0d00c24b52a0bfd8660c29999d1fd90dfbcdd2fe5e",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"7167179|Zinc|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a proposal/commentary outlining a future collaborative study design, presenting no original comparative results on zinc and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7284230|Dairy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NO-TARGET-ESTIMATE\",\"reason\":\"The ecological analysis reports prostate cancer associations only for saturated/animal fat and animal/total protein, so no dairy-specific prostate cancer incidence estimate can be separated.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7473833|Beta-carotene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting dietary beta-carotene intake in relation to incident prostate cancer risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":47894,\"cases\":812,\"comparison_type\":\"high versus low quintile of intake\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"male health professionals initially free of diagnosed cancer\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 47,894 eligible subjects initially free of diagnosed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"Intakes of the carotenoids beta-carotene, alpha-carotene, lutein, and beta-cryptoxanthin were not associated with risk of non-stage A1 prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"for high versus low quintile of intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We concluded a prospective cohort study to examine the relationship between the intake of various carotenoids, retinol, fruits, and vegetables and the risk of prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7473833|Lutein|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting dietary lutein intake in relation to incident prostate cancer risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":47894,\"cases\":812,\"comparison_type\":\"high versus low quintile of intake\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"male health professionals initially free of diagnosed cancer\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 47,894 eligible subjects initially free of diagnosed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"Intakes of the carotenoids beta-carotene, alpha-carotene, lutein, and beta-cryptoxanthin were not associated with risk of non-stage A1 prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"for high versus low quintile of intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We concluded a prospective cohort study to examine the relationship between the intake of various carotenoids, retinol, fruits, and vegetables and the risk of prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7473833|Lycopene|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting a quantitative association between dietary lycopene intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":0.79,\"effect_type\":\"RR\",\"ci_lower\":0.64,\"ci_upper\":0.99,\"p_value\":0.04,\"ci_confidence_level\":95,\"total_n\":47894,\"cases\":773,\"comparison_type\":\"high versus low quintile of intake\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"male health professionals initially free of diagnosed cancer\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 47,894 eligible subjects initially free of diagnosed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"only lycopene intake was related to lower risk (age- and energy-adjusted RR = 0.79\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% confidence interval [CI] = 0.64-0.99 for high versus low quintile of intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P for trend = .04\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"for high versus low quintile of intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We concluded a prospective cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Using responses to a validated, semiquantitative food-frequency questionnaire ... we assessed dietary intake for a 1-year period\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7473833|Tomato|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting combined tomato-food intake in relation to incident prostate cancer risk.\",\"extraction\":{\"effect_size\":0.65,\"effect_type\":\"RR\",\"ci_lower\":0.44,\"ci_upper\":0.95,\"p_value\":0.01,\"ci_confidence_level\":95,\"total_n\":47894,\"cases\":773,\"comparison_type\":\"consumption frequency greater than 10 versus less than 1.5 servings per week\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"male health professionals initially free of diagnosed cancer\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 47,894 eligible subjects initially free of diagnosed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"Combined intake of tomatoes, tomato sauce, tomato juice, and pizza ... was inversely associated with risk of prostate cancer (multivariate RR = 0.65\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"confidence_interval\":{\"excerpt\":\"95% CI = 0.44-0.95, for consumption frequency greater than 10 versus less than 1.5 servings per week\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"p_value\":{\"excerpt\":\"P for trend = .01\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"comparison\":{\"excerpt\":\"for consumption frequency greater than 10 versus less than 1.5 servings per week\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"design\":{\"excerpt\":\"We concluded a prospective cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Between 1986 and 1992, 812 new cases of prostate cancer ... were documented\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Using responses to a validated, semiquantitative food-frequency questionnaire ... we assessed dietary intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7473833|Vitamin A|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective cohort reporting dietary retinol (vitamin A) intake in relation to incident prostate cancer risk.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":47894,\"cases\":812,\"comparison_type\":\"high versus low intake categories\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"male health professionals initially free of diagnosed cancer\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 47,894 eligible subjects initially free of diagnosed cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"No consistent association was observed for dietary retinol and risk of prostate cancer.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"We calculated the relative risk (RR) for each of the upper categories of intake of a specific food or nutrient by dividing the incidence rate of prostate cancer among men in each of these categories by the rate among men in the lowest intake level.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"design\":{\"excerpt\":\"We concluded a prospective cohort study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Using responses to a validated, semiquantitative food-frequency questionnaire ... we assessed dietary intake\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7473833/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7495237|Beta-carotene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review summarizing observational epidemiologic evidence on beta-carotene and cancer prevention rather than an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7497914|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a commentary/editorial on an antioxidant trial with no abstract or original results reported.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7510134|Alcohol|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Cohort study of health plan members examining alcohol consumption in relation to incident prostate cancer.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":null,\"ci_confidence_level\":null,\"total_n\":43432,\"cases\":238,\"comparison_type\":\"alcohol consumption categories versus no elevated risk reference\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":\"North America\",\"country\":\"United States\",\"location\":\"northern California, United States\",\"ethnicity\":\"Black and White men\",\"population\":\"men who were members of a prepaid health plan and had received a health examination\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"a cohort of 43,432 men who were members of a prepaid health plan in northern California (United States)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, methods\"},\"cases\":{\"excerpt\":\"the 238 men in our study in whom prostate cancer developed\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, results\"},\"effect_size\":{\"excerpt\":\"Alcohol consumption was associated with no elevated prostate cancer risk\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, results\"},\"confidence_interval\":null,\"p_value\":null,\"comparison\":{\"excerpt\":\"Detailed information on demographic variables, alcohol consumption, smoking habits, medical complaints and conditions, occupation, and surgery (including vasectomy) was assessed.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, methods\"},\"design\":{\"excerpt\":\"we examined this relation in a cohort of 43,432 men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, methods\"},\"timing\":{\"excerpt\":\"who had received a health examination in the period from 1979 through 1985\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, methods\"},\"continent\":{\"excerpt\":\"in northern California (United States)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, methods\"},\"ethnicity\":{\"excerpt\":\"Prostate cancer risk for Black men was 2.2 (CI = 1.6-3.1) when compared with that for White men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, results\"},\"location\":{\"excerpt\":\"members of a prepaid health plan in northern California (United States)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, methods\"},\"exposure_measurement\":{\"excerpt\":\"Detailed information on demographic variables, alcohol consumption, smoking habits ... was assessed\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/7510134/\",\"location\":\"abstract, methods\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Unclear\",\"q4\":\"Yes\",\"q5\":\"No\",\"q6\":\"Unclear\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"7525054|Low-fat diet|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study exclusively examines dietary fat and prostate carcinogenesis in ACI/Seg rats.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"7525054|Vegetable and seed oil intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"Corn oil feeding and prostate carcinogenesis were assessed only in rats, with no human data.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "7167179|Zinc|Prostate cancer",
+      "pmid": "7167179",
+      "pmcid": "",
+      "published_date": "1982",
+      "title": "Proposal for a collaborative epidemiology study of prostate cancer in the Pacific Basin.",
+      "authors": [
+        "Thomas DB",
+        "Kolonel LN",
+        "Ross RK",
+        "Thompson DJ"
+      ],
+      "journal": "National Cancer Institute monograph",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7167179/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a proposal/commentary outlining a future collaborative study design, presenting no original comparative results on zinc and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7284230|Dairy|Prostate cancer",
+      "pmid": "7284230",
+      "pmcid": "PMC2010777",
+      "published_date": "1981-09-01",
+      "title": "Nutrient intakes in relation to cancer incidence in Hawaii.",
+      "authors": [
+        "Kolonel LN",
+        "Hankin JH",
+        "Lee J",
+        "Chu SY",
+        "Nomura AM",
+        "Hinds MW"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7284230/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "The ecological analysis reports prostate cancer associations only for saturated/animal fat and animal/total protein, so no dairy-specific prostate cancer incidence estimate can be separated.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7473833|Beta-carotene|Prostate cancer",
+      "pmid": "7473833",
+      "pmcid": "",
+      "published_date": "1995-12-06",
+      "title": "Intake of carotenoids and retinol in relation to risk of prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Ascherio A",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Colditz GA",
+        "Willett WC"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting dietary beta-carotene intake in relation to incident prostate cancer risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 47894,
+        "cases": 812,
+        "comparison_type": "high versus low quintile of intake",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male health professionals initially free of diagnosed cancer",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake for a 1-year period for a cohort of 47,894 eligible subjects initially free of diagnosed cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Intakes of the carotenoids beta-carotene, alpha-carotene, lutein, and beta-cryptoxanthin were not associated with risk of non-stage A1 prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for high versus low quintile of intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We concluded a prospective cohort study to examine the relationship between the intake of various carotenoids, retinol, fruits, and vegetables and the risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7473833|Lutein|Prostate cancer",
+      "pmid": "7473833",
+      "pmcid": "",
+      "published_date": "1995-12-06",
+      "title": "Intake of carotenoids and retinol in relation to risk of prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Ascherio A",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Colditz GA",
+        "Willett WC"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+      "exposure": "Lutein",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting dietary lutein intake in relation to incident prostate cancer risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 47894,
+        "cases": 812,
+        "comparison_type": "high versus low quintile of intake",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male health professionals initially free of diagnosed cancer",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake for a 1-year period for a cohort of 47,894 eligible subjects initially free of diagnosed cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Intakes of the carotenoids beta-carotene, alpha-carotene, lutein, and beta-cryptoxanthin were not associated with risk of non-stage A1 prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "for high versus low quintile of intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We concluded a prospective cohort study to examine the relationship between the intake of various carotenoids, retinol, fruits, and vegetables and the risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7473833|Lycopene|Prostate cancer",
+      "pmid": "7473833",
+      "pmcid": "",
+      "published_date": "1995-12-06",
+      "title": "Intake of carotenoids and retinol in relation to risk of prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Ascherio A",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Colditz GA",
+        "Willett WC"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting a quantitative association between dietary lycopene intake and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.79,
+        "effect_type": "RR",
+        "ci_lower": 0.64,
+        "ci_upper": 0.99,
+        "p_value": 0.04,
+        "ci_confidence_level": 95,
+        "total_n": 47894,
+        "cases": 773,
+        "comparison_type": "high versus low quintile of intake",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male health professionals initially free of diagnosed cancer",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake for a 1-year period for a cohort of 47,894 eligible subjects initially free of diagnosed cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Intakes of the carotenoids beta-carotene, alpha-carotene, lutein, and beta-cryptoxanthin were not associated with risk of non-stage A1 prostate cancer; only lycopene intake was related to lower risk (age- and energy-adjusted RR = 0.79; 95% confidence interval [CI] = 0.64-0.99 for high versus low quintile of intake; P for trend = .04). Of 46 vegetables and fruits or related products, four were significantly associated with lower prostate cancer risk; of the four--tomato sauce (P for trend = .001), tomatoes (P for trend = .03), and pizza (P for trend = .05), but not strawberries--were primary sources of lycopene.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "Intakes of the carotenoids beta-carotene, alpha-carotene, lutein, and beta-cryptoxanthin were not associated with risk of non-stage A1 prostate cancer; only lycopene intake was related to lower risk (age- and energy-adjusted RR = 0.79; 95% confidence interval [CI] = 0.64-0.99 for high versus low quintile of intake; P for trend = .04).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P for trend = .04",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "for high versus low quintile of intake",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We concluded a prospective cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.04",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7473833|Tomato|Prostate cancer",
+      "pmid": "7473833",
+      "pmcid": "",
+      "published_date": "1995-12-06",
+      "title": "Intake of carotenoids and retinol in relation to risk of prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Ascherio A",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Colditz GA",
+        "Willett WC"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting combined tomato-food intake in relation to incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": 0.65,
+        "effect_type": "RR",
+        "ci_lower": 0.44,
+        "ci_upper": 0.95,
+        "p_value": 0.01,
+        "ci_confidence_level": 95,
+        "total_n": 47894,
+        "cases": 773,
+        "comparison_type": "consumption frequency greater than 10 versus less than 1.5 servings per week",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male health professionals initially free of diagnosed cancer",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake for a 1-year period for a cohort of 47,894 eligible subjects initially free of diagnosed cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Of 46 vegetables and fruits or related products, four were significantly associated with lower prostate cancer risk; of the four--tomato sauce (P for trend = .001), tomatoes (P for trend = .03), and pizza (P for trend = .05), but not strawberries--were primary sources of lycopene. Combined intake of tomatoes, tomato sauce, tomato juice, and pizza (which accounted for 82% of lycopene intake) was inversely associated with risk of prostate cancer (multivariate RR = 0.65; 95% CI = 0.44-0.95, for consumption frequency greater than 10 versus less than 1.5 servings per week; P for trend = .01) and advanced (stages C and D) prostate cancers (multivariate RR = 0.47; 95% CI = 0.22-1.00; P for trend = .03).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": {
+            "excerpt": "Combined intake of tomatoes, tomato sauce, tomato juice, and pizza (which accounted for 82% of lycopene intake) was inversely associated with risk of prostate cancer (multivariate RR = 0.65; 95% CI = 0.44-0.95, for consumption frequency greater than 10 versus less than 1.5 servings per week; P for trend = .01) and advanced (stages C and D) prostate cancers (multivariate RR = 0.47; 95% CI = 0.22-1.00; P for trend = .03).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "p_value": {
+            "excerpt": "P for trend = .01",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "comparison": {
+            "excerpt": "for consumption frequency greater than 10 versus less than 1.5 servings per week",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "We concluded a prospective cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "0.01",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7473833|Vitamin A|Prostate cancer",
+      "pmid": "7473833",
+      "pmcid": "",
+      "published_date": "1995-12-06",
+      "title": "Intake of carotenoids and retinol in relation to risk of prostate cancer.",
+      "authors": [
+        "Giovannucci E",
+        "Ascherio A",
+        "Rimm EB",
+        "Stampfer MJ",
+        "Colditz GA",
+        "Willett WC"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Prospective cohort reporting dietary retinol (vitamin A) intake in relation to incident prostate cancer risk.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 47894,
+        "cases": 812,
+        "comparison_type": "high versus low intake categories",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": null,
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "male health professionals initially free of diagnosed cancer",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Using responses to a validated, semiquantitative food-frequency questionnaire mailed to participants in the Health Professionals Follow-up Study in 1986, we assessed dietary intake for a 1-year period for a cohort of 47,894 eligible subjects initially free of diagnosed cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Between 1986 and 1992, 812 new cases of prostate cancer, including 773 non-stage A1 cases, were documented.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "No consistent association was observed for dietary retinol and risk of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "We calculated the relative risk (RR) for each of the upper categories of intake of a specific food or nutrient by dividing the incidence rate of prostate cancer among men in each of these categories by the rate among men in the lowest intake level.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "design": {
+            "excerpt": "We concluded a prospective cohort study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "Follow-up questionnaires were sent to the entire cohort in 1988, 1990, and 1992.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          },
+          "continent": null,
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7473833/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 81.8,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7495237|Beta-carotene|Prostate cancer",
+      "pmid": "7495237",
+      "pmcid": "",
+      "published_date": "1995-12-01",
+      "title": "Epidemiologic evidence for beta-carotene and cancer prevention.",
+      "authors": [
+        "van Poppel G",
+        "Goldbohm RA"
+      ],
+      "journal": "The American journal of clinical nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7495237/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review summarizing observational epidemiologic evidence on beta-carotene and cancer prevention rather than an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7497914|Antioxidants|Prostate cancer",
+      "pmid": "7497914",
+      "pmcid": "",
+      "published_date": "1994",
+      "title": "[SETTI-Study and antioxidants--more questions than answers].",
+      "authors": [
+        "Huttunen J",
+        "Kontula K"
+      ],
+      "journal": "Duodecim; laaketieteellinen aikakauskirja",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7497914/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a commentary/editorial on an antioxidant trial with no abstract or original results reported.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7510134|Alcohol|Prostate cancer",
+      "pmid": "7510134",
+      "pmcid": "",
+      "published_date": "1994-01-01",
+      "title": "Alcohol consumption, smoking, and other risk factors and prostate cancer in a large health plan cohort in California (United States).",
+      "authors": [
+        "Hiatt RA",
+        "Armstrong MA",
+        "Klatsky AL",
+        "Sidney S"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+      "exposure": "Alcohol",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Cohort study of health plan members examining alcohol consumption in relation to incident prostate cancer.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 43432,
+        "cases": 238,
+        "comparison_type": "alcohol consumption categories versus no elevated risk reference",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "men who were members of a prepaid health plan and had received a health examination",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "We therefore examined this relation in a cohort of 43,432 men who were members of a prepaid health plan in northern California (United States) and who had received a health examination in the period from 1979 through 1985.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, methods"
+          },
+          "cases": {
+            "excerpt": "Alcohol consumption was associated with no elevated prostate cancer risk for the 238 men in our study in whom prostate cancer developed, but smoking one or more packs of cigarettes per day was associated with an adjusted relative risk (RR) of 1.9 (95 percent confidence interval [CI] = 1.2-3.1).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, results"
+          },
+          "effect_size": {
+            "excerpt": "Alcohol consumption was associated with no elevated prostate cancer risk",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, results"
+          },
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "Detailed information on demographic variables, alcohol consumption, smoking habits, medical complaints and conditions, occupation, and surgery (including vasectomy) was assessed.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, methods"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "who had received a health examination in the period from 1979 through 1985",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "in northern California (United States)",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, methods"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/7510134/",
+            "location": "abstract, methods"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "No",
+          "q6": "Unclear",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7525054|Low-fat diet|Prostate cancer",
+      "pmid": "7525054",
+      "pmcid": "",
+      "published_date": "1994-12-01",
+      "title": "Promotional effect of two-generation exposure to a high-fat diet on prostate carcinogenesis in ACI/Seg rats.",
+      "authors": [
+        "Kondo Y",
+        "Homma Y",
+        "Aso Y",
+        "Kakizoe T"
+      ],
+      "journal": "Cancer research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7525054/",
+      "exposure": "Low-fat diet",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "The study exclusively examines dietary fat and prostate carcinogenesis in ACI/Seg rats.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "7525054|Vegetable and seed oil intake|Prostate cancer",
+      "pmid": "7525054",
+      "pmcid": "",
+      "published_date": "1994-12-01",
+      "title": "Promotional effect of two-generation exposure to a high-fat diet on prostate carcinogenesis in ACI/Seg rats.",
+      "authors": [
+        "Kondo Y",
+        "Homma Y",
+        "Aso Y",
+        "Kakizoe T"
+      ],
+      "journal": "Cancer research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/7525054/",
+      "exposure": "Vegetable and seed oil intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-ANIMAL",
+      "reason": "Corn oil feeding and prostate carcinogenesis were assessed only in rats, with no human data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

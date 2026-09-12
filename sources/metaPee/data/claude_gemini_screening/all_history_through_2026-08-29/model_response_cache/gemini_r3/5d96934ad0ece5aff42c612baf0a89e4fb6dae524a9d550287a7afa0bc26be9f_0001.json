@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "receipt_id": "fdd95878d3579e51f47223fa5219351e5d9ed72b34a819c65b45a17b7e1c97cf",
+  "requested_at": "2026-09-03T17:10:54.004152-04:00",
+  "received_at": "2026-09-03T17:11:09.420061-04:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "5d96934ad0ece5aff42c612baf0a89e4fb6dae524a9d550287a7afa0bc26be9f",
+  "dispatch_work_unit_key": "cf6a7c7260d442eea0c57fe483cd523a99cbe9bb3b9261184e35c3d0b5f89a4e",
+  "attempt": 1,
+  "context_ids": [
+    "9820187|Red meat|Renal cell carcinoma"
+  ],
+  "exposure_weights": {
+    "Red meat": 1
+  },
+  "input_digest": "fae61c4793bdfa733dd4ac654c37043d008b38b73a08feec09b45398a34356c5",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13831,
+    "cached_input_tokens": 0,
+    "output_tokens": 2670,
+    "reasoning_tokens": 796
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.02038575",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "32ff8d25-770b-4848-9093-1a6a7fde23aa",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.99.0",
+    "x-litellm-response-cost": "0.02038575"
+  },
+  "output_sha256": "ffe1aae5ac0d0da63120801905c7e7224a34f14d24d7239ddf4697ccdec7634c",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"9820187|Red meat|Renal cell carcinoma\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"The full text provides fully adjusted odds ratios with 95% confidence intervals for red meat intake and renal cell carcinoma risk in a case-control study.\",\n      \"extraction\": {\n        \"effect_size\": 3.42,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.76,\n        \"ci_upper\": 6.65,\n        \"p_value\": 0.001,\n        \"total_n\": 364,\n        \"cases\": 121,\n        \"comparison_type\": \"tertile 3 vs tertile 1 (365+ vs <=208 servings/year)\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"South America\",\n        \"country\": \"Uruguay\",\n        \"population\": \"Hospital-based cases and controls from the Instituto Nacional de Oncologia in Montevideo\",\n        \"gender\": \"Mixed\",\n        \"smoking_status\": null,\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This led to a final total of 121 cases and 243 controls.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"SUBJECTS AND METHODS, paragraph 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"all patients with RCC admitted to the Instituto Nacional de Oncologia in the time period 1988-95 and successfully interviewed were included in the case series. The response rate for cases was high (92.7%). All cases were histologically verified as having RCC.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"SUBJECTS AND METHODS, paragraph 2\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Red meat 365+ 50/55 3.42 1.76-6.65\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Table 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"3.42 1.76-6.65\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Table 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Chi-square for trend = 12.38 P-value > 0.001\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Table 3\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"<=208 28/95 1.0 - ; 209-364 43/93 1.33 0.73-2.42 ; 365+ 50/55 3.42 1.76-6.65\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Table 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"a case-control study of diet and renal cell carcinoma (RCC) risk involving 121 cases and 243 hospitalized controls was carried out in Montevideo, Uruguay.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Summary\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In the period January 1988-December 1995, a case-control study of diet and renal cell carcinoma (RCC) risk involving 121 cases and 243 hospitalized controls was carried out in Montevideo, Uruguay.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Summary\"\n          },\n          \"continent\": {\n            \"excerpt\": \"a case-control study of diet and renal cell carcinoma (RCC) risk involving 121 cases and 243 hospitalized controls was carried out in Montevideo, Uruguay.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Summary\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Because cattle raising is the main industry in Uruguay, meat consumption is one of the highest in the world\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Introduction, paragraph 2\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The routine questionnaire covered the following items: socio-demographic variables, occupation, anthropometric variables... and a short frequency form with queries about red meat, barbecued meat, processed meat, salted meat, milk, raw vegetables and fresh fruits.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"SUBJECTS AND METHODS, paragraph 4\"\n          },\n          \"gender\": {\n            \"excerpt\": \"Sex Male 73 60.3 146 60.1; Female 48 39.7 97 39.9\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"Table 2\"\n          },\n          \"smoking_status\": {\n            \"excerpt\": \"The questionnaire also covered details of tobacco smoking and alcohol and mate drinking.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2062999/\",\n            \"location\": \"SUBJECTS AND METHODS, paragraph 4\"\n          }\n        }\n      },\n      \"additional_extractions\": [],\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

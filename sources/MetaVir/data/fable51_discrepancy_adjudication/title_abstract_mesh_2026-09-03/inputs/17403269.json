@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:07.505169-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "baa62c4e2f989fc1ad463005178558412d39edc14858b5b61277646315f39b73",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17403269",
+      "title": "Phyto-oestrogens and risk of prostate cancer in Scottish men.",
+      "abstract": "A population-based case-control study of diet, inherited susceptibility and prostate cancer was undertaken in the lowlands and central belt of Scotland to investigate the effect of phyto-oestrogen intake and serum concentrations on prostate cancer risk. A total of 433 cases and 483 controls aged 50-74 years were asked to complete a validated FFQ and provide a non-fasting blood sample. Multivariate logistic regression analysis found significant inverse associations with increased serum concentrations of enterolactone (adjusted OR 0.40, 95 % CI 0.22, 0.71] and with the consumption of soy foods (adjusted OR 0.52, 95 % CI 0.30, 0.91). However, no significant associations were observed for isoflavone intake or serum genistein, daidzein and equol. This study supports the hypotheses that soy foods and enterolactone metabolised from dietary lignans protect against prostate cancer in older Scottish men.",
+      "mesh": [
+        "4-Butyrolactone / administration & dosage, analogs & derivatives, blood",
+        "Aged",
+        "Case-Control Studies",
+        "Diet",
+        "Diet Surveys",
+        "Energy Intake / physiology",
+        "Equol",
+        "Genistein / administration & dosage, blood",
+        "Humans",
+        "Isoflavones / administration & dosage, blood",
+        "Lignans / administration & dosage, blood",
+        "Male",
+        "Middle Aged",
+        "Phytoestrogens / administration & dosage, blood",
+        "Prostatic Neoplasms / blood, epidemiology",
+        "Risk Assessment / methods",
+        "Scotland / epidemiology"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17403269",
+      "contexts": [
+        {
+          "context_id": "17403269|Genistein|Prostate cancer",
+          "exposure": "Genistein",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "916",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        },
+        {
+          "context_id": "17403269|Soy|Prostate cancer",
+          "exposure": "Soy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "0.52",
+              "ci_lower": "0.3",
+              "ci_upper": "0.91",
+              "p_value": "0.02088689983011218",
+              "comparison": "increased consumption of soy foods"
+            },
+            "Claude+Gemini": {
+              "sample_size": "916",
+              "effect_measure_type": "OR",
+              "effect_size": "0.52",
+              "ci_lower": "0.3",
+              "ci_upper": "0.91",
+              "p_value": null,
+              "comparison": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

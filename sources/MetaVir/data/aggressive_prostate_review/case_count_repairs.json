@@ -1,0 +1,113 @@
+{
+  "schema_version": "sol-aggressive-case-count-citation-repairs-v1",
+  "model_requested": "gpt-5.6-sol",
+  "current_case_counts_sha256": "76c9ec4111d46922fee04ce260718ab0b1fd722acc3395e978c26595c183174b",
+  "note": "This repair finished before the projection freeze message could stop the process; main case_counts.json had already been written. Original guarded results are preserved here for reconciliation.",
+  "original_gateway_calls": 27,
+  "original_provider_reported_usage": {
+    "input_tokens": 132175,
+    "cached_input_tokens": 0,
+    "output_tokens": 20635,
+    "reasoning_tokens": 4776
+  },
+  "before_records": [
+    {
+      "pmid": "21930800",
+      "row_id": "094c380600507b2951ce571ca9df91f7d60095e02965f6dab1c111a74141adcc",
+      "endpoint_cases": null,
+      "endpoint_definition": "Incident lethal prostate cancer, defined as distant-organ metastasis or death from prostate cancer during follow-up.",
+      "source": "abstract",
+      "excerpt": "Therefore, we prospectively examined total, unprocessed, and processed red meat, poultry, and eggs in relation to risk of lethal prostate cancer (e.g., men without cancer at baseline who developed distant organ metastases or died from prostate cancer during follow-up) among 27,607 men followed from 1994 to 2008. In the incidence analysis, we observed 199 events during 306,715 person-years.",
+      "reason": "The egg estimate is from the incidence analysis, which explicitly reported 199 lethal prostate cancer events.",
+      "original_cases": 199,
+      "status": "unavailable",
+      "validation_issues": [
+        "Count excerpt is not literal text in its declared source."
+      ],
+      "model": "gpt-5.6-sol",
+      "schema_version": "sol-aggressive-case-counts-v1",
+      "gateway_receipt": "data/aggressive_prostate_review/case_count_responses/866b8065ea2b39038f20_0.json"
+    },
+    {
+      "pmid": "22190107",
+      "row_id": "8cdce7f1e4f8a224cb792af61022b9b47ef790875ace021962b814cbb5af6d2c",
+      "endpoint_cases": null,
+      "endpoint_definition": "Advanced prostate cancer, defined as stage 3 or higher or prostate cancer death, among men who provided early-life milk-intake information.",
+      "source": "existing_evidence",
+      "excerpt": "Of the 2,267 men who provided information on early-life milk intake, 346 had a prostate cancer diagnosis; 213 cases were diagnosed before completion of the food frequency questionnaire and 133 incident cases were diagnosed later during follow-up. Information on tumor stage at diagnosis was available for 258 men (75%), and 63 had advanced disease.",
+      "reason": "The 371 advanced cases reported in the abstract belong to the full 8,894-man cohort, whereas this adolescent milk estimate uses the early-life intake subgroup, which explicitly had 63 advanced cases.",
+      "original_cases": 371.0,
+      "status": "unavailable",
+      "validation_issues": [
+        "Count excerpt is not literal text in its declared source."
+      ],
+      "model": "gpt-5.6-sol",
+      "schema_version": "sol-aggressive-case-counts-v1",
+      "gateway_receipt": "data/aggressive_prostate_review/case_count_responses/866b8065ea2b39038f20_0.json"
+    },
+    {
+      "pmid": "31026211",
+      "row_id": "c70a91cb8bd8e0191ea9113cb469c67531e34e944fd15601b95a659e765a7ccd",
+      "endpoint_cases": null,
+      "endpoint_definition": "Incident lethal prostate cancer, defined as metastatic or fatal prostate cancer, among initially cancer-free men.",
+      "source": "existing_evidence",
+      "excerpt": "We observed 869 lethal prostate cancer events among 47,568 participants observed for a median of 25.3 years (interquartile range, 24.8-25.8 years).",
+      "reason": "This duplicate row represents the same incident lethal prostate cancer estimate and analytic population; the article's supplied evidence explicitly reports 869 matching events.",
+      "original_cases": null,
+      "status": "unavailable",
+      "validation_issues": [
+        "Count excerpt is not literal text in its declared source."
+      ],
+      "model": "gpt-5.6-sol",
+      "schema_version": "sol-aggressive-case-counts-v1",
+      "gateway_receipt": "data/aggressive_prostate_review/case_count_responses/92c3b56b776954be0b37_0.json"
+    }
+  ],
+  "after_records": [
+    {
+      "pmid": "21930800",
+      "row_id": "094c380600507b2951ce571ca9df91f7d60095e02965f6dab1c111a74141adcc",
+      "endpoint_cases": 199,
+      "endpoint_definition": "Incident lethal prostate cancer, defined as distant-organ metastasis or death from prostate cancer, among men cancer-free at baseline.",
+      "source": "abstract",
+      "excerpt": "Therefore, we prospectively examined total, unprocessed, and processed red meat, poultry, and eggs in relation to risk of lethal prostate cancer (e.g., men without cancer at baseline who developed distant organ metastases or died from prostate cancer during follow-up) among 27,607 men followed from 1994 to 2008. We also conducted a case-only survival analysis to examine postdiagnostic consumption of these foods and risk of lethal prostate cancer among the 3,127 men initially diagnosed with nonmetastatic prostate cancer during follow-up. In the incidence analysis, we observed 199 events during 306,715 person-years.",
+      "reason": "The abstract explicitly reports 199 events for the incidence analysis corresponding to the egg estimate among men without cancer at baseline.",
+      "original_cases": 199,
+      "status": "confirmed",
+      "validation_issues": [],
+      "model": "gpt-5.6-sol",
+      "schema_version": "sol-aggressive-case-counts-v1",
+      "gateway_receipt": "data/aggressive_prostate_review/case_count_responses/a962963373619f04cd23_0.json"
+    },
+    {
+      "pmid": "22190107",
+      "row_id": "8cdce7f1e4f8a224cb792af61022b9b47ef790875ace021962b814cbb5af6d2c",
+      "endpoint_cases": null,
+      "endpoint_definition": "Advanced prostate cancer, defined as stage 3 or higher or prostate cancer death, for daily versus less-than-daily adolescent milk consumption in the 2,268-participant dietary subgroup.",
+      "source": "none",
+      "excerpt": "",
+      "reason": "The 371 advanced cases are reported for the overall cohort of 8,894 men, not explicitly for the 2,268-participant subgroup used for the adolescent milk-consumption estimate.",
+      "original_cases": 371.0,
+      "status": "unavailable",
+      "validation_issues": [],
+      "model": "gpt-5.6-sol",
+      "schema_version": "sol-aggressive-case-counts-v1",
+      "gateway_receipt": "data/aggressive_prostate_review/case_count_responses/a962963373619f04cd23_0.json"
+    },
+    {
+      "pmid": "31026211",
+      "row_id": "c70a91cb8bd8e0191ea9113cb469c67531e34e944fd15601b95a659e765a7ccd",
+      "endpoint_cases": null,
+      "endpoint_definition": "Incident lethal prostate cancer, defined as metastatic or fatal prostate cancer, among 47,568 initially cancer-free men.",
+      "source": "none",
+      "excerpt": "",
+      "reason": "Neither the abstract nor the supplied existing evidence reports the number of lethal prostate cancer events in the cancer-free incidence analysis.",
+      "original_cases": null,
+      "status": "unavailable",
+      "validation_issues": [],
+      "model": "gpt-5.6-sol",
+      "schema_version": "sol-aggressive-case-counts-v1",
+      "gateway_receipt": "data/aggressive_prostate_review/case_count_responses/a962963373619f04cd23_0.json"
+    }
+  ]
+}

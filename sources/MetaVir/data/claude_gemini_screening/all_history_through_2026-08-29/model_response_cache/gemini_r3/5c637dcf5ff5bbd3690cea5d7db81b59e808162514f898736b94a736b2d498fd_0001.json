@@ -1,0 +1,530 @@
+{
+  "schema_version": 1,
+  "receipt_id": "5c989e07b073478ecf5275a9171def2983ebbdaafde9068303721e5fb1d96a54",
+  "requested_at": "2026-09-02T09:18:31.858583+08:00",
+  "received_at": "2026-09-02T09:19:10.434520+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "5c637dcf5ff5bbd3690cea5d7db81b59e808162514f898736b94a736b2d498fd",
+  "attempt": 1,
+  "context_ids": [
+    "34383904|Legumes|Prostate cancer",
+    "34383904|Plant protein intake|Prostate cancer",
+    "34383904|Tomato|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Legumes": 1,
+    "Plant protein intake": 1,
+    "Tomato": 1
+  },
+  "input_digest": "e0a05cf2c9db51d48ff28514c39b297f8255cbb2d752fb931e4df61f772dc2ae",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 19727,
+    "cached_input_tokens": 0,
+    "output_tokens": 7109,
+    "reasoning_tokens": 2043
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.041454000000000005",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "59bb6fde-2ed3-4561-beff-3b6f3301ec9b",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.041454000000000005"
+  },
+  "output_sha256": "f1fb3bcfa3f6dfaa1c8e5bac2487fd593af13b501df901d602958dc11f32ee2f",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"34383904|Legumes|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between adolescent legume intake and incident prostate cancer risk in the NIH-AARP Diet and Health Study.\",\n      \"extraction\": {\n        \"effect_size\": 0.98,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.92,\n        \"ci_upper\": 1.05,\n        \"p_value\": 0.016,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 150671,\n        \"cases\": 14238,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"California, Florida, Louisiana, New Jersey, North Carolina, Pennsylvania, Atlanta, Detroit\",\n        \"ethnicity\": \"predominantly Non-Hispanic white\",\n        \"population\": \"NIH-AARP Diet and Health Study male participants aged 50-70 years at baseline\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The final analytic cohort included 150,671 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"14,238 men were diagnosed with nonadvanced PCa and 2170 with advanced disease\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Legumes ... Nonadvanced PCa ... ≥3/wk: 0.98 (0.92, 1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Legumes ... Nonadvanced PCa ... ≥3/wk: 0.98 (0.92, 1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Legumes ... Nonadvanced PCa ... P-trend = 0.016\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Legumes ... ≤11/y ... ≥3/wk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Cox proportional hazards regression was used to calculate HRs and 95% CIs of nonadvanced (n = 14,238) and advanced (n = 2,170) PCa incidence\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this large prospective analysis of adolescent plant product intake and PCa risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Discussion, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In 1995, the US National Cancer Institute invited 3.5 million AARP members 50–70 y of age residing in 6 states\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic white: 94.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta and Detroit)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"The supplementary risk factor questionnaire included a 37-item FFQ that assessed participants’ diet at ages 12–13 y.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Assessment and definitions of adolescent plant product and nutrient intake, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Unclear\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"34383904|Plant protein intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between adolescent vegetable protein intake and incident prostate cancer risk in the NIH-AARP Diet and Health Study.\",\n      \"extraction\": {\n        \"effect_size\": 0.98,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.92,\n        \"ci_upper\": 1.05,\n        \"p_value\": 0.484,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 150671,\n        \"cases\": 14238,\n        \"comparison_type\": \"quintiles\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"California, Florida, Louisiana, New Jersey, North Carolina, Pennsylvania, Atlanta, Detroit\",\n        \"ethnicity\": \"predominantly Non-Hispanic white\",\n        \"population\": \"NIH-AARP Diet and Health Study male participants aged 50-70 years at baseline\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The final analytic cohort included 150,671 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"14,238 men were diagnosed with nonadvanced PCa and 2170 with advanced disease\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Vegetable protein, % of kcal ... Nonadvanced PCa ... Q5 (≥5.7): 0.98 (0.92, 1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Vegetable protein, % of kcal ... Nonadvanced PCa ... Q5 (≥5.7): 0.98 (0.92, 1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Vegetable protein, % of kcal ... Nonadvanced PCa ... P-trend = 0.484\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Vegetable protein, % of kcal ... Q1 (<3.4) ... Q5 (≥5.7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Cox proportional hazards regression was used to calculate HRs and 95% CIs of nonadvanced (n = 14,238) and advanced (n = 2,170) PCa incidence\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this large prospective analysis of adolescent plant product intake and PCa risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Discussion, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In 1995, the US National Cancer Institute invited 3.5 million AARP members 50–70 y of age residing in 6 states\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic white: 94.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta and Detroit)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Intakes of nutrients, such as vegetable fat, vegetable protein, carbohydrates, and fiber, were also estimated and adjusted for total energy intake using the nutrient density method\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Assessment and definitions of adolescent plant product and nutrient intake, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Unclear\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"34383904|Tomato|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between adolescent tomato intake and incident prostate cancer risk in the NIH-AARP Diet and Health Study.\",\n      \"extraction\": {\n        \"effect_size\": 0.91,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.85,\n        \"ci_upper\": 0.97,\n        \"p_value\": 0.004,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 150671,\n        \"cases\": 14238,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": \"California, Florida, Louisiana, New Jersey, North Carolina, Pennsylvania, Atlanta, Detroit\",\n        \"ethnicity\": \"predominantly Non-Hispanic white\",\n        \"population\": \"NIH-AARP Diet and Health Study male participants aged 50-70 years at baseline\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"The final analytic cohort included 150,671 men.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"14,238 men were diagnosed with nonadvanced PCa and 2170 with advanced disease\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Tomato soup and fresh tomato ... Nonadvanced PCa ... ≥1/d: 0.91 (0.85, 0.97)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Tomato soup and fresh tomato ... Nonadvanced PCa ... ≥1/d: 0.91 (0.85, 0.97)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Tomato soup and fresh tomato ... Nonadvanced PCa ... P-trend = 0.004\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Tomato soup and fresh tomato ... ≤1/wk ... ≥1/d\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"Cox proportional hazards regression was used to calculate HRs and 95% CIs of nonadvanced (n = 14,238) and advanced (n = 2,170) PCa incidence\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this large prospective analysis of adolescent plant product intake and PCa risk\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Discussion, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"In 1995, the US National Cancer Institute invited 3.5 million AARP members 50–70 y of age residing in 6 states\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic white: 94.8\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"residing in 6 states (California, Florida, Louisiana, New Jersey, North Carolina, and Pennsylvania) and 2 metropolitan areas (Atlanta and Detroit)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Groups included tomatoes (tomato soup and fresh tomatoes, as well as tomato soup, fresh tomatoes, and pizza)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/\",\n            \"location\": \"Methods, Assessment and definitions of adolescent plant product and nutrient intake, paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Unclear\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:19:11.405524+08:00",
+      "transition": "new_gateway_attempt_validated",
+      "validation_status": "received",
+      "validation_error": "",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "f1fb3bcfa3f6dfaa1c8e5bac2487fd593af13b501df901d602958dc11f32ee2f"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [],
+  "validated_results": [
+    {
+      "context_id": "34383904|Legumes|Prostate cancer",
+      "pmid": "34383904",
+      "pmcid": "PMC12532455",
+      "published_date": "2021-10-01",
+      "title": "Adolescent Plant Product Intake in Relation to Later Prostate Cancer Risk and Mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34383904/",
+      "exposure": "Legumes",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between adolescent legume intake and incident prostate cancer risk in the NIH-AARP Diet and Health Study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.98,
+        "effect_type": "HR",
+        "ci_lower": 0.92,
+        "ci_upper": 1.05,
+        "p_value": 0.016,
+        "ci_confidence_level": 95,
+        "total_n": 150671,
+        "cases": 14238,
+        "comparison_type": "categorical",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50-70 years at baseline",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The final analytic cohort included 150,671 men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Nonadvanced PCa cases, n 14,238",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Our null findings for carrot intake are also consistent with those from a Swedish case-control study that observed no association for adolescent carrot intake (OR: 0.9; 95% CI: 0.6, 1.4) ( 26 ). With respect to grain intake, although our null findings for adolescent dark bread intake differ from those from a previous Icelandic case-control study (OR: 0.76; 95% CI: 0.59, 0.98 comparing >1 to ≤1 portions/d of rye bread for total PCa and OR: 0.47; 95% CI: 0.27, 0.84 for advanced PCa) ( 29 ), the much higher intake of whole grains in the Icelandic study may explain this discrepancy.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.98 (0.92, 1.05)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "0.016",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "In this large prospective analysis of adolescent plant product intake and PCa risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Discussion, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "In 1995, the US National Cancer Institute invited 3.5 million AARP members 50–70 y of age residing in 6 states",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "The supplementary risk factor questionnaire included a 37-item FFQ that assessed participants’ diet at ages 12–13 y.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Assessment and definitions of adolescent plant product and nutrient intake, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.016",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50467,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "fcef922b39fb86e55572c7c8839cf4ac8d91569c7d87c24598e00c13c7752949",
+      "pmc_source_receipt_digest": "bab2118a3457c596ac272370263b88018eba472d628924213ff161ec073c35a7",
+      "pmc_source_raw_sha256": "e150f733976ece6c9142e49aabfc1f50006c19c8adec58583e00ae8345feb8e4",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "27fa5851833b379757e2002ac8e92a176c2bec1ae011edac0576d7aa5a37d779"
+    },
+    {
+      "context_id": "34383904|Plant protein intake|Prostate cancer",
+      "pmid": "34383904",
+      "pmcid": "PMC12532455",
+      "published_date": "2021-10-01",
+      "title": "Adolescent Plant Product Intake in Relation to Later Prostate Cancer Risk and Mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34383904/",
+      "exposure": "Plant protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between adolescent vegetable protein intake and incident prostate cancer risk in the NIH-AARP Diet and Health Study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.98,
+        "effect_type": "HR",
+        "ci_lower": 0.92,
+        "ci_upper": 1.05,
+        "p_value": 0.484,
+        "ci_confidence_level": 95,
+        "total_n": 150671,
+        "cases": 14238,
+        "comparison_type": "quintiles",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50-70 years at baseline",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The final analytic cohort included 150,671 men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Nonadvanced PCa cases, n 14,238",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Our null findings for carrot intake are also consistent with those from a Swedish case-control study that observed no association for adolescent carrot intake (OR: 0.9; 95% CI: 0.6, 1.4) ( 26 ). With respect to grain intake, although our null findings for adolescent dark bread intake differ from those from a previous Icelandic case-control study (OR: 0.76; 95% CI: 0.59, 0.98 comparing >1 to ≤1 portions/d of rye bread for total PCa and OR: 0.47; 95% CI: 0.27, 0.84 for advanced PCa) ( 29 ), the much higher intake of whole grains in the Icelandic study may explain this discrepancy.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.98 (0.92, 1.05)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "0.484",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "In this large prospective analysis of adolescent plant product intake and PCa risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Discussion, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "In 1995, the US National Cancer Institute invited 3.5 million AARP members 50–70 y of age residing in 6 states",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Intakes of nutrients, such as vegetable fat, vegetable protein, carbohydrates, and fiber, were also estimated and adjusted for total energy intake using the nutrient density method",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Assessment and definitions of adolescent plant product and nutrient intake, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.484",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50467,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "fcef922b39fb86e55572c7c8839cf4ac8d91569c7d87c24598e00c13c7752949",
+      "pmc_source_receipt_digest": "bab2118a3457c596ac272370263b88018eba472d628924213ff161ec073c35a7",
+      "pmc_source_raw_sha256": "e150f733976ece6c9142e49aabfc1f50006c19c8adec58583e00ae8345feb8e4",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "92f1456163d6774e1b502abc9dc2122ad8adfbb8170c5b009a7f1de29f99ccd4"
+    },
+    {
+      "context_id": "34383904|Tomato|Prostate cancer",
+      "pmid": "34383904",
+      "pmcid": "PMC12532455",
+      "published_date": "2021-10-01",
+      "title": "Adolescent Plant Product Intake in Relation to Later Prostate Cancer Risk and Mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "The Journal of nutrition",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34383904/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluated the association between adolescent tomato intake and incident prostate cancer risk in the NIH-AARP Diet and Health Study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.91,
+        "effect_type": "HR",
+        "ci_lower": 0.85,
+        "ci_upper": 0.97,
+        "p_value": 0.004,
+        "ci_confidence_level": 95,
+        "total_n": 150671,
+        "cases": 14238,
+        "comparison_type": "categorical",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50-70 years at baseline",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "The final analytic cohort included 150,671 men.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Nonadvanced PCa cases, n 14,238",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.91 (0.85, 0.97)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.91 (0.85, 0.97)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "Greater adolescent intakes of tomatoes ( P -trend = 0.004) and nonstarch vegetables ( P -trend = 0.025) were associated with significantly reduced risk of nonadvanced PCa, whereas no trends were observed for risk of advanced PCa or PCa mortality.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Abstract, Methods"
+          },
+          "timing": {
+            "excerpt": "In this large prospective analysis of adolescent plant product intake and PCa risk",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Discussion, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "In 1995, the US National Cancer Institute invited 3.5 million AARP members 50–70 y of age residing in 6 states",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Groups included tomatoes (tomato soup and fresh tomatoes, as well as tomato soup, fresh tomatoes, and pizza)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532455/",
+            "location": "Methods, Assessment and definitions of adolescent plant product and nutrient intake, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.004",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 50467,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "fcef922b39fb86e55572c7c8839cf4ac8d91569c7d87c24598e00c13c7752949",
+      "pmc_source_receipt_digest": "bab2118a3457c596ac272370263b88018eba472d628924213ff161ec073c35a7",
+      "pmc_source_raw_sha256": "e150f733976ece6c9142e49aabfc1f50006c19c8adec58583e00ae8345feb8e4",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "9ab8f22a16a86551325dd4f30da7b9f37ff9984ae47bc5a48c5ede74c35a411e"
+    }
+  ]
+}

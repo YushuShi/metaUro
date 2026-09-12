@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:41.946521-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "85672a2333a3bdf8d6fd093e24d13ea970496bbd27e0cb97d326a3b9a455a5e6",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "22033893",
+      "title": "Associations of circulating 25-hydroxyvitamin D with prostate cancer diagnosis, stage and grade.",
+      "abstract": "Epidemiological studies suggest that vitamin D protects against prostate cancer, although evidence is limited and inconsistent. We investigated associations of circulating total 25-hydroxyvitamin D (25(OH)D) with prostate specific antigen-detected prostate cancer in a case-control study nested within the prostate testing for cancer and treatment (ProtecT) trial. Conditional logistic regression was used to estimate odds ratios (ORs) and 95% confidence intervals (CIs) quantifying the association between circulating total 25(OH)D and prostate cancer. In case-only analyses, we used unconditional logistic regression to quantify associations of total 25(OH)D with stage (advanced vs. localized) and Gleason grade (high-grade (≥7) vs. low-grade (<7)). Predetermined categories of total 25(OH)D were defined as: high: ≥30 ng/mL; adequate: 20-<30 ng/mL; insufficient: 12-<20 ng/mL; deficient: <12 ng/mL. Fractional polynomials were used to investigate the existence of any U-shaped relationship. We included 1,447 prostate cancer cases (153 advanced, 469 high-grade) and 1,449 healthy controls. There was evidence that men deficient in vitamin D had a 2-fold increased risk of advanced versus localized cancer (OR for deficient vs. adequate total 25(OH)D=2.33, 95% CI: 1.26, 4.28) and high-grade versus low-grade cancer (OR for deficient vs. adequate total 25(OH)D=1.78, 95% CI: 1.15, 2.77). There was no evidence of a linear association between total 25(OH)D and prostate cancer (p=0.44) or of an increased risk of prostate cancer with high and low vitamin D levels. Our study provides evidence that lower 25(OH)D concentrations were associated with more aggressive cancers (advanced versus localized cancers and high- versus low-Gleason grade), but there was no evidence of an association with overall prostate cancer risk.",
+      "mesh": [
+        "Aged",
+        "Biomarkers, Tumor / blood",
+        "Case-Control Studies",
+        "Humans",
+        "Male",
+        "Middle Aged",
+        "Multicenter Studies as Topic",
+        "Neoplasm Grading",
+        "Neoplasm Staging",
+        "Odds Ratio",
+        "Prognosis",
+        "Prostate / metabolism",
+        "Prostatic Neoplasms / blood, diagnosis",
+        "Randomized Controlled Trials as Topic",
+        "Risk Assessment",
+        "Vitamin D / analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "22033893",
+      "contexts": [
+        {
+          "context_id": "22033893|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2896",
+              "effect_measure_type": "OR",
+              "effect_size": "1",
+              "ci_lower": "0.92",
+              "ci_upper": "1.1",
+              "p_value": "0.92",
+              "comparison": "Prostate cancer cases versus healthy controls"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2896",
+              "effect_measure_type": "OR",
+              "effect_size": "1.08",
+              "ci_lower": "0.79",
+              "ci_upper": "1.5",
+              "p_value": "0.62",
+              "comparison": "categorical"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

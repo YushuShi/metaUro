@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "receipt_id": "cb95c1a1775d6a810131a5e3b2648d011f470972d2d2ce3a3c32ee72f9c2a0e3",
+  "requested_at": "2026-09-02T08:39:49.322574+08:00",
+  "received_at": "2026-09-02T08:40:14.501361+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "e5ae06285de92a9451f1cdad00f0de6d7a750eef17262503d3bc914b58d53499",
+  "attempt": 2,
+  "context_ids": [
+    "20003241|Dairy|Prostate cancer",
+    "20003241|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Dairy": 1,
+    "Red meat": 1
+  },
+  "input_digest": "9cff37e280782397fd35aa9d09e8366e1b9c4a4e0e943cc8e333853c34b207b2",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 8727,
+    "cached_input_tokens": 0,
+    "output_tokens": 3847,
+    "reasoning_tokens": 1305
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0209715",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "0c4fedbd-d3e9-4931-b59d-e58d92b65543",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0209715"
+  },
+  "output_sha256": "b1db9b14c6e4911977a3a563cfb357053427f0a4dc64e808470e9eda5a921b8d",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\"results\":[{\"context_id\":\"20003241|Dairy|Prostate cancer\",\"status\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Hospital-based case-control study investigating dietary factors including dairy products in relation to prostate cancer risk.\",\"extraction\":{\"effect_size\":0.58,\"effect_type\":\"OR\",\"ci_lower\":0.33,\"ci_upper\":1.01,\"p_value\":0.056,\"ci_confidence_level\":95,\"total_n\":528,\"cases\":261,\"comparison_type\":\"categorical\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Taiwan\",\"location\":\"four medical centers: two hospitals from northern, one from central and one from southern Taiwan\",\"ethnicity\":null,\"population\":\"Men recruited from four medical centers in Taiwan\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 261 cases (age: 72.1 ± 6.8 years) and 267 controls (age: 71.3 ± 7.2 years) were recruited.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Results, paragraph 1\"},\"cases\":{\"excerpt\":\"A total of 261 cases (age: 72.1 ± 6.8 years) and 267 controls (age: 71.3 ± 7.2 years) were recruited.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Results, paragraph 1\"},\"effect_size\":{\"excerpt\":\"Dairy products Frequent 0.58 (0.33-1.01) 0.056\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"confidence_interval\":{\"excerpt\":\"Dairy products Frequent 0.58 (0.33-1.01) 0.056\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"p_value\":{\"excerpt\":\"Dairy products Frequent 0.58 (0.33-1.01) 0.056\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"comparison\":{\"excerpt\":\"Dairy products Less 1.0; Frequent 0.58 (0.33-1.01)\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"design\":{\"excerpt\":\"Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, paragraph 1\"},\"timing\":{\"excerpt\":\"Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Data collection, paragraph 2\"},\"continent\":{\"excerpt\":\"Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, paragraph 1\"},\"ethnicity\":{\"excerpt\":\"The questionnaire contained the most frequently consumed food items among Chinese, including poultry, pork, beef, egg, fish, seafood, diary products, vegetables and fruits, tofu, herbal preparations as food supplement, and eating out including banquets.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Data collection, paragraph 2\"},\"location\":{\"excerpt\":\"Cases, which were histologically confirmed prostate adenocarcinoma, were recruited from four medical centers: two hospitals from northern, one from central and one from southern Taiwan.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Subjects, paragraph 1\"},\"exposure_measurement\":{\"excerpt\":\"Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Data collection, paragraph 2\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"20003241|Red meat|Prostate cancer\",\"status\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Hospital-based case-control study investigating dietary factors including beef intake in relation to prostate cancer risk.\",\"extraction\":{\"effect_size\":0.6,\"effect_type\":\"OR\",\"ci_lower\":0.37,\"ci_upper\":0.96,\"p_value\":0.033,\"ci_confidence_level\":95,\"total_n\":528,\"cases\":261,\"comparison_type\":\"categorical\",\"design\":\"case_control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Taiwan\",\"location\":\"four medical centers: two hospitals from northern, one from central and one from southern Taiwan\",\"ethnicity\":null,\"population\":\"Men recruited from four medical centers in Taiwan\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":true,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"A total of 261 cases (age: 72.1 ± 6.8 years) and 267 controls (age: 71.3 ± 7.2 years) were recruited.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Results, paragraph 1\"},\"cases\":{\"excerpt\":\"A total of 261 cases (age: 72.1 ± 6.8 years) and 267 controls (age: 71.3 ± 7.2 years) were recruited.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Results, paragraph 1\"},\"effect_size\":{\"excerpt\":\"Beef Frequent 0.60 (0.37-0.96) 0.033\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"confidence_interval\":{\"excerpt\":\"Beef Frequent 0.60 (0.37-0.96) 0.033\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"p_value\":{\"excerpt\":\"Beef Frequent 0.60 (0.37-0.96) 0.033\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"comparison\":{\"excerpt\":\"Beef Less 1.0; Frequent 0.60 (0.37-0.96)\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Table 1\"},\"design\":{\"excerpt\":\"Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, paragraph 1\"},\"timing\":{\"excerpt\":\"Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Data collection, paragraph 2\"},\"continent\":{\"excerpt\":\"Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, paragraph 1\"},\"ethnicity\":{\"excerpt\":\"The questionnaire contained the most frequently consumed food items among Chinese, including poultry, pork, beef, egg, fish, seafood, diary products, vegetables and fruits, tofu, herbal preparations as food supplement, and eating out including banquets.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Data collection, paragraph 2\"},\"location\":{\"excerpt\":\"Cases, which were histologically confirmed prostate adenocarcinoma, were recruited from four medical centers: two hospitals from northern, one from central and one from southern Taiwan.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Subjects, paragraph 1\"},\"exposure_measurement\":{\"excerpt\":\"Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.\",\"source\":\"full_text\",\"url\":\"https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/\",\"location\":\"Methods, Data collection, paragraph 2\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Yes\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}}]}\n```",
+  "validated_results": [
+    {
+      "context_id": "20003241|Dairy|Prostate cancer",
+      "pmid": "20003241",
+      "pmcid": "PMC2797022",
+      "published_date": "2009-12-10",
+      "title": "Cadmium burden and the risk and phenotype of prostate cancer.",
+      "authors": [
+        "Chen YC",
+        "Pu YS",
+        "Wu HC",
+        "Wu TT",
+        "Lai MK",
+        "Yang CY",
+        "Sung FC"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20003241/",
+      "exposure": "Dairy",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study investigating dietary factors including dairy products in relation to prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.58,
+        "effect_type": "OR",
+        "ci_lower": 0.33,
+        "ci_upper": 1.01,
+        "p_value": 0.056,
+        "ci_confidence_level": 95,
+        "total_n": 528,
+        "cases": 261,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Taiwan",
+        "location": "four hospitals in Taiwan",
+        "ethnicity": "NA",
+        "population": "Men recruited from four medical centers in Taiwan",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 261 cases (age: 72.1 ± 6.8 years) and 267 controls (age: 71.3 ± 7.2 years) were recruited.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Results, paragraph 1; total_n derived from reported group counts 261 + 267 = 528"
+          },
+          "cases": {
+            "excerpt": "Among the 261 cases, these data were available, respectively, for 220 (84.3%) and 210 (80.5%) cases.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.58 (0.33-1.01)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "confidence_interval": {
+            "excerpt": "0.58 (0.33-1.01)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "p_value": {
+            "excerpt": "0.056",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, Data collection, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "four hospitals in Taiwan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20003241/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, Data collection, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.056",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 27886,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "748b63868c861e68d8aa3c28fe3d0bac2cf971229d71ba63c1a047e8e900d0d4",
+      "pmc_source_receipt_digest": "23b3d8436bb254d6fb7c196ab1f21f0060fed57d4e9709dbb703076a2cfdc655",
+      "pmc_source_raw_sha256": "18714e7ec748771e125193bd5af56fc10dc152663fb43e7b398debf153cbf458",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "3621da25d51fd3175dc2206285c30611cf6719b9a71d199e993dad039e3e37ca"
+    },
+    {
+      "context_id": "20003241|Red meat|Prostate cancer",
+      "pmid": "20003241",
+      "pmcid": "PMC2797022",
+      "published_date": "2009-12-10",
+      "title": "Cadmium burden and the risk and phenotype of prostate cancer.",
+      "authors": [
+        "Chen YC",
+        "Pu YS",
+        "Wu HC",
+        "Wu TT",
+        "Lai MK",
+        "Yang CY",
+        "Sung FC"
+      ],
+      "journal": "BMC cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20003241/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Hospital-based case-control study investigating dietary factors including beef intake in relation to prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.6,
+        "effect_type": "OR",
+        "ci_lower": 0.37,
+        "ci_upper": 0.96,
+        "p_value": 0.033,
+        "ci_confidence_level": 95,
+        "total_n": 528,
+        "cases": 261,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Taiwan",
+        "location": "four hospitals in Taiwan",
+        "ethnicity": "NA",
+        "population": "Men recruited from four medical centers in Taiwan",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A total of 261 cases (age: 72.1 ± 6.8 years) and 267 controls (age: 71.3 ± 7.2 years) were recruited.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Results, paragraph 1; total_n derived from reported group counts 261 + 267 = 528"
+          },
+          "cases": {
+            "excerpt": "Among the 261 cases, these data were available, respectively, for 220 (84.3%) and 210 (80.5%) cases.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.60 (0.37-0.96)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "confidence_interval": {
+            "excerpt": "0.60 (0.37-0.96)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "p_value": {
+            "excerpt": "0.033",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Table 1"
+          },
+          "design": {
+            "excerpt": "Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, Data collection, paragraph 2"
+          },
+          "continent": {
+            "excerpt": "Hospital-based 261 prostate cancer cases and 267 controls with benign diseases were recruited from four hospitals in Taiwan.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "four hospitals in Taiwan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/20003241/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Using a food frequency questionnaire, both cases and controls reported dietary intake history from 10 years ago, determined by personal recall.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2797022/",
+            "location": "Methods, Data collection, paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.033",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 27886,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "748b63868c861e68d8aa3c28fe3d0bac2cf971229d71ba63c1a047e8e900d0d4",
+      "pmc_source_receipt_digest": "23b3d8436bb254d6fb7c196ab1f21f0060fed57d4e9709dbb703076a2cfdc655",
+      "pmc_source_raw_sha256": "18714e7ec748771e125193bd5af56fc10dc152663fb43e7b398debf153cbf458",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "732a7465b1aad2b47baa1a9905e5546690c5f9eb83924c31bb68b9f2f20f0a1e"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "receipt_id": "2d09e0003ab73b023bac5521ceeb7086baf4b1c992f33e702fcbeda46ad4bb4d",
+  "requested_at": "2026-09-02T08:35:08.415215+08:00",
+  "received_at": "2026-09-02T08:35:29.971115+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "9f50463c1d0f8ffdad1e0e58c2625b5d137c0aa4dbf85a26feec76052c75cea8",
+  "attempt": 1,
+  "context_ids": [
+    "3778808|Tea|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Tea": 1
+  },
+  "input_digest": "13d39f9d5904e67fb050adc8a7a6682f3ea2c7583db22821cf3f5d991cdcc147",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 10914,
+    "cached_input_tokens": 0,
+    "output_tokens": 3138,
+    "reasoning_tokens": 1291
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.019953",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "0f19dd3e-8314-402d-a624-ace083b175c7",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.019953"
+  },
+  "output_sha256": "706dbcbf7ab9d42004c654a2534b449ba5d0ae707d55766f46388b16bf2bf854",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"3778808|Tea|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluated the association between black tea consumption and incident prostate cancer risk in Japanese men in Hawaii.\",\n      \"extraction\": {\n        \"effect_size\": 0.6,\n        \"effect_type\": \"RR\",\n        \"ci_lower\": null,\n        \"ci_upper\": null,\n        \"p_value\": 0.02,\n        \"ci_confidence_level\": null,\n        \"total_n\": 7833,\n        \"cases\": 149,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"prospective_cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men of Japanese ancestry residing on Oahu, Hawaii\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": false,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"This left 7,833 study eligible men for analysis, including 951 tissue confirmed cancer incidence cases as of April, 1985.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Methods, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Since 1965, newly diagnosed cancer incidence cases have been identified: 152 colon, 151 lung, 149 prostate, 136 stomach, 76 rectum, 57 bladder, 30 pancreas, 25 liver, 12 kidney and 163 at other (miscellaneous) sites.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Table III Adjusted relative risks of selected cancers by frequency of consumption of black tea. Prostate (n = 149): Almost never 1.0 (95), <twice/wk 0.8 (34), 2-4 times/wk 0.4 (5), Almost daily / >once/day 0.6 (15)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Results, Table III\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Covariate-adjusted 95% confidence intervals were used to determine whether an adjusted relative risk was significantly different from unity.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Methods, paragraph 4\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"We also observed a weaker but significant negative association of black tea intake and prostate cancer incidence (P = 0.020).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Men in the lowest black tea consumption category (almost never) were chosen as the referent group, and were assigned RR= 1.0.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Methods, paragraph 4\"\n          },\n          \"design\": {\n            \"excerpt\": \"In a prospective cohort study, men of Japanese ancestry were clinically examined from 1965 to 1968.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"More than 7,800 men have been followed for at least 16 years for the development of any type of cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Introduction, paragraph 6\"\n          },\n          \"continent\": {\n            \"excerpt\": \"A cohort of 8006 Japanese men, residing on the Hawaiian island of Oahu, and born in the years 1900 to 1919, was clinically examined from 1965 to 1968\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"In a prospective cohort study, men of Japanese ancestry were clinically examined from 1965 to 1968.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Summary, paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"A cohort of 8006 Japanese men, residing on the Hawaiian island of Oahu, and born in the years 1900 to 1919, was clinically examined from 1965 to 1968\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"During the interview, the men were asked about their habitual frequency of consumption of black tea (Tillotson et al., 1973). This was recorded in five categories: almost never, <twice per week, 2-4 times per week, almost daily (5-7 times per week), > once per day.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2001507/\",\n            \"location\": \"Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```"
+}

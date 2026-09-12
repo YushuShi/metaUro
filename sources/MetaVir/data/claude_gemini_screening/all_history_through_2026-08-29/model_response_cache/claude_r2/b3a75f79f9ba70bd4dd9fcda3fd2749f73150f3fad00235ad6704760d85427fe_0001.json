@@ -1,0 +1,857 @@
+{
+  "schema_version": 1,
+  "receipt_id": "ec9f07f2da0ec8c9ac08fceef9eb6251469ca1f592dd384347fd83b463c53784",
+  "requested_at": "2026-09-02T07:29:31.413440+08:00",
+  "received_at": "2026-09-02T07:30:52.793959+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "b3a75f79f9ba70bd4dd9fcda3fd2749f73150f3fad00235ad6704760d85427fe",
+  "attempt": 1,
+  "context_ids": [
+    "10403903|Selenium|Prostate cancer",
+    "10403903|Vitamin E|Prostate cancer",
+    "10408871|Red meat|Prostate cancer",
+    "10408871|Vitamin C|Prostate cancer",
+    "10408871|Vitamin E|Prostate cancer",
+    "10430257|Red meat|Prostate cancer",
+    "10433624|Lycopene|Prostate cancer",
+    "10433624|Tomato|Prostate cancer",
+    "10433625|Lycopene|Prostate cancer",
+    "10433625|Tomato|Prostate cancer",
+    "10453174|Beta-carotene|Prostate cancer",
+    "10453275|Antioxidants|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Beta-carotene": 1,
+    "Lycopene": 2,
+    "Red meat": 2,
+    "Selenium": 1,
+    "Tomato": 2,
+    "Vitamin C": 1,
+    "Vitamin E": 2
+  },
+  "input_digest": "d74042ea00ab79665554eeaf596cc0491abc5c2ae48d5371987e23c5b4816c97",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 7888,
+    "cached_input_tokens": 0,
+    "output_tokens": 8773,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.258765",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "7e355b09-4264-4d8e-9e6b-5b70eed25b57",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.258765"
+  },
+  "output_sha256": "6f84b42590ad1a519007621b1d971fa66a894fa5758be33a2b04542ad2c2ca63",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"10403903|Selenium|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is explicitly a review summarizing prostate cancer screening status and recommendations, not an original study of selenium and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10403903|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review that only speculates that tocopherols or selenium may reduce incidence, providing no original data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10408871|Red meat|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original case-control study in Uruguay reporting a quartile-based odds ratio for red meat intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":2.0,\"effect_type\":\"OR\",\"ci_lower\":1.1,\"ci_upper\":3.8,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":408,\"cases\":175,\"comparison_type\":\"highest quartile of intake vs lowest quartile\",\"design\":\"case-control\",\"timing\":\"retrospective\",\"continent\":\"South America\",\"country\":\"Uruguay\",\"location\":\"Montevideo, Uruguay\",\"ethnicity\":null,\"population\":\"175 cases and 233 controls in Montevideo, Uruguay\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"involving 175 cases and 233 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"175 cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"positive findings were obtained for red meat intake (OR 2.0, 95% CI 1.1-3.8)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"(OR 2.0, 95% CI 1.1-3.8)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"When the highest quartile of intake was compared with the lowest\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study of diet and prostate cancer was conducted\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"A case-control study of diet and prostate cancer\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"10408871|Vitamin C|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original case-control study reporting an odds ratio for dietary vitamin C intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":0.4,\"effect_type\":\"OR\",\"ci_lower\":0.2,\"ci_upper\":0.8,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":408,\"cases\":175,\"comparison_type\":\"highest quartile of intake vs lowest quartile\",\"design\":\"case-control\",\"timing\":\"retrospective\",\"continent\":\"South America\",\"country\":\"Uruguay\",\"location\":\"Montevideo, Uruguay\",\"ethnicity\":null,\"population\":\"175 cases and 233 controls in Montevideo, Uruguay\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"involving 175 cases and 233 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"175 cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"vitamin C (OR 0.4, 95% 0.2-0.8)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"vitamin C (OR 0.4, 95% 0.2-0.8)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"When the highest quartile of intake was compared with the lowest\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study of diet and prostate cancer was conducted\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Foods, nutrients and prostate cancer: a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"title/abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"10408871|Vitamin E|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original case-control study reporting an odds ratio for dietary vitamin E intake and incident prostate cancer.\",\"extraction\":{\"effect_size\":0.6,\"effect_type\":\"OR\",\"ci_lower\":0.3,\"ci_upper\":1.1,\"p_value\":null,\"ci_confidence_level\":95,\"total_n\":408,\"cases\":175,\"comparison_type\":\"highest quartile of intake vs lowest quartile\",\"design\":\"case-control\",\"timing\":\"retrospective\",\"continent\":\"South America\",\"country\":\"Uruguay\",\"location\":\"Montevideo, Uruguay\",\"ethnicity\":null,\"population\":\"175 cases and 233 controls in Montevideo, Uruguay\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"involving 175 cases and 233 controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"175 cases\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"vitamin E (OR 0.6, 95% CI 0.3-1.1)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"vitamin E (OR 0.6, 95% CI 0.3-1.1)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"p_value\":null,\"comparison\":{\"excerpt\":\"When the highest quartile of intake was compared with the lowest\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"A case-control study of diet and prostate cancer was conducted\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"conducted in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"ethnicity\":null,\"location\":{\"excerpt\":\"in Montevideo, Uruguay\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Foods, nutrients and prostate cancer: a case-control study\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10408871/\",\"location\":\"title/abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Unclear\",\"q3\":\"Unclear\",\"q4\":\"Unclear\",\"q5\":\"Unclear\",\"q6\":\"Unclear\",\"q7\":\"Unclear\",\"q8\":\"Unclear\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"10430257|Red meat|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Original hospital-based case-control study of newly diagnosed prostate carcinoma that assessed pork (red meat) consumption as a dietary exposure.\",\"extraction\":{\"effect_size\":null,\"effect_type\":null,\"ci_lower\":null,\"ci_upper\":null,\"p_value\":\"not statistically significant\",\"ci_confidence_level\":null,\"total_n\":270,\"cases\":90,\"comparison_type\":\"pork consumption in cases versus controls\",\"design\":\"case-control\",\"timing\":\"retrospective\",\"continent\":\"Asia\",\"country\":\"Taiwan\",\"location\":\"northern Taiwan\",\"ethnicity\":\"Chinese\",\"population\":\"Patients newly diagnosed with prostate carcinoma at a veterans hospital or 2 military hospitals and matched noncancer hospital controls\",\"exposure_subtype\":\"whole_food\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"cases (n = 90). Controls (n = 180)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"newly diagnosed with prostate carcinoma between August 1995 and July 1996 were included as cases (n = 90)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"effect_size\":null,\"confidence_interval\":null,\"p_value\":{\"excerpt\":\"The consumption of pork was moderately higher for cases than for controls, although this difference was not statistically significant.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"comparison\":{\"excerpt\":\"The consumption of pork was moderately higher for cases than for controls\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"The authors conducted a hospital-based case-control study to identify risk factors for prostate carcinoma in northern Taiwan.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"Subjects were interviewed in person to elicit information regarding sociodemographic characteristics, life-style, diet, height, and weight.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"continent\":{\"excerpt\":\"risk factors for prostate carcinoma in northern Taiwan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"ethnicity\":{\"excerpt\":\"prostate carcinoma remains a rare disease among Chinese men\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"location\":{\"excerpt\":\"in northern Taiwan\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"},\"exposure_measurement\":{\"excerpt\":\"Subjects were interviewed in person to elicit information regarding sociodemographic characteristics, life-style, diet\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/10430257/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"case_control\",\"answers\":{\"q1\":\"Unclear\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Unclear\",\"q5\":\"Yes\",\"q6\":\"Yes\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Yes\",\"q11\":\"NA\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"10433624|Lycopene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is a correspondence letter commenting on a published review, with no original results.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10433624|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This \\\"Re:\\\" letter is commentary on a review rather than an original human study of tomato intake and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10433625|Lycopene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"This is an authors' response letter to correspondence and reports no original study data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10433625|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NONPRIMARY\",\"reason\":\"The record is a reply letter about a review, not an original human study of tomato intake and incident prostate cancer.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10453174|Beta-carotene|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is explicitly a review of recent research on dietary carotenoids and disease, not an original study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"10453275|Antioxidants|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review/hypothesis paper on diet, androgens and oxidative stress without an original population-based antioxidant-incidence analysis.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "10403903|Selenium|Prostate cancer",
+      "pmid": "10403903",
+      "pmcid": "",
+      "published_date": "1999",
+      "title": "Prostate cancer screening: promise and peril--a review.",
+      "authors": [
+        "Godley PA"
+      ],
+      "journal": "Cancer detection and prevention",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10403903/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is explicitly a review summarizing prostate cancer screening status and recommendations, not an original study of selenium and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10403903|Vitamin E|Prostate cancer",
+      "pmid": "10403903",
+      "pmcid": "",
+      "published_date": "1999",
+      "title": "Prostate cancer screening: promise and peril--a review.",
+      "authors": [
+        "Godley PA"
+      ],
+      "journal": "Cancer detection and prevention",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10403903/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is a narrative review that only speculates that tocopherols or selenium may reduce incidence, providing no original data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10408871|Red meat|Prostate cancer",
+      "pmid": "10408871",
+      "pmcid": "PMC2362326",
+      "published_date": "1999-05-01",
+      "title": "Foods, nutrients and prostate cancer: a case-control study in Uruguay.",
+      "authors": [
+        "Deneo-Pellegrini H",
+        "De Stefani E",
+        "Ronco A",
+        "Mendilaharsu M"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original case-control study in Uruguay reporting a quartile-based odds ratio for red meat intake and incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2,
+        "effect_type": "OR",
+        "ci_lower": 1.1,
+        "ci_upper": 3.8,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 408,
+        "cases": 175,
+        "comparison_type": "highest quartile of intake vs lowest quartile",
+        "design": "case-control",
+        "timing": "retrospective",
+        "continent": "South America",
+        "country": "Uruguay",
+        "location": "Montevideo, Uruguay",
+        "ethnicity": "NA",
+        "population": "175 cases and 233 controls in Montevideo, Uruguay",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract; total_n derived from reported group counts 175 + 233 = 408"
+          },
+          "cases": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest, positive findings were obtained for red meat intake (OR 2.0, 95% CI 1.1-3.8), desserts (OR 1.8, 95% CI 0.9-3.3), total energy (OR 1.9, 95% CI 1.0-3.4) and total fat intake (OR 1.8, 95% CI 0.9-3.4).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest, positive findings were obtained for red meat intake (OR 2.0, 95% CI 1.1-3.8), desserts (OR 1.8, 95% CI 0.9-3.3), total energy (OR 1.9, 95% CI 1.0-3.4) and total fat intake (OR 1.8, 95% CI 0.9-3.4).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "A case-control study of diet and prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 10.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10408871|Vitamin C|Prostate cancer",
+      "pmid": "10408871",
+      "pmcid": "PMC2362326",
+      "published_date": "1999-05-01",
+      "title": "Foods, nutrients and prostate cancer: a case-control study in Uruguay.",
+      "authors": [
+        "Deneo-Pellegrini H",
+        "De Stefani E",
+        "Ronco A",
+        "Mendilaharsu M"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+      "exposure": "Vitamin C",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original case-control study reporting an odds ratio for dietary vitamin C intake and incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.4,
+        "effect_type": "OR",
+        "ci_lower": 0.2,
+        "ci_upper": 0.8,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 408,
+        "cases": 175,
+        "comparison_type": "highest quartile of intake vs lowest quartile",
+        "design": "case-control",
+        "timing": "retrospective",
+        "continent": "South America",
+        "country": "Uruguay",
+        "location": "Montevideo, Uruguay",
+        "ethnicity": "NA",
+        "population": "175 cases and 233 controls in Montevideo, Uruguay",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract; total_n derived from reported group counts 175 + 233 = 408"
+          },
+          "cases": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "On the other hand, vegetables and fruits (OR 0.5, 95% CI 0.3-0.9), vitamin C (OR 0.4, 95% 0.2-0.8) and vitamin E (OR 0.6, 95% CI 0.3-1.1) were associated with reduced risks of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "On the other hand, vegetables and fruits (OR 0.5, 95% CI 0.3-0.9), vitamin C (OR 0.4, 95% 0.2-0.8) and vitamin E (OR 0.6, 95% CI 0.3-1.1) were associated with reduced risks of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Foods, nutrients and prostate cancer: a case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "title/abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 10.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10408871|Vitamin E|Prostate cancer",
+      "pmid": "10408871",
+      "pmcid": "PMC2362326",
+      "published_date": "1999-05-01",
+      "title": "Foods, nutrients and prostate cancer: a case-control study in Uruguay.",
+      "authors": [
+        "Deneo-Pellegrini H",
+        "De Stefani E",
+        "Ronco A",
+        "Mendilaharsu M"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original case-control study reporting an odds ratio for dietary vitamin E intake and incident prostate cancer.",
+      "missing_key_fields": [
+        "p_value"
+      ],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.6,
+        "effect_type": "OR",
+        "ci_lower": 0.3,
+        "ci_upper": 1.1,
+        "p_value": null,
+        "ci_confidence_level": 95,
+        "total_n": 408,
+        "cases": 175,
+        "comparison_type": "highest quartile of intake vs lowest quartile",
+        "design": "case-control",
+        "timing": "retrospective",
+        "continent": "South America",
+        "country": "Uruguay",
+        "location": "Montevideo, Uruguay",
+        "ethnicity": "NA",
+        "population": "175 cases and 233 controls in Montevideo, Uruguay",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract; total_n derived from reported group counts 175 + 233 = 408"
+          },
+          "cases": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay involving 175 cases and 233 controls.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "effect_size": {
+            "excerpt": "On the other hand, vegetables and fruits (OR 0.5, 95% CI 0.3-0.9), vitamin C (OR 0.4, 95% 0.2-0.8) and vitamin E (OR 0.6, 95% CI 0.3-1.1) were associated with reduced risks of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "On the other hand, vegetables and fruits (OR 0.5, 95% CI 0.3-0.9), vitamin C (OR 0.4, 95% 0.2-0.8) and vitamin E (OR 0.6, 95% CI 0.3-1.1) were associated with reduced risks of prostate cancer.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "p_value": null,
+          "comparison": {
+            "excerpt": "When the highest quartile of intake was compared with the lowest",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "A case-control study of diet and prostate cancer was conducted in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "conducted in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Montevideo, Uruguay",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Foods, nutrients and prostate cancer: a case-control study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10408871/",
+            "location": "title/abstract"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Unclear",
+          "q3": "Unclear",
+          "q4": "Unclear",
+          "q5": "Unclear",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Unclear",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 10.0,
+        "grade": "Fair"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "JBI remains Fair after Claude R2",
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10430257|Red meat|Prostate cancer",
+      "pmid": "10430257",
+      "pmcid": "",
+      "published_date": "1999-08-01",
+      "title": "Risk factors for prostate carcinoma in Taiwan: a case-control study in a Chinese population.",
+      "authors": [
+        "Sung JF",
+        "Lin RS",
+        "Pu YS",
+        "Chen YC",
+        "Chang HC",
+        "Lai MK"
+      ],
+      "journal": "Cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "Original hospital-based case-control study of newly diagnosed prostate carcinoma that assessed pork (red meat) consumption as a dietary exposure.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": false,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 270,
+        "cases": 90,
+        "comparison_type": "pork consumption in cases versus controls",
+        "design": "case-control",
+        "timing": "retrospective",
+        "continent": "Asia",
+        "country": "Taiwan",
+        "location": "northern Taiwan",
+        "ethnicity": "Chinese",
+        "population": "Patients newly diagnosed with prostate carcinoma at a veterans hospital or 2 military hospitals and matched noncancer hospital controls",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Patients at a selected veterans hospital or 2 military hospitals who were newly diagnosed with prostate carcinoma between August 1995 and July 1996 were included as cases (n = 90). Controls (n = 180) were comprised noncancer patients who were treated in emergency rooms and departments other than those of urology and cardiology at the same hospitals; controls were matched to cases by age (+/-5 years) and admission date (+/-4 months).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract; total_n derived from reported group counts 90 + 180 = 270"
+          },
+          "cases": {
+            "excerpt": "Patients at a selected veterans hospital or 2 military hospitals who were newly diagnosed with prostate carcinoma between August 1995 and July 1996 were included as cases (n = 90).",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": {
+            "excerpt": "The consumption of pork was moderately higher for cases than for controls, although this difference was not statistically significant.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "comparison": {
+            "excerpt": "The consumption of pork was moderately higher for cases than for controls",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "design": {
+            "excerpt": "The authors conducted a hospital-based case-control study to identify risk factors for prostate carcinoma in northern Taiwan.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "timing": {
+            "excerpt": "Subjects were interviewed in person to elicit information regarding sociodemographic characteristics, life-style, diet, height, and weight.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "continent": {
+            "excerpt": "risk factors for prostate carcinoma in northern Taiwan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "ethnicity": {
+            "excerpt": "prostate carcinoma remains a rare disease among Chinese men",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "location": {
+            "excerpt": "in northern Taiwan",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Subjects were interviewed in person to elicit information regarding sociodemographic characteristics, life-style, diet",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/10430257/",
+            "location": "abstract"
+          }
+        },
+        "p_value_reported_as": "not statistically significant",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Unclear",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Unclear",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 70.0,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10433624|Lycopene|Prostate cancer",
+      "pmid": "10433624",
+      "pmcid": "",
+      "published_date": "1999-08-04",
+      "title": "Re: Tomatoes, tomato-based products, lycopene, and prostate cancer: review of the epidemiologic literature.",
+      "authors": [
+        "Zackheim HS"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10433624/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is a correspondence letter commenting on a published review, with no original results.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10433624|Tomato|Prostate cancer",
+      "pmid": "10433624",
+      "pmcid": "",
+      "published_date": "1999-08-04",
+      "title": "Re: Tomatoes, tomato-based products, lycopene, and prostate cancer: review of the epidemiologic literature.",
+      "authors": [
+        "Zackheim HS"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10433624/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This \"Re:\" letter is commentary on a review rather than an original human study of tomato intake and prostate cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10433625|Lycopene|Prostate cancer",
+      "pmid": "10433625",
+      "pmcid": "",
+      "published_date": "1999-08-04",
+      "title": "RESPONSE: re: tomatoes, tomato-based products, lycopene, and prostate cancer: review of the epidemiologic literature.",
+      "authors": [
+        "Giovannucci E"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10433625/",
+      "exposure": "Lycopene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "This is an authors' response letter to correspondence and reports no original study data.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10433625|Tomato|Prostate cancer",
+      "pmid": "10433625",
+      "pmcid": "",
+      "published_date": "1999-08-04",
+      "title": "RESPONSE: re: tomatoes, tomato-based products, lycopene, and prostate cancer: review of the epidemiologic literature.",
+      "authors": [
+        "Giovannucci E"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10433625/",
+      "exposure": "Tomato",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NONPRIMARY",
+      "reason": "The record is a reply letter about a review, not an original human study of tomato intake and incident prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10453174|Beta-carotene|Prostate cancer",
+      "pmid": "10453174",
+      "pmcid": "",
+      "published_date": "1999-07-01",
+      "title": "Dietary carotenoids and certain cancers, heart disease, and age-related macular degeneration: a review of recent research.",
+      "authors": [
+        "Cooper DA",
+        "Eldridge AL",
+        "Peters JC"
+      ],
+      "journal": "Nutrition reviews",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10453174/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "The article is explicitly a review of recent research on dietary carotenoids and disease, not an original study.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "10453275|Antioxidants|Prostate cancer",
+      "pmid": "10453275",
+      "pmcid": "",
+      "published_date": "1998",
+      "title": "Diet, androgens, oxidative stress and prostate cancer susceptibility.",
+      "authors": [
+        "Fleshner NE",
+        "Klotz LH"
+      ],
+      "journal": "Cancer metastasis reviews",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/10453275/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-REVIEW",
+      "reason": "This is a narrative review/hypothesis paper on diet, androgens and oxidative stress without an original population-based antioxidant-incidence analysis.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

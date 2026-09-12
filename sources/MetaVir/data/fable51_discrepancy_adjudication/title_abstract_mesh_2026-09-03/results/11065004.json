@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:21:36.691046-04:00",
+  "pmid": "11065004",
+  "work_key": "30e95953611b85a03e9ccd6707e2d42fcbab7c510187ddcd280f040240afa9ef",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/11065004_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "11065004",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "11065004|Omega-3 fatty acids|Prostate cancer",
+        "exposure": "Omega-3 fatty acids",
+        "field": "SCREENING_DECISION",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "The prostate cancer risk increased in proportion to alpha-linolenic acid intake.",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports only alpha-linolenic acid intake (a single omega-3 constituent) and never mentions omega-3 fatty acids as a class; whether this satisfies the review's exposure definition cannot be resolved from title/abstract/MeSH.",
+        "one_sentence_explanation": "The abstract gives an incident prostate-cancer OR for dietary alpha-linolenic acid but never names omega-3 fatty acids or a total omega-3 measure, so whether this single constituent satisfies the target exposure cannot be uniquely determined."
+      },
+      {
+        "context_id": "11065004|Vitamin C|Prostate cancer",
+        "exposure": "Vitamin C",
+        "field": "SAMPLE_SIZE",
+        "tam_assessment": "SUFFICIENT",
+        "verdict": "CLAUDE_GEMINI_CORRECT",
+        "adjudicated_value": "651",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "Two hundred seventeen incident cases with histologically confirmed diagnosis of prostate cancer were matched to 434 hospital and community controls by age and residence.",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": false,
+        "manual_review_reason": null,
+        "one_sentence_explanation": "The abstract reports 217 incident cases and 434 controls in the case-control analysis, totaling 651 participants, which supports Claude+Gemini's sample size of 651 over ChatGPT's null."
+      }
+    ]
+  }
+}

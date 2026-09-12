@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:38:05.982913-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "f2a472532b7c6f4ddf9fa8f5532cd8b7f7d8908a0e0856a59689353b1f3dd5cf",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "38060977",
+      "title": "Cancer Risk Factors in Southern Brazil: Report of a Comprehensive, Matched Case-Control Study.",
+      "abstract": "To evaluate cancer risk factors among cancer cases and controls from Southern Brazil, to analyze a multigene hereditary panel testing (MGPT, 26 genes) for breast cancer (BC) and colorectal cancer (CCR) cases diagnosed age younger than 50 years and to characterize them for hereditary cancer syndrome (HCS) phenotypes. A case-control (matched by age group and sex) study was conducted on regional cancer. Data on exposure factors and first-/second-degree family history of cancer (1/2FHC) were collected. The MGPT was performed using Illumina next-generation sequencing technology. A total of 1,007 cases and 1,007 controls were included. The most frequent cancers were BC (n = 311), CCR (n = 147), prostate (n = 132), and lung cancers (n = 89). It was independently associated with cancer, 1/2FHC, tobacco consumption (TC), pesticide exposure (PE), solvent/glue exposure, and BMI <24. BC was associated with 1/2FHC, TC, and hormone replacement therapy use; CCR with 1/2FHC, TC, and BMI <24; prostate cancer with 1/2FHC, TC, and alcohol consumption; and lung cancer with 1/2FHC, TC, PE, and BMI <24. MGPT identified pathogenic/likely pathogenic mutations in 24 (32%) women with BC and in three (18%) women and four (24%) men diagnosed with CCR at under 50 years. Among the tested patients under 50 years with diagnosed BC and CCR, 98.6% and 97% present criteria for HCS, respectively. This study confirmed the association of several factors associated with BC, CCR, prostate, and lung cancers and reinforced the importance of evaluating FHC and genetic testing, especially for patients under 50 years with diagnosed BC or CCR. A better understanding of population-specific cancer risk factors builds on sustainable data for developing prevention strategies. These efforts increase the commitment to early detection and surveillance.",
+      "mesh": [
+        "Humans",
+        "Female",
+        "Middle Aged",
+        "Male",
+        "Case-Control Studies",
+        "Brazil / epidemiology",
+        "Breast Neoplasms / diagnosis",
+        "Risk Factors",
+        "Lung Neoplasms"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "38060977",
+      "contexts": [
+        {
+          "context_id": "38060977|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "2014",
+              "effect_measure_type": "OR",
+              "effect_size": "7.3",
+              "ci_lower": "1.3",
+              "ci_upper": "40.5",
+              "p_value": "0.01",
+              "comparison": "Alcohol consumption versus no alcohol consumption"
+            },
+            "Claude+Gemini": {
+              "sample_size": "264",
+              "effect_measure_type": "OR",
+              "effect_size": "7.3",
+              "ci_lower": "1.3",
+              "ci_upper": "40.5",
+              "p_value": "0.01",
+              "comparison": "binary"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

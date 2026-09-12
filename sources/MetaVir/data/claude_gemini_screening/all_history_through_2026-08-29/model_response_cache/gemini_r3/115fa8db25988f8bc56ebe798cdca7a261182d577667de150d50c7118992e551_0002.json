@@ -1,0 +1,991 @@
+{
+  "schema_version": 1,
+  "receipt_id": "63488aa0f6d368eaa39474103f60abe947e73e68b40dbea1857672d02c1b7fef",
+  "requested_at": "2026-09-02T08:39:40.827138+08:00",
+  "received_at": "2026-09-02T08:40:38.407410+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "115fa8db25988f8bc56ebe798cdca7a261182d577667de150d50c7118992e551",
+  "attempt": 2,
+  "context_ids": [
+    "19093214|Beta-carotene|Prostate cancer",
+    "19093214|Folic acid|Prostate cancer",
+    "19093214|Multivitamin|Prostate cancer",
+    "19093214|Selenium|Prostate cancer",
+    "19093214|Vitamin E|Prostate cancer",
+    "19093214|Zinc|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Beta-carotene": 1,
+    "Folic acid": 1,
+    "Multivitamin": 1,
+    "Selenium": 1,
+    "Vitamin E": 1,
+    "Zinc": 1
+  },
+  "input_digest": "f3d6538c761d3a8fa7b17e22ec83bae395931536fd0e939b77438e8d4f8d64ee",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 11199,
+    "cached_input_tokens": 0,
+    "output_tokens": 10567,
+    "reasoning_tokens": 1285
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.0480255",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "c73211f8-6117-4bb6-a961-118e4e6d9abb",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.0480255"
+  },
+  "output_sha256": "f4f5755e2c92dd1f590d092c6edfd346fc65cae2965167dfd9cffc4613084cc6",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"19093214|Beta-carotene|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluates beta-carotene supplement use and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.3,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.1,\n        \"ci_upper\": 0.8,\n        \"p_value\": 0.341,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4110,\n        \"cases\": 1706,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"among 1,706 prostate cancer cases and 2,404 matched controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Eligible cases were 1,706 men aged 40–79 years admitted to the participating hospitals in Baltimore, Boston, New York, or Philadelphia\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The OR for 10 or more years of use of beta-carotene was 0.8 (95% CI: 0.4–1.7) before adjustment for other supplements and 0.3 (95% CI: 0.1, 0.8) after adjustment.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"0.3 (0.1, 0.8)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Beta-carotene\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.341\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Beta-carotene\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Never or < 1 yr use vs 10+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"data from the hospital-based Case-Control Surveillance Study conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 83.9 Black 16.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Boston, New York, Philadelphia, Baltimore\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"19093214|Folic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluates folate supplement use and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.0,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.5,\n        \"ci_upper\": 1.7,\n        \"p_value\": 0.414,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4110,\n        \"cases\": 1706,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"among 1,706 prostate cancer cases and 2,404 matched controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Eligible cases were 1,706 men aged 40–79 years admitted to the participating hospitals in Baltimore, Boston, New York, or Philadelphia\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"1.0 (0.5, 1.7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Folate\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.0 (0.5, 1.7)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Folate\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.414\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Folate\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Never or < 1 yr use vs 10+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"data from the hospital-based Case-Control Surveillance Study conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 83.9 Black 16.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Boston, New York, Philadelphia, Baltimore\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"19093214|Multivitamin|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluates multivitamin use and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.3,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.0,\n        \"ci_upper\": 1.6,\n        \"p_value\": 0.089,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4110,\n        \"cases\": 1706,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"among 1,706 prostate cancer cases and 2,404 matched controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Eligible cases were 1,706 men aged 40–79 years admitted to the participating hospitals in Baltimore, Boston, New York, or Philadelphia\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"the multivariable-adjusted odds ratios (ORs) for prostate cancer were 0.7 for use of multivitamins/minerals for 1–4 years, 1.1 for 5–9 years, and 1.3 for 10 or more years, respectively (p for trend =0.089).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.3 (1.0, 1.6)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Multivitamins\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"p for trend =0.089\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Results, paragraph 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Never or < 1 yr use vs 10+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"data from the hospital-based Case-Control Surveillance Study conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 83.9 Black 16.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Boston, New York, Philadelphia, Baltimore\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"19093214|Selenium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluates selenium supplement use and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.7,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.6,\n        \"ci_upper\": 4.3,\n        \"p_value\": 0.34,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4110,\n        \"cases\": 1706,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"among 1,706 prostate cancer cases and 2,404 matched controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Eligible cases were 1,706 men aged 40–79 years admitted to the participating hospitals in Baltimore, Boston, New York, or Philadelphia\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"1.7 (95% CI: 0.6, 4.3)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Results, paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.7 (0.6, 4.3)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Selenium\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.340\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Selenium\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Never or < 1 yr use vs 10+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"data from the hospital-based Case-Control Surveillance Study conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 83.9 Black 16.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Boston, New York, Philadelphia, Baltimore\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"19093214|Vitamin E|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluates vitamin E supplement use and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.2,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.9,\n        \"ci_upper\": 1.9,\n        \"p_value\": 0.798,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4110,\n        \"cases\": 1706,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"among 1,706 prostate cancer cases and 2,404 matched controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Eligible cases were 1,706 men aged 40–79 years admitted to the participating hospitals in Baltimore, Boston, New York, or Philadelphia\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"1.2 (0.9, 1.9)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Vitamin E\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.2 (0.9, 1.9)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Vitamin E\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.798\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Vitamin E\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Never or < 1 yr use vs 10+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"data from the hospital-based Case-Control Surveillance Study conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 83.9 Black 16.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Boston, New York, Philadelphia, Baltimore\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"19093214|Zinc|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This hospital-based case-control study evaluates zinc supplement use and risk of prostate cancer.\",\n      \"extraction\": {\n        \"effect_size\": 1.9,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.0,\n        \"ci_upper\": 3.6,\n        \"p_value\": 0.292,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 4110,\n        \"cases\": 1706,\n        \"comparison_type\": \"categorical\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia\",\n        \"exposure_subtype\": \"supplement\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"among 1,706 prostate cancer cases and 2,404 matched controls\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Eligible cases were 1,706 men aged 40–79 years admitted to the participating hospitals in Baltimore, Boston, New York, or Philadelphia\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Cases, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Men who used zinc for 10 years or more, either in a multivitamin or as a supplement, had an approximately 2-fold (OR=1.9, 95% CI: 1.0, 3.6) increased risk of prostate cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"1.9 (1.0, 3.6)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Zinc\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P for trend 0.292\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2, row Zinc\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Never or < 1 yr use vs 10+\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"data from the hospital-based Case-Control Surveillance Study conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"conducted in the United States\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Methods, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"White 83.9 Black 16.1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Boston, New York, Philadelphia, Baltimore\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Table 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/\",\n            \"location\": \"Subjects and Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "19093214|Beta-carotene|Prostate cancer",
+      "pmid": "19093214",
+      "pmcid": "PMC2755205",
+      "published_date": "2009-07-01",
+      "title": "Vitamin and mineral use and risk of prostate cancer: the case-control surveillance study.",
+      "authors": [
+        "Zhang Y",
+        "Coogan P",
+        "Palmer JR",
+        "Strom BL",
+        "Rosenberg L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+      "exposure": "Beta-carotene",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluates beta-carotene supplement use and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.3,
+        "effect_type": "OR",
+        "ci_lower": 0.1,
+        "ci_upper": 0.8,
+        "p_value": 0.341,
+        "ci_confidence_level": 95,
+        "total_n": 4110,
+        "cases": 1706,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases (n=1,706) Controls (n=2,404)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 1706 + 2404 = 4110"
+          },
+          "cases": {
+            "excerpt": "Cases (n=1,706)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "The OR for 10 or more years of use of beta-carotene was 0.8 (95% CI: 0.4–1.7) before adjustment for other supplements and 0.3 (95% CI: 0.1, 0.8) after adjustment. All p values for trend were greater than 0.05, suggesting that there was no apparent dose-response relationship between use of either multivitamins/minerals or single supplements and the risk of prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Results, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "The OR for 10 or more years of use of beta-carotene was 0.8 (95% CI: 0.4–1.7) before adjustment for other supplements and 0.3 (95% CI: 0.1, 0.8) after adjustment.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Beta-carotene"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.341",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Beta-carotene"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "data from the hospital-based Case-Control Surveillance Study conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.341",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 31817,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "795042012aeecab5ca81b86a9dff0fa29010f89c05150d2af5173c4b49268ba0",
+      "pmc_source_receipt_digest": "920e4f6f2ed5e967958dbb54b703d716f5f0b755f118a935ecf06673510b8e93",
+      "pmc_source_raw_sha256": "f7880f3956082790fba5ebecc85c26faf98a8b0cd0243372101c0b0f8c41bea8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "6e96db0bc317eb167264acc208e90e4f1b3c9d8c3371b2ac81134f82c02907cd"
+    },
+    {
+      "context_id": "19093214|Folic acid|Prostate cancer",
+      "pmid": "19093214",
+      "pmcid": "PMC2755205",
+      "published_date": "2009-07-01",
+      "title": "Vitamin and mineral use and risk of prostate cancer: the case-control surveillance study.",
+      "authors": [
+        "Zhang Y",
+        "Coogan P",
+        "Palmer JR",
+        "Strom BL",
+        "Rosenberg L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+      "exposure": "Folic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluates folate supplement use and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1,
+        "effect_type": "OR",
+        "ci_lower": 0.5,
+        "ci_upper": 1.7,
+        "p_value": 0.414,
+        "ci_confidence_level": 95,
+        "total_n": 4110,
+        "cases": 1706,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases (n=1,706) Controls (n=2,404)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 1706 + 2404 = 4110"
+          },
+          "cases": {
+            "excerpt": "Cases (n=1,706)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "The ORs of prostate cancer were 1.3 (95% CI: 1.0, 1.7) for use of 10 years or more of multivitamins/minerals, 1.3 (95% CI: 0.9, 2.0) for vitamin E, 0.3 (95% CI: 0.1, 0.8) for beta-carotene, 0.9 (95% CI: 0.5, 1.7) for folate, 1.5 (95% CI: 0.8, 3.0) for zinc, and 1.9 (95% CI: 0.7, 5.2) for selenium, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Folate"
+          },
+          "confidence_interval": {
+            "excerpt": "The ORs of prostate cancer were 1.3 (95% CI: 1.0, 1.7) for use of 10 years or more of multivitamins/minerals, 1.3 (95% CI: 0.9, 2.0) for vitamin E, 0.3 (95% CI: 0.1, 0.8) for beta-carotene, 0.9 (95% CI: 0.5, 1.7) for folate, 1.5 (95% CI: 0.8, 3.0) for zinc, and 1.9 (95% CI: 0.7, 5.2) for selenium, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Folate"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.414",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Folate"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "data from the hospital-based Case-Control Surveillance Study conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.414",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 31817,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "795042012aeecab5ca81b86a9dff0fa29010f89c05150d2af5173c4b49268ba0",
+      "pmc_source_receipt_digest": "920e4f6f2ed5e967958dbb54b703d716f5f0b755f118a935ecf06673510b8e93",
+      "pmc_source_raw_sha256": "f7880f3956082790fba5ebecc85c26faf98a8b0cd0243372101c0b0f8c41bea8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "19a055bb8c0a42f9ba6f6d1caf77c6bd95cafefd76b7f660f2a43a5b3a8e0cdc"
+    },
+    {
+      "context_id": "19093214|Multivitamin|Prostate cancer",
+      "pmid": "19093214",
+      "pmcid": "PMC2755205",
+      "published_date": "2009-07-01",
+      "title": "Vitamin and mineral use and risk of prostate cancer: the case-control surveillance study.",
+      "authors": [
+        "Zhang Y",
+        "Coogan P",
+        "Palmer JR",
+        "Strom BL",
+        "Rosenberg L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+      "exposure": "Multivitamin",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluates multivitamin use and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.3,
+        "effect_type": "OR",
+        "ci_lower": 1,
+        "ci_upper": 1.6,
+        "p_value": 0.089,
+        "ci_confidence_level": 95,
+        "total_n": 4110,
+        "cases": 1706,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases (n=1,706) Controls (n=2,404)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 1706 + 2404 = 4110"
+          },
+          "cases": {
+            "excerpt": "Cases (n=1,706)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "The relation of duration of use of multivitamins and specific vitamins and minerals to the risk of prostate cancer is shown in Table 2 . Relative to use for less than a year, the multivariable-adjusted odds ratios (ORs) for prostate cancer were 0.7 for use of multivitamins/minerals for 1–4 years, 1.1 for 5–9 years, and 1.3 for 10 or more years, respectively (p for trend =0.089).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Results, paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "1.3 (1.0, 1.6)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Multivitamins"
+          },
+          "p_value": {
+            "excerpt": "p for trend =0.089",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Results, paragraph 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "data from the hospital-based Case-Control Surveillance Study conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.089",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 31817,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "795042012aeecab5ca81b86a9dff0fa29010f89c05150d2af5173c4b49268ba0",
+      "pmc_source_receipt_digest": "920e4f6f2ed5e967958dbb54b703d716f5f0b755f118a935ecf06673510b8e93",
+      "pmc_source_raw_sha256": "f7880f3956082790fba5ebecc85c26faf98a8b0cd0243372101c0b0f8c41bea8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "497e26af9ef0d0c4a569e2613ba4b6c3902fc053622930f61fd04c7620765d6a"
+    },
+    {
+      "context_id": "19093214|Selenium|Prostate cancer",
+      "pmid": "19093214",
+      "pmcid": "PMC2755205",
+      "published_date": "2009-07-01",
+      "title": "Vitamin and mineral use and risk of prostate cancer: the case-control surveillance study.",
+      "authors": [
+        "Zhang Y",
+        "Coogan P",
+        "Palmer JR",
+        "Strom BL",
+        "Rosenberg L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+      "exposure": "Selenium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluates selenium supplement use and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.7,
+        "effect_type": "OR",
+        "ci_lower": 0.6,
+        "ci_upper": 4.3,
+        "p_value": 0.34,
+        "ci_confidence_level": 95,
+        "total_n": 4110,
+        "cases": 1706,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases (n=1,706) Controls (n=2,404)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 1706 + 2404 = 4110"
+          },
+          "cases": {
+            "excerpt": "Cases (n=1,706)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Control for the use of other supplements reduced all of these ORs for 10 or more years of use to 1.2 or less except for those for zinc and selenium, which were 1.9 (95% CI: 1.0, 3.6) and 1.7 (95% CI: 0.6, 4.3), respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Results, paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "Control for the use of other supplements reduced all of these ORs for 10 or more years of use to 1.2 or less except for those for zinc and selenium, which were 1.9 (95% CI: 1.0, 3.6) and 1.7 (95% CI: 0.6, 4.3), respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Selenium"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.340",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Selenium"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "data from the hospital-based Case-Control Surveillance Study conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+            "location": "abstract, methods"
+          },
+          "exposure_measurement": {
+            "excerpt": "Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.34",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 31817,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "795042012aeecab5ca81b86a9dff0fa29010f89c05150d2af5173c4b49268ba0",
+      "pmc_source_receipt_digest": "920e4f6f2ed5e967958dbb54b703d716f5f0b755f118a935ecf06673510b8e93",
+      "pmc_source_raw_sha256": "f7880f3956082790fba5ebecc85c26faf98a8b0cd0243372101c0b0f8c41bea8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "2860e3a5365d1718153feea525758b54863437de18dda9adf8ff499703e4f26d"
+    },
+    {
+      "context_id": "19093214|Vitamin E|Prostate cancer",
+      "pmid": "19093214",
+      "pmcid": "PMC2755205",
+      "published_date": "2009-07-01",
+      "title": "Vitamin and mineral use and risk of prostate cancer: the case-control surveillance study.",
+      "authors": [
+        "Zhang Y",
+        "Coogan P",
+        "Palmer JR",
+        "Strom BL",
+        "Rosenberg L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluates vitamin E supplement use and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.2,
+        "effect_type": "OR",
+        "ci_lower": 0.9,
+        "ci_upper": 1.9,
+        "p_value": 0.798,
+        "ci_confidence_level": 95,
+        "total_n": 4110,
+        "cases": 1706,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases (n=1,706) Controls (n=2,404)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 1706 + 2404 = 4110"
+          },
+          "cases": {
+            "excerpt": "Cases (n=1,706)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Because we found an association of prostate cancer risk with zinc use, we repeated the analyses of multivitamin use after excluding men who used zinc from multivitamins or single supplements for one year or more. As shown in Table 4 , the ORs for 10 or more years of use of multivitamins/minerals that did not contain zinc were 1.2 (95% CI: 0.8, 1.9) for all prostate cancer (p for trend = 0.71), 1.5 (95% CI: 0.9, 2.6) for early stage prostate cancer, and 1.0 (95% CI: 0.5, 1.9) for late stage prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Vitamin E"
+          },
+          "confidence_interval": {
+            "excerpt": "As shown in Table 4 , the ORs for 10 or more years of use of multivitamins/minerals that did not contain zinc were 1.2 (95% CI: 0.8, 1.9) for all prostate cancer (p for trend = 0.71), 1.5 (95% CI: 0.9, 2.6) for early stage prostate cancer, and 1.0 (95% CI: 0.5, 1.9) for late stage prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Vitamin E"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.798",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Vitamin E"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "data from the hospital-based Case-Control Surveillance Study conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.798",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 31817,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "795042012aeecab5ca81b86a9dff0fa29010f89c05150d2af5173c4b49268ba0",
+      "pmc_source_receipt_digest": "920e4f6f2ed5e967958dbb54b703d716f5f0b755f118a935ecf06673510b8e93",
+      "pmc_source_raw_sha256": "f7880f3956082790fba5ebecc85c26faf98a8b0cd0243372101c0b0f8c41bea8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "60b71d7951930443f731189adb3a466fa1b727a7ff3bad1d0e297f154fc29525"
+    },
+    {
+      "context_id": "19093214|Zinc|Prostate cancer",
+      "pmid": "19093214",
+      "pmcid": "PMC2755205",
+      "published_date": "2009-07-01",
+      "title": "Vitamin and mineral use and risk of prostate cancer: the case-control surveillance study.",
+      "authors": [
+        "Zhang Y",
+        "Coogan P",
+        "Palmer JR",
+        "Strom BL",
+        "Rosenberg L"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+      "exposure": "Zinc",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This hospital-based case-control study evaluates zinc supplement use and risk of prostate cancer.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.9,
+        "effect_type": "OR",
+        "ci_lower": 1,
+        "ci_upper": 3.6,
+        "p_value": 0.292,
+        "ci_confidence_level": 95,
+        "total_n": 4110,
+        "cases": 1706,
+        "comparison_type": "categorical",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "United States",
+        "ethnicity": "NA",
+        "population": "Hospital-based case-control surveillance study participants in Baltimore, Boston, New York, and Philadelphia",
+        "exposure_subtype": "supplement",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Cases (n=1,706) Controls (n=2,404)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1; total_n derived from reported group counts 1706 + 2404 = 4110"
+          },
+          "cases": {
+            "excerpt": "Cases (n=1,706)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Cases, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "Men who used zinc for 10 years or more, either in a multivitamin or as a supplement, had an approximately 2-fold (OR=1.9, 95% CI: 1.0, 3.6) increased risk of prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Results, paragraph 1"
+          },
+          "confidence_interval": {
+            "excerpt": "Men who used zinc for 10 years or more, either in a multivitamin or as a supplement, had an approximately 2-fold (OR=1.9, 95% CI: 1.0, 3.6) increased risk of prostate cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Zinc"
+          },
+          "p_value": {
+            "excerpt": "P for trend 0.292",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2, row Zinc"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "data from the hospital-based Case-Control Surveillance Study conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Since 1976, the Case-Control Surveillance Study has been conducted in hospitals located in four centers",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "conducted in the United States",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Methods, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "conducted in the United States",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19093214/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Subjects were interviewed in hospital by trained nurse interviewers who used a structured questionnaire to collect information on demographic factors, reproductive and medical history, family history of cancer, and lifetime history of medication use.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2755205/",
+            "location": "Subjects and Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.292",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 31817,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "795042012aeecab5ca81b86a9dff0fa29010f89c05150d2af5173c4b49268ba0",
+      "pmc_source_receipt_digest": "920e4f6f2ed5e967958dbb54b703d716f5f0b755f118a935ecf06673510b8e93",
+      "pmc_source_raw_sha256": "f7880f3956082790fba5ebecc85c26faf98a8b0cd0243372101c0b0f8c41bea8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "ea3b1f39d621e8789b963c4d798ee59156bfb90a25efc1c2ecf43f94600eabd1"
+    }
+  ]
+}

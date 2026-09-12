@@ -1,0 +1,365 @@
+{
+  "schema_version": 1,
+  "receipt_id": "78a685e8d0ec76adc31d0fcce068b06aa8fcd52910e221483f0c20bfbf89eb69",
+  "requested_at": "2026-09-02T08:48:22.752110+08:00",
+  "received_at": "2026-09-02T08:48:50.533005+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "8911144a5881a02607d4f05d74f0dcb8017731243f46b1334d3cd422d84b49f5",
+  "attempt": 2,
+  "context_ids": [
+    "25858172|Calcium|Prostate cancer",
+    "25858172|Vitamin D|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Calcium": 1,
+    "Vitamin D": 1
+  },
+  "input_digest": "abb655e402d89f69f583bb9422f5cb26d7347d890d1c5fa5e5b4754a5e220819",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13319,
+    "cached_input_tokens": 0,
+    "output_tokens": 4765,
+    "reasoning_tokens": 1378
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.027858",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "32299508-70c2-4802-93b8-ba66bbab7a53",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.027858"
+  },
+  "output_sha256": "384fc30cc1ed2bf26176c7ea50ec2a6339e601b0cd18d10e0dc09cacf15ba989",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"25858172|Calcium|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study evaluated the association between serum calcium concentrations and incident prostate cancer risk in Jamaican men.\",\n      \"extraction\": {\n        \"effect_size\": 1.12,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.0,\n        \"ci_upper\": 1.25,\n        \"p_value\": \"0.269\",\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 476,\n        \"cases\": 225,\n        \"comparison_type\": \"continuous\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"Jamaica\",\n        \"location\": null,\n        \"ethnicity\": \"Black\",\n        \"population\": null,\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Serum calcium per 0.1 nmol/L ... Cases/controls 225/251\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Table 5\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Serum calcium per 0.1 nmol/L ... Cases/controls 225/251\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Table 5\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Multivariable-adjusted models showed a positive linear relationship between PCa and serum calcium (OR, 1.12; CI, 1.00–1.25 per 0.1 nmol/L).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Multivariable-adjusted models showed a positive linear relationship between PCa and serum calcium (OR, 1.12; CI, 1.00–1.25 per 0.1 nmol/L).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Multivariable-adjusted ... 1.35 (0.80–2.29) ... P trend 0.269\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Table 5\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Serum calcium per 0.1 nmol/L\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Table 5\"\n          },\n          \"design\": {\n            \"excerpt\": \"We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"PCa in Jamaica, a tropical country\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Both serum 25-hydroxyvitamin D and calcium levels may increase the risk of incident prostate cancer in Caribbean men of African ancestry.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Title\"\n          },\n          \"location\": {\n            \"excerpt\": \"attending urology clinics at two major hospitals and private urologists' offices in the Kingston Metropolitan area in Jamaica\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Material and Methods, Study population\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum calcium concentrations were measured on an Abbott C8000 by the Arsenazo 111 method at the University of the West Indies Pathology (Chemical Pathology) Laboratory.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Material and Methods, Laboratory assays\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"25858172|Vitamin D|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This case-control study assessed circulating 25-hydroxyvitamin D concentrations and incident prostate cancer risk in Jamaican men of African ancestry.\",\n      \"extraction\": {\n        \"effect_size\": 2.47,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 1.2,\n        \"ci_upper\": 4.9,\n        \"p_value\": \"0.013\",\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 348,\n        \"cases\": 153,\n        \"comparison_type\": \"tertiles\",\n        \"design\": \"case_control\",\n        \"timing\": \"retrospective\",\n        \"continent\": \"North America\",\n        \"country\": \"Jamaica\",\n        \"location\": null,\n        \"ethnicity\": \"Black\",\n        \"population\": null,\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"25 (OH) vitamin D (ng/mL) ... Total prostate cancer Cases/controls ... 153/195\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Table 5\"\n          },\n          \"cases\": {\n            \"excerpt\": \"25 (OH) vitamin D (ng/mL) ... Total prostate cancer Cases/controls ... 153/195\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Table 5\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The odds of PCa in men with serum 25(OH)D tertile 2 was OR, 2.18; CI, 1.04–4.43 and OR, 2.47 CI, 1.20–4.90 for tertile 3 ( P trend = 0.013).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"The odds of PCa in men with serum 25(OH)D tertile 2 was OR, 2.18; CI, 1.04–4.43 and OR, 2.47 CI, 1.20–4.90 for tertile 3 ( P trend = 0.013).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"The odds of PCa in men with serum 25(OH)D tertile 2 was OR, 2.18; CI, 1.04–4.43 and OR, 2.47 CI, 1.20–4.90 for tertile 3 ( P trend = 0.013).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"25 (OH) vitamin D (ng/mL) 1 ... <27.06 ... 27.07–34.26 ... 34.27–93.20\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Table 5\"\n          },\n          \"design\": {\n            \"excerpt\": \"We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"timing\": {\n            \"excerpt\": \"We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"continent\": {\n            \"excerpt\": \"PCa in Jamaica, a tropical country\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Abstract\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Both serum 25-hydroxyvitamin D and calcium levels may increase the risk of incident prostate cancer in Caribbean men of African ancestry.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Title\"\n          },\n          \"location\": {\n            \"excerpt\": \"attending urology clinics at two major hospitals and private urologists' offices in the Kingston Metropolitan area in Jamaica\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Material and Methods, Study population\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Serum 25(OH)D concentration was determined by ultra-performance liquid chromatography/tandem mass spectrometry (UPLC/MS/MS) analysis\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/\",\n            \"location\": \"Material and Methods, Laboratory assays\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"No\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validated_results": [
+    {
+      "context_id": "25858172|Calcium|Prostate cancer",
+      "pmid": "25858172",
+      "pmcid": "PMC4472215",
+      "published_date": "2015-06-01",
+      "title": "Both serum 25-hydroxyvitamin D and calcium levels may increase the risk of incident prostate cancer in Caribbean men of African ancestry.",
+      "authors": [
+        "Jackson MD",
+        "Tulloch-Reid MK",
+        "Lindsay CM",
+        "Smith G",
+        "Bennett FI",
+        "McFarlane-Anderson N",
+        "Aiken W",
+        "Coard KC"
+      ],
+      "journal": "Cancer medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25858172/",
+      "exposure": "Calcium",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study evaluated the association between serum calcium concentrations and incident prostate cancer risk in Jamaican men.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.12,
+        "effect_type": "OR",
+        "ci_lower": 1,
+        "ci_upper": 1.25,
+        "p_value": 0.269,
+        "ci_confidence_level": 95,
+        "total_n": 476,
+        "cases": 225,
+        "comparison_type": "continuous",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "Jamaica",
+        "location": "Jamaica",
+        "ethnicity": "NA",
+        "population": "Men 40-80 years old with newly diagnosed, histologically confirmed prostate cancer and controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Nine hundred and seventy-two men were interviewed and 243 men with newly diagnosed PCa and 275 controls were enrolled; negative biopsy men ( n = 187) and men who did not meet the inclusion criteria for controls ( n = 267) were excluded from analyses. In this report, we present information on calcium (224 cases; 248 controls) and 25(OH)D vitamin D (146 cases; 191 controls) for whom a sample of blood was available.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Table 5; total_n derived from reported group counts 243 + 224 + 9 = 476"
+          },
+          "cases": {
+            "excerpt": "225/251",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Table 5"
+          },
+          "effect_size": {
+            "excerpt": "Multivariable-adjusted models showed a positive linear relationship between PCa and serum calcium (OR, 1.12; CI, 1.00–1.25 per 0.1 nmol/L). Serum 25(OH)D concentration also showed a positive association with PCa (OR, 1.23; CI, 1.01–1.49 per 10 ng/mL).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "Serum calcium was positively correlated with PCa diagnosis (multivariable-adjusted: OR, 1.12; CI, 1.00–1.25 per 0.1 nmol/L).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "p_value": {
+            "excerpt": "0.269",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Table 5"
+          },
+          "comparison": {
+            "excerpt": "Serum calcium per 0.1 nmol/L",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Table 5"
+          },
+          "design": {
+            "excerpt": "We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "continent": {
+            "excerpt": "PCa in Jamaica, a tropical country",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Jamaica, a tropical country",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25858172/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Serum calcium concentrations were measured on an Abbott C8000 by the Arsenazo 111 method at the University of the West Indies Pathology (Chemical Pathology) Laboratory.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Material and Methods, Laboratory assays"
+          }
+        },
+        "p_value_reported_as": "0.269",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 39415,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "2325c5052533e561db424c612a752d81e165592f5e28b72e418919f3d9ccc459",
+      "pmc_source_receipt_digest": "b5adbe47503d316ddc602a00871dfa74f82c086ea6c67c84b734436a8c69a5c3",
+      "pmc_source_raw_sha256": "4dd2001d93642aee668295d90b0e722c8414a5392cbfcba05bafad8395dca652",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "174e9360e0a205d6cdf0e8726f41ab072e8d2bfe90c9dbee2816e688a416f83c"
+    },
+    {
+      "context_id": "25858172|Vitamin D|Prostate cancer",
+      "pmid": "25858172",
+      "pmcid": "PMC4472215",
+      "published_date": "2015-06-01",
+      "title": "Both serum 25-hydroxyvitamin D and calcium levels may increase the risk of incident prostate cancer in Caribbean men of African ancestry.",
+      "authors": [
+        "Jackson MD",
+        "Tulloch-Reid MK",
+        "Lindsay CM",
+        "Smith G",
+        "Bennett FI",
+        "McFarlane-Anderson N",
+        "Aiken W",
+        "Coard KC"
+      ],
+      "journal": "Cancer medicine",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/25858172/",
+      "exposure": "Vitamin D",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This case-control study assessed circulating 25-hydroxyvitamin D concentrations and incident prostate cancer risk in Jamaican men of African ancestry.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 2.47,
+        "effect_type": "OR",
+        "ci_lower": 1.2,
+        "ci_upper": 4.9,
+        "p_value": 0.013,
+        "ci_confidence_level": 95,
+        "total_n": 348,
+        "cases": 153,
+        "comparison_type": "tertiles",
+        "design": "case_control",
+        "timing": "retrospective",
+        "continent": "North America",
+        "country": "Jamaica",
+        "location": "Jamaica",
+        "ethnicity": "NA",
+        "population": "Men 40-80 years old with newly diagnosed, histologically confirmed prostate cancer and controls",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Nine hundred and seventy-two men were interviewed and 243 men with newly diagnosed PCa and 275 controls were enrolled; negative biopsy men ( n = 187) and men who did not meet the inclusion criteria for controls ( n = 267) were excluded from analyses.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Table 5; total_n derived from reported group counts 267 + 9 + 72 = 348"
+          },
+          "cases": {
+            "excerpt": "153/195",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Table 5"
+          },
+          "effect_size": {
+            "excerpt": "Serum 25(OH)D concentration also showed a positive association with PCa (OR, 1.23; CI, 1.01–1.49 per 10 ng/mL). The odds of PCa in men with serum 25(OH)D tertile 2 was OR, 2.18; CI, 1.04–4.43 and OR, 2.47 CI, 1.20–4.90 for tertile 3 ( P trend = 0.013).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "confidence_interval": {
+            "excerpt": "The odds of PCa in men with serum 25(OH)D tertile 2 was OR, 2.18; CI, 1.04–4.43 and OR, 2.47 CI, 1.20–4.90 for tertile 3 ( P trend = 0.013).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "p_value": {
+            "excerpt": "The odds of PCa in men with serum 25(OH)D tertile 2 was OR, 2.18; CI, 1.04–4.43 and OR, 2.47 CI, 1.20–4.90 for tertile 3 ( P trend = 0.013).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Table 5"
+          },
+          "design": {
+            "excerpt": "We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "timing": {
+            "excerpt": "We examined these relationships in a case–control study of men 40–80 years old with newly diagnosed, histologically confirmed PCa in Jamaica",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "continent": {
+            "excerpt": "PCa in Jamaica, a tropical country",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Abstract"
+          },
+          "ethnicity": null,
+          "location": {
+            "excerpt": "in Jamaica, a tropical country",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/25858172/",
+            "location": "abstract"
+          },
+          "exposure_measurement": {
+            "excerpt": "Serum 25(OH)D concentration was determined by ultra-performance liquid chromatography/tandem mass spectrometry (UPLC/MS/MS) analysis",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4472215/",
+            "location": "Material and Methods, Laboratory assays"
+          }
+        },
+        "p_value_reported_as": "0.013",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "No",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, p_value, total_n"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 39415,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "2325c5052533e561db424c612a752d81e165592f5e28b72e418919f3d9ccc459",
+      "pmc_source_receipt_digest": "b5adbe47503d316ddc602a00871dfa74f82c086ea6c67c84b734436a8c69a5c3",
+      "pmc_source_raw_sha256": "4dd2001d93642aee668295d90b0e722c8414a5392cbfcba05bafad8395dca652",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "8674003833fe527127c794408aab73ca5ee6dfaf3566f4ddd9a7a8d7e39f102a"
+    }
+  ]
+}

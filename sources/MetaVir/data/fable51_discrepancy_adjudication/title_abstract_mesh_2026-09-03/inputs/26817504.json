@@ -1,0 +1,80 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:34:23.254003-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "a0fbc542858fc9d7204c724d2a32a4fcdee701c45febd3be1d24ed1039c0f39b",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "26817504",
+      "title": "Dietary lycopene intake and risk of prostate cancer defined by ERG protein expression.",
+      "abstract": "There is limited evidence that supports etiologically distinct molecular subtypes of prostate cancer, the identification of which may improve prevention. Given their antioxidant properties, we hypothesized that lycopene and tomato sauce may be especially protective against diseases harboring the common gene fusion transmembrane protease, serine 2 (TMPRSS2):v-ets avian erythroblastosis virus E26 oncogene homolog (ERG). We aimed to examine associations between estimated lycopene and tomato sauce intake and the risk of prostate cancer defined by ERG protein expression subtype. Our study population consisted of a prospective cohort of 46,719 men from the Health Professionals Follow-Up Study. TMPRSS2:ERG was assessed by ERG immunohistochemistry on tumor tissue microarrays constructed from radical prostatectomy specimens. We used multivariable competing risk models to calculate HRs and 95% CIs for the risk of ERG-positive and, separately, ERG-negative disease. We implemented inverse probability weighting to account for evaluating ERG status only in surgically treated cases. During 23 y of follow-up, 5543 men were diagnosed with prostate cancer, among whom 884 were assayed for ERG (426 ERG-positive). With inclusion of only the latter cases, increasing cumulative average tomato sauce intake was associated with a decreased risk of prostate cancer overall (≥2 servings/wk compared with <1 serving/mo; multivariable HR: 0.70; 95% CI: 0.52, 0.95; P-trend = 0.002). With respect to molecular subtypes, cumulative average tomato sauce intake was associated with a decreased risk of ERG-positive disease (HR: 0.54; 95% CI: 0.37, 0.81; P-trend = 0.004) but not with ERG-negative disease (HR: 0.96; 95% CI: 0.62, 1.50; P-trend = 0.10) (P-heterogeneity = 0.04). Increasing quintiles of lycopene intake were associated with a decreased risk of both subtypes (P-heterogeneity = 0.79). Inverse probability weighting did not materially change the results. Our results lend some support to the hypothesis that prostate cancers that harbor TMPRSS2:ERG may be etiologically distinct from fusion-negative cancers. In particular, tomato sauce consumption may play a role in reducing TMPRSS2:ERG-positive disease.",
+      "mesh": [
+        "Adult",
+        "Antineoplastic Agents, Phytogenic / therapeutic use",
+        "Antioxidants / therapeutic use",
+        "Carotenoids / therapeutic use",
+        "Diet",
+        "Feeding Behavior",
+        "Humans",
+        "Lycopene",
+        "Solanum lycopersicum / chemistry",
+        "Male",
+        "Middle Aged",
+        "Oncogene Proteins, Fusion / metabolism",
+        "Plant Extracts / therapeutic use",
+        "Prostatic Neoplasms / metabolism, prevention & control",
+        "Trans-Activators / metabolism",
+        "Transcriptional Regulator ERG"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "26817504",
+      "contexts": [
+        {
+          "context_id": "26817504|Lycopene|Prostate cancer",
+          "exposure": "Lycopene",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "46719",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Increasing quintiles of lycopene intake"
+            },
+            "Claude+Gemini": {
+              "sample_size": "46719",
+              "effect_measure_type": "HR",
+              "effect_size": "0.95",
+              "ci_lower": "0.87",
+              "ci_upper": "1.03",
+              "p_value": "0.04",
+              "comparison": "quintiles"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

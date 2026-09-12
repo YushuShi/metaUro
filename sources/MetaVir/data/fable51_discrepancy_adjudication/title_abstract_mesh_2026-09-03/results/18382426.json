@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:27:26.399971-04:00",
+  "pmid": "18382426",
+  "work_key": "3d2d4b898db8d4dff0751693ea8783146e1571f5356f088907a7788c71910df5",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/18382426_0002.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "18382426",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "18382426|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "No confidence interval or p value for any calcium estimate appears in title, abstract, or MeSH; the only numeric CIs/p values given concern dairy protein.",
+        "one_sentence_explanation": "The abstract provides CIs and p values only for dairy protein, not calcium, so neither the ChatGPT CI 1.01-1.16/p 0.02 nor the Claude+Gemini CI 1-1.35/p 0.01 can be confirmed from the allowed evidence."
+      },
+      {
+        "context_id": "18382426|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports calcium association only qualitatively; numeric HR for calcium (1.09 per 0.3 g/day or 1.17 top vs bottom) is not present in title, abstract, or MeSH.",
+        "one_sentence_explanation": "The abstract states dairy calcium was positively associated with risk but gives no numeric calcium hazard ratio, so neither the ChatGPT value 1.09 nor the Claude+Gemini value 1.17 can be verified from the allowed evidence."
+      }
+    ]
+  }
+}

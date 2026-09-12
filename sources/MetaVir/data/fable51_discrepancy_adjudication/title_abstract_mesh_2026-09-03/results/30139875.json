@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:36:16.163247-04:00",
+  "pmid": "30139875",
+  "work_key": "e2a56afac5dee643343cec34b17c581266cacb5959d5e873cef6f0475b793b06",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/30139875_0002.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "30139875",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "30139875|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "BOTH_CORRECT",
+        "adjudicated_value": "Ptrend = 0.020 (ages 15-19, ≥7 drinks/week); Ptrend = 0.003 (cumulative lifetime intake tertiles); no CI reported in abstract",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "(OR = 3.20, <i>P</i> <sub>trend</sub> = 0.003)",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Both p values (0.020 and 0.003) appear in the abstract but belong to different comparisons; ChatGPT's CI (1.20-8.58) is absent from title/abstract/MeSH and cannot be verified.",
+        "one_sentence_explanation": "The abstract gives Ptrend 0.020 for the ages 15-19 estimate (ChatGPT) and Ptrend 0.003 for the cumulative lifetime estimate (Claude+Gemini), each matching its own comparison, while ChatGPT's CI is not verifiable here."
+      },
+      {
+        "context_id": "30139875|Alcohol|Prostate cancer",
+        "exposure": "Alcohol",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "BOTH_CORRECT",
+        "adjudicated_value": "OR 3.21 (≥7 drinks/week at ages 15-19 vs nondrinkers, high-grade); OR 3.20 (upper tertile cumulative lifetime intake, high-grade)",
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "men who consumed ≥7 drinks/week at ages 15 to 19 had increased odds of high-grade prostate cancer diagnosis (OR = 3.21,",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Pipelines extracted different comparisons (early-life ≥7 drinks/week OR 3.21 vs cumulative lifetime upper tertile OR 3.20), both for high-grade disease in a biopsy cohort; target estimate selection needs reviewer decision.",
+        "one_sentence_explanation": "The abstract supports both ChatGPT's OR 3.21 for ≥7 drinks/week at ages 15-19 and Claude+Gemini's OR 3.20 for upper-tertile cumulative lifetime intake, but they are different estimates, both for high-grade prostate cancer."
+      }
+    ]
+  }
+}

@@ -1,0 +1,345 @@
+{
+  "schema_version": 1,
+  "receipt_id": "6e22b8ac661e9b6ad97f08bb74d10ed55870a18b418ce0c594cbabae873dc934",
+  "requested_at": "2026-09-02T09:18:18.929087+08:00",
+  "received_at": "2026-09-02T09:18:31.142092+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "823a831e0a66eaf0f2f62b6ed808482a77dbda18261eb2121e2ddba8867c027a",
+  "attempt": 1,
+  "context_ids": [
+    "38973750|Processed meat intake|Prostate cancer",
+    "38973750|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Processed meat intake": 1,
+    "Red meat": 1
+  },
+  "input_digest": "d3c2ded46957c82c84f6fb097fb0423189a65cb0b4a96ead376665f3333c2a66",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 13979,
+    "cached_input_tokens": 0,
+    "output_tokens": 1239,
+    "reasoning_tokens": 1030
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.015130500000000002",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3dbaf909-c1f4-47a8-b0f3-1379da05f382",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.015130500000000002"
+  },
+  "output_sha256": "db33369b7af0f894739b46dbea323ffbda47aa9947c9c59efbd707fb8dcbc4ef",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"38973750|Processed meat intake|Prostate cancer\",\n      \"status\": \"EXCLUDE\",\n      \"exclusion_code\": \"S2-NO-TARGET-ESTIMATE\",\n      \"reason\": \"Quantitative risk estimates and confidence intervals for the processed meat strategy are not reported in the main text.\",\n      \"extraction\": null,\n      \"jbi\": null\n    },\n    {\n      \"context_id\": \"38973750|Red meat|Prostate cancer\",\n      \"status\": \"EXCLUDE\",\n      \"exclusion_code\": \"S2-NO-TARGET-ESTIMATE\",\n      \"reason\": \"Quantitative risk estimates and confidence intervals for the red meat strategy are not reported in the main text.\",\n      \"extraction\": null,\n      \"jbi\": null\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:18:31.310294+08:00",
+      "transition": "new_gateway_attempt_validated",
+      "validation_status": "received",
+      "validation_error": "",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "db33369b7af0f894739b46dbea323ffbda47aa9947c9c59efbd707fb8dcbc4ef"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [],
+  "validated_results": [
+    {
+      "context_id": "38973750|Processed meat intake|Prostate cancer",
+      "pmid": "38973750",
+      "pmcid": "PMC12034833",
+      "published_date": "2025-02-05",
+      "title": "Evaluating recommendation-based dietary and physical activity strategies for prostate cancer prevention: a target trial emulation in the Health Professionals Follow-up Study.",
+      "authors": [
+        "Guo F",
+        "McGee EE",
+        "Chiu YH",
+        "Giovannucci E",
+        "Mucci LA",
+        "Dickerman BA"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+      "exposure": "Processed meat intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "Quantitative risk estimates and confidence intervals for the processed meat strategy are not reported in the main text.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 27859,
+        "cases": null,
+        "comparison_type": "restricting processed meat consumption versus no intervention",
+        "design": "cohort",
+        "timing": "prospective follow-up over 26 years",
+        "continent": "North America",
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "27 859 men in the Health Professionals Follow-up Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": true,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Using observational data from 27 859 men in the Health Professionals Follow-up Study, we emulated a target trial of recommendation-based physical activity and dietary strategies and 26-year risks of prostate cancer, adjusting for risk factors via the parametric g-formula.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, methods"
+          },
+          "cases": null,
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "we emulated a target trial of recommendation-based physical activity and dietary strategies",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "26-year risks of prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "Health Professionals Follow-up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Restricting consumption of processed foods showed a 0.4% to 0.9% higher risk of all prostate cancer outcomes",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "EXCLUDE",
+      "full_text_status": "EXCLUDE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 49638,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "eec6b8d59c6ce4b17a631cf3b59025f6022187bb7ad6d7a67f934d299e885f7d",
+      "pmc_source_receipt_digest": "e1cdaae6c08933d4934742aee9be44a673f6d7ff175fbbbb133ee7bf975262fa",
+      "pmc_source_raw_sha256": "9d903f199505b15a2cd6a68fe85396abc5674fa9e6bf770f06cfea9f1c1674ce",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "27cd65a05219ef380cf93ccb32fb08f7e6b3359fd6f44d163667f25ee1c95adc"
+    },
+    {
+      "context_id": "38973750|Red meat|Prostate cancer",
+      "pmid": "38973750",
+      "pmcid": "PMC12034833",
+      "published_date": "2025-02-05",
+      "title": "Evaluating recommendation-based dietary and physical activity strategies for prostate cancer prevention: a target trial emulation in the Health Professionals Follow-up Study.",
+      "authors": [
+        "Guo F",
+        "McGee EE",
+        "Chiu YH",
+        "Giovannucci E",
+        "Mucci LA",
+        "Dickerman BA"
+      ],
+      "journal": "American journal of epidemiology",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "Quantitative risk estimates and confidence intervals for the red meat strategy are not reported in the main text.",
+      "missing_key_fields": [
+        "effect_size",
+        "effect_type",
+        "ci_lower",
+        "ci_upper",
+        "p_value",
+        "cases"
+      ],
+      "invalid_key_fields": [
+        "effect_type"
+      ],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": null,
+        "effect_type": null,
+        "ci_lower": null,
+        "ci_upper": null,
+        "p_value": null,
+        "ci_confidence_level": null,
+        "total_n": 27859,
+        "cases": null,
+        "comparison_type": "restricting red meat consumption versus no intervention",
+        "design": "cohort",
+        "timing": "prospective follow-up over 26 years",
+        "continent": "North America",
+        "country": null,
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "27 859 men in the Health Professionals Follow-up Study",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": false,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Using observational data from 27 859 men in the Health Professionals Follow-up Study, we emulated a target trial of recommendation-based physical activity and dietary strategies and 26-year risks of prostate cancer, adjusting for risk factors via the parametric g-formula.",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, methods"
+          },
+          "cases": null,
+          "effect_size": null,
+          "confidence_interval": null,
+          "p_value": null,
+          "comparison": {
+            "excerpt": "",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, results"
+          },
+          "design": {
+            "excerpt": "we emulated a target trial of recommendation-based physical activity and dietary strategies",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, methods"
+          },
+          "timing": {
+            "excerpt": "26-year risks of prostate cancer",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, methods"
+          },
+          "continent": {
+            "excerpt": "Health Professionals Follow-up Study",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "title"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "strategies involving fruits and nonstarchy vegetables, whole grains and legumes, red meat, and processed meat",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/38973750/",
+            "location": "abstract, results"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Unclear",
+          "q7": "Unclear",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Unclear",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 54.5,
+        "grade": "Moderate"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "EXCLUDE",
+      "full_text_status": "EXCLUDE",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 49638,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "eec6b8d59c6ce4b17a631cf3b59025f6022187bb7ad6d7a67f934d299e885f7d",
+      "pmc_source_receipt_digest": "e1cdaae6c08933d4934742aee9be44a673f6d7ff175fbbbb133ee7bf975262fa",
+      "pmc_source_raw_sha256": "9d903f199505b15a2cd6a68fe85396abc5674fa9e6bf770f06cfea9f1c1674ce",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "06c955106ac18e703596834e0cdcaff7435c152f23b2af3df3df970b3a1b696b"
+    }
+  ]
+}

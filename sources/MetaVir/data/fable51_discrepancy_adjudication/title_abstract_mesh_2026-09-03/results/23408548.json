@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:32:19.341887-04:00",
+  "pmid": "23408548",
+  "work_key": "8b9a47d3526bd7851ad1fec5c401c45476ce8ef94ae581e06d880996851d17cc",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/23408548_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "23408548",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "23408548|Mediterranean diet|Prostate cancer",
+        "exposure": "Mediterranean diet",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "No significant association was observed between aMED score and total prostate cancer",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "No CI or p value for the aMED total prostate cancer estimate appears in title, abstract, or MeSH; the claimed CI 0.91-1.03 and p=0.09 may derive from full text.",
+        "one_sentence_explanation": "The abstract gives numeric CIs only for HEI-2005, AHEI-2010, and aMED fish component (fatal cancer), not for the aMED total prostate cancer estimate, so the Claude+Gemini CI 0.91-1.03 and p=0.09 cannot be verified."
+      },
+      {
+        "context_id": "23408548|Mediterranean diet|Prostate cancer",
+        "exposure": "Mediterranean diet",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "ABSTRACT",
+        "evidence_text": "No significant association was observed between aMED score and total prostate cancer",
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports only a null verbal result for aMED and total prostate cancer; the HR 0.97 claimed by Claude+Gemini is not present in title, abstract, or MeSH and may derive from full text.",
+        "one_sentence_explanation": "The abstract states only that no significant association was observed between aMED score and total prostate cancer, so the Claude+Gemini HR of 0.97 cannot be confirmed or rejected from title, abstract, or MeSH."
+      }
+    ]
+  }
+}

@@ -1,0 +1,206 @@
+{
+  "schema_version": 1,
+  "canonical_track": "combined",
+  "build_id": "4e71b1802106f92791ec5bfd23c2724d9de076fb1ac5e944cbf1cb88821c7e1e",
+  "sources": {
+    "base_cache": "Cached_results",
+    "selected_chatgpt": "data/claude_gemini_screening/all_history_through_2026-08-29/r1_selected_decisions.json",
+    "claude_r2": "data/claude_gemini_screening/all_history_through_2026-08-29/claude_r2_results.json",
+    "gemini_r3": "data/claude_gemini_screening/all_history_through_2026-08-29/gemini_r3_results.json",
+    "fable51_adjudication": "outputs/fable51_discrepancy_adjudication_2026-09-03/fable51Adjudication.csv",
+    "effective_current_tracks": "outputs/fair_display_2026-09-05/*_poolability.json"
+  },
+  "source_digests": {
+    "selected_chatgpt_sha256": "36ff8c3fcb2b98033a6d1a3af63f8ccdb5d7ac639fe6494d47b99cbc5655d415",
+    "chatgpt_lineage_sha256": "9c91a5c6ed5c60154e37178e70e023ee0c5c3eabbcb0606053baec1fc83d20c5",
+    "claude_gemini_lineage_sha256": "d606ef69627ceec032dcaca44228b63734df3dbd327835271efe4e729bc69a8a",
+    "fable51_adjudication_sha256": "513374fec3a05a0931ad2f2a21144836bcad26d6b88b0a1ed4a7a7aaf23dadc6",
+    "manual_overrides_sha256": "0348436b6fbfe40ba53002e22bcd6f7f7b56dc3456bd3f58bdf265eea298572f",
+    "combined_rows_sha256": "e4e69aa5415f42bc9b4d3c07378241935efb174c4d09340ed9293beb9950b570",
+    "astra_checkpoint_sha256": "80f4308e009d190907ff9b39d37db4525cd6148544854afea2b8fe1cdd24e458",
+    "projected_studies_sha256": "83ff29dd310c4c62b7975e08275a5a2d2a5dea9787dc1eee64607bda6dc75755"
+  },
+  "generator_digests": {
+    "build_combined_results_sha256": "83beccc7385e4bd8519d4baac1f42b91c21adb1dfbc5367db18732314271df68",
+    "current_comparison_adapter_sha256": "99c5fb87d5e30c061db451c17e2c348b1d13b280b150a3b58a81508520a6cb8c",
+    "key_comparison_policy_sha256": "55fe2f134526eab850191071a6d35f25a697a692461a0e56222edc0f70601c96",
+    "meta_analysis_sha256": "3bc4ae624702c0fe4d5fd60550e28d815520a2af2554c616ff7f5b56f7d4905d",
+    "effect_measure_sha256": "a571621f2056762b77c0808c07c1b491f9f339d80122e7243f8dee207c995a80",
+    "monthly_evidence_update_sha256": "e701bd10d66e493bc88230e7356ae96941c1c1801e63adac5c84d179bd1003c8",
+    "dual_screening_sha256": "03fddc28de590e3a33b08e8d282d9f0fea0f4ca90661945142419c5d72a0875f"
+  },
+  "policy": {
+    "poolability": "Require total N, ratio effect and usable CI or derivable exact p-value; cases, exposure units, adjustment/stratum and direct measurement are optional; missing comparison direction defaults to high versus low or yes versus no and is marked imputed.",
+    "automatic_adjudication": "Apply only MODEL_ADJUDICATED, SUFFICIENT, manual-review-false Fable winners with a verbatim title/abstract/MeSH excerpt; retain ChatGPT provisionally for all unresolved fields.",
+    "estimate_bundle": "Effect, measure, CI/p-value, comparison, inversion, cases, and evidence move together only after every discrepant estimate field is resolved."
+  },
+  "counts": {
+    "selected_contexts": 35545,
+    "combined_statuses": {
+      "ELIGIBLE_NOT_POOLABLE": 657,
+      "EXCLUDE": 34411,
+      "INCLUDE_META": 477
+    },
+    "fable_field_rows": 641,
+    "fable_contexts": 499,
+    "merge_actions": {
+      "applied_astra_pmc_fulltext": 155,
+      "applied_astra_title_abstract": 265,
+      "applied_chatgpt": 5,
+      "applied_claude_gemini": 4,
+      "pending_manual_review": 209,
+      "retained_manual_final": 3
+    },
+    "applied_contexts": 356,
+    "pending_fields": 209,
+    "pending_contexts": 141,
+    "manual_overrides": 0,
+    "base_supplemental_direct_studies": 0,
+    "direct_ui_studies": 1158,
+    "displayed_ui_studies": 1298,
+    "cache_exposures": 122,
+    "cache_files": 244
+  },
+  "current_comparison": {
+    "policy_version": "key-comparison-2026-09-05-v1",
+    "shared_reviewed_contexts": 6314,
+    "status_matrix": {
+      "exclude|exclude": 5135,
+      "include|exclude": 75,
+      "include|include": 996,
+      "exclude|include": 108
+    },
+    "historical_discrepancy_contexts": 497,
+    "current_discrepancy_contexts": 499,
+    "historical_discrepancy_fields": 631,
+    "current_discrepancy_fields": 641,
+    "current_context_set_is_subset_of_previous": false,
+    "current_field_set_is_subset_of_previous": false,
+    "new_discrepancy_contexts": [
+      "19066370|Vitamin E|Prostate cancer",
+      "22864870|Tea|Prostate cancer",
+      "33148052|Alcohol|Prostate cancer",
+      "3834323|Vitamin A|Prostate cancer",
+      "40170123|Ultra-processed food intake|Prostate cancer",
+      "9568790|Vitamin E|Prostate cancer"
+    ],
+    "new_discrepancy_fields": [
+      [
+        "10362125|Dairy|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "10362125|Processed meat intake|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "10952096|Legumes|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "15095309|Dairy|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "19066370|Vitamin E|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "22190107|Dairy|Prostate cancer",
+        "EFFECT_SIZE"
+      ],
+      [
+        "22864870|Tea|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "24451130|Lycopene|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "24563519|Vitamin E|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "25858172|Vitamin D|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "32743740|Dairy|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "33148052|Alcohol|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "34383904|Tomato|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "3567915|Vitamin A|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "37139178|Vitamin B6|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "3834323|Vitamin A|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "40170123|Ultra-processed food intake|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ],
+      [
+        "9568790|Vitamin E|Prostate cancer",
+        "CI_OR_P_VALUE"
+      ]
+    ],
+    "reused_prior_final_contexts": 478,
+    "new_unpooled_pending_contexts": 18,
+    "key_agreement_contexts": 680,
+    "metadata_fields_filled": 9379,
+    "p_value_resolutions": 160,
+    "p_value_resolution_counts": {
+      "computed_two_sided_wald": 156,
+      "wald_unavailable": 4
+    },
+    "wald_matching_source_counts": {
+      "chatgpt": 144,
+      "neither": 7,
+      "null": 4,
+      "claude_gemini": 5
+    },
+    "current_pending_review_fields": 209,
+    "new_gateway_calls": 0,
+    "comparison_fields": [
+      "total_n",
+      "effect_size",
+      "ci"
+    ],
+    "numeric_direction_inversion_applied": false,
+    "effective_source_sha256": {
+      "CHATGPT": "e64628d0fc8d32bc417b33940bfe6ce6a01210a735db6ffb27c5c324d37d0e3f",
+      "CLAUDE_GEMINI": "88117d66d57c0fff27e3bcefdcd03a580a05b114f1a272910f8ec26ee7227671"
+    },
+    "current_combined_statuses": {
+      "EXCLUDE": 34411,
+      "ELIGIBLE_NOT_POOLABLE": 657,
+      "INCLUDE_META": 477
+    }
+  },
+  "disease_scope_projection": {
+    "policy_version": 1,
+    "model": "gpt-5.6-sol",
+    "review_sha256": "595e76bb12f24bfa0b7e503b87515762ee39c6536713b0ea195e8b17ec9a5a1d",
+    "counts": {
+      "parent_rows": 1306,
+      "aggressive_rows": 304,
+      "aggressive_pmids": 168,
+      "exposures_with_aggressive_evidence": 68
+    },
+    "case_review_sha256": "76c9ec4111d46922fee04ce260718ab0b1fd722acc3395e978c26595c183174b"
+  }
+}

@@ -1,0 +1,14 @@
+CURRENT PUBLISHED SEER LOOKUP TABLES
+
+Use incidenceRate/published_seer/ for the current published five-year tables.
+Source: November 2025 SEER submission; April 22, 2026 release; risk period 2021–2023.
+Starting ages: 30,35,...,80. Follow-up: 5,10,...,50 years. Ending age <=90.
+The app reads static/seer-baseline.json from the same validated published values.
+Unsupported disease/stratum/coordinate cells remain blank; no annual interpolation.
+
+CSV matrices directly under incidenceRate/ belong to the preserved historical
+November 2024 package (61 x 50 annual grid, mostly blank). They are retained for
+provenance and are not the current app baseline source. No original file changed.
+
+Reproduction: metaMeta/seer_risk_pipeline/published_five_year/reproduce.py
+Master reports: metaMeta/incidenceRate/published_seer/

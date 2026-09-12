@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:29:06.899063-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "c7ce851f79e7354ff936eff21d88da408946440e54e3d49ed9d3a30746a093b7",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "20383574",
+      "title": "Serum 25-OH vitamin D levels and risk of developing prostate cancer in older men.",
+      "abstract": "Multiple studies have shown clear evidence of vitamin D's anti-tumor effects on prostate cancer cells in laboratory experiments, but the evidence has not been consistent in humans. We sought to examine the association between vitamin D and prostate cancer risk in a cohort of older men. We conducted a prospective case-cohort study nested within the multicenter Osteoporotic Fractures in Men (MrOS) study. Baseline serum 25-OH vitamin D was measured in a randomly selected sub-cohort of 1,433 men > or = 65 years old without a history of prostate cancer and from all participants with an incident diagnosis of prostate cancer (n = 297). Cox proportional hazards models were used to evaluate the associations between quartiles of total 25-OH vitamin D and incident prostate cancer, as well as Gleason score. In comparison with the lowest quartile of 25-OH vitamin D, the hazard ratio for the highest quartile of 25-OH vitamin D was 1.22 (CI 0.50-1.72, p = 0.25), no trend across quartiles (p = 0.94) or association with Gleason score was observed. Adjustment for covariates did not alter the results. In this prospective cohort of older men, we found no association between serum 25-OH vitamin D levels and subsequent risk of prostate cancer.",
+      "mesh": [
+        "Age Factors",
+        "Aged",
+        "Case-Control Studies",
+        "Humans",
+        "Male",
+        "Proportional Hazards Models",
+        "Prospective Studies",
+        "Prostatic Neoplasms / blood, pathology",
+        "Risk Factors",
+        "Vitamin D / analogs & derivatives, blood"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "20383574",
+      "contexts": [
+        {
+          "context_id": "20383574|Vitamin D|Prostate cancer",
+          "exposure": "Vitamin D",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE",
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "1648",
+              "effect_measure_type": "HR",
+              "effect_size": "1.2",
+              "ci_lower": "0.81",
+              "ci_upper": "1.78",
+              "p_value": "0.37",
+              "comparison": "Highest serum vitamin D quartile (>30 ng/mL) versus lowest quartile (3.1–19.9 ng/mL)"
+            },
+            "Claude+Gemini": {
+              "sample_size": "1433",
+              "effect_measure_type": "HR",
+              "effect_size": "1.22",
+              "ci_lower": "0.5",
+              "ci_upper": "1.72",
+              "p_value": "0.25",
+              "comparison": "highest vs lowest quartile of total 25-OH vitamin D"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

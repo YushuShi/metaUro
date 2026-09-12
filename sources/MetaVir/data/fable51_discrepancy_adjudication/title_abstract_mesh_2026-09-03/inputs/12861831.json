@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:23:29.204447-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "85b81fe762d1a39b07f17169933c0e6bc484e0aa636382ddf8111462612f5821",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "12861831",
+      "title": "[The effects of estrogen-like products in milk on prostate and testes].",
+      "abstract": "To study the effects of estrogen-like products in milk on the male reproductive system. The incidence rates of testicular and prostatic cancers in 42 countries (regions), collected from the cancer incidence in five continent database (1988-1992), were correlated with the relative food consumption in these countries, which was provided by FAO database (1961-1990); two-generation reproduction test was taken by using Wistar rats according to FDA standard. Among the food items examined, milk was most closely correlated (r = 0.711) with prostatic cancer incidence, followed by meat and coffee. As for testicular cancer, cheese was most closely correlated (r = 0.804) with the incidences in ages of 20-39, followed by animal fat and milk. No significant decreases of reproductive organ weight were found after the rats had been fed a lot of milk for long time. The results suggest that further studies should be taken on the effects of estrogen-like products in milk on the male reproductive health.",
+      "mesh": [
+        "Adult",
+        "Animals",
+        "Body Weight",
+        "Diet",
+        "Estrogens / adverse effects",
+        "Female",
+        "Humans",
+        "Male",
+        "Milk / adverse effects",
+        "Prostate / drug effects",
+        "Prostatic Neoplasms / epidemiology",
+        "Rats",
+        "Rats, Wistar",
+        "Testicular Neoplasms / epidemiology",
+        "Testis / drug effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "12861831",
+      "contexts": [
+        {
+          "context_id": "12861831|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            },
+            "Claude+Gemini": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-NO-TARGET-ESTIMATE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

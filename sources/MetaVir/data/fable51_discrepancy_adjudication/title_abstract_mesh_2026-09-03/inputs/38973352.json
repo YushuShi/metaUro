@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:38:30.729956-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "5cee6ade742a660d7c18ac39dd5aca8f454c0bf8bbcfa731b1e29c36f1f5a620",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "38973352",
+      "title": "Glucosamine and Cancer Incidence in Osteoarthritis: A Prevalent New-User Cohort Design.",
+      "abstract": "Observational studies have associated glucosamine, used to treat joint pain and osteoarthritis, with reductions in cancer incidence, although their study design was affected by selection bias. We assessed this association using a study design that mitigates this selection bias. We used the UK Clinical Practice Research Datalink to identify a cohort of patients diagnosed with osteoarthritis during 1995 through 2017. The prevalent new-user cohort design was employed to match glucosamine initiators with non-users on time-conditional propensity scores, who were observed until cancer incidence. Hazard ratios (HRs) and 95% confidence intervals (CIs) of cancer incidence were estimated to compare glucosamine initiators with non-users. The study cohort of patients with osteoarthritis included 20,541 glucosamine initiators who were matched to 20,541 non-users. Over an average follow-up of eight years, the overall incidence rate of any cancer was 16.4 per 1,000 per year. The HR of any cancer incidence with glucosamine treatment was 0.97 (95% CI 0.91-1.02) compared with non-users. For lung cancer, the HR with glucosamine treatment was 0.99 (95% CI 0.83-1.18), whereas it was 1.11 (95% CI 0.93-1.33) for colorectal cancer, 1.07 (95% CI 0.93-1.23) for breast cancer in women, and 1.03 (95% CI 0.88-1.22) for prostate cancer. In this large, real-world study of patients with osteoarthritis, designed to emulate a trial, treatment with glucosamine did not reduce the incidence of cancer. This finding reinforces that previous studies, not based on glucosamine initiators, were affected by selection bias. Our study does not support the prescription of glucosamine to prevent cancer in patients with osteoarthritis.",
+      "mesh": [
+        "Humans",
+        "Glucosamine / therapeutic use",
+        "Osteoarthritis / epidemiology, drug therapy",
+        "Female",
+        "Male",
+        "Incidence",
+        "Middle Aged",
+        "Neoplasms / epidemiology",
+        "Aged",
+        "United Kingdom / epidemiology",
+        "Risk Factors",
+        "Databases, Factual",
+        "Risk Assessment",
+        "Time Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "38973352",
+      "contexts": [
+        {
+          "context_id": "38973352|Glucosamine|Prostate cancer",
+          "exposure": "Glucosamine",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-EXPOSURE-MISMATCH"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema_version": 1,
+  "receipt_id": "215e5abd8479fd05a34b4367b71fe5534f2c4eff8fa82e49ce54d7223df108b0",
+  "requested_at": "2026-09-02T07:23:43.929441+08:00",
+  "received_at": "2026-09-02T07:24:04.940710+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "8ce7ba0c803ac62f9dfb2c1ae140faa5ac6567d76fc0a4323072cb3de8419f6c",
+  "attempt": 1,
+  "context_ids": [
+    "6831463|Animal protein intake|Prostate cancer",
+    "6831463|Dietary protein intake|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Animal protein intake": 1,
+    "Dietary protein intake": 1
+  },
+  "input_digest": "ca84be0262ded4edfb955cb5f1a0c5b4eb61cfdb0b2da77ede649ea7061f05d1",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 5147,
+    "cached_input_tokens": 0,
+    "output_tokens": 1639,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.06671",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "0a290d2f-0734-4b4f-8bae-5faed7aa7257",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.06671"
+  },
+  "output_sha256": "87a8bf40d36506876c1b724dcf9437d622009ec81f499651e992dae1b05818b6",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "{\"results\":[{\"context_id\":\"6831463|Animal protein intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-NO-TARGET-ESTIMATE\",\"reason\":\"The abstract only states that \\\"Animal protein intake showed associations similar to those for dietary fat, but these two nutrients were highly correlated in the data\\\" across breast, endometrial, and prostate cancers, so no prostate-cancer-specific animal protein incidence result can be separated.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"6831463|Dietary protein intake|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-EXPOSURE-MISMATCH\",\"reason\":\"Total dietary protein intake is never assessed in the abstract, which reports only dietary fat, animal protein, cholesterol, vitamin A, and vitamin C in relation to cancer incidence.\",\"extraction\":null,\"jbi\":null}]}",
+  "validated_results": [
+    {
+      "context_id": "6831463|Animal protein intake|Prostate cancer",
+      "pmid": "6831463",
+      "pmcid": "",
+      "published_date": "1983-05-01",
+      "title": "Role of diet in cancer incidence in Hawaii.",
+      "authors": [
+        "Kolonel LN",
+        "Nomura AM",
+        "Hinds MW",
+        "Hirohata T",
+        "Hankin JH",
+        "Lee J"
+      ],
+      "journal": "Cancer research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/6831463/",
+      "exposure": "Animal protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-NO-TARGET-ESTIMATE",
+      "reason": "The abstract only states that \"Animal protein intake showed associations similar to those for dietary fat, but these two nutrients were highly correlated in the data\" across breast, endometrial, and prostate cancers, so no prostate-cancer-specific animal protein incidence result can be separated.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    },
+    {
+      "context_id": "6831463|Dietary protein intake|Prostate cancer",
+      "pmid": "6831463",
+      "pmcid": "",
+      "published_date": "1983-05-01",
+      "title": "Role of diet in cancer incidence in Hawaii.",
+      "authors": [
+        "Kolonel LN",
+        "Nomura AM",
+        "Hinds MW",
+        "Hirohata T",
+        "Hankin JH",
+        "Lee J"
+      ],
+      "journal": "Cancer research",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/6831463/",
+      "exposure": "Dietary protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "EXCLUDE",
+      "exclusion_code": "S2-EXPOSURE-MISMATCH",
+      "reason": "Total dietary protein intake is never assessed in the abstract, which reports only dietary fat, animal protein, cholesterol, vitamin A, and vitamin C in relation to cancer incidence.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": false,
+      "full_text_eligible": false,
+      "extraction": null,
+      "jbi": null,
+      "dual_screening_gate_before_parallel_policy": false,
+      "parallel_r3_gate_reasons": [],
+      "wald_completed_before_parallel_r3_gate": true
+    }
+  ]
+}

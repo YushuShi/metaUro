@@ -1,0 +1,79 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:38:42.227233-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "3d53016706357fe05ccb5b3b451f0ce319ef7b1762d5fed1406592686f66818c",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "39707344",
+      "title": "Machine learning algorithms that predict the risk of prostate cancer based on metabolic syndrome and sociodemographic characteristics: a prospective cohort study.",
+      "abstract": "Given the rapid increase in the prevalence of prostate cancer (PCa), identifying its risk factors and developing suitable risk prediction models has important implications for public health. We used machine learning (ML) approach to screen participants with high risk of PCa and, specifically, investigated whether participants with metabolic syndrome (MetS) exhibited an elevated PCa risk. A prospective cohort study was performed with 41,837 participants in South Korea. We predicted PCa based on MetS, its components, and sociodemographic factors using Cox proportional hazards and five ML models. Integrated Brier score (IBS) and C-index were used to assess model performance. A total of 210 incident PCa cases were identified. We found good calibration and discrimination for all models (C-index ≥ 0.800 and IBS = 0.01). Importantly, performance increased after excluding MetS and its components from the models; the highest C-index was 0.862 for survival support vector machine. In contrast, first-degree family history of PCa, alcohol consumption, age, and income were valuable for PCa prediction. ML models are an effective approach to develop prediction models for survival analysis. Furthermore, MetS and its components do not seem to influence PCa susceptibility, in contrast to first-degree family history of PCa, age, alcohol consumption, and income.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Metabolic Syndrome / epidemiology",
+        "Prostatic Neoplasms / epidemiology",
+        "Prospective Studies",
+        "Republic of Korea / epidemiology",
+        "Middle Aged",
+        "Machine Learning",
+        "Aged",
+        "Risk Assessment / methods",
+        "Risk Factors",
+        "Sociodemographic Factors",
+        "Algorithms",
+        "Proportional Hazards Models",
+        "Socioeconomic Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "39707344",
+      "contexts": [
+        {
+          "context_id": "39707344|Alcohol|Prostate cancer",
+          "exposure": "Alcohol",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "13371",
+              "effect_measure_type": "HR",
+              "effect_size": "1.91",
+              "ci_lower": "1.18",
+              "ci_upper": "3.1",
+              "p_value": "0.009",
+              "comparison": "Ex-drinkers versus nondrinkers"
+            },
+            "Claude+Gemini": {
+              "sample_size": "13371",
+              "effect_measure_type": "HR",
+              "effect_size": "1.85",
+              "ci_lower": "0.98",
+              "ci_upper": "3.51",
+              "p_value": "0.06",
+              "comparison": "Current drinkers vs Nondrinkers"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

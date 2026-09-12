@@ -1,0 +1,14 @@
+<div class="sample-design-controls">
+    <label for="power-study-design">Study design
+        <select id="power-study-design"><option value="prospective">Prospective</option><option value="retrospective">Retrospective case-control</option></select>
+    </label>
+    <label id="power-exposure-field" for="power-exposure-percentage" hidden>Exposure among controls (%)
+        <input id="power-exposure-percentage" type="number" min="0.0001" max="99.9999" step="any" value="50" aria-describedby="power-exposure-help">
+        <small id="power-exposure-help">Uses the value in Settings; edit it here or there.</small>
+    </label>
+    <label id="power-allocation-field" for="power-controls-per-case" hidden>Case : control ratio
+        <span class="case-control-input">1 : <input id="power-controls-per-case" type="number" min="0.001" step="any" value="1" aria-label="Controls per case"></span>
+    </label>
+</div>
+<p id="power-effect-summary" class="power-effect-summary" aria-live="polite"></p>
+<p id="sample-design-note" class="sample-design-note"></p>

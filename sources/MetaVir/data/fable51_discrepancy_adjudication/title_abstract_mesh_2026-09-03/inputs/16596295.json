@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:25:48.843641-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "8719db3d96fc2bee1e0ea6c03a0a603ad7cd9724ac38b72ae6243d109774ee99",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "16596295",
+      "title": "Milk, dairy products and cancer risk (Italy).",
+      "abstract": "Inconclusive information is available on the potential role of milk and dairy products on the risk of cancer at several sites. We analyzed data from a large and integrated network of hospital-based case-control studies in Italy on cancers of the oral cavity and pharynx (598 cases, 1491 controls), oesophagus (304 cases, 743 controls), colorectum (1953 cases, 4154 controls), larynx (460 cases, 1088 controls), breast (2569 cases, 2588 controls), ovary (1031 cases, 2411 controls) and prostate (1294 cases, 1451 controls). Multivariate odds ratio (OR) for the highest consumption level of any type of milk was 0.94 (95% confidence interval, CI: 0.61-1.33) for cancers of the oral cavity and pharynx, 1.20 (95% CI: 0.76-1.90) for oesophageal, 0.77 (95% CI: 0.62-0.96) for colon, 0.80 (95% CI: 0.60-1.05) for rectal, 0.83 (95% CI: 0.56-1.21) for laryngeal, 0.91 (95% CI: 0.76-1.10) for breast, 0.89 (95% CI: 0.68-1.15) for ovarian and 1.08 (95% CI: 0.84-1.37) for prostate cancer. A significant trend in risk was found for colon cancer only. Inverse associations were observed between consumption of skim milk and cancers of colon (OR=0.84; 95% CI: 0.73-0.97), rectum (OR=0.76; 95% CI: 0.64-0.91), breast (OR=0.87; 95% CI: 0.77-0.98) and ovary (OR=0.77; 95% CI: 0.66-0.91). Conversely, whole milk consumption was directly associated with cancer of the rectum (OR=1.22; 95% CI: 1.03-1.44) and ovary (OR=1.25; 95% CI: 1.07-1.46). High consumption of cheese was inversely related to colon cancer risk (OR=0.80; 95% CI: 0.67-0.95). There was a modest direct association between milk and dairy products and prostate cancer, and a moderate inverse one for colorectal cancer. However, our findings indicate that milk and dairy products are not strong risk indicators for any of the cancers considered.",
+      "mesh": [
+        "Animals",
+        "Case-Control Studies",
+        "Dairy Products / adverse effects",
+        "Female",
+        "Humans",
+        "Italy",
+        "Male",
+        "Middle Aged",
+        "Milk / adverse effects",
+        "Neoplasms / etiology",
+        "Odds Ratio",
+        "Risk Factors"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "16596295",
+      "contexts": [
+        {
+          "context_id": "16596295|Dairy|Prostate cancer",
+          "exposure": "Dairy",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": "OR",
+              "effect_size": "1.08",
+              "ci_lower": "0.84",
+              "ci_upper": "1.37",
+              "p_value": "0.5374134427896564",
+              "comparison": "highest consumption level of any type of milk"
+            },
+            "Claude+Gemini": {
+              "sample_size": "2745",
+              "effect_measure_type": "OR",
+              "effect_size": "1.08",
+              "ci_lower": "0.84",
+              "ci_upper": "1.37",
+              "p_value": null,
+              "comparison": "highest vs lowest consumption level of any type of milk"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:30:02.907453-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "68c2c4b0b65f3c7e91209e4683c5b9647b3a892baa29cbc47c71e6616c77fb68",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "21310299",
+      "title": "A high ratio of dietary n-6/n-3 polyunsaturated fatty acids is associated with increased risk of prostate cancer.",
+      "abstract": "Experimental studies suggest omega-3 (n-3) polyunsaturated fatty acids (PUFA) suppress and n-6 PUFA promote prostate tumor carcinogenesis. Epidemiologic evidence remains inconclusive. The objectives of this study were to examine the association between n-3 and n-6 PUFA and prostate cancer risk and determine if these associations differ by race or disease aggressiveness. We hypothesize that high intakes of n-3 and n-6 PUFA will be associated with lower and higher prostate cancer risk, respectively. A case-control study comprising 79 prostate cancer cases and 187 controls was conducted at the Durham VA Medical Center. Diet was assessed using a food frequency questionnaire. Logistic regression analyses were used to obtain odds ratios (ORs) and 95% confidence intervals (95% CI) for the associations between n-3 and n-6 PUFA intakes, the dietary ratio of n-6/n-3 fatty acids, and prostate cancer risk. Our results showed no significant associations between specific n-3 or n-6 PUFA intakes and prostate cancer risk. The highest dietary ratio of n-6/n-3 was significantly associated with elevated risk of high-grade (OR, 3.55; 95% CI, 1.18-10.69; P(trend) = 0.03), but not low-grade prostate cancer (OR, 0.95; 95% CI, 0.43-2.17). In race-specific analyses, an increasing dietary ratio of n-6/n-3 fatty acids correlated with higher prostate cancer risk among white men (P(trend) = 0.05), but not black men. In conclusion, our findings suggest that a high dietary ratio of n-6/n-3 fatty acids may increase the risk of overall prostate cancer among white men and possibly increase the risk of high-grade prostate cancer among all men.",
+      "mesh": [
+        "Aged",
+        "Case-Control Studies",
+        "Confidence Intervals",
+        "Diet",
+        "Dietary Fats, Unsaturated / metabolism",
+        "Fatty Acids, Omega-3 / metabolism",
+        "Fatty Acids, Omega-6 / metabolism",
+        "Humans",
+        "Logistic Models",
+        "Male",
+        "Middle Aged",
+        "Odds Ratio",
+        "Prostatic Neoplasms / metabolism",
+        "Risk Factors",
+        "Surveys and Questionnaires"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "21310299",
+      "contexts": [
+        {
+          "context_id": "21310299|Omega-3 fatty acids|Prostate cancer",
+          "exposure": "Omega-3 fatty acids",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "SAMPLE_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": null,
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": null
+            },
+            "Claude+Gemini": {
+              "sample_size": "266",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Higher versus lower dietary n-3 PUFA intake (categories not specified in abstract)"
+            }
+          }
+        },
+        {
+          "context_id": "21310299|Polyunsaturated fat (PUFA)|Prostate cancer",
+          "exposure": "Polyunsaturated fat (PUFA)",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE",
+            "CI_OR_P_VALUE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "266",
+              "effect_measure_type": "OR",
+              "effect_size": "3.55",
+              "ci_lower": "1.18",
+              "ci_upper": "10.69",
+              "p_value": "0.03",
+              "comparison": "highest dietary n-6/n-3 ratio"
+            },
+            "Claude+Gemini": {
+              "sample_size": "266",
+              "effect_measure_type": null,
+              "effect_size": null,
+              "ci_lower": null,
+              "ci_upper": null,
+              "p_value": null,
+              "comparison": "Higher versus lower dietary PUFA (n-3 and n-6) intake (categories not specified in abstract)"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

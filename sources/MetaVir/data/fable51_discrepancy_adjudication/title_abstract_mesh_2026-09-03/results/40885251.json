@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:39:20.015468-04:00",
+  "pmid": "40885251",
+  "work_key": "97bbf490acce1753f6688848585c8fb46cc8798495376fe1cb73822454e72d3d",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 1,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/40885251_0001.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "40885251",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "40885251|DASH diet|Prostate cancer",
+        "exposure": "DASH diet",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "No CI or p value for the DASH-prostate cancer incidence estimate appears in the allowed evidence; only the mortality CI (0.38, 0.83) is reported.",
+        "one_sentence_explanation": "The allowed record lacks any CI or p value for a DASH-prostate cancer incidence estimate, reporting only the mortality CI (0.38, 0.83), so neither pipeline's CI/p value can be adjudicated."
+      },
+      {
+        "context_id": "40885251|DASH diet|Prostate cancer",
+        "exposure": "DASH diet",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "INSUFFICIENT",
+        "verdict": "INSUFFICIENT_TITLE_ABSTRACT_MESH",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "Abstract reports only a DASH-prostate cancer mortality HR (0.56 among White participants); no DASH-prostate cancer incidence effect size is given, so neither 1.02 nor 0.99 can be verified.",
+        "one_sentence_explanation": "The abstract gives no DASH-prostate cancer incidence HR (only mortality HR 0.56 among White participants), so neither ChatGPT's 1.02 nor Claude+Gemini's 0.99 can be confirmed from title, abstract, or MeSH."
+      }
+    ]
+  }
+}

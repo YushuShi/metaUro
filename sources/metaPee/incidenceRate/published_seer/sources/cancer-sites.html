@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cancer Site Definitions - SEER*Explorer</title>
+	
+<link rel="preconnect" href="https://static.cancer.gov">
+<link rel="preconnect" href="https://dap.digitalgov.gov">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<link rel="preconnect" href="https://www.google-analytics.com">
+	
+<link rel="preload" as="image" href="/i/seer.svg">
+<link rel="preload" as="image" href="/i/search_btn.png">
+<!--custom_head--><!-- Start Meta Tag Insertion - Do Not Edit - See /source_files/add_metatags -->
+<meta name="description" content="Cancer site definitions in the SEER*Explorer.">
+<meta property="twitter:title" content="SEER*Explorer Cancer Sites"> 
+<meta property="twitter:description" content="Cancer site definitions in the SEER*Explorer."> 
+<meta property="twitter:url" content="https://seer.cancer.gov/statistics-network/explorer/cancer-sites.html"> 
+<meta property="og:title" content="SEER*Explorer Help"> 
+<meta property="og:description" content="Cancer site definitions in the SEER*Explorer."> 
+<meta property="og:url" content="https://seer.cancer.gov/statistics-network/explorer/cancer-sites.html"> 
+<!-- End Meta Tag Insertion -->
+
+<link rel="stylesheet" href="s/explorer-base.css" /> <!-- modify SEER/adapt SEER styles -->
+<link rel="stylesheet" href="s/scse.css" /> <!-- Explorer specific -->
+<link rel="stylesheet" href="s/explorer-help.css" /> <!-- help page specific --><!--/custom_head--></head>
+
+<body class="interactive max-width">
+
+<header role="banner">
+	<a id="skip" href="#jump">Skip to Main Content</a>
+	<!---gov banner--->
+<div class="usa-banner container">
+<img src="/i/usa-banner-flag-icon.png" alt="" width="16" height="11">
+<p>An official website of the United States government</p>
+</div><!---end gov banner--> 
+	<div class="container bannerWrap">
+		<a class="seerLogo" href="/" title="Return to SEER Home">
+			<img src="/i/seer.svg" alt="Surveillance, Epidemiology, and End Results Program" width="642" height="54" />
+		</a>
+
+        <div class="search">
+            <div class="share">
+                <a class="facebook-share-button" href="" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;" target="_blank">
+                    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="12" height="12" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                    </svg>
+                    Share <span class="sr-only">on Facebook</span>
+                </a>
+					
+					<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="small" data-dnt="true" data-show-count="false">Tweet</a>
+                    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+					<a class="print" href="javascript:window.print();">
+                        <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#fff" viewBox="0 0 32 32">
+                            <g><path d="M24.67 10.62h-2.86V7.49H10.82v3.12H7.95c-.5 0-.9.4-.9.9v7.66h3.77v1.31L15 24.66h6.81v-5.44h3.77v-7.7c-.01-.5-.41-.9-.91-.9zM11.88 8.56h8.86v2.06h-8.86V8.56zm10.98 9.18h-1.05v-2.1h-1.06v7.96H16.4c-1.58 0-.82-3.74-.82-3.74s-3.65.89-3.69-.78v-3.43h-1.06v2.06H9.77v-3.58h13.09v3.61zm.75-4.91c-.4 0-.72-.32-.72-.72s.32-.72.72-.72c.4 0 .72.32.72.72s-.32.72-.72.72zm-4.12 2.96h-6.1v1.06h6.1v-1.06zm-6.11 3.15h6.1v-1.06h-6.1v1.06z"></path></g>
+                        </svg>
+                        <span>Print</span>
+                    </a>
+				</div>
+			<form class="d-flex" action="/search" method="get" name="search" onSubmit="return searchCheck(this.q) && NCIAnalytics.SiteSearch(this);">
+				<label for="searchsite">Search SEER:</label>
+				<input id="searchsite" type="text" size="35" name="q" placeholder="Search SEER" />
+				<input type="image" src="/i/search_btn.png" class="greenBtn" alt="Search" />
+			</form>
+		</div>
+ 	</div>
+</header>
+
+<nav>
+	<div class="container navWrap">
+		<a class="logo" href="/statistics-network/">Cancer Statistics Explorer Network</a>
+		<div class="explorerTitle"><span>SEER*Explorer</span> <a class="update-date" href="revisions.html" style="display:none"></a></div>		<button class="navTog" aria-expanded="false" aria-controls="menu">
+			<svg aria-hidden="true" width="26px" height="26px" viewBox="0 0 100 100">
+				<path class="line line1" d="M 20,29.000046 H 80.000231 C 80.000231,29.000046 94.498839,28.817352 94.532987,66.711331 94.543142,77.980673 90.966081,81.670246 85.259173,81.668997 79.552261,81.667751 75.000211,74.999942 75.000211,74.999942 L 25.000021,25.000058"></path>
+				<path class="line line2" d="M 20,50 H 80"></path>
+				<path class="line line3" d="M 20,70.999954 H 80.000231 C 80.000231,70.999954 94.498839,71.182648 94.532987,33.288669 94.543142,22.019327 90.966081,18.329754 85.259173,18.331003 79.552261,18.332249 75.000211,25.000058 75.000211,25.000058 L 25.000021,74.999942"></path>
+			</svg>
+			Menu
+		</button>
+		<ul id="menu">
+			<li class="toplevel"><a href="/statistics-network/explorer/application.html">Application</a></li>
+<li class="sub-menu toplevel">
+	<a href="#" role="button" aria-expanded="false">
+		About 
+		<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" fill="currentColor" viewBox="0 0 16 16">
+			<path d="M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z"/>
+		</svg>
+	</a>
+	<ul>
+		<li><a href="/statistics-network/explorer/overview.html">Overview</a></li>
+        <li><a href="/statistics-network/explorer/cancer-sites.html">Cancer Site Definitions</a></li>
+        <li><a href="/statistics-network/explorer/revisions.html">Revision History</a></li>	
+        <li><a href="/statistics-network/explorer/help.html">Help</a></li>
+        <li><a href="/statistics-network/explorer/archive.html">Data Archive</a></li>		
+	</ul>
+</li>			<li>
+				<a href="/statistics/">
+					SEER Statistics
+					<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M6.364 13.5a.5.5 0 0 0 .5.5H13.5a1.5 1.5 0 0 0 1.5-1.5v-10A1.5 1.5 0 0 0 13.5 1h-10A1.5 1.5 0 0 0 2 2.5v6.636a.5.5 0 1 0 1 0V2.5a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 .5.5v10a.5.5 0 0 1-.5.5H6.864a.5.5 0 0 0-.5.5z"></path>
+						<path fill-rule="evenodd" d="M11 5.5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793l-8.147 8.146a.5.5 0 0 0 .708.708L10 6.707V10.5a.5.5 0 0 0 1 0v-5z"></path>
+					</svg>
+				</a>
+			</li>
+		</ul>
+	</div>
+</nav>
+	
+<main id="jump">
+	<div class="bg-hero">
+		<div class="container">
+			<h1 class="sr-only">SEER*Explorer</h1>
+		</div>
+	</div>
+	<div class="container pull-up">
+		<!--body_content--><h1>Cancer Site Definitions</h1>
+<p>The cancer sites available in SEER*Explorer are primarily defined using the <a href="/siterecode/icdo3_dwhoheme/index.html">SEER Site Recode ICD-O-3/WHO 2008 </a> variable.  However, there are additional sites included that are defined below and are  based on specific behaviors and/or histologies, and only valid for specific years.<br>All definitions below include  Malignant Behavior only unless noted. </p>
+
+<h2 class="h-icon">
+	<svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z" clip-rule="evenodd"/>
+		<path fill-rule="evenodd" d="M7 5.5a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5a.5.5 0 01-.5-.5zm-1.496-.854a.5.5 0 010 .708l-1.5 1.5a.5.5 0 01-.708 0l-.5-.5a.5.5 0 11.708-.708l.146.147 1.146-1.147a.5.5 0 01.708 0zM7 9.5a.5.5 0 01.5-.5h5a.5.5 0 010 1h-5a.5.5 0 01-.5-.5zm-1.496-.854a.5.5 0 010 .708l-1.5 1.5a.5.5 0 01-.708 0l-.5-.5a.5.5 0 01.708-.708l.146.147 1.146-1.147a.5.5 0 01.708 0z" clip-rule="evenodd"/>
+	</svg>
+	Special Cancer Site Definitions
+</h2>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Chronic Myelomonocytic  Leukemia (CMML)</strong>
+		<ul class="clean-list">
+		  <li>Only valid for diagnosis  years 2001+</li>
+		  <li>ICD-O-3 Histology (Type) = 9945</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Chronic myeloproliferative  disorders (CMD)</strong>
+		<ul class="clean-list">
+		  <li>Only valid for diagnosis  years 2001+</li>
+		  <li>ICD-O-3 Histology (Type) = 9950-9964</li>
+		</ul><br/>
+	</div>
+</div>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Myelodysplastic syndromes  (MDS)</strong>
+		<ul class="clean-list">
+		  <li>Only valid for diagnosis  years 2001+</li>
+		  <li>ICD-O-3 Histology (Type) = 9980-9989</li>
+		</ul><br/>
+	</div>
+</div>
+
+<h2 class="h-icon">
+	<svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" d="M14.5 3h-13a.5.5 0 00-.5.5v9a.5.5 0 00.5.5h13a.5.5 0 00.5-.5v-9a.5.5 0 00-.5-.5zm-13-1A1.5 1.5 0 000 3.5v9A1.5 1.5 0 001.5 14h13a1.5 1.5 0 001.5-1.5v-9A1.5 1.5 0 0014.5 2h-13z" clip-rule="evenodd"/>
+		<path fill-rule="evenodd" d="M5 8a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7A.5.5 0 015 8zm0-2.5a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5zm0 5a.5.5 0 01.5-.5h7a.5.5 0 010 1h-7a.5.5 0 01-.5-.5z" clip-rule="evenodd"/>
+		<circle cx="3.5" cy="5.5" r=".5"/>
+		<circle cx="3.5" cy="8" r=".5"/>
+		<circle cx="3.5" cy="10.5" r=".5"/>
+	</svg>
+	Cancer Subtype Definitions for SEER*Explorer
+</h2>
+
+<h3 class="h-icon">Brain and Other Nervous System Cancer</h3><br/>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Diffuse Astrocytoma and Anaplastic Astrocytoma of the Brain and ONS</strong>  
+		<ul class="clean-list">
+			<li>SEER Brain and CNS Recode = 1.1.1</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Glioblastoma of the Brain and ONS</strong>
+		<ul class="clean-list">
+			<li>SEER Brain and CNS Recode = 1.1.2</li>
+		</ul><br/>
+	</div>
+</div>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Other Glioma of the Brain and ONS</strong>  
+		<ul class="clean-list">
+			<li>SEER Brain and CNS Recode = 1.1.3-1.1.10</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Embryonal Tumors of the Brain and ONS</strong>
+		<ul class="clean-list">
+			<li>SEER Brain and CNS Recode = 1.2</li>
+		</ul><br/>
+	</div>
+</div>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Meningioma of the Brain and ONS</strong>  
+		<ul class="clean-list">
+			<li>SEER Brain and CNS Recode = 1.3</li>
+		</ul><br/>
+	</div>
+</div>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Non-Malignant Brain and Other Nervous System</strong>
+		<ul class="clean-list">
+		  <li>Only valid for years of  diagnosis 2004+</li>
+		  <li>Site recode ICD-O-3/WHO 2008 =  Brain and  Other Nervous System</li>
+		  <li>Behavior code ICD-O-3 = Benign or Borderline malignancy</li>
+		</ul><br/>
+	</div>
+</div>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Non-malignant Meningioma of the Brain and ONS</strong>  
+		<ul class="clean-list">
+		  <li>Only valid for years of  diagnosis 2004+</li>
+			<li>SEER Brain and CNS Recode = 2.1</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Non-malignant Tumors of the Cranial and Paraspinal Nerves</strong>
+		<ul class="clean-list">
+		  <li>Only valid for years of  diagnosis 2004+</li>
+			<li>SEER Brain and CNS Recode = 2.2</li>
+		</ul><br/>
+	</div>
+</div>
+<p>Refer to the documentation for <a href="/seerstat/variables/seer/brain_cns-recode/">Brain/CNS Recode</a></p>
+
+<h3 class="h-icon">Breast Cancer</h3><br/>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>HR+/HER2+ Breast Cancer</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Breast</li>
+			<li>Breast Subtype (2010+) = Her2+/HR+</li>
+    	</ul><br/>
+ 	</div>
+  	<div class="flex-50-child">
+		<strong>HR-/HER2+ Breast Cancer</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Breast</li>
+			<li>Breast Subtype (2010+)   = Her2+/HR-</li>
+		</ul><br/>
+  	</div>
+</div>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>HR+/HER2- Breast Cancer</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008  = Breast</li>
+			<li>Breast Subtype (2010+) = Her2-/HR+</li>
+		</ul><br/>
+	</div>
+  	<div class="flex-50-child">
+		<strong>HR-/HER2- Breast Cancer </strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Breast</li>
+			<li>Breast Subtype (2010+) =  Triple Negative</li>
+		</ul><br/>
+	</div>
+</div>
+<p>Refer to the documentation for <a href="/seerstat/databases/ssf/breast-subtype.html">Breast Subtype (2010+)</a></p>
+
+
+<h3 class="h-icon">Esophagus Cancer</h3><br/>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Adenocarcinoma of the Esophagus</strong>  
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Esophagus</li>
+			<li>ICD-O-3 Histology (Type) = 8140-8573</li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Squamous Cell Carcinoma of the Esophagus</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Esophagus</li>
+			<li>ICD-O-3 Histology (Type) = 8050-8082</li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+</div>
+
+<h3 class="h-icon">Lung &amp; Bronchus</h3><br/>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Adenocarcinoma of the Lung and Bronchus</strong>  
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008  = Lung and Bronchus</li>
+			<li>ICD-O-3 Histology (Type) = 8015, 8050, 8140, 8141, 8143, 8144, 8145, 8147, 8190, 8201, 8211, 8250, 8251, 8252, 8253, 8254, 8255, 8260, 8290, 8310, 8320, 8323, 8333, 8401, 8440, 8470, 8471, 8480, 8481, 8490, 8503, 8507, 8550, 8570, 8571, 8572, 8574, 8576<strong></strong></li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Small cell carcinoma of the Lung and Bronchus</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Lung and Bronchus</li>
+			<li>ICD-O-3 Histology (Type) = 8002, 8041, 8042, 8043, 8044, 8045</li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+</div>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Squamous Cell Carcinoma of the Lung and Bronchus</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Lung and Bronchus</li>
+			<li>ICD-O-3 Histology (Type) = 8051, 8052, 8070, 8071, 8072, 8073, 8074, 8075, 8076, 8078, 8083, 8084, 8090, 8094, 8120, 8123</li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Large Cell Carcinoma of the Lung and Bronchus</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Lung and Bronchus</li>
+			<li>ICD-O-3 Histology (Type) = 8012, 8013, 8014, 8021, 8034, 8082</li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+</div>
+		
+<h3 class="h-icon">Thyroid</h3><br/>
+<div class="flex-50">
+	<div class="flex-50-child">
+		<strong>Papillary Subtype of the Thyroid</strong>
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Thyroid</li>
+			<li>ICD-O-3 Histology (Type) = 8050, 8052, 8260, 8340, 8341, 8342, 8343, 8344</li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+	<div class="flex-50-child">
+		<strong>Follicular Subtype of the Thyroid</strong>   
+		<ul class="clean-list">
+			<li>Site recode ICD-O-3/WHO 2008 = Thyroid</li>
+			<li>ICD-O-3 Histology (Type) = 8290, 8330, 8331, 8332, 8335</li>
+			<li>Diagnostic Confirmation = Microscopically confirmed</li>
+		</ul><br/>
+	</div>
+</div><!--/body_content-->	</div>
+</main>
+
+<footer class="footer" role="contentinfo">
+	<div class="container">
+		<p class="seer-logo">SEER is supported by the <a href="https://surveillance.cancer.gov/">Surveillance Research Program (SRP)</a> in NCI's <a href="https://cancercontrol.cancer.gov/">Division of Cancer Control and Population Sciences (DCCPS)</a>. SRP provides national leadership in the science of cancer surveillance as well as analytical tools and methodological expertise in collecting, analyzing, interpreting, and disseminating reliable population-based statistics.</p>
+	</div>
+	
+	<div class="footer-links">
+    	<div class="container">
+			<a class="returntop" href="#jump">
+				<svg aria-hidden="true" width="1em" height="1em" viewBox="0 0 16 16" fill="#006EE4" xmlns="http://www.w3.org/2000/svg">
+					<path fill-rule="evenodd" d="M8 3.5a.5.5 0 01.5.5v9a.5.5 0 01-1 0V4a.5.5 0 01.5-.5z" clip-rule="evenodd"/>
+					<path fill-rule="evenodd" d="M7.646 2.646a.5.5 0 01.708 0l3 3a.5.5 0 01-.708.708L8 3.707 5.354 6.354a.5.5 0 11-.708-.708l3-3z" clip-rule="evenodd"/>
+				</svg>
+				<span>Return to Top</span>
+			</a>
+			<div class="footerWrap">
+				<div>
+					<h2>Follow SEER</h2>
+					<ul class="social">
+						<li><a href="https://surveillance.cancer.gov/blog"><img src="/i/blog-icon.png" alt="SRP Blog" width="40" height="32" loading="lazy"></a></li>
+						<li><a href="https://www.linkedin.com/showcase/nci-cancer-control-and-population-sciences/"><img loading="lazy" src="/i/linkedin-icon.png" alt="DCCPS LinkedIn" width="32" height="32"></a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h2>Contact Information</h2>
+					<ul>        	
+						<li><a href="/about/contact.html">Contact Us</a></li>
+						<li><a href="https://livehelp.cancer.gov/">LiveHelp Online Chat</a></li>
+					</ul>
+				</div>
+				
+				<div>
+					<h2>More Information</h2>
+					<ul>    
+						<li><a href="https://surveillance.cancer.gov/jobs/">Careers</a></li>	
+						<li><a href="/sitemap.html">Sitemap</a></li>
+						<li><a href="/about/using-website.html">Using This Website</a></li>
+					</ul>
+				</div>	
+				
+				<div>
+					<h2>Policies</h2>
+					<ul>        						
+						<li><a href="https://www.cancer.gov/policies/accessibility">Accessibility</a></li>
+						<li><a href="https://www.cancer.gov/policies/disclaimer">Disclaimer</a></li>
+						<li><a href="https://www.cancer.gov/policies/foia">FOIA</a></li>
+						<li><a href="https://www.hhs.gov/vulnerability-disclosure-policy">HHS Vulnerability Disclosure</a></li>
+						<li><a href="https://www.cancer.gov/policies/privacy-security">Privacy &amp; Security</a></li>
+						<li><a href="https://www.cancer.gov/policies/copyright-reuse">Reuse of Graphics and Text</a></li>
+						<li><a href="https://www.cancer.gov/policies/linking">Website Linking</a></li>
+					</ul>
+				</div>	
+			</div>
+
+			<ul class="linkList">
+				<li><a href="https://www.hhs.gov/">U.S. Department of Health and Human Services</a></li>
+				<li><a href="https://www.nih.gov/">National Institutes of Health</a></li>
+				<li><a href="https://www.cancer.gov/">National Cancer Institute</a></li>
+				<li class="last"><a href="https://www.usa.gov/">USA.gov</a></li>
+			</ul>
+			<p class="tagline">NIH... Turning Discovery Into Health<sup>&reg;</sup></p>
+    	</div>
+	</div>
+</footer>
+
+<script src="/statistics-network/explorer/explorer-base-code/vendor/jquery/jquery-3.6.0.min.js"></script>
+
+<!-- NCI WEB ANALYTICS CODE -->
+<script src="//static.cancer.gov/webanalytics/WA_DCCPS_PageLoad.js"></script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-125238734-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-125238734-1');
+</script>
+	
+<script>
+// This function updates the ARIA attributes for the toggled main navigation
+// Documentation: https://www.fourfront.us/blog/jquery-window-width-and-media-queries
+function checkSize(){
+	// Checking for the state of the Main Menu toggle. If it's there, it means we are mobile so apply relevant ARIA.
+    if ($(".navWrap button").css("display") === "block" ){
+		if ( $(".navWrap > ul").css("display") === "block") {
+			$(".navWrap > ul").attr({ "aria-hidden": "false", "role": "region", "tabindex": "-1" });
+		} else {
+			$(".navWrap > ul").attr({ "aria-hidden": "true", "role": "region", "tabindex": "-1" });
+		}
+	// Main Menu toggle is not there, then we are in desktop mode.
+	} else {
+		$(".navWrap > ul").removeAttr("aria-hidden role aria-labeledby tabindex");
+	}
+}
+
+$(document).ready(function() {
+	// highlight active nav item
+	$('a[href="' + location.pathname + '"]').closest('li.toplevel').addClass('active'); 
+	
+	// Check the viewport size on page load and add relevant ARIA to menu toggles
+	checkSize();
+	
+	// Check the viewport size on window resize and add relevant ARIA to menu toggles
+    $(window).resize(checkSize);
+	
+	// When the menu toggle is hit, check its current state, show/hide the relevent elements, update all ARIA
+	$(".navWrap .navTog").click(function(){
+		if ( $("#menu").attr("aria-hidden") === "true" ) {
+			$(".navWrap .navTog").attr("aria-expanded", "true");
+			$("#menu").attr("aria-hidden", "false");
+		} else {
+			$(".navWrap .navTog").attr("aria-expanded", "false");
+			$("#menu").attr("aria-hidden", "true");
+		}
+	});
+	
+	// Expand/collapse submenu
+	$(".sub-menu a[role='button']").click(function(){
+		if ( $(this).attr("aria-expanded") === "false" ) {
+			$(this).attr("aria-expanded", "true").next().show();
+		} else {
+			$(this).attr("aria-expanded", "false").next().hide();
+		}
+		return false;
+	});
+	
+	// Close the submenu when clicking outside of it
+	$(document).click(function(e) {
+    	var container = $(".navWrap");
+		// if the target of the click isn't the container nor a descendant of the container
+    	if (!container.is(e.target) && container.has(e.target).length === 0) 
+    	{
+			$(".sub-menu a[role='button']").attr("aria-expanded", "false").next().hide();
+    	}
+	});
+
+    //create Facebook share URL for current page
+    var fb_page = window.location.href; //current page url
+    var page_title = $("title").text(); //current page title
+    fb_page = "https://www.facebook.com/sharer/sharer.php?u=" + fb_page + "&t=" + page_title; //insert url and title into the FB sharer
+    $(".facebook-share-button").attr('href', fb_page); //add sharer url to link
+	
+	// Scroll to Top Button  //
+	$(window).scroll(function () {
+		if ($(this).scrollTop() >= 150) {
+			$('.returntop').fadeIn(200).css('display','inline-block');
+		} else {
+			$('.returntop').fadeOut(200);
+		}
+	});
+});
+</script>
+
+<!-- Additional Scripts -->
+<script src="j/bootstrap/namespaces.js"></script>
+<script src="j/defines/site-defines.js"></script>
+<script>
+	document.querySelector(".update-date").style.display = '';
+	document.querySelector(".update-date").innerHTML = oSiteDefines.get_update_str();
+</script></body>
+</html>

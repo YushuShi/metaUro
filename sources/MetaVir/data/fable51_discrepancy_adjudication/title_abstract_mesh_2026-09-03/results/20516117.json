@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "accepted_at": "2026-09-03T18:29:28.021020-04:00",
+  "pmid": "20516117",
+  "work_key": "20f4e5fb4404daac5466f4a9d7f6d5330ff8fc77c07932718acff866f3afd9d2",
+  "model_requested": "claude-fable-5-1",
+  "model_reported": "claude-fable-5-1",
+  "accepted_attempt": 2,
+  "attempt_path": "data/fable51_discrepancy_adjudication/title_abstract_mesh_2026-09-03/attempts/20516117_0002.json",
+  "adjudication_status": "MODEL_ADJUDICATED",
+  "response_mode": "standard",
+  "payload": {
+    "schema_version": "metavir-fable51-adjudication-v1",
+    "pmid": "20516117",
+    "source_scope": "TITLE_ABSTRACT_MESH_ONLY",
+    "results": [
+      {
+        "context_id": "20516117|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "CI_OR_P_VALUE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "ChatGPT's CI and p value match the stratum-specific estimate in the allowed metadata; the Claude+Gemini CI and p value for the overall estimate are absent from the allowed metadata and cannot be checked.",
+        "one_sentence_explanation": "The allowed metadata supports ChatGPT's interval and p value only for a stratum-specific estimate, while the Claude+Gemini values are not present, so the target estimate cannot be resolved."
+      },
+      {
+        "context_id": "20516117|Calcium|Prostate cancer",
+        "exposure": "Calcium",
+        "field": "EFFECT_SIZE",
+        "tam_assessment": "AMBIGUOUS",
+        "verdict": "UNSURE",
+        "adjudicated_value": null,
+        "evidence_source": "NONE",
+        "evidence_text": null,
+        "evidence_type": "DIETARY_INTAKE",
+        "manual_review_needed": true,
+        "manual_review_reason": "The allowed metadata reports both an overall estimate and a stratum-specific estimate, and the pipelines selected different strata as the target.",
+        "one_sentence_explanation": "The allowed metadata supports both the overall value and the stratum-specific value, but they belong to different strata and cannot be uniquely mapped to a single target estimate."
+      }
+    ]
+  }
+}

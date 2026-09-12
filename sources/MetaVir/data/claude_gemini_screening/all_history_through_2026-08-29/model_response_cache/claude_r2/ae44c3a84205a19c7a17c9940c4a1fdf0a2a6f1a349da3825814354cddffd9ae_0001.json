@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "receipt_id": "c5b1c0903d65f9bcfa4eb1c9b9e1f7542384a98c3642bdbeee9b354b240c937b",
+  "requested_at": "2026-09-02T08:11:08.182630+08:00",
+  "received_at": "2026-09-02T08:11:39.446717+08:00",
+  "stage": "claude_r2",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "claude-opus-5",
+  "model_reported": "claude-opus-5",
+  "work_unit_key": "ae44c3a84205a19c7a17c9940c4a1fdf0a2a6f1a349da3825814354cddffd9ae",
+  "attempt": 1,
+  "context_ids": [
+    "29103966|Soy|Prostate cancer",
+    "29103966|Tomato|Prostate cancer",
+    "29103966|Vitamin C|Prostate cancer",
+    "29103966|Vitamin D|Prostate cancer",
+    "29114854|Genistein|Prostate cancer",
+    "29121168|Vitamin E|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Genistein": 1,
+    "Soy": 1,
+    "Tomato": 1,
+    "Vitamin C": 1,
+    "Vitamin D": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "6edb63ff8702ae7c9f02710f0db0313179690b50953d78159df0863cfe080dc8",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 6793,
+    "cached_input_tokens": 0,
+    "output_tokens": 3069,
+    "reasoning_tokens": 0
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.11069000000000001",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "bdcc43b5-f20a-4f19-8ed7-42cd46052647",
+    "x-litellm-model-id": "4d7a2985c303c2049ae4f7acb2e8b7373a3eca1696c6524d6e06f3f38a6ae9e9",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.11069000000000001"
+  },
+  "output_sha256": "eec26927c9d366a97e9a6a30573b90ec80ae273599065e6f4f9ed5b8bcf071b5",
+  "validation_status": "invalid",
+  "scientific_result_accepted": false,
+  "validation_error": "p_value must be numeric or null, not '≤0.05'",
+  "output_text": "{\"results\":[{\"context_id\":\"29103966|Soy|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"This is a narrative review chapter updating published literature on nutrition and prostate cancer rather than an original human study.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"29103966|Tomato|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative literature update summarizing prior studies, providing no original tomato-specific incidence data.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"29103966|Vitamin C|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a review chapter highlighting progress in the field, not an original human study of vitamin C and prostate cancer incidence.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"29103966|Vitamin D|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-REVIEW\",\"reason\":\"The article is a narrative review of existing evidence and reports no original vitamin D exposure-outcome analysis.\",\"extraction\":null,\"jbi\":null},{\"context_id\":\"29114854|Genistein|Prostate cancer\",\"eligibility\":\"INCLUDE\",\"exclusion_code\":null,\"reason\":\"Prospective analysis within the PLCO screening trial cohort reporting dietary genistein intake and incident prostate cancer risk estimates.\",\"extraction\":{\"effect_size\":1.51,\"effect_type\":\"HR\",\"ci_lower\":1.02,\"ci_upper\":2.22,\"p_value\":\"≤0.05\",\"ci_confidence_level\":95,\"total_n\":27004,\"cases\":287,\"comparison_type\":\"highest vs lowest quintile (Q5 vs Q1) of dietary genistein intake, advanced prostate cancer\",\"design\":\"cohort\",\"timing\":\"prospective\",\"continent\":null,\"country\":null,\"location\":\"NA\",\"ethnicity\":\"NA\",\"population\":\"Men in the intervention arm of the Prostate, Lung, Colorectal and Ovarian Cancer Screening Trial\",\"exposure_subtype\":\"dietary_component\",\"exposure_measurement_type\":\"dietary_intake\",\"exposure_classification_ambiguous\":false,\"wald_inputs_same_estimate\":false,\"needs_inversion\":false,\"evidence\":{\"sample_size\":{\"excerpt\":\"among 27,004 men in the intervention arm of the Prostate, Lung, Colorectal and Ovarian Cancer Screening Trial\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"cases\":{\"excerpt\":\"2,598 cases of prostate cancer (including 287 advanced cases) have been identified\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"effect_size\":{\"excerpt\":\"genistein [1.51 (1.02-2.22)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"confidence_interval\":{\"excerpt\":\"genistein [1.51 (1.02-2.22)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"p_value\":{\"excerpt\":\"(p-trend for all associations ≤0.05)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"comparison\":{\"excerpt\":\"an increased risk of advanced prostate cancer [HR (95% CI) for quintile (Q) 5 vs. Q1]\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"design\":{\"excerpt\":\"Cox proportional hazards regression analysis was performed to estimate hazard ratios (HRs)\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"timing\":{\"excerpt\":\"During a median follow up of 11.5 years\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"},\"continent\":null,\"ethnicity\":null,\"location\":null,\"exposure_measurement\":{\"excerpt\":\"Dietary intake of phytoestrogens (excluding lignans) was assessed with a food frequency questionnaire.\",\"source\":\"abstract\",\"url\":\"https://pubmed.ncbi.nlm.nih.gov/29114854/\",\"location\":\"abstract\"}}},\"jbi\":{\"checklist_type\":\"cohort\",\"answers\":{\"q1\":\"Yes\",\"q2\":\"Yes\",\"q3\":\"Yes\",\"q4\":\"Yes\",\"q5\":\"Yes\",\"q6\":\"Unclear\",\"q7\":\"Yes\",\"q8\":\"Yes\",\"q9\":\"Unclear\",\"q10\":\"Unclear\",\"q11\":\"Yes\",\"q12\":\"NA\",\"q13\":\"NA\"}}},{\"context_id\":\"29121168|Vitamin E|Prostate cancer\",\"eligibility\":\"EXCLUDE\",\"exclusion_code\":\"S2-ANIMAL\",\"reason\":\"The study tests δ-tocopherol diets exclusively in prostate-specific Pten-/- mice and prostate cancer cell lines, with no human data.\",\"extraction\":null,\"jbi\":null}]}"
+}

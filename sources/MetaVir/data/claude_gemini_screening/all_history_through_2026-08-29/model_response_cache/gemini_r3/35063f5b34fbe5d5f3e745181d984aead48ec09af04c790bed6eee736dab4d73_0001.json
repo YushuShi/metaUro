@@ -1,0 +1,379 @@
+{
+  "schema_version": 1,
+  "receipt_id": "f3d1440cb87a61085392bf4f0c19a4ae1df05f1db7cbd4a23ba8d0d793b6ab1d",
+  "requested_at": "2026-09-02T09:22:04.226244+08:00",
+  "received_at": "2026-09-02T09:22:40.151609+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "35063f5b34fbe5d5f3e745181d984aead48ec09af04c790bed6eee736dab4d73",
+  "attempt": 1,
+  "context_ids": [
+    "23843441|Linoleic acid|Prostate cancer",
+    "23843441|Omega-3 fatty acids|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Linoleic acid": 1,
+    "Omega-3 fatty acids": 1
+  },
+  "input_digest": "e72efbb83466ee1ab78c806ec342dabe96eb89a705f5820fc0c48e531ebaedc7",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15671,
+    "cached_input_tokens": 0,
+    "output_tokens": 5349,
+    "reasoning_tokens": 1925
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.031812",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "0660abfa-ed43-4136-87f6-875b3976cbd8",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.031812"
+  },
+  "output_sha256": "7289629eea162614877980174d84b3060b0e78c30551a33048db4aea795a3cce",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"23843441|Linoleic acid|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-cohort study evaluated the association between plasma phospholipid linoleic acid and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.77,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.59,\n        \"ci_upper\": 1.01,\n        \"p_value\": 0.13,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 2273,\n        \"cases\": 834,\n        \"comparison_type\": \"quantile\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men participating in the Selenium and Vitamin E Cancer Prevention Trial (SELECT)\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Table 3. Associations between plasma phospholipid fatty acids and prostate cancer risk, by prostate cancer grade (n=2273)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3 heading\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Case subjects were 834 men diagnosed with prostate cancer, of which 156 had high-grade cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \">21.02 ... 0.77 (0.59 to 1.01)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3, Linoleic acid (18:2ω6)\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \">21.02 ... 0.77 (0.59 to 1.01)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3, Linoleic acid (18:2ω6)\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P trend .13\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3, Linoleic acid (18:2ω6)\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Associations are given for phospholipid fatty acids expressed as quartiles, contrasting quartiles 2, 3, and 4 with quartile 1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, Statistical Analysis, paragraph 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"This study is a case–cohort design nested within SELECT.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, Case Subject and Subcohort Selection, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this large, prospective trial, high plasma phospholipid concentrations of long-chain ω-3 PUFA were associated with statistically significant increases in prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Discussion, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico, black men aged 50 years or older or men of all other races aged 55 years or older who had no history of prostate cancer and who had a serum prostate-specific antigen of 4ng/mL or less and nonsuspicious digital rectal exam were eligible to participate.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, The Selenium and Vitamin E Cancer Prevention Trial, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic white ... Non-Hispanic black ... Other\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, The Selenium and Vitamin E Cancer Prevention Trial, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"total lipids were extracted from plasma, and phospholipids were separated from other lipids by one-dimensional thin-layer chromatography ( 28 ). Fatty acid methyl ester samples were prepared by direct transesterification and separated by gas chromatography\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, Data Collection and Laboratory Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"23843441|Omega-3 fatty acids|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective nested case-cohort study evaluated the association between plasma phospholipid long-chain omega-3 fatty acids and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.43,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 1.09,\n        \"ci_upper\": 1.88,\n        \"p_value\": 0.007,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 2273,\n        \"cases\": 834,\n        \"comparison_type\": \"quantile\",\n        \"design\": \"cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Men participating in the Selenium and Vitamin E Cancer Prevention Trial (SELECT)\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Table 3. Associations between plasma phospholipid fatty acids and prostate cancer risk, by prostate cancer grade (n=2273)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3 heading\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Case subjects were 834 men diagnosed with prostate cancer, of which 156 had high-grade cancer.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Abstract, Methods\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \">5.31 ... 1.43 (1.09 to 1.88)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3, Total long-chain ω-3 PUFA (EPA + DPA + DHA)\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \">5.31 ... 1.43 (1.09 to 1.88)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3, Total long-chain ω-3 PUFA (EPA + DPA + DHA)\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P trend .007\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 3, Total long-chain ω-3 PUFA (EPA + DPA + DHA)\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Associations are given for phospholipid fatty acids expressed as quartiles, contrasting quartiles 2, 3, and 4 with quartile 1\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, Statistical Analysis, paragraph 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"This study is a case–cohort design nested within SELECT.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, Case Subject and Subcohort Selection, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"In this large, prospective trial, high plasma phospholipid concentrations of long-chain ω-3 PUFA were associated with statistically significant increases in prostate cancer risk.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Discussion, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico, black men aged 50 years or older or men of all other races aged 55 years or older who had no history of prostate cancer and who had a serum prostate-specific antigen of 4ng/mL or less and nonsuspicious digital rectal exam were eligible to participate.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, The Selenium and Vitamin E Cancer Prevention Trial, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic white ... Non-Hispanic black ... Other\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, The Selenium and Vitamin E Cancer Prevention Trial, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"total lipids were extracted from plasma, and phospholipids were separated from other lipids by one-dimensional thin-layer chromatography ( 28 ). Fatty acid methyl ester samples were prepared by direct transesterification and separated by gas chromatography\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/\",\n            \"location\": \"Methods, Data Collection and Laboratory Methods, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:22:40.679025+08:00",
+      "transition": "new_gateway_attempt_validated",
+      "validation_status": "received",
+      "validation_error": "",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "7289629eea162614877980174d84b3060b0e78c30551a33048db4aea795a3cce"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [],
+  "validated_results": [
+    {
+      "context_id": "23843441|Linoleic acid|Prostate cancer",
+      "pmid": "23843441",
+      "pmcid": "PMC3735464",
+      "published_date": "2013-08-07",
+      "title": "Plasma phospholipid fatty acids and prostate cancer risk in the SELECT trial.",
+      "authors": [
+        "Brasky TM",
+        "Darke AK",
+        "Song X",
+        "Tangen CM",
+        "Goodman PJ",
+        "Thompson IM",
+        "Meyskens FL",
+        "Goodman GE",
+        "Minasian LM",
+        "Parnes HL",
+        "Klein EA",
+        "Kristal AR"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23843441/",
+      "exposure": "Linoleic acid",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-cohort study evaluated the association between plasma phospholipid linoleic acid and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.77,
+        "effect_type": "HR",
+        "ci_lower": 0.59,
+        "ci_upper": 1.01,
+        "p_value": 0.13,
+        "ci_confidence_level": 95,
+        "total_n": 2273,
+        "cases": 834,
+        "comparison_type": "quantile",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men participating in the Selenium and Vitamin E Cancer Prevention Trial (SELECT)",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Distribution of plasma phospholipid fatty acids among SELECT participants by prostate cancer grade (n=2273)*",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3 heading"
+          },
+          "cases": {
+            "excerpt": "Case subjects were 834 men diagnosed with prostate cancer, of which 156 had high-grade cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Abstract, Methods"
+          },
+          "effect_size": {
+            "excerpt": "Higher linoleic acid (ω-6) was associated with reduced risks of low-grade (HR = 0.75, 95% CI = 0.56 to 0.99) and total prostate cancer (HR = 0.77, 95% CI = 0.59 to 1.01); however, there was no dose response.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3, Linoleic acid (18:2ω6)"
+          },
+          "confidence_interval": {
+            "excerpt": "Higher linoleic acid (ω-6) was associated with reduced risks of low-grade (HR = 0.75, 95% CI = 0.56 to 0.99) and total prostate cancer (HR = 0.77, 95% CI = 0.59 to 1.01); however, there was no dose response.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3, Linoleic acid (18:2ω6)"
+          },
+          "p_value": {
+            "excerpt": "P trend .13",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3, Linoleic acid (18:2ω6)"
+          },
+          "comparison": {
+            "excerpt": "Associations are given for phospholipid fatty acids expressed as quartiles, contrasting quartiles 2, 3, and 4 with quartile 1",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, Statistical Analysis, paragraph 3"
+          },
+          "design": {
+            "excerpt": "This study is a case–cohort design nested within SELECT.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, Case Subject and Subcohort Selection, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "In this large, prospective trial, high plasma phospholipid concentrations of long-chain ω-3 PUFA were associated with statistically significant increases in prostate cancer risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Discussion, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico, black men aged 50 years or older or men of all other races aged 55 years or older who had no history of prostate cancer and who had a serum prostate-specific antigen of 4ng/mL or less and nonsuspicious digital rectal exam were eligible to participate.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, The Selenium and Vitamin E Cancer Prevention Trial, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "total lipids were extracted from plasma, and phospholipids were separated from other lipids by one-dimensional thin-layer chromatography ( 28 ). Fatty acid methyl ester samples were prepared by direct transesterification and separated by gas chromatography",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, Data Collection and Laboratory Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.13",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36941,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "98bfa1c77eaee4b39c49e40f98677ac8c891f03bc11fea461c3c49a51b1fd9cb",
+      "pmc_source_receipt_digest": "4445ca7ca35ea0eeaf984c12da879947c7c40c460a75449436e31723a92e6139",
+      "pmc_source_raw_sha256": "6d0a1256c5023329938a031487dffadd4fb5d134618f3b9fe0d9f5c3989611e8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "7250621754a483c6914d8b33833f1e2473eec85480beab57fed676941fd4e927"
+    },
+    {
+      "context_id": "23843441|Omega-3 fatty acids|Prostate cancer",
+      "pmid": "23843441",
+      "pmcid": "PMC3735464",
+      "published_date": "2013-08-07",
+      "title": "Plasma phospholipid fatty acids and prostate cancer risk in the SELECT trial.",
+      "authors": [
+        "Brasky TM",
+        "Darke AK",
+        "Song X",
+        "Tangen CM",
+        "Goodman PJ",
+        "Thompson IM",
+        "Meyskens FL",
+        "Goodman GE",
+        "Minasian LM",
+        "Parnes HL",
+        "Klein EA",
+        "Kristal AR"
+      ],
+      "journal": "Journal of the National Cancer Institute",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/23843441/",
+      "exposure": "Omega-3 fatty acids",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective nested case-cohort study evaluated the association between plasma phospholipid long-chain omega-3 fatty acids and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.43,
+        "effect_type": "HR",
+        "ci_lower": 1.09,
+        "ci_upper": 1.88,
+        "p_value": 0.007,
+        "ci_confidence_level": 95,
+        "total_n": 2273,
+        "cases": 834,
+        "comparison_type": "quantile",
+        "design": "cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "Men participating in the Selenium and Vitamin E Cancer Prevention Trial (SELECT)",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Distribution of plasma phospholipid fatty acids among SELECT participants by prostate cancer grade (n=2273)*",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3 heading"
+          },
+          "cases": {
+            "excerpt": "Case subjects were 834 men diagnosed with prostate cancer, of which 156 had high-grade cancer.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Abstract, Methods"
+          },
+          "effect_size": {
+            "excerpt": "Compared with men in the lowest quartiles of LCω-3PUFA, men in the highest quartile had increased risks for low-grade (HR = 1.44, 95% CI = 1.08 to 1.93), high-grade (HR = 1.71, 95% CI = 1.00 to 2.94), and total prostate cancer (HR = 1.43, 95% CI = 1.09 to 1.88).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3, Total long-chain ω-3 PUFA (EPA + DPA + DHA)"
+          },
+          "confidence_interval": {
+            "excerpt": "Compared with men in the lowest quartiles of LCω-3PUFA, men in the highest quartile had increased risks for low-grade (HR = 1.44, 95% CI = 1.08 to 1.93), high-grade (HR = 1.71, 95% CI = 1.00 to 2.94), and total prostate cancer (HR = 1.43, 95% CI = 1.09 to 1.88).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3, Total long-chain ω-3 PUFA (EPA + DPA + DHA)"
+          },
+          "p_value": {
+            "excerpt": "P trend .007",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Table 3, Total long-chain ω-3 PUFA (EPA + DPA + DHA)"
+          },
+          "comparison": {
+            "excerpt": "Associations are given for phospholipid fatty acids expressed as quartiles, contrasting quartiles 2, 3, and 4 with quartile 1",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, Statistical Analysis, paragraph 3"
+          },
+          "design": {
+            "excerpt": "This study is a case–cohort design nested within SELECT.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, Case Subject and Subcohort Selection, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "In this large, prospective trial, high plasma phospholipid concentrations of long-chain ω-3 PUFA were associated with statistically significant increases in prostate cancer risk.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Discussion, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Briefly, in 427 participating sites across the United States, Canada, and Puerto Rico, black men aged 50 years or older or men of all other races aged 55 years or older who had no history of prostate cancer and who had a serum prostate-specific antigen of 4ng/mL or less and nonsuspicious digital rectal exam were eligible to participate.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, The Selenium and Vitamin E Cancer Prevention Trial, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "total lipids were extracted from plasma, and phospholipids were separated from other lipids by one-dimensional thin-layer chromatography ( 28 ). Fatty acid methyl ester samples were prepared by direct transesterification and separated by gas chromatography",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3735464/",
+            "location": "Methods, Data Collection and Laboratory Methods, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "0.007",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 36941,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "98bfa1c77eaee4b39c49e40f98677ac8c891f03bc11fea461c3c49a51b1fd9cb",
+      "pmc_source_receipt_digest": "4445ca7ca35ea0eeaf984c12da879947c7c40c460a75449436e31723a92e6139",
+      "pmc_source_raw_sha256": "6d0a1256c5023329938a031487dffadd4fb5d134618f3b9fe0d9f5c3989611e8",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "41305fd9ef61e751afb03046eb99b05c755efc21b38ed96190b358488ac9dfe0"
+    }
+  ]
+}

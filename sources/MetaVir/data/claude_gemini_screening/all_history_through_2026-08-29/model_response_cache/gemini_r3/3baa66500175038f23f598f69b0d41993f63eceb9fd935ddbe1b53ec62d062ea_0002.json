@@ -1,0 +1,870 @@
+{
+  "schema_version": 1,
+  "receipt_id": "3d30a43804be5923597e4f3006a7aa9a15c30fddd0babeb324265384232c5743",
+  "requested_at": "2026-09-02T08:38:42.745317+08:00",
+  "received_at": "2026-09-02T08:39:19.792198+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "3baa66500175038f23f598f69b0d41993f63eceb9fd935ddbe1b53ec62d062ea",
+  "attempt": 2,
+  "context_ids": [
+    "19212706|Antioxidants|Prostate cancer",
+    "19212706|Vitamin A|Prostate cancer",
+    "19212706|Vitamin E|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Antioxidants": 1,
+    "Vitamin A": 1,
+    "Vitamin E": 1
+  },
+  "input_digest": "06c0311a9c2c8cbaa3855795a640ced0737e7466d2d2011b8a4162caa8be3b26",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 15342,
+    "cached_input_tokens": 0,
+    "output_tokens": 6510,
+    "reasoning_tokens": 772
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.035919000000000006",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "3db909fd-bac0-4e8e-88f5-6242e3fbafab",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.035919000000000006"
+  },
+  "output_sha256": "72e087c707118b4841666de345c4fe3fa336bf582fde7902968b123c23f24101",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"19212706|Antioxidants|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study reports adjusted risk estimates for circulating antioxidant biomarkers and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.0,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.67,\n        \"ci_upper\": 1.49,\n        \"p_value\": 0.87,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1147,\n        \"cases\": 382,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Multiethnic Cohort\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"For the fourth quartile compared to the first quartile, the odds ratio was 1.00 (95% CI: 0.67–1.49).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"For the fourth quartile compared to the first quartile, the odds ratio was 1.00 (95% CI: 0.67–1.49).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Total carotenoids (μg/dl) ... Fully adjusted OR ... 1.00 (0.67–1.49) ... p trend 0.87\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"For the fourth quartile compared to the first quartile, the odds ratio was 1.00 (95% CI: 0.67–1.49).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"We conducted a nested case–control study of serum antioxidant biomarkers (selenium, tocopherols, carotenoids, and retinol) and a urinary oxidation biomarker (15-isoprostane F 2t ) with risk of prostate cancer within the Multiethnic Cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Methods / Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Cases of prostate cancer, diagnosed after specimen collection, were identified through linkages with the Los Angeles County Cancer Surveillance Program, the State of California Cancer Registry, and the Hawaii Tumor Registry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Selection of cases and controls / Paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the leading cancer among males in the US.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Introduction / Paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"African-Americans, Caucasians, Japanese-Americans, Latinos, and Native-Hawaiians were the primary targets for recruitment\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"using a 26-page self-administered mail questionnaire sent to residents of Hawaii and California, mainly Los Angeles County.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Plasma concentrations of tocopherols, retinol, lycopene, and other carotenoids were determined by high-pressure liquid chromatography with photo diode array detection slightly modified from our earlier protocol\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"19212706|Vitamin A|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study reports adjusted risk estimates for serum retinol and incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 1.05,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.7,\n        \"ci_upper\": 1.58,\n        \"p_value\": 0.66,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1147,\n        \"cases\": 382,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Multiethnic Cohort\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The odds ratio for the fourth quartile compared to the first quartile was 1.05 (95% CI: 0.70–1.58).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 3\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"The odds ratio for the fourth quartile compared to the first quartile was 1.05 (95% CI: 0.70–1.58).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 3\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Retinol (μg/dl) ... Fully adjusted OR ... 1.05 (0.70–1.58) ... p trend 0.66\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The odds ratio for the fourth quartile compared to the first quartile was 1.05 (95% CI: 0.70–1.58).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 3\"\n          },\n          \"design\": {\n            \"excerpt\": \"We conducted a nested case–control study of serum antioxidant biomarkers (selenium, tocopherols, carotenoids, and retinol) and a urinary oxidation biomarker (15-isoprostane F 2t ) with risk of prostate cancer within the Multiethnic Cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Methods / Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Cases of prostate cancer, diagnosed after specimen collection, were identified through linkages with the Los Angeles County Cancer Surveillance Program, the State of California Cancer Registry, and the Hawaii Tumor Registry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Selection of cases and controls / Paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the leading cancer among males in the US.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Introduction / Paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"African-Americans, Caucasians, Japanese-Americans, Latinos, and Native-Hawaiians were the primary targets for recruitment\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"using a 26-page self-administered mail questionnaire sent to residents of Hawaii and California, mainly Los Angeles County.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Plasma concentrations of tocopherols, retinol, lycopene, and other carotenoids were determined by high-pressure liquid chromatography with photo diode array detection slightly modified from our earlier protocol\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"19212706|Vitamin E|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This nested case-control study reports adjusted risk estimates for serum alpha-tocopherol and prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.95,\n        \"effect_type\": \"OR\",\n        \"ci_lower\": 0.65,\n        \"ci_upper\": 1.41,\n        \"p_value\": 0.89,\n        \"ci_confidence_level\": 95.0,\n        \"total_n\": 1147,\n        \"cases\": 382,\n        \"comparison_type\": \"extreme_quantiles\",\n        \"design\": \"nested_case_control\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"Multiethnic Cohort\",\n        \"exposure_subtype\": \"human_biomarker\",\n        \"exposure_measurement_type\": \"human_biospecimen\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 3\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 3\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"The odds ratios for the fourth quartile compared to the first quartile of serum concentration were 0.95 (95% CI: 0.65–1.41), 0.95 (95% CI: 0.65–1.39), and 1.12 (95% CI: 0.75–1.67) for alpha-tocopherol, gamma-tocopherol, and total tocopherols, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"The odds ratios for the fourth quartile compared to the first quartile of serum concentration were 0.95 (95% CI: 0.65–1.41), 0.95 (95% CI: 0.65–1.39), and 1.12 (95% CI: 0.75–1.67) for alpha-tocopherol, gamma-tocopherol, and total tocopherols, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"Alpha-tocopherol (mg/dl) ... Fully adjusted OR ... 0.95 (0.65–1.41) ... p trend 0.89\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"The odds ratios for the fourth quartile compared to the first quartile of serum concentration were 0.95 (95% CI: 0.65–1.41), 0.95 (95% CI: 0.65–1.39), and 1.12 (95% CI: 0.75–1.67) for alpha-tocopherol, gamma-tocopherol, and total tocopherols, respectively.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Results / Paragraph 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"We conducted a nested case–control study of serum antioxidant biomarkers (selenium, tocopherols, carotenoids, and retinol) and a urinary oxidation biomarker (15-isoprostane F 2t ) with risk of prostate cancer within the Multiethnic Cohort.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Methods / Paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Cases of prostate cancer, diagnosed after specimen collection, were identified through linkages with the Los Angeles County Cancer Surveillance Program, the State of California Cancer Registry, and the Hawaii Tumor Registry\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Selection of cases and controls / Paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"Prostate cancer is the leading cancer among males in the US.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Introduction / Paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"African-Americans, Caucasians, Japanese-Americans, Latinos, and Native-Hawaiians were the primary targets for recruitment\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"using a 26-page self-administered mail questionnaire sent to residents of Hawaii and California, mainly Los Angeles County.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Study population / Paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Plasma concentrations of tocopherols, retinol, lycopene, and other carotenoids were determined by high-pressure liquid chromatography with photo diode array detection slightly modified from our earlier protocol\",\n            \"source\": \"full_text\",\n            \"url\": \"https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/\",\n            \"location\": \"Materials and methods / Laboratory analysis / Paragraph 2\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"case_control\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Yes\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"NA\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:19:17.518497+08:00",
+      "transition": "cached_attempt_revalidated",
+      "validation_status": "invalid",
+      "validation_error": "Evidence URL for sample_size must use pmc.ncbi.nlm.nih.gov",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "72e087c707118b4841666de345c4fe3fa336bf582fde7902968b123c23f24101"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "field": "results[0].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "field": "results[1].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.sample_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.cases.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.effect_size.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.confidence_interval.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.p_value.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.comparison.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.design.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.timing.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.continent.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.ethnicity.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.location.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    },
+    {
+      "contract_version": "metavir-gemini-r3-cache-recovery-v1",
+      "event_type": "legacy_pmc_url",
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "field": "results[2].extraction.evidence.exposure_measurement.url",
+      "before": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2725220/",
+      "after": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+      "rule": "exact_legacy_ncbi_pmc_url_for_expected_pmcid"
+    }
+  ],
+  "validated_results": [
+    {
+      "context_id": "19212706|Antioxidants|Prostate cancer",
+      "pmid": "19212706",
+      "pmcid": "PMC2725220",
+      "published_date": "2009-09-01",
+      "title": "Association of selenium, tocopherols, carotenoids, retinol, and 15-isoprostane F(2t) in serum or urine with prostate cancer risk: the multiethnic cohort.",
+      "authors": [
+        "Gill JK",
+        "Franke AA",
+        "Steven Morris J",
+        "Cooney RV",
+        "Wilkens LR",
+        "Le Marchand L",
+        "Goodman MT",
+        "Henderson BE",
+        "Kolonel LN"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19212706/",
+      "exposure": "Antioxidants",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study reports adjusted risk estimates for circulating antioxidant biomarkers and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1,
+        "effect_type": "OR",
+        "ci_lower": 0.67,
+        "ci_upper": 1.49,
+        "p_value": 0.87,
+        "ci_confidence_level": 95,
+        "total_n": 1147,
+        "cases": 382,
+        "comparison_type": "extreme_quantiles",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "Multiethnic",
+        "population": "Multiethnic Cohort",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 3; total_n derived from reported group counts 382 + 765 = 1147"
+          },
+          "cases": {
+            "excerpt": "Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 3"
+          },
+          "effect_size": {
+            "excerpt": "For the fourth quartile compared to the first quartile, the odds ratio was 1.00 (95% CI: 0.67–1.49). Serum retinol was not associated with the risk of prostate cancer either.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "For the fourth quartile compared to the first quartile, the odds ratio was 1.00 (95% CI: 0.67–1.49).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "0.87",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "For the fourth quartile compared to the first quartile, the odds ratio was 1.00 (95% CI: 0.67–1.49).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 3"
+          },
+          "design": {
+            "excerpt": "We conducted a nested case–control study of serum antioxidant biomarkers (selenium, tocopherols, carotenoids, and retinol) and a urinary oxidation biomarker (15-isoprostane F 2t ) with risk of prostate cancer within the Multiethnic Cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Methods / Paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Cases of prostate cancer, diagnosed after specimen collection, were identified through linkages with the Los Angeles County Cancer Surveillance Program, the State of California Cancer Registry, and the Hawaii Tumor Registry",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Selection of cases and controls / Paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the leading cancer among males in the US.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Introduction / Paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "within the Multiethnic Cohort",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19212706/",
+            "location": "abstract methods"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Plasma concentrations of tocopherols, retinol, lycopene, and other carotenoids were determined by high-pressure liquid chromatography with photo diode array detection slightly modified from our earlier protocol",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.87",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 40200,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "f615d6dda394b2e318a8ec3cd5572303a6a4c8667da3dd0d99e69605a4915f76",
+      "pmc_source_receipt_digest": "e6fd0a04481da8ea7bde29bafaa8833a355d89cb51965836cb6a04ac69dad5f5",
+      "pmc_source_raw_sha256": "5a4494ad03501c0d53a69802d0c6f73c2d1b95b4fece88b1be85d2ed56655e0a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "69b59d41938f589581615fad11f871cf5321f4e8fbcd8a1eb954bb5e1c592544"
+    },
+    {
+      "context_id": "19212706|Vitamin A|Prostate cancer",
+      "pmid": "19212706",
+      "pmcid": "PMC2725220",
+      "published_date": "2009-09-01",
+      "title": "Association of selenium, tocopherols, carotenoids, retinol, and 15-isoprostane F(2t) in serum or urine with prostate cancer risk: the multiethnic cohort.",
+      "authors": [
+        "Gill JK",
+        "Franke AA",
+        "Steven Morris J",
+        "Cooney RV",
+        "Wilkens LR",
+        "Le Marchand L",
+        "Goodman MT",
+        "Henderson BE",
+        "Kolonel LN"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19212706/",
+      "exposure": "Vitamin A",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study reports adjusted risk estimates for serum retinol and incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 1.05,
+        "effect_type": "OR",
+        "ci_lower": 0.7,
+        "ci_upper": 1.58,
+        "p_value": 0.66,
+        "ci_confidence_level": 95,
+        "total_n": 1147,
+        "cases": 382,
+        "comparison_type": "extreme_quantiles",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "Multiethnic",
+        "population": "Multiethnic Cohort",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 3; total_n derived from reported group counts 382 + 765 = 1147"
+          },
+          "cases": {
+            "excerpt": "Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 3"
+          },
+          "effect_size": {
+            "excerpt": "Serum retinol was not associated with the risk of prostate cancer either. The odds ratio for the fourth quartile compared to the first quartile was 1.05 (95% CI: 0.70–1.58).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 3"
+          },
+          "confidence_interval": {
+            "excerpt": "The odds ratio for the fourth quartile compared to the first quartile was 1.05 (95% CI: 0.70–1.58).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 3"
+          },
+          "p_value": {
+            "excerpt": "0.66",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "The odds ratio for the fourth quartile compared to the first quartile was 1.05 (95% CI: 0.70–1.58).",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 3"
+          },
+          "design": {
+            "excerpt": "We conducted a nested case–control study of serum antioxidant biomarkers (selenium, tocopherols, carotenoids, and retinol) and a urinary oxidation biomarker (15-isoprostane F 2t ) with risk of prostate cancer within the Multiethnic Cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Methods / Paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Cases of prostate cancer, diagnosed after specimen collection, were identified through linkages with the Los Angeles County Cancer Surveillance Program, the State of California Cancer Registry, and the Hawaii Tumor Registry",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Selection of cases and controls / Paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the leading cancer among males in the US.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Introduction / Paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "within the Multiethnic Cohort",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19212706/",
+            "location": "abstract methods"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Plasma concentrations of tocopherols, retinol, lycopene, and other carotenoids were determined by high-pressure liquid chromatography with photo diode array detection slightly modified from our earlier protocol",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.66",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 40200,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "f615d6dda394b2e318a8ec3cd5572303a6a4c8667da3dd0d99e69605a4915f76",
+      "pmc_source_receipt_digest": "e6fd0a04481da8ea7bde29bafaa8833a355d89cb51965836cb6a04ac69dad5f5",
+      "pmc_source_raw_sha256": "5a4494ad03501c0d53a69802d0c6f73c2d1b95b4fece88b1be85d2ed56655e0a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "4ea7882e75dafdf7717a82fc39a9e46ba18ae27054670cc501fa7889d5f3f948"
+    },
+    {
+      "context_id": "19212706|Vitamin E|Prostate cancer",
+      "pmid": "19212706",
+      "pmcid": "PMC2725220",
+      "published_date": "2009-09-01",
+      "title": "Association of selenium, tocopherols, carotenoids, retinol, and 15-isoprostane F(2t) in serum or urine with prostate cancer risk: the multiethnic cohort.",
+      "authors": [
+        "Gill JK",
+        "Franke AA",
+        "Steven Morris J",
+        "Cooney RV",
+        "Wilkens LR",
+        "Le Marchand L",
+        "Goodman MT",
+        "Henderson BE",
+        "Kolonel LN"
+      ],
+      "journal": "Cancer causes & control : CCC",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19212706/",
+      "exposure": "Vitamin E",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This nested case-control study reports adjusted risk estimates for serum alpha-tocopherol and prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.95,
+        "effect_type": "OR",
+        "ci_lower": 0.65,
+        "ci_upper": 1.41,
+        "p_value": 0.89,
+        "ci_confidence_level": 95,
+        "total_n": 1147,
+        "cases": 382,
+        "comparison_type": "extreme_quantiles",
+        "design": "nested_case_control",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "Multiethnic",
+        "population": "Multiethnic Cohort",
+        "exposure_subtype": "human_biomarker",
+        "exposure_measurement_type": "human_biospecimen",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 3; total_n derived from reported group counts 382 + 765 = 1147"
+          },
+          "cases": {
+            "excerpt": "Serum analysis was performed on 461 cases (99%) and 931 controls (99%) for selenium, and on 382 cases (82%) and 765 controls (82%) with fasting for 8 h or more for tocopherols, retinol, lycopene, and other carotenoids.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 3"
+          },
+          "effect_size": {
+            "excerpt": "We observed no association between serum concentrations of alpha-tocopherol, gamma-tocopherol, or total tocopherols and risk of prostate cancer. The odds ratios for the fourth quartile compared to the first quartile of serum concentration were 0.95 (95% CI: 0.65–1.41), 0.95 (95% CI: 0.65–1.39), and 1.12 (95% CI: 0.75–1.67) for alpha-tocopherol, gamma-tocopherol, and total tocopherols, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 2"
+          },
+          "confidence_interval": {
+            "excerpt": "The odds ratios for the fourth quartile compared to the first quartile of serum concentration were 0.95 (95% CI: 0.65–1.41), 0.95 (95% CI: 0.65–1.39), and 1.12 (95% CI: 0.75–1.67) for alpha-tocopherol, gamma-tocopherol, and total tocopherols, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 2"
+          },
+          "p_value": {
+            "excerpt": "0.89",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "The odds ratios for the fourth quartile compared to the first quartile of serum concentration were 0.95 (95% CI: 0.65–1.41), 0.95 (95% CI: 0.65–1.39), and 1.12 (95% CI: 0.75–1.67) for alpha-tocopherol, gamma-tocopherol, and total tocopherols, respectively.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Results / Paragraph 2"
+          },
+          "design": {
+            "excerpt": "We conducted a nested case–control study of serum antioxidant biomarkers (selenium, tocopherols, carotenoids, and retinol) and a urinary oxidation biomarker (15-isoprostane F 2t ) with risk of prostate cancer within the Multiethnic Cohort.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Methods / Paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Cases of prostate cancer, diagnosed after specimen collection, were identified through linkages with the Los Angeles County Cancer Surveillance Program, the State of California Cancer Registry, and the Hawaii Tumor Registry",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Selection of cases and controls / Paragraph 1"
+          },
+          "continent": {
+            "excerpt": "Prostate cancer is the leading cancer among males in the US.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Introduction / Paragraph 1"
+          },
+          "ethnicity": {
+            "excerpt": "within the Multiethnic Cohort",
+            "source": "abstract",
+            "url": "https://pubmed.ncbi.nlm.nih.gov/19212706/",
+            "location": "abstract methods"
+          },
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "Plasma concentrations of tocopherols, retinol, lycopene, and other carotenoids were determined by high-pressure liquid chromatography with photo diode array detection slightly modified from our earlier protocol",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC2725220/",
+            "location": "Materials and methods / Laboratory analysis / Paragraph 2"
+          }
+        },
+        "p_value_reported_as": "0.89",
+        "p_value_is_exact": true
+      },
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 100.0,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 40200,
+      "pmc_source_format": "jats_xml",
+      "pmc_source_sha256": "f615d6dda394b2e318a8ec3cd5572303a6a4c8667da3dd0d99e69605a4915f76",
+      "pmc_source_receipt_digest": "e6fd0a04481da8ea7bde29bafaa8833a355d89cb51965836cb6a04ac69dad5f5",
+      "pmc_source_raw_sha256": "5a4494ad03501c0d53a69802d0c6f73c2d1b95b4fece88b1be85d2ed56655e0a",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "b2b46a1a01a7d6e1f133de60b24649fe1b82cc9bba4cf2de15b760476946baa1"
+    }
+  ]
+}

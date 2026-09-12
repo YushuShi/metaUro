@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:26:00.815753-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "adf026f0c539d1565915e19eb7762aa6068036d684a04b858f79fb638d262bea",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "17222649",
+      "title": "High dose zinc increases hospital admissions due to genitourinary complications.",
+      "abstract": "Zinc is a common dietary supplement that is widely believed to have beneficial health effects. To assess the impact of high dose supplemental zinc on genitourinary diseases we analyzed a recent randomized trial comparing zinc, antioxidants and their combination to placebo for complications related to the genitourinary tract. In a further analysis of the recent Age-related Eye Disease Study we examined the data pool for primary International Classification of Diseases, 9th revision codes given for hospital admissions related to urological problems. The Age-Related Eye Disease Study randomized 3,640 patients with age related macular degeneration to 1 of 4 study arms, including placebo, antioxidants (500 mg vitamin C, 400 IU vitamin E and 15 mg beta-carotene), 80 mg zinc and antioxidant plus zinc. Statistical analyses using Fisher's exact test were performed. We found a significant increase in hospital admissions due to genitourinary causes in patients on zinc vs nonzinc formulations (11.1% vs 7.6%, p = 0.0003). The risk was greatest in male patients (RR 1.26, 95% CI 1.07-1.50, p = 0.008). In the study group of 343 patients requiring hospital admission the most common primary International Classification of Diseases, 9th revision codes included benign prostatic hyperplasia/urinary retention (benign prostatic hyperplasia), urinary tract infection, urinary lithiasis and renal failure. When comparing zinc to placebo, significant increases in urinary tract infections were found (p = 0.004), especially in females (2.3% vs 0.4%, RR 5.77, 95% CI 1.30-25.66, p = 0.013). Admissions for urinary lithiasis approached significance in men on zinc compared to placebo (2.0% vs 0.5%, RR = 4.08, 95% CI 0.87-19.10). There was no increase in prostate or other cancers with zinc supplementation. A significant decrease in prostate cancer diagnoses was seen in patients receiving antioxidants vs placebo (RR = 0.6, 95% CI 0.49-0.86, p = 0.049). Subgroup analysis revealed that this finding was significant in men who smoked but not in nonsmokers. Zinc supplementation at high levels results in increased hospitalizations for urinary complications compared to placebo. These data support the hypothesis that high dose zinc supplementation has a negative effect on select aspects of urinary physiology.",
+      "mesh": [
+        "Aged",
+        "Aged, 80 and over",
+        "Female",
+        "Female Urogenital Diseases / chemically induced, epidemiology",
+        "Humans",
+        "Male",
+        "Male Urogenital Diseases / chemically induced, epidemiology",
+        "Middle Aged",
+        "Patient Admission / statistics & numerical data",
+        "Zinc / administration & dosage, adverse effects"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "17222649",
+      "contexts": [
+        {
+          "context_id": "17222649|Antioxidants|Prostate cancer",
+          "exposure": "Antioxidants",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "SCREENING",
+          "requested_fields": [
+            "SCREENING_DECISION"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "screen_status": "EXCLUDE",
+              "exclusion_code": "S2-COMPOUND"
+            },
+            "Claude+Gemini": {
+              "screen_status": "ELIGIBLE_NOT_POOLABLE",
+              "exclusion_code": null
+            }
+          }
+        }
+      ]
+    }
+  }
+}

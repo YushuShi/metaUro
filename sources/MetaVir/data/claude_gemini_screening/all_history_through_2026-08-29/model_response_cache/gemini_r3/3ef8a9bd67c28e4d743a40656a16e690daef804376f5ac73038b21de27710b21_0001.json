@@ -1,0 +1,569 @@
+{
+  "schema_version": 1,
+  "receipt_id": "7b499b6f4ba9e3ee14e81c1347149bc59a31f9db7fe385fad48426242d6a7c8b",
+  "requested_at": "2026-09-02T09:24:44.475412+08:00",
+  "received_at": "2026-09-02T09:25:18.372829+08:00",
+  "stage": "gemini_r3",
+  "api_style": "chat_completions",
+  "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+  "response_format_omitted": true,
+  "model_requested": "gemini-3.7-flash",
+  "model_reported": "gemini-3.7-flash",
+  "work_unit_key": "3ef8a9bd67c28e4d743a40656a16e690daef804376f5ac73038b21de27710b21",
+  "attempt": 1,
+  "context_ids": [
+    "34135472|Animal protein intake|Prostate cancer",
+    "34135472|Eggs|Prostate cancer",
+    "34135472|Red meat|Prostate cancer"
+  ],
+  "exposure_weights": {
+    "Animal protein intake": 1,
+    "Eggs": 1,
+    "Red meat": 1
+  },
+  "input_digest": "a2f659b1835c918648142871e2d900597f57f12853df068f3a1f4acaab056bdb",
+  "request_id": "",
+  "usage": {
+    "input_tokens": 19671,
+    "cached_input_tokens": 0,
+    "output_tokens": 6850,
+    "reasoning_tokens": 1924
+  },
+  "token_provenance": "provider_reported_via_cornell_gateway_response_usage",
+  "response_cost_usd": "0.04044075",
+  "cost_header_status": "validated_finite_nonnegative_gateway_header",
+  "cost_provenance": "cornell_gateway_x-litellm-response-cost",
+  "safe_gateway_headers": {
+    "x-litellm-call-id": "14647be0-c506-4a1b-9c18-e3c73ac5e31a",
+    "x-litellm-model-id": "497ec2fc730f0fab9077325579ae92dc4d86f22a8b3cc310e2093b8f644588ce",
+    "x-litellm-version": "1.98.0",
+    "x-litellm-response-cost": "0.04044075"
+  },
+  "output_sha256": "b468a10a799bdc0eec4a3c701a87653254f9ecdec9071cf6aad0406e11cea3cb",
+  "validation_status": "valid",
+  "scientific_result_accepted": true,
+  "validation_error": "",
+  "output_text": "```json\n{\n  \"results\": [\n    {\n      \"context_id\": \"34135472|Animal protein intake|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluates adolescent animal protein intake in relation to incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.99,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.93,\n        \"ci_upper\": 1.05,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 159482,\n        \"cases\": 17349,\n        \"comparison_type\": \"categorical_extreme\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"NIH-AARP Diet and Health Study male participants aged 50-71 years at baseline\",\n        \"exposure_subtype\": \"dietary_component\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After these exclusions, 159,482 remained in the final analytic sample.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"Q5 (> 13.6) ... Adjusted HR 0.99 (0.93–1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Adjusted HR e ... 0.99 (0.93–1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P-trend ... 0.52\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"Q1 ( < 9.6) ... Q5 ( > 13.6)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The AARP Study is a large prospective cohort study of AARP members administered by the US National Cancer Institute.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants contributed time-at-risk from the month of the return of the adolescent FFQ until the month of PCa diagnosis (total and advanced PCa analyses only), death, re-location outside of the study catchment area, loss to follow-up or December 31, 2011, whichever occurred first.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Statistical analysis, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"administered by the US National Cancer Institute.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic White (%) ... 90.2\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"residing in six states (California, Florida, Louisiana, New Jersey, North Carolina and Pennsylvania) and two metropolitan areas (Atlanta and Detroit).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Diet from ages 12–13 years was assessed by a 37-item food-frequency questionnaire (FFQ, Supplementary Fig. 1) included on the risk factor questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Assessment and definitions of adolescent animal product, fat and protein intake, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Unclear\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"34135472|Eggs|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study investigates adolescent egg intake in relation to incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.94,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.89,\n        \"ci_upper\": 0.99,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 159482,\n        \"cases\": 17349,\n        \"comparison_type\": \"categorical_extreme\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"NIH-AARP Diet and Health Study male participants aged 50-71 years at baseline\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After these exclusions, 159,482 remained in the final analytic sample.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"≥1/day ... Adjusted HR 0.94 (0.89–0.99)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Adjusted HR b ... 0.94 (0.89–0.99)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P-trend ... <0.01\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"≤2/week ... ≥1/day\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The AARP Study is a large prospective cohort study of AARP members administered by the US National Cancer Institute.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants contributed time-at-risk from the month of the return of the adolescent FFQ until the month of PCa diagnosis (total and advanced PCa analyses only), death, re-location outside of the study catchment area, loss to follow-up or December 31, 2011, whichever occurred first.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Statistical analysis, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"administered by the US National Cancer Institute.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic White (%) ... 90.2\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"residing in six states (California, Florida, Louisiana, New Jersey, North Carolina and Pennsylvania) and two metropolitan areas (Atlanta and Detroit).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Diet from ages 12–13 years was assessed by a 37-item food-frequency questionnaire (FFQ, Supplementary Fig. 1) included on the risk factor questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Assessment and definitions of adolescent animal product, fat and protein intake, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Unclear\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    },\n    {\n      \"context_id\": \"34135472|Red meat|Prostate cancer\",\n      \"status\": \"INCLUDE\",\n      \"exclusion_code\": null,\n      \"reason\": \"This prospective cohort study evaluates adolescent total red meat intake in relation to incident prostate cancer risk.\",\n      \"extraction\": {\n        \"effect_size\": 0.97,\n        \"effect_type\": \"HR\",\n        \"ci_lower\": 0.89,\n        \"ci_upper\": 1.05,\n        \"p_value\": null,\n        \"ci_confidence_level\": 95,\n        \"total_n\": 159482,\n        \"cases\": 17349,\n        \"comparison_type\": \"categorical_extreme\",\n        \"design\": \"prospective cohort\",\n        \"timing\": \"prospective\",\n        \"continent\": \"North America\",\n        \"country\": \"United States\",\n        \"location\": null,\n        \"ethnicity\": null,\n        \"population\": \"NIH-AARP Diet and Health Study male participants aged 50-71 years at baseline\",\n        \"exposure_subtype\": \"whole_food\",\n        \"exposure_measurement_type\": \"dietary_intake\",\n        \"exposure_classification_ambiguous\": false,\n        \"wald_inputs_same_estimate\": true,\n        \"needs_inversion\": false,\n        \"evidence\": {\n          \"sample_size\": {\n            \"excerpt\": \"After these exclusions, 159,482 remained in the final analytic sample.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 2\"\n          },\n          \"cases\": {\n            \"excerpt\": \"Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Results, paragraph 1\"\n          },\n          \"effect_size\": {\n            \"excerpt\": \"≥2/day ... Adjusted HR 0.97 (0.89–1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"confidence_interval\": {\n            \"excerpt\": \"Adjusted HR d ... 0.97 (0.89–1.05)\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"p_value\": {\n            \"excerpt\": \"P-trend ... 0.06\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"comparison\": {\n            \"excerpt\": \"≤2/week ... ≥2/day\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 2\"\n          },\n          \"design\": {\n            \"excerpt\": \"The AARP Study is a large prospective cohort study of AARP members administered by the US National Cancer Institute.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"timing\": {\n            \"excerpt\": \"Participants contributed time-at-risk from the month of the return of the adolescent FFQ until the month of PCa diagnosis (total and advanced PCa analyses only), death, re-location outside of the study catchment area, loss to follow-up or December 31, 2011, whichever occurred first.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Statistical analysis, paragraph 1\"\n          },\n          \"continent\": {\n            \"excerpt\": \"administered by the US National Cancer Institute.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"ethnicity\": {\n            \"excerpt\": \"Non-Hispanic White (%) ... 90.2\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Table 1\"\n          },\n          \"location\": {\n            \"excerpt\": \"residing in six states (California, Florida, Louisiana, New Jersey, North Carolina and Pennsylvania) and two metropolitan areas (Atlanta and Detroit).\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Study population and design, paragraph 1\"\n          },\n          \"exposure_measurement\": {\n            \"excerpt\": \"Diet from ages 12–13 years was assessed by a 37-item food-frequency questionnaire (FFQ, Supplementary Fig. 1) included on the risk factor questionnaire.\",\n            \"source\": \"full_text\",\n            \"url\": \"https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/\",\n            \"location\": \"Methods, Assessment and definitions of adolescent animal product, fat and protein intake, paragraph 1\"\n          }\n        }\n      },\n      \"jbi\": {\n        \"checklist_type\": \"cohort\",\n        \"answers\": {\n          \"q1\": \"Yes\",\n          \"q2\": \"Yes\",\n          \"q3\": \"Unclear\",\n          \"q4\": \"Yes\",\n          \"q5\": \"Yes\",\n          \"q6\": \"Yes\",\n          \"q7\": \"Yes\",\n          \"q8\": \"Yes\",\n          \"q9\": \"Yes\",\n          \"q10\": \"Yes\",\n          \"q11\": \"Yes\",\n          \"q12\": \"NA\",\n          \"q13\": \"NA\"\n        }\n      }\n    }\n  ]\n}\n```",
+  "validation_history": [
+    {
+      "history_sequence": 1,
+      "superseded_at": "2026-09-02T09:25:19.229434+08:00",
+      "transition": "new_gateway_attempt_validated",
+      "validation_status": "received",
+      "validation_error": "",
+      "scientific_result_accepted": false,
+      "validation_contract_version": "legacy",
+      "normalization_events": [],
+      "validated_results_digest": "",
+      "output_sha256": "b468a10a799bdc0eec4a3c701a87653254f9ecdec9071cf6aad0406e11cea3cb"
+    }
+  ],
+  "validation_contract_version": "metavir-gemini-r3-cache-recovery-v1",
+  "normalization_events": [],
+  "validated_results": [
+    {
+      "context_id": "34135472|Animal protein intake|Prostate cancer",
+      "pmid": "34135472",
+      "pmcid": "PMC8505417",
+      "published_date": "2021-10-01",
+      "title": "Adolescent animal product intake in relation to later prostate cancer risk and mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Sinha R",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34135472/",
+      "exposure": "Animal protein intake",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluates adolescent animal protein intake in relation to incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.99,
+        "effect_type": "HR",
+        "ci_lower": 0.93,
+        "ci_upper": 1.05,
+        "p_value": 0.7454659990438812,
+        "ci_confidence_level": 95,
+        "total_n": 159482,
+        "cases": 17349,
+        "comparison_type": "categorical_extreme",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50-71 years at baseline",
+        "exposure_subtype": "dietary_component",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After all relevant exclusions, 159,482 participants were included in the analysis. Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa, 2297 with advanced and 804 with fatal PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa, 2297 with advanced and 804 with fatal PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.99 (0.93–1.05)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.99 (0.93–1.05)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The AARP Study is a large prospective cohort study of AARP members administered by the US National Cancer Institute.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Participants contributed time-at-risk from the month of the return of the adolescent FFQ until the month of PCa diagnosis (total and advanced PCa analyses only), death, re-location outside of the study catchment area, loss to follow-up or December 31, 2011, whichever occurred first.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Statistical analysis, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "administered by the US National Cancer Institute.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Assessment and definitions of adolescent animal product, fat and protein intake, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.99,
+            "effect_type": "HR",
+            "ci_lower": 0.93,
+            "ci_upper": 1.05,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 47141,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "fd1d49dbdbc6fe1946bfa9e8e1e6b910a76a76ebdcce5407d7402eaa9397643e",
+      "pmc_source_receipt_digest": "e65fb3fd157f830b335d76a889a07f00c5ffb93c4404d3c1589f8f934ea4768b",
+      "pmc_source_raw_sha256": "eed0b780439536f0f6d5bef5ade585686aa672e443c340aa0209dd38efc15da4",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "018347b8a2f9c0e8a583eab79d54e08040f13c6930c66fac1de6b7577a17aa6f"
+    },
+    {
+      "context_id": "34135472|Eggs|Prostate cancer",
+      "pmid": "34135472",
+      "pmcid": "PMC8505417",
+      "published_date": "2021-10-01",
+      "title": "Adolescent animal product intake in relation to later prostate cancer risk and mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Sinha R",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34135472/",
+      "exposure": "Eggs",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study investigates adolescent egg intake in relation to incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.94,
+        "effect_type": "HR",
+        "ci_lower": 0.89,
+        "ci_upper": 0.99,
+        "p_value": 0.022739025909346088,
+        "ci_confidence_level": 95,
+        "total_n": 159482,
+        "cases": 17349,
+        "comparison_type": "categorical_extreme",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50-71 years at baseline",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After all relevant exclusions, 159,482 participants were included in the analysis. Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa, 2297 with advanced and 804 with fatal PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa, 2297 with advanced and 804 with fatal PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.94 (0.89–0.99)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "In analyses stratified by the number of PSA tests before baseline, trends for unprocessed beef intake were slightly, but not statistically significantly stronger among lesser screened men (0 PSA tests: multivariable-adjusted HR = 0.86, 95% CI: 0.72–1.03, P -trend = 0.11; 1 PSA test: HR = 0.85, 95% CI: 0.72–0.99, P -trend = 0.04) and weaker among more heavily screened men (≥2 PSA tests: HR = 0.94, 95% CI: 0.84–1.04, P -trend = 0.21; P -interaction = 0.36, comparing ≥2 to 0 PSA tests), whereas no differences in patterns were observed for egg intake.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The AARP Study is a large prospective cohort study of AARP members administered by the US National Cancer Institute.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Participants contributed time-at-risk from the month of the return of the adolescent FFQ until the month of PCa diagnosis (total and advanced PCa analyses only), death, re-location outside of the study catchment area, loss to follow-up or December 31, 2011, whichever occurred first.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Statistical analysis, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "administered by the US National Cancer Institute.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Assessment and definitions of adolescent animal product, fat and protein intake, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.94,
+            "effect_type": "HR",
+            "ci_lower": 0.89,
+            "ci_upper": 0.99,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, comparison_type, effect_size, effect_type, p_value"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 47141,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "fd1d49dbdbc6fe1946bfa9e8e1e6b910a76a76ebdcce5407d7402eaa9397643e",
+      "pmc_source_receipt_digest": "e65fb3fd157f830b335d76a889a07f00c5ffb93c4404d3c1589f8f934ea4768b",
+      "pmc_source_raw_sha256": "eed0b780439536f0f6d5bef5ade585686aa672e443c340aa0209dd38efc15da4",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "899131af0f6f07c2916407eda0a0a597b098f47c4b1bb12c4a68120f541fcf78"
+    },
+    {
+      "context_id": "34135472|Red meat|Prostate cancer",
+      "pmid": "34135472",
+      "pmcid": "PMC8505417",
+      "published_date": "2021-10-01",
+      "title": "Adolescent animal product intake in relation to later prostate cancer risk and mortality in the NIH-AARP Diet and Health Study.",
+      "authors": [
+        "Lan T",
+        "Park Y",
+        "Colditz GA",
+        "Liu J",
+        "Sinha R",
+        "Wang M",
+        "Wu K",
+        "Giovannucci E",
+        "Sutcliffe S"
+      ],
+      "journal": "British journal of cancer",
+      "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/34135472/",
+      "exposure": "Red meat",
+      "cancer": "Prostate cancer",
+      "outcome": "Incidence",
+      "eligibility": "INCLUDE",
+      "exclusion_code": null,
+      "reason": "This prospective cohort study evaluates adolescent total red meat intake in relation to incident prostate cancer risk.",
+      "missing_key_fields": [],
+      "invalid_key_fields": [],
+      "needs_full_text": true,
+      "full_text_eligible": true,
+      "extraction": {
+        "effect_size": 0.97,
+        "effect_type": "HR",
+        "ci_lower": 0.89,
+        "ci_upper": 1.05,
+        "p_value": 0.4701680999962025,
+        "ci_confidence_level": 95,
+        "total_n": 159482,
+        "cases": 17349,
+        "comparison_type": "categorical_extreme",
+        "design": "prospective cohort",
+        "timing": "prospective",
+        "continent": "North America",
+        "country": "United States",
+        "location": "NA",
+        "ethnicity": "NA",
+        "population": "NIH-AARP Diet and Health Study male participants aged 50-71 years at baseline",
+        "exposure_subtype": "whole_food",
+        "exposure_measurement_type": "dietary_intake",
+        "exposure_classification_ambiguous": false,
+        "wald_inputs_same_estimate": true,
+        "needs_inversion": false,
+        "evidence": {
+          "sample_size": {
+            "excerpt": "After all relevant exclusions, 159,482 participants were included in the analysis. Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa, 2297 with advanced and 804 with fatal PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 2"
+          },
+          "cases": {
+            "excerpt": "Between the date of completion of the risk factor questionnaire and December 31, 2011, 17,349 men were diagnosed with any PCa, 2297 with advanced and 804 with fatal PCa.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Results, paragraph 1"
+          },
+          "effect_size": {
+            "excerpt": "0.97 (0.89–1.05)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "confidence_interval": {
+            "excerpt": "0.97 (0.89–1.05)",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "p_value": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "comparison": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Table 2"
+          },
+          "design": {
+            "excerpt": "The AARP Study is a large prospective cohort study of AARP members administered by the US National Cancer Institute.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "timing": {
+            "excerpt": "Participants contributed time-at-risk from the month of the return of the adolescent FFQ until the month of PCa diagnosis (total and advanced PCa analyses only), death, re-location outside of the study catchment area, loss to follow-up or December 31, 2011, whichever occurred first.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Statistical analysis, paragraph 1"
+          },
+          "continent": {
+            "excerpt": "administered by the US National Cancer Institute.",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Study population and design, paragraph 1"
+          },
+          "ethnicity": null,
+          "location": null,
+          "exposure_measurement": {
+            "excerpt": "",
+            "source": "full_text",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8505417/",
+            "location": "Methods, Assessment and definitions of adolescent animal product, fat and protein intake, paragraph 1"
+          }
+        },
+        "p_value_reported_as": "",
+        "p_value_is_exact": false,
+        "wald_derivations": [
+          {
+            "formula_version": 1,
+            "output": "p_value",
+            "effect_size": 0.97,
+            "effect_type": "HR",
+            "ci_lower": 0.89,
+            "ci_upper": 1.05,
+            "ci_confidence_level": 95.0,
+            "same_estimate": true
+          }
+        ],
+        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale"
+      },
+      "jbi": {
+        "checklist_type": "cohort",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Yes",
+          "q10": "Yes",
+          "q11": "Yes",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 90.9,
+        "grade": "Good"
+      },
+      "dual_screening_gate_before_parallel_policy": true,
+      "parallel_r3_gate_reasons": [
+        "important quantitative evidence remains missing or invalid: ci_lower, ci_upper, effect_size, effect_type"
+      ],
+      "wald_completed_before_parallel_r3_gate": true,
+      "final_status": "INCLUDE_META",
+      "full_text_status": "INCLUDE_META",
+      "pmc_source_status": "verified_full_text",
+      "full_text_characters_reviewed": 47141,
+      "pmc_source_format": "pmc_html",
+      "pmc_source_sha256": "fd1d49dbdbc6fe1946bfa9e8e1e6b910a76a76ebdcce5407d7402eaa9397643e",
+      "pmc_source_receipt_digest": "e65fb3fd157f830b335d76a889a07f00c5ffb93c4404d3c1589f8f934ea4768b",
+      "pmc_source_raw_sha256": "eed0b780439536f0f6d5bef5ade585686aa672e443c340aa0209dd38efc15da4",
+      "third_round_status": "COMPLETED",
+      "third_round_model": "gemini-3.7-flash",
+      "source_claude_r2_context_digest": "d94dfb64c5cec6d1ec2e5dcf72e1670adb95a74bb583e1b6e2ba2b00dc03342b"
+    }
+  ]
+}

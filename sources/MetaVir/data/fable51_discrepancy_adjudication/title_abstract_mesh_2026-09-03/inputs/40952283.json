@@ -1,0 +1,78 @@
+{
+  "schema_version": 1,
+  "created_at": "2026-09-03T18:39:20.017456-04:00",
+  "protocol_version": "metavir-fable51-title-abstract-mesh-v1",
+  "model_requested": "claude-fable-5-1",
+  "work_key": "14144c1f528655072f55a6e46b725e0534a0d2b6af8070dae42c2807ec50b9c8",
+  "allowed_scientific_source_fields": [
+    "title",
+    "abstract",
+    "mesh"
+  ],
+  "explicitly_excluded_source_types": [
+    "full_text",
+    "PMC",
+    "DOI_or_article_URL",
+    "prior_evidence_excerpt",
+    "prior_exclusion_reason",
+    "prior_brief_explanation"
+  ],
+  "request_payload": {
+    "SOURCE_EVIDENCE": {
+      "pmid": "40952283",
+      "title": "Lifestyle-Related Factors and Dietary Components that Affect the Risk of Prostate Cancer in a Brazilian Study Group.",
+      "abstract": "The incidence of prostate cancer (PCa) is increasing among Brazilian men. There are only a few studies about risk factors for PCa among Brazilian men, and to date, there are no studies about dietary components that affect PCa risk. A case‒control study was performed on data from 125 PCa patients from a reference center for cancer treatment in Northeast Brazil. Data were obtained from medical records and interviews and compared with 250 age-matched controls. Binary logistic regression analysis was applied to obtain odds ratios (ORs) and confidence intervals (95% CIs) of the variables. According to the regression analysis model, hypertension, family history and ever smoking increased the risk of PCa 2.940 (95% CI: 1.81-4.78), 2.268 (95% CI: 1.31-3.92) and 2.715 (95% CI= 1.67-4.41) times (p< 0.001; p= 0.003; p<0.001), respectively. The consumption of red and processed meat increased the risk of disease by 0.6% (OR= 1.006; 95% CI: 1.00-1.01; p= 0.048) and 7.2% (OR= 1.072; 95% CI: 1.02-1.13; p= 0.012), respectively, for each gram of intake per day. The consumption of cruciferous vegetables reduced the risk by 22.0% for each g intake per day (OR= 0.978; 95% CI: 0.96-1.00; p= 0.052). Hypertension, family history and smoking increased PCa risk among men in the present study. Additionally, red and processed meat increased the risk of disease, and cruciferous vegetables had a protective effect. The present results indicate that lifestyle-related factors and dietary components affect PCa risk among Brazilian men. Health authorities should include information about these risk and protective factors in their PCa prevention campaigns.",
+      "mesh": [
+        "Humans",
+        "Male",
+        "Prostatic Neoplasms / epidemiology, etiology",
+        "Brazil / epidemiology",
+        "Case-Control Studies",
+        "Risk Factors",
+        "Life Style",
+        "Middle Aged",
+        "Diet / adverse effects",
+        "Aged",
+        "Follow-Up Studies",
+        "Prognosis",
+        "Smoking / adverse effects",
+        "Hypertension / complications",
+        "Incidence"
+      ]
+    },
+    "PIPELINE_CLAIMS_NOT_EVIDENCE": {
+      "pmid": "40952283",
+      "contexts": [
+        {
+          "context_id": "40952283|Processed meat intake|Prostate cancer",
+          "exposure": "Processed meat intake",
+          "cancer": "Prostate cancer",
+          "discrepancy_type": "EXTRACTION",
+          "requested_fields": [
+            "EFFECT_SIZE"
+          ],
+          "claims": {
+            "ChatGPT": {
+              "sample_size": "375",
+              "effect_measure_type": "OR",
+              "effect_size": "1.072",
+              "ci_lower": "1.02",
+              "ci_upper": "1.13",
+              "p_value": "0.012",
+              "comparison": "per gram of processed meat intake per day"
+            },
+            "Claude+Gemini": {
+              "sample_size": "375",
+              "effect_measure_type": "OR",
+              "effect_size": "1.074",
+              "ci_lower": "1.02",
+              "ci_upper": "1.13",
+              "p_value": "0.012",
+              "comparison": "continuous"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -2,15 +2,12 @@
   <nav class="header-actions" aria-label="Page tools">
     <span id="language-controls"></span>
     <a data-uro-nav="settings" href="/settings?scope={{ current.id }}" class="header-action" {% if page == 'settings' %}aria-current="page"{% endif %}>Settings</a>
+    <a data-uro-nav="summary" href="{{ prefix }}/summary?scope={{ current.id }}" class="header-action" {% if page == 'summary' %}aria-current="page"{% endif %}>Summary</a>
     <a href="/about" class="header-action header-action--primary" {% if page == 'about' %}aria-current="page"{% endif %}>About</a>
   </nav>
   <div class="logo"><a href="/" aria-label="metaUro home">metaUro</a></div>
   <p>Advanced Meta-Analysis &amp; Evidence Synthesis</p>
   {% if page != 'about' %}<div class="evidence-track-label notranslate" translate="no">{{ 'Saved ChatGPT evidence' if track == 'chatgpt' else 'Saved evidence' }}</div>{% endif %}
   {% if page == 'evidence' %}<div class="last-updated">Last updated: <span id="last-updated">—</span></div>{% endif %}
-  <nav class="uro-evidence-nav" aria-label="Evidence navigation">
-    <a data-uro-nav="evidence" href="{{ prefix }}/?scope={{ current.id }}" class="header-action" {% if page == 'evidence' %}aria-current="page"{% endif %}>Evidence</a>
-    <a data-uro-nav="summary" href="{{ prefix }}/summary?scope={{ current.id }}" class="header-action" {% if page == 'summary' %}aria-current="page"{% endif %}>Summary</a>
-  </nav>
   {% if page != 'about' %}<div id="source-controls" class="uro-view-controls"><label for="include-subexposures">Related exposures</label><select id="include-subexposures"><option value="yes" {% if include_subexposures != 'no' %}selected{% endif %}>Include</option><option value="no" {% if include_subexposures == 'no' %}selected{% endif %}>Exclude</option></select></div>{% endif %}
 </header>

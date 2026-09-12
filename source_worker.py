@@ -10,6 +10,8 @@ import sys
 import threading
 import traceback
 
+from automation.sync_sources import assembled_source, generation
+
 ROOT = Path(__file__).resolve().parent
 SOURCES = ('metaPee', 'MetaVir')
 
@@ -37,7 +39,7 @@ def protect_snapshot(root):
 
 def serve(source, pipe):
     sys.dont_write_bytecode = True
-    folder = ROOT / 'sources' / source
+    folder = assembled_source(ROOT, source)
     runtime = ROOT / 'runtime' / source
     runtime.mkdir(parents=True, exist_ok=True)
     os.environ['MPLCONFIGDIR'] = str(runtime / 'matplotlib')
@@ -46,6 +48,8 @@ def serve(source, pipe):
     os.chdir(folder)
     sys.path.insert(0, str(folder))
     protect_snapshot(ROOT / 'sources')
+    if folder != ROOT / 'sources' / source:
+        protect_snapshot(folder)
     try:
         spec = importlib.util.spec_from_file_location('metauro_engine', folder / 'app.py')
         engine = importlib.util.module_from_spec(spec)
@@ -77,8 +81,10 @@ class SourceWorker:
         if source not in SOURCES:
             raise ValueError('Unknown evidence source')
         self.source, self.lock, self.process, self.pipe = source, threading.Lock(), None, None
+        self.generation = None
 
     def _start(self):
+        self.generation = generation(ROOT, self.source)
         context = multiprocessing.get_context('spawn')
         self.pipe, child = context.Pipe()
         self.process = context.Process(target=serve, args=(self.source, child), daemon=True)
@@ -94,6 +100,8 @@ class SourceWorker:
 
     def request(self, **message):
         with self.lock:
+            if self.generation != generation(ROOT, self.source):
+                self.close()
             if not self.process or not self.process.is_alive():
                 self._start()
             try:

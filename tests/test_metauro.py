@@ -69,6 +69,8 @@ def test_source_page_assets_and_summary(client, source):
     assert len(soup.select('#disease option')) == 14
     assert not soup.select_one('#include-subexposures')
     assert 'Saved evidence' not in soup.header.get_text()
+    selection_link = soup.select_one('.header-actions [data-uro-nav="selection"]')
+    assert selection_link and selection_link['href'].startswith('/study-selection?')
     assert not soup.select_one('#analysis-settings-dialog')
     assert soup.select_one('link[href="/static/theme.css"]')
     assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir'))
@@ -141,3 +143,26 @@ def test_product_pages_use_single_brand_and_infer_settings_scope(client, path):
     if 'aggressive_prostate' in path:
         assert soup.select_one('#disease option[selected]')['data-scope-key'] == 'aggressive_prostate_cancer'
         assert '/evidence/prostate/' in soup.select_one('[data-uro-nav="evidence"]')['href']
+
+
+@pytest.mark.parametrize('scope', ['bladder_cancer', 'aggressive_prostate_cancer'])
+def test_selection_page_uses_review_scope_and_preserves_context(client, scope):
+    response = client.get(f'/study-selection?scope={scope}&include_subexposures=no&track=chatgpt')
+    assert response.status_code == 200
+    soup = BeautifulSoup(response.data, 'html.parser')
+    assert soup.select_one('.header-actions [aria-current="page"]').text == 'Study selection'
+    assert soup.select_one('.prisma-figure')
+    assert len(soup.select('.flow-stage')) == 4
+    assert 'Not recorded' in soup.get_text()
+    assert 'full-text assessment when needed' in soup.get_text()
+    assert soup.select_one('a[href="https://doi.org/10.1371/journal.pmed.1003583"]')
+    assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir'))
+    assert not soup.select_one('#include-subexposures')
+    ids = [node['id'] for node in soup.select('[id]')]
+    assert len(ids) == len(set(ids))
+    for link in soup.select('.selection-reviews a'):
+        assert client.get(link['href']).status_code == 200
+    for link in soup.select('link[rel="stylesheet"]'):
+        if link['href'].startswith('/'):
+            assert client.get(link['href']).status_code == 200
+    assert client.get('/study-selection?group=unknown').status_code == 404

@@ -17,6 +17,7 @@ Open http://127.0.0.1:5012. Production: `gunicorn --workers 1 --threads 4 --time
 
 - **Evidence:** select any of the 14 disease scopes; cross-source selection routes to the appropriate engine. Related-exposure inclusion, study filters, temporary study selection, analysis, plots, and CSV downloads remain available.
 - **Summary:** original saved cross-exposure plots and workbooks for both collections. These exports retain their original settings.
+- **Study selection:** the top-right link opens `/study-selection`, with separate urinary and prostate review flows adapted from PRISMA 2020 (Page, McKenzie, et al., 2021). Counts are derived read-only from saved screening decisions and deduplicated by PMID across exposure/cancer contexts. These are report counts, not distinct-study counts. Detailed assessment includes conditional full-text review; unavailable identification, retrieval, and study-linkage totals remain explicitly unknown. Prostate inclusion uses the canonical screening record; three additional provisional display reports are identified separately.
 - **Settings:** a dedicated responsive page for exact SEER population/age/interval risk, per-disease manual reference risk, RR/HR/OR display, forest labels, sample-size planning, and exposure hierarchy. Preferences persist only in this browser, independently for each source. Reset affects only the current source. Invalid stored preferences recover to defaults.
 - **About:** explains disease coverage, analysis settings, and the alternate prostate evidence view.
 

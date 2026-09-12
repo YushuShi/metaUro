@@ -10,6 +10,7 @@ from urllib.parse import urlencode
 from bs4 import BeautifulSoup
 from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_from_directory
 from source_worker import SOURCES, workers
+from study_selection import build_selection_flow
 
 ROOT = Path(__file__).resolve().parent
 app = Flask(__name__)
@@ -169,6 +170,20 @@ def settings():
 @app.get('/about')
 def about():
     return render_template('about.html', **context('metaPee', 'about'))
+
+
+@app.get('/study-selection')
+def study_selection():
+    selected_scope = request.args.get('scope')
+    inferred = next((s['source'] for s in scope_catalog() if selected_scope in {s['id'], s['label']}), 'metaPee')
+    source = resolve_source(request.args.get('group', inferred))
+    if source is None:
+        abort(404)
+    ctx = context(source, 'selection')
+    reviews = [dict(label=LABELS[item], current=item == source,
+                    href='/study-selection?' + urlencode(dict(group=PUBLIC_SCOPES[item],
+                        include_subexposures=ctx['include_subexposures']))) for item in SOURCES]
+    return render_template('study_selection.html', **ctx, flow=build_selection_flow(source), reviews=reviews)
 
 
 @app.route('/evidence/<source>/', defaults={'path': ''}, methods=['GET', 'POST', 'HEAD'])

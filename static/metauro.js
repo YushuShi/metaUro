@@ -17,7 +17,8 @@
     const mode = exposureMode();
     document.querySelectorAll('[data-uro-nav]').forEach(link => {
       const page = link.dataset.uroNav;
-      const url = new URL(page === 'settings' ? '/settings' : `${item.prefix}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.group_id === 'prostate' ? 'chatgpt' : ''}`, location.origin);
+      const productPage = {settings: '/settings', selection: '/study-selection'}[page];
+      const url = new URL(productPage || `${item.prefix}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.group_id === 'prostate' ? 'chatgpt' : ''}`, location.origin);
       url.searchParams.set('scope',item.id);
       url.searchParams.set('include_subexposures',mode);
       if(config.track === 'chatgpt' && item.group_id === 'prostate') url.searchParams.set('track','chatgpt');

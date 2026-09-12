@@ -47,7 +47,7 @@ function runtime({page='evidence',scope=0,mode='no',track='combined',sourceScrip
         nodes['reset-settings']=element('reset-settings');
         nodes['settings-save-status']=element('settings-save-status');
     }
-    for(const name of ['settings','summary','evidence','home']) {
+    for(const name of ['settings','summary','selection','evidence','home']) {
         links.push(element(name,{dataset:{uroNav:name==='home'?'evidence':name}}));
     }
     const window={MetaUro:{source:current.source,prefix:current.prefix,current,scopes,page,track},
@@ -108,6 +108,17 @@ test('ChatGPT settings return to the same track and disease',()=>{
         assert.equal(app.link(name).searchParams.get('scope'),'aggressive_prostate_cancer');
         assert.equal(app.link(name).searchParams.get('include_subexposures'),'no');
     }
+});
+test('Study selection opens the review page while preserving analysis context',()=>{
+    const app=runtime({scope:3,track:'chatgpt'});
+    const target=app.link('selection');
+    assert.equal(target.pathname,'/study-selection');
+    assert.equal(target.searchParams.get('scope'),'aggressive_prostate_cancer');
+    assert.equal(target.searchParams.get('track'),'chatgpt');
+    assert.equal(target.searchParams.get('include_subexposures'),'no');
+    const page=runtime({page:'selection',scope:3,track:'chatgpt'});
+    assert.equal(page.link('evidence').pathname,'/evidence/prostate/chatgpt');
+    assert.equal(page.link('evidence').searchParams.get('scope'),'aggressive_prostate_cancer');
 });
 test('Reset restores related-exposure inclusion as well as analysis settings',()=>{
     const app=runtime({page:'settings'});app.reset();

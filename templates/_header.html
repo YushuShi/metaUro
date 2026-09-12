@@ -3,10 +3,11 @@
     <span id="language-controls"></span>
     <a data-uro-nav="settings" href="/settings?scope={{ current.id }}" class="header-action" {% if page == 'settings' %}aria-current="page"{% endif %}>Settings</a>
     <a data-uro-nav="summary" href="{{ prefix }}/summary?scope={{ current.id }}" class="header-action" {% if page == 'summary' %}aria-current="page"{% endif %}>Summary</a>
+    <a data-uro-nav="selection" href="/study-selection?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}" class="header-action" {% if page == 'selection' %}aria-current="page"{% endif %}>Study selection</a>
     <a href="/about" class="header-action header-action--primary" {% if page == 'about' %}aria-current="page"{% endif %}>About</a>
   </nav>
   <div class="logo"><a data-uro-nav="evidence" href="{{ prefix }}/?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}" aria-label="metaUro home">metaUro</a></div>
   <p>Advanced Meta-Analysis &amp; Evidence Synthesis</p>
-  {% if track == 'chatgpt' %}<div class="evidence-track-label notranslate" translate="no">ChatGPT view</div>{% endif %}
+  {% if track == 'chatgpt' and page != 'selection' %}<div class="evidence-track-label notranslate" translate="no">ChatGPT view</div>{% endif %}
   {% if page == 'evidence' %}<div class="last-updated">Last updated: <span id="last-updated">—</span></div>{% endif %}
 </header>

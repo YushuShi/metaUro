@@ -58,7 +58,7 @@ def test_mutations_and_invalid_manual_baselines_rejected(client, source):
     assert client.post(f'/evidence/{source}/analyze', json=[]).status_code == 400
 
 
-@pytest.mark.parametrize('source', ['metaPee','MetaVir'])
+@pytest.mark.parametrize('source', ['urinary','prostate'])
 def test_source_page_assets_and_summary(client, source):
     response = client.get(f'/evidence/{source}/')
     assert response.status_code == 200, response.data[:1000]
@@ -67,6 +67,9 @@ def test_source_page_assets_and_summary(client, source):
     assert len(soup.select('#disease option')) == 14
     assert soup.select_one('#include-subexposures')
     assert not soup.select_one('#analysis-settings-dialog')
+    assert soup.select_one('link[href="/static/theme.css"]')
+    assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir'))
+    assert not any(name in element.get('href', '').lower() for element in soup.select('a[href]') for name in ('metapee', 'metavir'))
     for element in soup.select('script[src],link[rel="stylesheet"]'):
         url = element.get('src') or element.get('href')
         if url.startswith('/'):
@@ -119,6 +122,19 @@ def test_chatgpt_track_remains_visible_and_settings_aware(client):
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.body['data-evidence-track'] == 'chatgpt'
-    assert 'Saved ChatGPT evidence' in soup.select_one('.uro-context').get_text()
+    assert 'Saved ChatGPT evidence' in soup.select_one('.evidence-track-label').get_text()
     settings = client.get('/settings?source=MetaVir&track=chatgpt')
     assert b'"track": "chatgpt"' in settings.data
+
+
+@pytest.mark.parametrize('path', ['/about', '/settings?scope=bladder_cancer', '/settings?scope=aggressive_prostate_cancer'])
+def test_product_pages_use_single_brand_and_infer_settings_scope(client, path):
+    response = client.get(path)
+    assert response.status_code == 200
+    soup = BeautifulSoup(response.data, 'html.parser')
+    assert soup.select_one('link[href="/static/theme.css"]')
+    assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir', 'two evidence collections', 'source-specific engine'))
+    assert not any(name in link.get('href', '').lower() for link in soup.select('a[href]') for name in ('metapee', 'metavir'))
+    if 'aggressive_prostate' in path:
+        assert soup.select_one('#disease option[selected]')['data-scope-key'] == 'aggressive_prostate_cancer'
+        assert '/evidence/prostate/' in soup.select_one('[data-uro-nav="evidence"]')['href']

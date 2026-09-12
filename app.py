@@ -15,6 +15,19 @@ ROOT = Path(__file__).resolve().parent
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 LABELS = {'metaPee': 'Urinary tract', 'MetaVir': 'Prostate'}
+PUBLIC_SCOPES = {'metaPee': 'urinary', 'MetaVir': 'prostate'}
+
+
+def resolve_source(value):
+    return next((source for source, public in PUBLIC_SCOPES.items() if value in {source, public}), None)
+
+
+def public_prefix(source):
+    return f'/evidence/{PUBLIC_SCOPES[source]}'
+
+
+def product_branding(text):
+    return re.sub(r'meta(?:pee|vir)', 'metaUro', text, flags=re.IGNORECASE)
 
 
 def scope_catalog():
@@ -22,7 +35,8 @@ def scope_catalog():
     for source in SOURCES:
         catalog = json.loads((ROOT / 'sources' / source / 'static/seer-baseline.json').read_text())
         for disease in catalog['diseases']:
-            result.append({'source': source, 'group': LABELS[source], 'id': disease['id'], 'label': disease['label']})
+            result.append({'source': source, 'group': LABELS[source], 'id': disease['id'], 'label': disease['label'],
+                           'prefix': public_prefix(source), 'group_id': PUBLIC_SCOPES[source]})
     return result
 
 
@@ -31,7 +45,7 @@ def context(source, page='evidence'):
     selected = request.args.get('scope', '')
     current = next((s for s in scopes if s['source'] == source and selected in {s['id'], s['label']}), next(s for s in scopes if s['source'] == source))
     track = 'chatgpt' if source == 'MetaVir' and (request.args.get('track') == 'chatgpt' or request.path.endswith('/chatgpt')) else 'combined'
-    return dict(source=source, prefix=f'/evidence/{source}', scopes=scopes, current=current, track=track,
+    return dict(source=source, prefix=public_prefix(source), public_source=PUBLIC_SCOPES[source], scopes=scopes, current=current, track=track,
                 page=page, source_label=LABELS[source], include_subexposures=request.args.get('include_subexposures', 'yes'))
 
 
@@ -57,6 +71,9 @@ def decorate_html(body, source, path):
     if not soup.head or not soup.body:
         return body
     soup.title.string = f"metaUro · {'Evidence summary' if ctx['page'] == 'summary' else 'Explore evidence'}"
+    for stylesheet in soup.select('link[rel="stylesheet"]'):
+        if '/static/style.css' in stylesheet.get('href', ''):
+            stylesheet['href'] = '/static/theme.css'
     old_header = soup.find('header')
     old_controls = []
     if old_header:
@@ -67,9 +84,9 @@ def decorate_html(body, source, path):
         old_header.replace_with(BeautifulSoup(render_template('_header.html', **ctx), 'html.parser'))
     # Remove duplicate source-brand navigation, while preserving the source study UI.
     for node in soup.select('.hero h1'):
-        node.string = 'Explore nutrition & urologic cancer evidence'
+        node.string = 'Synthesize Evidence on Urologic Cancers & Nutrition'
     for node in soup.select('.hero > p'):
-        node.string = 'Choose an exposure and disease scope to view the saved studies and analysis.'
+        node.string = 'Explore associations between nutritional exposures and urologic cancer incidence'
     for node in soup.select('#loading p'):
         node.string = 'Loading saved evidence and calculating the selected view…'
     disease = soup.select_one('#disease')
@@ -93,9 +110,9 @@ def decorate_html(body, source, path):
         notice = soup.new_tag('div', attrs={'class': 'uro-summary-notice'})
         notice.string = 'These are saved summary plots and workbooks. Settings apply to the interactive evidence analysis.'
         soup.main.insert(0, notice)
-        picker = soup.new_tag('nav', attrs={'class': 'uro-summary-notice', 'aria-label': 'Evidence collections'})
+        picker = soup.new_tag('nav', attrs={'class': 'uro-summary-notice', 'aria-label': 'Disease summaries'})
         for collection in SOURCES:
-            link = soup.new_tag('a', href=f'/evidence/{collection}/summary?include_subexposures={ctx["include_subexposures"]}')
+            link = soup.new_tag('a', href=f'{public_prefix(collection)}/summary?include_subexposures={ctx["include_subexposures"]}')
             link.string = LABELS[collection] + ' summaries'
             picker.append(link)
             picker.append('   ·   ' if collection == SOURCES[0] else '')
@@ -118,7 +135,7 @@ def decorate_html(body, source, path):
             if value == '/' or (isinstance(value, str) and value.startswith('/?')):
                 node[attr] = ctx['prefix'] + value
     if old_controls:
-        controls = soup.select_one('#source-controls')
+        controls = soup.select_one('#language-controls')
         if controls:
             controls.append(BeautifulSoup(''.join(old_controls), 'html.parser'))
     return str(soup)
@@ -126,7 +143,7 @@ def decorate_html(body, source, path):
 
 @app.get('/')
 def index():
-    return redirect('/evidence/metaPee/')
+    return redirect('/evidence/urinary/')
 
 
 @app.get('/health')
@@ -141,8 +158,10 @@ def scopes():
 
 @app.get('/settings')
 def settings():
-    source = request.args.get('source', 'metaPee')
-    if source not in SOURCES:
+    selected_scope = request.args.get('scope')
+    inferred = next((s['source'] for s in scope_catalog() if selected_scope in {s['id'], s['label']}), 'metaPee')
+    source = resolve_source(request.args.get('group', request.args.get('source', inferred)))
+    if source is None:
         abort(404)
     return render_template('settings.html', **context(source, 'settings'))
 
@@ -155,7 +174,8 @@ def about():
 @app.route('/evidence/<source>/', defaults={'path': ''}, methods=['GET', 'POST', 'HEAD'])
 @app.route('/evidence/<source>/<path:path>', methods=['GET', 'POST', 'HEAD'])
 def evidence(source, path):
-    if source not in SOURCES:
+    source = resolve_source(source)
+    if source is None:
         abort(404)
     if path in {'verify', 'exclude'}:
         return jsonify(error='Saved evidence is read-only in metaUro. Interactive study selection is available for this view.'), 403
@@ -176,7 +196,7 @@ def evidence(source, path):
                 return jsonify(error='Manual reference risk must be greater than 0% and less than 100%.'), 400
     if path == 'about':
         return redirect('/about')
-    prefix = f'/evidence/{source}'
+    prefix = public_prefix(source)
     try:
         if path.startswith('static/'):
             # Settings catalogs and UI assets do not need the scientific engine.
@@ -199,14 +219,19 @@ def evidence(source, path):
         body = prefix_text(body.decode('utf-8'), prefix).encode()
         if path == 'static/script.js':
             body = body.replace(b"setSelectedExposure('Vitamin A');", b"setSelectedExposure(new URL(location.href).searchParams.get('exposure') || 'Vitamin A');")
+            body = body.replace(b'metapee_extracted_studies', b'metauro_extracted_studies').replace(b'metavir_extracted_studies', b'metauro_extracted_studies')
     elif 'text/css' in content_type:
         body = prefix_text(body.decode('utf-8'), prefix).encode()
     elif 'application/json' in content_type and body and request.method != 'HEAD' and status not in {204, 304}:
         payload = json.loads(body)
+        if isinstance(payload, dict) and isinstance(payload.get('error'), str):
+            payload['error'] = product_branding(payload['error'])
         body = json.dumps(prefix_json(payload, prefix), ensure_ascii=False).encode()
     for index, (key, value) in enumerate(outgoing):
         if key.lower() == 'location' and value.startswith('/'):
             outgoing[index] = (key, prefix + value)
+        elif key.lower() == 'content-disposition':
+            outgoing[index] = (key, product_branding(value))
     response = Response(body, status=status, headers=outgoing)
     if path in {'analyze', 'reanalyze'}:
         response.headers['Cache-Control'] = 'no-store'

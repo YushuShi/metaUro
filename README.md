@@ -1,6 +1,6 @@
 # metaUro
 
-One Flask interface for the current saved results from **metaPee** and **MetaVir**: 12 urinary cancer scopes, general prostate cancer, and aggressive prostate cancer.
+Explore nutrition and urologic cancer evidence across 14 disease scopes, including bladder, kidney, renal pelvis, prostate, and supported subtypes.
 
 ## Run
 
@@ -18,7 +18,7 @@ Open http://127.0.0.1:5012. Production: `gunicorn --workers 1 --threads 4 --time
 - **Evidence:** select any of the 14 disease scopes; cross-source selection routes to the appropriate engine. Related-exposure inclusion, study filters, temporary study selection, analysis, plots, and CSV downloads remain available.
 - **Summary:** original saved cross-exposure plots and workbooks for both collections. These exports retain their original settings.
 - **Settings:** a dedicated responsive page for exact SEER population/age/interval risk, per-disease manual reference risk, RR/HR/OR display, forest labels, sample-size planning, and exposure hierarchy. Preferences persist only in this browser, independently for each source. Reset affects only the current source. Invalid stored preferences recover to defaults.
-- **About:** explains the collections and links to MetaVir's separate ChatGPT track.
+- **About:** explains disease coverage, analysis settings, and the alternate prostate evidence view.
 
 Settings apply to request-local interactive calculations, not saved summaries. Unsupported histologies and aggressive prostate do not borrow a parent baseline. The interface shows unavailable baselines and the engine's identity approximation explicitly.
 

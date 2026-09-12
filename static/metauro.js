@@ -3,7 +3,6 @@
   'use strict';
   const config = window.MetaUro;
   if (!config) return;
-  const sourceKey = () => `metaUro:${config.source}`;
   function selectedScope() {
     const select = document.getElementById('disease') || document.getElementById('summary-scope') || document.getElementById('summary-disease');
     const option = select?.selectedOptions?.[0];
@@ -14,11 +13,10 @@
     const mode = document.getElementById('include-subexposures')?.value || new URL(location.href).searchParams.get('include_subexposures') || 'yes';
     document.querySelectorAll('[data-uro-nav]').forEach(link => {
       const page = link.dataset.uroNav;
-      const url = new URL(page === 'settings' ? '/settings' : `/evidence/${item.source}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.source === 'MetaVir' ? 'chatgpt' : ''}`, location.origin);
+      const url = new URL(page === 'settings' ? '/settings' : `${item.prefix}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.group_id === 'prostate' ? 'chatgpt' : ''}`, location.origin);
       url.searchParams.set('scope',item.id);
       url.searchParams.set('include_subexposures',mode);
-      if(page === 'settings') url.searchParams.set('source',item.source);
-      if(config.track === 'chatgpt' && item.source === 'MetaVir') url.searchParams.set('track','chatgpt');
+      if(config.track === 'chatgpt' && item.group_id === 'prostate') url.searchParams.set('track','chatgpt');
       link.href = url.pathname + url.search;
     });
   }
@@ -28,8 +26,8 @@
       const item = selectedScope();
       if (item.source !== config.source) {
         event.stopImmediatePropagation();
-        const url = new URL(config.page === 'settings' ? '/settings' : `/evidence/${item.source}/`,location.origin);
-        url.searchParams.set('source',item.source);url.searchParams.set('scope',item.id);
+        const url = new URL(config.page === 'settings' ? '/settings' : `${item.prefix}/`,location.origin);
+        url.searchParams.set('scope',item.id);
         url.searchParams.set('include_subexposures',document.getElementById('include-subexposures')?.value || 'yes');
         const exposure = document.getElementById('exposure')?.value;
         if(exposure)url.searchParams.set('exposure',exposure);
@@ -52,7 +50,7 @@
     document.getElementById('reset-settings')?.addEventListener('click',()=>{
       window.AnalysisSettings?.reset();
       const status=document.getElementById('settings-save-status');
-      if(status)status.textContent='Defaults restored for this source. Saved evidence is unchanged.';
+      if(status)status.textContent=`Defaults restored for ${selectedScope().group.toLowerCase()} preferences.`;
     });
     // Persistent review mutations are disabled; temporary study selection remains available.
     const style=document.createElement('style');

@@ -13,6 +13,8 @@ import hashlib
 import json
 from pathlib import Path
 
+from automation.sync_sources import load_overlay
+
 
 ROOT = Path(__file__).resolve().parent
 AUDIT_DIR = Path('data/claude_gemini_screening/all_history_through_2026-08-29')
@@ -188,4 +190,14 @@ def _build_selection_flow(source):
 def build_selection_flow(source):
     """Return a fresh public-view model without changing any evidence artifact."""
     source = {'urinary': 'metaPee', 'prostate': 'MetaVir'}.get(source, source)
-    return deepcopy(_build_selection_flow(source))
+    flow = deepcopy(_build_selection_flow(source))
+    monthly = load_overlay(ROOT, source)
+    if monthly:
+        flow['cohort_description'] = flow['cohort_description'].replace('Current ', 'Historical ', 1)
+        flow['monthly'] = {key: monthly.get(key) for key in ('search_through', 'human_review_pending', 'run_id')}
+        flow['notes'].append(
+            'Monthly searching is complete through ' + monthly['search_through'] +
+            '. These new screening records are reported separately from the historical flow diagram. ' +
+            str(monthly.get('human_review_pending', 0)) + ' exposure–disease contexts await human review.'
+        )
+    return flow

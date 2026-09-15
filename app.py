@@ -4,6 +4,7 @@ from __future__ import annotations
 import json
 import os
 from pathlib import Path
+from datetime import datetime
 import re
 from urllib.parse import urlencode
 
@@ -11,6 +12,7 @@ from bs4 import BeautifulSoup
 from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_from_directory
 from source_worker import SOURCES, workers
 from study_selection import build_selection_flow
+from automation.sync_sources import assembled_source, load_overlay, bound, sha
 
 ROOT = Path(__file__).resolve().parent
 app = Flask(__name__)
@@ -183,7 +185,58 @@ def study_selection():
     reviews = [dict(label=LABELS[item], current=item == source,
                     href='/study-selection?' + urlencode(dict(group=PUBLIC_SCOPES[item],
                         include_subexposures=ctx['include_subexposures']))) for item in SOURCES]
-    return render_template('study_selection.html', **ctx, flow=build_selection_flow(source), reviews=reviews)
+    html = render_template('study_selection.html', **ctx, flow=build_selection_flow(source), reviews=reviews)
+    monthly = load_overlay(ROOT, source)
+    if monthly:
+        soup = BeautifulSoup(html, 'html.parser')
+        section = soup.new_tag('section', attrs={'class': 'selection-notes'})
+        heading = soup.new_tag('h2'); heading.string = 'Monthly updates'; section.append(heading)
+        note = soup.new_tag('p')
+        note.string = 'Searching is complete through ' + monthly['search_through'] + '. Monthly screening is reported separately from this historical flow diagram.'
+        section.append(note)
+        link = soup.new_tag('a', href='/monthly-review/' + PUBLIC_SCOPES[source])
+        link.string = 'View monthly status and human-review tables'; section.append(link)
+        soup.select_one('main').append(section)
+        html = str(soup)
+    return html
+
+
+@app.get('/monthly-review/<group>')
+def monthly_review(group):
+    source = resolve_source(group)
+    if source is None:
+        abort(404)
+    monthly = load_overlay(ROOT, source)
+    soup = BeautifulSoup('<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"><title>metaUro · Monthly review</title><link rel="stylesheet" href="/static/theme.css"><link rel="stylesheet" href="/static/metauro.css"></head><body><main class="uro-selection"></main></body></html>', 'html.parser')
+    header = BeautifulSoup(render_template('_header.html', **context(source, 'selection')), 'html.parser')
+    soup.body.insert(0, header)
+    main = soup.main
+    title = soup.new_tag('h1'); title.string = LABELS[source] + ' monthly review'; main.append(title)
+    note = soup.new_tag('p')
+    note.string = ('Searching completed through ' + monthly['search_through'] + '. ' +
+                   str(monthly.get('human_review_pending', 0)) + ' exposure–disease contexts await human review. ' +
+                   'The historical study-selection diagram retains its original cohort counts.') if monthly else 'No monthly update has been synchronized yet.'
+    main.append(note)
+    for entry in (monthly or {}).get('review_files', []):
+        paragraph = soup.new_tag('p')
+        link = soup.new_tag('a', href='/monthly-review/' + PUBLIC_SCOPES[source] + '/download/' + entry['filename'])
+        link.string = 'Download discrepancy review (CSV)'; paragraph.append(link); main.append(paragraph)
+    return str(soup)
+
+
+@app.get('/monthly-review/<group>/download/<filename>')
+def monthly_review_download(group, filename):
+    source = resolve_source(group)
+    if source is None:
+        abort(404)
+    monthly = load_overlay(ROOT, source)
+    entry = next((item for item in (monthly or {}).get('review_files', []) if item['filename'] == filename), None)
+    if not entry:
+        abort(404)
+    path = bound(ROOT / 'updates' / source, entry['stored_path'])
+    if sha(path) != entry['sha256']:
+        abort(503)
+    return send_from_directory(path.parent, path.name, as_attachment=True, mimetype='text/csv')
 
 
 @app.route('/evidence/<source>/', defaults={'path': ''}, methods=['GET', 'POST', 'HEAD'])
@@ -215,7 +268,7 @@ def evidence(source, path):
     try:
         if path.startswith('static/'):
             # Settings catalogs and UI assets do not need the scientific engine.
-            asset = send_from_directory(ROOT / 'sources' / source / 'static', path[len('static/'):])
+            asset = send_from_directory(assembled_source(ROOT, source) / 'static', path[len('static/'):])
             asset.direct_passthrough = False
             status, response_headers, body = asset.status_code, list(asset.headers), asset.get_data()
         else:
@@ -223,7 +276,7 @@ def evidence(source, path):
             status, response_headers, body = workers[source].request(
                 path='/' + path + ('?' + request.query_string.decode() if request.query_string else ''),
                 method=request.method, data=request.get_data(), headers=headers)
-    except (RuntimeError, TimeoutError, EOFError, BrokenPipeError):
+    except (RuntimeError, TimeoutError, EOFError, BrokenPipeError, ValueError, OSError):
         app.logger.exception('Source engine failed: %s', source)
         return jsonify(error='This evidence source is temporarily unavailable. Please try again.'), 503
     content_type = next((v for k, v in response_headers if k.lower() == 'content-type'), '')
@@ -239,6 +292,9 @@ def evidence(source, path):
         body = prefix_text(body.decode('utf-8'), prefix).encode()
     elif 'application/json' in content_type and body and request.method != 'HEAD' and status not in {204, 304}:
         payload = json.loads(body)
+        monthly = load_overlay(ROOT, source)
+        if isinstance(payload, dict) and 'last_updated' in payload and monthly and monthly.get('completed_at'):
+            payload['last_updated'] = datetime.fromisoformat(monthly['completed_at'].replace('Z', '+00:00')).timestamp()
         if isinstance(payload, dict) and isinstance(payload.get('error'), str):
             payload['error'] = product_branding(payload['error'])
         body = json.dumps(prefix_json(payload, prefix), ensure_ascii=False).encode()

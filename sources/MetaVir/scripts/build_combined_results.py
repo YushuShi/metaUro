@@ -109,6 +109,8 @@ GENERATOR_FILES = {
     "build_combined_results_sha256": Path(__file__).resolve(),
     "current_comparison_adapter_sha256": REPO_ROOT / "scripts/current_comparison_adapter.py",
     "key_comparison_policy_sha256": REPO_ROOT / "scripts/key_comparison_policy.py",
+    "human_manual_review_sha256": REPO_ROOT / "scripts/human_manual_review.py",
+    "curator_dedup_sha256": REPO_ROOT / "scripts/curator_dedup.py",
     "meta_analysis_sha256": REPO_ROOT / "meta_analysis.py",
     "effect_measure_sha256": REPO_ROOT / "effect_measure.py",
     "monthly_evidence_update_sha256": (
@@ -982,7 +984,9 @@ def build_grouped_studies(
                 }
             )
             from scripts.nonpoolable_status_retention import display_records
-            grouped[target].extend(monthly.study_row(source_item) for source_item in display_records(display_item))
+            from scripts.human_manual_review import display_records as human_display_records
+            display_items = human_display_records(display_item) if display_item.get("human_adjudication") else display_records(display_item)
+            grouped[target].extend(monthly.study_row(source_item) for source_item in display_items)
         direct_count += 1
     supplements = add_base_supplements(
         grouped, inventory, selected_contexts, monthly
@@ -1322,9 +1326,43 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
             entry.update(merge_action='retained_eligible_not_poolable', pending_reason='',
                          combined_value='ELIGIBLE_NOT_POOLABLE')
     poolability_audit = reclassify_poolability(combined_rows, monthly)
+    # Targeted human-review refreshes keep all unrelated saved scientific records.
+    # The optional baseline is used only for that invocation, never future discovery.
+    if getattr(args, "preserve_canonical_from", None):
+        _, combined_rows = load_result_map(args.preserve_canonical_from)
+    from scripts import human_manual_review as human
+    combined_rows, human_audit = human.apply_checkpoint(combined_rows, args.output_root, {"chatgpt": chatgpt, "claude_gemini": claude_gemini})
+    human_contexts = {item["context_id"] for item in human_audit}
+    from scripts import curator_dedup as curator
+    combined_rows, curator_audit = curator.apply_checkpoint(combined_rows, args.output_root, {"chatgpt": chatgpt, "claude_gemini": claude_gemini})
+    curator_contexts = {item["context_id"] for item in curator_audit}
+    for entry in poolability_audit:
+        actual = combined_rows.get(entry["context_id"])
+        if actual:
+            entry.update(final_status=actual["final_status"],
+                         one_sentence_explanation=actual.get("reason"),
+                         direction_imputed=(actual.get("extraction") or {}).get("direction_imputed", False))
+            if actual.get("human_adjudication"):
+                entry["decision_authority"] = "human_manual_review"
+            if actual.get("curator_deduplication"):
+                entry["decision_authority"] = "human_curator_deduplication"
+    for entry in ledger:
+        if entry["context_id"] in human_contexts:
+            entry.update(merge_action="applied_human_manual_review", pending_reason="",
+                         manual_final_precedence=True)
+        if entry["context_id"] in curator_contexts:
+            entry.update(merge_action="applied_curator_deduplication", pending_reason="",
+                         manual_final_precedence=True)
+    if comparison is not None:
+        for entry in comparison["comparison_rows"]:
+            if entry["context_id"] in human_contexts:
+                entry.update(remaining_review=False, combined_action="applied_human_manual_review")
+            if entry["context_id"] in curator_contexts:
+                entry.update(remaining_review=False, combined_action="applied_curator_deduplication")
     from scripts import provisional_ui_overlay as provisional
     ui_packet, provisional_audit = provisional.effective_packet({'results':list(combined_rows.values())},
         {'chatgpt':chatgpt,'claude_gemini':claude_gemini},args.output_root,{key[0] for key in overrides})
+    ui_packet = curator.protect_ui_packet(ui_packet, args.output_root)
     ui_records = {row['context_id']:row for row in ui_packet['results']}
     for entry in ledger:
         entry["combined_value"] = value_for_field(
@@ -1334,6 +1372,11 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
     grouped, direct_study_count, supplement_count = build_grouped_studies(
         ui_records, inventory, set(selected), monthly
     )
+
+    if getattr(args, "preserve_canonical_from", None):
+        refreshed_contexts = set(getattr(args, "refresh_context", None) or (human_contexts | curator_contexts))
+        grouped = human.merge_saved_scope_rows(grouped, args.output_root, refreshed_contexts)
+    grouped = curator.filter_grouped(grouped, args.output_root)
 
     fable_digest = sha256_file(args.adjudication_csv)
     manual_digest = canonical_digest(manual_packet)
@@ -1414,6 +1457,8 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
                 shutil.copytree(args.output_root, archive, ignore=shutil.ignore_patterns("_history"))
         for slug in slug_by_exposure.values():
             (staging_static / slug).mkdir(parents=True, exist_ok=True)
+            if human_audit and (args.static_root / slug).exists():
+                shutil.copytree(args.static_root / slug, staging_static / slug, dirs_exist_ok=True)
 
         with working_directory(staging_parent):
             for exposure in all_exposures:
@@ -1575,6 +1620,30 @@ def build(args: argparse.Namespace) -> dict[str, Any]:
         if provisional_root.exists():
             shutil.copytree(provisional_root,staging_combined/'provisional_ui',dirs_exist_ok=True)
             provisional.persist(staging_combined,ui_packet,provisional_audit)
+        # The specialized aggressive-cancer review owns these independent scopes.
+        # A general-incidence review refresh must not erase them.
+        if human_audit:
+            for path in args.output_root.glob("*/aggressive_prostate_cancer_incidence_true_*.json"):
+                target = staging_combined / path.relative_to(args.output_root)
+                target.parent.mkdir(parents=True, exist_ok=True)
+                preserved = json.loads(path.read_text())
+                preserved.setdefault("combined_projection", {})["build_id"] = build_id
+                preserved["human_review_preserved_scope"] = {
+                    "reason": "Separate aggressive-cancer endpoint evidence is unchanged by this general-incidence review",
+                    "source_study_rows_sha256": human.digest(preserved.get("studies", [])),
+                }
+                write_json(target, preserved, indent=4)
+            aggressive_manifest = args.output_root / "_aggressive_prostate_manifest.json"
+            if aggressive_manifest.exists():
+                shutil.copy2(aggressive_manifest, staging_combined / aggressive_manifest.name)
+        human_root = args.output_root / "human_review"
+        if human_root.exists():
+            shutil.copytree(human_root, staging_combined / "human_review", dirs_exist_ok=True)
+            write_json(staging_combined / "human_review/replay_audit.json", human_audit)
+        curator_root = args.output_root / "curator_dedup"
+        if curator_root.exists():
+            shutil.copytree(curator_root, staging_combined / "curator_dedup", dirs_exist_ok=True)
+            write_json(staging_combined / "curator_dedup/replay_audit.json", curator_audit)
         write_json(staging_combined / "_manual_overrides.json", manual_packet)
         (staging_combined / "README.md").write_text(readme_text(), encoding="utf-8")
 
@@ -1602,6 +1671,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     parser.add_argument("--monthly-root", type=Path, default=DEFAULT_MONTHLY_ROOT)
     parser.add_argument("--parallel-root", type=Path, default=DEFAULT_PARALLEL_ROOT)
     parser.add_argument("--adjudication-csv", type=Path, default=DEFAULT_ADJUDICATION_CSV)
+    parser.add_argument("--preserve-canonical-from", type=Path, help="Use this saved canonical packet for a targeted evidence refresh, before replaying durable human decisions.")
+    parser.add_argument("--refresh-context", action="append", help="With --preserve-canonical-from, regenerate only this context's saved study rows; repeat for each targeted context.")
     parser.add_argument("--historical-comparison", action="store_true", help="Reconstruct the historical Fable snapshot without the current key-only comparison.")
     parser.add_argument(
         "--skip-plots",
@@ -1609,6 +1680,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help="Do not replace static plot directories (intended for tests only).",
     )
     args = parser.parse_args(argv)
+    if args.refresh_context and not args.preserve_canonical_from:
+        parser.error("--refresh-context requires --preserve-canonical-from")
     for field in (
         "base_cache_root", "output_root", "static_root", "monthly_root",
         "parallel_root", "adjudication_csv",

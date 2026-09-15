@@ -181,6 +181,16 @@ def build(output, apply=False, summary=True):
     protected = [*source_paths.values(), ROOT / 'combined/effective_results.json',
                  ROOT / 'combined/astra_fulltext/current_decisions.json',
                  ROOT / 'combined/astra_fulltext/review_dispositions.json']
+    human_checkpoint = ROOT / 'combined/human_review/current_decisions.json'
+    human_decisions = read(human_checkpoint) if human_checkpoint.exists() else {}
+    if human_checkpoint.exists():
+        protected.append(human_checkpoint)
+        if human_decisions.get('input_file'):
+            protected.append(human_checkpoint.parent / Path(human_decisions['input_file']).name)
+    from scripts import curator_dedup_overlay
+    curator_checkpoint = ROOT / 'combined' / curator_dedup_overlay.CHECKPOINT
+    if curator_checkpoint.exists():
+        protected.append(curator_checkpoint)
     hashes = {str(path.relative_to(ROOT)): sha(path) for path in protected}
     tracks = {track: {row['context_id']: row for row in read(path)['results']}
               for track, path in source_paths.items()}
@@ -190,7 +200,7 @@ def build(output, apply=False, summary=True):
     supplemental = ROOT.parent / 'screening_status_reports/provisional_human_review_2026-09-07' / ('additional_human_reviews_' + ALIAS + '.json')
     if supplemental.exists():
         entries += read(supplemental).get('rows') or []
-    if not entries:
+    if not entries and not human_decisions.get('decisions'):
         raise ValueError('No pending review manifest was found.')
     ids = [entry['id'] for entry in entries]
     if len(ids) != len(set(ids)):
@@ -217,7 +227,7 @@ def build(output, apply=False, summary=True):
               'pending_rows': len(entries), 'frozen_pending_rows': frozen_pending_count,
               'supplemental_pending_rows': len(entries) - frozen_pending_count, 'reason_counts': dict(counts),
               'changed_scopes': len(changed_scopes), 'protected_source_hashes': hashes,
-              'model_calls': 0, 'human_review_rows_resolved': 0}
+              'model_calls': 0, 'human_review_rows_resolved': len(human_decisions.get('decisions', []))}
     write(output / 'review_audit.json', audit)
     write(output / 'proposed_effective_results.json', {**packet, 'results': results})
     if apply:
@@ -302,7 +312,7 @@ def build(output, apply=False, summary=True):
             for mode in ('yes', 'no'):
                 root = stage / 'subexposure_views' / mode
                 built = summary_builder.build(root / 'Cached_results', root / 'Plot')
-                built.update(provisional_ui_version=provisional.VERSION, manual_review_pending=True)
+                built.update(provisional_ui_version=provisional.VERSION, manual_review_pending=bool(entries))
                 write(root / 'Plot/summary_manifest.json', built)
                 report['summary_modes'][mode] = {'scopes': len(built['scopes']),
                     'pdfs': len(list((root / 'Plot').rglob('*.pdf')))}
@@ -321,6 +331,17 @@ def build(output, apply=False, summary=True):
             'The app refuses stale views when a protected source changes. Rebuild offline with '
             '`python scripts/build_provisional_review_ui.py --output <new-empty-audit-folder> --apply`. '
             'Review pending metadata is retained in files without adding visible UI badges.\n')
+        if not entries:
+            (stage / 'README.md').write_text(
+                '# Saved combined UI view\n\n'
+                'All supplied human reviews are resolved. This view is rebuilt from the '
+                'authoritative combined records and retains their human decisions and existing '
+                'scientific and quality criteria. No temporary pipeline selections remain.\n\n'
+                'Both exposure hierarchy modes and disease-parent projections are saved under '
+                '`subexposure_views`. The readiness manifest verifies the immutable model '
+                'packets, canonical combined data, and human-decision checkpoint. Rebuild '
+                'offline with `python scripts/build_provisional_review_ui.py --output '
+                '<new-empty-audit-folder> --apply`.\n')
         backup = output / 'before_provisional_ui'
         if VIEW.exists():
             shutil.move(str(VIEW), backup)

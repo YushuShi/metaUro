@@ -7,9 +7,9 @@
   "disease_hierarchy_applied": true,
   "disease_hierarchy_inherited_count": 0,
   "disease_hierarchy_materialization": {
-    "source_fingerprint": "68799cf6c5158295850e7465bb28fb16b07f4b05c6130355cf77398d330fce39",
+    "source_fingerprint": "a52c7e7d7a6ae6b7006071595bbd4e722e61a32eb4b337addfbd5f9abc9da580",
     "source_hashes": {
-      "_disease_scope_sources/mediterranean_diet/bladder_cancer_incidence_true_core.json": "2d97ce507d2d47f3018396c0a47df336bf38a1578a2b3cc1790415e87e47c954"
+      "_disease_scope_sources/mediterranean_diet/bladder_cancer_incidence_true_core.json": "9481f271ee794dde9080aac7bb59a8ba97caff44be16905123f2857d25e3f4cf"
     },
     "source_root": "mode Cached_results",
     "version": "combined-disease-scopes-2026-09-07-v1"
@@ -26,21 +26,21 @@
     "baseline_risk": 0.00454,
     "baseline_risk_percent": 0.454,
     "canonical_rr": {
-      "ci_low": 0.8802401192762667,
-      "ci_upp": 1.0798035983408831,
+      "ci_low": 0.6205359319277568,
+      "ci_upp": 1.2592555135601309,
       "pi_low": null,
       "pi_upp": null,
-      "pooled_es": 0.9700661602031396
+      "pooled_es": 0.8902226072035401
     },
-    "ci_low": 0.88,
-    "ci_upp": 1.08,
+    "ci_low": 0.62,
+    "ci_upp": 1.26,
     "interpretation": "not statistically significant",
-    "pooled_es": 0.97
+    "pooled_es": 0.89
   },
   "include_subexposures": "yes",
   "outcome": "Incidence",
   "plot_url": null,
-  "requires_key_review": true,
+  "requires_key_review": false,
   "screening_stats": null,
   "studies": [
     {
@@ -398,12 +398,12 @@
       "Disease Evidence Source": "Bladder cancer",
       "Displayed Disease": "Bladder cancer",
       "Displayed Exposure": "Mediterranean diet",
-      "Effect ID": "combined:e53a62b0e9b680d594df",
-      "Effect Size": 0.97,
+      "Effect ID": "combined:161bcf77769d1d15cf96",
+      "Effect Size": 0.89,
       "Effect Type": "HR",
       "Estimated Cases": null,
       "Ethnicity": "NA",
-      "Gender": "Mixed-sex population",
+      "Gender": "Mixed",
       "JBI": {
         "q1": "Yes",
         "q10": "Yes",
@@ -421,51 +421,52 @@
       },
       "Journal": "International journal of cancer",
       "Link": "https://pubmed.ncbi.nlm.nih.gov/27149545/",
-      "Lower CI": 0.88,
-      "Original Effect Size": 0.97,
+      "Lower CI": 0.62,
+      "Original Effect Size": 0.89,
       "Original Effect Type": "HR",
-      "Original Lower CI": 0.88,
-      "Original Upper CI": 1.08,
-      "P Value": 0.52,
+      "Original Lower CI": 0.62,
+      "Original Upper CI": 1.26,
+      "P Value": 0.5,
       "PMCID": "PMC4992047",
       "PMID": "27149545",
       "Population": "Melbourne Collaborative Cohort Study participants aged 27–76 years at recruitment",
       "Primary Estimate": true,
       "Quality %": 100.0,
       "Quality Score": "Good",
-      "Record ID": "combined:e53a62b0e9b680d594df",
+      "Record ID": "combined:161bcf77769d1d15cf96",
       "Reference": "Association between selected dietary scores and the risk of urothelial cell carcinoma: A prospective cohort study.",
-      "SE": 0.052244432617488255,
+      "SE": 0.1809083043107046,
       "Sample Size": 37442,
       "Smoking Status": "Mixed smoking status; models adjusted for smoking",
       "Stage": null,
-      "Study": "Dugué PA et al. (2016) [PMID: 27149545] — estimate 1 · Mixed-sex population",
+      "Study": "Dugué PA et al. (2016) [PMID: 27149545] — estimate 1 · Mixed",
       "Timing": "Diet measured at baseline; incident cases followed from 1990–1994 through 31 December 2012",
       "Title": "Association between selected dietary scores and the risk of urothelial cell carcinoma: A prospective cohort study.",
-      "Upper CI": 1.08,
+      "Upper CI": 1.26,
       "Year": "2016",
       "canonical_track": "combined",
       "combined_direction_harmonization": null,
       "combined_nonkey_fills": [],
       "combined_p_value_resolution": null,
-      "combined_source": "chatgpt",
+      "combined_source": "human_manual_review",
       "combined_source_estimate_index": 0,
       "combined_source_extraction": {
-        "astra_fulltext_quantitative_complete": true,
         "cases": 379,
         "ci_confidence_level": 95.0,
         "ci_confidence_level_source": "Explicit confidence interval evidence",
-        "ci_lower": 0.88,
-        "ci_upper": 1.08,
+        "ci_level": 95.0,
+        "ci_lower": 0.62,
+        "ci_upper": 1.26,
+        "combined_derived_estimate": true,
         "comparison_direction": "higher_vs_lower",
-        "comparison_group": "higher",
-        "comparison_labels_imputed": true,
-        "comparison_type": "Per 1 standard deviation increase in Mediterranean Diet Score",
+        "comparison_group": "Q5 (healthy)",
+        "comparison_type": "Mediterranean Diet Score Q5 (healthy) versus Q1 (unhealthy), all UCC",
         "continent": "Oceania",
         "country": "Australia",
         "design": "Prospective cohort",
         "direction_imputed": false,
-        "effect_size": 0.97,
+        "effect_is_adjusted": true,
+        "effect_size": 0.89,
         "effect_type": "HR",
         "ethnicity": "NA",
         "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
@@ -478,16 +479,20 @@
             "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
           },
           "comparison": {
-            "excerpt": "We used Cox models to compute hazard ratios (HR) for the association between dietary scores (per one standard deviation) and UCC risk.",
-            "location": "abstract",
-            "source": "abstract",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
+            "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+            "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+            "source": "human_review_with_saved_PMC_table",
+            "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+            "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
           },
           "confidence_interval": {
-            "excerpt": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
-            "location": "abstract",
-            "source": "abstract",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
+            "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+            "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+            "source": "human_review_with_saved_PMC_table",
+            "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+            "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
           },
           "continent": null,
           "design": {
@@ -497,10 +502,12 @@
             "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
           },
           "effect_size": {
-            "excerpt": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
-            "location": "abstract",
-            "source": "abstract",
-            "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
+            "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+            "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+            "source": "human_review_with_saved_PMC_table",
+            "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+            "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
+            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
           },
           "ethnicity": null,
           "exposure_measurement": {
@@ -511,9 +518,11 @@
           },
           "gender": null,
           "p_value": {
-            "excerpt": "Continuous, per 1 SD 0.97 0.87 1.07 0.52",
-            "location": "Table 2, HR estimates and 95% CI for the association between dietary scores and risk of UCC, All cases, MDS",
-            "source": "full_text",
+            "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+            "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+            "source": "human_review_with_saved_PMC_table",
+            "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+            "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
             "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
           },
           "sample_size": {
@@ -545,40 +554,38 @@
         "exposure_measurement_type": "dietary_intake",
         "exposure_measurement_type_original": "dietary_intake",
         "exposure_subtype": "whole_food",
-        "gender": "Mixed-sex population",
+        "gender": "Mixed",
         "needs_inversion": false,
-        "p_value": 0.52,
-        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+        "p_value": 0.5,
+        "p_value_imputed": false,
+        "p_value_method": "Reported two-sided p value for Table 2 MDS Q5 versus Q1, all cases",
         "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
         "population": "Melbourne Collaborative Cohort Study participants aged 27–76 years at recruitment",
-        "reference_group": "lower",
-        "reported_ci_lower": 0.88,
-        "reported_ci_upper": 1.08,
-        "reported_comparison_direction": "per_unit_increase",
-        "reported_effect_size": 0.97,
+        "reference_group": "Q1 (unhealthy)",
         "reported_effect_type": "HR",
-        "reported_effect_type_label": "HR",
-        "reported_p_value": 0.52,
         "smoking_status": "Mixed smoking status; models adjusted for smoking",
+        "stratum": "All urothelial cell carcinoma cases",
         "timing": "Diet measured at baseline; incident cases followed from 1990–1994 through 31 December 2012",
         "total_n": 37442
       },
       "comparison_direction": "higher_vs_lower",
-      "comparison_group": "higher",
-      "comparison_type": "Per 1 standard deviation increase in Mediterranean Diet Score",
+      "comparison_group": "Q5 (healthy)",
+      "comparison_type": "Mediterranean Diet Score Q5 (healthy) versus Q1 (unhealthy), all UCC",
       "context_id": "27149545|Mediterranean diet|Bladder cancer",
+      "decision_origin": "human",
       "direct_exposure": "Mediterranean diet",
       "direction_imputed": false,
       "disease_hierarchy_inherited": false,
       "disease_hierarchy_parent_context_excluded": false,
       "disease_hierarchy_pooling_reason": "Selected eligible estimate for this study/population; parent-direct preference, then adjusted/primary estimate.",
       "disease_hierarchy_pooling_selected": true,
-      "disease_hierarchy_projection_id": "8a5b6bc5d9e1b9ea306edc0c72f013a1ea8de6295a6b4ae42759d4aec3ba4313",
+      "disease_hierarchy_projection_id": "78bc11819aa42df4c1d21c59e574d0c2db7483d7332b86789d455ab37d3694fe",
       "disease_hierarchy_reference_basis": "Exact selected disease reference, when available.",
       "disease_hierarchy_source_context_excluded": false,
       "disease_hierarchy_source_key": "bladder_cancer",
       "disease_hierarchy_source_path": "_disease_scope_sources/mediterranean_diet/bladder_cancer_incidence_true_core.json",
       "effect_inverted": false,
+      "effect_is_adjusted": true,
       "exposure_measurement_original_fields": {
         "exposure_measurement_type": "dietary_intake"
       },
@@ -603,16 +610,20 @@
           "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
         },
         "comparison": {
-          "excerpt": "We used Cox models to compute hazard ratios (HR) for the association between dietary scores (per one standard deviation) and UCC risk.",
-          "location": "abstract",
-          "source": "abstract",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
+          "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+          "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+          "source": "human_review_with_saved_PMC_table",
+          "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+          "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
         },
         "confidence_interval": {
-          "excerpt": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
-          "location": "abstract",
-          "source": "abstract",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
+          "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+          "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+          "source": "human_review_with_saved_PMC_table",
+          "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+          "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
         },
         "continent": null,
         "design": {
@@ -622,10 +633,12 @@
           "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
         },
         "effect_size": {
-          "excerpt": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
-          "location": "abstract",
-          "source": "abstract",
-          "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
+          "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+          "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+          "source": "human_review_with_saved_PMC_table",
+          "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+          "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
         },
         "ethnicity": null,
         "exposure_measurement": {
@@ -636,9 +649,11 @@
         },
         "gender": null,
         "p_value": {
-          "excerpt": "Continuous, per 1 SD 0.97 0.87 1.07 0.52",
-          "location": "Table 2, HR estimates and 95% CI for the association between dietary scores and risk of UCC, All cases, MDS",
-          "source": "full_text",
+          "excerpt": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+          "section": "Table 2, MDS, all cases, Q5 (healthy) versus Q1 (unhealthy)",
+          "source": "human_review_with_saved_PMC_table",
+          "source_path": "data/claude_gemini_screening/all_history_through_2026-08-29/verified_pmc_sources/PMC4992047/article.xml",
+          "source_sha256": "568bda490904398fc259d57446940a1effc008d9c53322ff0818d34a51e4f62e",
           "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
         },
         "sample_size": {
@@ -657,173 +672,27 @@
       },
       "extraction_supporting_text": {
         "cases": "Over a median follow-up time of 21.3 years, 379 incident UCC cases were diagnosed.",
-        "comparison": "We used Cox models to compute hazard ratios (HR) for the association between dietary scores (per one standard deviation) and UCC risk.",
-        "confidence_interval": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
+        "comparison": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
+        "confidence_interval": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
         "design": "Over a median follow-up time of 21.3 years, 379 incident UCC cases were diagnosed.",
-        "effect_size": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
+        "effect_size": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
         "exposure_measurement": "Dietary scores were calculated using data from a 121-item food frequency questionnaire administered at baseline.",
-        "p_value": "Continuous, per 1 SD 0.97 0.87 1.07 0.52",
+        "p_value": "Q5 (healthy) | 60 | 0.89 | 0.62 1.26 | 0.50",
         "sample_size": "Cases (N=379) Non-cases (37,063)",
         "timing": "Over a median follow-up time of 21.3 years, 379 incident UCC cases were diagnosed."
       },
       "final_status": "INCLUDE_META",
       "include_subexposures": "yes",
       "key_differences": [],
-      "manual_review_pending": true,
+      "manual_poolable": true,
+      "manual_review": true,
       "policy_poolable": true,
-      "provisional_ui_selection": {
-        "extraction": {
-          "astra_fulltext_quantitative_complete": true,
-          "cases": 379,
-          "ci_confidence_level": 95.0,
-          "ci_confidence_level_source": "Explicit confidence interval evidence",
-          "ci_lower": 0.88,
-          "ci_upper": 1.08,
-          "comparison_direction": "higher_vs_lower",
-          "comparison_group": "higher",
-          "comparison_labels_imputed": true,
-          "comparison_type": "Per 1 standard deviation increase in Mediterranean Diet Score",
-          "continent": "Oceania",
-          "country": "Australia",
-          "design": "Prospective cohort",
-          "direction_imputed": false,
-          "effect_size": 0.97,
-          "effect_type": "HR",
-          "ethnicity": "NA",
-          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
-          "ethnicity_supporting_text": "NA",
-          "evidence": {
-            "cases": {
-              "excerpt": "Over a median follow-up time of 21.3 years, 379 incident UCC cases were diagnosed.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
-            },
-            "comparison": {
-              "excerpt": "We used Cox models to compute hazard ratios (HR) for the association between dietary scores (per one standard deviation) and UCC risk.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
-            },
-            "confidence_interval": {
-              "excerpt": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
-            },
-            "continent": null,
-            "design": {
-              "excerpt": "Over a median follow-up time of 21.3 years, 379 incident UCC cases were diagnosed.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
-            },
-            "effect_size": {
-              "excerpt": "A healthier diet was found to be inversely associated with the risk of invasive (MDS: HR = 0.86, 95% CI: 0.74-1.00, metascore: HR = 0.84, 95% CI: 0.71-0.98), but not superficial disease (heterogeneity between subtypes p = 0.04 and p = 0.03, respectively).",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
-            },
-            "ethnicity": null,
-            "exposure_measurement": {
-              "excerpt": "Dietary scores were calculated using data from a 121-item food frequency questionnaire administered at baseline.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
-            },
-            "gender": null,
-            "p_value": {
-              "excerpt": "Continuous, per 1 SD 0.97 0.87 1.07 0.52",
-              "location": "Table 2, HR estimates and 95% CI for the association between dietary scores and risk of UCC, All cases, MDS",
-              "source": "full_text",
-              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
-            },
-            "sample_size": {
-              "excerpt": "Cases (N=379) Non-cases (37,063)",
-              "location": "Table 1, Characteristics of the study participants; total_n derived from reported group counts 379 + 37063 = 37442",
-              "source": "full_text",
-              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4992047/"
-            },
-            "smoking_status": null,
-            "timing": {
-              "excerpt": "Over a median follow-up time of 21.3 years, 379 incident UCC cases were diagnosed.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/27149545/"
-            }
-          },
-          "exposure_measurement_original_fields": {
-            "exposure_measurement_type": "dietary_intake"
-          },
-          "exposure_measurement_overridden": true,
-          "exposure_measurement_policy": {
-            "exposure": "Mediterranean diet",
-            "id": "dietary-only-exposures-2026-09-05",
-            "label": "Dietary intake only",
-            "reason": "User-approved classification for this exposure; original source classification is retained.",
-            "source": "user_confirmed_project_classification",
-            "version": 1
-          },
-          "exposure_measurement_type": "dietary_intake",
-          "exposure_measurement_type_original": "dietary_intake",
-          "exposure_subtype": "whole_food",
-          "gender": "Mixed-sex population",
-          "needs_inversion": false,
-          "p_value": 0.52,
-          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
-          "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-          "population": "Melbourne Collaborative Cohort Study participants aged 27–76 years at recruitment",
-          "reference_group": "lower",
-          "reported_ci_lower": 0.88,
-          "reported_ci_upper": 1.08,
-          "reported_comparison_direction": "per_unit_increase",
-          "reported_effect_size": 0.97,
-          "reported_effect_type": "HR",
-          "reported_effect_type_label": "HR",
-          "reported_p_value": 0.52,
-          "smoking_status": "Mixed smoking status; models adjusted for smoking",
-          "timing": "Diet measured at baseline; incident cases followed from 1990–1994 through 31 December 2012",
-          "total_n": 37442
-        },
-        "higher_jbi": {
-          "answers": {
-            "q1": "Yes",
-            "q10": "Yes",
-            "q11": "Yes",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Yes",
-            "q3": "Yes",
-            "q4": "Yes",
-            "q5": "Yes",
-            "q6": "Yes",
-            "q7": "Yes",
-            "q8": "Yes",
-            "q9": "Yes"
-          },
-          "checklist_type": "cohort",
-          "grade": "Good",
-          "score_percent": 100.0
-        },
-        "higher_jbi_grade": "Good",
-        "metadata_fills": [],
-        "overrides_pending_astra_partial": false,
-        "pending": true,
-        "protect_adjudicated_quantities": false,
-        "reason": "Use ChatGPT by default while both complete pipeline estimates await human review.",
-        "review_ids": [
-          "metaPee-0125"
-        ],
-        "selected_track": "chatgpt",
-        "selection_poolable_candidate": true,
-        "source_fingerprint": "e29259a449cb20ae72a5a8186af92b138de7019be253db876baf595fdaa0425a",
-        "version": "provisional-human-review-2026-09-07-v2"
-      },
-      "reference_group": "lower",
+      "reference_group": "Q1 (unhealthy)",
       "requires_key_review": false,
+      "stratum": "All urothelial cell carcinoma cases",
       "subexposure_inherited": false,
       "subexposure_pooling_selected": true,
-      "subexposure_projection_id": "d3d453c52c1238d1e0f9a0940d38e0e283fbe368248ba3042d226c223331e01b",
+      "subexposure_projection_id": "1aa8112ad951ee0907d974762dc3cd80bf5f3c4f43fc84b0f9725d7146bca18c",
       "subexposure_source": "Mediterranean diet"
     },
     {
@@ -1155,7 +1024,7 @@
       "Disease Evidence Source": "Bladder cancer",
       "Displayed Disease": "Bladder cancer",
       "Displayed Exposure": "Mediterranean diet",
-      "Effect ID": "combined:99adac6d1630bdef836b",
+      "Effect ID": "combined:d39191f01a513451cf7f",
       "Effect Size": 0.85,
       "Effect Type": "HR",
       "Estimated Cases": null,
@@ -1190,7 +1059,7 @@
       "Primary Estimate": false,
       "Quality %": 54.5,
       "Quality Score": "Moderate",
-      "Record ID": "combined:99adac6d1630bdef836b",
+      "Record ID": "combined:d39191f01a513451cf7f",
       "Reference": "An inverse association between the Mediterranean diet and bladder cancer risk: a pooled analysis of 13 cohort studies.",
       "SE": 0.04816263788231715,
       "Sample Size": 646222,
@@ -1203,54 +1072,9 @@
       "Year": "2020",
       "canonical_track": "combined",
       "combined_direction_harmonization": null,
-      "combined_nonkey_fills": [
-        {
-          "field": "continent",
-          "value": "Europe, North America, and Oceania"
-        },
-        {
-          "field": "country",
-          "value": "Denmark, France, Germany, Greece, Italy, The Netherlands, Norway, Spain, Sweden, United Kingdom, United States, and Australia"
-        },
-        {
-          "field": "population",
-          "value": "Participants in 13 international prospective cohorts included in the BLEND consortium"
-        },
-        {
-          "field": "smoking_status",
-          "value": "Never, former, and current smokers; smoking status was adjusted for"
-        },
-        {
-          "field": "evidence.continent",
-          "value": {
-            "excerpt": "",
-            "location": "Materials and methods, Study population",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          }
-        },
-        {
-          "field": "evidence.smoking_status",
-          "value": {
-            "excerpt": "",
-            "location": "Materials and methods, Data collection and coding",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          }
-        }
-      ],
-      "combined_p_value_resolution": {
-        "chatgpt_matches": null,
-        "claude_gemini_matches": null,
-        "combined_p_value": 0.0007398279164663832,
-        "combined_p_value_relation": null,
-        "matching_source": null,
-        "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
-        "needed": false,
-        "resolution": "no_p_discrepancy",
-        "wald_p_value": 0.0007398279164663832
-      },
-      "combined_source": "claude_gemini",
+      "combined_nonkey_fills": [],
+      "combined_p_value_resolution": null,
+      "combined_source": "human_manual_review",
       "combined_source_estimate_index": 0,
       "combined_source_extraction": {
         "cases": 3639,
@@ -1391,13 +1215,14 @@
       "comparison_group": "higher",
       "comparison_type": "High adherence to the Mediterranean diet vs. low adherence (Mediterranean diet score)",
       "context_id": "30737562|Mediterranean diet|Bladder cancer",
+      "decision_origin": "human",
       "direct_exposure": "Mediterranean diet",
       "direction_imputed": false,
       "disease_hierarchy_inherited": false,
       "disease_hierarchy_parent_context_excluded": false,
       "disease_hierarchy_pooling_reason": "Saved quantitative, quality, clinical, exposure or manual pooling gates are not met.",
       "disease_hierarchy_pooling_selected": false,
-      "disease_hierarchy_projection_id": "6fca349de74ebec30204970e45711d5633ac766aeaee5fb9b9933baeb88bac15",
+      "disease_hierarchy_projection_id": "e3d4afc931fa6ba46286f960ea77eaffc924ee7fd920fdae6d3183a63ef051dc",
       "disease_hierarchy_reference_basis": "Exact selected disease reference, when available.",
       "disease_hierarchy_source_context_excluded": false,
       "disease_hierarchy_source_key": "bladder_cancer",
@@ -1505,12 +1330,14 @@
       "final_status": "ELIGIBLE_NOT_POOLABLE",
       "include_subexposures": "yes",
       "key_differences": [],
+      "manual_poolable": true,
+      "manual_review": true,
       "policy_poolable": false,
       "reference_group": "lower",
       "requires_key_review": false,
       "subexposure_inherited": false,
       "subexposure_pooling_selected": false,
-      "subexposure_projection_id": "44fe05a878bd56a57de4bbca0663620ebeb211dd15c054fb0eaee30b0f0108c4",
+      "subexposure_projection_id": "f56e6a158d732a83c6769148404fa9f6210dfa5cb01b060978c0dcf29768a002",
       "subexposure_source": "Mediterranean diet"
     },
     {
@@ -2487,528 +2314,6 @@
       "subexposure_source": "Mediterranean diet"
     },
     {
-      "Authors": "Witlox WJA, van Osch FHM, Brinkman M, Jochems S, Goossens ME, Weiderpass E, White E, van den Brandt PA, Giles GG, Milne RL, Huybrechts I, Adami HO, Bueno-de-Mesquita B, Wesselius A, Zeegers MP",
-      "Cases": null,
-      "Continent": null,
-      "Design": "Pooled prospective cohort analysis",
-      "Direct Exposure": "Mediterranean diet",
-      "Disease Evidence Source": "Bladder cancer",
-      "Displayed Disease": "Bladder cancer",
-      "Displayed Exposure": "Mediterranean diet",
-      "Effect ID": "combined:0c73dffa328d2de1c18e",
-      "Effect Size": 0.86,
-      "Effect Type": "HR",
-      "Estimated Cases": null,
-      "Ethnicity": null,
-      "Gender": "Male",
-      "JBI": {
-        "q1": "Yes",
-        "q10": "Unclear",
-        "q11": "Yes",
-        "q12": "NA",
-        "q13": "NA",
-        "q2": "Yes",
-        "q3": "Yes",
-        "q4": "Yes",
-        "q5": "Yes",
-        "q6": "Yes",
-        "q7": "Yes",
-        "q8": "Unclear",
-        "q9": "Unclear"
-      },
-      "Journal": "European journal of nutrition",
-      "Link": "https://pubmed.ncbi.nlm.nih.gov/30737562/",
-      "Lower CI": 0.77,
-      "Original Effect Size": 0.86,
-      "Original Effect Type": "HR",
-      "Original Lower CI": 0.77,
-      "Original Upper CI": 0.96,
-      "P Value": 0.007346251327950567,
-      "PMCID": "PMC7000493",
-      "PMID": "30737562",
-      "Population": "Men in the pooled BLEND cohort analysis",
-      "Primary Estimate": false,
-      "Quality %": 72.7,
-      "Quality Score": "Moderate",
-      "Record ID": "combined:0c73dffa328d2de1c18e",
-      "Reference": "An inverse association between the Mediterranean diet and bladder cancer risk: a pooled analysis of 13 cohort studies.",
-      "SE": 0.0562619444422871,
-      "Sample Size": null,
-      "Smoking Status": null,
-      "Stage": null,
-      "Study": "Witlox WJA et al. (2020) [PMID: 30737562] — estimate 2 · Male",
-      "Timing": null,
-      "Title": "An inverse association between the Mediterranean diet and bladder cancer risk: a pooled analysis of 13 cohort studies.",
-      "Upper CI": 0.96,
-      "Year": "2020",
-      "adjusted_model": "Multivariate model adjusted for energy intake, smoking, age and study sample",
-      "canonical_track": "combined",
-      "ci_level_assumed": false,
-      "combined_direction_harmonization": null,
-      "combined_nonkey_fills": [],
-      "combined_p_value_resolution": null,
-      "combined_source": "astra_fulltext",
-      "combined_source_estimate_index": 1,
-      "combined_source_extraction": {
-        "adjusted_model": "Multivariate model adjusted for energy intake, smoking, age and study sample",
-        "astra_fulltext_numeric_matches_sources": {
-          "chatgpt": true,
-          "claude_gemini": false
-        },
-        "astra_fulltext_provenance": {
-          "id": "metaPee-0157",
-          "model": "gpt-6-astra",
-          "reason": "Candidate A's male-specific HR and CI are directly supported. The supplied text does not establish the exact male analytical N after missing-data exclusions. A's p-value is not reported and is omitted.",
-          "reported_extraction": {
-            "adjusted_model": "Multivariate model adjusted for energy intake, smoking, age and study sample",
-            "cases": null,
-            "ci_level": 95,
-            "ci_level_assumed": false,
-            "ci_lower": 0.77,
-            "ci_scale": "original",
-            "ci_targets_selected_estimate": true,
-            "ci_upper": 0.96,
-            "comparison_direction": "higher_vs_lower",
-            "comparison_group": "High adherence (MDS 6–9)",
-            "comparison_type": "categorical adherence",
-            "country": null,
-            "derivations": [],
-            "design": "Pooled prospective cohort analysis",
-            "direction_imputed": false,
-            "effect_is_adjusted": true,
-            "effect_size": 0.86,
-            "effect_type": "HR",
-            "exposure_measurement_type": "dietary_intake",
-            "follow_up": null,
-            "gender": "Male",
-            "p_value": null,
-            "p_value_relation": null,
-            "p_value_targets_selected_estimate": null,
-            "population": "Men in the pooled BLEND cohort analysis",
-            "reference_group": "Low adherence (MDS 0–3)",
-            "reported_effect_type": "Pooled HR",
-            "scale": "Mediterranean diet score",
-            "stratum": "Men; all bladder cancer",
-            "subgroup": null,
-            "total_n": null,
-            "total_n_basis": null,
-            "unit": null,
-            "wald_inputs_same_estimate": null
-          },
-          "source": {
-            "pmcid": "PMC7000493",
-            "pmid": "30737562",
-            "raw_sha256": "1701a16dc9142925579ce410b89f60a663975e53be0693fabed5f3a5453eb8e7",
-            "source_format": "jats_xml",
-            "text_path": "/Users/yushushi/Library/CloudStorage/OneDrive-WeillCornellMedicine/screening_status_reports/astra_fulltext_adjudication_2026-09-07/sources/articles/PMC7000493/article.txt",
-            "text_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "source_fingerprint": "1d1cbe1e162504e4a67d7e0e77dadc97a2858c9ec4609a78a401f8ed694418eb",
-          "source_scope": "PMC_FULL_TEXT_TEXT_ONLY"
-        },
-        "astra_fulltext_quantitative_complete": false,
-        "cases": null,
-        "ci_confidence_level": 95.0,
-        "ci_level": 95,
-        "ci_level_assumed": false,
-        "ci_lower": 0.77,
-        "ci_scale": "original",
-        "ci_targets_selected_estimate": true,
-        "ci_upper": 0.96,
-        "comparison_direction": "higher_vs_lower",
-        "comparison_group": "High adherence (MDS 6–9)",
-        "comparison_type": "categorical adherence",
-        "country": null,
-        "derivations": [],
-        "design": "Pooled prospective cohort analysis",
-        "direction_imputed": false,
-        "effect_is_adjusted": true,
-        "effect_size": 0.86,
-        "effect_type": "HR",
-        "evidence": {
-          "adjusted_model": {
-            "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-            "pmcid": "PMC7000493",
-            "section": "Table 2 footnote",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "ci_level": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "ci_lower": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "ci_upper": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "comparison_direction": {
-            "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-            "pmcid": "PMC7000493",
-            "section": "Statistical analysis",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "comparison_group": {
-            "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-            "pmcid": "PMC7000493",
-            "section": "Mediterranean diet score",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "confidence_interval": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "effect_is_adjusted": {
-            "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-            "pmcid": "PMC7000493",
-            "section": "Table 2 footnote",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "effect_size": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "effect_type": {
-            "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-            "pmcid": "PMC7000493",
-            "section": "Statistical analysis",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "gender": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "reference_group": {
-            "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-            "pmcid": "PMC7000493",
-            "section": "Mediterranean diet score",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "scale": {
-            "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-            "pmcid": "PMC7000493",
-            "section": "Mediterranean diet score",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "stratum": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "total_n_basis": {
-            "excerpt": "dTotal number of cases in analysis (3.581) lower than Table 1 (3.590) because of missing values in energy intake and/or MDS score",
-            "pmcid": "PMC7000493",
-            "section": "Table 2 footnote",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          }
-        },
-        "exposure_measurement_original_fields": {
-          "exposure_measurement_type": "dietary_intake"
-        },
-        "exposure_measurement_overridden": true,
-        "exposure_measurement_policy": {
-          "exposure": "Mediterranean diet",
-          "id": "dietary-only-exposures-2026-09-05",
-          "label": "Dietary intake only",
-          "reason": "User-approved classification for this exposure; original source classification is retained.",
-          "source": "user_confirmed_project_classification",
-          "version": 1
-        },
-        "exposure_measurement_type": "dietary_intake",
-        "exposure_measurement_type_original": "dietary_intake",
-        "follow_up": null,
-        "gender": "Male",
-        "needs_inversion": false,
-        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
-        "p_value": 0.007346251327950567,
-        "p_value_imputed": true,
-        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
-        "p_value_relation": null,
-        "p_value_targets_selected_estimate": null,
-        "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-        "population": "Men in the pooled BLEND cohort analysis",
-        "reference_group": "Low adherence (MDS 0–3)",
-        "reported_effect_type": "Pooled HR",
-        "scale": "Mediterranean diet score",
-        "standard_error": 0.05626194444228712,
-        "stratum": "Men; all bladder cancer",
-        "subgroup": null,
-        "total_n": null,
-        "total_n_basis": null,
-        "unit": null,
-        "wald_inputs_same_estimate": null
-      },
-      "comparison_direction": "higher_vs_lower",
-      "comparison_group": "High adherence (MDS 6–9)",
-      "comparison_type": "categorical adherence",
-      "context_id": "30737562|Mediterranean diet|Bladder cancer",
-      "direct_exposure": "Mediterranean diet",
-      "direction_imputed": false,
-      "disease_hierarchy_inherited": false,
-      "disease_hierarchy_parent_context_excluded": false,
-      "disease_hierarchy_pooling_reason": "Saved quantitative, quality, clinical, exposure or manual pooling gates are not met.",
-      "disease_hierarchy_pooling_selected": false,
-      "disease_hierarchy_projection_id": "6c7cc9df26220399d2a0f2ed7b25378c0b7da27b6ccd8a14beaab99d235a3bff",
-      "disease_hierarchy_reference_basis": "Exact selected disease reference, when available.",
-      "disease_hierarchy_source_context_excluded": false,
-      "disease_hierarchy_source_key": "bladder_cancer",
-      "disease_hierarchy_source_path": "_disease_scope_sources/mediterranean_diet/bladder_cancer_incidence_true_core.json",
-      "display_only_reason": "Retain supported full-text correction; neither pipeline supplies a complete eligible estimate.",
-      "effect_inverted": false,
-      "effect_is_adjusted": true,
-      "exposure_measurement_original_fields": {
-        "exposure_measurement_type": "dietary_intake"
-      },
-      "exposure_measurement_overridden": true,
-      "exposure_measurement_policy": {
-        "exposure": "Mediterranean diet",
-        "id": "dietary-only-exposures-2026-09-05",
-        "label": "Dietary intake only",
-        "reason": "User-approved classification for this exposure; original source classification is retained.",
-        "source": "user_confirmed_project_classification",
-        "version": 1
-      },
-      "exposure_measurement_supporting_text": null,
-      "exposure_measurement_type": "dietary_intake",
-      "exposure_measurement_type_original": "dietary_intake",
-      "exposure_subtype": null,
-      "extraction_evidence": {
-        "adjusted_model": {
-          "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-          "pmcid": "PMC7000493",
-          "section": "Table 2 footnote",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "ci_level": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "ci_lower": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "ci_upper": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "comparison_direction": {
-          "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-          "pmcid": "PMC7000493",
-          "section": "Statistical analysis",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "comparison_group": {
-          "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-          "pmcid": "PMC7000493",
-          "section": "Mediterranean diet score",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "confidence_interval": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "effect_is_adjusted": {
-          "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-          "pmcid": "PMC7000493",
-          "section": "Table 2 footnote",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "effect_size": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "effect_type": {
-          "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-          "pmcid": "PMC7000493",
-          "section": "Statistical analysis",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "gender": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "reference_group": {
-          "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-          "pmcid": "PMC7000493",
-          "section": "Mediterranean diet score",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "scale": {
-          "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-          "pmcid": "PMC7000493",
-          "section": "Mediterranean diet score",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "stratum": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "total_n_basis": {
-          "excerpt": "dTotal number of cases in analysis (3.581) lower than Table 1 (3.590) because of missing values in energy intake and/or MDS score",
-          "pmcid": "PMC7000493",
-          "section": "Table 2 footnote",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        }
-      },
-      "extraction_supporting_text": {
-        "adjusted_model": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-        "ci_level": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "ci_lower": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "ci_upper": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "comparison_direction": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-        "comparison_group": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-        "confidence_interval": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "effect_is_adjusted": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-        "effect_size": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "effect_type": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-        "gender": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "reference_group": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-        "scale": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-        "stratum": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "total_n_basis": "dTotal number of cases in analysis (3.581) lower than Table 1 (3.590) because of missing values in energy intake and/or MDS score"
-      },
-      "final_status": "ELIGIBLE_NOT_POOLABLE",
-      "include_subexposures": "yes",
-      "key_differences": [],
-      "manual_poolable": false,
-      "manual_review_pending": true,
-      "policy_poolable": false,
-      "provisional_ui_selection": {
-        "extraction": null,
-        "higher_jbi": {
-          "answers": {
-            "q1": "Yes",
-            "q10": "Unclear",
-            "q11": "Yes",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Yes",
-            "q3": "Yes",
-            "q4": "Yes",
-            "q5": "Yes",
-            "q6": "Yes",
-            "q7": "Yes",
-            "q8": "Unclear",
-            "q9": "Unclear"
-          },
-          "checklist_type": "cohort",
-          "grade": "Moderate",
-          "score_percent": 72.7
-        },
-        "higher_jbi_grade": "Moderate",
-        "pending": true,
-        "protect_adjudicated_quantities": true,
-        "reason": "Retain supported full-text correction; neither pipeline supplies a complete eligible estimate.",
-        "review_ids": [
-          "metaPee-0157"
-        ],
-        "selected_track": null,
-        "selection_poolable_candidate": false,
-        "source_fingerprint": "1d1cbe1e162504e4a67d7e0e77dadc97a2858c9ec4609a78a401f8ed694418eb",
-        "version": "provisional-human-review-2026-09-07-v2"
-      },
-      "reference_group": "Low adherence (MDS 0–3)",
-      "requires_key_review": true,
-      "scale": "Mediterranean diet score",
-      "stratum": "Men; all bladder cancer",
-      "subexposure_inherited": false,
-      "subexposure_pooling_selected": false,
-      "subexposure_projection_id": "6d08c5aadb7e5635acb0f18be573174bcd97a32f56c8a3e8382acfda80212c6f",
-      "subexposure_source": "Mediterranean diet",
-      "subgroup": null,
-      "unit": null
-    },
-    {
       "Authors": "Kang M, Wilkens LR, Wirth MD, Shivappa N, Hébert JR, Haiman CA, Le Marchand L, Park SY",
       "Cases": 1152,
       "Continent": "North America",
@@ -3353,535 +2658,13 @@
       "subexposure_pooling_selected": false,
       "subexposure_projection_id": "587d2c3ec30a13b0e3dcc7d30871f243cce4cbc2b6947527de04c78b514931c4",
       "subexposure_source": "Mediterranean diet"
-    },
-    {
-      "Authors": "Witlox WJA, van Osch FHM, Brinkman M, Jochems S, Goossens ME, Weiderpass E, White E, van den Brandt PA, Giles GG, Milne RL, Huybrechts I, Adami HO, Bueno-de-Mesquita B, Wesselius A, Zeegers MP",
-      "Cases": null,
-      "Continent": null,
-      "Design": "Pooled prospective cohort analysis",
-      "Direct Exposure": "Mediterranean diet",
-      "Disease Evidence Source": "Bladder cancer",
-      "Displayed Disease": "Bladder cancer",
-      "Displayed Exposure": "Mediterranean diet",
-      "Effect ID": "combined:f8ee34ef770ee0ec57e2",
-      "Effect Size": 0.9,
-      "Effect Type": "HR",
-      "Estimated Cases": null,
-      "Ethnicity": null,
-      "Gender": "Female",
-      "JBI": {
-        "q1": "Yes",
-        "q10": "Unclear",
-        "q11": "Yes",
-        "q12": "NA",
-        "q13": "NA",
-        "q2": "Yes",
-        "q3": "Yes",
-        "q4": "Yes",
-        "q5": "Yes",
-        "q6": "Yes",
-        "q7": "Yes",
-        "q8": "Unclear",
-        "q9": "Unclear"
-      },
-      "Journal": "European journal of nutrition",
-      "Link": "https://pubmed.ncbi.nlm.nih.gov/30737562/",
-      "Lower CI": 0.74,
-      "Original Effect Size": 0.9,
-      "Original Effect Type": "HR",
-      "Original Lower CI": 0.74,
-      "Original Upper CI": 1.1,
-      "P Value": 0.2974807835547744,
-      "PMCID": "PMC7000493",
-      "PMID": "30737562",
-      "Population": "Women in the pooled BLEND cohort analysis",
-      "Primary Estimate": false,
-      "Quality %": 72.7,
-      "Quality Score": "Moderate",
-      "Record ID": "combined:f8ee34ef770ee0ec57e2",
-      "Reference": "An inverse association between the Mediterranean diet and bladder cancer risk: a pooled analysis of 13 cohort studies.",
-      "SE": 0.10112820330248914,
-      "Sample Size": null,
-      "Smoking Status": null,
-      "Stage": null,
-      "Study": "Witlox WJA et al. (2020) [PMID: 30737562] — estimate 3 · Female",
-      "Timing": null,
-      "Title": "An inverse association between the Mediterranean diet and bladder cancer risk: a pooled analysis of 13 cohort studies.",
-      "Upper CI": 1.1,
-      "Year": "2020",
-      "adjusted_model": "Multivariate model adjusted for energy intake, smoking, age and study sample",
-      "canonical_track": "combined",
-      "ci_level_assumed": false,
-      "combined_direction_harmonization": null,
-      "combined_nonkey_fills": [],
-      "combined_p_value_resolution": null,
-      "combined_source": "astra_fulltext",
-      "combined_source_estimate_index": 2,
-      "combined_source_extraction": {
-        "adjusted_model": "Multivariate model adjusted for energy intake, smoking, age and study sample",
-        "astra_fulltext_numeric_matches_sources": {
-          "chatgpt": true,
-          "claude_gemini": false
-        },
-        "astra_fulltext_provenance": {
-          "id": "metaPee-0158",
-          "model": "gpt-6-astra",
-          "reason": "Candidate A's female-specific HR and CI are directly supported. The supplied text does not establish the exact female analytical N after missing-data exclusions. A's p-value is not reported and is omitted. The null association remains eligible.",
-          "reported_extraction": {
-            "adjusted_model": "Multivariate model adjusted for energy intake, smoking, age and study sample",
-            "cases": null,
-            "ci_level": 95,
-            "ci_level_assumed": false,
-            "ci_lower": 0.74,
-            "ci_scale": "original",
-            "ci_targets_selected_estimate": true,
-            "ci_upper": 1.1,
-            "comparison_direction": "higher_vs_lower",
-            "comparison_group": "High adherence (MDS 6–9)",
-            "comparison_type": "categorical adherence",
-            "country": null,
-            "derivations": [],
-            "design": "Pooled prospective cohort analysis",
-            "direction_imputed": false,
-            "effect_is_adjusted": true,
-            "effect_size": 0.9,
-            "effect_type": "HR",
-            "exposure_measurement_type": "dietary_intake",
-            "follow_up": null,
-            "gender": "Female",
-            "p_value": null,
-            "p_value_relation": null,
-            "p_value_targets_selected_estimate": null,
-            "population": "Women in the pooled BLEND cohort analysis",
-            "reference_group": "Low adherence (MDS 0–3)",
-            "reported_effect_type": "Pooled HR",
-            "scale": "Mediterranean diet score",
-            "stratum": "Women; all bladder cancer",
-            "subgroup": null,
-            "total_n": null,
-            "total_n_basis": null,
-            "unit": null,
-            "wald_inputs_same_estimate": null
-          },
-          "source": {
-            "pmcid": "PMC7000493",
-            "pmid": "30737562",
-            "raw_sha256": "1701a16dc9142925579ce410b89f60a663975e53be0693fabed5f3a5453eb8e7",
-            "source_format": "jats_xml",
-            "text_path": "/Users/yushushi/Library/CloudStorage/OneDrive-WeillCornellMedicine/screening_status_reports/astra_fulltext_adjudication_2026-09-07/sources/articles/PMC7000493/article.txt",
-            "text_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "source_fingerprint": "1d1cbe1e162504e4a67d7e0e77dadc97a2858c9ec4609a78a401f8ed694418eb",
-          "source_scope": "PMC_FULL_TEXT_TEXT_ONLY"
-        },
-        "astra_fulltext_quantitative_complete": false,
-        "cases": null,
-        "ci_confidence_level": 95.0,
-        "ci_level": 95,
-        "ci_level_assumed": false,
-        "ci_lower": 0.74,
-        "ci_scale": "original",
-        "ci_targets_selected_estimate": true,
-        "ci_upper": 1.1,
-        "comparison_direction": "higher_vs_lower",
-        "comparison_group": "High adherence (MDS 6–9)",
-        "comparison_type": "categorical adherence",
-        "country": null,
-        "derivations": [],
-        "design": "Pooled prospective cohort analysis",
-        "direction_imputed": false,
-        "effect_is_adjusted": true,
-        "effect_size": 0.9,
-        "effect_type": "HR",
-        "evidence": {
-          "adjusted_model": {
-            "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-            "pmcid": "PMC7000493",
-            "section": "Table 2 footnote",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "ci_level": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "ci_lower": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "ci_upper": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "comparison_direction": {
-            "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-            "pmcid": "PMC7000493",
-            "section": "Statistical analysis",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "comparison_group": {
-            "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-            "pmcid": "PMC7000493",
-            "section": "Mediterranean diet score",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "confidence_interval": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "effect_is_adjusted": {
-            "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-            "pmcid": "PMC7000493",
-            "section": "Table 2 footnote",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "effect_size": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "effect_type": {
-            "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-            "pmcid": "PMC7000493",
-            "section": "Statistical analysis",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "gender": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "reference_group": {
-            "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-            "pmcid": "PMC7000493",
-            "section": "Mediterranean diet score",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "scale": {
-            "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-            "pmcid": "PMC7000493",
-            "section": "Mediterranean diet score",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "stratum": {
-            "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-            "pmcid": "PMC7000493",
-            "section": "Results",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          },
-          "total_n_basis": {
-            "excerpt": "dTotal number of cases in analysis (3.581) lower than Table 1 (3.590) because of missing values in energy intake and/or MDS score",
-            "pmcid": "PMC7000493",
-            "section": "Table 2 footnote",
-            "source": "pmc_full_text",
-            "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-          }
-        },
-        "exposure_measurement_original_fields": {
-          "exposure_measurement_type": "dietary_intake"
-        },
-        "exposure_measurement_overridden": true,
-        "exposure_measurement_policy": {
-          "exposure": "Mediterranean diet",
-          "id": "dietary-only-exposures-2026-09-05",
-          "label": "Dietary intake only",
-          "reason": "User-approved classification for this exposure; original source classification is retained.",
-          "source": "user_confirmed_project_classification",
-          "version": 1
-        },
-        "exposure_measurement_type": "dietary_intake",
-        "exposure_measurement_type_original": "dietary_intake",
-        "follow_up": null,
-        "gender": "Female",
-        "needs_inversion": false,
-        "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
-        "p_value": 0.2974807835547744,
-        "p_value_imputed": true,
-        "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
-        "p_value_relation": null,
-        "p_value_targets_selected_estimate": null,
-        "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-        "population": "Women in the pooled BLEND cohort analysis",
-        "reference_group": "Low adherence (MDS 0–3)",
-        "reported_effect_type": "Pooled HR",
-        "scale": "Mediterranean diet score",
-        "standard_error": 0.10112820330248917,
-        "stratum": "Women; all bladder cancer",
-        "subgroup": null,
-        "total_n": null,
-        "total_n_basis": null,
-        "unit": null,
-        "wald_inputs_same_estimate": null
-      },
-      "comparison_direction": "higher_vs_lower",
-      "comparison_group": "High adherence (MDS 6–9)",
-      "comparison_type": "categorical adherence",
-      "context_id": "30737562|Mediterranean diet|Bladder cancer",
-      "direct_exposure": "Mediterranean diet",
-      "direction_imputed": false,
-      "disease_hierarchy_inherited": false,
-      "disease_hierarchy_parent_context_excluded": false,
-      "disease_hierarchy_pooling_reason": "Saved quantitative, quality, clinical, exposure or manual pooling gates are not met.",
-      "disease_hierarchy_pooling_selected": false,
-      "disease_hierarchy_projection_id": "0c381f0fe27f4fd04cb0785708dc5b25be412c3f86aa7dc8c1ef20dae8602e21",
-      "disease_hierarchy_reference_basis": "Exact selected disease reference, when available.",
-      "disease_hierarchy_source_context_excluded": false,
-      "disease_hierarchy_source_key": "bladder_cancer",
-      "disease_hierarchy_source_path": "_disease_scope_sources/mediterranean_diet/bladder_cancer_incidence_true_core.json",
-      "display_only_reason": "Retain supported full-text correction; neither pipeline supplies a complete eligible estimate.",
-      "effect_inverted": false,
-      "effect_is_adjusted": true,
-      "exposure_measurement_original_fields": {
-        "exposure_measurement_type": "dietary_intake"
-      },
-      "exposure_measurement_overridden": true,
-      "exposure_measurement_policy": {
-        "exposure": "Mediterranean diet",
-        "id": "dietary-only-exposures-2026-09-05",
-        "label": "Dietary intake only",
-        "reason": "User-approved classification for this exposure; original source classification is retained.",
-        "source": "user_confirmed_project_classification",
-        "version": 1
-      },
-      "exposure_measurement_supporting_text": null,
-      "exposure_measurement_type": "dietary_intake",
-      "exposure_measurement_type_original": "dietary_intake",
-      "exposure_subtype": null,
-      "extraction_evidence": {
-        "adjusted_model": {
-          "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-          "pmcid": "PMC7000493",
-          "section": "Table 2 footnote",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "ci_level": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "ci_lower": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "ci_upper": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "comparison_direction": {
-          "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-          "pmcid": "PMC7000493",
-          "section": "Statistical analysis",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "comparison_group": {
-          "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-          "pmcid": "PMC7000493",
-          "section": "Mediterranean diet score",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "confidence_interval": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "effect_is_adjusted": {
-          "excerpt": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-          "pmcid": "PMC7000493",
-          "section": "Table 2 footnote",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "effect_size": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "effect_type": {
-          "excerpt": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-          "pmcid": "PMC7000493",
-          "section": "Statistical analysis",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "gender": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "reference_group": {
-          "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-          "pmcid": "PMC7000493",
-          "section": "Mediterranean diet score",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "scale": {
-          "excerpt": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-          "pmcid": "PMC7000493",
-          "section": "Mediterranean diet score",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "stratum": {
-          "excerpt": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-          "pmcid": "PMC7000493",
-          "section": "Results",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        },
-        "total_n_basis": {
-          "excerpt": "dTotal number of cases in analysis (3.581) lower than Table 1 (3.590) because of missing values in energy intake and/or MDS score",
-          "pmcid": "PMC7000493",
-          "section": "Table 2 footnote",
-          "source": "pmc_full_text",
-          "source_sha256": "f7e11861b29d51ef843f36e6aef9c53e4f391b423cec3156e8f1fe8f7c4d2165",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7000493/"
-        }
-      },
-      "extraction_supporting_text": {
-        "adjusted_model": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-        "ci_level": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "ci_lower": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "ci_upper": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "comparison_direction": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-        "comparison_group": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-        "confidence_interval": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "effect_is_adjusted": "aAll results are from multivariate model adjusted for total energy intake, smoking status and sex & age at study inclusion and study sample through setting of survival time",
-        "effect_size": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "effect_type": "Cox proportional hazard models using age at recruitment as the starting point on the time scale were used to calculate HRs and 95% confidence intervals (95% CI) for developing bladder cancer, comparing medium and high adherence with low adherence.",
-        "gender": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "reference_group": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-        "scale": "The MDS ranged from 0 (minimal adherence) to 9 (maximal adherence). Scores between 0 and 3 were classified as “low adherence”, scores of 4 and 5 were classified as “medium adherence”, and scores of 6 or higher were classified as “high adherence”.",
-        "stratum": "Results for men (HRhigh 0.86 [95% CI 0.77–0.96], HRmedium 0.89 [95% CI 0.82, 0.97]) and women (HRhigh 0.90 [95% CI 0.74–1.10], HRmedium 0.84 [95% CI 0.73, 0.98]) were comparable and in line with the overall estimates.",
-        "total_n_basis": "dTotal number of cases in analysis (3.581) lower than Table 1 (3.590) because of missing values in energy intake and/or MDS score"
-      },
-      "final_status": "ELIGIBLE_NOT_POOLABLE",
-      "include_subexposures": "yes",
-      "key_differences": [],
-      "manual_poolable": false,
-      "manual_review_pending": true,
-      "policy_poolable": false,
-      "provisional_ui_selection": {
-        "extraction": null,
-        "higher_jbi": {
-          "answers": {
-            "q1": "Yes",
-            "q10": "Unclear",
-            "q11": "Yes",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Yes",
-            "q3": "Yes",
-            "q4": "Yes",
-            "q5": "Yes",
-            "q6": "Yes",
-            "q7": "Yes",
-            "q8": "Unclear",
-            "q9": "Unclear"
-          },
-          "checklist_type": "cohort",
-          "grade": "Moderate",
-          "score_percent": 72.7
-        },
-        "higher_jbi_grade": "Moderate",
-        "pending": true,
-        "protect_adjudicated_quantities": true,
-        "reason": "Retain supported full-text correction; neither pipeline supplies a complete eligible estimate.",
-        "review_ids": [
-          "metaPee-0158"
-        ],
-        "selected_track": null,
-        "selection_poolable_candidate": false,
-        "source_fingerprint": "1d1cbe1e162504e4a67d7e0e77dadc97a2858c9ec4609a78a401f8ed694418eb",
-        "version": "provisional-human-review-2026-09-07-v2"
-      },
-      "reference_group": "Low adherence (MDS 0–3)",
-      "requires_key_review": true,
-      "scale": "Mediterranean diet score",
-      "stratum": "Women; all bladder cancer",
-      "subexposure_inherited": false,
-      "subexposure_pooling_selected": false,
-      "subexposure_projection_id": "7bbc3fc4b04ce979fc46966a77dde05a6f9cd5ed4c19dd6b13361bacd749c99c",
-      "subexposure_source": "Mediterranean diet",
-      "subgroup": null,
-      "unit": null
     }
   ],
   "subexposure_projection": {
     "mode": "yes",
     "pooling_rows": 1,
-    "table_rows": 10
+    "table_rows": 8
   },
   "success": true,
-  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n      <th>Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Pooled Result (Single Study)</th>\n      <td>379</td>\n      <td>37442</td>\n      <td>0.970066</td>\n      <td>0.88024</td>\n      <td>1.079804</td>\n    </tr>\n  </tbody>\n</table>"
+  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n      <th>Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Pooled Result (Single Study)</th>\n      <td>379</td>\n      <td>37442</td>\n      <td>0.890223</td>\n      <td>0.620536</td>\n      <td>1.259256</td>\n    </tr>\n  </tbody>\n</table>"
 }

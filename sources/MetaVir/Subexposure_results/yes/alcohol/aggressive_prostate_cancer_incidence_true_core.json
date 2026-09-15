@@ -1337,9 +1337,6 @@
       "Disease Scope": "Aggressive prostate cancer",
       "disease_scope_pooling_selected": false,
       "disease_scope_pooling_reason": "Both pipelines classify this study as eligible but not poolable. The pipeline with more populated study and result fields is displayed; equal information uses ChatGPT. This study is not pooled and this comparison does not require manual review.",
-      "subexposure_source": "Alcohol",
-      "subexposure_inherited": false,
-      "include_subexposures": "yes",
       "disease_scope_original_row": {
         "Study": "Papa NP et al. (2017)",
         "PMID": "28417982",
@@ -1576,11 +1573,13 @@
         "Disease Endpoint": "aggressive",
         "Disease Scope": "Aggressive prostate cancer",
         "disease_scope_pooling_selected": false,
-        "disease_scope_pooling_reason": "Both pipelines classify this study as eligible but not poolable. The pipeline with more populated study and result fields is displayed; equal information uses ChatGPT. This study is not pooled and this comparison does not require manual review.",
-        "subexposure_source": "Alcohol",
-        "subexposure_inherited": false,
-        "include_subexposures": "yes"
-      }
+        "disease_scope_pooling_reason": "Both pipelines classify this study as eligible but not poolable. The pipeline with more populated study and result fields is displayed; equal information uses ChatGPT. This study is not pooled and this comparison does not require manual review."
+      },
+      "subexposure_source": "Alcohol",
+      "subexposure_inherited": false,
+      "include_subexposures": "yes",
+      "subexposure_projection_id": "99c760e479664d97b6504adbb6886fdaf1e84d7bf0fc94788c63477a37dc362c",
+      "subexposure_original_pool_in_parent_meta_analysis": false
     },
     {
       "Effect ID": "9a6964f3b31d7bb34031bb5181a86013f44ac31ecc543cf784b5214d1628e3c9",
@@ -3933,8 +3932,8 @@
       "pooled_es": 1.2831269134088965,
       "ci_low": 0.7284764358443131,
       "ci_upp": 2.2603055426299075,
-      "pi_low": 0.10590918979223589,
-      "pi_upp": 15.545531781935495
+      "pi_low": 0.10590918978896197,
+      "pi_upp": 15.545531782416047
     },
     "pooled_es": 1.28,
     "ci_low": 0.73,
@@ -3995,9 +3994,9 @@
     "canonical_track": "combined",
     "extracted": 13
   },
-  "plot_url": "static/alcohol/forest_aggressive_prostate_cancer_incidence_primary.png?t=339",
-  "funnel_plot_url": "static/alcohol/funnel_aggressive_prostate_cancer_incidence_primary.png?t=7166",
-  "baujat_plot_url": "static/alcohol/baujat_aggressive_prostate_cancer_incidence_primary.png?t=3868",
+  "plot_url": "static/subexposures/yes/alcohol/forest_aggressive_prostate_cancer_incidence_primary.png?t=5668",
+  "funnel_plot_url": "static/subexposures/yes/alcohol/funnel_aggressive_prostate_cancer_incidence_primary.png?t=8063",
+  "baujat_plot_url": "static/subexposures/yes/alcohol/baujat_aggressive_prostate_cancer_incidence_primary.png?t=806",
   "exposure": "Alcohol",
   "cancer": "Aggressive prostate cancer",
   "outcome": "Incidence",
@@ -4057,7 +4056,7 @@
   },
   "combined_projection": {
     "schema_version": 1,
-    "build_id": "4e71b1802106f92791ec5bfd23c2724d9de076fb1ac5e944cbf1cb88821c7e1e",
+    "build_id": "bfc39165a77dcf2937c9f2ba59fb034729109db6432dfddc1c5eed8219f1d512",
     "base_track": "chatgpt",
     "adjudicator": "claude-fable-5-1",
     "applied_field_count": 31,
@@ -4074,6 +4073,11 @@
     "reviewed_rows": 13,
     "baseline_source": "manual_required"
   },
+  "nonpoolable_status_retention_version": "nonpoolable-status-retention-2026-09-08-both-v2",
+  "human_review_preserved_scope": {
+    "reason": "Separate aggressive-cancer endpoint evidence is unchanged by this general-incidence review",
+    "source_study_rows_sha256": "361913394e9c826ce15e04309250328198fcb249515a9ed1201093548940f621"
+  },
   "endpoint": "Incidence",
   "include_subexposures": "yes",
   "subexposure_projection": {
@@ -4081,6 +4085,5 @@
     "table_rows": 13,
     "pooling_rows": 4,
     "policy": "transitive-child-closure-distinct-populations-v1"
-  },
-  "nonpoolable_status_retention_version": "nonpoolable-status-retention-2026-09-08-both-v2"
+  }
 }

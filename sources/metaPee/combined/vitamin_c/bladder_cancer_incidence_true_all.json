@@ -1,21 +1,50 @@
 {
   "headline": {
-    "pooled_es": 0.68,
-    "ci_low": 0.44,
-    "ci_upp": 1.07,
-    "pi_low": null,
-    "pi_upp": null,
+    "canonical_rr": {
+      "pooled_es": 0.7520894595050112,
+      "ci_low": 0.5588914559969618,
+      "ci_upp": 1.011971086697384,
+      "pi_low": 0.054616610598348936,
+      "pi_upp": 10.356529797468596
+    },
+    "pooled_es": 0.75,
+    "ci_low": 0.56,
+    "ci_upp": 1.01,
+    "pi_low": 0.05,
+    "pi_upp": 10.36,
     "interpretation": "Not statistically significant",
-    "i2": 53.29,
-    "tau2": 0.06,
-    "eggers_p": null,
+    "i2": 25.5,
+    "tau2": 0.02,
+    "eggers_p": 0.755820742953421,
     "funnel_interpretation": "Egger’s test is generally not recommended when fewer than 10 studies are available.",
-    "loo_results": [],
+    "loo_results": [
+      {
+        "omitted": "Bruemmer B et al. (1996) [PMID: 8781464] — estimate 1 · Mixed",
+        "pooled_es": 0.6879734135858545,
+        "ci_low": null,
+        "ci_upp": null,
+        "is_significant": false
+      },
+      {
+        "omitted": "Zeegers MP et al. (2001) [PMID: 11592769] — estimate 1 · Mixed",
+        "pooled_es": 0.6848429677733634,
+        "ci_low": 0.3727937915155318,
+        "ci_upp": 1.258094692516057,
+        "is_significant": false
+      },
+      {
+        "omitted": "Shibata A et al. (1992) [PMID: 1419605] — estimate 1 · Male",
+        "pooled_es": 0.6838584665327847,
+        "ci_low": 0.43885200724352896,
+        "ci_upp": 1.0656494547809034,
+        "is_significant": false
+      }
+    ],
     "baseline_risk": 0.021,
     "baseline_risk_percent": 2.1,
-    "results_interpretation": "The pooled analysis of 2 studies yielded an effect size of 0.68 (95% CI: 0.44–1.07), indicating no statistically significant association between Vitamin C and bladder cancer. Although the point estimate suggests a potential inverse relationship, the confidence interval includes the null. These findings were accompanied by substantial heterogeneity (I² = 53.29%), reflecting considerable variability across studies."
+    "results_interpretation": "The pooled analysis of 3 studies yielded an effect size of 0.75 (95% CI: 0.56–1.01), indicating no statistically significant association between Vitamin C and bladder cancer. Although the point estimate suggests a potential inverse relationship, the confidence interval includes the null. These findings were accompanied by moderate heterogeneity (I² = 25.50%), suggesting some variability in the results across studies."
   },
-  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Effect</th>\n      <th>SD Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Bruemmer B et al. (1996) [PMID: 8781464] — estimate 1 · Mixed</th>\n      <td>-0.6826</td>\n      <td>0.2889</td>\n      <td>-1.2488</td>\n      <td>-0.1164</td>\n      <td>262.0</td>\n      <td>667.0</td>\n    </tr>\n    <tr>\n      <th>Zeegers MP et al. (2001) [PMID: 11592769] — estimate 1 · Mixed</th>\n      <td>-0.2107</td>\n      <td>0.1434</td>\n      <td>-0.4917</td>\n      <td>0.0703</td>\n      <td>569.0</td>\n      <td>3692.0</td>\n    </tr>\n  </tbody>\n</table>",
+  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Effect</th>\n      <th>SD Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Bruemmer B et al. (1996) [PMID: 8781464] — estimate 1 · Mixed</th>\n      <td>-0.6826</td>\n      <td>0.2889</td>\n      <td>-1.2488</td>\n      <td>-0.1164</td>\n      <td>262.0</td>\n      <td>667.0</td>\n    </tr>\n    <tr>\n      <th>Zeegers MP et al. (2001) [PMID: 11592769] — estimate 1 · Mixed</th>\n      <td>-0.2107</td>\n      <td>0.1434</td>\n      <td>-0.4917</td>\n      <td>0.0703</td>\n      <td>569.0</td>\n      <td>3692.0</td>\n    </tr>\n    <tr>\n      <th>Shibata A et al. (1992) [PMID: 1419605] — estimate 1 · Male</th>\n      <td>-0.0619</td>\n      <td>0.3022</td>\n      <td>-0.6541</td>\n      <td>0.5304</td>\n      <td>71.0</td>\n      <td>4247.0</td>\n    </tr>\n  </tbody>\n</table>",
   "screening_stats": null,
   "studies": [
     {
@@ -46,7 +75,7 @@
       "combined_direction_harmonization": null,
       "P Value": null,
       "Sample Size": null,
-      "Cases": 320.0,
+      "Cases": 320,
       "SE": null,
       "Quality Score": "Fair",
       "Quality %": 36.4,
@@ -282,14 +311,12 @@
         },
         "equal_information": true
       },
-      "subexposure_pooling_selected": false,
-      "display_only": true,
-      "manual_review_pending": false,
-      "display_only_reason": "Both pipelines classify this study as eligible, not poolable. The more informative single-pipeline record is retained for display only; no manual comparison or pooling is required.",
+      "Estimated Cases": null,
       "subexposure_source": "Vitamin C",
       "subexposure_inherited": false,
       "include_subexposures": "no",
-      "subexposure_projection_id": "1eecd800943073c952e03a47c2bb1c5bdaa4fce4c6eb4b9a343b548afb2018b2"
+      "subexposure_projection_id": "a5b2fb4a519c1c4750628ff43c0917ac020ae3ed24d5469d4a42faf39b1ad09d",
+      "subexposure_pooling_selected": false
     },
     {
       "Record ID": "combined:316b42a7d28e3f41df48",
@@ -606,7 +633,7 @@
       "combined_direction_harmonization": null,
       "P Value": null,
       "Sample Size": 1206,
-      "Cases": 351.0,
+      "Cases": 351,
       "SE": null,
       "Quality Score": "Good",
       "Quality %": 90.0,
@@ -868,252 +895,20 @@
         },
         "equal_information": true
       },
-      "subexposure_pooling_selected": false,
-      "display_only": true,
-      "manual_review_pending": false,
-      "display_only_reason": "Both pipelines classify this study as eligible, not poolable. The more informative single-pipeline record is retained for display only; no manual comparison or pooling is required.",
+      "Estimated Cases": null,
       "subexposure_source": "Vitamin C",
       "subexposure_inherited": false,
       "include_subexposures": "no",
-      "subexposure_projection_id": "b03a0296ef21692249d2755bd098f37bb21b0c5818e3f9cd130d53007dae57f7"
-    },
-    {
-      "Record ID": "combined:911007b10f8ff4368b88",
-      "Effect ID": "combined:911007b10f8ff4368b88",
-      "context_id": "1419605|Vitamin C|Bladder cancer",
-      "PMID": "1419605",
-      "PMCID": "PMC1977409",
-      "Study": "Shibata A et al. (1992) [PMID: 1419605] — estimate 1 · Men · ChatGPT review candidate",
-      "Reference": "Intake of vegetables, fruits, beta-carotene, vitamin C and vitamin supplements and cancer incidence among the elderly: a prospective study.",
-      "Title": "Intake of vegetables, fruits, beta-carotene, vitamin C and vitamin supplements and cancer incidence among the elderly: a prospective study.",
-      "Authors": "Shibata A, Paganini-Hill A, Ross RK, Henderson BE",
-      "Journal": "British journal of cancer",
-      "Year": "1992",
-      "Link": "https://pubmed.ncbi.nlm.nih.gov/1419605/",
-      "Direct Exposure": "Vitamin C",
-      "direct_exposure": "Vitamin C",
-      "Displayed Exposure": "Vitamin C",
-      "Effect Type": "RR",
-      "Effect Size": null,
-      "Lower CI": null,
-      "Upper CI": null,
-      "Original Effect Size": null,
-      "Original Lower CI": null,
-      "Original Upper CI": null,
-      "Original Effect Type": "RR",
-      "effect_inverted": false,
-      "combined_direction_harmonization": null,
-      "P Value": null,
-      "Sample Size": 11580,
-      "Cases": null,
-      "SE": null,
-      "Quality Score": "Fair",
-      "Quality %": 45.5,
-      "JBI": {
-        "q1": "Yes",
-        "q2": "Unclear",
-        "q3": "Yes",
-        "q4": "Yes",
-        "q5": "Yes",
-        "q6": "Yes",
-        "q7": "Unclear",
-        "q8": "Unclear",
-        "q9": "Unclear",
-        "q10": "Unclear",
-        "q11": "Unclear",
-        "q12": "NA",
-        "q13": "NA"
-      },
-      "Design": "prospective cohort",
-      "Timing": "1981-1989",
-      "Continent": null,
-      "Population": "Residents of a retirement community initially free from cancer",
-      "Gender": "Men",
-      "Ethnicity": "NA",
-      "Smoking Status": "Adjusted for smoking",
-      "Stage": null,
-      "comparison_type": "Vitamin C supplement users versus non-users",
-      "exposure_measurement_type": "dietary_intake",
-      "exposure_subtype": "supplement",
-      "extraction_evidence": {
-        "sample_size": {
-          "excerpt": "A cohort of 11,580 residents of a retirement community initially free from cancer were followed from 1981 to 1989.",
-          "source": "full_text",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-          "location": "Abstract, paragraph 1"
-        },
-        "cases": null,
-        "effect_size": null,
-        "confidence_interval": null,
-        "p_value": null,
-        "comparison": {
-          "excerpt": "However, an inverse association was observed between vitamin C supplement use and bladder cancer risk.",
-          "source": "full_text",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-          "location": "Abstract, paragraph 1"
-        },
-        "design": {
-          "excerpt": "A cohort of 11,580 residents of a retirement community initially free from cancer were followed from 1981 to 1989.",
-          "source": "full_text",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-          "location": "Abstract, paragraph 1"
-        },
-        "timing": {
-          "excerpt": "were followed from 1981 to 1989",
-          "source": "full_text",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-          "location": "Abstract, paragraph 1"
-        },
-        "continent": null,
-        "ethnicity": null,
-        "exposure_measurement": {
-          "excerpt": "Relative risks of cancer were calculated for baseline consumption of vegetables, fruits, beta-carotene, dietary vitamin C, and vitamin supplements.",
-          "source": "full_text",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-          "location": "Abstract, paragraph 1"
-        },
-        "gender": {
-          "excerpt": "After adjustment for age and smoking, no evidence of a protective effect was found for any of the dietary variables in men. However, an inverse association was observed between vitamin C supplement use and bladder cancer risk.",
-          "source": "full_text",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-          "location": "Abstract, paragraph 1"
-        },
-        "smoking_status": {
-          "excerpt": "After adjustment for age and smoking",
-          "source": "full_text",
-          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-          "location": "Abstract, paragraph 1"
-        }
-      },
-      "extraction_supporting_text": {
-        "sample_size": "A cohort of 11,580 residents of a retirement community initially free from cancer were followed from 1981 to 1989.",
-        "comparison": "However, an inverse association was observed between vitamin C supplement use and bladder cancer risk.",
-        "design": "A cohort of 11,580 residents of a retirement community initially free from cancer were followed from 1981 to 1989.",
-        "timing": "were followed from 1981 to 1989",
-        "exposure_measurement": "Relative risks of cancer were calculated for baseline consumption of vegetables, fruits, beta-carotene, dietary vitamin C, and vitamin supplements.",
-        "gender": "After adjustment for age and smoking, no evidence of a protective effect was found for any of the dietary variables in men. However, an inverse association was observed between vitamin C supplement use and bladder cancer risk.",
-        "smoking_status": "After adjustment for age and smoking"
-      },
-      "exposure_measurement_supporting_text": "Relative risks of cancer were calculated for baseline consumption of vegetables, fruits, beta-carotene, dietary vitamin C, and vitamin supplements.",
-      "policy_poolable": false,
-      "Primary Estimate": false,
-      "combined_source_estimate_index": 0,
-      "canonical_track": "combined",
-      "combined_source": "chatgpt",
-      "requires_key_review": true,
-      "key_differences": [
-        "total_n",
-        "effect_size",
-        "ci"
-      ],
-      "combined_nonkey_fills": [],
-      "combined_p_value_resolution": null,
-      "combined_source_extraction": {
-        "effect_size": null,
-        "effect_type": "RR",
-        "ci_lower": null,
-        "ci_upper": null,
-        "p_value": null,
-        "total_n": 11580,
-        "cases": null,
-        "comparison_type": "Vitamin C supplement users versus non-users",
-        "design": "prospective cohort",
-        "timing": "1981-1989",
-        "continent": null,
-        "country": null,
-        "population": "Residents of a retirement community initially free from cancer",
-        "gender": "Men",
-        "smoking_status": "Adjusted for smoking",
-        "exposure_subtype": "supplement",
-        "exposure_measurement_type": "dietary_intake",
-        "needs_inversion": false,
-        "reported_effect_type": "RR",
-        "reported_effect_type_label": "relative risk",
-        "reported_effect_size": null,
-        "reported_ci_lower": null,
-        "reported_ci_upper": null,
-        "reported_p_value": null,
-        "evidence": {
-          "sample_size": {
-            "excerpt": "A cohort of 11,580 residents of a retirement community initially free from cancer were followed from 1981 to 1989.",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-            "location": "Abstract, paragraph 1"
-          },
-          "cases": null,
-          "effect_size": null,
-          "confidence_interval": null,
-          "p_value": null,
-          "comparison": {
-            "excerpt": "However, an inverse association was observed between vitamin C supplement use and bladder cancer risk.",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-            "location": "Abstract, paragraph 1"
-          },
-          "design": {
-            "excerpt": "A cohort of 11,580 residents of a retirement community initially free from cancer were followed from 1981 to 1989.",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-            "location": "Abstract, paragraph 1"
-          },
-          "timing": {
-            "excerpt": "were followed from 1981 to 1989",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-            "location": "Abstract, paragraph 1"
-          },
-          "continent": null,
-          "ethnicity": null,
-          "exposure_measurement": {
-            "excerpt": "Relative risks of cancer were calculated for baseline consumption of vegetables, fruits, beta-carotene, dietary vitamin C, and vitamin supplements.",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-            "location": "Abstract, paragraph 1"
-          },
-          "gender": {
-            "excerpt": "After adjustment for age and smoking, no evidence of a protective effect was found for any of the dietary variables in men. However, an inverse association was observed between vitamin C supplement use and bladder cancer risk.",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-            "location": "Abstract, paragraph 1"
-          },
-          "smoking_status": {
-            "excerpt": "After adjustment for age and smoking",
-            "source": "full_text",
-            "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC1977409/",
-            "location": "Abstract, paragraph 1"
-          }
-        },
-        "ethnicity": "NA",
-        "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
-        "ethnicity_supporting_text": "NA",
-        "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-        "direction_imputed": false,
-        "comparison_direction": "higher_vs_lower",
-        "comparison_group": "higher",
-        "comparison_labels_imputed": true,
-        "reference_group": "lower"
-      },
-      "final_status": "ELIGIBLE_NOT_POOLABLE",
-      "direction_imputed": false,
-      "comparison_direction": "higher_vs_lower",
-      "comparison_group": "higher",
-      "reference_group": "lower",
-      "manual_poolable": false,
-      "display_only_reason": "Key numeric disagreement; both track candidates retained for manual review.",
-      "Estimated Cases": 243,
-      "subexposure_source": "Vitamin C",
-      "subexposure_inherited": false,
-      "include_subexposures": "no",
-      "subexposure_projection_id": "6120e2c9b5fe36a1820710cc500011df19d56fd8a7028a44db46a471a55298b6",
+      "subexposure_projection_id": "b024082cd92bef8920e3996ca75ee93acabe3226ddb5ad690d0df8b288474489",
       "subexposure_pooling_selected": false
     },
     {
-      "Record ID": "combined:61022e9983c9c542e620",
-      "Effect ID": "combined:61022e9983c9c542e620",
+      "Record ID": "combined:b67f2e9cbed3a365fdca",
+      "Effect ID": "combined:b67f2e9cbed3a365fdca",
       "context_id": "1419605|Vitamin C|Bladder cancer",
       "PMID": "1419605",
       "PMCID": "PMC1977409",
-      "Study": "Shibata A et al. (1992) [PMID: 1419605] — estimate 1 · Male · Claude+Gemini review candidate",
+      "Study": "Shibata A et al. (1992) [PMID: 1419605] — estimate 1 · Male",
       "Reference": "Intake of vegetables, fruits, beta-carotene, vitamin C and vitamin supplements and cancer incidence among the elderly: a prospective study.",
       "Title": "Intake of vegetables, fruits, beta-carotene, vitamin C and vitamin supplements and cancer incidence among the elderly: a prospective study.",
       "Authors": "Shibata A, Paganini-Hill A, Ross RK, Henderson BE",
@@ -1255,17 +1050,13 @@
         "smoking_status": "To adjust for age, we divided the cohort into three age strata: < = 74, 75-79, and > = 80. Similarly, the cohort was divided into three strata based on smoking habits; never (47% of all subjects), past (42%), and current (11%). Both the age and smoking strata were entered in the analysis as a series of dummy variables."
       },
       "exposure_measurement_supporting_text": "Dietary vitamin C intake was calculated similarly using the values in the US Department of Agriculture tables of food composition (US Department of Agriculture, 1976- 1984).",
-      "policy_poolable": false,
-      "Primary Estimate": false,
+      "policy_poolable": true,
+      "Primary Estimate": true,
       "combined_source_estimate_index": 0,
       "canonical_track": "combined",
-      "combined_source": "claude_gemini",
-      "requires_key_review": true,
-      "key_differences": [
-        "total_n",
-        "effect_size",
-        "ci"
-      ],
+      "combined_source": "human_manual_review",
+      "requires_key_review": false,
+      "key_differences": [],
       "combined_nonkey_fills": [],
       "combined_p_value_resolution": null,
       "combined_source_extraction": {
@@ -1381,20 +1172,21 @@
         "comparison_labels_imputed": true,
         "reference_group": "lower"
       },
-      "final_status": "ELIGIBLE_NOT_POOLABLE",
+      "final_status": "INCLUDE_META",
       "direction_imputed": false,
       "ci_level_assumed": true,
       "comparison_direction": "higher_vs_lower",
       "comparison_group": "higher",
       "reference_group": "lower",
-      "manual_poolable": false,
-      "display_only_reason": "Key numeric disagreement; both track candidates retained for manual review.",
+      "manual_review": true,
+      "manual_poolable": true,
+      "decision_origin": "human",
       "Estimated Cases": null,
       "subexposure_source": "Vitamin C",
       "subexposure_inherited": false,
       "include_subexposures": "no",
-      "subexposure_projection_id": "e1c05f5cbfded5600d7ecb71a251ee2b13f366eb7049a4438ce0788d99843a04",
-      "subexposure_pooling_selected": false
+      "subexposure_projection_id": "469747692b4f09fc89dcfcbbfa0ed2e024d30f2906e3654c4c041f8b77ca282d",
+      "subexposure_pooling_selected": true
     },
     {
       "Record ID": "combined:3eef10ebd9a03a124b3e",
@@ -1424,7 +1216,7 @@
       "combined_direction_harmonization": null,
       "P Value": null,
       "Sample Size": 3184,
-      "Cases": 1592.0,
+      "Cases": 1592,
       "SE": null,
       "Quality Score": "Moderate",
       "Quality %": 80.0,
@@ -1686,14 +1478,12 @@
         },
         "equal_information": false
       },
-      "subexposure_pooling_selected": false,
-      "display_only": true,
-      "manual_review_pending": false,
-      "display_only_reason": "Both pipelines classify this study as eligible, not poolable. The more informative single-pipeline record is retained for display only; no manual comparison or pooling is required.",
+      "Estimated Cases": null,
       "subexposure_source": "Vitamin C",
       "subexposure_inherited": false,
       "include_subexposures": "no",
-      "subexposure_projection_id": "e115b72502e0676f1ba1ee50e1de0d4112bb584928b9668c22c8bda5e9e031e3"
+      "subexposure_projection_id": "1fcfb0da7666381d15380b8f172f3865b22f588945fa685fb79293b13d382bde",
+      "subexposure_pooling_selected": false
     },
     {
       "Record ID": "combined:9a55277d084e2a4f648e",
@@ -1723,7 +1513,7 @@
       "combined_direction_harmonization": null,
       "P Value": null,
       "Sample Size": 55557,
-      "Cases": 322.0,
+      "Cases": 322,
       "SE": null,
       "Quality Score": "Moderate",
       "Quality %": 63.6,
@@ -1974,14 +1764,12 @@
         },
         "equal_information": false
       },
-      "subexposure_pooling_selected": false,
-      "display_only": true,
-      "manual_review_pending": false,
-      "display_only_reason": "Both pipelines classify this study as eligible, not poolable. The more informative single-pipeline record is retained for display only; no manual comparison or pooling is required.",
+      "Estimated Cases": null,
       "subexposure_source": "Vitamin C",
       "subexposure_inherited": false,
       "include_subexposures": "no",
-      "subexposure_projection_id": "711eb398a0ecd86cb7203f74014e338e3e8b53b4c794297059311e743b99bdd7"
+      "subexposure_projection_id": "8d9aecb0176b24f4be80418105b1b266314ec58aec815c184cc420bc1c4aa6e2",
+      "subexposure_pooling_selected": false
     },
     {
       "Record ID": "combined:f88c6cbbb647a77c69a4",
@@ -2011,7 +1799,7 @@
       "combined_direction_harmonization": null,
       "P Value": null,
       "Sample Size": 1712,
-      "Cases": 856.0,
+      "Cases": 856,
       "SE": null,
       "Quality Score": "Good",
       "Quality %": 90.0,
@@ -2268,14 +2056,12 @@
         },
         "equal_information": false
       },
-      "subexposure_pooling_selected": false,
-      "display_only": true,
-      "manual_review_pending": false,
-      "display_only_reason": "Both pipelines classify this study as eligible, not poolable. The more informative single-pipeline record is retained for display only; no manual comparison or pooling is required.",
+      "Estimated Cases": null,
       "subexposure_source": "Vitamin C",
       "subexposure_inherited": false,
       "include_subexposures": "no",
-      "subexposure_projection_id": "ad1f65253e96cb1d22bb364203634a942f275c6c00b1f130c74d6d0c28aa28c8"
+      "subexposure_projection_id": "7e88906c170c99580754fd756d3250c380551b5267921fe2a23e77a0d0242dae",
+      "subexposure_pooling_selected": false
     },
     {
       "Record ID": "combined:533c69e0153f08db30b8",
@@ -2512,14 +2298,12 @@
         },
         "equal_information": false
       },
-      "subexposure_pooling_selected": false,
-      "display_only": true,
-      "manual_review_pending": false,
-      "display_only_reason": "Both pipelines classify this study as eligible, not poolable. The more informative single-pipeline record is retained for display only; no manual comparison or pooling is required.",
+      "Estimated Cases": null,
       "subexposure_source": "Vitamin C",
       "subexposure_inherited": false,
       "include_subexposures": "no",
-      "subexposure_projection_id": "a894344887e82c0e818e7d5daa67f7b29a484aa3306e38ec96cc4a5c55073e47"
+      "subexposure_projection_id": "a894344887e82c0e818e7d5daa67f7b29a484aa3306e38ec96cc4a5c55073e47",
+      "subexposure_pooling_selected": false
     },
     {
       "Record ID": "combined:0f2e5a3c50cb4fadb017",
@@ -2840,10 +2624,9 @@
   "plot_url": null,
   "funnel_plot_url": null,
   "baujat_plot_url": null,
-  "requires_key_review": true,
+  "requires_key_review": false,
   "combined_reconciliation": {
     "source": "outputs/track_comparison_2026-09-05/discrepancies.json",
     "original_screening_tracks_unchanged": true
-  },
-  "both_nonpoolable_display_policy": "both-nonpoolable-display-2026-09-08-v1"
+  }
 }

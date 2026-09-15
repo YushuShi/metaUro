@@ -538,9 +538,6 @@
       "Disease Scope": "Prostate cancer",
       "disease_scope_pooling_selected": false,
       "disease_scope_pooling_reason": "Both pipelines classify this study as eligible but not poolable. The pipeline with more populated study and result fields is displayed; equal information uses ChatGPT. This study is not pooled and this comparison does not require manual review.",
-      "subexposure_source": "Iodine",
-      "subexposure_inherited": false,
-      "include_subexposures": "yes",
       "disease_scope_original_row": {
         "Study": "Hoption Cann SA et al. (2007)",
         "PMID": "17571964",
@@ -762,11 +759,13 @@
         "Disease Endpoint": "general",
         "Disease Scope": "Prostate cancer",
         "disease_scope_pooling_selected": false,
-        "disease_scope_pooling_reason": "Both pipelines classify this study as eligible but not poolable. The pipeline with more populated study and result fields is displayed; equal information uses ChatGPT. This study is not pooled and this comparison does not require manual review.",
-        "subexposure_source": "Iodine",
-        "subexposure_inherited": false,
-        "include_subexposures": "yes"
-      }
+        "disease_scope_pooling_reason": "Both pipelines classify this study as eligible but not poolable. The pipeline with more populated study and result fields is displayed; equal information uses ChatGPT. This study is not pooled and this comparison does not require manual review."
+      },
+      "subexposure_source": "Iodine",
+      "subexposure_inherited": false,
+      "include_subexposures": "yes",
+      "subexposure_projection_id": "c535a110947c66c4d593d1b458bdb5479a7b37afc25c0974984731a9e6d1cc15",
+      "subexposure_original_pool_in_parent_meta_analysis": false
     }
   ],
   "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n      <th>Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Pooled Result (Single Study)</th>\n      <td>328</td>\n      <td>656</td>\n      <td>0.775595</td>\n      <td>0.545268</td>\n      <td>1.094113</td>\n    </tr>\n  </tbody>\n</table>",
@@ -792,16 +791,16 @@
     "total_fetched": 24974,
     "after_prefilter": 35545,
     "prefilter_skip": {},
-    "llm_screened_in": 1134,
-    "llm_screened_out": 34411,
+    "llm_screened_in": 1147,
+    "llm_screened_out": 34398,
     "consensus_bypassed": 0,
-    "fable_applied_fields": 429,
-    "fable_pending_fields": 209,
+    "fable_applied_fields": 374,
+    "fable_pending_fields": 0,
     "canonical_track": "combined",
     "extracted": 2
   },
-  "plot_url": "static/iodine/forest_prostate_cancer_incidence_primary.png?t=7897",
-  "funnel_plot_url": "static/iodine/funnel_prostate_cancer_incidence_primary.png?t=1473",
+  "plot_url": "static/iodine/forest_prostate_cancer_incidence_primary.png?v=bfc39165a77d",
+  "funnel_plot_url": "static/iodine/funnel_prostate_cancer_incidence_primary.png?v=bfc39165a77d",
   "baujat_plot_url": null,
   "exposure": "Iodine",
   "cancer": "Prostate cancer",
@@ -834,14 +833,6 @@
     "source": "selected original ChatGPT final packets",
     "new_model_calls": 0
   },
-  "combined_projection": {
-    "schema_version": 1,
-    "build_id": "4e71b1802106f92791ec5bfd23c2724d9de076fb1ac5e944cbf1cb88821c7e1e",
-    "base_track": "chatgpt",
-    "adjudicator": "claude-fable-5-1",
-    "applied_field_count": 0,
-    "pending_field_count": 0
-  },
   "disease": "Prostate cancer",
   "disease_scope_projection": {
     "policy_version": 1,
@@ -853,6 +844,14 @@
     "reviewed_rows": 2,
     "baseline_source": "published_general_prostate"
   },
+  "combined_projection": {
+    "schema_version": 1,
+    "build_id": "bfc39165a77dcf2937c9f2ba59fb034729109db6432dfddc1c5eed8219f1d512",
+    "base_track": "chatgpt",
+    "adjudicator": "claude-fable-5-1",
+    "applied_field_count": 0,
+    "pending_field_count": 0
+  },
   "endpoint": "Incidence",
   "include_subexposures": "yes",
   "subexposure_projection": {
@@ -860,6 +859,5 @@
     "table_rows": 2,
     "pooling_rows": 1,
     "policy": "transitive-child-closure-distinct-populations-v1"
-  },
-  "nonpoolable_status_retention_version": "nonpoolable-status-retention-2026-09-08-both-v2"
+  }
 }

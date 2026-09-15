@@ -1,4 +1,4 @@
-"""Verify the immutable snapshots, optionally also checking their original folders."""
+"""Verify the active evidence release and its preserved import provenance."""
 import argparse
 import hashlib
 import json
@@ -14,11 +14,15 @@ def verify(original_parent=None):
     if manifest.get('pending_cloud_files'):
         print(f"Incomplete snapshot: {len(manifest['pending_cloud_files'])} cloud files are still pending.")
         return 1
-    for entry in manifest['files']:
-        targets = [ROOT / entry['path']]
-        if original_parent:
-            targets.append(Path(original_parent) / Path(entry['path']).relative_to('sources'))
-        for path in targets:
+    collections = [(manifest['files'] + manifest.get('supporting_files', []), ROOT, False)]
+    if original_parent:
+        baseline_path = manifest.get('baseline_snapshot_manifest')
+        baseline = json.loads((ROOT / baseline_path).read_text()) if baseline_path else manifest
+        collections.append((baseline['files'], Path(original_parent), True))
+    for entries, parent, original in collections:
+        for entry in entries:
+            relative = Path(entry['path']).relative_to('sources') if original else Path(entry['path'])
+            path = parent / relative
             if path.exists() and getattr(path.stat(), 'st_flags', 0) & 0x40000000:
                 failures.append(str(path) + ' (download from OneDrive before direct comparison)')
                 continue
@@ -28,7 +32,8 @@ def verify(original_parent=None):
         print('\n'.join(failures))
         print(f'FAILED: {len(failures)} changed or missing files')
         return 1
-    print(f"Verified {len(manifest['files']):,} snapshot files; all SHA-256 checksums match.")
+    print(f"Verified {len(manifest['files']):,} evidence files and "
+          f"{len(manifest.get('supporting_files', []))} provenance files; all SHA-256 checksums match.")
     return 0
 
 

@@ -1,0 +1,3454 @@
+{
+  "version": "curator-dataset-deduplication-2026-09-14-v1",
+  "repository": "MetaVir",
+  "decision_authority": "user",
+  "user_instruction": "keep only\n\nPMID: 15514967\n\nPMID: 25866035\n\nPMID: 39417685\n\nPMID: 19066370\n\nfor those exposure/disease combinations",
+  "preceding_audit_report": "reports/duplicate_sample_size_effect_2026-09-14/possible_shared_datasets.md",
+  "preceding_audit_report_sha256": "f867bcc32506386d9911fd8e010c7668331e280f9b24996e0177258795503b55",
+  "scope_note": "The PMID 25866035 choice belongs to the urinary source and is applied separately. These five decisions cover general prostate incidence only; unrelated exposure and aggressive-cancer scopes are preserved.",
+  "original_final_sha256": "ebadae361fe0e916b163dd07f0f0ab9e20caf3da74ade1164570e34a4f0da118",
+  "effective_track_sha256": {
+    "CHATGPT": "e64628d0fc8d32bc417b33940bfe6ce6a01210a735db6ffb27c5c324d37d0e3f",
+    "CLAUDE_GEMINI": "88117d66d57c0fff27e3bcefdcd03a580a05b114f1a272910f8ec26ee7227671"
+  },
+  "decisions": [
+    {
+      "decision_id": "metavir-dataset-dedup-2026-09-14-01",
+      "context_id": "17392149|Lycopene|Prostate cancer",
+      "exposure": "Lycopene",
+      "disease": "Prostate cancer",
+      "retained_pmid": "15514967",
+      "excluded_pmid": "17392149",
+      "retained_context_id": "15514967|Lycopene|Prostate cancer",
+      "superseded_human_review_id": null,
+      "source_track_sha256": {
+        "chatgpt": {
+          "17392149|Lycopene|Prostate cancer": "99f40d1159a445043f5aaa3d0375cfe7b05c04d50a62ab6a5df734ff7584aa3c",
+          "15514967|Lycopene|Prostate cancer": "4aadb15ced17daa5bd3944ede1db09927686ab3317aff5de9a6cd6bb57c69917"
+        },
+        "claude_gemini": {
+          "17392149|Lycopene|Prostate cancer": "07444fc2da2a5db5b9a3b8fc5d7f2f33b3a848b9bfe55ce1834455588a04936c",
+          "15514967|Lycopene|Prostate cancer": "4e309504e7e6ce0284c3ec337b0b6d382caffb9789eee8b90357aab20ceeda97"
+        }
+      },
+      "before": {
+        "context_id": "17392149|Lycopene|Prostate cancer",
+        "pmid": "17392149",
+        "pmcid": "",
+        "published_date": "2007",
+        "title": "Tea and lycopene protect against prostate cancer.",
+        "authors": [
+          "Jian L",
+          "Lee AH",
+          "Binns CW"
+        ],
+        "journal": "Asia Pacific journal of clinical nutrition",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+        "exposure": "Lycopene",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Not pooled: JBI grade must be Moderate or Good.",
+        "missing_key_fields": [],
+        "needs_full_text": true,
+        "full_text_eligible": false,
+        "extraction": {
+          "effect_size": 0.18,
+          "effect_type": "OR",
+          "ci_lower": 0.08,
+          "ci_upper": 0.39,
+          "p_value": 2.2026319369372503e-05,
+          "total_n": 404,
+          "cases": 130,
+          "comparison_type": "High versus low",
+          "design": "case-control study",
+          "timing": "retrospective dietary questionnaire assessment relative to diagnosis",
+          "continent": "Asia",
+          "country": "China",
+          "population": "Chinese men",
+          "exposure_subtype": "dietary_component",
+          "exposure_measurement_type": "dietary_intake",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3; total_n derived from reported group counts 130 + 274 = 404"
+            },
+            "cases": {
+              "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3"
+            },
+            "effect_size": {
+              "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk (odds ratio 0.18, 95% CI 0.08-0.39).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 8"
+            },
+            "confidence_interval": {
+              "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk (odds ratio 0.18, 95% CI 0.08-0.39).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 8"
+            },
+            "p_value": null,
+            "comparison": {
+              "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "abstract"
+            },
+            "design": {
+              "excerpt": "a case-control study was conducted",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3"
+            },
+            "timing": {
+              "excerpt": "Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "abstract"
+            },
+            "continent": {
+              "excerpt": "Hangzhou, China",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3"
+            },
+            "ethnicity": {
+              "excerpt": "Chinese men",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 10"
+            },
+            "exposure_measurement": {
+              "excerpt": "Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 4"
+            },
+            "location": {
+              "excerpt": "conducted in Hangzhou, China",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "abstract"
+            }
+          },
+          "ethnicity": "Asian",
+          "ethnicity_basis": "Country imputation: China -> Asian",
+          "ethnicity_supporting_text": "Chinese men",
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "OR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "direction_original_comparison": null,
+          "direction_imputed": true,
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure.",
+          "location": "Hangzhou, China",
+          "exposure_classification_ambiguous": true,
+          "p_value_is_exact": true,
+          "cross_model_original_p_value": 2.2026319369372503e-05,
+          "p_value_relation": "=",
+          "p_value_imputed": true,
+          "key_comparison_p_resolution": {
+            "needed": true,
+            "wald_p_value": 2.2026319369372503e-05,
+            "chatgpt_matches": true,
+            "claude_gemini_matches": false,
+            "matching_source": "chatgpt",
+            "combined_p_value": 2.2026319369372503e-05,
+            "combined_p_value_relation": "=",
+            "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+            "resolution": "computed_two_sided_wald"
+          }
+        },
+        "jbi": {
+          "checklist_type": "case_control",
+          "answers": {
+            "q1": "Unclear",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Unclear",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Unclear",
+            "q10": "Yes",
+            "q11": "NA",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 40.0,
+          "grade": "Fair"
+        },
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+        "pmc_source_status": "no_pmcid",
+        "pmc_error": "",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Not pooled: JBI grade must be Moderate or Good.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [
+            "JBI grade must be Moderate or Good"
+          ],
+          "direction_imputed": true
+        },
+        "invalid_key_fields": [],
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: p_value"
+        ],
+        "key_comparison_p_resolution": {
+          "needed": true,
+          "wald_p_value": 2.2026319369372503e-05,
+          "chatgpt_matches": true,
+          "claude_gemini_matches": false,
+          "matching_source": "chatgpt",
+          "combined_p_value": 2.2026319369372503e-05,
+          "combined_p_value_relation": "=",
+          "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+          "resolution": "computed_two_sided_wald"
+        },
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 9
+        }
+      },
+      "before_sha256": "312f25015612381155d37a818f4e5ec7a9de876787c8b7a7c795b7b6f0eaea79",
+      "after": {
+        "context_id": "17392149|Lycopene|Prostate cancer",
+        "pmid": "17392149",
+        "pmcid": "",
+        "published_date": "2007",
+        "title": "Tea and lycopene protect against prostate cancer.",
+        "authors": [
+          "Jian L",
+          "Lee AH",
+          "Binns CW"
+        ],
+        "journal": "Asia Pacific journal of clinical nutrition",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+        "exposure": "Lycopene",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "EXCLUDE",
+        "exclusion_code": "CURATOR-REDUNDANT-DATASET",
+        "reason": "User selected PMID 15514967 instead of PMID 17392149 for Lycopene / Prostate cancer; exclude the redundant article from display and pooling, including inherited exposure views.",
+        "missing_key_fields": [],
+        "needs_full_text": true,
+        "full_text_eligible": false,
+        "extraction": {
+          "effect_size": 0.18,
+          "effect_type": "OR",
+          "ci_lower": 0.08,
+          "ci_upper": 0.39,
+          "p_value": 2.2026319369372503e-05,
+          "total_n": 404,
+          "cases": 130,
+          "comparison_type": "High versus low",
+          "design": "case-control study",
+          "timing": "retrospective dietary questionnaire assessment relative to diagnosis",
+          "continent": "Asia",
+          "country": "China",
+          "population": "Chinese men",
+          "exposure_subtype": "dietary_component",
+          "exposure_measurement_type": "dietary_intake",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3; total_n derived from reported group counts 130 + 274 = 404"
+            },
+            "cases": {
+              "excerpt": "To investigate the possible joint effect of lycopene and green tea on prostate cancer risk, a case-control study was conducted in Hangzhou, China, with 130 prostate cancer patients and 274 hospital controls.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3"
+            },
+            "effect_size": {
+              "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk (odds ratio 0.18, 95% CI 0.08-0.39).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 8"
+            },
+            "confidence_interval": {
+              "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk (odds ratio 0.18, 95% CI 0.08-0.39).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 8"
+            },
+            "p_value": null,
+            "comparison": {
+              "excerpt": "Intakes of vegetables and fruits rich in lycopene were also inversely associated with prostate cancer risk",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "abstract"
+            },
+            "design": {
+              "excerpt": "a case-control study was conducted",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3"
+            },
+            "timing": {
+              "excerpt": "Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "abstract"
+            },
+            "continent": {
+              "excerpt": "Hangzhou, China",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 3"
+            },
+            "ethnicity": {
+              "excerpt": "Chinese men",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 10"
+            },
+            "exposure_measurement": {
+              "excerpt": "Information on tea and dietary intakes, and possible confounders was collected using a structured questionnaire.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "Abstract, sentence 4"
+            },
+            "location": {
+              "excerpt": "conducted in Hangzhou, China",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/17392149/",
+              "location": "abstract"
+            }
+          },
+          "ethnicity": "Asian",
+          "ethnicity_basis": "Country imputation: China -> Asian",
+          "ethnicity_supporting_text": "Chinese men",
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "OR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "direction_original_comparison": null,
+          "direction_imputed": true,
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure.",
+          "location": "Hangzhou, China",
+          "exposure_classification_ambiguous": true,
+          "p_value_is_exact": true,
+          "cross_model_original_p_value": 2.2026319369372503e-05,
+          "p_value_relation": "=",
+          "p_value_imputed": true,
+          "key_comparison_p_resolution": {
+            "needed": true,
+            "wald_p_value": 2.2026319369372503e-05,
+            "chatgpt_matches": true,
+            "claude_gemini_matches": false,
+            "matching_source": "chatgpt",
+            "combined_p_value": 2.2026319369372503e-05,
+            "combined_p_value_relation": "=",
+            "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+            "resolution": "computed_two_sided_wald"
+          }
+        },
+        "jbi": {
+          "checklist_type": "case_control",
+          "answers": {
+            "q1": "Unclear",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Unclear",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Unclear",
+            "q10": "Yes",
+            "q11": "NA",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 40.0,
+          "grade": "Fair"
+        },
+        "final_status": "EXCLUDE",
+        "full_text_status": "EXCLUDE",
+        "pmc_source_status": "no_pmcid",
+        "pmc_error": "",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Not pooled: JBI grade must be Moderate or Good.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [
+            "JBI grade must be Moderate or Good"
+          ],
+          "direction_imputed": true
+        },
+        "invalid_key_fields": [],
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: p_value"
+        ],
+        "key_comparison_p_resolution": {
+          "needed": true,
+          "wald_p_value": 2.2026319369372503e-05,
+          "chatgpt_matches": true,
+          "claude_gemini_matches": false,
+          "matching_source": "chatgpt",
+          "combined_p_value": 2.2026319369372503e-05,
+          "combined_p_value_relation": "=",
+          "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+          "resolution": "computed_two_sided_wald"
+        },
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 9
+        },
+        "decision_authority": "human_curator_deduplication",
+        "manual_review_pending": false,
+        "key_comparison_pending": false,
+        "provisional_ui_display_only": false,
+        "policy_poolable": false,
+        "manual_poolable": false,
+        "pool_in_parent_meta_analysis": false,
+        "curator_deduplication": {
+          "version": "curator-dataset-deduplication-2026-09-14-v1",
+          "decision_id": "metavir-dataset-dedup-2026-09-14-01",
+          "retained_pmid": "15514967",
+          "retained_context_id": "15514967|Lycopene|Prostate cancer",
+          "excluded_pmid": "17392149",
+          "exposure": "Lycopene",
+          "disease": "Prostate cancer",
+          "action": "exclude_redundant_article_context",
+          "user_instruction": "keep only\n\nPMID: 15514967\n\nPMID: 25866035\n\nPMID: 39417685\n\nPMID: 19066370\n\nfor those exposure/disease combinations",
+          "supersedes_previous_decisions": true
+        }
+      },
+      "after_sha256": "ca13a6b281f6c5485cd6d080de6e75bba452fca13f1063dcc9253dcb62441509",
+      "retained_record": {
+        "context_id": "15514967|Lycopene|Prostate cancer",
+        "pmid": "15514967",
+        "pmcid": "",
+        "published_date": "2005-03-01",
+        "title": "Do dietary lycopene and other carotenoids protect against prostate cancer?",
+        "authors": [
+          "Jian L",
+          "Du CJ",
+          "Lee AH",
+          "Binns CW"
+        ],
+        "journal": "International journal of cancer",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+        "exposure": "Lycopene",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Not pooled: JBI grade must be Moderate or Good.",
+        "missing_key_fields": [],
+        "needs_full_text": true,
+        "full_text_eligible": false,
+        "extraction": {
+          "effect_size": 0.18,
+          "effect_type": "OR",
+          "ci_lower": 0.08,
+          "ci_upper": 0.41,
+          "p_value": 3.898183284142841e-05,
+          "total_n": 404,
+          "cases": 130,
+          "comparison_type": "highest versus lowest quartile of intake",
+          "design": "case-control study",
+          "timing": "2001-2002",
+          "continent": "Asia",
+          "country": "China",
+          "population": "Incident histologically confirmed prostate adenocarcinoma cases and hospital inpatient controls without prostate cancer or other malignant diseases",
+          "exposure_subtype": "dietary_component",
+          "exposure_measurement_type": "dietary_intake",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "The cases were 130 incident patients with histologically confirmed adenocarcinoma of the prostate. The controls were 274 hospital inpatients without prostate cancer or any other malignant diseases.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, third and fourth sentences; total_n derived from reported group counts 130 + 274 = 404"
+            },
+            "cases": {
+              "excerpt": "The cases were 130 incident patients with histologically confirmed adenocarcinoma of the prostate.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, third sentence"
+            },
+            "effect_size": {
+              "excerpt": "Intake of tomatoes, pumpkin, spinach, watermelon and citrus fruits were also inversely associated with the prostate cancer risk. The adjusted odds ratios for the highest versus the lowest quartiles of intake were 0.18 (95% CI: 0.08-0.41) for lycopene, 0.43 (95% CI: 0.21-0.85) for alpha-carotene, 0.34 (95% CI: 0.17-0.69) for beta-carotene, 0.15 (95% CI: 0.06-0.34) for beta-cryptoxanthin and 0.02 (95% CI: 0.01-0.10) for lutein and zeaxanthin.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, ninth sentence"
+            },
+            "confidence_interval": {
+              "excerpt": "The adjusted odds ratios for the highest versus the lowest quartiles of intake were 0.18 (95% CI: 0.08-0.41) for lycopene, 0.43 (95% CI: 0.21-0.85) for alpha-carotene, 0.34 (95% CI: 0.17-0.69) for beta-carotene, 0.15 (95% CI: 0.06-0.34) for beta-cryptoxanthin and 0.02 (95% CI: 0.01-0.10) for lutein and zeaxanthin.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, ninth sentence"
+            },
+            "p_value": null,
+            "comparison": {
+              "excerpt": "The adjusted odds ratios for the highest versus the lowest quartiles of intake",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, ninth sentence"
+            },
+            "design": {
+              "excerpt": "a case-control study was conducted",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, second sentence"
+            },
+            "timing": {
+              "excerpt": "during 2001-2002",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, second sentence"
+            },
+            "continent": {
+              "excerpt": "Hangzhou, southeast China",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, second sentence"
+            },
+            "ethnicity": null,
+            "exposure_measurement": {
+              "excerpt": "Information on usual food consumption, including vegetables and fruits, was collected by face-to-face interviews using a structured food frequency questionnaire.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "Abstract, fifth sentence"
+            },
+            "location": {
+              "excerpt": "Hangzhou, southeast China",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/15514967/",
+              "location": "abstract"
+            }
+          },
+          "ethnicity": "NA",
+          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
+          "ethnicity_supporting_text": "NA",
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "OR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "direction_imputed": false,
+          "location": "Hangzhou, southeast China",
+          "exposure_classification_ambiguous": false,
+          "p_value_is_exact": true,
+          "cross_model_original_p_value": 3.898183284142841e-05,
+          "p_value_relation": "=",
+          "p_value_imputed": true,
+          "key_comparison_p_resolution": {
+            "needed": true,
+            "wald_p_value": 3.898183284142841e-05,
+            "chatgpt_matches": true,
+            "claude_gemini_matches": false,
+            "matching_source": "chatgpt",
+            "combined_p_value": 3.898183284142841e-05,
+            "combined_p_value_relation": "=",
+            "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+            "resolution": "computed_two_sided_wald"
+          }
+        },
+        "jbi": {
+          "checklist_type": "case_control",
+          "answers": {
+            "q1": "Unclear",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Unclear",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Unclear",
+            "q10": "Yes",
+            "q11": "NA",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 40.0,
+          "grade": "Fair"
+        },
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+        "pmc_source_status": "no_pmcid",
+        "pmc_error": "",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Not pooled: JBI grade must be Moderate or Good.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [
+            "JBI grade must be Moderate or Good"
+          ],
+          "direction_imputed": false
+        },
+        "invalid_key_fields": [],
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: p_value"
+        ],
+        "key_comparison_p_resolution": {
+          "needed": true,
+          "wald_p_value": 3.898183284142841e-05,
+          "chatgpt_matches": true,
+          "claude_gemini_matches": false,
+          "matching_source": "chatgpt",
+          "combined_p_value": 3.898183284142841e-05,
+          "combined_p_value_relation": "=",
+          "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+          "resolution": "computed_two_sided_wald"
+        },
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 6
+        }
+      },
+      "retained_record_sha256": "cd0e8461b6ea4b2db185f903e48ac25df982c15087db20755d5c7f190f144e15"
+    },
+    {
+      "decision_id": "metavir-dataset-dedup-2026-09-14-02",
+      "context_id": "38343844|Omega-3 fatty acids|Prostate cancer",
+      "exposure": "Omega-3 fatty acids",
+      "disease": "Prostate cancer",
+      "retained_pmid": "39417685",
+      "excluded_pmid": "38343844",
+      "retained_context_id": "39417685|Omega-3 fatty acids|Prostate cancer",
+      "superseded_human_review_id": null,
+      "source_track_sha256": {
+        "chatgpt": {
+          "38343844|Omega-3 fatty acids|Prostate cancer": "170987567e526b409669a00141653f78576c5d126aa27f7c26325fffa366bc36",
+          "39417685|Omega-3 fatty acids|Prostate cancer": "743ff69ede7e13e5a1b24a4f862ac68b875cd178b269317fe4a3363e71964b25"
+        },
+        "claude_gemini": {
+          "38343844|Omega-3 fatty acids|Prostate cancer": "521e111b82eae22dbea20d9c6c2b714bde29fa27cbf63f983a47c6b608156930",
+          "39417685|Omega-3 fatty acids|Prostate cancer": "8c611f21ec1acfea2aa9d1d3d4aba91cb419ec71ad28e96ae403a1405c977e37"
+        }
+      },
+      "before": {
+        "context_id": "38343844|Omega-3 fatty acids|Prostate cancer",
+        "pmid": "38343844",
+        "pmcid": "PMC10854355",
+        "published_date": "2024-01-22",
+        "title": "Associations of plasma omega-6 and omega-3 fatty acids with overall and 19 site-specific cancers: a population-based cohort study in UK Biobank.",
+        "authors": [
+          "Zhang Y",
+          "Sun Y",
+          "Song S",
+          "Khankari NK",
+          "Brenna JT",
+          "Shen Y",
+          "Ye K"
+        ],
+        "journal": "medRxiv : the preprint server for health sciences",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+        "exposure": "Omega-3 fatty acids",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+        "missing_key_fields": [],
+        "invalid_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": true,
+        "extraction": {
+          "effect_size": 1.03,
+          "effect_type": "HR",
+          "ci_lower": 1,
+          "ci_upper": 1.05,
+          "p_value": 0.017557004961141237,
+          "ci_confidence_level": 95.0,
+          "total_n": 253138,
+          "cases": 6617,
+          "comparison_type": "Per 1-SD increase in plasma omega-3 fatty acids percentage",
+          "design": "Prospective population-based cohort study",
+          "timing": "Baseline plasma biomarker measurement with incident prostate cancer during follow-up",
+          "continent": "Europe",
+          "country": "United Kingdom",
+          "location": "UK Biobank",
+          "ethnicity": "NA",
+          "population": "Male UK Biobank participants",
+          "exposure_subtype": "human_biomarker",
+          "exposure_measurement_type": "human_biospecimen",
+          "exposure_classification_ambiguous": false,
+          "wald_inputs_same_estimate": true,
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort. 253,138 eligible UK Biobank participants were included in our study.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            },
+            "cases": {
+              "excerpt": "",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 3, prostate cancer, additionally adjusted model"
+            },
+            "effect_size": {
+              "excerpt": "Of the 19 site-specific cancers available, 14 were associated with omega-6% and five with omega-3%, all indicating inverse associations, with the exception that prostate cancer was positively associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 - 1.05).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "confidence_interval": {
+              "excerpt": "Of the 19 site-specific cancers available, 14 were associated with omega-6% and five with omega-3%, all indicating inverse associations, with the exception that prostate cancer was positively associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 - 1.05).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "p_value": null,
+            "comparison": {
+              "excerpt": "HR per SD",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "design": {
+              "excerpt": "a population-based cohort study in UK Biobank",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Title"
+            },
+            "timing": {
+              "excerpt": "With a mean follow-up of 12.9 years",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "continent": {
+              "excerpt": "UK Biobank",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            },
+            "ethnicity": null,
+            "location": {
+              "excerpt": "UK Biobank",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            },
+            "exposure_measurement": {
+              "excerpt": "The plasma levels of omega-3 and omega-6 PUFAs were expressed as percentages of total fatty acids",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            }
+          },
+          "p_value_reported_as": "0.049",
+          "p_value_is_exact": true,
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "wald_derivations": [
+            {
+              "formula_version": 1,
+              "output": "p_value",
+              "effect_size": 1.03,
+              "effect_type": "HR",
+              "ci_lower": 1.01,
+              "ci_upper": 1.05,
+              "ci_confidence_level": 95.0,
+              "same_estimate": true
+            }
+          ],
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "direction_imputed": false,
+          "direction_original_comparison": "continuous",
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure.",
+          "cross_model_original_p_value": 0.049,
+          "p_value_relation": "=",
+          "p_value_imputed": true,
+          "key_comparison_p_resolution": {
+            "needed": true,
+            "wald_p_value": 0.017557004961141237,
+            "chatgpt_matches": false,
+            "claude_gemini_matches": false,
+            "matching_source": "neither",
+            "combined_p_value": 0.017557004961141237,
+            "combined_p_value_relation": "=",
+            "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+            "resolution": "computed_two_sided_wald"
+          }
+        },
+        "jbi": {
+          "checklist_type": "cohort",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Yes",
+            "q3": "Yes",
+            "q4": "Yes",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Yes",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Yes",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 81.8,
+          "grade": "Good"
+        },
+        "final_status": "INCLUDE_META",
+        "full_text_status": "INCLUDE_META",
+        "pmc_source_status": "full_text",
+        "third_round_status": "COMPLETED",
+        "third_round_model": "gpt-5.6-luna",
+        "full_text_characters_reviewed": 69302,
+        "pmc_source_sha256": "9546a10e088c0ce3b457a48f4bdf896a200f13e41da266211e1eedfcd5325983",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "INCLUDE_META",
+          "source_reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+          "source_full_text_status": "INCLUDE_META",
+          "remaining_issues": [],
+          "direction_imputed": false
+        },
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: cases, p_value"
+        ],
+        "pmc_source_format": "jats_xml",
+        "pmc_source_receipt_digest": "47e262133c50db490b1872d73543e67e6ac2c6afc741f7953c305b9e6a5e0f9c",
+        "pmc_source_raw_sha256": "cf6d4ad02b1f7db5ed176d7ef5a785f861a3c2cf006c9635e8d6110333376459",
+        "key_comparison_p_resolution": {
+          "needed": true,
+          "wald_p_value": 0.017557004961141237,
+          "chatgpt_matches": false,
+          "claude_gemini_matches": false,
+          "matching_source": "neither",
+          "combined_p_value": 0.017557004961141237,
+          "combined_p_value_relation": "=",
+          "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+          "resolution": "computed_two_sided_wald"
+        },
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 7
+        }
+      },
+      "before_sha256": "0f1edc9f93a9689996840335961045659e90ddb9258dc27c2cbe9343cb090a94",
+      "after": {
+        "context_id": "38343844|Omega-3 fatty acids|Prostate cancer",
+        "pmid": "38343844",
+        "pmcid": "PMC10854355",
+        "published_date": "2024-01-22",
+        "title": "Associations of plasma omega-6 and omega-3 fatty acids with overall and 19 site-specific cancers: a population-based cohort study in UK Biobank.",
+        "authors": [
+          "Zhang Y",
+          "Sun Y",
+          "Song S",
+          "Khankari NK",
+          "Brenna JT",
+          "Shen Y",
+          "Ye K"
+        ],
+        "journal": "medRxiv : the preprint server for health sciences",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+        "exposure": "Omega-3 fatty acids",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "EXCLUDE",
+        "exclusion_code": "CURATOR-REDUNDANT-DATASET",
+        "reason": "User selected PMID 39417685 instead of PMID 38343844 for Omega-3 fatty acids / Prostate cancer; exclude the redundant article from display and pooling, including inherited exposure views.",
+        "missing_key_fields": [],
+        "invalid_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": true,
+        "extraction": {
+          "effect_size": 1.03,
+          "effect_type": "HR",
+          "ci_lower": 1,
+          "ci_upper": 1.05,
+          "p_value": 0.017557004961141237,
+          "ci_confidence_level": 95.0,
+          "total_n": 253138,
+          "cases": 6617,
+          "comparison_type": "Per 1-SD increase in plasma omega-3 fatty acids percentage",
+          "design": "Prospective population-based cohort study",
+          "timing": "Baseline plasma biomarker measurement with incident prostate cancer during follow-up",
+          "continent": "Europe",
+          "country": "United Kingdom",
+          "location": "UK Biobank",
+          "ethnicity": "NA",
+          "population": "Male UK Biobank participants",
+          "exposure_subtype": "human_biomarker",
+          "exposure_measurement_type": "human_biospecimen",
+          "exposure_classification_ambiguous": false,
+          "wald_inputs_same_estimate": true,
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort. 253,138 eligible UK Biobank participants were included in our study.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            },
+            "cases": {
+              "excerpt": "",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 3, prostate cancer, additionally adjusted model"
+            },
+            "effect_size": {
+              "excerpt": "Of the 19 site-specific cancers available, 14 were associated with omega-6% and five with omega-3%, all indicating inverse associations, with the exception that prostate cancer was positively associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 - 1.05).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "confidence_interval": {
+              "excerpt": "Of the 19 site-specific cancers available, 14 were associated with omega-6% and five with omega-3%, all indicating inverse associations, with the exception that prostate cancer was positively associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 - 1.05).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "p_value": null,
+            "comparison": {
+              "excerpt": "HR per SD",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "design": {
+              "excerpt": "a population-based cohort study in UK Biobank",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Title"
+            },
+            "timing": {
+              "excerpt": "With a mean follow-up of 12.9 years",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Results"
+            },
+            "continent": {
+              "excerpt": "UK Biobank",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            },
+            "ethnicity": null,
+            "location": {
+              "excerpt": "UK Biobank",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            },
+            "exposure_measurement": {
+              "excerpt": "The plasma levels of omega-3 and omega-6 PUFAs were expressed as percentages of total fatty acids",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "Methods"
+            }
+          },
+          "p_value_reported_as": "0.049",
+          "p_value_is_exact": true,
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "wald_derivations": [
+            {
+              "formula_version": 1,
+              "output": "p_value",
+              "effect_size": 1.03,
+              "effect_type": "HR",
+              "ci_lower": 1.01,
+              "ci_upper": 1.05,
+              "ci_confidence_level": 95.0,
+              "same_estimate": true
+            }
+          ],
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "direction_imputed": false,
+          "direction_original_comparison": "continuous",
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure.",
+          "cross_model_original_p_value": 0.049,
+          "p_value_relation": "=",
+          "p_value_imputed": true,
+          "key_comparison_p_resolution": {
+            "needed": true,
+            "wald_p_value": 0.017557004961141237,
+            "chatgpt_matches": false,
+            "claude_gemini_matches": false,
+            "matching_source": "neither",
+            "combined_p_value": 0.017557004961141237,
+            "combined_p_value_relation": "=",
+            "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+            "resolution": "computed_two_sided_wald"
+          }
+        },
+        "jbi": {
+          "checklist_type": "cohort",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Yes",
+            "q3": "Yes",
+            "q4": "Yes",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Yes",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Yes",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 81.8,
+          "grade": "Good"
+        },
+        "final_status": "EXCLUDE",
+        "full_text_status": "EXCLUDE",
+        "pmc_source_status": "full_text",
+        "third_round_status": "COMPLETED",
+        "third_round_model": "gpt-5.6-luna",
+        "full_text_characters_reviewed": 69302,
+        "pmc_source_sha256": "9546a10e088c0ce3b457a48f4bdf896a200f13e41da266211e1eedfcd5325983",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "INCLUDE_META",
+          "source_reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+          "source_full_text_status": "INCLUDE_META",
+          "remaining_issues": [],
+          "direction_imputed": false
+        },
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: cases, p_value"
+        ],
+        "pmc_source_format": "jats_xml",
+        "pmc_source_receipt_digest": "47e262133c50db490b1872d73543e67e6ac2c6afc741f7953c305b9e6a5e0f9c",
+        "pmc_source_raw_sha256": "cf6d4ad02b1f7db5ed176d7ef5a785f861a3c2cf006c9635e8d6110333376459",
+        "key_comparison_p_resolution": {
+          "needed": true,
+          "wald_p_value": 0.017557004961141237,
+          "chatgpt_matches": false,
+          "claude_gemini_matches": false,
+          "matching_source": "neither",
+          "combined_p_value": 0.017557004961141237,
+          "combined_p_value_relation": "=",
+          "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+          "resolution": "computed_two_sided_wald"
+        },
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 7
+        },
+        "decision_authority": "human_curator_deduplication",
+        "manual_review_pending": false,
+        "key_comparison_pending": false,
+        "provisional_ui_display_only": false,
+        "policy_poolable": false,
+        "manual_poolable": false,
+        "pool_in_parent_meta_analysis": false,
+        "curator_deduplication": {
+          "version": "curator-dataset-deduplication-2026-09-14-v1",
+          "decision_id": "metavir-dataset-dedup-2026-09-14-02",
+          "retained_pmid": "39417685",
+          "retained_context_id": "39417685|Omega-3 fatty acids|Prostate cancer",
+          "excluded_pmid": "38343844",
+          "exposure": "Omega-3 fatty acids",
+          "disease": "Prostate cancer",
+          "action": "exclude_redundant_article_context",
+          "user_instruction": "keep only\n\nPMID: 15514967\n\nPMID: 25866035\n\nPMID: 39417685\n\nPMID: 19066370\n\nfor those exposure/disease combinations",
+          "supersedes_previous_decisions": true
+        }
+      },
+      "after_sha256": "507009a124e8c0a8be9435bca1e90eb15bf06d43da9c65f4a85114a3d3648aa4",
+      "retained_record": {
+        "context_id": "39417685|Omega-3 fatty acids|Prostate cancer",
+        "pmid": "39417685",
+        "pmcid": "PMC11736987",
+        "published_date": "2025-03-15",
+        "title": "Associations of plasma omega-6 and omega-3 fatty acids with overall and 19 site-specific cancers: A population-based cohort study in UK Biobank.",
+        "authors": [
+          "Zhang Y",
+          "Sun Y",
+          "Song S",
+          "Khankari NK",
+          "Brenna JT",
+          "Shen Y",
+          "Ye K"
+        ],
+        "journal": "International journal of cancer",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+        "exposure": "Omega-3 fatty acids",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+        "missing_key_fields": [],
+        "invalid_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": true,
+        "extraction": {
+          "effect_size": 1.03,
+          "effect_type": "HR",
+          "ci_lower": 1.01,
+          "ci_upper": 1.05,
+          "p_value": 0.049,
+          "ci_confidence_level": 95.0,
+          "total_n": 253138,
+          "cases": 6778,
+          "comparison_type": "Per 1-SD increase in plasma omega-3 fatty acids versus lower level",
+          "design": "Prospective cohort",
+          "timing": "Baseline plasma measurement with incident cancer follow-up",
+          "continent": "Europe",
+          "country": "United Kingdom",
+          "location": "UK Biobank",
+          "ethnicity": "NA",
+          "population": "Adults aged 37–73 years without cancer at baseline",
+          "exposure_subtype": "human_biomarker",
+          "exposure_measurement_type": "human_biospecimen",
+          "exposure_classification_ambiguous": false,
+          "wald_inputs_same_estimate": true,
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort. 253,138 eligible UK Biobank participants were included in our study.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods/results"
+            },
+            "cases": {
+              "excerpt": "",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "Table 3, prostate row, main model"
+            },
+            "effect_size": {
+              "excerpt": "Of the 19 site-specific cancers available, 14 were associated with omega-6% and five with omega-3%, all indicating inverse associations, with the exception that prostate cancer was positively associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01-1.05).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, results"
+            },
+            "confidence_interval": {
+              "excerpt": "Of the 19 site-specific cancers available, 14 were associated with omega-6% and five with omega-3%, all indicating inverse associations, with the exception that prostate cancer was positively associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01-1.05).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, results"
+            },
+            "p_value": {
+              "excerpt": "Only one site‐specific cancer, prostate cancer, was associated with omega‐3% (HR per SD = 1.03, 95% CI = 1.01–1.05, corrected p = .049) but not omega‐6% (HR per SD = 1.01, 95% CI = 0.98–1.03, corrected p = .56).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "Results, Associations of plasma omega-6, omega-3, and their ratio with cancer risk, paragraph 3"
+            },
+            "comparison": {
+              "excerpt": "HR per SD = 1.03",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, results"
+            },
+            "design": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods"
+            },
+            "timing": {
+              "excerpt": "With a mean follow-up of 12.9 years",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, results"
+            },
+            "continent": {
+              "excerpt": "Between 2006 and 2010, UK Biobank recruited over half a million participants, aged 37–73, in 22 assessment centers across England, Wales, and Scotland.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "METHODS, Study population, paragraph 1"
+            },
+            "ethnicity": null,
+            "location": {
+              "excerpt": "253,138 eligible UK Biobank participants were included in our study.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods/results"
+            },
+            "exposure_measurement": {
+              "excerpt": "The plasma levels of omega-3 and omega-6 PUFAs were expressed as percentages of total fatty acids (omega-3% and omega-6%).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods"
+            }
+          },
+          "p_value_reported_as": "0.049",
+          "p_value_is_exact": true,
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "wald_derivations": [
+            {
+              "formula_version": 1,
+              "output": "p_value",
+              "effect_size": 1.03,
+              "effect_type": "HR",
+              "ci_lower": 1.01,
+              "ci_upper": 1.05,
+              "ci_confidence_level": 95.0,
+              "same_estimate": true
+            }
+          ],
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "direction_imputed": false,
+          "direction_original_comparison": "continuous",
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure."
+        },
+        "jbi": {
+          "checklist_type": "cohort",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Yes",
+            "q3": "Yes",
+            "q4": "Yes",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Yes",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Yes",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 81.8,
+          "grade": "Good"
+        },
+        "final_status": "INCLUDE_META",
+        "full_text_status": "INCLUDE_META",
+        "pmc_source_status": "full_text",
+        "third_round_status": "COMPLETED",
+        "third_round_model": "gpt-5.6-luna",
+        "full_text_characters_reviewed": 75552,
+        "pmc_source_sha256": "1d9aa1941dde24a573b45fa386493141283e13421eeb79e8075389b179ec3bac",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "INCLUDE_META",
+          "source_reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+          "source_full_text_status": "INCLUDE_META",
+          "remaining_issues": [],
+          "direction_imputed": false
+        },
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: cases"
+        ],
+        "pmc_source_format": "jats_xml",
+        "pmc_source_receipt_digest": "88af53f87e0524492cad79166074b21d607990ae9bec0487a17977bf5b658c7b",
+        "pmc_source_raw_sha256": "9108fe2a904907b652b4dfa46b83bd6f4c169c9288df2840f01d5ca2182867bd",
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 8
+        }
+      },
+      "retained_record_sha256": "2553555d90eaf379740260e8334a91d547a7ea5bc2f1edbeabbbf95668077ae1"
+    },
+    {
+      "decision_id": "metavir-dataset-dedup-2026-09-14-03",
+      "context_id": "38343844|Omega-6 fatty acids|Prostate cancer",
+      "exposure": "Omega-6 fatty acids",
+      "disease": "Prostate cancer",
+      "retained_pmid": "39417685",
+      "excluded_pmid": "38343844",
+      "retained_context_id": "39417685|Omega-6 fatty acids|Prostate cancer",
+      "superseded_human_review_id": "metaVir-0429",
+      "source_track_sha256": {
+        "chatgpt": {
+          "38343844|Omega-6 fatty acids|Prostate cancer": "b0f9190b72f29f136ca5a977aec84db927e1776f3b10e0ec34d96eedaa2fecae",
+          "39417685|Omega-6 fatty acids|Prostate cancer": "98583f6b068cbd53d95c305558704c1943327b062dc63250e83291cd478a0b1a"
+        },
+        "claude_gemini": {
+          "38343844|Omega-6 fatty acids|Prostate cancer": "aa1a80426527adc7fe02674082da6249d805dfd61495857a477f5e23ac92c8ad",
+          "39417685|Omega-6 fatty acids|Prostate cancer": "7283532cc89ed7835a735925100197328a51461dee7754e09d51c42c922a4c37"
+        }
+      },
+      "before": {
+        "context_id": "38343844|Omega-6 fatty acids|Prostate cancer",
+        "pmid": "38343844",
+        "pmcid": "PMC10854355",
+        "published_date": "2024-01-22",
+        "title": "Associations of plasma omega-6 and omega-3 fatty acids with overall and 19 site-specific cancers: a population-based cohort study in UK Biobank.",
+        "authors": [
+          "Zhang Y",
+          "Sun Y",
+          "Song S",
+          "Khankari NK",
+          "Brenna JT",
+          "Shen Y",
+          "Ye K"
+        ],
+        "journal": "medRxiv : the preprint server for health sciences",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+        "exposure": "Omega-6 fatty acids",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Use Claude's",
+        "missing_key_fields": [],
+        "invalid_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": true,
+        "extraction": {
+          "effect_size": 1.01,
+          "effect_type": "HR",
+          "ci_lower": 0.98,
+          "ci_upper": 1.03,
+          "p_value": 0.719,
+          "ci_confidence_level": 95,
+          "total_n": 253138,
+          "cases": 6617,
+          "comparison_type": "High versus low",
+          "design": "prospective cohort",
+          "timing": "prospective",
+          "continent": "Europe",
+          "country": "United Kingdom",
+          "location": "UK Biobank",
+          "ethnicity": "NA",
+          "population": "UK Biobank participants aged 37-73 years without prior cancer at baseline",
+          "exposure_subtype": "human_biomarker",
+          "exposure_measurement_type": "human_biospecimen",
+          "exposure_classification_ambiguous": false,
+          "wald_inputs_same_estimate": true,
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "A total of 253,138 eligible participants were eventually included.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Methods / Study population / Paragraph 1"
+            },
+            "cases": {
+              "excerpt": "",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "effect_size": {
+              "excerpt": "Only one site-specific cancer, prostate cancer, was associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 – 1.05, corrected p = 0.049) but not omega-6% (HR per SD = 1.01, 95% CI = 0.98 – 1.03, corrected p = 0.56).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "confidence_interval": {
+              "excerpt": "Only one site-specific cancer, prostate cancer, was associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 – 1.05, corrected p = 0.049) but not omega-6% (HR per SD = 1.01, 95% CI = 0.98 – 1.03, corrected p = 0.56).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "p_value": {
+              "excerpt": "0.719",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "comparison": {
+              "excerpt": "Risk estimates of the incidence of overall cancer and specific cancer sites for 1-SD increase of plasma omega-6% and omega-3%, for additionally adjusted models.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Figure 2 / Caption"
+            },
+            "design": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Abstract / Methods / Paragraph 1"
+            },
+            "timing": {
+              "excerpt": "With a mean follow-up of 12.9 years, 29,838 participants were diagnosed with cancer.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Abstract / Methods / Paragraph 1"
+            },
+            "continent": {
+              "excerpt": "Between 2006 and 2010, UK Biobank recruited over half a million participants, aged 37–73, in 22 assessment centers across England, Wales and Scotland.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Methods / Study population / Paragraph 1"
+            },
+            "ethnicity": null,
+            "location": {
+              "excerpt": "UK Biobank participants",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "abstract"
+            },
+            "exposure_measurement": {
+              "excerpt": "The absolute concentrations of plasma polyunsaturated fatty acids (PUFAs) were assessed using nuclear magnetic resonance (NMR) in plasma samples obtained at the baseline visit from 2007 to 2010, and the corresponding percentages of total fatty acids were calculated",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Methods / Ascertainment of exposures / Paragraph 1"
+            }
+          },
+          "p_value_reported_as": "0.719",
+          "p_value_is_exact": true,
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "direction_original_comparison": "continuous",
+          "direction_imputed": true,
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure."
+        },
+        "jbi": {
+          "checklist_type": "cohort",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Yes",
+            "q3": "Yes",
+            "q4": "Yes",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Yes",
+            "q9": "Yes",
+            "q10": "Yes",
+            "q11": "Yes",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 100.0,
+          "grade": "Good"
+        },
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, p_value"
+        ],
+        "wald_completed_before_parallel_r3_gate": true,
+        "final_status": "INCLUDE_META",
+        "full_text_status": "INCLUDE_META",
+        "pmc_source_status": "verified_full_text",
+        "full_text_characters_reviewed": 69303,
+        "pmc_source_format": "jats_xml",
+        "pmc_source_sha256": "2ac48cf4bc74c529b320bef124cc6142cd12f43aff9e94bf66df0609fc982806",
+        "pmc_source_receipt_digest": "47e262133c50db490b1872d73543e67e6ac2c6afc741f7953c305b9e6a5e0f9c",
+        "pmc_source_raw_sha256": "cf6d4ad02b1f7db5ed176d7ef5a785f861a3c2cf006c9635e8d6110333376459",
+        "third_round_status": "COMPLETED",
+        "third_round_model": "gemini-3.7-flash",
+        "source_claude_r2_context_digest": "7821c1aba38c5c9365cddf1cf8d85e9e7dd14afa9f195d3372073ae50aa480dc",
+        "combined_selected_pipeline": "CLAUDE_GEMINI",
+        "poolability_policy": {
+          "version": "human-manual-review-2026-09-14-v1",
+          "remaining_issues": [],
+          "human_decision_authority": true
+        },
+        "decision_authority": "human_manual_review",
+        "key_comparison_pending": false,
+        "manual_review_pending": false,
+        "human_review_follow_up": [],
+        "human_adjudication": {
+          "version": "human-manual-review-2026-09-14-v1",
+          "review_id": "metaVir-0429",
+          "source_sha256": "ea0df907d0a6d148fdf471cda5300e46f867db94cd2a45ccdd1de098f8a7706e",
+          "manual_review_results": "Use Claude's",
+          "action": "selected_claude_gemini",
+          "selected_pipeline": "claude_gemini",
+          "estimate_pair": 1,
+          "follow_up_required": false
+        },
+        "combined_adjudication": {
+          "resolution": "HUMAN_MANUAL_REVIEW",
+          "selected_pipeline": "claude_gemini",
+          "explanation": "Use Claude's"
+        }
+      },
+      "before_sha256": "3598ff486934da702ccee07b844bb2ca915f40e9bfc85883f1023bce3fdb9d0a",
+      "after": {
+        "context_id": "38343844|Omega-6 fatty acids|Prostate cancer",
+        "pmid": "38343844",
+        "pmcid": "PMC10854355",
+        "published_date": "2024-01-22",
+        "title": "Associations of plasma omega-6 and omega-3 fatty acids with overall and 19 site-specific cancers: a population-based cohort study in UK Biobank.",
+        "authors": [
+          "Zhang Y",
+          "Sun Y",
+          "Song S",
+          "Khankari NK",
+          "Brenna JT",
+          "Shen Y",
+          "Ye K"
+        ],
+        "journal": "medRxiv : the preprint server for health sciences",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+        "exposure": "Omega-6 fatty acids",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "EXCLUDE",
+        "exclusion_code": "CURATOR-REDUNDANT-DATASET",
+        "reason": "User selected PMID 39417685 instead of PMID 38343844 for Omega-6 fatty acids / Prostate cancer; exclude the redundant article from display and pooling, including inherited exposure views.",
+        "missing_key_fields": [],
+        "invalid_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": true,
+        "extraction": {
+          "effect_size": 1.01,
+          "effect_type": "HR",
+          "ci_lower": 0.98,
+          "ci_upper": 1.03,
+          "p_value": 0.719,
+          "ci_confidence_level": 95,
+          "total_n": 253138,
+          "cases": 6617,
+          "comparison_type": "High versus low",
+          "design": "prospective cohort",
+          "timing": "prospective",
+          "continent": "Europe",
+          "country": "United Kingdom",
+          "location": "UK Biobank",
+          "ethnicity": "NA",
+          "population": "UK Biobank participants aged 37-73 years without prior cancer at baseline",
+          "exposure_subtype": "human_biomarker",
+          "exposure_measurement_type": "human_biospecimen",
+          "exposure_classification_ambiguous": false,
+          "wald_inputs_same_estimate": true,
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "A total of 253,138 eligible participants were eventually included.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Methods / Study population / Paragraph 1"
+            },
+            "cases": {
+              "excerpt": "",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "effect_size": {
+              "excerpt": "Only one site-specific cancer, prostate cancer, was associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 – 1.05, corrected p = 0.049) but not omega-6% (HR per SD = 1.01, 95% CI = 0.98 – 1.03, corrected p = 0.56).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "confidence_interval": {
+              "excerpt": "Only one site-specific cancer, prostate cancer, was associated with omega-3% (HR per SD = 1.03, 95% CI = 1.01 – 1.05, corrected p = 0.049) but not omega-6% (HR per SD = 1.01, 95% CI = 0.98 – 1.03, corrected p = 0.56).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "p_value": {
+              "excerpt": "0.719",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Table 2"
+            },
+            "comparison": {
+              "excerpt": "Risk estimates of the incidence of overall cancer and specific cancer sites for 1-SD increase of plasma omega-6% and omega-3%, for additionally adjusted models.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Figure 2 / Caption"
+            },
+            "design": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Abstract / Methods / Paragraph 1"
+            },
+            "timing": {
+              "excerpt": "With a mean follow-up of 12.9 years, 29,838 participants were diagnosed with cancer.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Abstract / Methods / Paragraph 1"
+            },
+            "continent": {
+              "excerpt": "Between 2006 and 2010, UK Biobank recruited over half a million participants, aged 37–73, in 22 assessment centers across England, Wales and Scotland.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Methods / Study population / Paragraph 1"
+            },
+            "ethnicity": null,
+            "location": {
+              "excerpt": "UK Biobank participants",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/38343844/",
+              "location": "abstract"
+            },
+            "exposure_measurement": {
+              "excerpt": "The absolute concentrations of plasma polyunsaturated fatty acids (PUFAs) were assessed using nuclear magnetic resonance (NMR) in plasma samples obtained at the baseline visit from 2007 to 2010, and the corresponding percentages of total fatty acids were calculated",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10854355/",
+              "location": "Methods / Ascertainment of exposures / Paragraph 1"
+            }
+          },
+          "p_value_reported_as": "0.719",
+          "p_value_is_exact": true,
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "direction_original_comparison": "continuous",
+          "direction_imputed": true,
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure."
+        },
+        "jbi": {
+          "checklist_type": "cohort",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Yes",
+            "q3": "Yes",
+            "q4": "Yes",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Yes",
+            "q9": "Yes",
+            "q10": "Yes",
+            "q11": "Yes",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 100.0,
+          "grade": "Good"
+        },
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, p_value"
+        ],
+        "wald_completed_before_parallel_r3_gate": true,
+        "final_status": "EXCLUDE",
+        "full_text_status": "EXCLUDE",
+        "pmc_source_status": "verified_full_text",
+        "full_text_characters_reviewed": 69303,
+        "pmc_source_format": "jats_xml",
+        "pmc_source_sha256": "2ac48cf4bc74c529b320bef124cc6142cd12f43aff9e94bf66df0609fc982806",
+        "pmc_source_receipt_digest": "47e262133c50db490b1872d73543e67e6ac2c6afc741f7953c305b9e6a5e0f9c",
+        "pmc_source_raw_sha256": "cf6d4ad02b1f7db5ed176d7ef5a785f861a3c2cf006c9635e8d6110333376459",
+        "third_round_status": "COMPLETED",
+        "third_round_model": "gemini-3.7-flash",
+        "source_claude_r2_context_digest": "7821c1aba38c5c9365cddf1cf8d85e9e7dd14afa9f195d3372073ae50aa480dc",
+        "combined_selected_pipeline": "CLAUDE_GEMINI",
+        "poolability_policy": {
+          "version": "human-manual-review-2026-09-14-v1",
+          "remaining_issues": [],
+          "human_decision_authority": true
+        },
+        "decision_authority": "human_curator_deduplication",
+        "key_comparison_pending": false,
+        "manual_review_pending": false,
+        "human_review_follow_up": [],
+        "human_adjudication": {
+          "version": "human-manual-review-2026-09-14-v1",
+          "review_id": "metaVir-0429",
+          "source_sha256": "ea0df907d0a6d148fdf471cda5300e46f867db94cd2a45ccdd1de098f8a7706e",
+          "manual_review_results": "Use Claude's",
+          "action": "selected_claude_gemini",
+          "selected_pipeline": "claude_gemini",
+          "estimate_pair": 1,
+          "follow_up_required": false
+        },
+        "combined_adjudication": {
+          "resolution": "HUMAN_MANUAL_REVIEW",
+          "selected_pipeline": "claude_gemini",
+          "explanation": "Use Claude's"
+        },
+        "provisional_ui_display_only": false,
+        "policy_poolable": false,
+        "manual_poolable": false,
+        "pool_in_parent_meta_analysis": false,
+        "curator_deduplication": {
+          "version": "curator-dataset-deduplication-2026-09-14-v1",
+          "decision_id": "metavir-dataset-dedup-2026-09-14-03",
+          "retained_pmid": "39417685",
+          "retained_context_id": "39417685|Omega-6 fatty acids|Prostate cancer",
+          "excluded_pmid": "38343844",
+          "exposure": "Omega-6 fatty acids",
+          "disease": "Prostate cancer",
+          "action": "exclude_redundant_article_context",
+          "user_instruction": "keep only\n\nPMID: 15514967\n\nPMID: 25866035\n\nPMID: 39417685\n\nPMID: 19066370\n\nfor those exposure/disease combinations",
+          "supersedes_previous_decisions": true
+        }
+      },
+      "after_sha256": "a2c1f57cd553cda64d988abd8d4d72fdec9501c7e584b314258685a0a9c0cd9f",
+      "retained_record": {
+        "context_id": "39417685|Omega-6 fatty acids|Prostate cancer",
+        "pmid": "39417685",
+        "pmcid": "PMC11736987",
+        "published_date": "2025-03-15",
+        "title": "Associations of plasma omega-6 and omega-3 fatty acids with overall and 19 site-specific cancers: A population-based cohort study in UK Biobank.",
+        "authors": [
+          "Zhang Y",
+          "Sun Y",
+          "Song S",
+          "Khankari NK",
+          "Brenna JT",
+          "Shen Y",
+          "Ye K"
+        ],
+        "journal": "International journal of cancer",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+        "exposure": "Omega-6 fatty acids",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+        "missing_key_fields": [],
+        "invalid_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": true,
+        "extraction": {
+          "effect_size": 1.01,
+          "effect_type": "HR",
+          "ci_lower": 0.98,
+          "ci_upper": 1.03,
+          "p_value": 0.4331396773951873,
+          "ci_confidence_level": 95.0,
+          "total_n": 253138,
+          "cases": 1555,
+          "comparison_type": "Per 1-SD increase in plasma omega-6 fatty acids percentage; 1 SD = 3.63 percentage points",
+          "design": "Prospective population-based cohort",
+          "timing": "Baseline plasma measurement with prospective follow-up for incident prostate cancer through 19 December 2022",
+          "continent": "Europe",
+          "country": "United Kingdom",
+          "location": "UK Biobank",
+          "ethnicity": "NA",
+          "population": "Male UK Biobank participants aged 37–73 years without cancer at baseline",
+          "exposure_subtype": "human_biomarker",
+          "exposure_measurement_type": "human_biospecimen",
+          "exposure_classification_ambiguous": false,
+          "wald_inputs_same_estimate": true,
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort. 253,138 eligible UK Biobank participants were included in our study.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods/results"
+            },
+            "cases": {
+              "excerpt": "1555",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "Results, Table 2, Prostate, additionally adjusted model"
+            },
+            "effect_size": {
+              "excerpt": "This association remained unchanged after additionally controlling for site‐specific covariates (per SD HR = 1.02, 95% CI = 1.01–1.03, p = .003).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "Results, Table 2, Prostate, additionally adjusted model"
+            },
+            "confidence_interval": {
+              "excerpt": "Only one site‐specific cancer, prostate cancer, was associated with omega‐3% (HR per SD = 1.03, 95% CI = 1.01–1.05, corrected p = .049) but not omega‐6% (HR per SD = 1.01, 95% CI = 0.98–1.03, corrected p = .56).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "Results, Table 2, Prostate, additionally adjusted model"
+            },
+            "p_value": {
+              "excerpt": "The most notable pair was omega‐6% and prostate cancer (additionally adjusted model, p trend = .72, p overall = .005).",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "Results, Associations of plasma omega-6, omega-3, and their ratio with cancer risk, paragraph discussing likelihood ratio tests"
+            },
+            "comparison": {
+              "excerpt": "The plasma levels of omega-3 and omega-6 PUFAs were expressed as percentages of total fatty acids (omega-3% and omega-6%).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods"
+            },
+            "design": {
+              "excerpt": "We investigated the associations of plasma omega-3 and omega-6 PUFAs with the incidence of overall and 19 site-specific cancers in a large prospective cohort.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods"
+            },
+            "timing": {
+              "excerpt": "With a mean follow-up of 12.9 years, 29,838 participants were diagnosed with cancer.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, results"
+            },
+            "continent": {
+              "excerpt": "Between 2006 and 2010, UK Biobank recruited over half a million participants, aged 37–73, in 22 assessment centers across England, Wales, and Scotland.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11736987/",
+              "location": "METHODS, Study population, paragraph 1"
+            },
+            "ethnicity": null,
+            "location": {
+              "excerpt": "253,138 eligible UK Biobank participants were included in our study.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods/results"
+            },
+            "exposure_measurement": {
+              "excerpt": "The plasma levels of omega-3 and omega-6 PUFAs were expressed as percentages of total fatty acids (omega-3% and omega-6%).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/39417685/",
+              "location": "Abstract, methods"
+            }
+          },
+          "p_value_reported_as": "0.005",
+          "p_value_is_exact": true,
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "direction_imputed": false,
+          "direction_original_comparison": "continuous",
+          "direction_imputation_reason": "Comparison direction was not explicit; the protocol assumes high versus low exposure.",
+          "cross_model_original_p_value": 0.005,
+          "p_value_relation": "=",
+          "p_value_imputed": true,
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "key_comparison_p_resolution": {
+            "needed": true,
+            "wald_p_value": 0.4331396773951873,
+            "chatgpt_matches": false,
+            "claude_gemini_matches": false,
+            "matching_source": "neither",
+            "combined_p_value": 0.4331396773951873,
+            "combined_p_value_relation": "=",
+            "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+            "resolution": "computed_two_sided_wald"
+          }
+        },
+        "jbi": {
+          "checklist_type": "cohort",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Yes",
+            "q3": "Yes",
+            "q4": "Yes",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Yes",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Yes",
+            "q12": "NA",
+            "q13": "NA"
+          },
+          "score_percent": 81.8,
+          "grade": "Good"
+        },
+        "final_status": "INCLUDE_META",
+        "full_text_status": "INCLUDE_META",
+        "pmc_source_status": "full_text",
+        "third_round_status": "COMPLETED",
+        "third_round_model": "gpt-5.6-luna",
+        "full_text_characters_reviewed": 75552,
+        "pmc_source_sha256": "1d9aa1941dde24a573b45fa386493141283e13421eeb79e8075389b179ec3bac",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "INCLUDE_META",
+          "source_reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+          "source_full_text_status": "INCLUDE_META",
+          "remaining_issues": [],
+          "direction_imputed": false
+        },
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: cases, ci_lower, ci_upper, effect_size, p_value"
+        ],
+        "pmc_source_format": "jats_xml",
+        "pmc_source_receipt_digest": "88af53f87e0524492cad79166074b21d607990ae9bec0487a17977bf5b658c7b",
+        "pmc_source_raw_sha256": "9108fe2a904907b652b4dfa46b83bd6f4c169c9288df2840f01d5ca2182867bd",
+        "key_comparison_p_resolution": {
+          "needed": true,
+          "wald_p_value": 0.4331396773951873,
+          "chatgpt_matches": false,
+          "claude_gemini_matches": false,
+          "matching_source": "neither",
+          "combined_p_value": 0.4331396773951873,
+          "combined_p_value_relation": "=",
+          "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+          "resolution": "computed_two_sided_wald"
+        },
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 8
+        }
+      },
+      "retained_record_sha256": "1ce0418f43b8887c71ff33718836aca198d6510889bddce6d4ab03996e89f4b5"
+    },
+    {
+      "decision_id": "metavir-dataset-dedup-2026-09-14-04",
+      "context_id": "20924966|Selenium|Prostate cancer",
+      "exposure": "Selenium",
+      "disease": "Prostate cancer",
+      "retained_pmid": "19066370",
+      "excluded_pmid": "20924966",
+      "retained_context_id": "19066370|Selenium|Prostate cancer",
+      "superseded_human_review_id": null,
+      "source_track_sha256": {
+        "chatgpt": {
+          "20924966|Selenium|Prostate cancer": "e5d7fdd4f7235b0eafa1bdaee848a750bc3cc8f85b9f3aba1f8cd63024fc19c4",
+          "19066370|Selenium|Prostate cancer": "4b8dd6e71d2984d7f003b382856040de0dd58832612b595fb249d49530d0f767"
+        },
+        "claude_gemini": {
+          "20924966|Selenium|Prostate cancer": "586b2efd8f09f2936810268ede52f7748b3fdfb02fd44552848a87c0a7f1a4b9",
+          "19066370|Selenium|Prostate cancer": "4bb4255007a626d3c9e7208e04458de203cdd55a3673f1d2ddbd6998c2efa580"
+        }
+      },
+      "before": {
+        "context_id": "20924966|Selenium|Prostate cancer",
+        "pmid": "20924966",
+        "pmcid": "",
+        "published_date": "2010",
+        "title": "A nutrient approach to prostate cancer prevention: The Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+        "authors": [
+          "Dunn BK",
+          "Richmond ES",
+          "Minasian LM",
+          "Ryan AM",
+          "Ford LG"
+        ],
+        "journal": "Nutrition and cancer",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+        "exposure": "Selenium",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "One pipeline excluded this study and the other retained it as eligible but not poolable. Retained for display without pooling; this comparison does not require manual review.",
+        "missing_key_fields": [],
+        "needs_full_text": true,
+        "full_text_eligible": false,
+        "extraction": {
+          "effect_size": 1.04,
+          "effect_type": "HR",
+          "ci_lower": 0.9088259032561716,
+          "ci_upper": 1.1901069238066473,
+          "p_value": 0.62,
+          "total_n": 35533,
+          "cases": 432,
+          "comparison_type": "selenium supplement versus placebo",
+          "design": "randomized controlled trial",
+          "timing": "7 to 12 yr",
+          "continent": null,
+          "country": null,
+          "population": "healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml",
+          "exposure_subtype": "supplement",
+          "exposure_measurement_type": "unclear",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml to 1) 200 μg/day l-selenomethionine, 2) 400 IU/day all-rac-alpha-tocopheryl acetate (vitamin E), 3) both supplements, or 4) placebo for 7 to 12 yr.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "cases": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, selenium result"
+            },
+            "effect_size": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "confidence_interval": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, selenium result"
+            },
+            "p_value": {
+              "excerpt": "P = 0.62",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, selenium result"
+            },
+            "comparison": {
+              "excerpt": "1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs. 1.00 (n = 416) for placebo",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "design": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "timing": {
+              "excerpt": "for 7 to 12 yr",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "continent": null,
+            "ethnicity": {
+              "excerpt": ">50 yr if African American",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "exposure_measurement": {
+              "excerpt": "200 μg/day l-selenomethionine",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            }
+          },
+          "ethnicity": "Black",
+          "ethnicity_basis": "Population imputation: stated Black/African population -> Black",
+          "ethnicity_supporting_text": ">50 yr if African American",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "ci_original_reported_bounds": [
+            0.87,
+            1.24
+          ],
+          "ci_original_confidence_level": 99.0,
+          "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+          "direction_imputed": false
+        },
+        "jbi": {
+          "checklist_type": "rct",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Unclear",
+            "q5": "Unclear",
+            "q6": "Unclear",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Unclear",
+            "q12": "Yes",
+            "q13": "Yes"
+          },
+          "score_percent": 30.8,
+          "grade": "Fair"
+        },
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+        "pmc_source_status": "no_pmcid",
+        "pmc_error": "",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Full text was indicated but no PMCID was available, so missing evidence could not be recovered.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [
+            "JBI grade must be Moderate or Good"
+          ],
+          "direction_imputed": false
+        },
+        "invalid_key_fields": [],
+        "key_comparison_pending": false,
+        "manual_review_pending": false,
+        "manual_poolable": false,
+        "policy_poolable": false,
+        "scientific_pooling_eligible": false,
+        "nonpoolable_status_retained": true,
+        "nonpoolable_status_resolution": {
+          "version": "nonpoolable-status-retention-2026-09-08-v1",
+          "retained_track": "chatgpt",
+          "final_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_fingerprint": "9cada26719f35d0aad161eded5250ace20b700c166340499eff75264b430645c",
+          "chatgpt_status": "ELIGIBLE_NOT_POOLABLE",
+          "claude_gemini_status": null,
+          "previous_combined_status": "ELIGIBLE_NOT_POOLABLE",
+          "manual_review_required": false,
+          "pooling_eligible": false,
+          "previous_automated_adjudications": {
+            "poolability_policy": {
+              "version": 1,
+              "source_status": "ELIGIBLE_NOT_POOLABLE",
+              "source_reason": "Not pooled: JBI grade must be Moderate or Good.",
+              "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+              "remaining_issues": [
+                "JBI grade must be Moderate or Good"
+              ],
+              "direction_imputed": false
+            }
+          }
+        },
+        "key_comparison": {
+          "action": "retained_eligible_not_poolable",
+          "current_fields": [],
+          "policy_version": "nonpoolable-status-retention-2026-09-08-v1"
+        }
+      },
+      "before_sha256": "3b0ce2ceea92f0a7433daa1bb8eb68d8cb66b1cbe39944040184c9924c837393",
+      "after": {
+        "context_id": "20924966|Selenium|Prostate cancer",
+        "pmid": "20924966",
+        "pmcid": "",
+        "published_date": "2010",
+        "title": "A nutrient approach to prostate cancer prevention: The Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+        "authors": [
+          "Dunn BK",
+          "Richmond ES",
+          "Minasian LM",
+          "Ryan AM",
+          "Ford LG"
+        ],
+        "journal": "Nutrition and cancer",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+        "exposure": "Selenium",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "EXCLUDE",
+        "exclusion_code": "CURATOR-REDUNDANT-DATASET",
+        "reason": "User selected PMID 19066370 instead of PMID 20924966 for Selenium / Prostate cancer; exclude the redundant article from display and pooling, including inherited exposure views.",
+        "missing_key_fields": [],
+        "needs_full_text": true,
+        "full_text_eligible": false,
+        "extraction": {
+          "effect_size": 1.04,
+          "effect_type": "HR",
+          "ci_lower": 0.9088259032561716,
+          "ci_upper": 1.1901069238066473,
+          "p_value": 0.62,
+          "total_n": 35533,
+          "cases": 432,
+          "comparison_type": "selenium supplement versus placebo",
+          "design": "randomized controlled trial",
+          "timing": "7 to 12 yr",
+          "continent": null,
+          "country": null,
+          "population": "healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml",
+          "exposure_subtype": "supplement",
+          "exposure_measurement_type": "unclear",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml to 1) 200 μg/day l-selenomethionine, 2) 400 IU/day all-rac-alpha-tocopheryl acetate (vitamin E), 3) both supplements, or 4) placebo for 7 to 12 yr.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "cases": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, selenium result"
+            },
+            "effect_size": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "confidence_interval": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, selenium result"
+            },
+            "p_value": {
+              "excerpt": "P = 0.62",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, selenium result"
+            },
+            "comparison": {
+              "excerpt": "1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs. 1.00 (n = 416) for placebo",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "design": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "timing": {
+              "excerpt": "for 7 to 12 yr",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "continent": null,
+            "ethnicity": {
+              "excerpt": ">50 yr if African American",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "exposure_measurement": {
+              "excerpt": "200 μg/day l-selenomethionine",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            }
+          },
+          "ethnicity": "Black",
+          "ethnicity_basis": "Population imputation: stated Black/African population -> Black",
+          "ethnicity_supporting_text": ">50 yr if African American",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "ci_original_reported_bounds": [
+            0.87,
+            1.24
+          ],
+          "ci_original_confidence_level": 99.0,
+          "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+          "direction_imputed": false
+        },
+        "jbi": {
+          "checklist_type": "rct",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Unclear",
+            "q5": "Unclear",
+            "q6": "Unclear",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Unclear",
+            "q12": "Yes",
+            "q13": "Yes"
+          },
+          "score_percent": 30.8,
+          "grade": "Fair"
+        },
+        "final_status": "EXCLUDE",
+        "full_text_status": "EXCLUDE",
+        "pmc_source_status": "no_pmcid",
+        "pmc_error": "",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Full text was indicated but no PMCID was available, so missing evidence could not be recovered.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [
+            "JBI grade must be Moderate or Good"
+          ],
+          "direction_imputed": false
+        },
+        "invalid_key_fields": [],
+        "key_comparison_pending": false,
+        "manual_review_pending": false,
+        "manual_poolable": false,
+        "policy_poolable": false,
+        "scientific_pooling_eligible": false,
+        "nonpoolable_status_retained": true,
+        "nonpoolable_status_resolution": {
+          "version": "nonpoolable-status-retention-2026-09-08-v1",
+          "retained_track": "chatgpt",
+          "final_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_fingerprint": "9cada26719f35d0aad161eded5250ace20b700c166340499eff75264b430645c",
+          "chatgpt_status": "ELIGIBLE_NOT_POOLABLE",
+          "claude_gemini_status": null,
+          "previous_combined_status": "ELIGIBLE_NOT_POOLABLE",
+          "manual_review_required": false,
+          "pooling_eligible": false,
+          "previous_automated_adjudications": {
+            "poolability_policy": {
+              "version": 1,
+              "source_status": "ELIGIBLE_NOT_POOLABLE",
+              "source_reason": "Not pooled: JBI grade must be Moderate or Good.",
+              "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+              "remaining_issues": [
+                "JBI grade must be Moderate or Good"
+              ],
+              "direction_imputed": false
+            }
+          }
+        },
+        "key_comparison": {
+          "action": "retained_eligible_not_poolable",
+          "current_fields": [],
+          "policy_version": "nonpoolable-status-retention-2026-09-08-v1"
+        },
+        "decision_authority": "human_curator_deduplication",
+        "provisional_ui_display_only": false,
+        "pool_in_parent_meta_analysis": false,
+        "curator_deduplication": {
+          "version": "curator-dataset-deduplication-2026-09-14-v1",
+          "decision_id": "metavir-dataset-dedup-2026-09-14-04",
+          "retained_pmid": "19066370",
+          "retained_context_id": "19066370|Selenium|Prostate cancer",
+          "excluded_pmid": "20924966",
+          "exposure": "Selenium",
+          "disease": "Prostate cancer",
+          "action": "exclude_redundant_article_context",
+          "user_instruction": "keep only\n\nPMID: 15514967\n\nPMID: 25866035\n\nPMID: 39417685\n\nPMID: 19066370\n\nfor those exposure/disease combinations",
+          "supersedes_previous_decisions": true
+        }
+      },
+      "after_sha256": "78bfdb394ea2ccd99b303a5eca14b8dbfed1f91b69948049e8e35d0ab5fc584c",
+      "retained_record": {
+        "context_id": "19066370|Selenium|Prostate cancer",
+        "pmid": "19066370",
+        "pmcid": "PMC3682779",
+        "published_date": "2009-01-07",
+        "title": "Effect of selenium and vitamin E on risk of prostate cancer and other cancers: the Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+        "authors": [
+          "Lippman SM",
+          "Klein EA",
+          "Goodman PJ",
+          "Lucia MS",
+          "Thompson IM",
+          "Ford LG",
+          "Parnes HL",
+          "Minasian LM",
+          "Gaziano JM",
+          "Hartline JA",
+          "Parsons JK",
+          "Bearden JD",
+          "Crawford ED",
+          "Goodman GE",
+          "Claudio J",
+          "Winquist E",
+          "Cook ED",
+          "Karp DD",
+          "Walther P",
+          "Lieber MM",
+          "Kristal AR",
+          "Darke AK",
+          "Arnold KB",
+          "Ganz PA",
+          "Santella RM",
+          "Albanes D",
+          "Taylor PR",
+          "Probstfield JL",
+          "Jagpal TJ",
+          "Crowley JJ",
+          "Meyskens FL",
+          "Baker LH",
+          "Coltman CA"
+        ],
+        "journal": "JAMA",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+        "exposure": "Selenium",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+        "missing_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": true,
+        "extraction": {
+          "effect_size": 1.04,
+          "effect_type": "HR",
+          "ci_lower": 0.8767913691146844,
+          "ci_upper": 1.23358878531402,
+          "p_value": 0.6524862864110325,
+          "total_n": 35533,
+          "cases": 432,
+          "comparison_type": "Selenium versus placebo",
+          "design": "Randomized, double-blind, placebo-controlled, four-arm trial",
+          "timing": "Median follow-up 5.46 years",
+          "continent": "North America",
+          "country": "United States, Canada, and Puerto Rico",
+          "population": "Relatively healthy men aged at least 50 years if African American or at least 55 years otherwise, with PSA <=4 ng/mL and non-suspicious DRE",
+          "exposure_subtype": "supplement",
+          "exposure_measurement_type": "dietary_intake",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "A randomized, placebo-controlled trial (Selenium and Vitamin E Cancer Prevention Trial [SELECT]) of 35,533 men from 427 participating sites in the United States, Canada, and Puerto Rico randomly assigned to 4 groups (selenium, vitamin E, selenium + vitamin E, and placebo) in a double-blind fashion between August 22, 2001, and June 24, 2004. Baseline eligibility included age 50 years or older (African American men) or 55 years or older (all other men), a serum prostate-specific antigen level of 4 ng/mL or less, and a digital rectal examination not suspicious for prostate cancer.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Methods"
+            },
+            "cases": {
+              "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Results"
+            },
+            "effect_size": {
+              "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Results"
+            },
+            "confidence_interval": {
+              "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Results"
+            },
+            "p_value": null,
+            "comparison": {
+              "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Results"
+            },
+            "design": {
+              "excerpt": "A randomized, placebo-controlled trial",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Methods"
+            },
+            "timing": {
+              "excerpt": "As of October 23, 2008, median overall follow-up was 5.46 years (range, 4.17-7.33 years).",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Results"
+            },
+            "continent": {
+              "excerpt": "Participants were recruited and followed in community practices, local hospitals and HMOs, and tertiary cancer centers in the United States, Canada and Puerto Rico.",
+              "source": "full_text",
+              "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3682779/",
+              "location": "Abstract, Design, Setting, and Participants"
+            },
+            "ethnicity": null,
+            "exposure_measurement": {
+              "excerpt": "Oral selenium (200 microg/d from L-selenomethionine) and matched vitamin E placebo",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "Methods"
+            },
+            "location": {
+              "excerpt": "427 participating sites in the United States, Canada, and Puerto Rico",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+              "location": "abstract, methods"
+            }
+          },
+          "ethnicity": "NA",
+          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
+          "ethnicity_supporting_text": "NA",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "ci_original_reported_bounds": [
+            0.83,
+            1.3
+          ],
+          "ci_original_confidence_level": 99.0,
+          "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+          "direction_imputed": false,
+          "location": "427 participating sites in the United States, Canada, and Puerto Rico",
+          "exposure_classification_ambiguous": false,
+          "p_value_reported_as": ">0.15",
+          "p_value_is_exact": true,
+          "cross_model_original_p_value": 0.7318660995209845,
+          "p_value_relation": "=",
+          "p_value_imputed": true,
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "key_comparison_p_resolution": {
+            "needed": true,
+            "wald_p_value": 0.6524862864110325,
+            "chatgpt_matches": false,
+            "claude_gemini_matches": false,
+            "matching_source": "neither",
+            "combined_p_value": 0.6524862864110325,
+            "combined_p_value_relation": "=",
+            "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+            "resolution": "computed_two_sided_wald"
+          }
+        },
+        "jbi": {
+          "checklist_type": "rct",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Unclear",
+            "q3": "Yes",
+            "q4": "Yes",
+            "q5": "Yes",
+            "q6": "Yes",
+            "q7": "Yes",
+            "q8": "Yes",
+            "q9": "Yes",
+            "q10": "Yes",
+            "q11": "Yes",
+            "q12": "Yes",
+            "q13": "Yes"
+          },
+          "score_percent": 92.3,
+          "grade": "Good"
+        },
+        "final_status": "INCLUDE_META",
+        "full_text_status": "INCLUDE_META",
+        "pmc_source_status": "full_text",
+        "full_text_characters_reviewed": 60258,
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "INCLUDE_META",
+          "source_reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+          "source_full_text_status": "INCLUDE_META",
+          "remaining_issues": [],
+          "direction_imputed": false
+        },
+        "invalid_key_fields": [],
+        "dual_screening_gate_before_parallel_policy": true,
+        "parallel_r3_gate_reasons": [
+          "important quantitative evidence remains missing or invalid: p_value"
+        ],
+        "pmc_source_format": "jats_xml",
+        "pmc_source_sha256": "c4bbe31078debcef3d7a5206c97b3869bb1e8b6090b6fbbd278cd95178ec6433",
+        "pmc_source_receipt_digest": "20ea8e3155d261c53fe9eb12479f7c6340bc1c4b4f4d6badd4dbf3f065a9c5b2",
+        "pmc_source_raw_sha256": "0353ddb59965dacae7687c1dbf3698e74bf2e7eab14f749dca47bf84205b9a69",
+        "third_round_status": "COMPLETED",
+        "third_round_model": "gemini-3.7-flash",
+        "key_comparison_p_resolution": {
+          "needed": true,
+          "wald_p_value": 0.6524862864110325,
+          "chatgpt_matches": false,
+          "claude_gemini_matches": false,
+          "matching_source": "neither",
+          "combined_p_value": 0.6524862864110325,
+          "combined_p_value_relation": "=",
+          "method": "Two-sided Wald test on the log ratio (null 1), using the 95% CI width.",
+          "resolution": "computed_two_sided_wald"
+        },
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "retained_prior_combined_key_agreement",
+          "current_fields": [],
+          "historical_field_coverage": true,
+          "missing_nonkey_fields_filled": 15
+        }
+      },
+      "retained_record_sha256": "99d1612d34a7a65a038050b5860cef46e392f123265cac9bdddbae97e79e7f6c"
+    },
+    {
+      "decision_id": "metavir-dataset-dedup-2026-09-14-05",
+      "context_id": "20924966|Vitamin E|Prostate cancer",
+      "exposure": "Vitamin E",
+      "disease": "Prostate cancer",
+      "retained_pmid": "19066370",
+      "excluded_pmid": "20924966",
+      "retained_context_id": "19066370|Vitamin E|Prostate cancer",
+      "superseded_human_review_id": null,
+      "source_track_sha256": {
+        "chatgpt": {
+          "20924966|Vitamin E|Prostate cancer": "e88252a61d9258c2d41d9945c37b14128bcdbaad7436855326220ae386e6ab1a",
+          "19066370|Vitamin E|Prostate cancer": "45a1cfc4cd5448f377a94e1320557d316d9167711aaf423fbb78e4ce4f1b1ccb"
+        },
+        "claude_gemini": {
+          "20924966|Vitamin E|Prostate cancer": "efeed73d620c052f19c323b4490be1f7495bb697be1695f0364452fbd7d63980",
+          "19066370|Vitamin E|Prostate cancer": "f632b2b44b2203505e69b68ac65e4ec5ca1210fde68f4827baf012ee8a510e0f"
+        }
+      },
+      "before": {
+        "context_id": "20924966|Vitamin E|Prostate cancer",
+        "pmid": "20924966",
+        "pmcid": "",
+        "published_date": "2010",
+        "title": "A nutrient approach to prostate cancer prevention: The Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+        "authors": [
+          "Dunn BK",
+          "Richmond ES",
+          "Minasian LM",
+          "Ryan AM",
+          "Ford LG"
+        ],
+        "journal": "Nutrition and cancer",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+        "exposure": "Vitamin E",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "One pipeline excluded this study and the other retained it as eligible but not poolable. Retained for display without pooling; this comparison does not require manual review.",
+        "missing_key_fields": [],
+        "needs_full_text": true,
+        "full_text_eligible": false,
+        "extraction": {
+          "effect_size": 1.13,
+          "effect_type": "HR",
+          "ci_lower": 0.9885928126472658,
+          "ci_upper": 1.2916339100025434,
+          "p_value": 0.06,
+          "total_n": 35533,
+          "cases": 473,
+          "comparison_type": "vitamin E supplement versus placebo",
+          "design": "randomized controlled trial",
+          "timing": "7 to 12 yr",
+          "continent": null,
+          "country": null,
+          "population": "healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml",
+          "exposure_subtype": "supplement",
+          "exposure_measurement_type": "unclear",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml to 1) 200 μg/day l-selenomethionine, 2) 400 IU/day all-rac-alpha-tocopheryl acetate (vitamin E), 3) both supplements, or 4) placebo for 7 to 12 yr.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "cases": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, vitamin E result"
+            },
+            "effect_size": {
+              "excerpt": "Statistically nonsignificant increased risks of prostate cancer with vitamin E alone [relative risk (RR) = 1.13, P = 0.06) and newly diagnosed Type 2 diabetes mellitus with selenium alone (RR = 1.07, P = 0.16) were observed. SELECT data show that neither selenium nor vitamin E, alone or together, in the doses and formulations used, prevented prostate cancer in this heterogeneous population of healthy men.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "confidence_interval": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, vitamin E result"
+            },
+            "p_value": {
+              "excerpt": "P = 0.06",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, vitamin E result"
+            },
+            "comparison": {
+              "excerpt": "1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs. 1.00 (n = 416) for placebo",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "design": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "timing": {
+              "excerpt": "for 7 to 12 yr",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "continent": null,
+            "ethnicity": {
+              "excerpt": ">50 yr if African American",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "exposure_measurement": {
+              "excerpt": "400 IU/day all-rac-alpha-tocopheryl acetate (vitamin E)",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            }
+          },
+          "ethnicity": "Black",
+          "ethnicity_basis": "Population imputation: stated Black/African population -> Black",
+          "ethnicity_supporting_text": ">50 yr if African American",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "ci_original_reported_bounds": [
+            0.95,
+            1.35
+          ],
+          "ci_original_confidence_level": 99.0,
+          "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+          "direction_imputed": false
+        },
+        "jbi": {
+          "checklist_type": "rct",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Unclear",
+            "q5": "Unclear",
+            "q6": "Unclear",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Unclear",
+            "q12": "Yes",
+            "q13": "Yes"
+          },
+          "score_percent": 30.8,
+          "grade": "Fair"
+        },
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "full_text_status": "ELIGIBLE_NOT_POOLABLE",
+        "pmc_source_status": "no_pmcid",
+        "pmc_error": "",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Full text was indicated but no PMCID was available, so missing evidence could not be recovered.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [
+            "JBI grade must be Moderate or Good"
+          ],
+          "direction_imputed": false
+        },
+        "invalid_key_fields": [],
+        "key_comparison_pending": false,
+        "manual_review_pending": false,
+        "manual_poolable": false,
+        "policy_poolable": false,
+        "scientific_pooling_eligible": false,
+        "nonpoolable_status_retained": true,
+        "nonpoolable_status_resolution": {
+          "version": "nonpoolable-status-retention-2026-09-08-v1",
+          "retained_track": "chatgpt",
+          "final_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_fingerprint": "47affd622ed5b65d90ccd152f1595f1773a748ee2450212208082a2d2f009399",
+          "chatgpt_status": "ELIGIBLE_NOT_POOLABLE",
+          "claude_gemini_status": null,
+          "previous_combined_status": "ELIGIBLE_NOT_POOLABLE",
+          "manual_review_required": false,
+          "pooling_eligible": false,
+          "previous_automated_adjudications": {
+            "poolability_policy": {
+              "version": 1,
+              "source_status": "ELIGIBLE_NOT_POOLABLE",
+              "source_reason": "Not pooled: JBI grade must be Moderate or Good.",
+              "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+              "remaining_issues": [
+                "JBI grade must be Moderate or Good"
+              ],
+              "direction_imputed": false
+            }
+          }
+        },
+        "key_comparison": {
+          "action": "retained_eligible_not_poolable",
+          "current_fields": [],
+          "policy_version": "nonpoolable-status-retention-2026-09-08-v1"
+        }
+      },
+      "before_sha256": "d987f52322c8db086e2a15d08c210759a7bd4929bf8cc84239bee382a21eebaf",
+      "after": {
+        "context_id": "20924966|Vitamin E|Prostate cancer",
+        "pmid": "20924966",
+        "pmcid": "",
+        "published_date": "2010",
+        "title": "A nutrient approach to prostate cancer prevention: The Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+        "authors": [
+          "Dunn BK",
+          "Richmond ES",
+          "Minasian LM",
+          "Ryan AM",
+          "Ford LG"
+        ],
+        "journal": "Nutrition and cancer",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+        "exposure": "Vitamin E",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "EXCLUDE",
+        "exclusion_code": "CURATOR-REDUNDANT-DATASET",
+        "reason": "User selected PMID 19066370 instead of PMID 20924966 for Vitamin E / Prostate cancer; exclude the redundant article from display and pooling, including inherited exposure views.",
+        "missing_key_fields": [],
+        "needs_full_text": true,
+        "full_text_eligible": false,
+        "extraction": {
+          "effect_size": 1.13,
+          "effect_type": "HR",
+          "ci_lower": 0.9885928126472658,
+          "ci_upper": 1.2916339100025434,
+          "p_value": 0.06,
+          "total_n": 35533,
+          "cases": 473,
+          "comparison_type": "vitamin E supplement versus placebo",
+          "design": "randomized controlled trial",
+          "timing": "7 to 12 yr",
+          "continent": null,
+          "country": null,
+          "population": "healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml",
+          "exposure_subtype": "supplement",
+          "exposure_measurement_type": "unclear",
+          "needs_inversion": false,
+          "evidence": {
+            "sample_size": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men, >55 yr old (>50 yr if African American), with normal digital rectal exams and prostate specific antigens <4 ng/ml to 1) 200 μg/day l-selenomethionine, 2) 400 IU/day all-rac-alpha-tocopheryl acetate (vitamin E), 3) both supplements, or 4) placebo for 7 to 12 yr.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "cases": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, vitamin E result"
+            },
+            "effect_size": {
+              "excerpt": "Statistically nonsignificant increased risks of prostate cancer with vitamin E alone [relative risk (RR) = 1.13, P = 0.06) and newly diagnosed Type 2 diabetes mellitus with selenium alone (RR = 1.07, P = 0.16) were observed. SELECT data show that neither selenium nor vitamin E, alone or together, in the doses and formulations used, prevented prostate cancer in this heterogeneous population of healthy men.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "confidence_interval": {
+              "excerpt": "In SELECT, prostate cancer incidence did not differ among the 4 arms: hazard ratios [99% confidence intervals (CIs)] for prostate cancer were 1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs.",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, vitamin E result"
+            },
+            "p_value": {
+              "excerpt": "P = 0.06",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3, vitamin E result"
+            },
+            "comparison": {
+              "excerpt": "1.13 (99% CI = 0.95-1.35, P = 0.06; n = 473) for vitamin E, 1.04 (99% CI = 0.87-1.24, P = 0.62; n = 432) for selenium, and 1.05 (99% CI = 0.88-1.25, P = 0.52; n = 437) for selenium + vitamin E vs. 1.00 (n = 416) for placebo",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 3"
+            },
+            "design": {
+              "excerpt": "The Selenium and Vitamin E Cancer Prevention Trial (SELECT) randomized 35,533 healthy men",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "timing": {
+              "excerpt": "for 7 to 12 yr",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "continent": null,
+            "ethnicity": {
+              "excerpt": ">50 yr if African American",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            },
+            "exposure_measurement": {
+              "excerpt": "400 IU/day all-rac-alpha-tocopheryl acetate (vitamin E)",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/20924966/",
+              "location": "Abstract, sentence 1"
+            }
+          },
+          "ethnicity": "Black",
+          "ethnicity_basis": "Population imputation: stated Black/African population -> Black",
+          "ethnicity_supporting_text": ">50 yr if African American",
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "ci_original_reported_bounds": [
+            0.95,
+            1.35
+          ],
+          "ci_original_confidence_level": 99.0,
+          "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+          "direction_imputed": false
+        },
+        "jbi": {
+          "checklist_type": "rct",
+          "answers": {
+            "q1": "Yes",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Unclear",
+            "q5": "Unclear",
+            "q6": "Unclear",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Unclear",
+            "q10": "Unclear",
+            "q11": "Unclear",
+            "q12": "Yes",
+            "q13": "Yes"
+          },
+          "score_percent": 30.8,
+          "grade": "Fair"
+        },
+        "final_status": "EXCLUDE",
+        "full_text_status": "EXCLUDE",
+        "pmc_source_status": "no_pmcid",
+        "pmc_error": "",
+        "screen_layer": "full_text",
+        "track": "chatgpt",
+        "combined_selected_pipeline": "CHATGPT",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Full text was indicated but no PMCID was available, so missing evidence could not be recovered.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [
+            "JBI grade must be Moderate or Good"
+          ],
+          "direction_imputed": false
+        },
+        "invalid_key_fields": [],
+        "key_comparison_pending": false,
+        "manual_review_pending": false,
+        "manual_poolable": false,
+        "policy_poolable": false,
+        "scientific_pooling_eligible": false,
+        "nonpoolable_status_retained": true,
+        "nonpoolable_status_resolution": {
+          "version": "nonpoolable-status-retention-2026-09-08-v1",
+          "retained_track": "chatgpt",
+          "final_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_fingerprint": "47affd622ed5b65d90ccd152f1595f1773a748ee2450212208082a2d2f009399",
+          "chatgpt_status": "ELIGIBLE_NOT_POOLABLE",
+          "claude_gemini_status": null,
+          "previous_combined_status": "ELIGIBLE_NOT_POOLABLE",
+          "manual_review_required": false,
+          "pooling_eligible": false,
+          "previous_automated_adjudications": {
+            "poolability_policy": {
+              "version": 1,
+              "source_status": "ELIGIBLE_NOT_POOLABLE",
+              "source_reason": "Not pooled: JBI grade must be Moderate or Good.",
+              "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+              "remaining_issues": [
+                "JBI grade must be Moderate or Good"
+              ],
+              "direction_imputed": false
+            }
+          }
+        },
+        "key_comparison": {
+          "action": "retained_eligible_not_poolable",
+          "current_fields": [],
+          "policy_version": "nonpoolable-status-retention-2026-09-08-v1"
+        },
+        "decision_authority": "human_curator_deduplication",
+        "provisional_ui_display_only": false,
+        "pool_in_parent_meta_analysis": false,
+        "curator_deduplication": {
+          "version": "curator-dataset-deduplication-2026-09-14-v1",
+          "decision_id": "metavir-dataset-dedup-2026-09-14-05",
+          "retained_pmid": "19066370",
+          "retained_context_id": "19066370|Vitamin E|Prostate cancer",
+          "excluded_pmid": "20924966",
+          "exposure": "Vitamin E",
+          "disease": "Prostate cancer",
+          "action": "exclude_redundant_article_context",
+          "user_instruction": "keep only\n\nPMID: 15514967\n\nPMID: 25866035\n\nPMID: 39417685\n\nPMID: 19066370\n\nfor those exposure/disease combinations",
+          "supersedes_previous_decisions": true
+        }
+      },
+      "after_sha256": "9507c78602e6c98b1c312356ec6d718171bd90e2b3332c04031f569c37fe6306",
+      "retained_record": {
+        "context_id": "19066370|Vitamin E|Prostate cancer",
+        "pmid": "19066370",
+        "pmcid": "PMC3682779",
+        "published_date": "2009-01-07",
+        "title": "Effect of selenium and vitamin E on risk of prostate cancer and other cancers: the Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+        "authors": [
+          "Lippman SM",
+          "Klein EA",
+          "Goodman PJ",
+          "Lucia MS",
+          "Thompson IM",
+          "Ford LG",
+          "Parnes HL",
+          "Minasian LM",
+          "Gaziano JM",
+          "Hartline JA",
+          "Parsons JK",
+          "Bearden JD",
+          "Crawford ED",
+          "Goodman GE",
+          "Claudio J",
+          "Winquist E",
+          "Cook ED",
+          "Karp DD",
+          "Walther P",
+          "Lieber MM",
+          "Kristal AR",
+          "Darke AK",
+          "Arnold KB",
+          "Ganz PA",
+          "Santella RM",
+          "Albanes D",
+          "Taylor PR",
+          "Probstfield JL",
+          "Jagpal TJ",
+          "Crowley JJ",
+          "Meyskens FL",
+          "Baker LH",
+          "Coltman CA"
+        ],
+        "journal": "JAMA",
+        "pubmed_url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+        "exposure": "Vitamin E",
+        "cancer": "Prostate cancer",
+        "outcome": "Incidence",
+        "eligibility": "INCLUDE",
+        "exclusion_code": null,
+        "reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+        "missing_key_fields": [],
+        "invalid_key_fields": [],
+        "needs_full_text": false,
+        "full_text_eligible": false,
+        "extraction": {
+          "design": "rct",
+          "population": "relatively healthy men aged 50 years or older (African American men) or 55 years or older, with PSA 4 ng/mL or less",
+          "comparison_type": "vitamin E (400 IU/d all rac-alpha-tocopheryl acetate) vs placebo",
+          "exposure_measurement_type": "unclear",
+          "exposure_subtype": "supplement",
+          "total_n": 35533,
+          "effect_size": 1.13,
+          "ci_lower": 0.9885928126472658,
+          "ci_upper": 1.2916339100025434,
+          "effect_type": "HR",
+          "astra_replaced_extraction": {
+            "effect_size": 1.13,
+            "effect_type": "HR",
+            "ci_lower": 0.9885928126472658,
+            "ci_upper": 1.2916339100025434,
+            "p_value": 0.06,
+            "ci_confidence_level": 95.0,
+            "total_n": 35533,
+            "cases": 473,
+            "comparison_type": "vitamin E (400 IU/d all rac-alpha-tocopheryl acetate) vs placebo",
+            "design": "rct",
+            "timing": "median overall follow-up 5.46 years (range, 4.17-7.33 years)",
+            "continent": "North America",
+            "country": "United States, Canada, Puerto Rico",
+            "location": "427 participating sites in the United States, Canada, and Puerto Rico",
+            "ethnicity": "NA",
+            "population": "relatively healthy men aged 50 years or older (African American men) or 55 years or older, with PSA 4 ng/mL or less",
+            "exposure_subtype": "supplement",
+            "exposure_measurement_type": "unclear",
+            "exposure_classification_ambiguous": false,
+            "wald_inputs_same_estimate": true,
+            "needs_inversion": false,
+            "evidence": {
+              "sample_size": {
+                "excerpt": "A randomized, placebo-controlled trial (Selenium and Vitamin E Cancer Prevention Trial [SELECT]) of 35,533 men from 427 participating sites in the United States, Canada, and Puerto Rico randomly assigned to 4 groups (selenium, vitamin E, selenium + vitamin E, and placebo) in a double-blind fashion between August 22, 2001, and June 24, 2004. Baseline eligibility included age 50 years or older (African American men) or 55 years or older (all other men), a serum prostate-specific antigen level of 4 ng/mL or less, and a digital rectal examination not suspicious for prostate cancer.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, methods"
+              },
+              "cases": {
+                "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, results"
+              },
+              "effect_size": {
+                "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, results"
+              },
+              "confidence_interval": {
+                "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, results"
+              },
+              "p_value": {
+                "excerpt": "statistically nonsignificant increased risks of prostate cancer in the vitamin E group (P = .06)",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, results"
+              },
+              "comparison": {
+                "excerpt": "vs 1.00 (n = 416) for placebo",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, results"
+              },
+              "design": {
+                "excerpt": "A randomized, placebo-controlled trial (Selenium and Vitamin E Cancer Prevention Trial [SELECT])",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, methods"
+              },
+              "timing": {
+                "excerpt": "median overall follow-up was 5.46 years (range, 4.17-7.33 years)",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, results"
+              },
+              "continent": {
+                "excerpt": "427 participating sites in the United States, Canada, and Puerto Rico",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, methods"
+              },
+              "ethnicity": null,
+              "location": {
+                "excerpt": "427 participating sites in the United States, Canada, and Puerto Rico",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, methods"
+              },
+              "exposure_measurement": {
+                "excerpt": "vitamin E (400 IU/d of all rac-alpha-tocopheryl acetate) and matched selenium placebo",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, intervention"
+              }
+            },
+            "p_value_reported_as": "0.06",
+            "p_value_is_exact": true,
+            "poolability_policy_version": "relaxed-incidence-v1",
+            "reported_effect_type": "HR",
+            "ci_original_reported_bounds": [
+              0.95,
+              1.35
+            ],
+            "ci_original_confidence_level": 99.0,
+            "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+            "direction_imputed": false
+          },
+          "evidence": {
+            "sample_size": {
+              "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/"
+            },
+            "effect_size": {
+              "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/"
+            },
+            "confidence_interval": {
+              "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E",
+              "source": "abstract",
+              "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/"
+            }
+          },
+          "poolability_policy_version": "relaxed-incidence-v1",
+          "reported_effect_type": "HR",
+          "ci_confidence_level": 95.0,
+          "ci_confidence_level_source": "Explicit confidence interval evidence",
+          "ci_original_reported_bounds": [
+            0.95,
+            1.35
+          ],
+          "ci_original_confidence_level": 99.0,
+          "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+          "p_value": 0.0731701227683939,
+          "p_value_method": "two-sided Wald test from effect and 95% CI on the log scale",
+          "p_value_relation": null,
+          "p_source_ci_role": "approximately_log_symmetric_95_percent_target_effect",
+          "p_value_imputed": true,
+          "standard_error": 0.06821063149521273,
+          "direction_imputed": false
+        },
+        "jbi": {
+          "checklist_type": "rct",
+          "answers": {
+            "q1": "Unclear",
+            "q2": "Unclear",
+            "q3": "Unclear",
+            "q4": "Yes",
+            "q5": "Unclear",
+            "q6": "Unclear",
+            "q7": "Yes",
+            "q8": "Unclear",
+            "q9": "Yes",
+            "q10": "Yes",
+            "q11": "Yes",
+            "q12": "Yes",
+            "q13": "Yes"
+          },
+          "score_percent": 53.8,
+          "grade": "Moderate"
+        },
+        "dual_screening_gate_before_parallel_policy": false,
+        "parallel_r3_gate_reasons": [],
+        "wald_completed_before_parallel_r3_gate": true,
+        "final_status": "INCLUDE_META",
+        "combined_selected_pipeline": "CLAUDE_GEMINI",
+        "poolability_policy": {
+          "version": 1,
+          "source_status": "ELIGIBLE_NOT_POOLABLE",
+          "source_reason": "Poolable with total sample size, a ratio effect and usable CI or exact p-value; optional metadata and reported cases are not required.",
+          "source_full_text_status": "ELIGIBLE_NOT_POOLABLE",
+          "remaining_issues": [],
+          "direction_imputed": false
+        },
+        "full_text_status": "INCLUDE_META",
+        "astra_quantitative_follow_up_required": false,
+        "astra_preserved_pooling_hold": false,
+        "astra_previous_combined": {
+          "sha256": "1b8129591a60e1a28ce99cb4bee6023b7cf2f6501a2b9d227c91f220c64a8cb7",
+          "final_status": "ELIGIBLE_NOT_POOLABLE",
+          "combined_adjudication": null,
+          "extraction": {
+            "effect_size": 1.13,
+            "effect_type": "HR",
+            "ci_lower": 0.9565876261309141,
+            "ci_upper": 1.3348489622060502,
+            "p_value": 0.06,
+            "total_n": 35533,
+            "cases": 473,
+            "comparison_type": "Vitamin E versus placebo",
+            "design": "Randomized, double-blind, placebo-controlled, four-arm trial",
+            "timing": "Median follow-up 5.46 years",
+            "continent": "North America",
+            "country": "United States, Canada, and Puerto Rico",
+            "population": "Relatively healthy men aged at least 50 years if African American or at least 55 years otherwise, with PSA <=4 ng/mL and non-suspicious DRE",
+            "exposure_subtype": "supplement",
+            "exposure_measurement_type": "unclear",
+            "needs_inversion": false,
+            "evidence": {
+              "sample_size": {
+                "excerpt": "A randomized, placebo-controlled trial (Selenium and Vitamin E Cancer Prevention Trial [SELECT]) of 35,533 men from 427 participating sites in the United States, Canada, and Puerto Rico randomly assigned to 4 groups (selenium, vitamin E, selenium + vitamin E, and placebo) in a double-blind fashion between August 22, 2001, and June 24, 2004. Baseline eligibility included age 50 years or older (African American men) or 55 years or older (all other men), a serum prostate-specific antigen level of 4 ng/mL or less, and a digital rectal examination not suspicious for prostate cancer.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Methods"
+              },
+              "cases": {
+                "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Results"
+              },
+              "effect_size": {
+                "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Results"
+              },
+              "confidence_interval": {
+                "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Results"
+              },
+              "p_value": {
+                "excerpt": "There were statistically nonsignificant increased risks of prostate cancer in the vitamin E group (P = .06)",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Results"
+              },
+              "comparison": {
+                "excerpt": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E, 1.04 (99% CI, 0.87-1.24; n = 432) for selenium, and 1.05 (99% CI, 0.88-1.25; n = 437) for selenium + vitamin E vs 1.00 (n = 416) for placebo.",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Results"
+              },
+              "design": {
+                "excerpt": "A randomized, placebo-controlled trial",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Methods"
+              },
+              "timing": {
+                "excerpt": "As of October 23, 2008, median overall follow-up was 5.46 years (range, 4.17-7.33 years).",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Results"
+              },
+              "continent": {
+                "excerpt": "427 participating sites in the United States, Canada, and Puerto Rico",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, methods"
+              },
+              "ethnicity": null,
+              "exposure_measurement": {
+                "excerpt": "vitamin E (400 IU/d of all rac-alpha-tocopheryl acetate) and matched selenium placebo",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "Methods"
+              },
+              "location": {
+                "excerpt": "427 participating sites in the United States, Canada, and Puerto Rico",
+                "source": "abstract",
+                "url": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+                "location": "abstract, methods"
+              }
+            },
+            "ethnicity": "NA",
+            "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
+            "ethnicity_supporting_text": "NA",
+            "poolability_policy_version": "relaxed-incidence-v1",
+            "reported_effect_type": "HR",
+            "ci_confidence_level": 95.0,
+            "ci_confidence_level_source": "Explicit confidence interval evidence",
+            "ci_original_reported_bounds": [
+              0.91,
+              1.41
+            ],
+            "ci_original_confidence_level": 99.0,
+            "ci_level_conversion": "Two-sided Wald conversion of reported confidence level to 95% on log scale",
+            "direction_imputed": false,
+            "location": "427 participating sites in the United States, Canada, and Puerto Rico",
+            "exposure_classification_ambiguous": false,
+            "p_value_reported_as": "0.06",
+            "p_value_is_exact": true
+          },
+          "jbi": {
+            "checklist_type": "rct",
+            "answers": {
+              "q1": "Yes",
+              "q2": "Unclear",
+              "q3": "Yes",
+              "q4": "Yes",
+              "q5": "Yes",
+              "q6": "Yes",
+              "q7": "Yes",
+              "q8": "Yes",
+              "q9": "Yes",
+              "q10": "Yes",
+              "q11": "Yes",
+              "q12": "Yes",
+              "q13": "Yes"
+            },
+            "score_percent": 92.3,
+            "grade": "Good"
+          }
+        },
+        "astra_adjudication": {
+          "version": "astra-title-abstract-combined-overlay-2026-09-07-v1",
+          "id": "metaVir-0182",
+          "selected_pipeline": "claude_gemini",
+          "source_scope": "TITLE_ABSTRACT_ONLY",
+          "decision": {
+            "id": "metaVir-0182",
+            "verdict": "NEITHER",
+            "confidence": "high",
+            "eligibility": "INCLUDE",
+            "numeric_values": {
+              "sample_size": 35533,
+              "effect_size": 1.13,
+              "ci_lower": 0.95,
+              "ci_upper": 1.35
+            },
+            "effect_type": "HR",
+            "evidence_quote": "Hazard ratios (99% confidence intervals [CIs]) for prostate cancer were 1.13 (99% CI, 0.95-1.35; n = 473) for vitamin E",
+            "reason": "The directly reported vitamin E interval is explicitly 99% and matches neither candidate. The numeric values preserve that reported interval; 35,533 is the total randomized trial population.",
+            "source_quote_validated": true,
+            "adjudicator_model": "gpt-6-astra",
+            "source_scope": "TITLE_ABSTRACT_ONLY"
+          },
+          "source_row": {
+            "PMID": "19066370",
+            "Exposure": "Vitamin E",
+            "Disease": "Prostate cancer",
+            "Estimate pair": "1",
+            "Discrepancy": "Confidence interval",
+            "ChatGPT sample size": "35533",
+            "Claude+Gemini sample size": "35533",
+            "ChatGPT effect size": "1.13",
+            "Claude+Gemini effect size": "1.13",
+            "ChatGPT CI lower": "0.9565876261309141",
+            "ChatGPT CI upper": "1.3348489622060502",
+            "Claude+Gemini CI lower": "0.9885928126472658",
+            "Claude+Gemini CI upper": "1.2916339100025434",
+            "ChatGPT effect type": "HR",
+            "Claude+Gemini effect type": "HR",
+            "ChatGPT p value": "0.06",
+            "Claude+Gemini p value": "0.06",
+            "ChatGPT status": "INCLUDE_META",
+            "Claude+Gemini status": "INCLUDE_META",
+            "ChatGPT estimate index": "",
+            "Claude+Gemini estimate index": "",
+            "Combined resolution": "unresolved_new_key_difference",
+            "Combined context status": "ELIGIBLE_NOT_POOLABLE",
+            "Review pending": "Yes",
+            "Previous discrepancy context": "",
+            "Previous fields covered": "No",
+            "Previous decision reused": "No",
+            "Title": "Effect of selenium and vitamin E on risk of prostate cancer and other cancers: the Selenium and Vitamin E Cancer Prevention Trial (SELECT).",
+            "Context ID": "19066370|Vitamin E|Prostate cancer",
+            "PubMed URL": "https://pubmed.ncbi.nlm.nih.gov/19066370/",
+            "Endpoint": "Incidence",
+            "ChatGPT comparison": "",
+            "Claude+Gemini comparison": "",
+            "ChatGPT stratum": "",
+            "Claude+Gemini stratum": "",
+            "Difference kind": "Different or missing key values",
+            "Manual review results": ""
+          },
+          "source_record_sha256": "f632b2b44b2203505e69b68ac65e4ec5ca1210fde68f4827baf012ee8a510e0f"
+        },
+        "combined_adjudication": {
+          "resolution": "ASTRA_TITLE_ABSTRACT_RESOLVED",
+          "selected_pipeline": "CLAUDE_GEMINI",
+          "explanation": "The directly reported vitamin E interval is explicitly 99% and matches neither candidate. The numeric values preserve that reported interval; 35,533 is the total randomized trial population.",
+          "astra_review_id": "metaVir-0182"
+        },
+        "screen_layer": "combined",
+        "key_comparison_pending": false,
+        "requires_key_review": false,
+        "key_comparison": {
+          "policy_version": "key-comparison-2026-09-05-v1",
+          "action": "astra_title_abstract_resolved",
+          "current_fields": [
+            "CI_OR_P_VALUE"
+          ],
+          "historical_field_coverage": false,
+          "missing_nonkey_fields_filled": 7,
+          "prior_decision_reused": false,
+          "existing_scientific_hold_preserved": false
+        }
+      },
+      "retained_record_sha256": "7062640ea048c53447c86f195afc80332e55e307657fe185dd29cd1fb56067f4"
+    }
+  ],
+  "decisions_sha256": "d7c3ff1310ef37edcb15200530dee7d636715c56a186c786ccdc246755099d4c"
+}

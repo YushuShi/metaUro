@@ -164,6 +164,9 @@ def compose_result(base, sources, parent_key, scopes, exposure, endpoint, source
         parent_allowed = set(source_filter(pd.DataFrame(rows), parent, exposure, endpoint).index)
         for index, row in enumerate(rows):
             row['disease_hierarchy_parent_context_excluded'] = index not in parent_allowed
+    if track == 'combined':
+        from scripts.curator_dedup_overlay import filter_rows
+        rows = filter_rows(rows, exposure, parent, endpoint)
     rows = select_rows(rows)
     result.update({'disease':parent,'cancer':parent,'exposure':exposure,'endpoint':endpoint,'outcome':endpoint,
         'studies':rows,'disease_hierarchy_applied':True,'disease_hierarchy_parent_key':parent_key,

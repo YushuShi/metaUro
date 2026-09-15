@@ -9,6 +9,7 @@ import meta_analysis
 from scripts import subexposure_policy as policy
 from scripts import monthly_evidence_update as monthly
 from scripts import build_summary_plots as summary
+from scripts import curator_dedup as curator
 
 
 def read(path):return json.loads(path.read_text())
@@ -18,6 +19,7 @@ def write(path,data):
 
 def build(skip_summary=False):
     source_root=ROOT/('combined' if ROOT.name=='MetaVir' else 'Cached_results')
+    curator_packet=curator.load_checkpoint(source_root) if ROOT.name=='MetaVir' else None
     hierarchy=read(ROOT/'data/exposure_hierarchy.json')
     for name in hierarchy:policy.descendants(name,hierarchy)
     groups=defaultdict(dict);payloads={};source_hashes={}
@@ -26,7 +28,7 @@ def build(skip_summary=False):
         exposure=raw.get('exposure') or path.parent.name
         disease=raw.get('disease') or raw.get('cancer');endpoint=raw.get('endpoint') or raw.get('outcome') or 'Incidence'
         if not disease:continue
-        groups[(disease,endpoint)][exposure]=raw.get('studies',[])
+        groups[(disease,endpoint)][exposure]=curator.filter_rows(raw.get('studies',[]),exposure,disease,curator_packet)
         payloads[(disease,endpoint,policy.key(exposure))]=(raw,path.name)
     audit={'source_cache_files':len(source_hashes),'new_gateway_calls':0,'modes':{}}
     with tempfile.TemporaryDirectory(prefix='subexposure-build-') as td:
@@ -41,6 +43,7 @@ def build(skip_summary=False):
                         if policy.key(source) in {policy.key(c) for c in policy.descendants(parent,hierarchy)}:targets.add(parent)
                 for target in sorted(targets,key=policy.key):
                     rows=[dietary_policy.apply_row(row,target) for row in policy.project_rows(sources,target,hierarchy,include=mode)]
+                    rows=curator.filter_rows(rows,target,disease,curator_packet)
                     original_entry=payloads.get((disease,endpoint,policy.key(target)))
                     original,filename=original_entry or next(payloads[(disease,endpoint,policy.key(source))] for source in sources)
                     output=copy.deepcopy(original)

@@ -196,7 +196,6 @@ def effective_packet(packet, tracks, combined_root, protected=()):
 
 
 def persist(combined_root, effective, audit):
-    if not audit:return
     write(Path(combined_root)/'provisional_ui/effective_screening.json',effective)
     write(Path(combined_root)/'provisional_ui/application_audit.json',audit)
     if effective.get('provisional_supplemental_audit'):

@@ -7,10 +7,10 @@
   "disease_hierarchy_applied": true,
   "disease_hierarchy_inherited_count": 3,
   "disease_hierarchy_materialization": {
-    "source_fingerprint": "d78b12b84db8bf5553be7995aa804ea4d32225f0d395b1d59e5f8b1165735df6",
+    "source_fingerprint": "fa364b6ef6cf3b4be9d6c81b8e5500c60e549c2bae6268cbc3daca0a769691ac",
     "source_hashes": {
       "_disease_scope_sources/vitamin_a/kidney_and_renal_pelvis_cancer_incidence_true_core.json": "fbcab6720ea6afaa407bf82289418e20d23465fe77a91826365f354270be1f6d",
-      "_disease_scope_sources/vitamin_a/renal_cell_carcinoma_incidence_true_core.json": "1c4f306fcac80302f8173c50329401c523c4eb064f8c2d49ae4b975c788a4067"
+      "_disease_scope_sources/vitamin_a/renal_cell_carcinoma_incidence_true_core.json": "17330d9ea220ab8ba91ad2cbfd41fc3a2cfa551bdba86af7de8da2181b82e408"
     },
     "source_root": "mode Cached_results",
     "version": "combined-disease-scopes-2026-09-07-v1"
@@ -51,7 +51,7 @@
   "include_subexposures": "yes",
   "outcome": "Incidence",
   "plot_url": null,
-  "requires_key_review": true,
+  "requires_key_review": false,
   "screening_stats": null,
   "studies": [
     {
@@ -723,7 +723,7 @@
       "Sample Size": 1015,
       "Smoking Status": null,
       "Stage": null,
-      "Study": "Maclure M et al. (1990) [PMID: 2090280] — estimate 1 · Mixed",
+      "Study": "Maclure M et al. (1990) [PMID: 2090280] — estimate 1 · Mixed · Claude+Gemini review candidate",
       "Timing": null,
       "Title": "A case-control study of diet and risk of renal adenocarcinoma.",
       "Upper CI": null,
@@ -735,7 +735,6 @@
       "combined_source": "claude_gemini",
       "combined_source_estimate_index": 0,
       "combined_source_extraction": {
-        "astra_fulltext_quantitative_complete": false,
         "cases": 410,
         "ci_lower": null,
         "ci_upper": null,
@@ -828,11 +827,12 @@
       "disease_hierarchy_parent_context_excluded": false,
       "disease_hierarchy_pooling_reason": "Saved quantitative, quality, clinical, exposure or manual pooling gates are not met.",
       "disease_hierarchy_pooling_selected": false,
-      "disease_hierarchy_projection_id": "c6883c6c95ec8acf89778102e959e5798b75497bd2335bf559401c22f1728956",
+      "disease_hierarchy_projection_id": "2149a7e42b087bac3b2eb7594cc87389d24e29c28cb45ec6fdc1fade1efa03b7",
       "disease_hierarchy_reference_basis": "Selected parent reference risk is an analysis proxy for inherited subtype estimates; it is not a published subtype risk.",
       "disease_hierarchy_source_context_excluded": false,
       "disease_hierarchy_source_key": "renal_cell_carcinoma",
       "disease_hierarchy_source_path": "_disease_scope_sources/vitamin_a/renal_cell_carcinoma_incidence_true_core.json",
+      "display_only": true,
       "display_only_reason": "EXCLUDE versus ELIGIBLE_NOT_POOLABLE resolves to eligible, not poolable; no manual comparison is required.",
       "effect_inverted": false,
       "exposure_measurement_supporting_text": "Prior hypotheses concerning intake of cholesterol, beta-carotene, preformed vitamin A",
@@ -905,154 +905,34 @@
       },
       "final_status": "ELIGIBLE_NOT_POOLABLE",
       "include_subexposures": "yes",
-      "key_differences": [],
+      "key_differences": [
+        "total_n",
+        "effect_size",
+        "ci"
+      ],
       "manual_poolable": false,
       "manual_review_pending": false,
-      "policy_poolable": false,
-      "provisional_ui_selection": {
-        "extraction": {
-          "astra_fulltext_quantitative_complete": false,
-          "cases": 410,
-          "ci_lower": null,
-          "ci_upper": null,
-          "comparison_type": "Intake of preformed vitamin A (no quantitative contrast reported)",
-          "continent": "North America",
-          "country": "United States",
-          "design": "case-control",
-          "effect_size": null,
-          "effect_type": null,
-          "ethnicity": "Mixed",
-          "ethnicity_basis": "Default: no protocol-mapped specific country or population was established",
-          "ethnicity_supporting_text": "2.0 (95% Cl: 1.3-3.1) for northeastern European ancestry",
-          "evidence": {
-            "cases": {
-              "excerpt": "We examined dietary and other risk factors for renal adenocarcinoma in a case-control study of 203 incident and 207 prevalent cases and 605 neighborhood controls.",
-              "location": "abstract; cases derived from reported group counts 203 + 207 = 410",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "comparison": {
-              "excerpt": "Prior hypotheses concerning intake of cholesterol, beta-carotene, preformed vitamin A, and cruciferous vegetables were not corroborated.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "confidence_interval": null,
-            "continent": {
-              "excerpt": "",
-              "location": "MeSH terms",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "design": {
-              "excerpt": "We examined dietary and other risk factors for renal adenocarcinoma in a case-control study",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "effect_size": null,
-            "ethnicity": {
-              "excerpt": "2.0 (95% Cl: 1.3-3.1) for northeastern European ancestry",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "exposure_measurement": {
-              "excerpt": "Prior hypotheses concerning intake of cholesterol, beta-carotene, preformed vitamin A",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "gender": {
-              "excerpt": "1.7 (95% Cl: 0.9-3.2) for women and 1.7 (95% Cl: 1.1-2.8) for men",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "p_value": null,
-            "sample_size": {
-              "excerpt": "We examined dietary and other risk factors for renal adenocarcinoma in a case-control study of 203 incident and 207 prevalent cases and 605 neighborhood controls. Using unconditional logistic regression to control selection biases identified in an adjunct study, we found exposure odds ratios (OR) similar to those from other studies: 1.9 (with a 95% confidence interval (Cl) from 0.8 to 4.4) for smoking 2 packs of cigarettes per day; 3.8 (95% Cl: 0.78-18) for 3 or more packs per day; 1.7 (95% Cl: 0.9-3.2) for women and 1.7 (95% Cl: 1.1-2.8) for men in the highest quintile of relative weight (kg/m2); 2.0 (95% Cl: 1.3-3.1) for northeastern European ancestry; and 2.3 (95% Cl: 1.3-4.1) for history of kidney stones.",
-              "location": "abstract; total_n derived from reported group counts 203 + 207 + 605 = 1015",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/2090280/"
-            },
-            "smoking_status": null,
-            "timing": null
-          },
-          "exposure_measurement_type": "dietary_intake",
-          "exposure_subtype": "dietary_component",
-          "gender": "Mixed",
-          "needs_inversion": false,
-          "p_value": null,
-          "p_value_relation": null,
-          "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-          "population": "Incident and prevalent renal adenocarcinoma cases and neighborhood controls in Massachusetts",
-          "reported_ci_lower": null,
-          "reported_ci_upper": null,
-          "reported_effect_size": null,
-          "reported_effect_type": null,
-          "reported_effect_type_label": null,
-          "reported_p_value": null,
-          "smoking_status": null,
-          "timing": null,
-          "total_n": 1015
-        },
-        "higher_jbi": {
-          "answers": {
-            "q1": "Yes",
-            "q10": "Yes",
-            "q11": "NA",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Yes",
-            "q3": "Unclear",
-            "q4": "Unclear",
-            "q5": "Unclear",
-            "q6": "Yes",
-            "q7": "Yes",
-            "q8": "Yes",
-            "q9": "Unclear"
-          },
-          "checklist_type": "case_control",
-          "grade": "Moderate",
-          "score_percent": 60.0
-        },
-        "higher_jbi_grade": "Moderate",
-        "metadata_fills": [],
-        "overrides_pending_astra_partial": false,
-        "pending": true,
-        "protect_adjudicated_quantities": false,
-        "reason": "Use the non-excluded pipeline for display; quantitative inputs remain incomplete.",
-        "review_ids": [
-          "metaPee-0066"
-        ],
-        "selected_track": "claude_gemini",
-        "selection_poolable_candidate": false,
-        "source_fingerprint": "b29c1d2195ba2d670df9bba7b13782efe39865c280ddb17ef7a9a2f6302be1cb",
-        "version": "provisional-human-review-2026-09-07-v2"
+      "nonpoolable_status_previous": {
+        "Primary Estimate": false,
+        "display_only": null,
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "manual_review_pending": null,
+        "policy_poolable": false,
+        "requires_key_review": true,
+        "scientific_pooling_eligible": null,
+        "subexposure_pooling_selected": false
       },
+      "nonpoolable_status_resolution": {
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "retained_track": "claude_gemini"
+      },
+      "policy_poolable": false,
       "requires_key_review": false,
+      "scientific_pooling_eligible": false,
       "subexposure_inherited": false,
       "subexposure_pooling_selected": false,
       "subexposure_projection_id": "65a25c6676bd41ea5ce97e7d3382fba1bb3fb9e24b3fdeac86aacbe2762bc301",
-      "subexposure_source": "Vitamin A",
-      "nonpoolable_status_previous": {
-        "final_status": "ELIGIBLE_NOT_POOLABLE",
-        "scientific_pooling_eligible": null,
-        "policy_poolable": false,
-        "Primary Estimate": false,
-        "subexposure_pooling_selected": false,
-        "display_only": null,
-        "requires_key_review": true,
-        "manual_review_pending": true,
-        "disease_hierarchy_pooling_selected": false
-      },
-      "scientific_pooling_eligible": false,
-      "display_only": true,
-      "nonpoolable_status_resolution": {
-        "retained_track": "claude_gemini",
-        "final_status": "ELIGIBLE_NOT_POOLABLE"
-      }
+      "subexposure_source": "Vitamin A"
     },
     {
       "Authors": "Bock CH, Ruterbusch JJ, Holowatyj AN, Steck SE, Van Dyke AL, Ho WJ, Cote ML, Hofmann JN, Davis F, Graubard BI, Schwartz KL, Purdue MP",
@@ -1393,10 +1273,9 @@
   ],
   "subexposure_projection": {
     "mode": "yes",
-    "pooling_rows": 2,
+    "pooling_rows": 1,
     "table_rows": 1
   },
   "success": true,
-  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Effect</th>\n      <th>SD Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Bosetti C et al. (2007) [PMID: 17131347] — estimate 1 · Mixed</th>\n      <td>-0.2221</td>\n      <td>0.1536</td>\n      <td>-0.5231</td>\n      <td>0.0789</td>\n      <td>767.0</td>\n      <td>2301.0</td>\n    </tr>\n    <tr>\n      <th>Bock CH et al. (2018) [PMID: 29968964] — estimate 1 · Mixed</th>\n      <td>0.6372</td>\n      <td>0.1751</td>\n      <td>0.2940</td>\n      <td>0.9804</td>\n      <td>1142.0</td>\n      <td>2296.0</td>\n    </tr>\n  </tbody>\n</table>",
-  "nonpoolable_status_policy": "nonpoolable-status-reconciliation-2026-09-08-v1"
+  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Effect</th>\n      <th>SD Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Bosetti C et al. (2007) [PMID: 17131347] — estimate 1 · Mixed</th>\n      <td>-0.2221</td>\n      <td>0.1536</td>\n      <td>-0.5231</td>\n      <td>0.0789</td>\n      <td>767.0</td>\n      <td>2301.0</td>\n    </tr>\n    <tr>\n      <th>Bock CH et al. (2018) [PMID: 29968964] — estimate 1 · Mixed</th>\n      <td>0.6372</td>\n      <td>0.1751</td>\n      <td>0.2940</td>\n      <td>0.9804</td>\n      <td>1142.0</td>\n      <td>2296.0</td>\n    </tr>\n  </tbody>\n</table>"
 }

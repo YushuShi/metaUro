@@ -2703,6 +2703,8 @@ def study_row(item: dict[str, Any]) -> dict[str, Any]:
     for field in dietary_policy.AUDIT_FIELDS:
         if field in extraction:
             row[field] = extraction[field]
+    from scripts.human_manual_review import decorate_study
+    row = decorate_study(row, item)
     return dietary_policy.apply_row(row, item.get("exposure"))
 
 

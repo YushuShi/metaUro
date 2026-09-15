@@ -1,12 +1,5 @@
 {
   "headline": {
-    "canonical_rr": {
-      "pooled_es": 1.7283934187520837,
-      "ci_low": 1.019815310708609,
-      "ci_upp": 2.917648411669824,
-      "pi_low": null,
-      "pi_upp": null
-    },
     "pooled_es": 1.73,
     "ci_low": 1.02,
     "ci_upp": 2.92,
@@ -332,7 +325,7 @@
       "context_id": "35013964|Zinc|Kidney and renal pelvis cancer",
       "PMID": "35013964",
       "PMCID": "",
-      "Study": "Zhang H et al. (2022) [PMID: 35013964] — estimate 1 · NA",
+      "Study": "Zhang H et al. (2022) [PMID: 35013964] — estimate 1 · NA · Claude+Gemini review candidate",
       "Reference": "Disordered serum essential element levels are associated with increased risk of kidney tumors.",
       "Title": "Disordered serum essential element levels are associated with increased risk of kidney tumors.",
       "Authors": "Zhang H, Xu Z, Zhang J, Wei D, Liu K, Hu W, Wang J",
@@ -438,7 +431,11 @@
       "canonical_track": "combined",
       "combined_source": "claude_gemini",
       "requires_key_review": false,
-      "key_differences": [],
+      "key_differences": [
+        "total_n",
+        "effect_size",
+        "ci"
+      ],
       "combined_nonkey_fills": [],
       "combined_p_value_resolution": null,
       "combined_source_extraction": {
@@ -510,118 +507,9 @@
         "ethnicity": "NA",
         "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
         "ethnicity_supporting_text": "NA",
-        "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-        "astra_fulltext_quantitative_complete": false
+        "poolability_policy_version": "relaxed-poolability-2026-09-05-v2"
       },
       "final_status": "ELIGIBLE_NOT_POOLABLE",
-      "manual_review_pending": false,
-      "provisional_ui_selection": {
-        "version": "provisional-human-review-2026-09-07-v2",
-        "pending": true,
-        "selected_track": "claude_gemini",
-        "extraction": {
-          "p_value_relation": null,
-          "effect_size": null,
-          "effect_type": null,
-          "ci_lower": null,
-          "ci_upper": null,
-          "p_value": null,
-          "total_n": 172,
-          "cases": 100,
-          "comparison_type": "Serum zinc concentration in kidney tumor patients versus healthy individuals",
-          "design": "case-control",
-          "timing": null,
-          "continent": null,
-          "country": null,
-          "population": "Healthy individuals and kidney tumor patients",
-          "gender": "NA",
-          "smoking_status": null,
-          "exposure_subtype": "human_biomarker",
-          "exposure_measurement_type": "human_biospecimen",
-          "needs_inversion": false,
-          "reported_effect_type": null,
-          "reported_effect_type_label": null,
-          "reported_effect_size": null,
-          "reported_ci_lower": null,
-          "reported_ci_upper": null,
-          "reported_p_value": null,
-          "evidence": {
-            "sample_size": {
-              "excerpt": "",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/",
-              "location": "abstract methods"
-            },
-            "cases": {
-              "excerpt": "This study included 72 healthy individuals and 100 kidney tumor patients.",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/",
-              "location": "abstract methods"
-            },
-            "effect_size": null,
-            "confidence_interval": null,
-            "p_value": null,
-            "comparison": {
-              "excerpt": "The levels of Co, Cr, Fe, Mn, Ni, and Zn in patients with kidney tumors were significantly lower.",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/",
-              "location": "abstract results"
-            },
-            "design": {
-              "excerpt": "This study included 72 healthy individuals and 100 kidney tumor patients.",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/",
-              "location": "abstract methods"
-            },
-            "timing": null,
-            "continent": null,
-            "ethnicity": null,
-            "exposure_measurement": {
-              "excerpt": "determined by inductively coupled plasma mass spectrometry",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/",
-              "location": "abstract methods"
-            },
-            "gender": null,
-            "smoking_status": null
-          },
-          "ethnicity": "NA",
-          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
-          "ethnicity_supporting_text": "NA",
-          "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-          "astra_fulltext_quantitative_complete": false
-        },
-        "higher_jbi": {
-          "checklist_type": "case_control",
-          "answers": {
-            "q1": "Unclear",
-            "q2": "Unclear",
-            "q3": "Unclear",
-            "q4": "Yes",
-            "q5": "Yes",
-            "q6": "No",
-            "q7": "No",
-            "q8": "Yes",
-            "q9": "No",
-            "q10": "Unclear",
-            "q11": "NA",
-            "q12": "NA",
-            "q13": "NA"
-          },
-          "score_percent": 30.0,
-          "grade": "Fair"
-        },
-        "higher_jbi_grade": "Fair",
-        "review_ids": [
-          "metaPee-0186"
-        ],
-        "source_fingerprint": "dbf6b36c9e7c310ddee5db2899245c46e021e4ae3276f3c9bb582006dbc5b4f7",
-        "selection_poolable_candidate": false,
-        "protect_adjudicated_quantities": false,
-        "reason": "Use the non-excluded pipeline for display; quantitative inputs remain incomplete.",
-        "metadata_fills": [],
-        "overrides_pending_astra_partial": false
-      },
       "manual_poolable": false,
       "display_only_reason": "EXCLUDE versus ELIGIBLE_NOT_POOLABLE resolves to eligible, not poolable; no manual comparison is required.",
       "Estimated Cases": null,
@@ -638,10 +526,11 @@
         "subexposure_pooling_selected": false,
         "display_only": null,
         "requires_key_review": true,
-        "manual_review_pending": true
+        "manual_review_pending": null
       },
       "scientific_pooling_eligible": false,
       "display_only": true,
+      "manual_review_pending": false,
       "nonpoolable_status_resolution": {
         "retained_track": "claude_gemini",
         "final_status": "ELIGIBLE_NOT_POOLABLE"

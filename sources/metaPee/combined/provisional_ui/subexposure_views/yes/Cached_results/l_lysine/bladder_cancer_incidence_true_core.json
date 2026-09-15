@@ -7,9 +7,9 @@
   "disease_hierarchy_applied": true,
   "disease_hierarchy_inherited_count": 0,
   "disease_hierarchy_materialization": {
-    "source_fingerprint": "dd5f23717f06011ca69a2449aab898f71ed6e40c60242e3e360a2a99c292e5bb",
+    "source_fingerprint": "0f650b01996829de3a65dc1b2f98b4f3b67a6d8229fd3fdf12220cac7510a10e",
     "source_hashes": {
-      "_disease_scope_sources/l_lysine/bladder_cancer_incidence_true_core.json": "d058db173eafb3804434480f96ac45a7544b7fa0197fdeabc8bd51dc3d5a10eb"
+      "_disease_scope_sources/l_lysine/bladder_cancer_incidence_true_core.json": "c3814638fb107f86b755bacdf4e962e5ad17f16f95f160a0138032f4cf3076ae"
     },
     "source_root": "mode Cached_results",
     "version": "combined-disease-scopes-2026-09-07-v1"
@@ -26,7 +26,7 @@
   "include_subexposures": "yes",
   "outcome": "Incidence",
   "plot_url": null,
-  "requires_key_review": true,
+  "requires_key_review": false,
   "screening_stats": null,
   "studies": [
     {
@@ -304,6 +304,7 @@
       "disease_hierarchy_source_context_excluded": false,
       "disease_hierarchy_source_key": "bladder_cancer",
       "disease_hierarchy_source_path": "_disease_scope_sources/l_lysine/bladder_cancer_incidence_true_core.json",
+      "display_only": true,
       "display_only_reason": "EXCLUDE versus ELIGIBLE_NOT_POOLABLE resolves to eligible, not poolable; no manual comparison is required.",
       "effect_inverted": false,
       "effect_is_adjusted": null,
@@ -406,71 +407,35 @@
       },
       "final_status": "ELIGIBLE_NOT_POOLABLE",
       "include_subexposures": "yes",
+      "inherited_exposure_memberships": [],
       "key_differences": [],
-      "manual_poolable": false,
       "manual_review_pending": false,
-      "policy_poolable": false,
-      "provisional_ui_selection": {
-        "extraction": null,
-        "higher_jbi": {
-          "answers": {
-            "q1": "Yes",
-            "q10": "Yes",
-            "q11": "NA",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Yes",
-            "q3": "Yes",
-            "q4": "Yes",
-            "q5": "Yes",
-            "q6": "No",
-            "q7": "Yes",
-            "q8": "Yes",
-            "q9": "Yes"
-          },
-          "checklist_type": "case_control",
-          "grade": "Good",
-          "score_percent": 90.0
-        },
-        "higher_jbi_grade": "Good",
-        "pending": true,
-        "protect_adjudicated_quantities": true,
-        "reason": "Retain supported full-text correction; neither pipeline supplies a complete eligible estimate.",
-        "review_ids": [
-          "metaPee-0207"
-        ],
-        "selected_track": null,
-        "selection_poolable_candidate": false,
-        "source_fingerprint": "0e207d55abcfda2e597c6fed5c88840dca1a13f0f893a84664e685c988892436",
-        "version": "provisional-human-review-2026-09-07-v2"
+      "nonpoolable_status_previous": {
+        "Primary Estimate": false,
+        "display_only": null,
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "manual_review_pending": null,
+        "policy_poolable": false,
+        "requires_key_review": false,
+        "scientific_pooling_eligible": null,
+        "subexposure_pooling_selected": false
       },
+      "nonpoolable_status_resolution": {
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "retained_track": "chatgpt"
+      },
+      "policy_poolable": false,
       "reference_group": "Cancer-free controls",
       "requires_key_review": false,
       "scale": null,
+      "scientific_pooling_eligible": false,
       "stratum": "Both recruitment sets combined",
       "subexposure_inherited": false,
       "subexposure_pooling_selected": false,
       "subexposure_projection_id": "f789bf74f07b92721f6f3ca069393324a3405666e31d16a87024ab39d86198b3",
       "subexposure_source": "L-lysine",
       "subgroup": null,
-      "unit": null,
-      "nonpoolable_status_previous": {
-        "final_status": "ELIGIBLE_NOT_POOLABLE",
-        "scientific_pooling_eligible": null,
-        "policy_poolable": false,
-        "Primary Estimate": false,
-        "subexposure_pooling_selected": false,
-        "display_only": null,
-        "requires_key_review": true,
-        "manual_review_pending": true,
-        "disease_hierarchy_pooling_selected": false
-      },
-      "scientific_pooling_eligible": false,
-      "display_only": true,
-      "nonpoolable_status_resolution": {
-        "retained_track": "chatgpt",
-        "final_status": "ELIGIBLE_NOT_POOLABLE"
-      }
+      "unit": null
     }
   ],
   "subexposure_projection": {
@@ -479,6 +444,5 @@
     "table_rows": 1
   },
   "success": true,
-  "summary_html": null,
-  "nonpoolable_status_policy": "nonpoolable-status-reconciliation-2026-09-08-v1"
+  "summary_html": null
 }

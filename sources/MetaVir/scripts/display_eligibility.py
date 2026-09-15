@@ -15,7 +15,7 @@ def eligible_fair(item):
 
 
 def eligible_fulltext_display(item):
-    return (bool(item.get('astra_fulltext_adjudication') or item.get('nonpoolable_status_retained'))
+    return (bool(item.get('astra_fulltext_adjudication') or item.get('nonpoolable_status_retained') or item.get('human_adjudication'))
             and item.get('eligibility') == 'INCLUDE'
             and (item.get('final_status') or item.get('full_text_status')) == 'ELIGIBLE_NOT_POOLABLE')
 
@@ -103,4 +103,6 @@ def display_row(item):
     if item.get('manual_review_pending'):
         from scripts.provisional_ui_overlay import decorate_row
         row = decorate_row(row,item)
+    from scripts.human_manual_review import decorate_study
+    row = decorate_study(row, item)
     return dietary_policy.apply_row(row, item.get('exposure'))

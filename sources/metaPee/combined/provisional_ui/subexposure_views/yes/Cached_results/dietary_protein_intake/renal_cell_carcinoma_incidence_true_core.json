@@ -7,9 +7,9 @@
   "disease_hierarchy_applied": true,
   "disease_hierarchy_inherited_count": 0,
   "disease_hierarchy_materialization": {
-    "source_fingerprint": "36272ed989a80748ac5e56eef9f5d22617d5ea2a224eccfa548f0e058a0b2e21",
+    "source_fingerprint": "caff912843e85bbb7909c5b315626954f43a8c97669d6f8089ee6532744cb3d4",
     "source_hashes": {
-      "_disease_scope_sources/dietary_protein_intake/renal_cell_carcinoma_incidence_true_core.json": "d6dc26496cc7b072440a9fc7953d24cf26a4bbf1f2e2ea778d1512708f6be6b5"
+      "_disease_scope_sources/dietary_protein_intake/renal_cell_carcinoma_incidence_true_core.json": "c37b6ec07aadca48f1428c424225260838cf4e020c663fb98631baa7e1dbf7c9"
     },
     "source_root": "mode Cached_results",
     "version": "combined-disease-scopes-2026-09-07-v1"
@@ -48,7 +48,7 @@
   "include_subexposures": "yes",
   "outcome": "Incidence",
   "plot_url": null,
-  "requires_key_review": true,
+  "requires_key_review": false,
   "screening_stats": null,
   "studies": [
     {
@@ -775,7 +775,7 @@
       "Sample Size": 1397,
       "Smoking Status": null,
       "Stage": null,
-      "Study": "Benichou J et al. (1998) [PMID: 9737554] — estimate 1 · Mixed",
+      "Study": "Benichou J et al. (1998) [PMID: 9737554] — estimate 1 · Mixed · Claude+Gemini review candidate",
       "Timing": "retrospective",
       "Title": "Population attributable risk of renal cell cancer in Minnesota.",
       "Upper CI": null,
@@ -787,7 +787,6 @@
       "combined_source": "claude_gemini",
       "combined_source_estimate_index": 0,
       "combined_source_extraction": {
-        "astra_fulltext_quantitative_complete": false,
         "cases": 690,
         "ci_lower": null,
         "ci_upper": null,
@@ -893,11 +892,12 @@
       "disease_hierarchy_parent_context_excluded": false,
       "disease_hierarchy_pooling_reason": "Saved quantitative, quality, clinical, exposure or manual pooling gates are not met.",
       "disease_hierarchy_pooling_selected": false,
-      "disease_hierarchy_projection_id": "0f6971660716a9f4a2a068472ef7225b04fadf52cbb9b7ad015b604e0b36f3eb",
+      "disease_hierarchy_projection_id": "48d1d4139528109121bc7eddc6be80fc045c751feefd28cbb6e9bf8449e60576",
       "disease_hierarchy_reference_basis": "Exact selected disease reference, when available.",
       "disease_hierarchy_source_context_excluded": false,
       "disease_hierarchy_source_key": "renal_cell_carcinoma",
       "disease_hierarchy_source_path": "_disease_scope_sources/dietary_protein_intake/renal_cell_carcinoma_incidence_true_core.json",
+      "display_only": true,
       "display_only_reason": "EXCLUDE versus ELIGIBLE_NOT_POOLABLE resolves to eligible, not poolable; no manual comparison is required.",
       "effect_inverted": false,
       "exposure_measurement_original_fields": {
@@ -983,167 +983,34 @@
       },
       "final_status": "ELIGIBLE_NOT_POOLABLE",
       "include_subexposures": "yes",
-      "key_differences": [],
+      "key_differences": [
+        "total_n",
+        "effect_size",
+        "ci"
+      ],
       "manual_poolable": false,
       "manual_review_pending": false,
-      "policy_poolable": false,
-      "provisional_ui_selection": {
-        "extraction": {
-          "astra_fulltext_quantitative_complete": false,
-          "cases": 690,
-          "ci_lower": null,
-          "ci_upper": null,
-          "comparison_type": "elevated protein intake versus non-elevated intake",
-          "continent": "North America",
-          "country": "United States",
-          "design": "case-control",
-          "effect_size": null,
-          "effect_type": null,
-          "ethnicity": "NA",
-          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
-          "ethnicity_supporting_text": "NA",
-          "evidence": {
-            "cases": {
-              "excerpt": "It included 690 histologically confirmed incident cases identified through the state cancer surveillance system, and 707 age and sex frequency-matched controls.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            },
-            "comparison": {
-              "excerpt": "more speculative risk factors, namely elevated protein intake, history of renal disease",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            },
-            "confidence_interval": null,
-            "continent": {
-              "excerpt": "conducted in Minnesota",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            },
-            "design": {
-              "excerpt": "A population-based case-control study of renal cell cancer was conducted in Minnesota between 1988 and 1990.",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            },
-            "effect_size": null,
-            "ethnicity": null,
-            "exposure_measurement": {
-              "excerpt": "These estimates were based on information obtained from directly interviewed subjects (65% of cases and 100% of controls).",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            },
-            "gender": {
-              "excerpt": "Sex-specific analyses revealed a greater impact of smoking among men",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            },
-            "p_value": null,
-            "sample_size": {
-              "excerpt": "It included 690 histologically confirmed incident cases identified through the state cancer surveillance system, and 707 age and sex frequency-matched controls. In this paper, the authors present estimates of the proportion of renal cell cancer cases attributable (or population attributable risk (PAR)) to 1) well-established risk factors, namely smoking, excess weight, and hypertension, and 2) more speculative risk factors, namely elevated protein intake, history of renal disease (i.e., stone, injury, or infection) and high parity among women.",
-              "location": "abstract; total_n derived from reported group counts 690 + 707 = 1397",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            },
-            "smoking_status": null,
-            "timing": {
-              "excerpt": "conducted in Minnesota between 1988 and 1990",
-              "location": "abstract",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/9737554/"
-            }
-          },
-          "exposure_measurement_original_fields": {
-            "exposure_measurement_type": "dietary_intake"
-          },
-          "exposure_measurement_overridden": true,
-          "exposure_measurement_policy": {
-            "exposure": "Dietary protein intake",
-            "id": "dietary-only-exposures-2026-09-05",
-            "label": "Dietary intake only",
-            "reason": "User-approved classification for this exposure; original source classification is retained.",
-            "source": "user_confirmed_project_classification",
-            "version": 1
-          },
-          "exposure_measurement_type": "dietary_intake",
-          "exposure_measurement_type_original": "dietary_intake",
-          "exposure_subtype": "dietary_component",
-          "gender": "Mixed",
-          "needs_inversion": false,
-          "p_value": null,
-          "p_value_relation": null,
-          "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-          "population": "population-based incident renal cell cancer cases and age- and sex-frequency-matched controls in Minnesota",
-          "reported_ci_lower": null,
-          "reported_ci_upper": null,
-          "reported_effect_size": null,
-          "reported_effect_type": null,
-          "reported_effect_type_label": null,
-          "reported_p_value": null,
-          "smoking_status": null,
-          "timing": "retrospective",
-          "total_n": 1397
-        },
-        "higher_jbi": {
-          "answers": {
-            "q1": "Yes",
-            "q10": "Yes",
-            "q11": "NA",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Yes",
-            "q3": "Yes",
-            "q4": "Unclear",
-            "q5": "Yes",
-            "q6": "Yes",
-            "q7": "Yes",
-            "q8": "Yes",
-            "q9": "Unclear"
-          },
-          "checklist_type": "case_control",
-          "grade": "Moderate",
-          "score_percent": 80.0
-        },
-        "higher_jbi_grade": "Moderate",
-        "metadata_fills": [],
-        "overrides_pending_astra_partial": false,
-        "pending": true,
-        "protect_adjudicated_quantities": false,
-        "reason": "Use the non-excluded pipeline for display; quantitative inputs remain incomplete.",
-        "review_ids": [
-          "metaPee-0258"
-        ],
-        "selected_track": "claude_gemini",
-        "selection_poolable_candidate": false,
-        "source_fingerprint": "70ce87ab258e8d90fac04f289558630fb0af6e949297192d69c3c680acc23cf1",
-        "version": "provisional-human-review-2026-09-07-v2"
+      "nonpoolable_status_previous": {
+        "Primary Estimate": false,
+        "display_only": null,
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "manual_review_pending": null,
+        "policy_poolable": false,
+        "requires_key_review": true,
+        "scientific_pooling_eligible": null,
+        "subexposure_pooling_selected": false
       },
+      "nonpoolable_status_resolution": {
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "retained_track": "claude_gemini"
+      },
+      "policy_poolable": false,
       "requires_key_review": false,
+      "scientific_pooling_eligible": false,
       "subexposure_inherited": false,
       "subexposure_pooling_selected": false,
       "subexposure_projection_id": "73e28fa969ade82ba4f1724029808f733ab8de7a5168d0b7d91d4692ffe9377f",
-      "subexposure_source": "Dietary protein intake",
-      "nonpoolable_status_previous": {
-        "final_status": "ELIGIBLE_NOT_POOLABLE",
-        "scientific_pooling_eligible": null,
-        "policy_poolable": false,
-        "Primary Estimate": false,
-        "subexposure_pooling_selected": false,
-        "display_only": null,
-        "requires_key_review": true,
-        "manual_review_pending": true,
-        "disease_hierarchy_pooling_selected": false
-      },
-      "scientific_pooling_eligible": false,
-      "display_only": true,
-      "nonpoolable_status_resolution": {
-        "retained_track": "claude_gemini",
-        "final_status": "ELIGIBLE_NOT_POOLABLE"
-      }
+      "subexposure_source": "Dietary protein intake"
     }
   ],
   "subexposure_projection": {
@@ -1152,6 +1019,5 @@
     "table_rows": 3
   },
   "success": true,
-  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Effect</th>\n      <th>SD Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Lee JE et al. (2008) [PMID: 19033572] — estimate 1 · Mixed</th>\n      <td>0.0583</td>\n      <td>0.0887</td>\n      <td>-0.1156</td>\n      <td>0.2321</td>\n      <td>1478.0</td>\n      <td>774952.0</td>\n    </tr>\n    <tr>\n      <th>Chow WH et al. (1994) [PMID: 8028035] — estimate 1 · Mixed</th>\n      <td>0.6419</td>\n      <td>0.3268</td>\n      <td>0.0014</td>\n      <td>1.2823</td>\n      <td>690.0</td>\n      <td>1397.0</td>\n    </tr>\n  </tbody>\n</table>",
-  "nonpoolable_status_policy": "nonpoolable-status-reconciliation-2026-09-08-v1"
+  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Effect</th>\n      <th>SD Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Lee JE et al. (2008) [PMID: 19033572] — estimate 1 · Mixed</th>\n      <td>0.0583</td>\n      <td>0.0887</td>\n      <td>-0.1156</td>\n      <td>0.2321</td>\n      <td>1478.0</td>\n      <td>774952.0</td>\n    </tr>\n    <tr>\n      <th>Chow WH et al. (1994) [PMID: 8028035] — estimate 1 · Mixed</th>\n      <td>0.6419</td>\n      <td>0.3268</td>\n      <td>0.0014</td>\n      <td>1.2823</td>\n      <td>690.0</td>\n      <td>1397.0</td>\n    </tr>\n  </tbody>\n</table>"
 }

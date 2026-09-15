@@ -336,6 +336,10 @@ def main():
         record,entries,issues=reconcile_context(tracks['chatgpt'].get(cid),tracks['claude_gemini'].get(cid))
         from scripts import astra_fulltext_overlay as fulltext
         replayed=fulltext.replay_record(record,tracks['chatgpt'].get(cid),tracks['claude_gemini'].get(cid),COMBINED)
+        from scripts import human_review_overlay
+        replayed=human_review_overlay.replay_record(replayed,tracks['chatgpt'].get(cid),tracks['claude_gemini'].get(cid),COMBINED)
+        from scripts import curator_dedup_overlay
+        replayed=curator_dedup_overlay.replay_record(replayed,tracks['chatgpt'].get(cid),tracks['claude_gemini'].get(cid),COMBINED)
         if replayed is not record:
             record=replayed;entries=fulltext.candidates_for_record(record,tracks)
         records.append(record);differences.extend(issues)

@@ -1,4 +1,4 @@
-"""Read-only, report-level selection counts from the immutable screening audit.
+"""Read-only, report-level selection counts from the current screening audit.
 
 The saved pipeline screens exposure–cancer contexts and conditionally reviews
 full text. It is not a complete PRISMA retrieval ledger. Missing retrieval and
@@ -133,6 +133,19 @@ def _build_selection_flow(source):
         displayed_pmids = {str(row['pmid']) for row in projection['results'] if row['final_status'] in RETAINED_STATUSES}
         provisional_reports = len(displayed_pmids - included_pmids)
         provenance.append(projection_provenance)
+    review_path = ROOT / 'evidence-revisions/2026-09-14/revision.json'
+    review_note = ''
+    if review_path.exists():
+        revision, review_provenance = _read_packet(review_path, 'Applied human review decisions')
+        if source in revision.get('sources', {}):
+            review_note = ' Human review updates applied on 14 September 2026.'
+            provenance.append(review_provenance)
+    dedup_path = ROOT / 'evidence-revisions/2026-09-14-dataset-deduplication/revision.json'
+    if dedup_path.exists():
+        revision, dedup_provenance = _read_packet(dedup_path, 'Applied duplicate-article decisions')
+        if source in revision.get('sources', {}):
+            review_note += ' Duplicate-article decisions applied on 14 September 2026.'
+            provenance.append(dedup_provenance)
     return {
         'label': 'Urinary tract cancers' if urinary else 'Prostate cancer',
         'unit': 'Unique reports (PubMed IDs)',
@@ -140,7 +153,7 @@ def _build_selection_flow(source):
             'Current urinary tract review, using search rounds ending 22–29 August 2026 and adjudication saved on 7 September 2026.'
             if urinary else
             'Current prostate review, using search rounds through 29 August 2026 and report dispositions saved on 8 September 2026.'
-        ),
+        ) + review_note,
         'identified': None,
         'duplicate_removed': None,
         'automation_removed': None,
@@ -163,8 +176,8 @@ def _build_selection_flow(source):
                 if urinary else
                 'The prostate review includes the shared screening cohort used by the general and aggressive prostate cancer views. Counts do not change with disease, exposure, or display settings.'
             ),
-            *([] if urinary else [
-                'Three additional reports are displayed provisionally in the analysis and are not counted as included here. Quantitative eligibility here follows the saved adjudicated record; provisional analysis estimates can differ.',
+            *([] if urinary or not provisional_reports else [
+                f'{provisional_reports} additional reports are displayed provisionally in the analysis and are not counted as included here. Quantitative eligibility here follows the saved adjudicated record; provisional analysis estimates can differ.',
             ]),
         ],
         'provenance': provenance,

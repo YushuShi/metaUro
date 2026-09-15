@@ -7,10 +7,10 @@
   "disease_hierarchy_applied": true,
   "disease_hierarchy_inherited_count": 1,
   "disease_hierarchy_materialization": {
-    "source_fingerprint": "a37bafb601f51151a5790e34a988c4df8b1a83edab2a46fad7d7d22739fa05e6",
+    "source_fingerprint": "16dbed0b0298e5e14560a9b9b7b28fbcac5df0db4ee4d8a8b0e9f9143cc7aef0",
     "source_hashes": {
-      "_disease_scope_sources/manganese/kidney_and_renal_pelvis_cancer_incidence_true_core.json": "6eee2f5c4d372472c66ac806bed29467a2be716e7cc5833d9970e8f78b7808d7",
-      "_disease_scope_sources/manganese/renal_cell_carcinoma_incidence_true_core.json": "00868a43ab99c7989dacee34e90752e18cda50ed2919ca62fa879fd87a7cb7fc"
+      "_disease_scope_sources/manganese/kidney_and_renal_pelvis_cancer_incidence_true_core.json": "7474c8cd1038e458264ebe4e4987902930f3afd3df58ed9b758a52da0c8f6e31",
+      "_disease_scope_sources/manganese/renal_cell_carcinoma_incidence_true_core.json": "b6eb6716875a0edaaf93fbd181ce637d20f763b05874b41587b2cdf92b2bbd8d"
     },
     "source_root": "mode Cached_results",
     "version": "combined-disease-scopes-2026-09-07-v1"
@@ -43,7 +43,7 @@
   "include_subexposures": "yes",
   "outcome": "Incidence",
   "plot_url": null,
-  "requires_key_review": true,
+  "requires_key_review": false,
   "screening_stats": null,
   "studies": [
     {
@@ -427,7 +427,7 @@
       "Sample Size": 172,
       "Smoking Status": null,
       "Stage": null,
-      "Study": "Zhang H et al. (2022) [PMID: 35013964] — estimate 1 · NA",
+      "Study": "Zhang H et al. (2022) [PMID: 35013964] — estimate 1 · NA · Claude+Gemini review candidate",
       "Timing": null,
       "Title": "Disordered serum essential element levels are associated with increased risk of kidney tumors.",
       "Upper CI": null,
@@ -439,7 +439,6 @@
       "combined_source": "claude_gemini",
       "combined_source_estimate_index": 0,
       "combined_source_extraction": {
-        "astra_fulltext_quantitative_complete": false,
         "cases": 100,
         "ci_lower": null,
         "ci_upper": null,
@@ -517,11 +516,12 @@
       "disease_hierarchy_parent_context_excluded": false,
       "disease_hierarchy_pooling_reason": "Saved quantitative, quality, clinical, exposure or manual pooling gates are not met.",
       "disease_hierarchy_pooling_selected": false,
-      "disease_hierarchy_projection_id": "f87deb6c4c6974ba569460ebcadb2318dd485e94e5e230b87e5b7b87c36e5449",
+      "disease_hierarchy_projection_id": "98b067f556ac6c6fa9444822befd5f71623093c657bcdb72c8ded82a7c0a5495",
       "disease_hierarchy_reference_basis": "Exact selected disease reference, when available.",
       "disease_hierarchy_source_context_excluded": false,
       "disease_hierarchy_source_key": "kidney_and_renal_pelvis_cancer",
       "disease_hierarchy_source_path": "_disease_scope_sources/manganese/kidney_and_renal_pelvis_cancer_incidence_true_core.json",
+      "display_only": true,
       "display_only_reason": "EXCLUDE versus ELIGIBLE_NOT_POOLABLE resolves to eligible, not poolable; no manual comparison is required.",
       "effect_inverted": false,
       "exposure_measurement_supporting_text": "determined by inductively coupled plasma mass spectrometry",
@@ -576,139 +576,34 @@
       },
       "final_status": "ELIGIBLE_NOT_POOLABLE",
       "include_subexposures": "yes",
-      "key_differences": [],
+      "key_differences": [
+        "total_n",
+        "effect_size",
+        "ci"
+      ],
       "manual_poolable": false,
       "manual_review_pending": false,
-      "policy_poolable": false,
-      "provisional_ui_selection": {
-        "extraction": {
-          "astra_fulltext_quantitative_complete": false,
-          "cases": 100,
-          "ci_lower": null,
-          "ci_upper": null,
-          "comparison_type": "Serum manganese concentration in kidney tumor patients versus healthy individuals",
-          "continent": null,
-          "country": null,
-          "design": "case-control",
-          "effect_size": null,
-          "effect_type": null,
-          "ethnicity": "NA",
-          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
-          "ethnicity_supporting_text": "NA",
-          "evidence": {
-            "cases": {
-              "excerpt": "This study included 72 healthy individuals and 100 kidney tumor patients.",
-              "location": "abstract methods",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/"
-            },
-            "comparison": {
-              "excerpt": "The levels of Co, Cr, Fe, Mn, Ni, and Zn in patients with kidney tumors were significantly lower.",
-              "location": "abstract results",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/"
-            },
-            "confidence_interval": null,
-            "continent": null,
-            "design": {
-              "excerpt": "This study included 72 healthy individuals and 100 kidney tumor patients.",
-              "location": "abstract methods",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/"
-            },
-            "effect_size": null,
-            "ethnicity": null,
-            "exposure_measurement": {
-              "excerpt": "determined by inductively coupled plasma mass spectrometry",
-              "location": "abstract methods",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/"
-            },
-            "gender": null,
-            "p_value": null,
-            "sample_size": {
-              "excerpt": "",
-              "location": "abstract methods",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/35013964/"
-            },
-            "smoking_status": null,
-            "timing": null
-          },
-          "exposure_measurement_type": "human_biospecimen",
-          "exposure_subtype": "human_biomarker",
-          "gender": "NA",
-          "needs_inversion": false,
-          "p_value": null,
-          "p_value_relation": null,
-          "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-          "population": "Healthy individuals and kidney tumor patients",
-          "reported_ci_lower": null,
-          "reported_ci_upper": null,
-          "reported_effect_size": null,
-          "reported_effect_type": null,
-          "reported_effect_type_label": null,
-          "reported_p_value": null,
-          "smoking_status": null,
-          "timing": null,
-          "total_n": 172
-        },
-        "higher_jbi": {
-          "answers": {
-            "q1": "Unclear",
-            "q10": "Unclear",
-            "q11": "NA",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Unclear",
-            "q3": "Unclear",
-            "q4": "Yes",
-            "q5": "Yes",
-            "q6": "No",
-            "q7": "No",
-            "q8": "Yes",
-            "q9": "No"
-          },
-          "checklist_type": "case_control",
-          "grade": "Fair",
-          "score_percent": 30.0
-        },
-        "higher_jbi_grade": "Fair",
-        "metadata_fills": [],
-        "overrides_pending_astra_partial": false,
-        "pending": true,
-        "protect_adjudicated_quantities": false,
-        "reason": "Use the non-excluded pipeline for display; quantitative inputs remain incomplete.",
-        "review_ids": [
-          "metaPee-0184"
-        ],
-        "selected_track": "claude_gemini",
-        "selection_poolable_candidate": false,
-        "source_fingerprint": "aaad25f2c3e863355995d69e1f760bde20477ff6db32cffe0b816e37702d1591",
-        "version": "provisional-human-review-2026-09-07-v2"
+      "nonpoolable_status_previous": {
+        "Primary Estimate": false,
+        "display_only": null,
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "manual_review_pending": null,
+        "policy_poolable": false,
+        "requires_key_review": true,
+        "scientific_pooling_eligible": null,
+        "subexposure_pooling_selected": false
       },
+      "nonpoolable_status_resolution": {
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "retained_track": "claude_gemini"
+      },
+      "policy_poolable": false,
       "requires_key_review": false,
+      "scientific_pooling_eligible": false,
       "subexposure_inherited": false,
       "subexposure_pooling_selected": false,
       "subexposure_projection_id": "b0f2cb37e59487473dd3e48fdaf20a18c2d12875bfdd8163c149d5d3b2c52499",
-      "subexposure_source": "Manganese",
-      "nonpoolable_status_previous": {
-        "final_status": "ELIGIBLE_NOT_POOLABLE",
-        "scientific_pooling_eligible": null,
-        "policy_poolable": false,
-        "Primary Estimate": false,
-        "subexposure_pooling_selected": false,
-        "display_only": null,
-        "requires_key_review": true,
-        "manual_review_pending": true,
-        "disease_hierarchy_pooling_selected": false
-      },
-      "scientific_pooling_eligible": false,
-      "display_only": true,
-      "nonpoolable_status_resolution": {
-        "retained_track": "claude_gemini",
-        "final_status": "ELIGIBLE_NOT_POOLABLE"
-      }
+      "subexposure_source": "Manganese"
     },
     {
       "Authors": "Arulraj K, Quadri JA, Nayak B, Pandit S, Panayadiyan S, Singh P, Sarwar S, A S, Seth A",
@@ -772,7 +667,6 @@
       "combined_source": "claude_gemini",
       "combined_source_estimate_index": 0,
       "combined_source_extraction": {
-        "astra_fulltext_quantitative_complete": false,
         "cases": 150,
         "ci_lower": null,
         "ci_upper": null,
@@ -860,6 +754,7 @@
       "disease_hierarchy_source_context_excluded": false,
       "disease_hierarchy_source_key": "renal_cell_carcinoma",
       "disease_hierarchy_source_path": "_disease_scope_sources/manganese/renal_cell_carcinoma_incidence_true_core.json",
+      "display_only": true,
       "display_only_reason": "EXCLUDE versus ELIGIBLE_NOT_POOLABLE resolves to eligible, not poolable; no manual comparison is required.",
       "effect_inverted": false,
       "exposure_measurement_supporting_text": "Levels of arsenic, copper, manganese, selenium, cadmium, lead, and mercury were measured in each of the samples.",
@@ -921,143 +816,28 @@
       "final_status": "ELIGIBLE_NOT_POOLABLE",
       "include_subexposures": "yes",
       "key_differences": [],
-      "manual_poolable": false,
       "manual_review_pending": false,
-      "policy_poolable": false,
-      "provisional_ui_selection": {
-        "extraction": {
-          "astra_fulltext_quantitative_complete": false,
-          "cases": 150,
-          "ci_lower": null,
-          "ci_upper": null,
-          "comparison_type": "Blood manganese levels in RCC cases versus age-matched healthy controls",
-          "continent": null,
-          "country": null,
-          "design": "case-control",
-          "effect_size": null,
-          "effect_type": null,
-          "ethnicity": "NA",
-          "ethnicity_basis": "NA: no field-specific ethnicity evidence was available",
-          "ethnicity_supporting_text": "NA",
-          "evidence": {
-            "cases": {
-              "excerpt": "150 cases and 150 age matched controls were enrolled.",
-              "location": "abstract, results",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/39294077/"
-            },
-            "comparison": {
-              "excerpt": "",
-              "location": "abstract, results",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/39294077/"
-            },
-            "confidence_interval": null,
-            "continent": null,
-            "design": {
-              "excerpt": "This observational study recruited RCC patients who visited our tertiary care centre from 2019 to 2023. Age matched healthy volunteers were included as controls.",
-              "location": "abstract, methods",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/39294077/"
-            },
-            "effect_size": null,
-            "ethnicity": null,
-            "exposure_measurement": {
-              "excerpt": "Levels of arsenic, copper, manganese, selenium, cadmium, lead, and mercury were measured in each of the samples.",
-              "location": "abstract, methods",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/39294077/"
-            },
-            "gender": null,
-            "p_value": null,
-            "sample_size": {
-              "excerpt": "150 cases and 150 age matched controls were enrolled.",
-              "location": "abstract, results; total_n derived from reported group counts 150 + 150 = 300",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/39294077/"
-            },
-            "smoking_status": null,
-            "timing": {
-              "excerpt": "recruited RCC patients who visited our tertiary care centre from 2019 to 2023",
-              "location": "abstract, methods",
-              "source": "abstract",
-              "url": "https://pubmed.ncbi.nlm.nih.gov/39294077/"
-            }
-          },
-          "exposure_measurement_type": "human_biospecimen",
-          "exposure_subtype": "human_biomarker",
-          "gender": "NA",
-          "needs_inversion": false,
-          "p_value": null,
-          "p_value_relation": null,
-          "poolability_policy_version": "relaxed-poolability-2026-09-05-v2",
-          "population": "Renal cell carcinoma patients at a tertiary care centre and age-matched healthy volunteers",
-          "reported_ci_lower": null,
-          "reported_ci_upper": null,
-          "reported_effect_size": null,
-          "reported_effect_type": null,
-          "reported_effect_type_label": null,
-          "reported_p_value": null,
-          "smoking_status": null,
-          "timing": "2019 to 2023",
-          "total_n": 300
-        },
-        "higher_jbi": {
-          "answers": {
-            "q1": "Yes",
-            "q10": "Unclear",
-            "q11": "NA",
-            "q12": "NA",
-            "q13": "NA",
-            "q2": "Yes",
-            "q3": "Unclear",
-            "q4": "Yes",
-            "q5": "Yes",
-            "q6": "No",
-            "q7": "Unclear",
-            "q8": "Yes",
-            "q9": "No"
-          },
-          "checklist_type": "case_control",
-          "grade": "Fair",
-          "score_percent": 50.0
-        },
-        "higher_jbi_grade": "Fair",
-        "metadata_fills": [],
-        "overrides_pending_astra_partial": false,
-        "pending": true,
-        "protect_adjudicated_quantities": false,
-        "reason": "Use the non-excluded pipeline for display; quantitative inputs remain incomplete.",
-        "review_ids": [
-          "metaPee-0217"
-        ],
-        "selected_track": "claude_gemini",
-        "selection_poolable_candidate": false,
-        "source_fingerprint": "d595ccccc124727933914fa34a21fb9b55f5e36813e8c566181ccd5872de255d",
-        "version": "provisional-human-review-2026-09-07-v2"
+      "nonpoolable_status_previous": {
+        "Primary Estimate": false,
+        "display_only": null,
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "manual_review_pending": null,
+        "policy_poolable": false,
+        "requires_key_review": false,
+        "scientific_pooling_eligible": null,
+        "subexposure_pooling_selected": false
       },
+      "nonpoolable_status_resolution": {
+        "final_status": "ELIGIBLE_NOT_POOLABLE",
+        "retained_track": "claude_gemini"
+      },
+      "policy_poolable": false,
       "requires_key_review": false,
+      "scientific_pooling_eligible": false,
       "subexposure_inherited": false,
       "subexposure_pooling_selected": false,
       "subexposure_projection_id": "254d2778261c6f577e3e1bde3c19082e827e9a2054a599c0374ae8604a9eba27",
-      "subexposure_source": "Manganese",
-      "nonpoolable_status_previous": {
-        "final_status": "ELIGIBLE_NOT_POOLABLE",
-        "scientific_pooling_eligible": null,
-        "policy_poolable": false,
-        "Primary Estimate": false,
-        "subexposure_pooling_selected": false,
-        "display_only": null,
-        "requires_key_review": true,
-        "manual_review_pending": true,
-        "disease_hierarchy_pooling_selected": false
-      },
-      "scientific_pooling_eligible": false,
-      "display_only": true,
-      "nonpoolable_status_resolution": {
-        "retained_track": "claude_gemini",
-        "final_status": "ELIGIBLE_NOT_POOLABLE"
-      }
+      "subexposure_source": "Manganese"
     }
   ],
   "subexposure_projection": {
@@ -1066,6 +846,5 @@
     "table_rows": 2
   },
   "success": true,
-  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n      <th>Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Pooled Result (Single Study)</th>\n      <td>229</td>\n      <td>61321</td>\n      <td>1.259147</td>\n      <td>0.830368</td>\n      <td>1.905481</td>\n    </tr>\n  </tbody>\n</table>",
-  "nonpoolable_status_policy": "nonpoolable-status-reconciliation-2026-09-08-v1"
+  "summary_html": "<table border=\"1\" class=\"dataframe table table-striped\">\n  <thead>\n    <tr style=\"text-align: right;\">\n      <th></th>\n      <th>Cases</th>\n      <th>Sample Size</th>\n      <th>Effect</th>\n      <th>95% CI lower</th>\n      <th>95% CI upper</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th>Pooled Result (Single Study)</th>\n      <td>229</td>\n      <td>61321</td>\n      <td>1.259147</td>\n      <td>0.830368</td>\n      <td>1.905481</td>\n    </tr>\n  </tbody>\n</table>"
 }

@@ -46,7 +46,8 @@ def serve(source, pipe):
     os.environ['MPLBACKEND'] = 'Agg'
     os.environ['VERIFICATIONS_FILE'] = str(runtime / 'verifications.json')
     os.chdir(folder)
-    sys.path.insert(0, str(folder))
+    # UI calculation updates are separate from the immutable evidence snapshot.
+    sys.path[:0] = [str(ROOT / 'runtime_code' / source), str(folder), str(ROOT)]
     protect_snapshot(ROOT / 'sources')
     if folder != ROOT / 'sources' / source:
         protect_snapshot(folder)

@@ -1,0 +1,32 @@
+const assert = require('node:assert/strict');
+const cases = require('../static/case-counts.js');
+for (const reported of [0, 1, 49, 50, 51, '1,200']) {
+    const study = {Cases:reported, 'Sample Size':2000, 'Estimated Cases':999};
+    const result = cases.refresh(study, {p0:.1});
+    assert.equal(result.value, cases.count(reported));
+    assert.equal(result.estimated, null);
+    assert.equal(study.Cases, reported);
+}
+const study = {Cases:null, 'Sample Size':'1,000', 'Estimated Cases':900};
+assert.equal(cases.refresh(study, {p0:.049}).value, 49);
+assert(!cases.meetsMinimum(49, 50));
+assert.equal(cases.refresh(study, {p0:.1, sex:'female', age:60, years:10, race:'asian'}).value, 100);
+assert.equal(study['Case Estimation'].race, 'asian');
+assert(cases.meetsMinimum(100, 50));
+assert.equal(cases.refresh(study, {p0:null}).value, null);
+assert(cases.meetsMinimum(null, 0));
+assert(!cases.meetsMinimum(null, 1));
+assert.equal(cases.refresh(study, 0).value, 0);
+assert.equal(cases.refresh({'Sample Size':100}, .025).value, 2);
+assert.equal(cases.refresh({'Sample Size':100}, .035).value, 4);
+assert.equal(cases.refresh({'Sample Size':null}, .1).value, null);
+const rows = [{}, {}];
+const checkboxes = rows.map((_, index) => ({dataset:{index:String(index)},disabled:false,checked:false,defaultChecked:true}));
+global.document = {querySelectorAll:() => checkboxes};
+cases.rememberSelection(rows);
+checkboxes[0].checked = true;
+checkboxes[1].disabled = true;
+cases.restoreSelection(rows);
+assert.equal(checkboxes[0].checked, false, 'Keep a manual deselection across baseline changes');
+assert.equal(checkboxes[1].checked, false, 'A cutoff cannot be bypassed by restoring selection');
+console.log('Current-baseline case estimates and optional cutoff passed.');

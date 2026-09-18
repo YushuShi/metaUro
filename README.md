@@ -1,5 +1,13 @@
 # metaUro
 
+The **Minimum cases** control defaults to **0** (no case-count cutoff). A positive
+cutoff uses reported cases, or a labelled estimate of `round(N × selected baseline
+risk)` when cases are unreported. Estimates update with the applicable sex,
+race/ethnicity, starting-age and observation-period settings. Missing N or an
+unavailable baseline leaves the estimate unknown; a cutoff of 0 still passes the
+case-count filter. Other study eligibility rules continue to apply. Visitor
+estimates do not overwrite reported counts or saved evidence caches.
+
 Explore nutrition and urologic cancer evidence across 14 disease scopes, including bladder, kidney, renal pelvis, prostate, and supported subtypes.
 
 ## Run

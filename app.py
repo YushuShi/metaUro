@@ -128,9 +128,16 @@ def decorate_html(body, source, path):
         node = soup.new_tag('link', rel='stylesheet', href=href)
         soup.head.append(node)
     # Initialize settings before the source script uses AnalysisSettings.
-    for src in ['/static/metauro.js', '/static/analysis-settings.js']:
+    for src in ['/static/metauro.js', '/static/analysis-settings.js', '/static/case-counts.js?v=20260918']:
         node = soup.new_tag('script', src=src)
         soup.head.append(node)
+    minimum = soup.select_one('#filter-min-cases')
+    if minimum:
+        minimum['value'], minimum['min'], minimum['step'] = '0', '0', '1'
+        minimum['title'] = '0 includes studies regardless of case count. Missing cases use N × the baseline risk selected in Settings.'
+    for script in soup.select('script[src]'):
+        if '/static/script.js' in script['src']:
+            script['src'] = script['src'].split('?')[0] + '?v=selected-case-counts-20260918'
     # Relative downloads/links produced by source templates must stay with their source.
     for node in soup.select('[href], [src], [action], [data]'):
         for attr in ('href', 'src', 'action', 'data'):
@@ -268,7 +275,9 @@ def evidence(source, path):
     try:
         if path.startswith('static/'):
             # Settings catalogs and UI assets do not need the scientific engine.
-            asset = send_from_directory(assembled_source(ROOT, source) / 'static', path[len('static/'):])
+            code_static = ROOT / 'runtime_code' / source / 'static'
+            static_root = code_static if path == 'static/script.js' else assembled_source(ROOT, source) / 'static'
+            asset = send_from_directory(static_root, path[len('static/'):])
             asset.direct_passthrough = False
             status, response_headers, body = asset.status_code, list(asset.headers), asset.get_data()
         else:

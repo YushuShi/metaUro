@@ -669,13 +669,8 @@ def _place_close_labels(fig: Any, ax: Any, labels: list[dict[str, Any]]) -> None
         annotation.set_va(vertical_alignment)
 
 
-def heterogeneity_plot(
-    path: Path,
-    rows: list[dict[str, Any]],
-    disease: str,
-    kind: str,
-    locale: str = "en",
-) -> int:
+def heterogeneity_rows(rows, kind):
+    """Use the existing diagnostic eligibility without recomputing results."""
     eligible = []
     minimum_studies = 10 if kind == "egger" else 3
     for row in rows:
@@ -691,6 +686,18 @@ def heterogeneity_plot(
             eligible.append(row)
     if kind == "egger":
         eligible = [row for row in eligible if row.get("eggers p-value") not in (None, 0) and 0 < float(row["eggers p-value"]) <= 1]
+    return eligible if len(eligible) >= 2 else []
+
+
+def heterogeneity_plot(
+    path: Path,
+    rows: list[dict[str, Any]],
+    disease: str,
+    kind: str,
+    locale: str = "en",
+) -> int:
+    from scripts.diagnostic_style import exposure_color, finish_diagnostic, save_diagnostic
+    eligible = heterogeneity_rows(rows, kind)
     if len(eligible) < 2:
         path.unlink(missing_ok=True)
         return 0
@@ -701,25 +708,25 @@ def heterogeneity_plot(
         "axes.unicode_minus": False,
         "mathtext.fontset": "dejavusans",
     }):
-        fig, ax = plt.subplots(figsize=(11.7, 8.3))
+        fig, ax = plt.subplots(figsize=(15, 15))
         x_values = [
-            math.log(float(row["eggers p-value"])) if kind == "egger" else float(row["Pooled RR"])
+            math.log10(float(row["eggers p-value"])) if kind == "egger" else float(row["Pooled RR"])
             for row in eligible
         ]
         labels = []
         for index, row in enumerate(eligible):
             category = row["category"]
-            color = CATEGORY_COLORS.get(category, CATEGORY_COLORS["Other"])
+            color = exposure_color(row["Exposure"])
             x = x_values[index]
             y = float(row["I^2 (%)"])
-            marker_size = 45 + row["number studies"] * 6
+            marker_size = 24 + 220 * row["number studies"] / max(r["number studies"] for r in eligible)
             ax.scatter(
                 x,
                 y,
                 s=marker_size,
                 color=color,
-                alpha=0.86,
-                edgecolors="white",
+                alpha=0.85,
+                edgecolors="none",
                 linewidths=0.9,
                 zorder=3,
             )
@@ -736,7 +743,7 @@ def heterogeneity_plot(
         ax.grid(color="#D7DEE5", linestyle=":", linewidth=0.7)
         disease_text = disease_label(disease, locale)
         if kind == "egger":
-            ax.axvline(math.log(0.05), color="#1A1A2E", linestyle="--", linewidth=1)
+            ax.axvline(math.log10(0.05), color="#1A1A2E", linestyle="--", linewidth=1)
             x_min = min(x_values)
             x_max = max(x_values)
             padding = max(0.35, (x_max - x_min) * 0.28)
@@ -763,7 +770,7 @@ def heterogeneity_plot(
             ax.spines[spine].set_visible(False)
         fig.text(0.5, 0.022, caption, ha="center", va="bottom", fontsize=8.0, color="#607D8B", fontstyle="italic", wrap=True)
         fig.subplots_adjust(left=0.09, right=0.98, top=0.91, bottom=0.12)
-        font_size = 7.7 if len(eligible) <= 24 else 7.0
+        font_size = 10.5
         for label in labels:
             label["annotation"] = ax.annotate(
                 label["text"],
@@ -780,13 +787,13 @@ def heterogeneity_plot(
                 annotation_clip=True,
                 zorder=4,
             )
-        _place_close_labels(fig, ax, labels)
+        finish_diagnostic(fig, ax, labels)
         path.parent.mkdir(parents=True, exist_ok=True)
         if disease == 'Aggressive prostate cancer':
             fig.text(0.02, -0.012, plot_text('aggressive_baseline_note', locale), ha='left', va='top', fontsize=7, color='#607D8B')
         if SUBEXPOSURE_MODE is not None:
             fig.text(0.99, 0.005, 'Include subexposures: ' + SUBEXPOSURE_MODE.title(), ha='right', va='bottom', fontsize=7, color='#607D8B')
-        fig.savefig(path, format="pdf", bbox_inches="tight", metadata={"CreationDate": None})
+        save_diagnostic(fig, path)
         plt.close(fig)
     return len(eligible)
 

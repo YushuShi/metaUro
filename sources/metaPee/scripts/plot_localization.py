@@ -334,3 +334,7 @@ def validate_localizations(
             disease_label(disease, locale)
         for exposure in exposures:
             exposure_label(repo_root, exposure, locale)
+
+# Shared diagnostic vocabulary follows the requested base-10 scale.
+from scripts.diagnostic_style import STYLE_STRINGS
+PLOT_STRINGS.update(STYLE_STRINGS)

@@ -83,6 +83,15 @@ directions default to high versus low or yes versus no and show a
 **Direction imputed** badge. Known reversed comparisons retain their inversion.
 Moderate/Good JBI and disease/design eligibility rules still apply.
 
+Incidence means time to first prostate-cancer diagnosis. For every HR (and any
+other follow-up estimate), the modeled failure event must be identified.
+Mortality, fatal/lethal disease determined by later death or metastasis,
+postdiagnosis progression, recurrence, and survival are excluded even when the
+cohort was cancer-free at entry. Separately reported total, advanced-stage-at-
+diagnosis, and high-grade diagnosis estimates remain eligible. Reviewed legacy
+exceptions are recorded in `data/incidence_endpoint_review/` and replayed by
+the disease-scope projection without changing historical model responses.
+
 To apply this policy to saved evidence and regenerate both tracks' exposure
 plots plus all localized combined summary/heterogeneity plots, without new
 model calls:
@@ -94,7 +103,9 @@ python scripts/rebuild_poolability_results.py
 The original screening packets remain unchanged. Reclassified ChatGPT and
 Claude+Gemini projections and per-study audits are saved under
 `outputs/poolability_policy_2026-09-05/`. ChatGPT plots use
-`static/chatgpt/`; combined plots use `static/<exposure>/`.
+`static/chatgpt/`; combined plots use `static/<exposure>/`. Endpoint-policy
+rebuilds use the isolated `incidence_endpoint_v1` namespaces so an audited
+release never overwrites prior figure bytes.
 
 ## Prostate cancer survival module
 

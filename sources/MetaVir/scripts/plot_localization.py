@@ -223,7 +223,9 @@ def normalize_key(value: str) -> str:
 def site_key(repo_root: Path) -> str:
     if (repo_root / "digestive_cancer_types.csv").is_file():
         return "metagut"
-    if repo_root.name.casefold() == "metavir":
+    if (repo_root.name.casefold() == "metavir"
+            or ((repo_root / "data/aggressive_prostate_review").is_dir()
+                and (repo_root / "combined").is_dir())):
         return "metavir"
     raise ValueError(f"Cannot infer plot-localization site from {repo_root}")
 

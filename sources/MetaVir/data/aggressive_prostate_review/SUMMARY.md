@@ -23,9 +23,20 @@ The review also retained **174 additional endpoint entries**: 59 numerical aggre
 
 ## Endpoint definitions and safeguards
 
-Included definitions follow each paper's wording: aggressive/high-grade/high-risk disease; advanced or extraprostatic disease; metastatic or regional/distant disease; explicit lethal/fatal incident disease; and specified high Gleason/ISUP or anaplastic tumor categories. This is a heterogeneous study-defined subtype, not one uniform clinical threshold.
+This section describes the frozen version-1 model review. Its included
+definitions followed each paper's wording and included lethal/fatal disease.
+The authoritative diagnosis-only checkpoint recorded on 2026-09-19 now
+excludes reviewed fatal/lethal, prostate-cancer-death, and postdiagnosis
+progression estimates while retaining distinct total, advanced-at-diagnosis,
+and high-grade diagnosis estimates. See
+`../incidence_endpoint_review/current_exclusions.json`.
 
-A background mention, unspecified stage/grade stratification, or mortality alone without an explicit aggressive-incidence definition is insufficient. Focused Sol adjudication resolved vague stage/grade descriptions before final validation. Every numerical extraction requires its effect and both CI bounds in a literal abstract excerpt; extracted counts must occur in their cited text. Missing/insufficient information stays uncertain or null. Saved full-text-derived estimates can retain their endpoint when their supplied field-level evidence supports it and the abstract establishes the aggressive analysis; that provenance is recorded explicitly.
+A background mention or unspecified stage/grade stratification is insufficient.
+For current incidence projection, mortality and a lethal/fatal endpoint defined
+by a later event are also insufficient regardless of cancer-free cohort entry.
+Every HR must model time to first diagnosis. Focused adjudication, literal
+numeric-extraction safeguards, and the original model provenance remain
+preserved in this historical review snapshot.
 
 The model returned `gpt-5.6-sol` in all **214 retained responses**. Provider-reported usage totals **1,309,966 input tokens** (including 229,886 cached input tokens) and **577,265 output tokens** (including 235,803 reasoning tokens). There are no pending PMIDs or recorded terminal failures. See [responses](responses/) for original outputs and receipts.
 

@@ -8,9 +8,11 @@ import math
 import re
 from collections import defaultdict
 
+from scripts import incidence_endpoint_policy
+
 GENERAL = 'Prostate cancer'
 AGGRESSIVE = 'Aggressive prostate cancer'
-POLICY_VERSION = 1
+POLICY_VERSION = 2
 AUDIT_FIELDS = ['Disease Scope', 'Disease Endpoint', 'Aggressive Definition',
                 'Disease Endpoint Definition', 'disease_scope_review',
                 'disease_scope_original_row', 'disease_scope_pooling_selected',
@@ -25,10 +27,10 @@ def original_row(row):
     return copy.deepcopy(row.get('disease_scope_original_row') or row)
 
 
-def source_rows(rows):
-    """Undo our projection, including rows moved out of the parent scope."""
+def source_rows(rows, excluded_source_rows=None):
+    """Undo projection, including rows retained only in endpoint audit state."""
     result, seen = [], set()
-    for row in rows:
+    for row in list(rows) + list(excluded_source_rows or []):
         if (row.get('disease_scope_review') or {}).get('origin') == 'abstract_extraction':
             continue
         original = original_row(row)
@@ -243,7 +245,8 @@ def select_scope_rows(rows, exposure):
                 'Another eligible endpoint/contrast is selected for this study population, or this row does not meet the existing pooling criteria.')
 
 
-def project(rows, exposure, reviews, row_id_function, case_reviews=None):
+def project(rows, exposure, reviews, row_id_function, case_reviews=None,
+            endpoint_exclusions=None):
     """Return parent rows, child rows and per-action audit; never pool both endpoints in parent."""
     originals = source_rows(rows)
     annotated, audit = [], []
@@ -252,6 +255,15 @@ def project(rows, exposure, reviews, row_id_function, case_reviews=None):
         pmid = str(original.get('PMID') or '')
         review = reviews.get(pmid, {})
         rid = row_id_function(original)
+        endpoint_record = incidence_endpoint_policy.matching_record(
+            original, endpoint_exclusions, source_row_id=rid)
+        if endpoint_record is not None:
+            action = incidence_endpoint_policy.audit_action(
+                endpoint_record, original, source_row_id=rid,
+                origin='saved_estimate')
+            action['excluded_source_row'] = copy.deepcopy(original)
+            audit.append(action)
+            continue
         decisions = {d['row_id']: d for d in review.get('estimate_classifications', [])}
         decision = decisions.get(rid, {})
         endpoint = decision.get('endpoint', 'uncertain')
@@ -284,6 +296,15 @@ def project(rows, exposure, reviews, row_id_function, case_reviews=None):
             if key(estimate.get('exposure_key')) != direct or estimate.get('endpoint') not in {'general', 'aggressive'} or not estimate.get('effect_excerpt'):
                 continue
             derived = _derived_row(template, estimate, review, template['disease_scope_review']['source_row_id'])
+            endpoint_record = incidence_endpoint_policy.matching_record(
+                derived, endpoint_exclusions,
+                source_row_id=template['disease_scope_review']['source_row_id'])
+            if endpoint_record is not None:
+                audit.append(incidence_endpoint_policy.audit_action(
+                    endpoint_record, derived,
+                    source_row_id=template['disease_scope_review']['source_row_id'],
+                    origin='abstract_extraction'))
+                continue
             if any(estimate_signature(r) == estimate_signature(derived) for r in templates):
                 continue
             templates.append(derived)

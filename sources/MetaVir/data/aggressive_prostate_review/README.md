@@ -15,7 +15,21 @@ This directory contains the Sol review requested for the included prostate-incid
 
 Article-level `both` says the abstract studies general and aggressive incident disease. It does not mean that a saved overall effect can be relabeled aggressive. Each saved estimate is separately classified using its abstract and existing field-level evidence; endpoint support from existing full-text excerpts is identified explicitly. Original estimates and their reported comparison orientation are preserved in the corpus. New estimates retain the paper's original effect orientation and require the effect and both CI numbers in a literal abstract quote. Aggressive associations without those numbers are represented with null effect/CI and must remain display-only.
 
-Definitions are study-specific. Explicit aggressive, high-grade/high-risk, advanced, metastatic/distant, lethal/fatal incident, extraprostatic, and equivalent pathological endpoints may qualify. A mention in background, a generic statement about stratification by unspecified stage/grade, or survival after diagnosis does not establish aggressive incidence. Missing or insufficient abstract evidence is uncertain.
+Definitions are study-specific. Explicit aggressive, high-grade/high-risk,
+advanced, metastatic/distant, extraprostatic, and equivalent pathological
+endpoints may qualify only when defined at first diagnosis. A mention in
+background, a generic statement about stratification by unspecified
+stage/grade, fatal/lethal disease determined by later death or metastasis, or
+survival after diagnosis does not establish aggressive incidence. Missing or
+insufficient abstract evidence is uncertain.
+
+The retained `review.json` is the frozen version-1 model snapshot and therefore
+still documents its historical lethal/fatal classifications. The later human
+endpoint decision is authoritative in
+`../incidence_endpoint_review/current_exclusions.json`; projection replays that
+checkpoint and preserves excluded source rows in cache-level audit state. A
+future model review uses the version-2 prompt in code and the same diagnosis-
+only contract.
 
 Total analytic N and cases are different quantities. Extracted numeric counts must occur in the cited abstract text. Full prospective cohort analyses sharing participants may share total N across general/aggressive endpoints; nested case-control and case-cohort denominators are not automatically forced to the parent cohort population. Original model flags changed by validation remain auditable.
 

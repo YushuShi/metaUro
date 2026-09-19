@@ -208,6 +208,12 @@ class AggressiveProstatePolicyTests(unittest.TestCase):
         self.assertEqual(len(restored), 2)
         self.assertEqual(empty, [])
 
+    def test_source_rows_restores_endpoint_exclusion_snapshot(self):
+        original = study('death')
+        projected = study('diagnosis')
+        restored = policy.source_rows([projected], [original])
+        self.assertEqual({row['Effect ID'] for row in restored}, {'death', 'diagnosis'})
+
     def test_analysis_signature_detects_endpoint_and_selection_changes(self):
         original = study(**{'Disease Endpoint': 'general', 'disease_scope_pooling_selected': True})
         self.assertNotEqual(builder.analysis_signature([original]), builder.analysis_signature([

@@ -18,7 +18,7 @@ from scripts.aggressive_prostate_review import (
 )
 from scripts.run_claude_gemini_parallel_review import _configure_client, _usage_dict
 
-REVISION = "direct-exposure-aggressive-coverage-v1"
+REVISION = "direct-exposure-aggressive-coverage-v2"
 PMIDS = "2403069 9950236 12419792 19536097 20564317 25210201 25417840 28676103 30108373 32121075 32183345 32698845 37139178 40254848".split()
 STRING = {"type": "string"}
 SCHEMA = obj({
@@ -68,10 +68,12 @@ chemically related nutrient or a common ingredient of the studied food.
 Use uncertain if scope cannot be determined; explain the exact missing connection.
 
 Aggressive endpoints require explicit aggressive/high-grade/high-risk, advanced,
-extraprostatic, metastatic/regional-distant, lethal/fatal incident, or equivalent
-defined severe disease. Generic stratification by stage/grade is insufficient.
-Mortality alone, postdiagnosis survival/progression/recurrence, or aggressive disease
-mentioned only in background is insufficient for aggressive incidence.
+extraprostatic, metastatic/regional-distant, or equivalent severe disease defined at
+the first prostate-cancer diagnosis. Generic stratification by stage/grade is
+insufficient. Mortality, fatal/lethal disease defined by later death or metastasis,
+postdiagnosis survival/progression/recurrence, or aggressive disease mentioned only
+in background is insufficient for aggressive incidence. For every HR identify the
+modeled failure event; only time to first diagnosis is eligible.
 
 Reassess article_classification independently. 'both' means the abstract analyzes
 general and explicit aggressive incident endpoints, even if aggressive concerns an

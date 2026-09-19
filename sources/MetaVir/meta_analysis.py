@@ -410,7 +410,11 @@ def generate_baujat_plot(df, disease, exposure, outcome="Incidence", exclude_met
     safe_disease = re.sub(r'[^a-zA-Z0-9]+', '_', disease.lower()).strip('_')
     safe_exposure = re.sub(r'[^a-zA-Z0-9]+', '_', exposure.lower()).strip('_')
     if plot_namespace:
-        if not re.fullmatch(r"chatgpt|subexposures/(yes|no)/interactive/[a-f0-9]{16}", plot_namespace):
+        if not re.fullmatch(
+            r"chatgpt|(?:chatgpt/)?incidence_endpoint_v1|"
+            r"subexposures/(yes|no)/(?:incidence_endpoint_v1|interactive/[a-f0-9]{16})",
+            plot_namespace,
+        ):
             raise ValueError("Invalid plot namespace")
         safe_exposure = plot_namespace + "/" + safe_exposure
     safe_outcome = re.sub(r'[^a-zA-Z0-9]+', '_', outcome.lower()).strip('_')
@@ -503,7 +507,11 @@ def perform_meta_analysis(
     safe_disease = re.sub(r'[^a-zA-Z0-9]+', '_', disease.lower()).strip('_')
     safe_exposure = re.sub(r'[^a-zA-Z0-9]+', '_', exposure.lower()).strip('_')
     if plot_namespace:
-        if not re.fullmatch(r"chatgpt|subexposures/(yes|no)/interactive/[a-f0-9]{16}", plot_namespace):
+        if not re.fullmatch(
+            r"chatgpt|(?:chatgpt/)?incidence_endpoint_v1|"
+            r"subexposures/(yes|no)/(?:incidence_endpoint_v1|interactive/[a-f0-9]{16})",
+            plot_namespace,
+        ):
             raise ValueError("Invalid plot namespace")
         safe_exposure = plot_namespace + "/" + safe_exposure
     safe_outcome = re.sub(r'[^a-zA-Z0-9]+', '_', outcome.lower()).strip('_')
@@ -628,9 +636,12 @@ def perform_meta_analysis(
             cols_to_drop = ['w_fe', 'w_re']
             summary_df = summary_df.drop(columns=cols_to_drop, errors='ignore')
 
-            # Add Cases and Sample Size from analysis_df
-            summary_df['Cases'] = analysis_df['Cases']
-            summary_df['Sample Size'] = analysis_df['Sample Size']
+            # Assign by row position rather than by the display-label index.
+            # Multiple eligible estimates may intentionally share a Study
+            # label; pandas cannot reindex a Series whose labels are duplicated.
+            pooled_rows = len(summary_df) - n_studies
+            summary_df['Cases'] = list(analysis_df['Cases'].to_numpy()) + [np.nan] * pooled_rows
+            summary_df['Sample Size'] = list(analysis_df['Sample Size'].to_numpy()) + [np.nan] * pooled_rows
 
             # Fill NaN for the pooled rows (since they aren't in analysis_df)
             summary_df['Cases'] = summary_df['Cases'].fillna('-')

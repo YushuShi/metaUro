@@ -18,7 +18,12 @@ def write(path,data):
     path.write_text(json.dumps(monthly.json_compatible(data),ensure_ascii=False,indent=2,allow_nan=False)+'\n')
 
 def build(skip_summary=False):
-    source_root=ROOT/('combined' if ROOT.name=='MetaVir' else 'Cached_results')
+    # Prefer the authoritative combined projection when it is present.  The
+    # prior directory-name check made isolated release builds silently fall
+    # back to the legacy cache merely because the checkout had been staged
+    # under a temporary directory name.
+    combined_root=ROOT/'combined'
+    source_root=combined_root if (combined_root/'_merge_manifest.json').exists() else ROOT/'Cached_results'
     curator_packet=curator.load_checkpoint(source_root) if ROOT.name=='MetaVir' else None
     hierarchy=read(ROOT/'data/exposure_hierarchy.json')
     for name in hierarchy:policy.descendants(name,hierarchy)
@@ -77,6 +82,10 @@ def build(skip_summary=False):
                             old_cwd=Path.cwd()
                             try:
                                 os.chdir(plot_root);kwargs['generate_plots']=True
+                                # The temporary plot root is copied beneath the
+                                # final subexposure-mode directory below, so the
+                                # namespace here is relative to that directory.
+                                kwargs['plot_namespace']='incidence_endpoint_v1'
                                 if ROOT.name=='metaBreath':kwargs['plot_root']=plot_root/'static'
                                 with contextlib.redirect_stdout(io.StringIO()),warnings.catch_warnings():
                                     warnings.simplefilter('ignore');plotted=meta_analysis.perform_meta_analysis(frame,disease,target,**kwargs)

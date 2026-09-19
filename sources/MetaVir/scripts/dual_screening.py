@@ -13,6 +13,7 @@ from __future__ import annotations
 from scripts import dietary_only_policy as dietary_policy
 
 from scripts import relaxed_poolability as relaxed_policy
+from scripts import incidence_endpoint_policy
 
 import json
 import math
@@ -107,7 +108,7 @@ EXCLUSION_CODES = frozenset(
     }
 )
 JBI_TOTALS = {"cohort": 11, "case_control": 10, "cross_sectional": 8, "rct": 13}
-SCREENING_PROTOCOL_VERSION = 9
+SCREENING_PROTOCOL_VERSION = 10
 POOLABILITY_POLICY_VERSION = "relaxed-incidence-v1"
 WALD_RATIO_EFFECT_TYPES = frozenset({"OR", "RR", "IRR", "HR"})
 WALD_95_Z = NormalDist().inv_cdf(0.975)
@@ -4421,3 +4422,6 @@ FULL_TEXT_INSTRUCTIONS += relaxed_policy.POLICY_INSTRUCTIONS
 # Deterministic saved-result classification also applies to future model workflows.
 SECOND_INSTRUCTIONS += "\n" + dietary_policy.PROMPT
 FULL_TEXT_INSTRUCTIONS += "\n" + dietary_policy.PROMPT
+FIRST_INSTRUCTIONS += "\n" + incidence_endpoint_policy.PROMPT_RULE
+SECOND_INSTRUCTIONS += "\n" + incidence_endpoint_policy.PROMPT_RULE
+FULL_TEXT_INSTRUCTIONS += "\n" + incidence_endpoint_policy.PROMPT_RULE

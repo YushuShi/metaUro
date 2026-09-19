@@ -7,11 +7,26 @@ let lastHeadlineData = null; // Store original RR results for transformation
 let lastHeadlineStudyCount = null;
 let lastAnalysisContext = null;
 
+const EXPOSURE_PRESENTATION_ALIASES = Object.freeze({
+    'Olive oil intake': 'Olive oil',
+    '橄榄油摄入量': '橄榄油',
+    '橄欖油攝取量': '橄欖油',
+    'Inname van olijfolie': 'Olijfolie',
+    '올리브유 섭취': '올리브유'
+});
+
+function presentationText(source) {
+    const text = String(source);
+    return EXPOSURE_PRESENTATION_ALIASES[text] || text;
+}
+
 function uiText(source, variables = {}) {
-    if (window.MetaPeeI18n) return window.MetaPeeI18n.t(source, variables);
-    return String(source).replace(/\{([a-zA-Z0-9_]+)\}/g, (match, key) => (
+    const translated = window.MetaPeeI18n
+        ? window.MetaPeeI18n.t(source, variables)
+        : String(source).replace(/\{([a-zA-Z0-9_]+)\}/g, (match, key) => (
         Object.prototype.hasOwnProperty.call(variables, key) ? String(variables[key]) : match
     ));
+    return presentationText(translated);
 }
 function escapeHtml(value) {
     return String(value ?? '').replace(/[&<>"']/g, character => ({
@@ -708,13 +723,15 @@ document.addEventListener('DOMContentLoaded', async () => {
                 return;
             }
 
-            const primaryVal = val.trim();
+            const canonicalVal = val.trim();
+            const primaryVal = uiText(canonicalVal);
             const rawSynonyms = entry && entry.core ? entry.core.split(',') : [];
-            const cleanedSynonyms = cleanAndNormalizeTerms(rawSynonyms, primaryVal);
+            const cleanedSynonyms = cleanAndNormalizeTerms(rawSynonyms, canonicalVal)
+                .filter(term => presentationText(term).toLocaleLowerCase() !== primaryVal.toLocaleLowerCase());
             const coreTerms = [primaryVal].concat(cleanedSynonyms);
 
             const rawDownstream = entry && entry.downstream ? entry.downstream.split(',') : [];
-            const downstreamTerms = cleanAndNormalizeTerms(rawDownstream, primaryVal);
+            const downstreamTerms = cleanAndNormalizeTerms(rawDownstream, canonicalVal);
 
             const corePills = coreTerms.map((t, i) => `<span style="
                 display:inline-block; padding: 3px 10px; border-radius: 20px;

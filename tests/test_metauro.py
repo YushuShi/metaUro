@@ -122,6 +122,19 @@ def test_conditional_and_head_json_asset_requests(client):
         assert cached.status_code == 304
 
 
+@pytest.mark.parametrize('scope', ['urinary', 'prostate'])
+def test_runtime_exposure_alias_is_presentation_only(client, scope):
+    response = client.get(f'/evidence/{scope}/static/script.js')
+    assert response.status_code == 200
+    script = response.get_data(as_text=True)
+    assert "'Olive oil intake': 'Olive oil'" in script
+    assert 'const canonicalVal = val.trim();' in script
+    assert 'const primaryVal = uiText(canonicalVal);' in script
+    assert 'presentationText(term).toLocaleLowerCase()' in script
+    assert 'elements.exposure.dataset.canonicalExposure = canonical;' in script
+    assert 'const exposure = selectedExposureValue();' in script
+
+
 def test_chatgpt_track_remains_visible_and_settings_aware(client):
     response = client.get('/evidence/MetaVir/chatgpt')
     assert response.status_code == 200

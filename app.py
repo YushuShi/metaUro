@@ -19,6 +19,10 @@ app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 LABELS = {'metaPee': 'Urinary tract', 'MetaVir': 'Prostate'}
 PUBLIC_SCOPES = {'metaPee': 'urinary', 'MetaVir': 'prostate'}
+UI_LABEL_TRANSLATIONS = {
+    'Download': {'zh-CN': '下载', 'zh-TW': '下載', 'nl': 'Downloaden', 'ko': '다운로드'},
+    'VERIFY': {'zh-CN': '核实', 'zh-TW': '驗證', 'nl': 'Verifiëren', 'ko': '검증'},
+}
 
 
 def resolve_source(value):
@@ -92,6 +96,12 @@ def decorate_html(body, source, path):
         node.string = 'Explore associations between nutritional exposures and urologic cancer incidence'
     for node in soup.select('#loading p'):
         node.string = 'Loading saved evidence and calculating the selected view…'
+    baujat_download = soup.select_one('#download-baujat-png')
+    if baujat_download:
+        baujat_download.string = 'Download'
+    for heading in soup.select('#studies-table thead th'):
+        if heading.get_text(' ', strip=True).upper() == 'VERIFIED':
+            heading.string = 'VERIFY'
     disease = soup.select_one('#disease')
     if disease:
         selected = next((o for o in disease.find_all('option') if o.get('selected') is not None), disease.find('option'))
@@ -297,10 +307,16 @@ def evidence(source, path):
         if path == 'static/script.js':
             body = body.replace(b"setSelectedExposure('Vitamin A');", b"setSelectedExposure(new URL(location.href).searchParams.get('exposure') || 'Vitamin A');")
             body = body.replace(b'metapee_extracted_studies', b'metauro_extracted_studies').replace(b'metavir_extracted_studies', b'metauro_extracted_studies')
+            body = body.replace(
+                b"'Quality Score', 'Verified', 'Exclusion Flags'",
+                b"'Quality Score', 'VERIFY', 'Exclusion Flags'",
+            )
     elif 'text/css' in content_type:
         body = prefix_text(body.decode('utf-8'), prefix).encode()
     elif 'application/json' in content_type and body and request.method != 'HEAD' and status not in {204, 304}:
         payload = json.loads(body)
+        if path == 'static/i18n-translations.json' and isinstance(payload, dict):
+            payload.update(UI_LABEL_TRANSLATIONS)
         monthly = load_overlay(ROOT, source)
         if isinstance(payload, dict) and 'last_updated' in payload and monthly and monthly.get('completed_at'):
             payload['last_updated'] = datetime.fromisoformat(monthly['completed_at'].replace('Z', '+00:00')).timestamp()

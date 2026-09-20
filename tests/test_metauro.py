@@ -133,6 +133,27 @@ def test_runtime_exposure_alias_is_presentation_only(client, scope):
     assert 'presentationText(term).toLocaleLowerCase()' in script
     assert 'elements.exposure.dataset.canonicalExposure = canonical;' in script
     assert 'const exposure = selectedExposureValue();' in script
+    assert "'Quality Score', 'VERIFY', 'Exclusion Flags'" in script
+    assert "'Quality Score', 'Verified', 'Exclusion Flags'" not in script
+
+
+@pytest.mark.parametrize('scope', ['urinary', 'prostate'])
+def test_requested_labels_cover_templates_runtime_exports_and_localization(client, scope):
+    response = client.get(f'/evidence/{scope}/')
+    assert response.status_code == 200
+    soup = BeautifulSoup(response.data, 'html.parser')
+    assert soup.select_one('#download-baujat-png').get_text(strip=True) == 'Download'
+    headers = [heading.get_text(' ', strip=True) for heading in soup.select('#studies-table thead th')]
+    assert 'VERIFY' in headers
+    assert 'Verified' not in headers
+
+    translations = client.get(f'/evidence/{scope}/static/i18n-translations.json').json
+    assert translations['Download'] == {
+        'zh-CN': '下载', 'zh-TW': '下載', 'nl': 'Downloaden', 'ko': '다운로드',
+    }
+    assert translations['VERIFY'] == {
+        'zh-CN': '核实', 'zh-TW': '驗證', 'nl': 'Verifiëren', 'ko': '검증',
+    }
 
 
 def test_chatgpt_track_remains_visible_and_settings_aware(client):
@@ -156,6 +177,24 @@ def test_product_pages_use_single_brand_and_infer_settings_scope(client, path):
     if 'aggressive_prostate' in path:
         assert soup.select_one('#disease option[selected]')['data-scope-key'] == 'aggressive_prostate_cancer'
         assert '/evidence/prostate/' in soup.select_one('[data-uro-nav="evidence"]')['href']
+
+
+def test_about_page_matches_the_metafemina_presentation_structure(client):
+    response = client.get('/about')
+    assert response.status_code == 200
+    soup = BeautifulSoup(response.data, 'html.parser')
+    container = soup.select_one('main.about-container')
+    assert container
+    assert len(soup.select('.background-globes .globe')) == 3
+    assert container.select_one('.about-toolbar .back-link').get_text(strip=True) == '← Back to Tool'
+    assert container.select_one('.disclaimer-box .disclaimer-title').get_text(' ', strip=True) == '⚠️ CAUTION: AI-Generated Results'
+    assert [heading.get_text(' ', strip=True) for heading in container.select('h2')] == [
+        'How It Works', 'Analysis Settings', 'Evidence Views', 'Study Selection',
+    ]
+    style = soup.style.get_text()
+    assert 'max-width: 800px' in style
+    assert 'background: rgba(255, 255, 255, 0.85)' in style
+    assert 'background-color: #ffabc0' in style
 
 
 @pytest.mark.parametrize('scope', ['bladder_cancer', 'aggressive_prostate_cancer'])

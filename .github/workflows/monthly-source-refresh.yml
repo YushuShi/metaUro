@@ -74,9 +74,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          for path in updates; do
-            if [ -d "$path" ]; then git add -A -- "$path"; fi
-          done
+          git add -A -- updates summary
           if ! git diff --cached --quiet; then
             git commit -m 'Refresh monthly results from validated source releases'
             git push origin "HEAD:${{ github.event.repository.default_branch }}"

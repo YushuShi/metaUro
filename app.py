@@ -9,10 +9,11 @@ import re
 from urllib.parse import urlencode
 
 from bs4 import BeautifulSoup
-from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_from_directory
+from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_file, send_from_directory
 from source_worker import SOURCES, workers
 from study_selection import build_selection_flow
 from automation.sync_sources import assembled_source, load_overlay, bound, sha
+from summary_outputs import ensure_current, summary_mode
 
 ROOT = Path(__file__).resolve().parent
 app = Flask(__name__)
@@ -281,6 +282,40 @@ def evidence(source, path):
                 return jsonify(error='Manual reference risk must be greater than 0% and less than 100%.'), 400
     if path == 'about':
         return redirect('/about')
+    if request.method in {'GET', 'HEAD'} and (path == 'summary' or path.startswith('summary/')):
+        try:
+            mode = summary_mode(request.args.get('include_subexposures'))
+            folder = ensure_current(ROOT, source, mode)
+        except ValueError as exc:
+            return jsonify(error=str(exc)), 400
+        except Exception:
+            app.logger.exception('Summary refresh failed: %s', path)
+            return jsonify(error='Summary generation failed; please retry after the evidence update completes.'), 503
+        workbook_match = re.fullmatch(r'summary/workbooks/([a-z0-9_]+)/(combined|dietary)', path)
+        plot_match = re.fullmatch(r'summary/plots/([a-z0-9_]+)/([a-z-]+)', path)
+        if workbook_match or plot_match:
+            match = workbook_match or plot_match
+            manifest = json.loads((folder / 'summary_manifest.json').read_text())
+            if match.group(1) not in manifest.get('sources', {}).get(source, {}).get('scopes', []):
+                abort(404)
+            scope = manifest.get('scopes', {}).get(match.group(1), {})
+            artifact = scope.get('workbooks' if workbook_match else 'plots', {}).get(match.group(2), {})
+            if not artifact.get('available'):
+                abort(404)
+            filename = artifact['filename']
+            if plot_match:
+                filename = artifact.get('locales', {}).get(request.args.get('lang'), filename)
+            asset = bound(folder, filename)
+            response = send_file(
+                asset,
+                mimetype=('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
+                          if workbook_match else 'application/pdf'),
+                as_attachment=bool(workbook_match),
+                download_name=asset.name,
+            )
+            response.headers['Cache-Control'] = 'no-store'
+            response.headers['X-metaUro-Source'] = source
+            return response
     prefix = public_prefix(source)
     try:
         if path.startswith('static/'):

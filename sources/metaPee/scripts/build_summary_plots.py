@@ -7,6 +7,7 @@ import argparse
 import io
 import json
 import math
+import os
 import re
 import sys
 import warnings
@@ -31,9 +32,10 @@ from matplotlib.ticker import FuncFormatter, LogLocator, NullFormatter  # noqa: 
 from matplotlib.transforms import Bbox  # noqa: E402
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(os.environ.get('METAURO_SUMMARY_SOURCE_ROOT') or Path(__file__).resolve().parents[1]).resolve()
 sys.path.insert(0, str(REPO_ROOT))
 import meta_analysis  # noqa: E402
+from scripts import plot_localization  # noqa: E402
 from scripts.plot_localization import (  # noqa: E402
     category_label,
     disease_label,
@@ -43,6 +45,48 @@ from scripts.plot_localization import (  # noqa: E402
     text as plot_text,
     validate_localizations,
 )
+
+
+METAAURO_ROOT = next(
+    (
+        parent
+        for parent in REPO_ROOT.parents
+        if (parent / "app.py").is_file()
+        and (parent / "source_worker.py").is_file()
+        and (parent / "summary_outputs.py").is_file()
+    ),
+    None,
+)
+if METAAURO_ROOT is not None:
+    sys.path.insert(0, str(METAAURO_ROOT))
+    from summary_outputs import (  # noqa: E402
+        canonical_asset_path,
+        finalize_build,
+        resolve_build_paths,
+        run_summary_build,
+    )
+else:
+    def canonical_asset_path(_source_root: Path, path: Path) -> Path:
+        return Path(path)
+
+    def resolve_build_paths(
+        _source_root: Path, cache_root: Path, plot_root: Path
+    ) -> tuple[Path, Path, None]:
+        return Path(cache_root), Path(plot_root), None
+
+    def finalize_build(
+        _source_root: Path, _plot_root: Path, manifest: dict[str, Any]
+    ) -> dict[str, Any]:
+        return manifest
+
+    def run_summary_build(
+        _source_root: Path,
+        cache_root: Path,
+        plot_root: Path,
+        languages: tuple[str, ...] | None,
+        callback: Any,
+    ) -> dict[str, Any]:
+        return callback(cache_root, plot_root, languages)
 
 
 COLUMNS = [
@@ -81,6 +125,30 @@ def _use_plain_log_ticks(axis: Any) -> None:
 
 def exposure_category(slug: str) -> str:
     return _shared_category(slug, REPO_ROOT)
+
+
+def load_existing_translation_overrides() -> None:
+    """Load the same reviewed labels used by the provisional UI builder."""
+    ui_catalog = REPO_ROOT / "static/i18n-translations.json"
+    if ui_catalog.exists():
+        catalog = json.loads(ui_catalog.read_text(encoding="utf-8"))
+        for label, translations in catalog.items():
+            if isinstance(translations, dict):
+                for language, value in translations.items():
+                    plot_localization.DISEASE_LABELS.setdefault(label, {}).setdefault(
+                        language, value
+                    )
+    override = REPO_ROOT / "combined/astra_adjudication/plot_translation_overrides.json"
+    if override.exists():
+        site_catalog = plot_localization._site_catalog(str(REPO_ROOT.resolve()))
+        payload = json.loads(override.read_text(encoding="utf-8"))
+        for label, translations in payload["translations"].items():
+            for language, value in translations.items():
+                site_catalog.setdefault(label, {}).setdefault(language, value)
+                if hasattr(plot_localization, "GUT_EXPOSURE_LABELS"):
+                    plot_localization.GUT_EXPOSURE_LABELS.setdefault(
+                        label, {}
+                    ).setdefault(language, value)
 
 
 def _numeric(frame: pd.DataFrame, column: str) -> pd.Series:
@@ -164,6 +232,8 @@ def summarize_cache(path: Path, disease: str, exposure: str, dietary: bool) -> d
     headline = result.get("headline") if isinstance(result, dict) else None
     if not isinstance(headline, dict) or headline.get("pooled_es") is None:
         return None
+    effect_headline = headline
+    diagnostic_i2 = round(float(headline.get("i2") or 0), 1)
     if parent_analysis is not None:
         valid = pd.DataFrame(parent_analysis['pooled_rows'])
         if valid.empty:
@@ -173,19 +243,24 @@ def summarize_cache(path: Path, disease: str, exposure: str, dietary: bool) -> d
         baseline = parent_analysis['baseline'].get('p0')
         derived_cases = np.floor(sample_sizes * baseline + 0.5) if baseline is not None else 0
         case_counts = reported_cases.fillna(derived_cases).fillna(0)
-        headline = headline.get('canonical_rr') or headline
+        # The canonical RR projection intentionally contains only effect and
+        # interval values. Keep I2 and Egger's p-value from the full parent
+        # headline instead of silently replacing them with zero/None.
+        effect_headline = headline.get('canonical_rr') or headline
+        parent_i2 = headline.get("i2")
+        diagnostic_i2 = float(parent_i2) if parent_i2 is not None else None
     else:
         sample_sizes = valid["Sample Size"].fillna(0)
         case_counts = cases.loc[valid.index].fillna(0)
     return {
         "Exposure": exposure,
         "number estimates": int(len(valid)),
-        "Pooled RR": float(headline["pooled_es"]),
-        "lower CI RR": float(headline["ci_low"]),
-        "upper CI RR": float(headline["ci_upp"]),
-        "lower PI RR": headline.get("pi_low"),
-        "upper PI RR": headline.get("pi_upp"),
-        "I^2 (%)": round(float(headline.get("i2") or 0), 1),
+        "Pooled RR": float(effect_headline["pooled_es"]),
+        "lower CI RR": float(effect_headline["ci_low"]),
+        "upper CI RR": float(effect_headline["ci_upp"]),
+        "lower PI RR": effect_headline.get("pi_low"),
+        "upper PI RR": effect_headline.get("pi_upp"),
+        "I^2 (%)": diagnostic_i2,
         "eggers p-value": headline.get("eggers_p"),
         "total N": int(sample_sizes.sum()),
         "total Cases": int(case_counts.sum()),
@@ -211,6 +286,8 @@ def inventory(cache_root: Path) -> dict[str, list[tuple[Path, str]]]:
 
 
 def workbook(path: Path, rows: list[dict[str, Any]]) -> None:
+    path = canonical_asset_path(REPO_ROOT, path)
+    path.parent.mkdir(parents=True, exist_ok=True)
     export = pd.DataFrame(rows, columns=COLUMNS)
     export.to_excel(path, index=False)
     book = load_workbook(path)
@@ -355,6 +432,7 @@ def forest_plot(
     dietary: bool,
     locale: str = "en",
 ) -> int:
+    path = canonical_asset_path(REPO_ROOT, path)
     rows = _ordered_plot_rows(rows, direction)
     if not rows:
         path.unlink(missing_ok=True)
@@ -681,6 +759,7 @@ def heterogeneity_plot(
     locale: str = "en",
 ) -> int:
     from scripts.diagnostic_style import exposure_color, finish_diagnostic, save_diagnostic
+    path = canonical_asset_path(REPO_ROOT, path)
     eligible = heterogeneity_rows(rows, kind)
     if len(eligible) < 2:
         path.unlink(missing_ok=True)
@@ -726,7 +805,10 @@ def heterogeneity_plot(
         # The visible tick scale remains the meaningful 0-100% range.
         ax.set_ylim(-6, 102)
         ax.set_yticks(range(0, 101, 20))
-        ax.set_ylabel(plot_text("heterogeneity_y", locale), fontweight="bold")
+        ax.set_ylabel(
+            plot_text("heterogeneity_y", locale).replace("I²", r"$I^2$"),
+            fontweight="bold",
+        )
         ax.grid(color="#D7DEE5", linestyle=":", linewidth=0.7)
         disease_text = disease_label(disease, locale)
         if kind == "egger":
@@ -790,16 +872,25 @@ def _localized_plot_path(plot_root: Path, filename: str, locale: str) -> Path:
 SUBEXPOSURE_MODE = None
 
 
-def build(
+def _build(
     cache_root: Path,
     plot_root: Path,
     languages: tuple[str, ...] | None = None,
 ) -> dict[str, Any]:
     global SUBEXPOSURE_MODE
+    cache_root, plot_root, resolved_mode = resolve_build_paths(
+        REPO_ROOT, cache_root, plot_root
+    )
     mode_path = cache_root / '_subexposure_manifest.json'
-    SUBEXPOSURE_MODE = json.loads(mode_path.read_text()).get('include_subexposures') if mode_path.exists() else None
+    manifest_mode = (
+        json.loads(mode_path.read_text()).get('include_subexposures')
+        if mode_path.exists()
+        else None
+    )
+    SUBEXPOSURE_MODE = resolved_mode or manifest_mode
     plot_root.mkdir(parents=True, exist_ok=True)
     cache_inventory = inventory(cache_root)
+    load_existing_translation_overrides()
     languages = tuple(languages or supported_languages(REPO_ROOT))
     if "en" not in languages:
         languages = ("en", *languages)
@@ -817,6 +908,7 @@ def build(
     )
     manifest: dict[str, Any] = {
         "schema_version": 2,
+        "include_subexposures": SUBEXPOSURE_MODE,
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "eligibility_note": "Good or Moderate JBI and an eligible ratio effect. Counts are extraction estimates, including separate sex or measurement strata; forest summaries require at least two estimates per exposure. N and case totals sum estimates and may overlap across strata.",
         "languages": list(languages),
@@ -904,10 +996,21 @@ def build(
             "workbooks": workbook_entries,
             "plots": plots,
         }
+    manifest = finalize_build(REPO_ROOT, plot_root, manifest)
     (plot_root / "summary_manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
     )
     return manifest
+
+
+def build(
+    cache_root: Path,
+    plot_root: Path,
+    languages: tuple[str, ...] | None = None,
+) -> dict[str, Any]:
+    return run_summary_build(
+        REPO_ROOT, cache_root, plot_root, languages, _build
+    )
 
 
 def main() -> int:

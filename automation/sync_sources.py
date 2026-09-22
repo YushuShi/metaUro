@@ -12,6 +12,7 @@ import tempfile
 
 SOURCES = ('metaPee', 'MetaVir')
 ROOT = Path(__file__).resolve().parents[1]
+ASSEMBLY_SCHEMA = 'central-summary-v1'
 
 
 def sha(path):
@@ -48,6 +49,29 @@ def allowed(relative):
     return (part.parts[0] in {'Cached_results', 'Subexposure_results', 'Subexposure_views', 'Plot', 'static'}
             or relative.startswith('combined/provisional_ui/')
             or (part.parts[0] == 'combined' and len(part.parts) == 3 and '_true_' in part.name))
+
+
+def legacy_summary_artifact(relative):
+    """Identify source-owned summary assets superseded by top-level ``summary``."""
+    part = Path(relative)
+    in_plot_tree = any(token.casefold() == 'plot' for token in part.parts[:-1])
+    return in_plot_tree and (
+        part.suffix.casefold() in {'.xlsx', '.pdf', '.png'}
+        or part.name == 'summary_manifest.json'
+    )
+
+
+def _ignore_legacy_summary_artifacts(base):
+    base = Path(base).resolve()
+
+    def ignore(directory, names):
+        root = Path(directory).resolve()
+        return {
+            name for name in names
+            if legacy_summary_artifact((root / name).relative_to(base))
+        }
+
+    return ignore
 
 
 def _check_rows(previous, incoming):
@@ -171,12 +195,18 @@ def sync_sources(repo_root, repos_root, require_through=None):
         previous = load_overlay(repo, source)
         if previous and state['last_successful_publication_date'] < previous['search_through']:
             raise ValueError('A monthly source release would rewind the search cutoff')
-        files = deepcopy((previous or {}).get('files', {}))
+        files = {
+            relative: deepcopy(entry)
+            for relative, entry in (previous or {}).get('files', {}).items()
+            if not legacy_summary_artifact(relative)
+        }
         run_id = state['run_id']
         version_id = run_id + '_' + state['manifest_sha256'][:16]
         source_root = siblings / source
         target = repo / 'updates' / source
         for relative, digest in outputs.items():
+            if legacy_summary_artifact(relative):
+                continue
             if not allowed(relative):
                 raise ValueError(f'Unapproved source output type: {relative}')
             old = _effective_file(repo, source, relative, previous)
@@ -238,8 +268,15 @@ def assembled_source(repo_root, source):
     if not manifest:
         return base
     folder = repo / 'runtime' / 'assembled' / generation(repo, source) / source
-    if (folder / '.complete').exists():
+    code_inputs = sorted(set(base.glob('*.py')) | set((base / 'scripts').glob('*.py'))
+                         | set((base / 'static').rglob('*.json'))
+                         | set((base / 'data').glob('*.json')) | set(base.glob('*.csv')))
+    code_digest = hashlib.sha256(''.join(sha(path) for path in code_inputs).encode()).hexdigest()
+    completion = generation(repo, source) + '\n' + ASSEMBLY_SCHEMA + '\n' + code_digest + '\n'
+    if (folder / '.complete').is_file() and (folder / '.complete').read_text() == completion:
         return folder
+    if folder.exists():
+        shutil.rmtree(folder)
     folder.parent.mkdir(parents=True, exist_ok=True)
     temporary = Path(tempfile.mkdtemp(prefix='assembling-', dir=folder.parent))
     try:
@@ -248,8 +285,16 @@ def assembled_source(repo_root, source):
                 return os.link(original, target)
             except OSError:
                 return shutil.copyfile(original, target)
-        shutil.copytree(base, temporary, dirs_exist_ok=True, copy_function=link)
+        shutil.copytree(
+            base,
+            temporary,
+            dirs_exist_ok=True,
+            copy_function=link,
+            ignore=_ignore_legacy_summary_artifacts(base),
+        )
         for relative, entry in manifest['files'].items():
+            if legacy_summary_artifact(relative):
+                continue
             if not allowed(relative):
                 raise ValueError('Unexpected runtime overlay path')
             target = bound(temporary, relative)
@@ -262,7 +307,7 @@ def assembled_source(repo_root, source):
                 raise ValueError('Runtime overlay artifact checksum mismatch')
             target.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(source_file, target)
-        (temporary / '.complete').write_text(generation(repo, source))
+        (temporary / '.complete').write_text(completion)
         try:
             temporary.rename(folder)
         except FileExistsError:

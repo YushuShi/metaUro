@@ -37,6 +37,52 @@ def sha(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
+def build_current_summaries():
+    """Build summaries only after the new saved cache has been installed."""
+    from scripts import build_summary_plots as summary_builder
+    from scripts import plot_localization
+
+    ui_catalog = ROOT / 'static/i18n-translations.json'
+    if ui_catalog.exists():
+        for label, translations in read(ui_catalog).items():
+            if isinstance(translations, dict):
+                for language, value in translations.items():
+                    plot_localization.DISEASE_LABELS.setdefault(label, {}).setdefault(language, value)
+    override = ROOT / 'combined/astra_adjudication/plot_translation_overrides.json'
+    if override.exists():
+        catalog = plot_localization._site_catalog(str(ROOT.resolve()))
+        for label, translations in read(override)['translations'].items():
+            for language, value in translations.items():
+                catalog.setdefault(label, {}).setdefault(language, value)
+                if hasattr(plot_localization, 'GUT_EXPOSURE_LABELS'):
+                    plot_localization.GUT_EXPOSURE_LABELS.setdefault(label, {}).setdefault(language, value)
+
+    result = {}
+    for mode in ('yes', 'no'):
+        root = VIEW / 'subexposure_views' / mode
+        built = summary_builder.build(root / 'Cached_results', root / 'Plot')
+        source = (built.get('sources') or {}).get(ALIAS) or {}
+        scopes = source.get('scopes') or list(built.get('scopes', {}))
+        artifacts = source.get('artifacts')
+        if artifacts is None:
+            artifacts = []
+            for scope in built.get('scopes', {}).values():
+                artifacts.extend(
+                    entry['filename'] for entry in scope.get('workbooks', {}).values()
+                    if entry.get('filename')
+                )
+                for entry in scope.get('plots', {}).values():
+                    if entry.get('available') and entry.get('filename'):
+                        artifacts.append(entry['filename'])
+                        artifacts.extend((entry.get('locales') or {}).values())
+        result[mode] = {
+            'scopes': len(scopes),
+            'pdfs': sum(str(path).endswith('.pdf') for path in artifacts),
+            'workbooks': sum(str(path).endswith('.xlsx') for path in artifacts),
+        }
+    return result
+
+
 def pair_index(entry):
     return int((entry.get('source_row') or {})['Estimate pair']) - 1
 
@@ -291,31 +337,6 @@ def build(output, apply=False, summary=True):
               'provisional_ui_version': provisional.VERSION})
         write(stage / 'pending_manifest.json', {'version': provisional.VERSION, 'rows': entries})
         write(stage / 'review_audit.json', audit)
-        if summary:
-            from scripts import build_summary_plots as summary_builder
-            from scripts import plot_localization
-            ui_catalog = ROOT / 'static/i18n-translations.json'
-            if ui_catalog.exists():
-                for label, translations in read(ui_catalog).items():
-                    if isinstance(translations, dict):
-                        for language, value in translations.items():
-                            plot_localization.DISEASE_LABELS.setdefault(label, {}).setdefault(language, value)
-            override = ROOT / 'combined/astra_adjudication/plot_translation_overrides.json'
-            if override.exists():
-                catalog = plot_localization._site_catalog(str(ROOT.resolve()))
-                for label, translations in read(override)['translations'].items():
-                    for language, value in translations.items():
-                        catalog.setdefault(label, {}).setdefault(language, value)
-                        if hasattr(plot_localization, 'GUT_EXPOSURE_LABELS'):
-                            plot_localization.GUT_EXPOSURE_LABELS.setdefault(label, {}).setdefault(language, value)
-            report['summary_modes'] = {}
-            for mode in ('yes', 'no'):
-                root = stage / 'subexposure_views' / mode
-                built = summary_builder.build(root / 'Cached_results', root / 'Plot')
-                built.update(provisional_ui_version=provisional.VERSION, manual_review_pending=bool(entries))
-                write(root / 'Plot/summary_manifest.json', built)
-                report['summary_modes'][mode] = {'scopes': len(built['scopes']),
-                    'pdfs': len(list((root / 'Plot').rglob('*.pdf')))}
         assert all(sha(ROOT / path) == value for path, value in hashes.items())
         manifest = {**report, 'canonical_track': 'combined', 'complete': True,
                     'pending_manifest_sha256': sha(stage / 'pending_manifest.json')}
@@ -347,7 +368,14 @@ def build(output, apply=False, summary=True):
             shutil.move(str(VIEW), backup)
         try:
             shutil.move(str(stage), VIEW)
+            if summary:
+                report['summary_modes'] = build_current_summaries()
+                manifest = {**report, 'canonical_track': 'combined', 'complete': True,
+                            'pending_manifest_sha256': sha(VIEW / 'pending_manifest.json')}
+                write(VIEW / 'manifest.json', manifest)
         except BaseException:
+            if VIEW.exists():
+                shutil.rmtree(VIEW)
             if backup.exists():
                 shutil.move(str(backup), VIEW)
             raise

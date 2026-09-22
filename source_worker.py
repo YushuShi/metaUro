@@ -55,6 +55,19 @@ def serve(source, pipe):
         spec = importlib.util.spec_from_file_location('metauro_engine', folder / 'app.py')
         engine = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(engine)
+        # All source-app summary links read the single published output tree.
+        from summary_outputs import summary_dir
+        engine.active_plot_dir = lambda: str(summary_dir(ROOT, source, engine.subexposure_mode()))
+        original_summary_manifest = engine.load_summary_manifest
+
+        def source_summary_manifest():
+            manifest = original_summary_manifest()
+            provenance = manifest.get('sources', {}).get(source, {})
+            return {**manifest, **provenance.get('metadata', {}),
+                    'scopes': {key: value for key, value in manifest.get('scopes', {}).items()
+                               if key in provenance.get('scopes', [])}}
+
+        engine.load_summary_manifest = source_summary_manifest
         engine.LOG_FILE = str(runtime / 'engine.log')
         engine.app.config.update(TESTING=False)
         client = engine.app.test_client(use_cookies=False)

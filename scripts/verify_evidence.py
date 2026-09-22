@@ -28,12 +28,22 @@ def verify(original_parent=None):
                 continue
             if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != entry['sha256']:
                 failures.append(str(path))
+    summary_count = 0
+    for summary_manifest in sorted((ROOT / 'summary').glob('*/summary_manifest.json')):
+        summary = json.loads(summary_manifest.read_text())
+        for relative, entry in summary.get('artifacts', {}).items():
+            path = (summary_manifest.parent / relative).resolve()
+            if (not path.is_relative_to((ROOT / 'summary').resolve()) or not path.is_file()
+                    or hashlib.sha256(path.read_bytes()).hexdigest() != entry['sha256']):
+                failures.append(str(path))
+            summary_count += 1
     if failures:
         print('\n'.join(failures))
         print(f'FAILED: {len(failures)} changed or missing files')
         return 1
     print(f"Verified {len(manifest['files']):,} evidence files and "
-          f"{len(manifest.get('supporting_files', []))} provenance files; all SHA-256 checksums match.")
+          f"{len(manifest.get('supporting_files', []))} provenance files and "
+          f"{summary_count} current summary artifacts; all SHA-256 checksums match.")
     return 0
 
 

@@ -7,6 +7,16 @@ views are excluded. Scientific inputs are hashed before and after rendering.
 from pathlib import Path
 import argparse, hashlib, inspect, json, os, shutil, subprocess, sys
 ROOT = Path(__file__).resolve().parents[1]
+METAAURO_ROOT = next((parent for parent in ROOT.parents
+    if (parent/'summary_outputs.py').is_file() and (parent/'source_worker.py').is_file()), None)
+if METAAURO_ROOT is not None and __name__ == '__main__':
+    parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--check',action='store_true')
+    args=parser.parse_args();sys.path.insert(0,str(METAAURO_ROOT))
+    from summary_outputs import ensure_current
+    for mode in ('yes','no'):
+        ensure_current(METAAURO_ROOT,ROOT.name,mode,force=not args.check)
+    print(f'{ROOT.name}: canonical summaries are current.',flush=True)
+    raise SystemExit(0)
 sys.path.insert(0, str(ROOT))
 OUT = ROOT / 'outputs/diagnostic_square_log10_2026-09-17'
 OUT.mkdir(parents=True, exist_ok=True)

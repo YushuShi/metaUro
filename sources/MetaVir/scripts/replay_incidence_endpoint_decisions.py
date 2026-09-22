@@ -150,9 +150,6 @@ def rebuild_summaries() -> dict[str, int]:
         ("Subexposure_results/no", "Plot/subexposures/no", "no"),
     ):
         manifest = summary.build(ROOT / cache_relative, ROOT / plot_relative)
-        if mode is not None:
-            manifest["include_subexposures"] = mode
-        write(ROOT / plot_relative / "summary_manifest.json", manifest)
         counts[cache_relative] = len(manifest["scopes"])
     return counts
 

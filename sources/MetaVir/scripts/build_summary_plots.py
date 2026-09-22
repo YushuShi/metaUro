@@ -8,6 +8,7 @@ import hashlib
 import io
 import json
 import math
+import os
 import re
 import sys
 import warnings
@@ -32,7 +33,7 @@ from matplotlib.ticker import FuncFormatter, LogLocator, NullFormatter  # noqa: 
 from matplotlib.transforms import Bbox  # noqa: E402
 
 
-REPO_ROOT = Path(__file__).resolve().parents[1]
+REPO_ROOT = Path(os.environ.get('METAURO_SUMMARY_SOURCE_ROOT') or Path(__file__).resolve().parents[1]).resolve()
 sys.path.insert(0, str(REPO_ROOT))
 import meta_analysis  # noqa: E402
 from scripts.plot_localization import (  # noqa: E402
@@ -44,6 +45,48 @@ from scripts.plot_localization import (  # noqa: E402
     text as plot_text,
     validate_localizations,
 )
+
+
+METAAURO_ROOT = next(
+    (
+        parent
+        for parent in REPO_ROOT.parents
+        if (parent / "app.py").is_file()
+        and (parent / "source_worker.py").is_file()
+        and (parent / "summary_outputs.py").is_file()
+    ),
+    None,
+)
+if METAAURO_ROOT is not None:
+    sys.path.insert(0, str(METAAURO_ROOT))
+    from summary_outputs import (  # noqa: E402
+        canonical_asset_path,
+        finalize_build,
+        resolve_build_paths,
+        run_summary_build,
+    )
+else:
+    def canonical_asset_path(_source_root: Path, path: Path) -> Path:
+        return Path(path)
+
+    def resolve_build_paths(
+        _source_root: Path, cache_root: Path, plot_root: Path
+    ) -> tuple[Path, Path, None]:
+        return Path(cache_root), Path(plot_root), None
+
+    def finalize_build(
+        _source_root: Path, _plot_root: Path, manifest: dict[str, Any]
+    ) -> dict[str, Any]:
+        return manifest
+
+    def run_summary_build(
+        _source_root: Path,
+        cache_root: Path,
+        plot_root: Path,
+        languages: tuple[str, ...] | None,
+        callback: Any,
+    ) -> dict[str, Any]:
+        return callback(cache_root, plot_root, languages)
 
 
 COLUMNS = [
@@ -211,6 +254,8 @@ def inventory(
 
 
 def workbook(path: Path, rows: list[dict[str, Any]], disease: str | None = None) -> None:
+    path = canonical_asset_path(REPO_ROOT, path)
+    path.parent.mkdir(parents=True, exist_ok=True)
     export = pd.DataFrame(rows, columns=COLUMNS)
     export.to_excel(path, index=False)
     book = load_workbook(path)
@@ -362,6 +407,7 @@ def forest_plot(
     dietary: bool,
     locale: str = "en",
 ) -> int:
+    path = canonical_asset_path(REPO_ROOT, path)
     rows = _ordered_plot_rows(rows, direction)
     if not rows:
         path.unlink(missing_ok=True)
@@ -697,6 +743,7 @@ def heterogeneity_plot(
     locale: str = "en",
 ) -> int:
     from scripts.diagnostic_style import exposure_color, finish_diagnostic, save_diagnostic
+    path = canonical_asset_path(REPO_ROOT, path)
     eligible = heterogeneity_rows(rows, kind)
     if len(eligible) < 2:
         path.unlink(missing_ok=True)
@@ -739,7 +786,10 @@ def heterogeneity_plot(
             })
 
         ax.set_ylim(0, 102)
-        ax.set_ylabel(plot_text("heterogeneity_y", locale), fontweight="bold")
+        ax.set_ylabel(
+            plot_text("heterogeneity_y", locale).replace("I²", r"$I^2$"),
+            fontweight="bold",
+        )
         ax.grid(color="#D7DEE5", linestyle=":", linewidth=0.7)
         disease_text = disease_label(disease, locale)
         if kind == "egger":
@@ -805,14 +855,22 @@ def _localized_plot_path(plot_root: Path, filename: str, locale: str) -> Path:
 SUBEXPOSURE_MODE = None
 
 
-def build(
+def _build(
     cache_root: Path,
     plot_root: Path,
     languages: tuple[str, ...] | None = None,
 ) -> dict[str, Any]:
     global SUBEXPOSURE_MODE
+    cache_root, plot_root, resolved_mode = resolve_build_paths(
+        REPO_ROOT, cache_root, plot_root
+    )
     mode_path = cache_root / '_subexposure_manifest.json'
-    SUBEXPOSURE_MODE = json.loads(mode_path.read_text()).get('include_subexposures') if mode_path.exists() else None
+    manifest_mode = (
+        json.loads(mode_path.read_text()).get('include_subexposures')
+        if mode_path.exists()
+        else None
+    )
+    SUBEXPOSURE_MODE = resolved_mode or manifest_mode
     plot_root.mkdir(parents=True, exist_ok=True)
     source_manifest_path = cache_root / "_merge_manifest.json"
     source_manifest = json.loads(source_manifest_path.read_text(encoding="utf-8"))
@@ -840,6 +898,7 @@ def build(
     )
     manifest: dict[str, Any] = {
         "schema_version": 2,
+        "include_subexposures": SUBEXPOSURE_MODE,
         "canonical_track": "combined",
         "combined_build_id": combined_build_id,
         "combined_manifest_sha256": source_manifest_digest,
@@ -931,10 +990,21 @@ def build(
             "workbooks": workbook_entries,
             "plots": plots,
         }
+    manifest = finalize_build(REPO_ROOT, plot_root, manifest)
     (plot_root / "summary_manifest.json").write_text(
         json.dumps(manifest, indent=2) + "\n", encoding="utf-8"
     )
     return manifest
+
+
+def build(
+    cache_root: Path,
+    plot_root: Path,
+    languages: tuple[str, ...] | None = None,
+) -> dict[str, Any]:
+    return run_summary_build(
+        REPO_ROOT, cache_root, plot_root, languages, _build
+    )
 
 
 def main() -> int:

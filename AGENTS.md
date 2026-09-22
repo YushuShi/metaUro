@@ -2,6 +2,14 @@
 
 ## Published results are release artifacts
 
+- `summary/` is the sole location for current disease summary XLSX and PDF
+  outputs, with shared `yes/` and `no/` mode directories for all disease scopes.
+  Update generators and downloads through `summary_outputs.py`; never recreate
+  old summary files in `sources/`, `runtime/`, or `updates/`. Commit all changed
+  summary files and manifests together. The explicitly requested September 22,
+  2026 migration is recorded as a deliberate baseline relocation in
+  `evidence-revisions/summary-consolidation-2026-09-22/`.
+
 - `updates/` is the authoritative, versioned monthly overlay. Commit every
   changed, added, or intentionally deleted result, review table, checksum, and
   manifest below it in the same commit and push as the code that produced it.

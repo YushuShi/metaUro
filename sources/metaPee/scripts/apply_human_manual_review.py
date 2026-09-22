@@ -389,8 +389,10 @@ def run(csv_path, output, apply=False, summaries=True):
         (ROOT / 'combined').glob('*/*_true_all.json'), ROOT / 'combined/subexposure_views')
     if summaries:
         report['canonical_summaries'] = abstract.build_summary_figures(output / 'canonical_summary_refresh')
+        from scripts.build_summary_plots import canonical_asset_path
         for mode in ('yes', 'no'):
-            summary_path = ROOT / 'combined/subexposure_views' / mode / 'Plot/summary_manifest.json'
+            summary_path = canonical_asset_path(
+                ROOT, ROOT / 'combined/subexposure_views' / mode / 'Plot/summary_manifest.json')
             summary = read(summary_path)
             summary['human_review_version'] = VERSION
             dump(summary_path, summary)

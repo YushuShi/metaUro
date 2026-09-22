@@ -83,6 +83,12 @@ def preserve_unaffected_outputs(before_root, combined_root):
         if before_path.read_bytes() != current_path.read_bytes():
             raise ValueError('Unrelated saved cache changed: ' + str(relative))
         checked += 1
+    from scripts import build_summary_plots as summary_builder
+    if summary_builder.METAAURO_ROOT is not None:
+        # metaUro publishes one verified summary tree; never restore legacy
+        # copies from a pre-review backup into the embedded evidence folders.
+        return {'unrelated_cache_files_verified_byte_identical': checked,
+                'unrelated_summary_artifacts_preserved': 0}
     for prefix in ('subexposure_views', 'provisional_ui/subexposure_views'):
         for mode in ('yes', 'no'):
             relative = Path(prefix) / mode / 'Plot'

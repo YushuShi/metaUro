@@ -78,16 +78,23 @@ def validate() -> dict[str, Any]:
 
     workbook_count = 0
     pdf_count = 0
-    for plot_relative, mode in (
+    from scripts import build_summary_plots as summary_builder
+    plot_views = (
         ("Plot", None),
         ("Plot/subexposures/yes", "yes"),
         ("Plot/subexposures/no", "no"),
-    ):
-        plot_root = ROOT / plot_relative
+    )
+    if summary_builder.METAAURO_ROOT is not None:
+        plot_views = plot_views[1:]
+    for plot_relative, mode in plot_views:
+        plot_root = summary_builder.canonical_asset_path(
+            ROOT, ROOT / plot_relative / 'summary_manifest.json').parent
         manifest = read(plot_root / "summary_manifest.json")
         if mode is not None:
             assert manifest.get("include_subexposures") == mode
-        for scope in manifest["scopes"].values():
+        scope_keys = manifest.get('sources', {}).get('MetaVir', {}).get('scopes', manifest['scopes'])
+        for key in scope_keys:
+            scope = manifest['scopes'][key]
             for item in scope["workbooks"].values():
                 if item.get("available"):
                     assert (plot_root / item["filename"]).is_file()

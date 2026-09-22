@@ -423,12 +423,18 @@ def build_summary_figures(output):
         root=ROOT/'combined/subexposure_views'/mode
         manifest=read(root/'manifest.json')
         dump(root/'Cached_results/_subexposure_manifest.json',manifest)
-        destination=output/'staged_plots'/mode
-        plotted=summary.build(root/'Cached_results',destination)
-        plotted.update(canonical_track='combined',astra_adjudication_version=VERSION,include_subexposures=mode)
-        dump(destination/'summary_manifest.json',plotted)
-        shutil.copytree(destination,root/'Plot',dirs_exist_ok=True)
-        report[mode]={'scopes':len(plotted['scopes']),'pdfs':len(list(destination.rglob('*.pdf'))),'workbooks':len(list(destination.glob('*.xlsx')))}
+        plotted=summary.build(root/'Cached_results',root/'Plot')
+        source=(plotted.get('sources') or {}).get(ROOT.name) or {}
+        scopes=source.get('scopes') or list(plotted.get('scopes',{}))
+        artifacts=source.get('artifacts')
+        if artifacts is None:
+            artifacts=[]
+            for scope in plotted.get('scopes',{}).values():
+                artifacts.extend(entry['filename'] for entry in scope.get('workbooks',{}).values() if entry.get('filename'))
+                for entry in scope.get('plots',{}).values():
+                    if entry.get('available') and entry.get('filename'):
+                        artifacts.append(entry['filename']);artifacts.extend((entry.get('locales') or {}).values())
+        report[mode]={'scopes':len(scopes),'pdfs':sum(str(path).endswith('.pdf') for path in artifacts),'workbooks':sum(str(path).endswith('.xlsx') for path in artifacts)}
     dump(output/'plot_report.json',report);return report
 
 

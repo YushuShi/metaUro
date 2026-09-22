@@ -108,8 +108,6 @@ def build(skip_summary=False):
             print(json.dumps({'mode':mode,**dict(count)}),flush=True)
             if not skip_summary:
                 manifest=summary.build(destination,ROOT/'Plot/subexposures'/mode)
-                manifest['include_subexposures']=mode
-                write(ROOT/'Plot/subexposures'/mode/'summary_manifest.json',manifest)
                 audit['modes'][mode]['summary_scopes']=len(manifest['scopes'])
     mismatches=[path for path,digest in source_hashes.items() if hashlib.sha256((ROOT/path).read_bytes()).hexdigest()!=digest]
     if mismatches:raise RuntimeError(f'Source cache mutation detected: {mismatches}')
@@ -122,6 +120,4 @@ if __name__=='__main__':
     if args.summary_only:
         for mode in ['yes','no']:
             manifest=summary.build(ROOT/'Subexposure_results'/mode,ROOT/'Plot/subexposures'/mode)
-            manifest['include_subexposures']=mode
-            write(ROOT/'Plot/subexposures'/mode/'summary_manifest.json',manifest)
     else:build(args.skip_summary)

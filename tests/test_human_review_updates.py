@@ -97,11 +97,11 @@ def _protected_hashes(source, mode):
     if source == 'metaPee':
         paths = [root / 'combined/effective_results.json',
                  root / 'combined/provisional_ui/manifest.json',
-                 root / f'combined/provisional_ui/subexposure_views/{mode}/Plot/summary_manifest.json']
+                 ROOT / f'summary/{mode}/summary_manifest.json']
     else:
         paths = [root / 'combined/final_screening.json',
                  root / f'Subexposure_results/{mode}/_merge_manifest.json',
-                 root / f'Plot/subexposures/{mode}/summary_manifest.json']
+                 ROOT / f'summary/{mode}/summary_manifest.json']
     paths.append(root / 'combined/human_review/current_decisions.json')
     return {str(path): hashlib.sha256(path.read_bytes()).hexdigest() for path in paths}
 

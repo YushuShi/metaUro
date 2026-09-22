@@ -26,8 +26,10 @@ def main():
         print('Both source repositories have completed monthly releases.'); return
     root = Path(__file__).resolve().parents[1]
     sync_sources(root, args.repos_root, require_through=str(cutoff))
+    from summary_outputs import refresh_all
+    refresh_all(root)
     subprocess.run([sys.executable, '-m', 'pytest', 'tests', '-q'], cwd=root, check=True)
-    print('Updated metaUro results and human-review tables; original evidence is unchanged.')
+    print('Updated metaUro results, summaries, and human-review tables.')
 
 
 if __name__ == '__main__':

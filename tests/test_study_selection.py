@@ -63,7 +63,8 @@ def test_current_urinary_flow_is_exposure_specific_and_reconciles():
         'Squamous cell carcinoma of the bladder', 'Adenocarcinoma of the bladder',
         'Small cell carcinoma of the bladder',
     ]
-    assert len(result['provenance']) == 4
+    assert len(result['provenance']) == 5
+    assert sum(item['count'] for item in result['nonpoolable_reasons']) == result['nonpoolable_reports']
     assert all(len(item['sha256']) == 64 for item in result['provenance'])
     result['reasons'].clear()
     assert build_selection_flow('urinary', 'Bladder cancer', 'Vitamin D')['reasons']
@@ -75,7 +76,49 @@ def test_current_prostate_selection_is_exposure_specific():
     assert (result['eligibility_excluded'], result['included_reports'], result['poolable_reports'], result['nonpoolable_reports']) == (417, 60, 28, 32)
     assert sum(item['count'] for item in result['reasons']) == result['eligibility_excluded']
     assert result['context_diseases'] == ['Prostate cancer']
-    assert len(result['provenance']) == 4
+    assert len(result['provenance']) == 5
+    assert sum(item['count'] for item in result['nonpoolable_reasons']) == result['nonpoolable_reports']
+
+
+def test_primary_pooling_reasons_count_publications_once_and_ignore_pooled_reports():
+    from selection_pooling_reasons import pooling_reason_counts
+    rows = [
+        {'PMID': '1', 'Quality Score': 'Fair', 'missing_quantities': ['effect size']},
+        {'PMID': '1', 'Quality Score': 'Fair'},
+        {'PMID': '2', 'missing_quantities': ['confidence interval']},
+        {'PMID': '3', 'manual_review_pending': True},
+    ]
+    reasons = pooling_reason_counts({'1', '2', '3', '4'}, {'3'}, rows)
+    assert {row['label']: row['count'] for row in reasons} == {
+        'Quality below the current pooling threshold': 1,
+        'Missing quantitative information': 1,
+        'Specific pooling reason not recorded': 1,
+    }
+
+
+def test_current_complete_estimate_does_not_reuse_old_missing_data_reason():
+    from selection_pooling_reasons import pooling_reason_counts
+    reasons = pooling_reason_counts({'1'}, set(), [{'PMID': '1', 'final_status': 'INCLUDE_META'}], [{'pmid': '1', 'missing_key_fields': ['effect_size']}])
+    assert reasons == [{'label': 'Specific pooling reason not recorded', 'count': 1}]
+
+
+def test_current_moderate_quality_is_not_overridden_by_old_fair_or_other_estimate():
+    from selection_pooling_reasons import pooling_reason_counts
+    rows = [{'PMID': '1', 'final_status': 'ELIGIBLE_NOT_POOLABLE', 'Quality Score': 'Moderate'}, {'PMID': '2', 'Quality Score': 'Fair'}, {'PMID': '2', 'Quality Score': 'Moderate'}]
+    reasons = pooling_reason_counts({'1', '2'}, set(), rows, [{'pmid': '1', 'jbi': {'grade': 'Fair'}}])
+    assert reasons == [{'label': 'Specific pooling reason not recorded', 'count': 2}]
+
+
+def test_pool_is_below_retained_and_print_has_dedicated_handler():
+    root = Path(__file__).resolve().parents[1]
+    template = (root / 'templates/study_selection.html').read_text()
+    assert template.index('flow-box--nonpoolable') < template.index('flow-stage--pooled')
+    assert 'flow-box--included flow-next' in template
+    assert 'id="print-selection"' in template
+    assert 'window.print()' in (root / 'static/study-selection.js').read_text()
+    css = (root / 'static/study-selection.css').read_text()
+    assert '.flow-stage--pooled .flow-box--pool { grid-column: 2;' in css
+    assert '@media screen and (max-width: 750px)' in css
 
 
 def test_selector_only_lists_current_direct_exposure_pools():

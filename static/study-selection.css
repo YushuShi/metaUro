@@ -36,7 +36,7 @@
 .selection-notes { font-size: .85rem; }
 .selection-reference { margin: 1.5rem 0 0; color: #64748b; font-size: .8rem; overflow-wrap: anywhere; }
 .selection-reference p + p { margin-top: .5rem; }
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
   .selection-heading { align-items: flex-start; flex-direction: column; gap: 1rem; }
   .selection-filters { grid-template-columns: 1fr; align-items: stretch; }
   .selection-filters > p { grid-column: auto; }
@@ -53,3 +53,33 @@
   .uro-selection { max-width: none; padding: 0; }
   .flow-stage, .selection-notes { break-inside: avoid; }
 }
+
+/* Retained reports branch right to pooling restrictions and down to the pool. */
+.selection-heading-actions { display: flex; align-items: center; gap: .65rem; flex-shrink: 0; flex-wrap: wrap; }
+.flow-stage--pooled .flow-box--pool { grid-column: 2; }
+@media screen and (max-width: 750px) {
+  .flow-stage--pooled .flow-box--pool { grid-column: 1; margin-left: 0; }
+  .selection-heading-actions { width: 100%; }
+}
+@media print {
+  @page { size: A4 portrait; margin: 12mm; }
+  body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .site-header, .uro-header, .uro-footer, .selection-heading-actions, .selection-filters, .selection-notes, .selection-reference { display: none !important; }
+  .uro-selection { width: 100%; max-width: none; margin: 0; padding: 0; }
+  .selection-heading { margin-bottom: .5rem; }
+  .selection-heading h1 { font-size: 1.45rem; }
+  .selection-heading > div > p:not(.selection-kicker) { display: none; }
+  .prisma-figure { border: 0; padding: 0; }
+  .prisma-figure > figcaption { margin-bottom: .7rem; font-size: 9pt; }
+  .flow-stage { grid-template-columns: 24px minmax(0,1fr) 22px minmax(0,1fr); column-gap: .55rem; margin-bottom: 1.1rem; break-inside: avoid; }
+  .flow-phase { font-size: 8pt; }
+  .flow-box { padding: .6rem .7rem; }
+  .flow-box h3 { font-size: 9pt; }
+  .flow-box .flow-count { font-size: 17pt; margin: .3rem 0; }
+  .flow-box p, .flow-box li, .flow-breakdown div { font-size: 8pt; line-height: 1.35; }
+  .flow-next::after { height: 1.1rem; }
+  .flow-next::before { top: calc(100% + 1.1rem - 5px); }
+  .selection-unit-note { font-size: 8pt; }
+}
+
+@media print { .selection-reference { display: block !important; font-size: 7pt; margin-top: .6rem; } }

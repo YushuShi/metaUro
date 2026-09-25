@@ -14,6 +14,7 @@ import json
 from pathlib import Path
 
 from automation.sync_sources import load_overlay
+from selection_pooling_reasons import pooling_reason_counts
 
 
 ROOT = Path(__file__).resolve().parent
@@ -102,6 +103,10 @@ def _report_counts(first_rows, final_rows):
         'included_reports': len(retained),
         'poolable_reports': len(poolable),
         'nonpoolable_reports': len(retained - poolable),
+        'nonpoolable_reasons': pooling_reason_counts(
+            retained, poolable,
+            assessment_rows=[row for rows in by_report.values() for row in rows if row['final_status'] in RETAINED_STATUSES],
+        ),
         'screening_contexts': len(first_contexts),
         'eligibility_contexts': len(final_contexts),
         'reasons': [{'label': label, 'count': count} for label, count in sorted(reason_counts.items(), key=lambda item: (-item[1], item[0]))],
@@ -219,21 +224,31 @@ def _disease_contexts(source):
 
 
 @lru_cache(maxsize=2)
-def _current_pool_contexts(source):
-    """Read direct-exposure caches and keep only contexts with a current pool."""
+def _current_pool_packets(source):
+    """Read the saved pool and its recorded pooling restrictions together."""
     source = _source_name(source)
     root = (
         ROOT / 'sources/metaPee/combined/provisional_ui/subexposure_views/no/Cached_results'
         if source == 'metaPee' else ROOT / 'sources/MetaVir/Subexposure_results/no'
     )
-    contexts = _disease_contexts(source)
-    result = []
+    result = {}
     for path in sorted(root.glob('*/*_core.json')):
-        payload = json.loads(path.read_text())
+        payload, provenance = _read_packet(path, 'Current direct-exposure pool and recorded restrictions')
         disease = str(payload.get('disease') or '').strip()
         exposure = str(payload.get('exposure') or '').strip()
         if not disease or not exposure or disease == 'Aggressive prostate cancer' or not payload.get('headline'):
             continue
+        result[(disease, exposure)] = (payload, provenance)
+    return result
+
+
+@lru_cache(maxsize=2)
+def _current_pool_contexts(source):
+    """Keep only contexts with an actual saved pool."""
+    source = _source_name(source)
+    contexts = _disease_contexts(source)
+    result = []
+    for (disease, exposure), (payload, _provenance) in _current_pool_packets(source).items():
         poolable = set()
         for row in payload.get('studies') or []:
             selected = row.get('subexposure_pooling_selected') is True
@@ -276,7 +291,7 @@ def _reason_label(codes):
     }.get(code, 'Other recorded eligibility criterion'))
 
 
-def _context_counts(audit, diseases, exposure, current_pool_pmids):
+def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=()):
     diseases = set(diseases)
     first = [
         row for row in audit['first']
@@ -331,6 +346,10 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids):
         'included_reports': len(retained),
         'poolable_reports': len(poolable),
         'nonpoolable_reports': len(retained - poolable),
+        'nonpoolable_reasons': pooling_reason_counts(
+            retained, poolable, current_rows,
+            [row for rows in final_by_pmid.values() for row in rows if row['final_status'] in RETAINED_STATUSES],
+        ),
         'initial_reasons': initial_reasons,
         'reasons': [
             {'label': label, 'count': count}
@@ -360,6 +379,7 @@ def _build_selection_flow(source, disease=None, exposure=None):
         item for item in _current_pool_contexts(source)
         if item[0] == selected_disease and item[1] == selected_exposure
     )
+    packet, pool_provenance = _current_pool_packets(source)[(selected_disease, selected_exposure)]
     return {
         'available': True,
         'disease': selected_disease,
@@ -370,8 +390,8 @@ def _build_selection_flow(source, disease=None, exposure=None):
         'unit': 'Unique reports (PubMed IDs)',
         'scope_note': '',
         'notes': [],
-        'provenance': list(audit['provenance']),
-        **_context_counts(audit, selected_context[2], selected_exposure, selected_context[3]),
+        'provenance': [*audit['provenance'], pool_provenance],
+        **_context_counts(audit, selected_context[2], selected_exposure, selected_context[3], packet.get('studies') or []),
     }
 
 

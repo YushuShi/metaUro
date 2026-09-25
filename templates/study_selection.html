@@ -5,12 +5,13 @@
 <link rel="stylesheet" href="/static/theme.css"><link rel="stylesheet" href="/static/metauro.css"><link rel="stylesheet" href="/static/study-selection.css">
 <script>window.MetaUro={{ {'source': source, 'prefix': prefix, 'current': current, 'scopes': scopes, 'page': page, 'track': track}|tojson }};</script>
 <script src="/static/metauro.js" defer></script>
+<script src="/static/study-selection.js" defer></script>
 </head><body>{% include '_header.html' %}
 {% macro count(value) -%}<span class="flow-count">{{ '{:,}'.format(value) }}</span>{%- endmacro %}
 <main class="uro-selection">
   <div class="selection-heading">
     <div><p class="selection-kicker">Evidence flow</p><h1>Study selection</h1><p>Choose a cancer and exposure to inspect its screening and pooling path.</p></div>
-    <a class="uro-button" data-uro-nav="evidence" href="{{ analysis_href }}">Return to analysis</a>
+    <div class="selection-heading-actions"><button class="uro-button" id="print-selection" type="button">Print diagram</button><a class="uro-button" data-uro-nav="evidence" href="{{ analysis_href }}">Return to analysis</a></div>
   </div>
 
   <form class="selection-filters" method="get" action="/study-selection">
@@ -53,8 +54,12 @@
       </section>
       <section class="flow-stage" aria-labelledby="phase-included">
         <h2 class="flow-phase" id="phase-included">Included</h2>
-        <div class="flow-box flow-box--included"><h3>Reports retained after assessment</h3>{{ count(flow.included_reports) }}<dl class="flow-breakdown"><div><dt>Current pooled result</dt><dd>{{ '{:,}'.format(flow.poolable_reports) }}</dd></div><div><dt>Eligible but not in the current pool</dt><dd>{{ '{:,}'.format(flow.nonpoolable_reports) }}</dd></div></dl></div>
+        <div class="flow-box flow-box--included flow-next"><h3>Reports retained after assessment</h3>{{ count(flow.included_reports) }}<dl class="flow-breakdown"><div><dt>Current pooled result</dt><dd>{{ '{:,}'.format(flow.poolable_reports) }}</dd></div><div><dt>Eligible but not in the current pool</dt><dd>{{ '{:,}'.format(flow.nonpoolable_reports) }}</dd></div></dl></div>
         <span class="flow-branch" aria-hidden="true"></span>
+        <div class="flow-box flow-box--side flow-box--nonpoolable"><h3>Eligible reports not included in the current pool</h3>{{ count(flow.nonpoolable_reports) }}{% if flow.nonpoolable_reasons %}<ul class="flow-reasons">{% for reason in flow.nonpoolable_reasons %}<li>{{ reason.label }}: <strong>{{ '{:,}'.format(reason.count) }}</strong></li>{% endfor %}</ul><p>Each publication is counted once; differing restrictions across its estimates are grouped together.</p>{% else %}<p>All retained reports are included in the current pool.</p>{% endif %}</div>
+      </section>
+      <section class="flow-stage flow-stage--pooled" aria-labelledby="phase-pooled">
+        <h2 class="flow-phase" id="phase-pooled">Pooled</h2>
         <div class="flow-box flow-box--pool"><h3>Reports in the current pooled result</h3>{{ count(flow.poolable_reports) }}<p>Current direct-exposure pool for this cancer selection.</p></div>
       </section>
     </div>

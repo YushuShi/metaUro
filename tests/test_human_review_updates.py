@@ -3,7 +3,9 @@
 Exercise the public workers, including both saved subexposure projections, so
 correcting the canonical record without rebuilding served evidence cannot pass.
 """
+import csv
 import hashlib
+import json
 from pathlib import Path
 import sys
 
@@ -14,6 +16,35 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from app import app
 from source_worker import close_workers
+
+
+def test_archived_review_inputs_match_applied_revision_receipts():
+    """Keep the supplied decisions auditable after redundant inbox copies go away."""
+    revision = json.loads((ROOT / 'evidence-revisions/2026-09-14/revision.json').read_text())
+    cases = {
+        'metaPee': ('utf-8-sig', 'input_sha256', 'review_status.json', 68),
+        'MetaVir': ('cp1252', 'source_sha256', 'review_status.json', 96),
+    }
+    for source, (encoding, checkpoint_hash_key, status_name, expected_rows) in cases.items():
+        receipt = revision['sources'][source]
+        archived = ROOT / receipt['input']
+        digest = hashlib.sha256(archived.read_bytes()).hexdigest()
+        assert digest == receipt['supplied_sha256'] == receipt['input_sha256']
+        with archived.open(encoding=encoding, newline='') as handle:
+            assert sum(1 for _ in csv.DictReader(handle)) == expected_rows
+
+        review_root = ROOT / 'sources' / source / 'combined/human_review'
+        checkpoint = json.loads((review_root / 'current_decisions.json').read_text())
+        assert checkpoint[checkpoint_hash_key] == digest
+        assert len(checkpoint['decisions']) == expected_rows
+        status = json.loads((review_root / status_name).read_text())
+        pending = status.get('review_rows', status.get('pending_model_discrepancy_reviews'))
+        assert pending == 0
+
+    follow_up = json.loads(
+        (ROOT / 'sources/MetaVir/combined/human_review/follow_up.json').read_text()
+    )
+    assert len(follow_up['records']) == 6
 
 
 @pytest.fixture(scope='module')

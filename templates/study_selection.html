@@ -6,54 +6,63 @@
 <script>window.MetaUro={{ {'source': source, 'prefix': prefix, 'current': current, 'scopes': scopes, 'page': page, 'track': track}|tojson }};</script>
 <script src="/static/metauro.js" defer></script>
 </head><body>{% include '_header.html' %}
-{% macro count(value) -%}<span class="flow-count">{{ '{:,}'.format(value) if value is not none else 'Not recorded' }}</span>{%- endmacro %}
+{% macro count(value) -%}<span class="flow-count">{{ '{:,}'.format(value) }}</span>{%- endmacro %}
 <main class="uro-selection">
   <div class="selection-heading">
-    <div><p class="selection-kicker">PRISMA 2020</p><h1>Study selection</h1><p>Follow the publications from initial screening to inclusion in the review.</p></div>
-    <a class="uro-button" data-uro-nav="evidence" href="{{ prefix }}/?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}">Return to analysis</a>
+    <div><p class="selection-kicker">Evidence flow</p><h1>Study selection</h1><p>Choose a cancer and exposure to inspect its screening and pooling path.</p></div>
+    <a class="uro-button" data-uro-nav="evidence" href="{{ analysis_href }}">Return to analysis</a>
   </div>
-  <nav class="selection-reviews" aria-label="Review cohort">{% for review in reviews %}<a href="{{ review.href }}" {% if review.current %}aria-current="true"{% endif %}>{{ review.label }}</a>{% endfor %}</nav>
-  <section class="selection-context" aria-labelledby="selection-review-title">
-    <h2 id="selection-review-title">{{ source_label }} cancer review</h2>
-    <p>{{ flow.cohort_description }}</p>
-    <p>This diagram covers the overall review. Disease, exposure, and evidence-view filters do not change these counts.</p>
-  </section>
+
+  <form class="selection-filters" method="get" action="/study-selection">
+    <label for="selection-scope">Cancer
+      <select id="selection-scope" name="scope">
+        {% if not flow.available %}<option value="{{ current.id }}" selected disabled>{{ current.label }} — flow unavailable</option>{% endif %}
+        {% for item in selection_scopes %}<option value="{{ item.id }}" {% if item.id == current.id %}selected{% endif %}>{{ item.label }}</option>{% endfor %}
+      </select>
+    </label>
+    <label for="selection-exposure">Exposure
+      <select id="selection-exposure" name="exposure" {% if not flow.available %}disabled{% endif %}>
+        {% for item in flow.exposures %}<option value="{{ item }}" {% if item == flow.exposure %}selected{% endif %}>{{ item }}</option>{% endfor %}
+      </select>
+    </label>
+    <input type="hidden" name="include_subexposures" value="no">
+    {% if track == 'chatgpt' %}<input type="hidden" name="track" value="chatgpt">{% endif %}
+    <button class="uro-button" type="submit" {% if not flow.available %}disabled{% endif %}>Show flow</button>
+    <p>Only disease–exposure pairs with a current pooled result are listed.</p>
+  </form>
+
+  {% if flow.available %}
   <figure class="prisma-figure" aria-labelledby="prisma-caption">
-    <figcaption id="prisma-caption">Study-selection flow adapted from <a href="https://www.prisma-statement.org/prisma-2020-flow-diagram">PRISMA 2020</a>. Counts are unique publications identified by PMID; unavailable totals are marked “Not recorded.”</figcaption>
+    <figcaption id="prisma-caption"><strong>{{ flow.disease }} · {{ flow.exposure }}</strong> — counts are unique publications identified by PMID.</figcaption>
     <div class="prisma-flow">
-      <section class="flow-stage" aria-labelledby="phase-identification">
-        <h2 class="flow-phase" id="phase-identification">Identification</h2>
-        <div class="flow-box flow-box--unknown flow-next"><h3>Records identified before deduplication</h3>{{ count(flow.identified) }}<p>The complete search total is not available for this review cohort.</p></div>
-        <span class="flow-branch" aria-hidden="true"></span>
-        <div class="flow-box flow-box--side flow-box--unknown"><h3>Records removed before screening</h3>{{ count(flow.duplicate_removed) }}<p>Complete counts for duplicates and other removals are not available.</p></div>
-      </section>
       <section class="flow-stage" aria-labelledby="phase-screening">
         <h2 class="flow-phase" id="phase-screening">Screening</h2>
-        <div class="flow-box flow-next"><h3>Records screened</h3>{{ count(flow.screened) }}<p>Each PMID is counted once across all exposure and cancer contexts in this review.</p></div>
+        <div class="flow-box flow-next"><h3>Records screened</h3>{{ count(flow.screened) }}<p>Exposure-specific records across the selected cancer scope.</p></div>
         <span class="flow-branch" aria-hidden="true"></span>
-        <div class="flow-box flow-box--side"><h3>Records excluded at initial screening</h3>{{ count(flow.screening_excluded) }}<p>No exposure or cancer context passed the initial screen.</p></div>
+        <div class="flow-box flow-box--side"><h3>Records excluded at initial screening</h3>{{ count(flow.screening_excluded) }}
+          <ul class="flow-reasons">{% for reason in flow.initial_reasons %}<li>{{ reason.label }}: <strong>{{ '{:,}'.format(reason.count) }}</strong></li>{% endfor %}</ul>
+        </div>
       </section>
       <section class="flow-stage" aria-labelledby="phase-eligibility">
         <h2 class="flow-phase" id="phase-eligibility">Eligibility</h2>
-        <div class="flow-box flow-next"><h3>Reports assessed for eligibility</h3>{{ count(flow.assessed) }}<p>Detailed title, abstract, and indexing review, with full-text assessment when needed and available.</p><p class="flow-method-note">Complete counts of reports sought, not retrieved, and assessed in full text are not recorded for this cohort.</p></div>
+        <div class="flow-box flow-next"><h3>Reports assessed in detail</h3>{{ count(flow.assessed) }}<p>Title, abstract, indexing, and conditional full-text assessment.</p></div>
         <span class="flow-branch" aria-hidden="true"></span>
         <div class="flow-box flow-box--side"><h3>Reports excluded after detailed assessment</h3>{{ count(flow.eligibility_excluded) }}
-          <details class="flow-reasons"><summary>View exclusion reasons</summary><ul>{% for reason in flow.reasons %}<li>{{ reason.label }}: <strong>{{ '{:,}'.format(reason.count) }}</strong></li>{% endfor %}</ul><p>Each excluded report appears in one category. Reports with several reason codes are grouped together.</p></details>
+          <ul class="flow-reasons">{% for reason in flow.reasons %}<li>{{ reason.label }}: <strong>{{ '{:,}'.format(reason.count) }}</strong></li>{% endfor %}</ul>
         </div>
       </section>
       <section class="flow-stage" aria-labelledby="phase-included">
         <h2 class="flow-phase" id="phase-included">Included</h2>
-        <div class="flow-box flow-box--included"><h3>Reports included in the review</h3>{{ count(flow.included_reports) }}<p>At least one eligible exposure or cancer context.</p><dl class="flow-breakdown"><div><dt>With a poolable result</dt><dd>{{ '{:,}'.format(flow.poolable_reports) }}</dd></div><div><dt>Without a poolable result</dt><dd>{{ '{:,}'.format(flow.nonpoolable_reports) }}</dd></div></dl></div>
-        <span aria-hidden="true"></span>
-        <div class="flow-box flow-box--side flow-box--unknown"><h3>Distinct studies represented</h3>{{ count(flow.unique_studies) }}<p>Several publications may describe one study. Study-level linkage is not available, so publication counts are not presented as study counts.</p></div>
+        <div class="flow-box flow-box--included"><h3>Reports retained after assessment</h3>{{ count(flow.included_reports) }}<dl class="flow-breakdown"><div><dt>Current pooled result</dt><dd>{{ '{:,}'.format(flow.poolable_reports) }}</dd></div><div><dt>Eligible but not in the current pool</dt><dd>{{ '{:,}'.format(flow.nonpoolable_reports) }}</dd></div></dl></div>
+        <span class="flow-branch" aria-hidden="true"></span>
+        <div class="flow-box flow-box--pool"><h3>Reports in the current pooled result</h3>{{ count(flow.poolable_reports) }}<p>Current direct-exposure pool for this cancer selection.</p></div>
       </section>
     </div>
   </figure>
-  <section class="selection-notes" aria-labelledby="selection-notes-title"><h2 id="selection-notes-title">How to read this diagram</h2>
-    <p>The recorded workflow uses initial screening followed by detailed eligibility assessment and conditional full-text review. The flow is adapted to that workflow; it does not imply that every report underwent full-text assessment.</p>
-    <p>Inclusion in the review does not mean inclusion in every meta-analysis. A report may contribute multiple results, and pooling also depends on the selected analysis and eligibility rules.</p>
-    {% if flow.provisional_reports %}<p>{{ flow.provisional_reports }} additional reports are displayed provisionally in the analysis and are not counted as included here.</p>{% endif %}
-    {% if flow.notes %}<details class="selection-audit-notes"><summary>About the screening records</summary><ul>{% for note in flow.notes %}<li>{{ note }}</li>{% endfor %}</ul></details>{% endif %}
-  </section>
+  <p class="selection-unit-note">The flow begins at screening. Counts represent publications identified by PMID, not distinct underlying studies.</p>
+  {% else %}
+  <section class="selection-empty"><h2>No complete selection flow is available for {{ current.label }}</h2><p>Choose a listed cancer with both a complete screening ledger and current poolable evidence.</p></section>
+  {% endif %}
+
   <div class="selection-reference"><p>Reference: Page MJ, McKenzie JE, Bossuyt PM, et al. The PRISMA 2020 statement: An updated guideline for reporting systematic reviews. <em>PLoS Medicine</em>. 2021;18(3):e1003583. <a href="https://doi.org/10.1371/journal.pmed.1003583">doi:10.1371/journal.pmed.1003583</a>.</p><p>Diagram format adapted from the <a href="https://www.prisma-statement.org/prisma-2020-flow-diagram">PRISMA 2020 flow template</a>, used under <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p></div>
 </main><footer class="uro-footer">metaUro · Urologic cancer &amp; nutrition</footer></body></html>

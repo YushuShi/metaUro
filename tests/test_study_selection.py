@@ -4,7 +4,7 @@ import sys
 import pytest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from study_selection import _report_counts, build_selection_flow
+from study_selection import _report_counts, build_selection_flow, selection_catalog
 
 
 def _first(pmid, context, decision='PASS'):
@@ -37,7 +37,7 @@ def test_effect_rows_and_first_stage_exclusions_do_not_inflate_counts_or_reasons
              _final('2', 'c', 'INCLUDE_META'), _final('2', 'c', 'INCLUDE_META')]
     result = _report_counts(first, final)
     assert (result['assessed'], result['eligibility_excluded'], result['included_reports']) == (2, 1, 1)
-    assert result['reasons'] == [{'label': 'Review article', 'count': 1}]
+    assert result['reasons'] == [{'label': 'Review or meta-analysis without an eligible primary estimate', 'count': 1}]
 
 
 @pytest.mark.parametrize('first,final', [
@@ -52,34 +52,48 @@ def test_incomplete_or_mismatched_audits_are_not_presented_as_complete(first, fi
         _report_counts(first, final)
 
 
-def test_current_urinary_audit_reconciles_and_preserves_unknown_counts():
-    result = build_selection_flow('urinary')
-    assert (result['screened'], result['screening_excluded'], result['assessed']) == (15095, 13981, 1114)
-    assert (result['eligibility_excluded'], result['included_reports'], result['poolable_reports'], result['nonpoolable_reports']) == (794, 320, 174, 146)
+def test_current_urinary_flow_is_exposure_specific_and_reconciles():
+    result = build_selection_flow('urinary', 'Bladder cancer', 'Vitamin D')
+    assert (result['screened'], result['screening_excluded'], result['assessed']) == (88, 49, 39)
+    assert (result['eligibility_excluded'], result['included_reports'], result['poolable_reports'], result['nonpoolable_reports']) == (24, 15, 10, 5)
     assert sum(item['count'] for item in result['reasons']) == result['eligibility_excluded']
-    for key in ('identified', 'duplicate_removed', 'automation_removed', 'other_removed', 'reports_sought', 'reports_not_retrieved', 'full_text_assessed', 'full_text_excluded', 'unique_studies'):
-        assert result[key] is None
-    assert len(result['provenance']) == 5
-    assert 'Human review updates applied on 14 September 2026' in result['cohort_description']
-    assert 'Duplicate-article decisions applied on 14 September 2026' in result['cohort_description']
+    assert result['initial_reasons'] == [{'label': 'No direct nutritional exposure–cancer evidence at initial screening', 'count': 49}]
+    assert result['context_diseases'] == [
+        'Bladder cancer', 'Urothelial carcinoma of the bladder',
+        'Squamous cell carcinoma of the bladder', 'Adenocarcinoma of the bladder',
+        'Small cell carcinoma of the bladder',
+    ]
+    assert len(result['provenance']) == 4
     assert all(len(item['sha256']) == 64 for item in result['provenance'])
     result['reasons'].clear()
-    assert build_selection_flow('urinary')['reasons']
+    assert build_selection_flow('urinary', 'Bladder cancer', 'Vitamin D')['reasons']
 
 
-def test_current_prostate_selection_reflects_applied_human_decisions():
-    result = build_selection_flow('prostate')
-    assert (result['screened'], result['screening_excluded'], result['assessed']) == (24974, 21729, 3245)
-    assert (result['eligibility_excluded'], result['included_reports'], result['poolable_reports'], result['nonpoolable_reports']) == (2638, 607, 312, 295)
+def test_current_prostate_selection_is_exposure_specific():
+    result = build_selection_flow('prostate', 'Prostate cancer', 'Vitamin D')
+    assert (result['screened'], result['screening_excluded'], result['assessed']) == (1215, 738, 477)
+    assert (result['eligibility_excluded'], result['included_reports'], result['poolable_reports'], result['nonpoolable_reports']) == (417, 60, 28, 32)
     assert sum(item['count'] for item in result['reasons']) == result['eligibility_excluded']
-    assert result['unique_studies'] is None
-    assert result['full_text_assessed'] is None
-    assert result['provisional_reports'] == 0
-    assert not any('not counted as included here' in note for note in result['notes'])
-    assert len(result['provenance']) == 6
-    assert 'Human review updates applied on 14 September 2026' in result['cohort_description']
-    assert 'Duplicate-article decisions applied on 14 September 2026' in result['cohort_description']
-    assert all(name not in ' '.join(result['notes']) for name in ('metaPee', 'MetaVir'))
+    assert result['context_diseases'] == ['Prostate cancer']
+    assert len(result['provenance']) == 4
+
+
+def test_selector_only_lists_current_direct_exposure_pools():
+    urinary = selection_catalog('urinary')
+    prostate = selection_catalog('prostate')
+    assert {disease: len(exposures) for disease, exposures in urinary.items()} == {
+        'Bladder cancer': 55,
+        'Clear cell renal cell carcinoma': 3,
+        'Kidney and renal pelvis cancer': 50,
+        'Papillary renal cell carcinoma': 1,
+        'Renal cell carcinoma': 43,
+        'Urothelial carcinoma of the bladder': 9,
+    }
+    assert len(prostate['Prostate cancer']) == 101
+    assert 'Ultra-processed food intake' not in urinary['Renal cell carcinoma']
+    assert 'Egg protein' not in prostate['Prostate cancer']
+    unavailable = build_selection_flow('prostate', 'Aggressive prostate cancer')
+    assert unavailable['available'] is False and unavailable['exposures'] == []
 
 
 def test_invalid_cohort_is_rejected():

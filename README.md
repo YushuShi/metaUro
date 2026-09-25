@@ -15,7 +15,7 @@ Explore nutrition and urologic cancer evidence across 14 disease scopes, includi
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-pip install -r requirements.txt
+python -m pip install -r requirements.txt
 python app.py
 ```
 
@@ -41,6 +41,10 @@ Some OneDrive-only PNGs could not be read directly during the original import. `
 
 The metaUro worker rejects writes into either snapshot. Persistent verification/exclusion actions are disabled; temporary study selection and reanalysis remain available. Runtime logs and plotting-library caches live under ignored `runtime/`. Original refresh workflows are archived inside the snapshots and are not active GitHub workflows in this repository.
 
+Recurring source releases are installed as validated overlays instead of editing
+the snapshots. See the [monthly update runbook](docs/monthly-automation.md) for
+preflight, deterministic retry, validation, rollback, and cleanup instructions.
+
 ```bash
 python scripts/verify_evidence.py
 # Optional: compare the preserved import baseline against the original projects:
@@ -62,7 +66,7 @@ The curator retained PMID 25866035 for Alcohol / Kidney and renal pelvis cancer,
 ## Validation
 
 ```bash
-pip install pytest
+python -m pip install pytest
 pytest tests
 node tests/settings.test.js static/analysis-settings.js
 node tests/navigation.test.js

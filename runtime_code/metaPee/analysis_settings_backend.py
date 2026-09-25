@@ -348,6 +348,21 @@ def _distinct_study_labels(studies, compact=False):
     return distinct
 
 
+def normalize_leave_one_out_rows(rows):
+    """Expose citation-only labels while retaining the saved source identity."""
+    normalized = []
+    for row in rows or []:
+        if not isinstance(row, dict):
+            continue
+        item = copy.deepcopy(row)
+        raw = str(item.get('omitted') or '').strip()
+        if raw:
+            item['source_omitted'] = raw
+            item['omitted'] = _study_label({'Study': raw}, compact=True)
+        normalized.append(item)
+    return normalized
+
+
 def forest_annotation_rows(studies, canonical, context):
     """Exact numerical annotations, independently of the logarithmic plot axis."""
     target = context['settings']['effect_measure']
@@ -358,7 +373,9 @@ def forest_annotation_rows(studies, canonical, context):
         values = [study.get(key) for key in ('Displayed Effect Size', 'Displayed Lower CI', 'Displayed Upper CI')]
         if all(v is not None and v > 0 for v in values) and values[1] <= values[0] <= values[2]:
             selected.append((study, values))
-    labels = _distinct_study_labels([study for study, _ in selected], compact=context.get('repository') == 'metaBreath')
+    # Forest labels are deliberately citation-only. Multiple estimates from the
+    # same publication may share a label; provenance remains in source_study.
+    labels = [_study_label(study, compact=True) for study, _ in selected]
     rows = [(label, str(study.get('Study') or label), *values)
             for label, (study, values) in zip(labels, selected)]
     pooled = [rr_to_display(canonical.get(key), target, context['baseline']['p0'])
@@ -502,6 +519,7 @@ def _project(result, context):
     headline['effect_measure'] = settings['effect_measure']
     headline['baseline_risk'] = baseline['p0']
     headline['baseline_risk_percent'] = baseline['risk_percent']
+    headline['loo_results'] = normalize_leave_one_out_rows(headline.get('loo_results'))
     for key, value in canonical.items():
         headline[key] = rr_to_display(value, settings['effect_measure'], baseline['p0'])
     result['headline'] = headline if canonical['pooled_es'] is not None else None

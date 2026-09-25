@@ -85,7 +85,10 @@ test('summary scope changes preserve exclusion without a selector',()=>{
     const app=runtime({page:'summary',selector:'summary-scope'});app.select(1);
     assert.equal(app.link('settings').searchParams.get('scope'),'renal_cell_carcinoma');
     assert.equal(app.link('summary').searchParams.get('include_subexposures'),'no');
-    app.select(3);assert.equal(app.assigned[0].searchParams.get('include_subexposures'),'no');
+    app.select(3);
+    assert.equal(app.assigned[0].pathname,'/evidence/prostate/summary');
+    assert.equal(app.assigned[0].searchParams.get('scope'),'aggressive_prostate_cancer');
+    assert.equal(app.assigned[0].searchParams.get('include_subexposures'),'no');
 });
 test('Settings changes update the URL, return link, and logo destination',()=>{
     const app=runtime({page:'settings',mode:'yes'});app.changeMode('no');
@@ -109,16 +112,23 @@ test('ChatGPT settings return to the same track and disease',()=>{
         assert.equal(app.link(name).searchParams.get('include_subexposures'),'no');
     }
 });
-test('Study selection opens the review page while preserving analysis context',()=>{
+test('Study selection preserves disease, exposure, and analysis track',()=>{
     const app=runtime({scope:3,track:'chatgpt'});
     const target=app.link('selection');
     assert.equal(target.pathname,'/study-selection');
     assert.equal(target.searchParams.get('scope'),'aggressive_prostate_cancer');
     assert.equal(target.searchParams.get('track'),'chatgpt');
     assert.equal(target.searchParams.get('include_subexposures'),'no');
+    assert.equal(target.searchParams.get('exposure'),'Vitamin D');
     const page=runtime({page:'selection',scope:3,track:'chatgpt'});
     assert.equal(page.link('evidence').pathname,'/evidence/prostate/chatgpt');
     assert.equal(page.link('evidence').searchParams.get('scope'),'aggressive_prostate_cancer');
+    assert.equal(page.link('evidence').searchParams.get('include_subexposures'),'no');
+    assert.equal(page.link('evidence').searchParams.get('exposure'),'Vitamin D');
+});
+test('Study-selection navigation always returns to the matching direct-evidence view',()=>{
+    const page=runtime({page:'selection',scope:0,mode:'yes'});
+    for(const link of page.links)assert.equal(new URL(link.href,page.url).searchParams.get('include_subexposures'),'no');
 });
 test('Reset restores related-exposure inclusion as well as analysis settings',()=>{
     const app=runtime({page:'settings'});app.reset();

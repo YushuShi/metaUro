@@ -8,8 +8,44 @@ import pytest
 
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
-from app import app, prefix_json, prefix_text, scope_catalog
+from app import (
+    EGGERS_FEWER_THAN_TEN_MESSAGE,
+    EGGERS_UNAVAILABLE_MESSAGE,
+    UI_LABEL_TRANSLATIONS,
+    app,
+    current_egger_interpretation,
+    prefix_json,
+    prefix_text,
+    scope_catalog,
+)
 from source_worker import close_workers
+
+
+ROOT_SCOPE_LABELS = [
+    'Bladder cancer', 'Kidney and renal pelvis cancer', 'Prostate cancer',
+]
+SUMMARY_SCOPE_IDS = {
+    'bladder_cancer', 'urothelial_carcinoma_of_the_bladder',
+    'kidney_and_renal_pelvis_cancer', 'renal_cell_carcinoma',
+    'clear_cell_renal_cell_carcinoma', 'papillary_renal_cell_carcinoma',
+    'prostate_cancer', 'aggressive_prostate_cancer',
+}
+
+
+def assert_unified_scope_hierarchy(selector, expected_count):
+    assert selector
+    assert not selector.select('optgroup')
+    options = selector.select('option')
+    assert len(options) == expected_count
+    roots = [
+        option.get_text(' ', strip=True)
+        for option in options
+        if option['data-hierarchy-depth'] == '0'
+    ]
+    assert roots == ROOT_SCOPE_LABELS
+    aggressive = selector.select_one('option[data-scope-key="aggressive_prostate_cancer"]')
+    assert aggressive['data-parent-key'] == 'prostate_cancer'
+    assert aggressive['data-hierarchy-depth'] == '1'
 
 
 @pytest.fixture(scope='module')
@@ -25,6 +61,11 @@ def test_catalog_keeps_all_sources_and_exact_endpoints(client):
     assert len(scopes) == 14
     assert len([s for s in scopes if s['source'] == 'metaPee']) == 12
     assert {s['id'] for s in scopes if s['source'] == 'MetaVir'} == {'prostate_cancer', 'aggressive_prostate_cancer'}
+    by_id = {scope['id']: scope for scope in scopes}
+    assert [by_id[scope]['hierarchy_depth'] for scope in (
+        'bladder_cancer', 'kidney_and_renal_pelvis_cancer', 'prostate_cancer')] == [0, 0, 0]
+    assert by_id['aggressive_prostate_cancer']['parent_id'] == 'prostate_cancer'
+    assert by_id['aggressive_prostate_cancer']['hierarchy_depth'] == 1
 
 
 @pytest.mark.parametrize('source,scope', [('metaPee', 'renal_cell_carcinoma'), ('MetaVir', 'aggressive_prostate_cancer')])
@@ -32,6 +73,7 @@ def test_settings_markup_is_complete_and_scope_aware(client, source, scope):
     response = client.get(f'/settings?source={source}&scope={scope}&include_subexposures=no')
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
+    assert_unified_scope_hierarchy(soup.select_one('#disease'), 14)
     assert soup.select_one('#disease option[selected]')['data-scope-key'] == scope
     assert soup.select_one('#include-subexposures option[selected]')['value'] == 'no'
     assert soup.select_one('#include-subexposures').find_parent('section')['id'] == 'exposure-settings'
@@ -66,12 +108,16 @@ def test_source_page_assets_and_summary(client, source):
     assert response.status_code == 200, response.data[:1000]
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.title.string.startswith('metaUro')
-    assert len(soup.select('#disease option')) == 14
+    assert_unified_scope_hierarchy(soup.select_one('#disease'), 14)
     assert not soup.select_one('#include-subexposures')
     assert 'Saved evidence' not in soup.header.get_text()
     selection_link = soup.select_one('.header-actions [data-uro-nav="selection"]')
     assert selection_link and selection_link['href'].startswith('/study-selection?')
     assert not soup.select_one('#analysis-settings-dialog')
+    assert not soup.select_one('#forest-scale-label')
+    assert not soup.select_one('#analysis-baseline-notice')
+    assert not soup.select_one('.poolability-help')
+    assert 'Advanced Meta-Analysis & Evidence Synthesis' not in soup.get_text()
     assert soup.select_one('link[href="/static/theme.css"]')
     assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir'))
     assert not any(name in element.get('href', '').lower() for element in soup.select('a[href]') for name in ('metapee', 'metavir'))
@@ -83,12 +129,31 @@ def test_source_page_assets_and_summary(client, source):
     response = client.get(f'/evidence/{source}/summary')
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
-    assert 'saved summary' in soup.get_text().lower()
-    for link in soup.select('a[href]'):
-        url = link['href']
-        if '/summary/workbooks/' in url or '/summary/plots/' in url:
-            assert client.get(url).status_code == 200, url
-            break
+    summary_selector = soup.select_one('#summary-scope, #summary-disease')
+    assert_unified_scope_hierarchy(summary_selector, len(SUMMARY_SCOPE_IDS))
+    assert {option['data-scope-key'] for option in summary_selector.select('option')} == SUMMARY_SCOPE_IDS
+    text = soup.get_text(' ', strip=True)
+    assert 'These are saved summary plots and workbooks.' not in text
+    assert 'Urinary tract summaries' not in text
+    assert 'Prostate summaries' not in text
+    assert 'Summary eligibility:' not in text
+    downloads = soup.select('a.summary-download')
+    assert len(downloads) == 1
+    assert downloads[0].get_text(' ', strip=True) == 'Download summary workbook'
+    assert downloads[0]['href'].split('?', 1)[0].endswith('/combined')
+    result = client.get(downloads[0]['href'])
+    assert result.status_code == 200
+    assert result.headers['Content-Type'].startswith(
+        'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+
+
+def test_summary_workbook_link_tracks_selected_disease(client):
+    response = client.get('/evidence/urinary/summary?scope=renal_cell_carcinoma&include_subexposures=no')
+    assert response.status_code == 200
+    soup = BeautifulSoup(response.data, 'html.parser')
+    assert soup.select_one('#summary-scope option[selected]')['data-scope-key'] == 'renal_cell_carcinoma'
+    link = soup.select_one('a.summary-download')
+    assert link and '/summary/workbooks/renal_cell_carcinoma/combined' in link['href']
 
 
 @pytest.mark.parametrize('source,disease', [('metaPee','Bladder cancer'),('MetaVir','Prostate cancer'),('MetaVir','Aggressive prostate cancer')])
@@ -102,9 +167,71 @@ def test_saved_analysis_and_interactive_settings(client, source, disease):
     assert data.get('studies')
     assert response.headers['X-metaUro-Source'] == source
     assert response.headers['Cache-Control'] == 'no-store'
+    assert data['headline']['funnel_interpretation'] == current_egger_interpretation(data, body)
     # Scientific rows stay backed by saved identities, even when display changes.
     if disease == 'Aggressive prostate cancer':
         assert 'aggressive' in json.dumps(data.get('baseline',data.get('analysis_settings',{}))).lower() or 'aggressive' in str(data.get('disease','')).lower()
+
+
+def test_current_egger_interpretation_has_all_exact_branches():
+    request_data = {'exposure': 'Omega-3 Fatty Acid', 'disease': 'Prostate Cancer'}
+
+    def result(count, p_value):
+        return {'studies': [{}] * count, 'headline': {'eggers_p': p_value}}
+
+    assert current_egger_interpretation(result(9, 0.001), request_data) == EGGERS_FEWER_THAN_TEN_MESSAGE
+    assert current_egger_interpretation(result(10, None), request_data) == EGGERS_UNAVAILABLE_MESSAGE
+    assert current_egger_interpretation(result(10, 'not available'), request_data) == EGGERS_UNAVAILABLE_MESSAGE
+    assert current_egger_interpretation(result(10, float('nan')), request_data) == EGGERS_UNAVAILABLE_MESSAGE
+    assert current_egger_interpretation(result(10, float('inf')), request_data) == EGGERS_UNAVAILABLE_MESSAGE
+    assert current_egger_interpretation(result(10, 0.0499), request_data) == (
+        'Egger’s test indicates significant funnel plot asymmetry (p=0.0499) for the '
+        'meta-analysis of Omega-3 Fatty Acid and Prostate Cancer. This finding suggests '
+        'the presence of small-study effects, which may arise from publication bias or '
+        'other sources of heterogeneity related to study size. The pooled estimate should '
+        'therefore be interpreted with appropriate caution.'
+    )
+    assert current_egger_interpretation(result(10, 0.05), request_data) == (
+        'Egger’s test does not indicate significant funnel plot asymmetry (p=0.0500) for '
+        'the meta-analysis of Omega-3 Fatty Acid and Prostate Cancer. There is no statistical '
+        'evidence of small-study effects based on this test, although the absence of '
+        'significance does not rule out publication bias.'
+    )
+
+
+@pytest.mark.parametrize('scope', ['urinary', 'prostate'])
+def test_runtime_egger_renderer_and_translation_catalog_are_current(client, scope):
+    script = client.get(f'/evidence/{scope}/static/script.js').get_data(as_text=True)
+    assert 'Egger’s test was not performed because fewer than {count} studies were available.' in script
+    assert 'Egger’s test could not be reliably estimated for this meta-analysis.' in script
+    assert 'Egger’s test indicates significant funnel plot asymmetry (p={p})' in script
+    assert 'Egger’s test does not indicate significant funnel plot asymmetry (p={p})' in script
+    assert 'indicates substantial publication bias' not in script
+    assert 'appears symmetric, suggesting a lower risk of publication bias' not in script
+
+    catalog = client.get(f'/evidence/{scope}/static/i18n-translations.json').json
+    for key in UI_LABEL_TRANSLATIONS:
+        assert key in catalog
+
+
+def test_processed_meat_heterogeneity_and_leave_one_out_labels(client):
+    response = client.post(
+        '/evidence/urinary/analyze?include_subexposures=no',
+        json={
+            'disease': 'Bladder cancer', 'exposure': 'Processed meat intake',
+            'outcome': 'Incidence', 'exclude_meta': True,
+            'include_subexposures': 'no',
+        },
+    )
+    assert response.status_code == 200
+    headline = response.json['headline']
+    assert headline['i2'] == pytest.approx(41.47)
+    assert headline['loo_results']
+    for row in headline['loo_results']:
+        assert 'Men and women' not in row['omitted']
+        assert 'Mixed' not in row['omitted']
+        assert 'estimate' not in row['omitted'].lower()
+        assert row['source_omitted']
 
 
 def test_invalid_source_does_not_dispatch(client):
@@ -133,8 +260,13 @@ def test_runtime_exposure_alias_is_presentation_only(client, scope):
     assert 'presentationText(term).toLocaleLowerCase()' in script
     assert 'elements.exposure.dataset.canonicalExposure = canonical;' in script
     assert 'const exposure = selectedExposureValue();' in script
+    assert 'class="review-count"' in script
+    assert 'onclick="window.verifyStudy' not in script
+    assert 'onclick="window.excludeStudy' not in script
     assert "'Quality Score', 'VERIFY', 'Exclusion Flags'" in script
     assert "'Quality Score', 'Verified', 'Exclusion Flags'" not in script
+    if scope == 'prostate':
+        assert "endpointBadge.className = 'disease-endpoint-badge'" not in script
 
 
 @pytest.mark.parametrize('scope', ['urinary', 'prostate'])
@@ -172,6 +304,7 @@ def test_product_pages_use_single_brand_and_infer_settings_scope(client, path):
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.select_one('link[href="/static/theme.css"]')
+    assert 'Advanced Meta-Analysis & Evidence Synthesis' not in soup.get_text()
     assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir', 'two evidence collections', 'source-specific engine'))
     assert not any(name in link.get('href', '').lower() for link in soup.select('a[href]') for name in ('metapee', 'metavir'))
     if 'aggressive_prostate' in path:
@@ -189,32 +322,62 @@ def test_about_page_matches_the_metafemina_presentation_structure(client):
     assert container.select_one('.about-toolbar .back-link').get_text(strip=True) == '← Back to Tool'
     assert container.select_one('.disclaimer-box .disclaimer-title').get_text(' ', strip=True) == '⚠️ CAUTION: AI-Generated Results'
     assert [heading.get_text(' ', strip=True) for heading in container.select('h2')] == [
-        'How It Works', 'Analysis Settings', 'Evidence Views', 'Study Selection',
+        'How It Works',
+        'Understanding Meta-Analysis in Urologic Cancers',
+        'JBI Quality Appraisal',
+        'Bug Reporting & Feedback',
     ]
+    assert {'Interpreting Heterogeneity (I²)', 'Exposure Quantification'} <= {
+        heading.get_text(' ', strip=True) for heading in container.select('h3')
+    }
+    assert len(container.select('.jbi-tab')) == 4
+    assert len(container.select('.jbi-panel')) == 4
+    page_text = container.get_text(' ', strip=True)
+    assert 'urologic cancers' in page_text.lower()
+    assert "women's cancer" not in page_text.lower()
+    assert 'breast, ovarian, or uterine cancer' not in page_text.lower()
+    assert 'margauxdelporte@gmail.com' in page_text
+    assert 'shiyushu2006@gmail.com' in page_text
+    assert 'ziyu.e.liu.gr@dartmouth.edu' in page_text
     style = soup.style.get_text()
     assert 'max-width: 800px' in style
     assert 'background: rgba(255, 255, 255, 0.85)' in style
     assert 'background-color: #ffabc0' in style
 
 
-@pytest.mark.parametrize('scope', ['bladder_cancer', 'aggressive_prostate_cancer'])
-def test_selection_page_uses_review_scope_and_preserves_context(client, scope):
-    response = client.get(f'/study-selection?scope={scope}&include_subexposures=no&track=chatgpt')
+def test_selection_page_is_exposure_specific_and_shows_criteria(client):
+    response = client.get('/study-selection?scope=bladder_cancer&exposure=Vitamin%20D&include_subexposures=no&track=chatgpt')
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.select_one('.header-actions [aria-current="page"]').text == 'Study selection'
     assert soup.select_one('.prisma-figure')
-    assert len(soup.select('.flow-stage')) == 4
-    assert 'Not recorded' in soup.get_text()
-    assert 'full-text assessment when needed' in soup.get_text()
+    assert len(soup.select('.flow-stage')) == 3
+    assert soup.select_one('#selection-scope option[selected]')['value'] == 'bladder_cancer'
+    assert soup.select_one('#selection-exposure option[selected]')['value'] == 'Vitamin D'
+    text = soup.get_text(' ', strip=True)
+    assert 'Bladder cancer · Vitamin D' in text
+    assert 'Animal, laboratory, or preclinical study: 1' in text
+    assert 'Review or meta-analysis without an eligible primary estimate: 14' in text
+    assert 'Not recorded' not in text
+    assert 'Identification' not in text
+    assert 'How to read this diagram' not in text
+    assert not soup.select_one('details.flow-reasons')
     assert soup.select_one('a[href="https://doi.org/10.1371/journal.pmed.1003583"]')
     assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir'))
     assert not soup.select_one('#include-subexposures')
     ids = [node['id'] for node in soup.select('[id]')]
     assert len(ids) == len(set(ids))
-    for link in soup.select('.selection-reviews a'):
-        assert client.get(link['href']).status_code == 200
     for link in soup.select('link[rel="stylesheet"]'):
         if link['href'].startswith('/'):
             assert client.get(link['href']).status_code == 200
     assert client.get('/study-selection?group=unknown').status_code == 404
+
+
+def test_selection_page_with_incomplete_scope_does_not_show_a_flow(client):
+    response = client.get('/study-selection?scope=aggressive_prostate_cancer')
+    assert response.status_code == 200
+    soup = BeautifulSoup(response.data, 'html.parser')
+    assert not soup.select_one('.prisma-figure')
+    assert 'No complete selection flow is available for Aggressive prostate cancer' in soup.get_text()
+    listed = {option['value'] for option in soup.select('#selection-scope option:not([disabled])')}
+    assert {'bladder_cancer', 'prostate_cancer'} <= listed

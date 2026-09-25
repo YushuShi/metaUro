@@ -52,7 +52,13 @@ def allowed(relative):
 
 
 def legacy_summary_artifact(relative):
-    """Identify source-owned summary assets superseded by top-level ``summary``."""
+    """Return whether a source output belongs in metaUro's central summary tree.
+
+    Source repositories still publish their historical ``Plot`` layouts.  We
+    verify those bytes as part of the source release, but metaUro regenerates
+    the public summary collection from the installed caches and must not retain
+    a second workbook/plot copy in ``updates`` or an assembled runtime tree.
+    """
     part = Path(relative)
     in_plot_tree = any(token.casefold() == 'plot' for token in part.parts[:-1])
     return in_plot_tree and (
@@ -120,6 +126,25 @@ def _effective_file(repo, source, relative, previous):
     return path if path.exists() else None
 
 
+def _reuse_with_current_provenance(entry, previous, source_commit, run_id):
+    """Reuse stored bytes while recording both their origin and latest release."""
+    reused = deepcopy(entry)
+    if reused.get('source_commit') == source_commit and reused.get('run_id') == run_id:
+        return reused
+    stored_commit = reused.get('stored_source_commit', reused.get('source_commit'))
+    stored_run = reused.get('stored_run_id', reused.get('run_id'))
+    if stored_commit is None:
+        stored_commit = (previous or {}).get('source_commit')
+    if stored_run is None:
+        stored_run = (previous or {}).get('run_id')
+    if stored_commit is not None:
+        reused['stored_source_commit'] = stored_commit
+    if stored_run is not None:
+        reused['stored_run_id'] = stored_run
+    reused.update(source_commit=source_commit, run_id=run_id)
+    return reused
+
+
 def _cumulative_outputs(source_root, manifest, manifest_path, seen=None):
     seen = set() if seen is None else seen
     run_id = manifest.get('run_id')
@@ -149,16 +174,24 @@ def verify_release(source_root, source):
     state = read(source_root / 'data/monthly_automation/state.json', {})
     if state.get('status') != 'completed':
         raise ValueError(f'{source}: a completed monthly source release is required')
+    if state.get('repository') != source:
+        raise ValueError(f'{source}: source state repository identity mismatch')
     manifest_path = bound(source_root, state['manifest_path'])
     if sha(manifest_path) != state.get('manifest_sha256'):
         raise ValueError(f'{source}: release manifest checksum mismatch')
     manifest = read(manifest_path)
     if manifest.get('status') != 'completed' or manifest.get('run_id') != state.get('run_id'):
         raise ValueError(f'{source}: incomplete or mismatched release')
+    if manifest.get('repository') != source:
+        raise ValueError(f'{source}: release repository identity mismatch')
     if manifest.get('end_date') != state.get('last_successful_publication_date'):
         raise ValueError(f'{source}: search cutoff differs from the release')
     run = manifest_path.parent
-    for relative, digest in manifest.get('raw_packet_sha256', {}).items():
+    raw = manifest.get('raw_packet_sha256')
+    required_raw = {'candidates.json', 'final_screening.json'}
+    if not isinstance(raw, dict) or not required_raw.issubset(raw):
+        raise ValueError(f'{source}: release lacks required screening packet receipts')
+    for relative, digest in raw.items():
         if sha(bound(run, relative)) != digest:
             raise ValueError(f'{source}: screening packet checksum mismatch')
     reviews = manifest.get('review_artifacts_sha256', {})
@@ -224,6 +257,13 @@ def sync_sources(repo_root, repos_root, require_through=None):
             if digest == original_sha:
                 files.pop(relative, None)
                 continue
+            previous_entry = (previous or {}).get('files', {}).get(relative)
+            if (previous_entry and not previous_entry.get('deleted')
+                    and previous_entry.get('sha256') == digest):
+                reused = _reuse_with_current_provenance(previous_entry, previous, commit, run_id)
+                reused['original_sha256'] = original_sha
+                files[relative] = reused
+                continue
             stored = f'versions/{version_id}/files/{relative}'
             destination = bound(target, stored)
             destination.parent.mkdir(parents=True, exist_ok=True)
@@ -231,15 +271,29 @@ def sync_sources(repo_root, repos_root, require_through=None):
             files[relative] = {'sha256': digest, 'original_sha256': original_sha,
                                'stored_path': stored, 'source_commit': commit, 'run_id': run_id}
         review_files = []
+        previous_reviews = {
+            (entry.get('filename'), entry.get('sha256')): entry
+            for entry in (previous or {}).get('review_files', [])
+            if isinstance(entry, dict)
+        }
         for relative, digest in reviews.items():
             if Path(relative).suffix != '.csv':
                 continue
             name = Path(relative).name
+            previous_entry = previous_reviews.get((name, digest))
+            if previous_entry:
+                previous_path = bound(target, previous_entry['stored_path'])
+                if not previous_path.is_file() or sha(previous_path) != digest:
+                    raise ValueError('Previously installed human-review artifact checksum mismatch')
+                review_files.append(_reuse_with_current_provenance(
+                    previous_entry, previous, commit, run_id))
+                continue
             stored = f'versions/{version_id}/review/{name}'
             path = bound(target, stored)
             path.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(bound(source_root, relative), path)
-            review_files.append({'filename': name, 'stored_path': stored, 'sha256': digest})
+            review_files.append({'filename': name, 'stored_path': stored, 'sha256': digest,
+                                 'source_commit': commit, 'run_id': run_id})
         manifest = {'schema_version': 1, 'source': source, 'run_id': run_id, 'source_commit': commit,
                     'source_manifest_sha256': state['manifest_sha256'],
                     'search_through': state['last_successful_publication_date'],

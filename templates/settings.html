@@ -23,7 +23,7 @@
     </section>
     <section class="settings-section" id="reference" aria-labelledby="reference-title">
       <h2 id="reference-title">Baseline incidence</h2>
-      <label class="settings-field uro-scope-field" for="disease">Disease scope<select id="disease">{% for group in scopes|groupby('group') %}<optgroup label="{{ group.grouper }}">{% for item in group.list %}<option value="{{ item.label }}" data-source="{{ item.source }}" data-scope-key="{{ item.id }}" data-disease="{{ item.label }}" {% if item.id == current.id %}selected{% endif %}>{{ item.label }}</option>{% endfor %}</optgroup>{% endfor %}</select></label>
+      <label class="settings-field uro-scope-field" for="disease">Disease scope<select id="disease">{% for item in scopes %}<option value="{{ item.label }}" data-source="{{ item.source }}" data-scope-key="{{ item.id }}" data-disease="{{ item.analysis_disease }}" data-parent-key="{{ item.parent_id or '' }}" data-hierarchy-depth="{{ item.hierarchy_depth }}"{% if item.hierarchy_depth %} data-subcategory="{{ item.id }}" class="disease-subcategory"{% endif %} {% if item.id == current.id %}selected{% endif %}>{{ ('\u00a0\u00a0' * item.hierarchy_depth) }}{{ item.label }}</option>{% endfor %}</select></label>
       <p id="settings-disease-name" class="settings-disease-name"></p><p id="settings-disease-definition"></p>
       <div class="settings-grid">
         <label class="settings-field" for="settings-baseline-source">Reference risk source<select id="settings-baseline-source"><option value="seer">Published SEER value</option><option value="manual">Manual risk</option></select></label>

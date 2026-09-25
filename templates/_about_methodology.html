@@ -1,0 +1,182 @@
+<p style="font-size: 0.9rem; color: #666; font-style: italic; margin-top: 10px;">
+    Source of exposure list: National Institutes of Health, Office of Dietary Supplements (n.d.). Dietary
+    supplement fact sheets.
+</p>
+
+<h2>Understanding Meta-Analysis in Urologic Cancers</h2>
+<p>
+    A <strong>Meta-Analysis</strong> is a statistical technique that combines the results of multiple scientific
+    studies. By pooling data from various sources, we can get a more precise estimate of an effect than any
+    single study can provide.
+</p>
+
+<h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; margin-top: 1.5rem; color: var(--text-primary);">Interpreting Heterogeneity (I²)</h3>
+<p>
+    The <strong>I² statistic</strong> measures the percentage of variation across studies that is due to heterogeneity
+    (true differences in effects) rather than chance. metaUro interprets I² based on standard guidelines:
+</p>
+<ul style="margin-bottom: 16px; padding-left: 20px;">
+    <li style="margin-bottom: 8px;"><strong>&lt; 25%:</strong> Low heterogeneity (indicating consistent findings across studies)</li>
+    <li style="margin-bottom: 8px;"><strong>25% to &lt; 50%:</strong> Moderate heterogeneity (suggesting some variability in results)</li>
+    <li style="margin-bottom: 8px;"><strong>50% to &lt; 75%:</strong> Substantial heterogeneity (reflecting considerable variability)</li>
+    <li style="margin-bottom: 8px;"><strong>&ge; 75%:</strong> Very high heterogeneity (reflecting highly inconsistent results)</li>
+</ul>
+<p>
+    If a pooled effect is statistically significant but has substantial or very high heterogeneity (I² &ge; 50%),
+    the results are flagged to be interpreted with caution due to the high variability between the included studies.
+</p>
+
+<h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; margin-top: 1.5rem; color: var(--text-primary);">Exposure Quantification</h3>
+<p>
+    To facilitate accurate comparison of findings, metaUro categorizes how exposure to food supplements or
+    nutritional factors was measured in each study:
+</p>
+<ul style="margin-bottom: 16px; padding-left: 20px;">
+    <li style="margin-bottom: 8px;">
+        <strong>Dietary Intake:</strong> The exposure is measured based on self-reported or observed consumption of
+        foods, beverages, or supplements. Common assessment methods include food frequency questionnaires (FFQs),
+        24-hour dietary recalls, and diet diaries.
+    </li>
+    <li style="margin-bottom: 8px;">
+        <strong>Human Biospecimen:</strong> The exposure is quantified objectively using biological samples collected
+        from study participants. This involves measuring levels of the nutrient, compound, or its metabolites in
+        biospecimens like blood (serum/plasma), urine, adipose tissue, or other body fluids.
+    </li>
+    <li style="margin-bottom: 8px;">
+        <strong>Unclear:</strong> If the study abstract does not specify how the exposure was measured or if there is
+        insufficient detail to categorize it, the exposure quantification type is marked as unclear.
+    </li>
+</ul>
+
+<h2>JBI Quality Appraisal</h2>
+<p>
+    Study quality is assessed using the <strong>JBI Critical Appraisal Tools</strong>, selected automatically based on
+    the study design identified by the LLM. Cross-Sectional is used as a fallback when the design is unclear.
+</p>
+
+<div style="display: flex; gap: 0; border-bottom: 2px solid #ddd; margin-bottom: 1rem; flex-wrap: wrap;">
+    <button class="jbi-tab" onclick="showJbiTab('rct')"
+        style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid transparent; color: #666;"
+        id="tab-rct">Clinical Trials (RCTs) (13 items)</button>
+    <button class="jbi-tab active" onclick="showJbiTab('cross-sectional')"
+        style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid var(--primary); color: var(--primary);"
+        id="tab-cross-sectional">Cross-Sectional (8 items)</button>
+    <button class="jbi-tab" onclick="showJbiTab('cohort')"
+        style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid transparent; color: #666;"
+        id="tab-cohort">Cohort (11 items)</button>
+    <button class="jbi-tab" onclick="showJbiTab('case-control')"
+        style="padding: 0.6rem 1.2rem; border: none; background: none; cursor: pointer; font-weight: 600; font-size: 0.9rem; border-bottom: 3px solid transparent; color: #666;"
+        id="tab-case-control">Case-Control (10 items)</button>
+</div>
+
+<div id="jbi-rct" class="jbi-panel" style="display: none;">
+    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Randomized Controlled Trials (2023 Revision)</h3>
+    <ol>
+        <li>Was true randomization used for assignment of participants to treatment groups?</li>
+        <li>Was allocation to treatment groups concealed?</li>
+        <li>Were treatment groups similar at baseline?</li>
+        <li>Were participants blind to treatment assignment?</li>
+        <li>Were those delivering the treatment blind to treatment assignment?</li>
+        <li>Were treatment groups treated identically other than the intervention of interest?</li>
+        <li>Were outcome assessors blind to treatment assignment?</li>
+        <li>Were outcomes measured in the same way for treatment groups?</li>
+        <li>Were outcomes measured in a reliable way?</li>
+        <li>Was follow-up complete and, if not, were differences between groups in terms of their follow-up adequately described and analyzed?</li>
+        <li>Were participants analyzed in the groups to which they were randomized?</li>
+        <li>Was appropriate statistical analysis used?</li>
+        <li>Was the trial design appropriate, and were any deviations from the standard RCT design (e.g., crossover, cluster) accounted for in the conduct and analysis of the trial?</li>
+    </ol>
+</div>
+
+<div id="jbi-cross-sectional" class="jbi-panel">
+    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Analytical Cross-Sectional Studies</h3>
+    <ol>
+        <li>Were the criteria for inclusion in the sample clearly defined?</li>
+        <li>Were the study subjects and the setting described in detail?</li>
+        <li>Was the exposure measured in a valid and reliable way?</li>
+        <li>Were objective, standard criteria used for measurement of the condition?</li>
+        <li>Were confounding factors identified?</li>
+        <li>Were strategies to deal with confounding factors stated?</li>
+        <li>Were the outcomes measured in a valid and reliable way?</li>
+        <li>Was appropriate statistical analysis used?</li>
+    </ol>
+</div>
+
+<div id="jbi-cohort" class="jbi-panel" style="display: none;">
+    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Cohort Studies</h3>
+    <ol>
+        <li>Were the two groups similar and recruited from the same population?</li>
+        <li>Were the exposures measured similarly to assign people to both exposed and unexposed groups?</li>
+        <li>Was the exposure measured in a valid and reliable way?</li>
+        <li>Were confounding factors identified?</li>
+        <li>Were strategies to deal with confounding factors stated?</li>
+        <li>Were the groups/participants free of the outcome at the start of the study (or at the moment of exposure)?</li>
+        <li>Were the outcomes measured in a valid and reliable way?</li>
+        <li>Was the follow up time reported and sufficient to be long enough for outcomes to occur?</li>
+        <li>Was follow up complete, and if not, were the reasons to loss to follow up described and explored?</li>
+        <li>Were strategies to address incomplete follow up utilized?</li>
+        <li>Was appropriate statistical analysis used?</li>
+    </ol>
+</div>
+
+<div id="jbi-case-control" class="jbi-panel" style="display: none;">
+    <h3 style="font-size: 1rem; margin-bottom: 0.5rem;">JBI Checklist for Case-Control Studies</h3>
+    <ol>
+        <li>Were the groups comparable other than the presence of disease in cases or the absence of disease in controls?</li>
+        <li>Were cases and controls matched appropriately?</li>
+        <li>Were the same criteria used for identification of cases and controls?</li>
+        <li>Was exposure measured in a standard, valid and reliable way?</li>
+        <li>Was exposure measured in the same way for cases and controls?</li>
+        <li>Were confounding factors identified?</li>
+        <li>Were strategies to deal with confounding factors stated?</li>
+        <li>Were outcomes assessed in a standard, valid and reliable way for cases and controls?</li>
+        <li>Was the exposure period of interest long enough to be meaningful?</li>
+        <li>Was appropriate statistical analysis used?</li>
+    </ol>
+</div>
+
+<p><strong>Scoring Criteria:</strong></p>
+<ul>
+    <li><strong>Score %:</strong> Calculated as the percentage of all checklist items rated as "Yes"; "No", "Unclear", and "NA" receive no credit.</li>
+    <li><strong>Good:</strong> &gt; 80% of items rated as "Yes" (i.e., 80.1% or higher).</li>
+    <li><strong>Moderate:</strong> 51% to 80% of items rated as "Yes" (i.e., 51.0% to 80.0% inclusive).</li>
+    <li><strong>Fair:</strong> &lt; 51% of items rated as "Yes" (i.e., 50.9% or lower; this includes exactly 50.0%).</li>
+</ul>
+<p style="font-size: 0.85rem; color: #666; font-style: italic; margin-top: 10px; line-height: 1.5;">
+    References:<br>
+    <span translate="no">• Barker, T. H., Stone, J. C., Sears, K., et al. (2023). The revised JBI critical appraisal tool for the assessment of risk of bias for randomized controlled trials. <i>JBI Evidence Synthesis</i>, 21(3), 494–506.</span> <a href="https://journals.lww.com/jbisrir/Fulltext/2023/03000/The_revised_JBI_critical_appraisal_tool_for_the.5.aspx?context=FeaturedArticles&amp;collectionId=2" target="_blank" style="color: var(--primary);">Journal Article Link</a>.<br>
+    <span translate="no">• Joanna Briggs Institute. Critical appraisal tools.</span> <a translate="no" href="https://jbi.global/critical-appraisal-tools" target="_blank" style="color: var(--primary);">https://jbi.global/critical-appraisal-tools</a>. Accessed 11 Feb 2026.
+</p>
+
+<hr style="border: 0; border-top: 1px solid var(--border); margin: 30px 0;">
+
+<div class="feedback-section" style="margin-top: 20px;">
+    <h2>Bug Reporting &amp; Feedback</h2>
+    <p>If you encounter any issues, bugs, or discrepancies in the extracted data, please report them to:</p>
+    <p style="margin-top: 15px; font-size: 1.05rem; line-height: 1.6;">
+        <strong>Margaux Delporte</strong><br>
+        Email: <a href="mailto:margauxdelporte@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--primary);">margauxdelporte@gmail.com</a>
+    </p>
+    <p style="margin-top: 15px; font-size: 1.05rem; line-height: 1.6;">
+        <strong>Yushu Shi</strong><br>
+        Email: <a href="mailto:shiyushu2006@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--primary);">shiyushu2006@gmail.com</a>
+    </p>
+    <p style="margin-top: 15px; font-size: 1.05rem; line-height: 1.6;">
+        <strong>Ziyu Liu</strong><br>
+        Email: <a href="mailto:ziyu.e.liu.gr@dartmouth.edu" style="color: var(--primary); text-decoration: none; font-weight: 600; border-bottom: 1px dashed var(--primary);">ziyu.e.liu.gr@dartmouth.edu</a>
+    </p>
+</div>
+
+<script>
+    function showJbiTab(tabName) {
+        document.querySelectorAll('.jbi-panel').forEach(p => p.style.display = 'none');
+        document.querySelectorAll('.jbi-tab').forEach(t => {
+            t.style.borderBottom = '3px solid transparent';
+            t.style.color = '#666';
+        });
+        document.getElementById('jbi-' + tabName).style.display = 'block';
+        const activeTab = document.getElementById('tab-' + tabName);
+        activeTab.style.borderBottom = '3px solid var(--primary)';
+        activeTab.style.color = 'var(--primary)';
+    }
+</script>

@@ -9,6 +9,7 @@
     return config.scopes.find(item => (item.source === (option?.dataset.source || config.source)) && [item.id,item.label].includes(option?.dataset.scopeKey || option?.value)) || config.current;
   }
   function exposureMode() {
+    if (config.page === 'selection') return 'no';
     const value = document.getElementById('include-subexposures')?.value || new URL(location.href).searchParams.get('include_subexposures') || 'yes';
     return ['no', 'false', '0'].includes(value.toLowerCase()) ? 'no' : 'yes';
   }
@@ -21,6 +22,10 @@
       const url = new URL(productPage || `${item.prefix}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.group_id === 'prostate' ? 'chatgpt' : ''}`, location.origin);
       url.searchParams.set('scope',item.id);
       url.searchParams.set('include_subexposures',mode);
+      const exposure = (document.getElementById('exposure') || document.getElementById('selection-exposure'))?.value;
+      if(exposure && (page === 'selection' || (config.page === 'selection' && page === 'evidence'))) {
+        url.searchParams.set('exposure', exposure);
+      }
       if(config.track === 'chatgpt' && item.group_id === 'prostate') url.searchParams.set('track','chatgpt');
       link.href = url.pathname + url.search;
     });
@@ -31,7 +36,7 @@
       const item = selectedScope();
       if (item.source !== config.source) {
         event.stopImmediatePropagation();
-        const url = new URL(config.page === 'settings' ? '/settings' : `${item.prefix}/`,location.origin);
+        const url = new URL(config.page === 'settings' ? '/settings' : `${item.prefix}/${config.page === 'summary' ? 'summary' : ''}`,location.origin);
         url.searchParams.set('scope',item.id);
         url.searchParams.set('include_subexposures',exposureMode());
         const exposure = document.getElementById('exposure')?.value;
@@ -47,6 +52,7 @@
         const url = new URL(location.href);url.searchParams.set('include_subexposures',event.target.value);history.replaceState(null,'',url);
       }
     }
+    if(['exposure','selection-exposure'].includes(event.target.id)) navigation();
   },true);
   document.addEventListener('DOMContentLoaded', () => {
     const exposure = new URL(location.href).searchParams.get('exposure');

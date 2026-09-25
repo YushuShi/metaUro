@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import json
+import math
 import os
 from pathlib import Path
 from datetime import datetime
@@ -11,19 +12,103 @@ from urllib.parse import urlencode
 from bs4 import BeautifulSoup
 from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_file, send_from_directory
 from source_worker import SOURCES, workers
-from study_selection import build_selection_flow
+from study_selection import build_selection_flow, selection_catalog
 from automation.sync_sources import assembled_source, load_overlay, bound, sha
-from summary_outputs import ensure_current, summary_mode
+from summary_outputs import ensure_current, summary_dir, summary_mode
 
 ROOT = Path(__file__).resolve().parent
 app = Flask(__name__)
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024
 LABELS = {'metaPee': 'Urinary tract', 'MetaVir': 'Prostate'}
 PUBLIC_SCOPES = {'metaPee': 'urinary', 'MetaVir': 'prostate'}
+SCOPE_PARENTS = {
+    'urothelial_carcinoma_of_the_bladder': 'bladder_cancer',
+    'squamous_cell_carcinoma_of_the_bladder': 'bladder_cancer',
+    'adenocarcinoma_of_the_bladder': 'bladder_cancer',
+    'small_cell_carcinoma_of_the_bladder': 'bladder_cancer',
+    'renal_cell_carcinoma': 'kidney_and_renal_pelvis_cancer',
+    'clear_cell_renal_cell_carcinoma': 'renal_cell_carcinoma',
+    'papillary_renal_cell_carcinoma': 'renal_cell_carcinoma',
+    'chromophobe_renal_cell_carcinoma': 'renal_cell_carcinoma',
+    'urothelial_carcinoma_of_the_renal_pelvis': 'kidney_and_renal_pelvis_cancer',
+    'renal_sarcoma': 'kidney_and_renal_pelvis_cancer',
+    'aggressive_prostate_cancer': 'prostate_cancer',
+}
+SUMMARY_MANIFESTS = {
+    'metaPee': 'summary/{mode}/summary_manifest.json',
+    'MetaVir': 'summary/{mode}/summary_manifest.json',
+}
 UI_LABEL_TRANSLATIONS = {
     'Download': {'zh-CN': '下载', 'zh-TW': '下載', 'nl': 'Downloaden', 'ko': '다운로드'},
     'VERIFY': {'zh-CN': '核实', 'zh-TW': '驗證', 'nl': 'Verifiëren', 'ko': '검증'},
+    'Egger’s test was not performed because fewer than {count} studies were available. With a small number of studies, the test generally has insufficient power to reliably detect funnel plot asymmetry.': {
+        'zh-CN': '由于可用研究少于 {count} 项，未进行 Egger 检验。研究数量较少时，该检验通常没有足够的统计效能来可靠地检测漏斗图不对称。',
+        'zh-TW': '由於可用研究少於 {count} 項，未進行 Egger 檢定。研究數量較少時，此檢定通常沒有足夠的統計效能來可靠地偵測漏斗圖不對稱。',
+        'nl': 'De Egger-test werd niet uitgevoerd omdat minder dan {count} studies beschikbaar waren. Bij een klein aantal studies heeft de test doorgaans onvoldoende onderscheidingsvermogen om asymmetrie van het trechterdiagram betrouwbaar vast te stellen.',
+        'ko': '이용 가능한 연구가 {count}개 미만이어서 Egger 검정을 수행하지 않았습니다. 연구 수가 적으면 이 검정은 일반적으로 깔때기 그림 비대칭을 신뢰성 있게 탐지할 검정력이 부족합니다.',
+    },
+    'Egger’s test could not be reliably estimated for this meta-analysis.': {
+        'zh-CN': '无法为该荟萃分析可靠地估计 Egger 检验结果。',
+        'zh-TW': '無法為此薈萃分析可靠地估計 Egger 檢定結果。',
+        'nl': 'De Egger-test kon voor deze meta-analyse niet betrouwbaar worden geschat.',
+        'ko': '이 메타분석에서는 Egger 검정을 신뢰성 있게 추정할 수 없었습니다.',
+    },
+    'Egger’s test indicates significant funnel plot asymmetry (p={p}) for the meta-analysis of {exposure} and {disease}. This finding suggests the presence of small-study effects, which may arise from publication bias or other sources of heterogeneity related to study size. The pooled estimate should therefore be interpreted with appropriate caution.': {
+        'zh-CN': 'Egger 检验提示 {exposure} 与 {disease} 荟萃分析的漏斗图存在显著不对称（p={p}）。这一结果提示存在小样本研究效应，可能源于发表偏倚或其他与研究规模相关的异质性来源。因此，应谨慎解释合并估计值。',
+        'zh-TW': 'Egger 檢定顯示 {exposure} 與 {disease} 薈萃分析的漏斗圖存在顯著不對稱（p={p}）。此結果提示存在小型研究效應，可能源於發表偏倚或其他與研究規模相關的異質性來源。因此，應適當謹慎解讀合併估計值。',
+        'nl': 'De Egger-test wijst op significante asymmetrie van het trechterdiagram (p={p}) voor de meta-analyse van {exposure} en {disease}. Deze bevinding duidt op kleinstudie-effecten, die kunnen voortkomen uit publicatiebias of andere bronnen van heterogeniteit die samenhangen met de onderzoeksgrootte. De gepoolde schatting moet daarom met gepaste voorzichtigheid worden geïnterpreteerd.',
+        'ko': 'Egger 검정은 {exposure} 노출과 {disease} 메타분석에서 유의한 깔때기 그림 비대칭을 나타냅니다(p={p}). 이 결과는 출판편향 또는 연구 규모와 관련된 다른 이질성 원인에서 발생할 수 있는 소규모 연구 효과가 있음을 시사합니다. 따라서 통합 추정치는 적절한 주의를 기울여 해석해야 합니다.',
+    },
+    'Egger’s test does not indicate significant funnel plot asymmetry (p={p}) for the meta-analysis of {exposure} and {disease}. There is no statistical evidence of small-study effects based on this test, although the absence of significance does not rule out publication bias.': {
+        'zh-CN': 'Egger 检验未提示 {exposure} 与 {disease} 荟萃分析的漏斗图存在显著不对称（p={p}）。根据该检验，没有小样本研究效应的统计学证据，但结果不显著并不能排除发表偏倚。',
+        'zh-TW': 'Egger 檢定未顯示 {exposure} 與 {disease} 薈萃分析的漏斗圖存在顯著不對稱（p={p}）。根據此檢定，沒有小型研究效應的統計證據，但結果不顯著並不能排除發表偏倚。',
+        'nl': 'De Egger-test wijst niet op significante asymmetrie van het trechterdiagram (p={p}) voor de meta-analyse van {exposure} en {disease}. Deze test levert geen statistisch bewijs voor kleinstudie-effecten, hoewel het ontbreken van significantie publicatiebias niet uitsluit.',
+        'ko': 'Egger 검정은 {exposure} 노출과 {disease} 메타분석에서 유의한 깔때기 그림 비대칭을 나타내지 않습니다(p={p}). 이 검정에 근거한 소규모 연구 효과의 통계적 근거는 없지만, 유의하지 않다는 사실이 출판편향을 배제하지는 않습니다.',
+    },
 }
+
+EGGERS_MIN_STUDIES = 10
+EGGERS_FEWER_THAN_TEN_MESSAGE = (
+    'Egger’s test was not performed because fewer than 10 studies were available. '
+    'With a small number of studies, the test generally has insufficient power to '
+    'reliably detect funnel plot asymmetry.'
+)
+EGGERS_UNAVAILABLE_MESSAGE = (
+    'Egger’s test could not be reliably estimated for this meta-analysis.'
+)
+
+
+def current_egger_interpretation(result, analysis_request=None):
+    """Return current presentation prose without mutating source evidence."""
+    if not isinstance(result, dict) or not isinstance(result.get('headline'), dict):
+        return None
+    studies = result.get('studies') if isinstance(result.get('studies'), list) else []
+    if len(studies) < EGGERS_MIN_STUDIES:
+        return EGGERS_FEWER_THAN_TEN_MESSAGE
+    p_value = result['headline'].get('eggers_p')
+    try:
+        p_value = float(p_value)
+        if not math.isfinite(p_value):
+            raise ValueError
+    except (TypeError, ValueError):
+        return EGGERS_UNAVAILABLE_MESSAGE
+    request_data = analysis_request if isinstance(analysis_request, dict) else {}
+    exposure = str(result.get('exposure') or request_data.get('exposure') or 'the selected exposure')
+    disease = str(result.get('disease') or request_data.get('disease') or 'the selected disease')
+    if p_value < 0.05:
+        return (
+            f'Egger’s test indicates significant funnel plot asymmetry (p={p_value:.4f}) '
+            f'for the meta-analysis of {exposure} and {disease}. This finding suggests '
+            'the presence of small-study effects, which may arise from publication bias '
+            'or other sources of heterogeneity related to study size. The pooled estimate '
+            'should therefore be interpreted with appropriate caution.'
+        )
+    return (
+        f'Egger’s test does not indicate significant funnel plot asymmetry (p={p_value:.4f}) '
+        f'for the meta-analysis of {exposure} and {disease}. There is no statistical '
+        'evidence of small-study effects based on this test, although the absence of '
+        'significance does not rule out publication bias.'
+    )
 
 
 def resolve_source(value):
@@ -43,9 +128,80 @@ def scope_catalog():
     for source in SOURCES:
         catalog = json.loads((ROOT / 'sources' / source / 'static/seer-baseline.json').read_text())
         for disease in catalog['diseases']:
-            result.append({'source': source, 'group': LABELS[source], 'id': disease['id'], 'label': disease['label'],
-                           'prefix': public_prefix(source), 'group_id': PUBLIC_SCOPES[source]})
+            scope_id = disease['id']
+            result.append({
+                'source': source,
+                'group': LABELS[source],
+                'id': scope_id,
+                'label': disease['label'],
+                'prefix': public_prefix(source),
+                'group_id': PUBLIC_SCOPES[source],
+                'parent_id': disease.get('parent_id') or SCOPE_PARENTS.get(scope_id),
+            })
+    by_id = {item['id']: item for item in result}
+    for item in result:
+        depth, parent_id, seen = 0, item['parent_id'], {item['id']}
+        while parent_id:
+            if parent_id in seen or parent_id not in by_id:
+                raise ValueError(f'Invalid disease-scope hierarchy for {item["id"]}')
+            seen.add(parent_id)
+            depth += 1
+            parent_id = by_id[parent_id]['parent_id']
+        item['hierarchy_depth'] = depth
+        parent = by_id.get(item['parent_id'])
+        item['analysis_disease'] = (
+            parent['label'] if item['source'] == 'MetaVir' and parent else item['label'])
     return result
+
+
+def summary_scope_catalog(include_subexposures='yes'):
+    """Return the cross-source scopes backed by saved summary manifests."""
+    mode = 'no' if str(include_subexposures).strip().lower() in {'no', 'false', '0'} else 'yes'
+    catalog = scope_catalog()
+    available = set()
+    for source, pattern in SUMMARY_MANIFESTS.items():
+        try:
+            manifest_path = ROOT / pattern.format(mode=mode)
+            manifest = json.loads(manifest_path.read_text())
+            scopes = manifest.get('scopes') or {}
+            available.update(
+                (source, scope_id)
+                for scope_id, details in scopes.items()
+                if isinstance(details, dict)
+                and scope_id in manifest.get('sources', {}).get(source, {}).get('scopes', [])
+                and (details.get('workbooks') or {}).get('combined', {}).get('available') is True
+            )
+        except (OSError, ValueError, TypeError, json.JSONDecodeError):
+            # Preserve access if a future source release briefly omits its
+            # manifest; the source page will still report unavailable outputs.
+            available.update((source, item['id']) for item in catalog if item['source'] == source)
+    return [item for item in catalog if (item['source'], item['id']) in available]
+
+
+def replace_scope_selector(soup, ctx):
+    """Render one cross-repository disease hierarchy without source optgroups."""
+    selector = soup.select_one('#disease, #summary-scope, #summary-disease')
+    if not selector:
+        return
+    is_summary = selector.get('id', '').startswith('summary-')
+    items = summary_scope_catalog(ctx['include_subexposures']) if is_summary else ctx['scopes']
+    selected_id = ctx['current']['id'] if any(
+        item['id'] == ctx['current']['id'] for item in items) else (items[0]['id'] if items else '')
+    selector.clear()
+    for item in items:
+        option = soup.new_tag('option', value=item['id'] if is_summary else item['label'])
+        option['data-source'] = item['source']
+        option['data-scope-key'] = item['id']
+        option['data-disease'] = item['analysis_disease']
+        option['data-parent-key'] = item['parent_id'] or ''
+        option['data-hierarchy-depth'] = str(item['hierarchy_depth'])
+        if item['hierarchy_depth']:
+            option['class'] = ['disease-subcategory']
+            option['data-subcategory'] = item['id']
+        if item['id'] == selected_id:
+            option['selected'] = ''
+        option.string = '\u00a0\u00a0' * item['hierarchy_depth'] + item['label']
+        selector.append(option)
 
 
 def context(source, page='evidence'):
@@ -103,34 +259,32 @@ def decorate_html(body, source, path):
     for heading in soup.select('#studies-table thead th'):
         if heading.get_text(' ', strip=True).upper() == 'VERIFIED':
             heading.string = 'VERIFY'
-    disease = soup.select_one('#disease')
-    if disease:
-        selected = next((o for o in disease.find_all('option') if o.get('selected') is not None), disease.find('option'))
-        selected_label = ctx['current']['label'] if request.args.get('scope') else (selected.get('value') if selected else '')
-        for option in disease.find_all('option'):
-            option['data-source'] = source
-            option.attrs.pop('selected', None)
-            if option.get('value') == selected_label:
-                option['selected'] = ''
-        group = soup.new_tag('optgroup', label=LABELS[next(s for s in SOURCES if s != source)])
-        for item in ctx['scopes']:
-            if item['source'] != source:
-                option = soup.new_tag('option', value=item['label'])
-                option['data-source'], option['data-scope-key'] = item['source'], item['id']
-                option.string = item['label']
-                group.append(option)
-        disease.append(group)
+    # The source applications retain these explanatory controls, but metaUro's
+    # consolidated interface keeps the forest and extracted-study sections terse.
+    for selector in ('#forest-scale-label', '#analysis-baseline-notice', '.poolability-help'):
+        for node in soup.select(selector):
+            node.decompose()
+    replace_scope_selector(soup, ctx)
     if ctx['page'] == 'summary' and soup.main:
-        notice = soup.new_tag('div', attrs={'class': 'uro-summary-notice'})
-        notice.string = 'These are saved summary plots and workbooks. Settings apply to the interactive evidence analysis.'
-        soup.main.insert(0, notice)
-        picker = soup.new_tag('nav', attrs={'class': 'uro-summary-notice', 'aria-label': 'Disease summaries'})
-        for collection in SOURCES:
-            link = soup.new_tag('a', href=f'{public_prefix(collection)}/summary?include_subexposures={ctx["include_subexposures"]}')
-            link.string = LABELS[collection] + ' summaries'
-            picker.append(link)
-            picker.append('   ·   ' if collection == SOURCES[0] else '')
-        soup.main.insert(0, picker)
+        downloads = list(soup.select('a.summary-download'))
+        combined = next((node for node in downloads
+                         if '/summary/workbooks/' in node.get('href', '')
+                         and '/combined' in node.get('href', '')), None)
+        if combined:
+            combined.extract()
+            combined.string = 'Download summary workbook'
+            scope_heading = soup.select_one('.summary-results-heading h2')
+            scope_label = scope_heading.get_text(' ', strip=True) if scope_heading else ctx['current']['label']
+            combined['aria-label'] = f'Download summary workbook for {scope_label}'
+            target = soup.select_one('.summary-results-heading .summary-counts') or soup.select_one('.summary-results-heading')
+            if target:
+                target.append(combined)
+        for node in downloads:
+            if node is not combined and node.parent:
+                node.decompose()
+        for note in soup.select('.summary-method-note'):
+            if note.get_text(' ', strip=True).startswith('Summary eligibility:'):
+                note.decompose()
     config = dict(source=source, prefix=ctx['prefix'], current=ctx['current'], scopes=ctx['scopes'], page=ctx['page'], track=ctx['track'])
     bootstrap = soup.new_tag('script')
     bootstrap.string = 'window.MetaUro = ' + json.dumps(config).replace('<', '\\u003c') + ';'
@@ -148,7 +302,9 @@ def decorate_html(body, source, path):
         minimum['title'] = '0 includes studies regardless of case count. Missing cases use N × the baseline risk selected in Settings.'
     for script in soup.select('script[src]'):
         if '/static/script.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=selected-case-counts-20260918'
+            script['src'] = script['src'].split('?')[0] + '?v=egger-interpretation-20260921'
+        elif '/static/i18n.js' in script['src']:
+            script['src'] = script['src'].split('?')[0] + '?v=egger-interpretation-20260921'
     # Relative downloads/links produced by source templates must stay with their source.
     for node in soup.select('[href], [src], [action], [data]'):
         for attr in ('href', 'src', 'action', 'data'):
@@ -200,17 +356,22 @@ def study_selection():
     if source is None:
         abort(404)
     ctx = context(source, 'selection')
-    reviews = [dict(label=LABELS[item], current=item == source,
-                    href='/study-selection?' + urlencode(dict(group=PUBLIC_SCOPES[item],
-                        include_subexposures=ctx['include_subexposures']))) for item in SOURCES]
-    html = render_template('study_selection.html', **ctx, flow=build_selection_flow(source), reviews=reviews)
+    available = {item: set(selection_catalog(item)) for item in SOURCES}
+    selection_scopes = [item for item in ctx['scopes'] if item['label'] in available[item['source']]]
+    flow = build_selection_flow(source, ctx['current']['label'], request.args.get('exposure'))
+    analysis_query = {'scope': ctx['current']['id'], 'include_subexposures': 'no'}
+    if flow.get('exposure'):
+        analysis_query['exposure'] = flow['exposure']
+    analysis_href = ctx['prefix'] + '/?' + urlencode(analysis_query)
+    html = render_template('study_selection.html', **ctx, flow=flow,
+                           selection_scopes=selection_scopes, analysis_href=analysis_href)
     monthly = load_overlay(ROOT, source)
     if monthly:
         soup = BeautifulSoup(html, 'html.parser')
         section = soup.new_tag('section', attrs={'class': 'selection-notes'})
         heading = soup.new_tag('h2'); heading.string = 'Monthly updates'; section.append(heading)
         note = soup.new_tag('p')
-        note.string = 'Searching is complete through ' + monthly['search_through'] + '. Monthly screening is reported separately from this historical flow diagram.'
+        note.string = 'Searching is complete through ' + monthly['search_through'] + '. Monthly screening remains separate until the reviewed update is released.'
         section.append(note)
         link = soup.new_tag('a', href='/monthly-review/' + PUBLIC_SCOPES[source])
         link.string = 'View monthly status and human-review tables'; section.append(link)
@@ -233,7 +394,7 @@ def monthly_review(group):
     note = soup.new_tag('p')
     note.string = ('Searching completed through ' + monthly['search_through'] + '. ' +
                    str(monthly.get('human_review_pending', 0)) + ' exposure–disease contexts await human review. ' +
-                   'The historical study-selection diagram retains its original cohort counts.') if monthly else 'No monthly update has been synchronized yet.'
+                   'The study-selection charts continue to use the released screening audit.') if monthly else 'No monthly update has been synchronized yet.'
     main.append(note)
     for entry in (monthly or {}).get('review_files', []):
         paragraph = soup.new_tag('p')
@@ -261,6 +422,7 @@ def monthly_review_download(group, filename):
 @app.route('/evidence/<source>/<path:path>', methods=['GET', 'POST', 'HEAD'])
 def evidence(source, path):
     source = resolve_source(source)
+    analysis_request = None
     if source is None:
         abort(404)
     if path in {'verify', 'exclude'}:
@@ -271,6 +433,7 @@ def evidence(source, path):
         payload = request.get_json(silent=True)
         if not isinstance(payload, dict):
             return jsonify(error='An analysis request must be a JSON object.'), 400
+        analysis_request = payload
         settings = payload.get('analysis_settings')
         if isinstance(settings, dict) and settings.get('baseline_source') == 'manual':
             risk = settings.get('manual_risk_percent')
@@ -339,6 +502,8 @@ def evidence(source, path):
         body = decorate_html(body.decode('utf-8'), source, path).encode()
     elif ('javascript' in content_type or path.endswith('.js')) and body:
         body = prefix_text(body.decode('utf-8'), prefix).encode()
+        if path == 'static/i18n.js':
+            body = body.replace(b'i18n-translations.json?v=1.4', b'i18n-translations.json?v=1.5')
         if path == 'static/script.js':
             body = body.replace(b"setSelectedExposure('Vitamin A');", b"setSelectedExposure(new URL(location.href).searchParams.get('exposure') || 'Vitamin A');")
             body = body.replace(b'metapee_extracted_studies', b'metauro_extracted_studies').replace(b'metavir_extracted_studies', b'metauro_extracted_studies')
@@ -350,6 +515,10 @@ def evidence(source, path):
         body = prefix_text(body.decode('utf-8'), prefix).encode()
     elif 'application/json' in content_type and body and request.method != 'HEAD' and status not in {204, 304}:
         payload = json.loads(body)
+        if path in {'analyze', 'reanalyze'} and isinstance(payload, dict):
+            interpretation = current_egger_interpretation(payload, analysis_request)
+            if interpretation is not None:
+                payload['headline']['funnel_interpretation'] = interpretation
         if path == 'static/i18n-translations.json' and isinstance(payload, dict):
             payload.update(UI_LABEL_TRANSLATIONS)
         monthly = load_overlay(ROOT, source)

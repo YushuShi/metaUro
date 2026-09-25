@@ -141,11 +141,13 @@
         <h1>About metaUro: Urologic Cancer &amp; Nutrition</h1>
 
         <div class="disclaimer-box">
-            <div class="disclaimer-title">⚠️ CAUTION: AI-Generated Results</div>
+            <div class="disclaimer-title">
+                ⚠️ CAUTION: AI-Generated Results
+            </div>
             <p>
-                <strong>This tool includes data extracted from scientific literature with automated methods.</strong>
-                Although the evidence is reviewed and released from saved source collections, automated extraction can
-                occasionally misinterpret values, sample sizes, or study designs.
+                <strong>This tool uses automated algorithms to extract data from scientific abstracts.</strong>
+                While we strive for accuracy, the extraction process may occasionally misinterpret extraction values,
+                sample sizes, or study designs.
             </p>
             <p style="margin-bottom: 0;">
                 <strong>Always verify the extracted data against the original publication before making any clinical or
@@ -156,50 +158,20 @@
 
         <h2>How It Works</h2>
         <p>
-            metaUro lets you explore associations between nutritional exposures and cancer incidence across 14 disease
-            scopes, including bladder, kidney, renal pelvis, prostate, and their supported subtypes. Choose a disease and
-            exposure to examine the studies, forest plots, effect estimates, and sensitivity analyses. Use the summaries
-            to compare evidence across nutritional exposures.
+            metaUro uses large language models to facilitate rapid synthesis of evidence regarding food supplements
+            (nutrition) and <strong>urologic cancers</strong>. When you enter a nutritional exposure (e.g., "Coffee",
+            "Vitamin D", "Soy"), the tool:
         </p>
         <ol>
-            <li><strong>Selects a disease scope and nutritional exposure</strong> from the released evidence collections.</li>
-            <li><strong>Shows extracted studies</strong> with their screening and quality assessments.</li>
-            <li><strong>Synthesizes eligible evidence</strong> using the selected analysis settings.</li>
-            <li><strong>Visualizes results</strong> with forest, funnel, Baujat, sensitivity, and summary views when available.</li>
+            <li><strong>Searches PubMed</strong> for relevant clinical trials and observational studies linking the
+                exposure to the selected urologic cancer outcome.</li>
+            <li><strong>Finds Key Studies</strong> on PubMed using natural language processing to extract effect sizes
+                (odds ratios, hazard ratios) and confidence intervals.</li>
+            <li><strong>Synthesizes Evidence</strong> by pooling the results using a Random-Effects Meta-Analysis model.
+            </li>
+            <li><strong>Visualizes Results</strong> in a Forest Plot to show the overall trend.</li>
         </ol>
-        <div class="uro-about-actions about-section-action">
-            <a class="header-action header-action--primary" href="/evidence/urinary/">Explore evidence</a>
-            <a class="header-action" href="/evidence/urinary/summary">Urinary tract summaries</a>
-            <a class="header-action" href="/evidence/prostate/summary">Prostate summaries</a>
-        </div>
-
-        <h2>Analysis Settings</h2>
-        <p>
-            Settings control the reference population, age and observation interval, effect-measure display, and
-            sample-size planning. Manual reference risks are saved separately for each disease. A subtype does not inherit
-            its parent cancer’s baseline.
-        </p>
-        <p>
-            Your settings and study selections update the interactive analysis. Saved summary plots and workbooks retain
-            their original analysis settings.
-        </p>
-        <a class="header-action about-section-action" href="/settings">Open Settings</a>
-
-        <h2>Evidence Views</h2>
-        <p>
-            The evidence pages show the saved studies and their screening and quality assessments. For prostate cancer, a
-            separate ChatGPT evidence view is also available.
-        </p>
-        <a class="header-action about-section-action" href="/evidence/prostate/chatgpt">Open ChatGPT evidence view</a>
-
-        <h2>Study Selection</h2>
-        <p>
-            Explore the study-selection process in a flow diagram adapted from PRISMA 2020
-            (<a href="https://doi.org/10.1371/journal.pmed.1003583">Page, McKenzie, et al., 2021</a>). The diagram
-            distinguishes publication counts from study counts and identifies stages that are not recorded in the
-            screening logs.
-        </p>
-        <a class="header-action about-section-action" href="/study-selection">View study selection</a>
+        {% include "_about_methodology.html" %}
     </main>
 
     <footer class="uro-footer">metaUro · Urologic cancer &amp; nutrition</footer>

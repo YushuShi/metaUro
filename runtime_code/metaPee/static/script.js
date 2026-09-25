@@ -456,22 +456,26 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         let match = original.match(
-            /^Egger's test indicates no significant funnel plot asymmetry \(p=([^)]*)\)\. The distribution of studies appears symmetric, suggesting a lower risk of publication bias\.$/i
+            /^Egger’s test does not indicate significant funnel plot asymmetry \(p=([^)]*)\) for the meta-analysis of (.+) and (.+)\. There is no statistical evidence of small-study effects based on this test, although the absence of significance does not rule out publication bias\.$/i
         );
         if (match) {
             elements.funnelInterpretation.textContent = uiText(
-                "Egger's test indicates no significant funnel plot asymmetry (p={p}). The distribution of studies appears symmetric, suggesting a lower risk of publication bias.",
-                { p: match[1] }
+                "Egger’s test does not indicate significant funnel plot asymmetry (p={p}) for the meta-analysis of {exposure} and {disease}. There is no statistical evidence of small-study effects based on this test, although the absence of significance does not rule out publication bias.",
+                {
+                    p: match[1],
+                    exposure: localizedAnalysisLabel(match[2]),
+                    disease: localizedAnalysisLabel(match[3])
+                }
             );
             return;
         }
 
         match = original.match(
-            /^The significant funnel plot asymmetry \(Egger's p=([^)]*)\) indicates substantial publication bias in this meta-analysis on (.+) and (.+)\. This specific pattern suggests that smaller studies with smaller or null effects may be underrepresented, compromising the reliability of the pooled estimate and potentially leading to an overestimation of the true association\.$/i
+            /^Egger’s test indicates significant funnel plot asymmetry \(p=([^)]*)\) for the meta-analysis of (.+) and (.+)\. This finding suggests the presence of small-study effects, which may arise from publication bias or other sources of heterogeneity related to study size\. The pooled estimate should therefore be interpreted with appropriate caution\.$/i
         );
         if (match) {
             elements.funnelInterpretation.textContent = uiText(
-                "The significant funnel plot asymmetry (Egger's p={p}) indicates substantial publication bias in this meta-analysis on {exposure} and {disease}. This specific pattern suggests that smaller studies with smaller or null effects may be underrepresented, compromising the reliability of the pooled estimate and potentially leading to an overestimation of the true association.",
+                "Egger’s test indicates significant funnel plot asymmetry (p={p}) for the meta-analysis of {exposure} and {disease}. This finding suggests the presence of small-study effects, which may arise from publication bias or other sources of heterogeneity related to study size. The pooled estimate should therefore be interpreted with appropriate caution.",
                 {
                     p: match[1],
                     exposure: localizedAnalysisLabel(match[2]),
@@ -496,18 +500,18 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
 
-        match = original.match(/^Egger’s test is generally not recommended when fewer than (\d+) studies are available\.$/i);
+        match = original.match(/^Egger’s test was not performed because fewer than (\d+) studies were available\. With a small number of studies, the test generally has insufficient power to reliably detect funnel plot asymmetry\.$/i);
         if (match) {
             elements.funnelInterpretation.textContent = uiText(
-                'Egger’s test is generally not recommended when fewer than {count} studies are available.',
+                'Egger’s test was not performed because fewer than {count} studies were available. With a small number of studies, the test generally has insufficient power to reliably detect funnel plot asymmetry.',
                 { count: match[1] }
             );
             return;
         }
 
-        if (/^Insufficient studies to perform formal publication bias testing\.$/i.test(original)) {
+        if (/^Egger’s test could not be reliably estimated for this meta-analysis\.$/i.test(original)) {
             elements.funnelInterpretation.textContent = uiText(
-                'Insufficient studies to perform formal publication bias testing.'
+                'Egger’s test could not be reliably estimated for this meta-analysis.'
             );
             return;
         }
@@ -1415,14 +1419,10 @@ document.addEventListener('DOMContentLoaded', async () => {
                     </div>
                 </td>
                 <td>
-                    <button onclick="window.verifyStudy('${study.PMID}', this)" style="cursor: pointer;">✓ ${study.verifications || 0}</button>
+                    <span class="review-count" title="Saved verification count" aria-label="Verified: ${study.verifications || 0}">✓ ${study.verifications || 0}</span>
                 </td>
                 <td>
-                    <button onclick="window.excludeStudy('${study.PMID}', this)"
-                            style="cursor: pointer; background: ${(study.exclusion_flags || 0) > 0 ? '#f57c00' : '#6c757d'}; color: white; border: none; padding: 2px 8px; border-radius: 4px;"
-                            title="Flag for developer review (2 flags email developers; results do not change)">
-                        ⚑ ${study.exclusion_flags || 0}
-                    </button>
+                    <span class="review-count review-count--exclude" title="Saved exclusion-flag count" aria-label="Exclude flags: ${study.exclusion_flags || 0}">⚑ ${study.exclusion_flags || 0}</span>
                 </td>
                 <td class="notranslate" translate="no" style="font-size: 0.75em;" title="${unselectedReason}">${study.Reference || '-'}</td>
                 <td style="font-size: 0.75em;" title="${unselectedReason}">

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About metaUro: Urologic Cancer &amp; Nutrition</title>
+    <title>About MetaUro: Urologic Cancer &amp; Nutrition</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;700&family=Inter:wght@400;500;600&display=swap"
         rel="stylesheet">
@@ -122,6 +122,9 @@
 </head>
 
 <body>
+    <script>window.MetaUro={{ {'source': source, 'prefix': prefix, 'current': current, 'scopes': scopes, 'page': page, 'track': track}|tojson }};</script>
+    <script src="/static/metauro.js" defer></script>
+    {% include '_site_header.html' %}
     <div class="background-globes" aria-hidden="true">
         <div class="globe globe-1"></div>
         <div class="globe globe-2"></div>
@@ -129,16 +132,8 @@
     </div>
 
     <main class="about-container">
-        <div class="about-toolbar">
-            <a href="{{ prefix }}/?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}" class="back-link">← Back to Tool</a>
-            <nav class="about-toolbar-links" aria-label="About page tools">
-                <a href="/settings?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}">Settings</a>
-                <a href="{{ prefix }}/summary?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}">Summary</a>
-                <a href="/study-selection?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}">Study selection</a>
-            </nav>
-        </div>
 
-        <h1>About metaUro: Urologic Cancer &amp; Nutrition</h1>
+        <h1>About MetaUro: Urologic Cancer &amp; Nutrition</h1>
 
         <div class="disclaimer-box">
             <div class="disclaimer-title">
@@ -158,7 +153,7 @@
 
         <h2>How It Works</h2>
         <p>
-            metaUro uses large language models to facilitate rapid synthesis of evidence regarding food supplements
+            MetaUro uses large language models to facilitate rapid synthesis of evidence regarding food supplements
             (nutrition) and <strong>urologic cancers</strong>. When you enter a nutritional exposure (e.g., "Coffee",
             "Vitamin D", "Soy"), the tool:
         </p>
@@ -174,7 +169,7 @@
         {% include "_about_methodology.html" %}
     </main>
 
-    <footer class="uro-footer">metaUro · Urologic cancer &amp; nutrition</footer>
+    <footer class="uro-footer">MetaUro · Urologic cancer &amp; nutrition</footer>
 </body>
 
 </html>

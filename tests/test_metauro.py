@@ -107,7 +107,7 @@ def test_source_page_assets_and_summary(client, source):
     response = client.get(f'/evidence/{source}/')
     assert response.status_code == 200, response.data[:1000]
     soup = BeautifulSoup(response.data, 'html.parser')
-    assert soup.title.string.startswith('metaUro')
+    assert soup.title.string.startswith('MetaUro')
     assert_unified_scope_hierarchy(soup.select_one('#disease'), 14)
     assert not soup.select_one('#include-subexposures')
     assert 'Saved evidence' not in soup.header.get_text()
@@ -288,12 +288,12 @@ def test_requested_labels_cover_templates_runtime_exports_and_localization(clien
     }
 
 
-def test_chatgpt_track_remains_visible_and_settings_aware(client):
+def test_chatgpt_track_remains_settings_aware_without_a_redundant_banner(client):
     response = client.get('/evidence/MetaVir/chatgpt')
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.body['data-evidence-track'] == 'chatgpt'
-    assert 'ChatGPT view' in soup.select_one('.evidence-track-label').get_text()
+    assert not soup.select_one('.evidence-track-label')
     settings = client.get('/settings?source=MetaVir&track=chatgpt')
     assert b'"track": "chatgpt"' in settings.data
 
@@ -319,7 +319,8 @@ def test_about_page_matches_the_metafemina_presentation_structure(client):
     container = soup.select_one('main.about-container')
     assert container
     assert len(soup.select('.background-globes .globe')) == 3
-    assert container.select_one('.about-toolbar .back-link').get_text(strip=True) == '← Back to Tool'
+    assert soup.select_one('header.site-header a.logo')
+    assert not container.select_one('.about-toolbar')
     assert container.select_one('.disclaimer-box .disclaimer-title').get_text(' ', strip=True) == '⚠️ CAUTION: AI-Generated Results'
     assert [heading.get_text(' ', strip=True) for heading in container.select('h2')] == [
         'How It Works',

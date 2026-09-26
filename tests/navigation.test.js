@@ -126,9 +126,11 @@ test('Study selection preserves disease, exposure, and analysis track',()=>{
     assert.equal(page.link('evidence').searchParams.get('include_subexposures'),'no');
     assert.equal(page.link('evidence').searchParams.get('exposure'),'Vitamin D');
 });
-test('Study-selection navigation always returns to the matching direct-evidence view',()=>{
-    const page=runtime({page:'selection',scope:0,mode:'yes'});
-    for(const link of page.links)assert.equal(new URL(link.href,page.url).searchParams.get('include_subexposures'),'no');
+test('Study-selection navigation preserves the requested related-exposure preference',()=>{
+    for(const mode of ['yes','no']) {
+        const page=runtime({page:'selection',scope:0,mode});
+        for(const link of page.links)assert.equal(new URL(link.href,page.url).searchParams.get('include_subexposures'),mode);
+    }
 });
 test('Reset restores related-exposure inclusion as well as analysis settings',()=>{
     const app=runtime({page:'settings'});app.reset();

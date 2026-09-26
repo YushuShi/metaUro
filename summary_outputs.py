@@ -137,6 +137,7 @@ def input_fingerprint(repo_root, source, mode):
     # Track the code actually used by these offline generators. Browser-only
     # changes and interactive request settings do not alter default summaries.
     inputs.add(repo / 'summary_outputs.py')
+    inputs.add(repo / 'display_localization.py')
     for relative in ('data/exposure_hierarchy.json',
                      'combined/astra_adjudication/plot_translation_overrides.json'):
         path = source_root / relative
@@ -278,6 +279,10 @@ def run_summary_build(source_root, cache_root, plot_root, languages, builder):
     repo = metauro_root(source_root)
     if repo is None:
         return builder(cache_root, plot_root, languages)
+    from display_localization import install_plot_localization
+    plot_localization = sys.modules.get("scripts.plot_localization")
+    if plot_localization is not None:
+        install_plot_localization(plot_localization)
     cache, folder, mode = resolve_build_paths(source_root, cache_root, plot_root)
     source = Path(source_root).name
     with _build_lock(folder):

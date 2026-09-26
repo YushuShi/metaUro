@@ -55,6 +55,9 @@ def serve(source, pipe):
         spec = importlib.util.spec_from_file_location('metauro_engine', folder / 'app.py')
         engine = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(engine)
+        from display_localization import install_plot_localization
+        from scripts import plot_localization
+        install_plot_localization(plot_localization)
         # All source-app summary links read the single published output tree.
         from summary_outputs import summary_dir
         engine.active_plot_dir = lambda: str(summary_dir(ROOT, source, engine.subexposure_mode()))

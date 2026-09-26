@@ -4,12 +4,11 @@
   const config = window.MetaUro;
   if (!config) return;
   function selectedScope() {
-    const select = document.getElementById('disease') || document.getElementById('summary-scope') || document.getElementById('summary-disease');
+    const select = document.getElementById('disease') || document.getElementById('summary-scope') || document.getElementById('summary-disease') || document.getElementById('selection-scope');
     const option = select?.selectedOptions?.[0];
-    return config.scopes.find(item => (item.source === (option?.dataset.source || config.source)) && [item.id,item.label].includes(option?.dataset.scopeKey || option?.value)) || config.current;
+    return config.scopes.find(item => (!option?.dataset.source || item.source === option.dataset.source) && [item.id,item.label].includes(option?.dataset.scopeKey || option?.value)) || config.current;
   }
   function exposureMode() {
-    if (config.page === 'selection') return 'no';
     const value = document.getElementById('include-subexposures')?.value || new URL(location.href).searchParams.get('include_subexposures') || 'yes';
     return ['no', 'false', '0'].includes(value.toLowerCase()) ? 'no' : 'yes';
   }
@@ -20,9 +19,14 @@
       const page = link.dataset.uroNav;
       const productPage = {settings: '/settings', selection: '/study-selection'}[page];
       const url = new URL(productPage || `${item.prefix}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.group_id === 'prostate' ? 'chatgpt' : ''}`, location.origin);
+      for (const key of ['lang', 'smoking_status', 'ethnicity', 'gender']) {
+        const value = new URL(location.href).searchParams.get(key);
+        if(value !== null) url.searchParams.set(key,value);
+      }
       url.searchParams.set('scope',item.id);
       url.searchParams.set('include_subexposures',mode);
-      const exposure = (document.getElementById('exposure') || document.getElementById('selection-exposure'))?.value;
+      const exposureControl = document.getElementById('exposure') || document.getElementById('selection-exposure');
+      const exposure = exposureControl?.dataset.canonicalExposure || exposureControl?.value;
       if(exposure && (page === 'selection' || (config.page === 'selection' && page === 'evidence'))) {
         url.searchParams.set('exposure', exposure);
       }

@@ -1,0 +1,117 @@
+/* Shared shell across the meta-analysis applications. Colors come from each theme. */
+html { scrollbar-gutter: stable; }
+header.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 2rem;
+    min-height: 84px;
+    text-align: left;
+    background: var(--card-bg, #fff);
+    border-bottom: 1px solid var(--border, #ddd);
+}
+.site-header .site-brand { min-width: 0; }
+header.site-header .logo {
+    display: inline-block;
+    margin: 0;
+    font: 800 1.5rem/1.25 var(--font-family, 'Inter', sans-serif);
+    letter-spacing: -.04em;
+    color: var(--primary);
+    text-decoration: none;
+}
+.site-header .last-updated { display: none; }
+header.site-header .header-actions {
+    order: 0;
+    position: static;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-end;
+    align-items: center;
+    gap: .5rem;
+    width: auto;
+    max-width: 100%;
+    margin: 0 0 0 auto;
+    transform: none;
+}
+.site-header .header-action,
+.site-header .analysis-settings-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .35rem;
+    min-height: 40px;
+    margin: 0;
+    padding: .55rem .85rem;
+    border: 1px solid var(--primary);
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--on-primary, #fff);
+    font: 600 .85rem/1.2 var(--font-family, 'Inter', sans-serif);
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    box-shadow: none;
+    cursor: pointer;
+}
+.site-header .header-action:hover,
+.site-header .analysis-settings-button:hover {
+    background: var(--primary-hover, var(--primary));
+    border-color: var(--primary-hover, var(--primary));
+}
+.site-header .header-action:focus-visible,
+.site-header .analysis-settings-button:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 3px;
+}
+.site-header .header-action[aria-current="page"] { box-shadow: inset 0 -3px 0 rgba(255,255,255,.65); }
+.site-header .header-action--icon { width: 40px; min-width: 40px; padding: 0; }
+.site-header .language-picker-menu { left: auto; right: 0; text-align: left; }
+.site-header .analysis-settings-dialog {
+    position: fixed;
+    inset: calc(var(--site-header-height, 84px) + 12px) 16px auto auto;
+    margin: 0;
+    width: min(900px, calc(100vw - 32px));
+    height: auto;
+    max-width: calc(100vw - 32px);
+    max-height: calc(100dvh - var(--site-header-height, 84px) - 28px);
+    overflow: auto;
+    border: 1px solid var(--border, #ddd);
+    text-align: left;
+}
+.site-header .analysis-settings-dialog:not([open]) { display: none; }
+@media (max-width: 1000px) {
+    header.site-header { flex-wrap: wrap; padding: 1rem; }
+}
+@media (max-width: 650px) {
+    header.site-header { gap: .75rem; padding: .75rem; }
+    .site-header .site-brand { width: 100%; }
+    header.site-header .header-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 36px repeat(4, minmax(0, 1fr));
+        gap: .35rem;
+    }
+    .site-header .header-action,
+    .site-header .analysis-settings-button {
+        min-height: 44px;
+        height: 44px;
+        padding: .4rem .3rem;
+        font-size: .72rem;
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+    .site-header .header-action--icon { width: 36px; min-width: 36px; }
+    .site-header .language-picker-menu { left: 0; right: auto; }
+}
+@media print { header.site-header { display: none; } }
+
+/* The application identity sits above the evidence controls. */
+.app-identity { margin: 0 auto 1.5rem; text-align: center; }
+.app-identity h1 { margin-bottom: .35rem; }
+.app-identity .app-scope { margin: 0 auto .3rem; max-width: 800px; font-size: 1rem; color: var(--text-main); }
+.app-identity .app-updated { margin: 0; font-size: .8rem; color: var(--text-muted, #64748b); }

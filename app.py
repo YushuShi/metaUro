@@ -1,4 +1,4 @@
-"""metaUro: one interface over two immutable evidence collections."""
+"""MetaUro: one interface over two immutable evidence collections."""
 from __future__ import annotations
 
 import json
@@ -38,7 +38,12 @@ SUMMARY_MANIFESTS = {
     'metaPee': 'summary/{mode}/summary_manifest.json',
     'MetaVir': 'summary/{mode}/summary_manifest.json',
 }
+from display_localization import normalize_catalog
+
 UI_LABEL_TRANSLATIONS = {
+    'Bladder, kidney, renal pelvis, and prostate cancers.': {'zh-CN':'膀胱癌、肾癌、肾盂癌及前列腺癌。','zh-TW':'膀胱癌、腎癌、腎盂癌及攝護腺癌。','nl':'Blaas-, nier-, nierbekken- en prostaatkanker.','ko':'방광암, 신장암, 신우암 및 전립선암.'},
+    'Settings': {'zh-CN': '设置', 'zh-TW': '設定', 'nl': 'Instellingen', 'ko': '설정'},
+    'Study selection': {'zh-CN': '研究筛选', 'zh-TW': '研究篩選', 'nl': 'Studieselectie', 'ko': '연구 선정'},
     'Download': {'zh-CN': '下载', 'zh-TW': '下載', 'nl': 'Downloaden', 'ko': '다운로드'},
     'VERIFY': {'zh-CN': '核实', 'zh-TW': '驗證', 'nl': 'Verifiëren', 'ko': '검증'},
     'Egger’s test was not performed because fewer than {count} studies were available. With a small number of studies, the test generally has insufficient power to reliably detect funnel plot asymmetry.': {
@@ -120,7 +125,7 @@ def public_prefix(source):
 
 
 def product_branding(text):
-    return re.sub(r'meta(?:pee|vir)', 'metaUro', text, flags=re.IGNORECASE)
+    return re.sub(r'meta(?:pee|vir)', 'MetaUro', text, flags=re.IGNORECASE)
 
 
 def scope_catalog():
@@ -234,7 +239,7 @@ def decorate_html(body, source, path):
     soup = BeautifulSoup(prefix_text(body, ctx['prefix']), 'html.parser')
     if not soup.head or not soup.body:
         return body
-    soup.title.string = f"metaUro · {'Evidence summary' if ctx['page'] == 'summary' else 'Explore evidence'}"
+    soup.title.string = f"MetaUro · {'Evidence summary' if ctx['page'] == 'summary' else 'Explore evidence'}"
     for stylesheet in soup.select('link[rel="stylesheet"]'):
         if '/static/style.css' in stylesheet.get('href', ''):
             stylesheet['href'] = '/static/theme.css'
@@ -248,9 +253,29 @@ def decorate_html(body, source, path):
         old_header.replace_with(BeautifulSoup(render_template('_header.html', **ctx), 'html.parser'))
     # Remove duplicate source-brand navigation, while preserving the source study UI.
     for node in soup.select('.hero h1'):
-        node.string = 'Synthesize Evidence on Urologic Cancers & Nutrition'
+        node.string = 'MetaUro'
     for node in soup.select('.hero > p'):
-        node.string = 'Explore associations between nutritional exposures and urologic cancer incidence'
+        node.decompose()
+    hero_title = soup.select_one('.hero h1')
+    if hero_title:
+        subtitle = soup.new_tag('p', attrs={'class': 'app-scope'})
+        subtitle.string = 'Bladder, kidney, renal pelvis, and prostate cancers.'
+        hero_title.insert_after(subtitle)
+        mode = 'no' if str(ctx['include_subexposures']).lower() in {'no', 'false', '0'} else 'yes'
+        manifest = json.loads((ROOT / 'summary' / mode / 'summary_manifest.json').read_text())
+        published = manifest.get('sources', {}).get(source, {}).get('metadata', {}).get('generated_at', '')
+        updated = soup.new_tag('p', attrs={'class': 'app-updated'})
+        updated.append('Last updated: ')
+        stamp = soup.new_tag('time', id='last-updated', datetime=published, attrs={'data-published-at': published, 'class': 'notranslate', 'translate': 'no'})
+        stamp.string = datetime.fromisoformat(published).strftime('%Y-%m-%d %H:%M %Z') if published else 'Not recorded'
+        updated.append(stamp)
+        subtitle.insert_after(updated)
+        identity = soup.new_tag('div', attrs={'class': 'app-identity'})
+        hero_title.insert_before(identity)
+        hero_title['class'] = 'notranslate'
+        hero_title['translate'] = 'no'
+        for node in (hero_title, subtitle, updated):
+            identity.append(node.extract())
     for node in soup.select('#loading p'):
         node.string = 'Loading saved evidence and calculating the selected view…'
     baujat_download = soup.select_one('#download-baujat-png')
@@ -261,11 +286,14 @@ def decorate_html(body, source, path):
             heading.string = 'VERIFY'
     # The source applications retain these explanatory controls, but metaUro's
     # consolidated interface keeps the forest and extracted-study sections terse.
-    for selector in ('#forest-scale-label', '#analysis-baseline-notice', '.poolability-help'):
+    for selector in ('#forest-scale-label', '#analysis-baseline-notice', '.poolability-help', '.summary-back-link', '.summary-eyebrow', '.summary-method-note', '.summary-intro > p', '.summary-section-heading p'):
         for node in soup.select(selector):
             node.decompose()
     replace_scope_selector(soup, ctx)
     if ctx['page'] == 'summary' and soup.main:
+        title = soup.select_one('main h1')
+        if title:
+            title.string = 'Summary'
         downloads = list(soup.select('a.summary-download'))
         combined = next((node for node in downloads
                          if '/summary/workbooks/' in node.get('href', '')
@@ -302,9 +330,9 @@ def decorate_html(body, source, path):
         minimum['title'] = '0 includes studies regardless of case count. Missing cases use N × the baseline risk selected in Settings.'
     for script in soup.select('script[src]'):
         if '/static/script.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=egger-interpretation-20260921'
+            script['src'] = script['src'].split('?')[0] + '?v=20260925-display'
         elif '/static/i18n.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=egger-interpretation-20260921'
+            script['src'] = script['src'].split('?')[0] + '?v=20260925-display'
     # Relative downloads/links produced by source templates must stay with their source.
     for node in soup.select('[href], [src], [action], [data]'):
         for attr in ('href', 'src', 'action', 'data'):
@@ -345,7 +373,8 @@ def settings():
 
 @app.get('/about')
 def about():
-    return render_template('about.html', **context('metaPee', 'about'))
+    source = next((item['source'] for item in scope_catalog() if request.args.get('scope') in {item['id'], item['label']}), 'metaPee')
+    return render_template('about.html', **context(source, 'about'))
 
 
 @app.get('/study-selection')
@@ -386,7 +415,7 @@ def monthly_review(group):
     if source is None:
         abort(404)
     monthly = load_overlay(ROOT, source)
-    soup = BeautifulSoup('<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"><title>metaUro · Monthly review</title><link rel="stylesheet" href="/static/theme.css"><link rel="stylesheet" href="/static/metauro.css"></head><body><main class="uro-selection"></main></body></html>', 'html.parser')
+    soup = BeautifulSoup('<!doctype html><html lang="en"><head><meta name="viewport" content="width=device-width, initial-scale=1"><title>MetaUro · Monthly review</title><link rel="stylesheet" href="/static/theme.css"><link rel="stylesheet" href="/static/metauro.css"></head><body><main class="uro-selection"></main></body></html>', 'html.parser')
     header = BeautifulSoup(render_template('_header.html', **context(source, 'selection')), 'html.parser')
     soup.body.insert(0, header)
     main = soup.main
@@ -426,7 +455,7 @@ def evidence(source, path):
     if source is None:
         abort(404)
     if path in {'verify', 'exclude'}:
-        return jsonify(error='Saved evidence is read-only in metaUro. Interactive study selection is available for this view.'), 403
+        return jsonify(error='Saved evidence is read-only in MetaUro. Interactive study selection is available for this view.'), 403
     if request.method == 'POST' and path not in {'analyze', 'reanalyze'}:
         abort(405)
     if path in {'analyze', 'reanalyze'} and request.method == 'POST':
@@ -503,8 +532,13 @@ def evidence(source, path):
     elif ('javascript' in content_type or path.endswith('.js')) and body:
         body = prefix_text(body.decode('utf-8'), prefix).encode()
         if path == 'static/i18n.js':
-            body = body.replace(b'i18n-translations.json?v=1.4', b'i18n-translations.json?v=1.5')
+            body = body.replace(
+                b'    function storedLanguage() {',
+                b"    function storedLanguage() {\n        const requested = new URL(window.location.href).searchParams.get('lang');\n        if (SUPPORTED_LANGUAGES.has(requested)) return requested;",
+            )
+            body = body.replace(b'i18n-translations.json?v=1.4', b'i18n-translations.json?v=20260925-display')
         if path == 'static/script.js':
+            body = body.replace(b'    function updateLastUpdated(ts = null) {', b'    function updateLastUpdated(ts = null) {\n        if (elements.lastUpdated?.dataset.publishedAt) return;')
             body = body.replace(b"setSelectedExposure('Vitamin A');", b"setSelectedExposure(new URL(location.href).searchParams.get('exposure') || 'Vitamin A');")
             body = body.replace(b'metapee_extracted_studies', b'metauro_extracted_studies').replace(b'metavir_extracted_studies', b'metauro_extracted_studies')
             body = body.replace(
@@ -521,6 +555,7 @@ def evidence(source, path):
                 payload['headline']['funnel_interpretation'] = interpretation
         if path == 'static/i18n-translations.json' and isinstance(payload, dict):
             payload.update(UI_LABEL_TRANSLATIONS)
+            payload = normalize_catalog(payload)
         monthly = load_overlay(ROOT, source)
         if isinstance(payload, dict) and 'last_updated' in payload and monthly and monthly.get('completed_at'):
             payload['last_updated'] = datetime.fromisoformat(monthly['completed_at'].replace('Z', '+00:00')).timestamp()

@@ -1,4 +1,4 @@
-# metaUro
+# MetaUro
 
 The **Minimum cases** control defaults to **0** (no case-count cutoff). A positive
 cutoff uses reported cases, or a labelled estimate of `round(N × selected baseline

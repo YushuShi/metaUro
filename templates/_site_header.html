@@ -1,0 +1,13 @@
+<link rel="stylesheet" href="/static/site-navigation.css?v=20260925-display">
+<script src="/static/site-navigation.js?v=20260925-display" defer></script>
+<header class="site-header uro-header">
+  <div class="site-brand"><a class="logo" data-uro-nav="evidence" data-site-link href="{{ prefix }}/?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}" aria-label="MetaUro home">MetaUro</a></div>
+  <nav class="header-actions" aria-label="Site navigation">
+    {% include '_language_picker.html' %}
+    {% include '_subexposure_toggle.html' %}
+    <a data-uro-nav="selection" data-site-link href="/study-selection?scope={{ current.id }}&amp;include_subexposures={{ include_subexposures }}" class="header-action" {% if page == 'selection' %}aria-current="page"{% endif %}>Study selection</a>
+    <a data-uro-nav="summary" data-site-link href="{{ prefix }}/summary?scope={{ current.id }}" class="header-action" {% if page == 'summary' %}aria-current="page"{% endif %}>Summary</a>
+    <a data-site-link href="/about?scope={{ current.id }}" class="header-action" {% if page == 'about' %}aria-current="page"{% endif %}>About</a>
+  </nav>
+</header>
+{% if page not in ['evidence', 'summary'] %}<script src="{{ prefix }}/static/i18n.js?v=20260925-display" defer></script>{% endif %}

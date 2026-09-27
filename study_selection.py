@@ -8,12 +8,12 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict
 from copy import deepcopy
-from functools import lru_cache
+from functools import lru_cache, wraps
 import hashlib
 import json
 from pathlib import Path
 
-from automation.sync_sources import load_overlay
+from automation.sync_sources import load_overlay, assembled_source, generation
 from selection_pooling_reasons import pooling_reason_counts
 
 
@@ -144,9 +144,24 @@ def _source_name(source):
     return source
 
 
-@lru_cache(maxsize=2)
+def generation_cache(maxsize):
+    """Invalidate every derived selection result with its evidence overlay."""
+    def decorate(function):
+        @lru_cache(maxsize=maxsize)
+        def cached(source, revision, *args, **kwargs):
+            return function(source, *args, **kwargs)
+        @wraps(function)
+        def current(source, *args, **kwargs):
+            source = _source_name(source)
+            return cached(source, generation(ROOT, source), *args, **kwargs)
+        current.cache_clear = cached.cache_clear
+        return current
+    return decorate
+
+
+@generation_cache(maxsize=2)
 def _selection_audit(source):
-    """Load and reconcile the immutable context-level screening records."""
+    """Reconcile immutable first screening with current corrected decisions."""
     source = _source_name(source)
     source_root = ROOT / 'sources' / source
     first, first_provenance = _read_packet(
@@ -155,7 +170,7 @@ def _selection_audit(source):
     )
     final_path = 'combined/effective_results.json' if source == 'metaPee' else 'combined/final_screening.json'
     final, final_provenance = _read_packet(
-        source_root / final_path,
+        assembled_source(ROOT, source) / final_path,
         'Current eligibility and inclusion decisions',
     )
     first_contexts = {}
@@ -223,14 +238,13 @@ def _disease_contexts(source):
     }
 
 
-@lru_cache(maxsize=2)
+@generation_cache(maxsize=2)
 def _current_pool_packets(source):
     """Read the saved pool and its recorded pooling restrictions together."""
     source = _source_name(source)
-    root = (
-        ROOT / 'sources/metaPee/combined/provisional_ui/subexposure_views/no/Cached_results'
-        if source == 'metaPee' else ROOT / 'sources/MetaVir/Subexposure_results/no'
-    )
+    source_root = assembled_source(ROOT, source)
+    root = (source_root / 'combined/provisional_ui/subexposure_views/no/Cached_results'
+            if source == 'metaPee' else source_root / 'Subexposure_results/no')
     result = {}
     for path in sorted(root.glob('*/*_core.json')):
         payload, provenance = _read_packet(path, 'Current direct-exposure pool and recorded restrictions')
@@ -242,7 +256,7 @@ def _current_pool_packets(source):
     return result
 
 
-@lru_cache(maxsize=2)
+@generation_cache(maxsize=2)
 def _current_pool_contexts(source):
     """Keep only contexts with an actual saved pool."""
     source = _source_name(source)
@@ -264,7 +278,7 @@ def _current_pool_contexts(source):
     return tuple(sorted(result, key=lambda item: (item[0].casefold(), item[1].casefold())))
 
 
-@lru_cache(maxsize=2)
+@generation_cache(maxsize=2)
 def _selection_catalog(source):
     """Map diseases to direct exposures with a current saved pooled result."""
     choices = defaultdict(list)
@@ -358,7 +372,7 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=
     }
 
 
-@lru_cache(maxsize=256)
+@generation_cache(maxsize=256)
 def _build_selection_flow(source, disease=None, exposure=None):
     source = _source_name(source)
     choices = selection_catalog(source)
@@ -404,7 +418,9 @@ def build_selection_flow(source, disease=None, exposure=None):
         _build_selection_flow(source, disease, exposure)
     )
     monthly = load_overlay(ROOT, source)
-    if monthly:
+    if monthly and monthly.get('kind') == 'scientific_correction':
+        flow.setdefault('notes', []).append('Saved uncertainty was corrected from the recorded extraction excerpts; no new search or screening was performed.')
+    elif monthly:
         if 'cohort_description' in flow:
             flow['cohort_description'] = flow['cohort_description'].replace('Current ', 'Historical ', 1)
         flow['monthly'] = {key: monthly.get(key) for key in ('search_through', 'human_review_pending', 'run_id')}

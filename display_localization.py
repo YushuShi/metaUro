@@ -31,6 +31,14 @@ def install_plot_localization(module):
         original = module._site_catalog
         @wraps(original)
         def display_catalog(*args, **kwargs):
-            return normalize_catalog(original(*args, **kwargs))
+            catalog = original(*args, **kwargs)
+            normalized = normalize_catalog(catalog)
+            # Summary builders add saved translation overrides to this cached
+            # catalog. Preserve its identity so later lookups see those edits.
+            if isinstance(catalog, dict):
+                catalog.clear()
+                catalog.update(normalized)
+                return catalog
+            return normalized
         module._site_catalog = display_catalog
     module._nutrition_display_installed = True

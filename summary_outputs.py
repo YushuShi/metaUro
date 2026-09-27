@@ -138,6 +138,8 @@ def input_fingerprint(repo_root, source, mode):
     # changes and interactive request settings do not alter default summaries.
     inputs.add(repo / 'summary_outputs.py')
     inputs.add(repo / 'display_localization.py')
+    inputs.update((repo / 'runtime_code').glob('*.py'))
+    inputs.add(repo / 'runtime_code/manifest.json')
     for relative in ('data/exposure_hierarchy.json',
                      'combined/astra_adjudication/plot_translation_overrides.json'):
         path = source_root / relative
@@ -277,6 +279,11 @@ def _build_lock(folder):
 def run_summary_build(source_root, cache_root, plot_root, languages, builder):
     """Build inside summary/ and replace a complete mode under a stable lock."""
     repo = metauro_root(source_root)
+    if repo is not None:
+        from runtime_code.trend_ci_runtime import install_core, install_completion
+        if 'meta_analysis' in sys.modules:
+            install_core(sys.modules['meta_analysis'])
+        install_completion()
     if repo is None:
         return builder(cache_root, plot_root, languages)
     from display_localization import install_plot_localization

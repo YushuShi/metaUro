@@ -395,7 +395,7 @@ def study_selection():
     html = render_template('study_selection.html', **ctx, flow=flow,
                            selection_scopes=selection_scopes, analysis_href=analysis_href)
     monthly = load_overlay(ROOT, source)
-    if monthly:
+    if monthly and monthly.get('kind') != 'scientific_correction':
         soup = BeautifulSoup(html, 'html.parser')
         section = soup.new_tag('section', attrs={'class': 'selection-notes'})
         heading = soup.new_tag('h2'); heading.string = 'Monthly updates'; section.append(heading)
@@ -421,6 +421,8 @@ def monthly_review(group):
     main = soup.main
     title = soup.new_tag('h1'); title.string = LABELS[source] + ' monthly review'; main.append(title)
     note = soup.new_tag('p')
+    if monthly and monthly.get('kind') == 'scientific_correction':
+        monthly = None
     note.string = ('Searching completed through ' + monthly['search_through'] + '. ' +
                    str(monthly.get('human_review_pending', 0)) + ' exposure–disease contexts await human review. ' +
                    'The study-selection charts continue to use the released screening audit.') if monthly else 'No monthly update has been synchronized yet.'

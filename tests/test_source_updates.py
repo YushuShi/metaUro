@@ -122,6 +122,25 @@ def test_both_sources_must_validate_before_install(tmp_path):
     assert not (root / 'updates/manifest.json').exists()
 
 
+def test_concurrent_assembly_accepts_only_completed_same_generation(tmp_path, monkeypatch):
+    import errno
+    import shutil
+    root, siblings, cache = prepare(tmp_path)
+    sync_sources(root, siblings)
+    rename = Path.rename
+
+    def finish_elsewhere(path, destination):
+        if path.name.startswith('assembling-'):
+            shutil.copytree(path, destination)
+            raise OSError(errno.ENOTEMPTY, 'Concurrent assembler finished first')
+        return rename(path, destination)
+
+    monkeypatch.setattr(Path, 'rename', finish_elsewhere)
+    runtime = assembled_source(root, 'metaPee')
+    assert (runtime / '.complete').is_file()
+    assert len(json.loads((runtime / cache).read_text())['studies']) == 2
+
+
 def test_modified_output_fails_hash_validation(tmp_path):
     root, siblings, cache = prepare(tmp_path)
     (siblings / 'MetaVir' / cache).write_text('{}')

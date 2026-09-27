@@ -46,7 +46,8 @@ def allowed(relative):
         return False
     if part.suffix.lower() not in {'.json', '.png', '.pdf', '.xlsx', '.csv', '.jpg', '.jpeg'}:
         return False
-    return (part.parts[0] in {'Cached_results', 'Subexposure_results', 'Subexposure_views', 'Plot', 'static'}
+    return (relative in {'combined/effective_results.json', 'combined/final_screening.json'}
+            or part.parts[0] in {'Cached_results', 'Subexposure_results', 'Subexposure_views', 'Plot', 'static'}
             or relative.startswith('combined/provisional_ui/')
             or (part.parts[0] == 'combined' and len(part.parts) == 3 and '_true_' in part.name))
 
@@ -226,7 +227,7 @@ def sync_sources(repo_root, repos_root, require_through=None):
     prepared = {}
     for source, (state, release, outputs, reviews, commit) in releases.items():
         previous = load_overlay(repo, source)
-        if previous and state['last_successful_publication_date'] < previous['search_through']:
+        if previous and previous.get('search_through') and state['last_successful_publication_date'] < previous['search_through']:
             raise ValueError('A monthly source release would rewind the search cutoff')
         files = {
             relative: deepcopy(entry)
@@ -250,6 +251,10 @@ def sync_sources(repo_root, repos_root, require_through=None):
                 files[relative] = {'deleted': True, 'previous_sha256': sha(old) if old else None,
                                    'source_commit': commit, 'run_id': run_id}
                 continue
+            if relative.endswith('.json'):
+                from runtime_code.trend_ci_projection import correct_tree
+                if correct_tree(read(incoming)):
+                    raise ValueError('A source update retains a confidence interval imputed from a trend p value')
             if old and relative.endswith('.json'):
                 _check_rows(read(old), read(incoming))
             original = bound(repo / 'sources' / source, relative)
@@ -364,7 +369,12 @@ def assembled_source(repo_root, source):
         (temporary / '.complete').write_text(completion)
         try:
             temporary.rename(folder)
-        except FileExistsError:
+        except OSError:
+            # Concurrent requests can finish this same generation first. macOS
+            # reports ENOTEMPTY rather than FileExistsError for that rename.
+            marker = folder / '.complete'
+            if not marker.is_file() or marker.read_text() != completion:
+                raise
             shutil.rmtree(temporary)
         return folder
     except BaseException:

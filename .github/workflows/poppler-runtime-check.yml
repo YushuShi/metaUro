@@ -1,0 +1,42 @@
+name: Check pinned Poppler runtime
+
+on:
+  push:
+    branches: [codex/pinned-poppler-26070]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: poppler-runtime-validation
+  cancel-in-progress: false
+
+jobs:
+  poppler:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
+        with:
+          sparse-checkout: |
+            automation
+            tests
+      - name: Install build dependencies and PDF encoding data
+        run: |
+          sudo apt-get update
+          sudo apt-get install --yes --no-install-recommends cmake ninja-build g++ pkg-config curl \
+            libfreetype-dev libfontconfig-dev libjpeg-dev libopenjp2-7-dev libpng-dev zlib1g-dev poppler-data
+      - name: Check installer rejection and PDF fixture
+        run: python3 -m unittest discover -s tests -p test_poppler_runtime.py -v
+      - name: Build and verify exact official Poppler release
+        run: bash automation/install_poppler.sh "$RUNNER_TEMP/poppler-26.07.0"
+      - name: Verify subsequent steps use the pinned tools
+        run: python3 automation/verify_poppler.py --bin-dir "$(dirname "$(command -v pdfinfo)")"
+      - name: Save dependency proof
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: poppler-26.07.0-verification
+          path: ${{ runner.temp }}/poppler-26.07.0/verification.json
+          if-no-files-found: ignore
+          retention-days: 90

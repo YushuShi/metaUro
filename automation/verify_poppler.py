@@ -49,6 +49,11 @@ def run(command, *, accepted_returncodes=(0,)):
     return result.stdout, result.stderr
 
 
+def require(condition, message):
+    if not condition:
+        raise RuntimeError(message)
+
+
 def verify(bin_dir):
     folder = Path(bin_dir).resolve()
     tools = {name: folder/name for name in ('pdfinfo', 'pdftotext', 'pdfdetach')}
@@ -65,19 +70,19 @@ def verify(bin_dir):
     with tempfile.TemporaryDirectory(prefix='monthly-poppler-smoke-') as temporary:
         path = Path(temporary)/'fixture.pdf'; path.write_bytes(pdf)
         info, _ = run([str(tools['pdfinfo']), str(path)])
-        assert re.search(r'(?m)^Pages:\s+2$', info), 'PDF page count differs'
-        assert re.search(r'(?m)^Encrypted:\s+no$', info), 'PDF encryption check differs'
+        require(re.search(r'(?m)^Pages:\s+2$', info), 'PDF page count differs')
+        require(re.search(r'(?m)^Encrypted:\s+no$', info), 'PDF encryption check differs')
         javascript, _ = run([str(tools['pdfinfo']), '-js', str(path)])
-        assert not javascript.strip(), 'Fixture unexpectedly contains JavaScript'
+        require(not javascript.strip(), 'Fixture unexpectedly contains JavaScript')
         urls, _ = run([str(tools['pdfinfo']), '-url', str(path)])
-        assert not any('http' in line for line in urls.splitlines()), 'Fixture unexpectedly contains links'
+        require(not any('http' in line for line in urls.splitlines()), 'Fixture unexpectedly contains links')
         attachments, _ = run([str(tools['pdfdetach']), '-list', str(path)])
-        assert re.search(r'^0 embedded files', attachments), 'Fixture unexpectedly contains attachments'
+        require(re.search(r'^0 embedded files', attachments), 'Fixture unexpectedly contains attachments')
         text, _ = run([str(tools['pdftotext']), '-layout', '-enc', 'UTF-8', str(path), '-'])
         pages = [page for page in text.split('\f') if page.strip()]
-        assert len(pages) == 2, 'Extracted page boundaries differ'
+        require(len(pages) == 2, 'Extracted page boundaries differ')
         for actual, expected in zip(pages, TEXT):
-            assert ' '.join(actual.split()) == expected, 'Substantive PDF text changed during extraction'
+            require(' '.join(actual.split()) == expected, 'Substantive PDF text changed during extraction')
     receipt.update(status='verified', fixture_sha256=hashlib.sha256(pdf).hexdigest(),
                    pages=2, substantive_characters=[len(p) for p in TEXT],
                    verified_commands=['pdfinfo', 'pdfinfo -js', 'pdfinfo -url', 'pdfdetach -list', 'pdftotext -layout -enc UTF-8'])

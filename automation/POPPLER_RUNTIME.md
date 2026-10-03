@@ -34,6 +34,10 @@ installation, and rebuild. A Python CLI calling the installer must also prepend
 `<prefix>/bin` to its own `os.environ['PATH']` after successful installation;
 `GITHUB_PATH` only changes later workflow steps.
 
+Ubuntu 24.04 is the verified build platform. Newer Ubuntu runners are allowed
+only through the same dependency, source-build, exact-version and parser checks;
+the installer records the actual operating-system release in its proof.
+
 `verify_poppler.py` tests all three exact versions plus page count, encryption,
 JavaScript, URL and attachment inspection, page boundaries, and complete text
 extraction from a deterministic, substantive two-page synthetic PDF. It writes

@@ -58,14 +58,14 @@ if actual != sys.argv[2]:
     raise SystemExit('Official Poppler source checksum mismatch')
 PY
 if [[ "$(uname -s)" != Linux ]]; then
-  echo 'This installer targets the Ubuntu 24.04 monthly runner.' >&2
+  echo 'This installer targets Ubuntu monthly runners.' >&2
   exit 2
 fi
 python3 - <<'PY'
 from pathlib import Path
 release = dict(line.split('=', 1) for line in Path('/etc/os-release').read_text().splitlines() if '=' in line)
-if release.get('ID', '').strip('"') != 'ubuntu' or release.get('VERSION_ID', '').strip('"') != '24.04':
-    raise SystemExit('This installer requires Ubuntu 24.04 build dependencies')
+if release.get('ID', '').strip('"') != 'ubuntu':
+    raise SystemExit('This installer requires Ubuntu build dependencies')
 PY
 privilege=()
 if [[ "$EUID" -ne 0 ]]; then
@@ -93,13 +93,14 @@ done
 python3 "$(dirname "$0")/verify_poppler.py" --bin-dir "$prefix/bin" \
   --receipt "$prefix/verification.json"
 python3 - "$prefix" "$POPPLER_URL" "$POPPLER_SHA256" <<'PY'
-import json, pathlib, subprocess, sys
+import json, pathlib, platform, subprocess, sys
 prefix = pathlib.Path(sys.argv[1])
 receipt = json.loads((prefix/'verification.json').read_text())
 receipt.update(source_url=sys.argv[2], source_sha256=sys.argv[3],
                compiler=subprocess.check_output(['c++', '--version'], text=True).splitlines()[0],
                cmake=subprocess.check_output(['cmake', '--version'], text=True).splitlines()[0],
-               build='static Poppler core; system codec/font libraries; Ubuntu 24.04')
+               build='static Poppler core; system codec/font libraries',
+               operating_system=platform.freedesktop_os_release())
 (prefix/'verification.json').write_text(json.dumps(receipt, indent=2)+'\n')
 PY
 activate_prefix

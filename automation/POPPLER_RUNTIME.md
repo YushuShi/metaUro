@@ -16,11 +16,7 @@ On an Ubuntu 24.04 workflow runner, use this step before evidence retrieval:
 
 ```yaml
 - name: Install exact PDF reader
-  run: |
-    sudo apt-get update
-    sudo apt-get install --yes --no-install-recommends cmake ninja-build g++ pkg-config curl \
-      libfreetype-dev libfontconfig-dev libjpeg-dev libopenjp2-7-dev libpng-dev zlib1g-dev poppler-data
-    bash automation/install_poppler.sh "$RUNNER_TEMP/poppler-26.07.0"
+  run: bash automation/install_poppler.sh "$RUNNER_TEMP/poppler-26.07.0"
 ```
 
 Copy `install_poppler.sh` and `verify_poppler.py` together to another source
@@ -29,6 +25,14 @@ API credentials, model calls, or evidence files. It appends the installed binary
 directory to `GITHUB_PATH`, so later steps use the verified tools. Ubuntu codec
 and font dependencies remain distro-managed; the Poppler source and executable
 versions are fixed and each built binary's checksum is saved.
+
+The installer owns the Ubuntu build-dependency list. A repeat invocation first
+checks the source receipt, all three binary hashes and exact versions, and the
+PDF extraction smoke; a valid prefix is reused without apt or network calls.
+An invalid or absent prefix triggers the checked source download, dependency
+installation, and rebuild. A Python CLI calling the installer must also prepend
+`<prefix>/bin` to its own `os.environ['PATH']` after successful installation;
+`GITHUB_PATH` only changes later workflow steps.
 
 `verify_poppler.py` tests all three exact versions plus page count, encryption,
 JavaScript, URL and attachment inspection, page boundaries, and complete text

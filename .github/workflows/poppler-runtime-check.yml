@@ -21,14 +21,11 @@ jobs:
           sparse-checkout: |
             automation
             tests
-      - name: Install build dependencies and PDF encoding data
-        run: |
-          sudo apt-get update
-          sudo apt-get install --yes --no-install-recommends cmake ninja-build g++ pkg-config curl \
-            libfreetype-dev libfontconfig-dev libjpeg-dev libopenjp2-7-dev libpng-dev zlib1g-dev poppler-data
       - name: Check installer rejection and PDF fixture
         run: python3 -m unittest discover -s tests -p test_poppler_runtime.py -v
       - name: Build and verify exact official Poppler release
+        run: bash automation/install_poppler.sh "$RUNNER_TEMP/poppler-26.07.0"
+      - name: Reuse only the verified installation
         run: bash automation/install_poppler.sh "$RUNNER_TEMP/poppler-26.07.0"
       - name: Verify subsequent steps use the pinned tools
         run: python3 automation/verify_poppler.py --bin-dir "$(dirname "$(command -v pdfinfo)")"

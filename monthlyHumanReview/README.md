@@ -22,3 +22,9 @@ The queue is written before the optional Astra adjudication call and copied
 into the versioned release receipts. A failed workflow also preserves it in its
 checkpoint artifact. An empty CSV still contains the complete column header.
 No CSV is fabricated for a monthly search that has not run.
+
+CSV row endings and line breaks inside cells use LF before hashing. Quoted
+multiline evidence and reviewer comments retain their text. Before Git
+publication, `automation.autonomous_monthly verify-index` checks that every
+required release file has exactly the validated bytes in Git's staging area;
+line-ending conversion or clean filters cannot silently invalidate a receipt.

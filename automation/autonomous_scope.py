@@ -4,7 +4,9 @@ import argparse
 import json
 import csv
 import hashlib
+import importlib.util
 from pathlib import Path
+import sys
 
 SCREENING_STAGE_ORDER = ('discover', 'first-screen', 'second-screen', 'report', 'full-text', 'finalize')
 
@@ -14,6 +16,49 @@ def configure_stage_order(pipeline):
     # before finalization writes the complete canonical exclusion ledger.
     # Keep the vendored source receipt unchanged so discovery can resume.
     pipeline.STAGES = SCREENING_STAGE_ORDER
+
+
+class _CanonicalReviewCSV:
+    """Override only the native review writer, never the shared csv module."""
+    def __getattr__(self, name):
+        return getattr(csv, name)
+
+    @staticmethod
+    def DictWriter(*args, **kwargs):
+        kwargs['lineterminator'] = '\n'
+        return csv.DictWriter(*args, **kwargs)
+
+
+def canonical_review_safe(value):
+    text = '' if value is None else str(value).replace('\r\n', '\n').replace('\r', '\n')
+    return "'" + text if text.lstrip().startswith(('=', '+', '-', '@')) or text.startswith(('\t', '\n')) else text
+
+
+def load_registered_driver(root):
+    """Match normal Python imports, including self-lookups during execution."""
+    path = Path(root)/'scripts/run_claude_gemini_parallel_review.py'
+    spec = importlib.util.spec_from_file_location('monthly_parallel_native_driver', path)
+    driver = importlib.util.module_from_spec(spec)
+    previous = sys.modules.get(spec.name)
+    sys.modules[spec.name] = driver
+    try:
+        spec.loader.exec_module(driver)
+    except BaseException:
+        if previous is None:
+            sys.modules.pop(spec.name, None)
+        else:
+            sys.modules[spec.name] = previous
+        raise
+    return driver
+
+
+def configure_native_runtime():
+    # These transport fixes deliberately leave the pinned source runtime and
+    # paid request identities unchanged. They precede every native pipeline call.
+    from automation import monthly_review_csv, monthly_parallel
+    monthly_review_csv.csv = _CanonicalReviewCSV()
+    monthly_review_csv.safe = canonical_review_safe
+    monthly_parallel.load_driver = load_registered_driver
 
 
 def export_review_queue(root, run, result):
@@ -55,8 +100,11 @@ def export_review_queue(root, run, result):
             row['validation_claims'] = json.dumps(claim,ensure_ascii=False,sort_keys=True)
         rows.append({key:safe(value) for key,value in row.items()})
     with target.open('w',encoding='utf-8-sig',newline='') as handle:
-        writer = csv.DictWriter(handle,fieldnames=fields,extrasaction='ignore')
-        writer.writeheader(); writer.writerows(rows)
+        writer = csv.DictWriter(handle,fieldnames=fields,extrasaction='ignore',lineterminator='\n')
+        writer.writeheader()
+        writer.writerows({key: value.replace('\r\n', '\n').replace('\r', '\n')
+                          if isinstance(value, str) else value for key, value in row.items()}
+                         for row in rows)
     return target
 
 
@@ -69,6 +117,7 @@ def main(argv=None):
     from automation import monthly_pipeline as pipeline
     from automation.autonomous_projection import refresh_ui
     configure_stage_order(pipeline)
+    configure_native_runtime()
     root = Path.cwd().resolve()
     config = pipeline.load_config(root, 'automation/monthly_config.json')
     config['repository'] = args.scope

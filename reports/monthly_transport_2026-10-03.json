@@ -1,0 +1,48 @@
+{
+  "timestamp": "2026-10-03T20:17:33.914428+00:00",
+  "base_commit": "5495b18fe61fdba6afc8786820f4dd83eb376475",
+  "status": "verified",
+  "tests": {
+    "command": "python -m pytest tests/test_autonomous_monthly.py tests/test_source_updates.py tests/test_trend_ci_guard.py tests/test_release_artifact_policy.py tests/test_autonomous_native_reports.py tests/test_monthly_transport.py tests/test_poppler_runtime.py -q",
+    "result": "..................................................................       [100%]\n66 passed in 41.67s"
+  },
+  "fixes": [
+    "Native and root CSV writers use LF row terminators and normalize CRLF/lone CR within text cells before hashing",
+    "Native CSV formula protection and original primary/independent claim JSON are preserved",
+    "Native dynamic reviewer loader registers module before execution and restores the previous module on import failure",
+    "Git publication compares unfiltered required file object hashes to stage-0 index blobs after local release validation"
+  ],
+  "proofs": [
+    "Both real vendored native drivers complete empty R2 without network/model calls",
+    "Both real native report/finalizer/validator chains preserve canonical exclusion ledgers",
+    "Git add/commit/show/checkout retain native and exported quoted multiline CSV hashes",
+    "CRLF conversion and a clean filter both fail the index guard",
+    "Missing index entries fail for evidence, manifests, summaries, review CSV and audit proofs",
+    "Hash-bound SQLite sidecars remain required; unreferenced recovery sidecars are scratch"
+  ],
+  "vendored_runtime": {
+    "files": 183,
+    "manifest_sha256": "2eb10a38632443678b2532ac1984eb88001a58cb75afb9eab4844e1b6270dc0c",
+    "unchanged": true
+  },
+  "immutable_sources_current_results_changed": false,
+  "cancelled_run": {
+    "id": 37149996837,
+    "url": "https://github.com/YushuShi/metaUro/actions/runs/37149996837",
+    "checkpoint_artifact_id": 11283991123,
+    "checkpoint_digest": "sha256:f726f0108a1514a53d86f9a1eb2527f723d8b2669ab706946e61c95e3cfa794f",
+    "query_receipts": 5388,
+    "screening_model_packets": 0,
+    "checkpoint_upload": "success",
+    "publication": "skipped"
+  },
+  "files_sha256": {
+    ".github/workflows/monthly-source-refresh.yml": "503dca80f892e8455124280365b49f9dfc0d8062e810b880efc41d41b64f2dfc",
+    "automation/autonomous_monthly.py": "b9bfd59b092c276f1cfe51d5a1e09855f3998d47d2d7d6ab6517a2314f1dee65",
+    "automation/autonomous_scope.py": "a18f596ae084a2d89617235253127eb9301d7849fc6e5452e5b4cb2c4fe73085",
+    "monthlyHumanReview/README.md": "c2773e72e6671a02dbea76275f4489ad7b127394061920ae4b1dbc08f2c52bcc",
+    "tests/native_ledger_probe.py": "890435812e6b10b6ee7a25a0faf4a9396660533b4ef7ac5742d6ad48831d18c0",
+    "tests/test_autonomous_native_reports.py": "2c5f3e0dea6c8e23a2b81ed6523de09a39e946d3d701d7c4af698e6f50b4ca16",
+    "tests/test_monthly_transport.py": "4c84721c382bb2165166328e8944597517d76962bbdbb91b5e7c0c5a1bba65ff"
+  }
+}

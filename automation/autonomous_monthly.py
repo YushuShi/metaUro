@@ -447,6 +447,58 @@ import an analysis engine, make requests, or perform pooling/review work.
             "source_scopes":list(SOURCES), "status":"completed"}
 
 
+def verify_git_index(root=ROOT):
+    """Require Git's staged release to retain every locally validated byte.
+
+    Compare unfiltered Git object hashes, including manifests and their proof
+    files, after staging. Normalization, clean filters, missing files, merge
+    entries and stale staged content all block publication.
+    """
+    root = Path(root).resolve()
+    completed = validate_completed_release(root)
+    if completed is None:
+        raise ValueError('A completed local release is required before Git publication')
+    runtime_manifest(root)
+    required = {'evidence-manifest.json'}
+    required.update(entry['path'] for entry in read(root/'evidence-manifest.json')['files'])
+    for name in ('updates', 'summary', 'monthlyHumanReview', 'runtime_code'):
+        required.update(str(path.relative_to(root)) for path in (root/name).rglob('*')
+                        if path.is_file() and '__pycache__' not in path.parts
+                        and path.name != '.DS_Store'
+                        and not path.name.endswith(('.sqlite3-wal', '.sqlite3-shm')))
+    # Recovery can contain obsolete SQLite sidecars. A sidecar explicitly bound
+    # by a completed proof remains mandatory, just like every other audit file.
+    release = read(bound(root, completed['manifest_path']))
+    for inventory in ('audit_artifact_sha256', 'summary_sha256'):
+        required.update(release[inventory])
+    raw = subprocess.run(['git', 'ls-files', '--stage', '-z'], cwd=root,
+                         capture_output=True, check=True).stdout
+    entries = {}
+    for entry in raw.split(b'\0'):
+        if entry:
+            header, relative = entry.split(b'\t', 1)
+            mode, oid, stage = header.decode('ascii').split()
+            entries.setdefault(os.fsdecode(relative), []).append((mode, oid, stage))
+    algorithm = subprocess.run(['git', 'rev-parse', '--show-object-format'], cwd=root,
+                               capture_output=True, text=True, check=True).stdout.strip()
+    if algorithm not in {'sha1', 'sha256'}:
+        raise ValueError('Unsupported Git object hash format')
+    for relative in sorted(required):
+        values = entries.get(relative, [])
+        if len(values) != 1 or values[0][2] != '0' or values[0][0] not in {'100644', '100755'}:
+            raise ValueError('Required release file is missing or unresolved in Git index: ' + relative)
+        path = bound(root, relative)
+        digest = hashlib.new(algorithm)
+        digest.update(('blob ' + str(path.stat().st_size) + '\0').encode('ascii'))
+        with path.open('rb') as stream:
+            for block in iter(lambda: stream.read(1024 * 1024), b''):
+                digest.update(block)
+        if digest.hexdigest() != values[0][1]:
+            raise ValueError('Git index bytes differ from validated release: ' + relative)
+    return {'status':'verified', 'run_id':completed['run_id'],
+            'required_files':len(required), 'git_object_format':algorithm}
+
+
 def restore(root=ROOT):
     """Recover paid request checkpoints from this repository's failed runs only."""
     root = Path(root).resolve()
@@ -495,9 +547,12 @@ def restore(root=ROOT):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, default=ROOT)
-    parser.add_argument("command", choices=("preflight", "prepare", "publish", "restore", "checkpoint"))
+    parser.add_argument("command", choices=("preflight", "prepare", "publish", "restore", "checkpoint", "verify-index"))
     parser.add_argument("--gateway", action="store_true")
     args = parser.parse_args(argv)
+    if args.command == 'verify-index':
+        print(json.dumps(verify_git_index(args.repo_root), indent=2))
+        return 0
     if args.command == "preflight":
         result = preflight(args.repo_root, gateway=args.gateway)
         print(json.dumps(result, indent=2))

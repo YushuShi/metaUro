@@ -58,7 +58,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes fonts-noto-cjk
       - name: Validate release safeguards
-        run: python -m pytest tests/test_autonomous_monthly.py tests/test_source_updates.py tests/test_trend_ci_guard.py tests/test_release_artifact_policy.py tests/test_autonomous_native_reports.py tests/test_poppler_runtime.py -q
+        run: python -m pytest tests/test_autonomous_monthly.py tests/test_source_updates.py tests/test_trend_ci_guard.py tests/test_release_artifact_policy.py tests/test_autonomous_native_reports.py tests/test_monthly_transport.py tests/test_poppler_runtime.py -q
       - name: Validate urinary NCBI fallback
         working-directory: runtime_code/monthly/metaPee
         run: python -m pytest tests/test_ncbi_throttle.py -q
@@ -82,6 +82,7 @@ jobs:
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
           git add -A -- updates summary monthlyHumanReview runtime_code
+          python -m automation.autonomous_monthly verify-index
           if ! git diff --cached --quiet; then
             git commit -m 'Publish autonomous monthly urinary evidence update'
             git push origin "HEAD:${{ github.event.repository.default_branch }}"

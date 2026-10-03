@@ -27,4 +27,5 @@ def test_native_report_finalization_keeps_canonical_ledger(scope, tmp_path):
     proof = json.loads(result.stdout)
     assert proof['native_report_finalizer_validator'] is True
     assert proof['old_order_rejected'] is True
+    assert proof['registered_native_driver_r2'] is True
     assert proof['model_and_network_calls'] == 0

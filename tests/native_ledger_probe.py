@@ -24,7 +24,22 @@ from automation import monthly_pipeline as pipeline
 spec = importlib.util.spec_from_file_location('uro_scope_probe', repo/'automation/autonomous_scope.py')
 worker = importlib.util.module_from_spec(spec); spec.loader.exec_module(worker)
 worker.configure_stage_order(pipeline)
+worker.configure_native_runtime()
 assert pipeline.STAGES.index('report') < pipeline.STAGES.index('full-text') < pipeline.STAGES.index('finalize')
+
+from automation import monthly_parallel, monthly_review_csv
+assert monthly_review_csv.csv.DictWriter is not __import__('csv').DictWriter
+driver = monthly_parallel.load_driver(repo/'runtime_code/monthly'/str(scope))
+assert sys.modules[driver.__name__] is driver
+independent = temporary/'independent'
+independent.mkdir()
+driver.OUTPUT_DIR = independent
+driver.COST_PATH = independent/'ClaudeGeminiCost.txt'
+(independent/'r1_pass_candidates.json').write_text(json.dumps({'articles':[], 'candidate_contexts':0}))
+(independent/'r1_pass_packet.json').write_text(json.dumps({'results':[], 'input_digest':'empty-fixture'}))
+with contextlib.redirect_stdout(io.StringIO()):
+    driver.run_r2(independent)
+assert json.loads((independent/'claude_r2_results.json').read_text())['results'] == []
 
 start, end = '2026-07-01', '2026-07-31'
 updates, reports = temporary/'updates', temporary/'reports'
@@ -74,4 +89,5 @@ with contextlib.redirect_stdout(io.StringIO()):
 validator.validate_run(updates, reports, start, end)
 print(json.dumps({'scope':str(scope),'status':'verified','candidate_contexts':summary['candidate_contexts'],
                   'native_report_finalizer_validator':True,'old_order_rejected':True,
+                  'registered_native_driver_r2':True,
                   'model_and_network_calls':0,'stage_order':list(pipeline.STAGES)}))

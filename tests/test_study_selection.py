@@ -63,7 +63,8 @@ def test_current_urinary_flow_is_exposure_specific_and_reconciles():
         'Squamous cell carcinoma of the bladder', 'Adenocarcinoma of the bladder',
         'Small cell carcinoma of the bladder',
     ]
-    assert len(result['provenance']) == 5
+    assert len(result['provenance']) >= 5
+    assert result['supplemental_reports'] == 0
     assert sum(item['count'] for item in result['nonpoolable_reasons']) == result['nonpoolable_reports']
     assert all(len(item['sha256']) == 64 for item in result['provenance'])
     result['reasons'].clear()
@@ -76,7 +77,8 @@ def test_current_prostate_selection_is_exposure_specific():
     assert (result['eligibility_excluded'], result['included_reports'], result['poolable_reports'], result['nonpoolable_reports']) == (417, 60, 28, 32)
     assert sum(item['count'] for item in result['reasons']) == result['eligibility_excluded']
     assert result['context_diseases'] == ['Prostate cancer']
-    assert len(result['provenance']) == 5
+    assert len(result['provenance']) >= 5
+    assert result['supplemental_reports'] == 0
     assert sum(item['count'] for item in result['nonpoolable_reasons']) == result['nonpoolable_reports']
 
 
@@ -125,15 +127,21 @@ def test_selector_only_lists_current_direct_exposure_pools():
     urinary = selection_catalog('urinary')
     prostate = selection_catalog('prostate')
     assert {disease: len(exposures) for disease, exposures in urinary.items()} == {
-        'Bladder cancer': 55,
+        'Bladder cancer': 55 + 1,  # Reviewed multisite UPF addition.
         'Clear cell renal cell carcinoma': 3,
         'Kidney and renal pelvis cancer': 50,
         'Papillary renal cell carcinoma': 1,
-        'Renal cell carcinoma': 43,
+        'Renal cell carcinoma': 43 + 1,
         'Urothelial carcinoma of the bladder': 9,
     }
     assert len(prostate['Prostate cancer']) == 101
-    assert 'Ultra-processed food intake' not in urinary['Renal cell carcinoma']
+    import json
+    root = Path(__file__).resolve().parents[1]
+    registry = json.loads((root/'evidence-revisions/multicancer-2026-09-29/metaPee/registry.json').read_text())
+    for disease in ('Bladder cancer', 'Renal cell carcinoma'):
+        assert 'Ultra-processed food intake' in urinary[disease]
+        assert any(entry['record']['cancer'] == disease and entry['record']['exposure'] == 'Ultra-processed food intake'
+                   and not entry['hold'] for entry in registry['entries'])
     assert 'Egg protein' not in prostate['Prostate cancer']
     unavailable = build_selection_flow('prostate', 'Aggressive prostate cancer')
     assert unavailable['available'] is False and unavailable['exposures'] == []
@@ -142,3 +150,11 @@ def test_selector_only_lists_current_direct_exposure_pools():
 def test_invalid_cohort_is_rejected():
     with pytest.raises(ValueError):
         build_selection_flow('../unrelated')
+
+
+def test_targeted_review_is_not_fabricated_as_initial_screening():
+    result = build_selection_flow('urinary', 'Bladder cancer', 'Ultra-processed food intake')
+    assert result['supplemental_reports'] > 0
+    assert result['assessed'] == result['screened'] - result['screening_excluded'] + result['supplemental_reports']
+    assert result['included_reports'] + result['eligibility_excluded'] == result['assessed']
+    assert result['poolable_reports'] + result['nonpoolable_reports'] == result['included_reports']

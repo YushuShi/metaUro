@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "repository": "MetaVir",
+  "bootstrap": {
+    "last_successful_publication_date": "2026-06-30",
+    "provenance": "data/claude_gemini_screening/all_history_through_2026-08-29/r1_precedence_manifest.json conservative complete baseline through June30; later rounds partly overlap"
+  },
+  "discovery_args": [
+    "--catalog",
+    "combined"
+  ],
+  "ui_commands": [],
+  "validation_commands": [
+    [
+      "{python}",
+      "scripts/validate_monthly_artifacts.py",
+      "--start-date",
+      "{start_date}",
+      "--end-date",
+      "{end_date}",
+      "--updates-root",
+      "data/monthly_updates",
+      "--reports-root",
+      "data/monthly_reports"
+    ],
+    [
+      "{python}",
+      "-m",
+      "pytest",
+      "tests/test_monthly_pipeline.py",
+      "tests/test_monthly_adjudication.py",
+      "tests/test_monthly_ui.py",
+      "tests/test_monthly_release.py",
+      "-q"
+    ],
+    [
+      "{python}",
+      "-m",
+      "pytest",
+      "tests/test_monthly_metavir.py",
+      "tests/test_aggressive_prostate_policy.py",
+      "tests/test_metavir_prostate_scope.py",
+      "-q"
+    ]
+  ],
+  "adapter": "metavir",
+  "ui_refresh": {
+    "cache_roots": [
+      "combined"
+    ],
+    "summary_pairs": []
+  }
+}

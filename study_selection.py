@@ -13,7 +13,7 @@ import hashlib
 import json
 from pathlib import Path
 
-from automation.sync_sources import load_overlay, assembled_source, generation
+from automation.sync_sources import load_overlay, assembled_source, generation, bound, sha
 from selection_pooling_reasons import pooling_reason_counts
 
 
@@ -173,6 +173,37 @@ def _selection_audit(source):
         assembled_source(ROOT, source) / final_path,
         'Current eligibility and inclusion decisions',
     )
+    provenance = [first_provenance, final_provenance]
+    # Targeted, source-reviewed additions have no historical R1 decision.
+    # Keep their separate route explicit instead of inventing a first screen.
+    registry_path = ROOT/'evidence-revisions/multicancer-2026-09-29'/source/'registry.json'
+    reviewed = {}
+    if registry_path.exists():
+        registry, registry_provenance = _read_packet(registry_path, 'Targeted primary-source evidence review')
+        release = json.loads((ROOT/'evidence-revisions/multicancer-2026-09-29/release_manifest.json').read_text())
+        if release['artifact_sha256'].get(str(registry_path.relative_to(ROOT))) != sha(registry_path):
+            raise ValueError('Targeted review provenance checksum mismatch')
+        reviewed = {entry['id']: entry['record'] for entry in registry['entries']}
+        provenance.append(registry_provenance)
+    first = deepcopy(first)
+    final = deepcopy(final)
+    # Monthly packets remain separate and source-bound. Repeated contexts do
+    # not replace previous reviewed decisions or inflate publication counts.
+    known = {row['context_id'] for row in first['results']}
+    for lineage in (load_overlay(ROOT, source) or {}).get('screening_runs', []):
+        packets = {}
+        for name, entry in lineage['files'].items():
+            path = bound(ROOT, entry['path'])
+            if sha(path) != entry['sha256']:
+                raise ValueError('Monthly selection packet checksum mismatch')
+            packets[name], origin = _read_packet(path, 'Monthly selection: '+name)
+            provenance.append(origin)
+        if not {'first_screen.json', 'final_screening.json'} <= packets.keys():
+            raise ValueError('Monthly selection ledger is incomplete')
+        added = {row['context_id'] for row in packets['first_screen.json']['results']} - known
+        first['results'].extend(row for row in packets['first_screen.json']['results'] if row['context_id'] in added)
+        final['results'].extend(row for row in packets['final_screening.json']['results'] if row['context_id'] in added)
+        known.update(added)
     first_contexts = {}
     for row in first['results']:
         context_id = row.get('context_id')
@@ -182,8 +213,12 @@ def _selection_audit(source):
             raise ValueError('Unknown first-screen decision in selection audit')
         first_contexts[context_id] = row
     covered_passes = set()
+    supplemental = []
     for row in final['results']:
         prior = first_contexts.get(row.get('context_id'))
+        if prior is None and reviewed.get(row.get('context_id')) == row:
+            supplemental.append(row)
+            continue
         if not prior or str(prior.get('pmid')) != str(row.get('pmid')):
             raise ValueError('Eligibility cohort does not match first screening')
         if row.get('final_status') not in RETAINED_STATUSES | {'EXCLUDE'}:
@@ -195,7 +230,6 @@ def _selection_audit(source):
     expected_passes = {key for key, row in first_contexts.items() if row['decision'] == 'PASS'}
     if covered_passes != expected_passes:
         raise ValueError('Eligibility audit does not cover every first-screen pass')
-    provenance = [first_provenance, final_provenance]
     for relative, label in (
         ('evidence-revisions/2026-09-14/revision.json', 'Applied human review decisions'),
         ('evidence-revisions/2026-09-14-dataset-deduplication/revision.json', 'Applied duplicate-article decisions'),
@@ -209,6 +243,7 @@ def _selection_audit(source):
         'first': tuple(first['results']),
         'final': tuple(final['results']),
         'first_contexts': first_contexts,
+        'supplemental': tuple(supplemental),
         'provenance': tuple(provenance),
     }
 
@@ -313,6 +348,8 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=
     ]
     context_ids = {row['context_id'] for row in first}
     final = [row for row in audit['final'] if row.get('context_id') in context_ids]
+    supplemental = [row for row in audit.get('supplemental', ())
+                    if row.get('cancer') in diseases and row.get('exposure') == exposure]
     first_by_pmid = defaultdict(list)
     for row in first:
         first_by_pmid[str(row['pmid'])].append(row)
@@ -325,6 +362,10 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=
     for row in final:
         if audit['first_contexts'][row['context_id']]['decision'] == 'PASS':
             final_by_pmid[str(row['pmid'])].append(row)
+    additional_reports = {str(row['pmid']) for row in supplemental} - assessed
+    for row in supplemental:
+        final_by_pmid[str(row['pmid'])].append(row)
+    assessed.update(additional_reports)
 
     retained = {
         pmid for pmid, rows in final_by_pmid.items()
@@ -345,7 +386,8 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=
         if codes == {'UNSPECIFIED'}:
             codes.clear()
         reason_counts[_reason_label(codes)] += 1
-    initial_excluded = screened - assessed
+    initial_excluded = {pmid for pmid, rows in first_by_pmid.items()
+                        if not any(row['decision'] == 'PASS' for row in rows)}
     initial_reasons = []
     if initial_excluded:
         initial_reasons.append({
@@ -356,6 +398,7 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=
         'screened': len(screened),
         'screening_excluded': len(initial_excluded),
         'assessed': len(assessed),
+        'supplemental_reports': len(additional_reports),
         'eligibility_excluded': len(excluded),
         'included_reports': len(retained),
         'poolable_reports': len(poolable),
@@ -420,13 +463,13 @@ def build_selection_flow(source, disease=None, exposure=None):
     monthly = load_overlay(ROOT, source)
     if monthly and monthly.get('kind') == 'scientific_correction':
         flow.setdefault('notes', []).append('Saved uncertainty was corrected from the recorded extraction excerpts; no new search or screening was performed.')
-    elif monthly:
+    elif monthly and monthly.get('search_through'):
         if 'cohort_description' in flow:
             flow['cohort_description'] = flow['cohort_description'].replace('Current ', 'Historical ', 1)
         flow['monthly'] = {key: monthly.get(key) for key in ('search_through', 'human_review_pending', 'run_id')}
         flow.setdefault('notes', []).append(
             'Monthly searching is complete through ' + monthly['search_through'] +
-            '. New screening records remain separate until the monthly review is released. ' +
+            '. Released monthly screening records are included in the diagram. ' +
             str(monthly.get('human_review_pending', 0)) + ' exposure–disease contexts await human review.'
         )
     return flow

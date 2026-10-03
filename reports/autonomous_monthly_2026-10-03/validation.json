@@ -1,0 +1,153 @@
+{
+  "task": "self-contained metaUro monthly evidence pipeline",
+  "date": "2026-10-03",
+  "baseline_commit": "22769ef9e67cebbe1a124f16f6260c6665c2ad14",
+  "full_suite": {
+    "passed": 187,
+    "failed": 0,
+    "seconds": 80.72
+  },
+  "release_safeguards": {
+    "passed": 43,
+    "failed": 0
+  },
+  "browser_helpers": {
+    "settings_passed": 12,
+    "navigation_passed": 10
+  },
+  "offline_scopes": {
+    "metaPee": {
+      "screening_projection": {
+        "scope": "metaPee",
+        "driver_import": "passed",
+        "zero_candidate_independent_review": "complete",
+        "projection_replay": "exact_hash_inventory",
+        "preserved_historical_rows": 5,
+        "output_files": 31
+      },
+      "calculation": {
+        "scope": "metaPee",
+        "calculation": "passed",
+        "baseline_preserved": true,
+        "historical_rows_preserved": 7,
+        "new_studies": 1,
+        "changed_files": 63,
+        "pooled_rr": 0.941952905327512
+      }
+    },
+    "MetaVir": {
+      "screening_projection": {
+        "scope": "MetaVir",
+        "driver_import": "passed",
+        "zero_candidate_independent_review": "complete",
+        "projection_replay": "exact_hash_inventory",
+        "preserved_historical_rows": 58,
+        "output_files": 7
+      },
+      "calculation": {
+        "scope": "MetaVir",
+        "calculation": "passed",
+        "baseline_preserved": true,
+        "historical_rows_preserved": 59,
+        "new_studies": 1,
+        "changed_files": 16,
+        "pooled_rr": 1.1760954368880365
+      }
+    }
+  },
+  "conservation_smoke": {
+    "metaPee": {
+      "files": 10,
+      "historical_study_dictionaries": 62
+    },
+    "MetaVir": {
+      "files": 6,
+      "historical_study_dictionaries": 348
+    }
+  },
+  "preexisting_failures_reproduced_at_head": {
+    "metauro-head-stale-ci-test.txt": {
+      "sha256": "fb54c8510613f716d57eec880b2ef75b41b540cb48f84aa7d468786fb4f77f62",
+      "summary": [
+        "\t/opt/homebrew/var/cache/fontconfig",
+        "\t/Users/yushushi/.cache/fontconfig",
+        "\t/Users/yushushi/.fontconfig",
+        "Matplotlib is building the font cache; this may take a moment.",
+        "=========================== short test summary info ============================",
+        "FAILED tests/test_human_review_updates.py::test_human_corrections_reach_saved_and_settings_views_without_source_writes[urinary-selected-pipeline-and-duplicate-no]",
+        "1 failed in 31.18s"
+      ]
+    },
+    "metauro-head-additions-tests.txt": {
+      "sha256": "b5243aab9dde364207c7752e8582aee73d615128749087042388c53ae9c09ca9",
+      "summary": [
+        "",
+        "2026-10-03 14:53:38 [MetaPee] Analyze complete in 0.0s: studies=17, error=None",
+        "=========================== short test summary info ============================",
+        "FAILED tests/test_study_selection.py::test_selector_only_lists_current_direct_exposure_pools",
+        "FAILED tests/test_summary_corrections.py::test_parent_scope_diagnostics_come_from_complete_saved_headline",
+        "FAILED tests/test_metauro.py::test_processed_meat_heterogeneity_and_leave_one_out_labels",
+        "3 failed in 7.76s"
+      ]
+    }
+  },
+  "preexisting_four_stage_template": {
+    "command": "git show HEAD:templates/study_selection.html",
+    "stages": [
+      "screening",
+      "eligibility",
+      "included",
+      "pooled"
+    ]
+  },
+  "published_evidence_diff": [],
+  "model_requests": 0,
+  "full_monthly_update_dispatched": false,
+  "external_repository_runtime_dependencies": [],
+  "runtime_sha256": "2eb10a38632443678b2532ac1984eb88001a58cb75afb9eab4844e1b6270dc0c",
+  "consumer_contract": {
+    "validator": "automation.autonomous_monthly.validate_completed_release",
+    "absent_state_returns": null,
+    "require_through": "minimum cutoff",
+    "state": "updates/monthly/state.json"
+  },
+  "test_artifact_sha256": {
+    "scope_smoke.py": "a393351e1e55af41fc3f72a0e5d1807174151cf2ede56b7b807eb5f475f641c2",
+    "full_tests.txt": "bfe9fc6fc3de71a54143ee9ea3a604d2da774fb577eede6fbc98af0899ea499a",
+    "preservation.json": "956e454f4722980f42cf5f2dcc0f530d84885b85ecfe24f36bfcdbca43989a11",
+    "pool_smoke.py": "f81c55a59740380b274b1c93241407762715e60c14c70a14ade5137b8de2d050",
+    "release_tests.txt": "e13eabf6a4cafe2cd370a96e0b12ad17cf96cd1f021e089a131580941f15b098",
+    "README.md": "f0f737e2983ca9a5555e943aca94ef5f2c523e99a098be698c2c6a0b9a727244",
+    "native_ncbi_MetaVir.txt": "2136f3a204e65aef0b0a362f9015092b25a1b250ff0b36144129e6358e1d530f",
+    "native_ncbi_metaPee.txt": "87ecfaf160763cdfd5a29916073f59f4e414e72b69c220e2f799826611786c62"
+  },
+  "runtime_files": 183,
+  "runtime_origins": {
+    "metaPee": {
+      "commit": "9ae1dd59dbb1af6dccb6eef353e53284cafa0aeb",
+      "note": "Code and catalog snapshot; historical evidence comes only from metaUro sources plus its updates.",
+      "snapshot_worktree_changes": []
+    },
+    "MetaVir": {
+      "commit": "a6aa6217a34f737ffc8a042dbdbc6c58a726f008",
+      "note": "Code and catalog snapshot; historical evidence comes only from metaUro sources plus its updates.",
+      "snapshot_worktree_changes": []
+    }
+  },
+  "native_ncbi_tests": {
+    "metaPee": {
+      "passed": 17,
+      "failed": 0
+    },
+    "MetaVir": {
+      "passed": 17,
+      "failed": 0
+    }
+  },
+  "preservation": {
+    "immutable_files_checked": 34301,
+    "immutable_hash_mismatches": [],
+    "tracked_protected_release_files": 35017,
+    "changed_paths": []
+  }
+}

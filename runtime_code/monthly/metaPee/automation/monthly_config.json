@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "repository": "metaPee",
+  "bootstrap": {
+    "last_successful_publication_date": "2026-08-22",
+    "provenance": "data/claude_gemini_screening/all_history_through_2026-08-29/r1_precedence_manifest.json baseline through August22"
+  },
+  "discovery_args": [
+    "--exposure-scope",
+    "all"
+  ],
+  "ui_commands": [],
+  "validation_commands": [
+    [
+      "{python}",
+      "scripts/validate_monthly_artifacts.py",
+      "--start-date",
+      "{start_date}",
+      "--end-date",
+      "{end_date}",
+      "--updates-root",
+      "data/monthly_updates",
+      "--reports-root",
+      "data/monthly_reports"
+    ],
+    [
+      "{python}",
+      "-m",
+      "pytest",
+      "tests/test_monthly_pipeline.py",
+      "tests/test_monthly_adjudication.py",
+      "tests/test_monthly_ui.py",
+      "tests/test_monthly_release.py",
+      "-q"
+    ]
+  ]
+}

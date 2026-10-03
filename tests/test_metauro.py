@@ -225,7 +225,10 @@ def test_processed_meat_heterogeneity_and_leave_one_out_labels(client):
     )
     assert response.status_code == 200
     headline = response.json['headline']
-    assert headline['i2'] == pytest.approx(41.47)
+    from automation.sync_sources import assembled_source
+    import json
+    saved = json.loads((assembled_source(ROOT, 'metaPee')/'combined/provisional_ui/subexposure_views/no/Cached_results/processed_meat_intake/bladder_cancer_incidence_true_all.json').read_text())
+    assert headline['i2'] == pytest.approx(saved['headline']['i2'])
     assert headline['loo_results']
     for row in headline['loo_results']:
         assert 'Men and women' not in row['omitted']
@@ -352,7 +355,8 @@ def test_selection_page_is_exposure_specific_and_shows_criteria(client):
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.select_one('.header-actions [aria-current="page"]').text == 'Study selection'
     assert soup.select_one('.prisma-figure')
-    assert len(soup.select('.flow-stage')) == 3
+    assert [section['aria-labelledby'] for section in soup.select('.flow-stage')] == [
+        'phase-screening', 'phase-eligibility', 'phase-included', 'phase-pooled']
     assert soup.select_one('#selection-scope option[selected]')['value'] == 'bladder_cancer'
     assert soup.select_one('#selection-exposure option[selected]')['value'] == 'Vitamin D'
     text = soup.get_text(' ', strip=True)

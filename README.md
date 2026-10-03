@@ -41,8 +41,9 @@ Some OneDrive-only PNGs could not be read directly during the original import. `
 
 The metaUro worker rejects writes into either snapshot. Persistent verification/exclusion actions are disabled; temporary study selection and reanalysis remain available. Runtime logs and plotting-library caches live under ignored `runtime/`. Original refresh workflows are archived inside the snapshots and are not active GitHub workflows in this repository.
 
-Recurring source releases are installed as validated overlays instead of editing
-the snapshots. See the [monthly update runbook](docs/monthly-automation.md) for
+metaUro now searches and updates both scopes independently, using its checked-in
+runtime and validated overlays instead of editing the snapshots or checking out
+external repositories. See the [monthly update runbook](docs/monthly-automation.md) for
 preflight, deterministic retry, validation, rollback, and cleanup instructions.
 
 ```bash

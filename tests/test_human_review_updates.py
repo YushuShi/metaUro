@@ -70,7 +70,11 @@ def _one_reviewed_row(payload, pmid, exposure, *, estimate, interval, sample_siz
     row = rows[0]
     assert float(row['Sample Size']) == sample_size
     assert float(row['Effect Size']) == pytest.approx(estimate, rel=1e-7)
-    assert (float(row['Lower CI']), float(row['Upper CI'])) == pytest.approx(interval, rel=1e-7)
+    if interval is None:
+        assert row['Lower CI'] is None and row['Upper CI'] is None
+        assert row.get('p_value_ci_retraction')
+    else:
+        assert (float(row['Lower CI']), float(row['Upper CI'])) == pytest.approx(interval, rel=1e-7)
     assert not row.get('manual_review_pending')
     assert not row.get('requires_key_review')
     return row
@@ -87,8 +91,10 @@ def _check_mediterranean(payload, mode):
 
 def _check_alcohol(payload, mode):
     # metaPee-0002 selects ChatGPT; metaPee-0003 deletes its duplicate pair.
+    # The later approved trend-p revision retains this effect and sample size,
+    # but retracts its unsupported Wald interval from both served modes.
     _one_reviewed_row(payload, '11159145', 'Alcohol', estimate=1.63,
-                      interval=(.865997191, 3.068023807), sample_size=120852)
+                      interval=None, sample_size=120852)
 
 
 def _check_beta_carotene(payload, mode):

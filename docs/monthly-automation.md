@@ -1,64 +1,46 @@
-# Monthly source refresh
+# Autonomous monthly evidence update
 
-The source repositories run NCBI searches and their three screening rounds on the 28th. This application refreshes after those workflows, at 16:47, 20:47, and 23:47 UTC on the 28th, with one recovery attempt at 04:47 UTC on the 29th. GitHub may delay scheduled jobs. A failed source release leaves the current application intact; it can be retried manually after the source finishes.
+metaUro searches PubMed, screens and extracts new evidence, calculates its urinary and prostate results, and publishes the complete release itself. The workflow has one checkout: metaUro. It does not access live metaPee/MetaVir repositories or websites. Those names now identify the two preserved analysis scopes.
 
-Private source checkouts use separate read-only deploy keys. The application uses GitHub's built-in token to commit its own generated outputs. No search or paid model calls are duplicated here. The workflow's manual `preflight` mode verifies checkout access and release readiness without changing evidence.
+The checked-in `runtime_code/monthly/` snapshot contains the screening engines, scientific policies, catalogs and provenance hashes. Writable workspaces are copied from metaUro's immutable `sources/` plus its current `updates/` overlays. Baseline files are never overwritten or hardlinked into writable workspaces.
 
-Both urinary and prostate releases must pass checksum and completion checks. New caches and plots are stored in versioned `updates/` overlays; the original `sources/` evidence and its checksum manifest remain unchanged. The application shows the updated results and offers the monthly human-review CSV from the study-selection page. Historical flow counts retain their original scope; the monthly review is identified separately.
+## Services and screening
 
-## Operator workflow
+Set `CORNELL_API_KEY`, `NCBI_EMAIL`, and either `CORNELL_API_BASE_URL` or `API_BASE_URI` in this repository's Actions secrets. `NCBI_API_KEY` is optional: an absent or rejected key uses the paced public NCBI service. No source deploy keys or Tencent credentials are needed.
 
-The default local checkout layout is `.sources/metaPee` and `.sources/MetaVir`.
-The directory is ignored by Git. Use preflight first; it verifies both release
-identities, their shared publication cutoff, source packets, review artifacts,
-application gates, UI outputs, checksums, and clean source checkouts without
-changing metaUro.
+A gateway model listing verifies all five required model IDs before screening. The primary pipeline uses GPT 5.6 Luna for R1, GPT 5.6 Sol for R2 and GPT 5.6 Luna for source-gated R3. The independent pipeline shares the actual current-window R1 decisions, then uses Claude Opus 5 for R2 and Gemini 3.7 Flash for R3. Actual model identities, source proofs, responses and billing receipts are preserved. It never reseeds the independent review from historical all-history generations.
 
-```bash
-python -m automation.monthly_refresh --preflight
-python -m automation.monthly_refresh
-```
+Gpt-6-astra supplies recommendations for actual disagreements. Disputed contexts remain withheld from new automatic application until an explicit reviewed revision; a model recommendation or an edited CSV does not silently approve evidence. Root `monthlyHumanReview/<run_id>_<scope>.csv` queues show each pipeline's decisions, effect/CI/sample/quality claims and reasons alongside the disagreement fields and human annotation columns. Sequential R2/R3 comparisons are identified separately from independent pipeline comparisons.
 
-For a checkout elsewhere, pass `--repos-root /path/to/parent`. For a delayed
-retry or backfill, pin the expected publication date so the result does not
-depend on the day the command runs:
+## Run and resume
+
+The schedule runs at 16:47 UTC on the 28th; GitHub can delay scheduled jobs. Manual dispatch defaults to a read-only service preflight. Select `update` for the complete pipeline.
 
 ```bash
-python -m automation.monthly_refresh --cutoff YYYY-MM-DD --preflight
-python -m automation.monthly_refresh --cutoff YYYY-MM-DD
+python -m automation.autonomous_monthly preflight --gateway
+python -m automation.autonomous_monthly prepare
+python -m automation.autonomous_monthly publish
 ```
 
-The update command validates both sources before publishing either one. It then
-installs additive overlays, runs the Python regression suite once against the
-installed view, and leaves `sources/` untouched. Repeating the same verified
-release is a no-op. Unchanged overlay artifacts and review CSVs reuse their
-already-installed bytes instead of creating another monthly copy.
+Preparation fixes a window ending on the last complete UTC day. Conservative initial watermarks are June 30 for prostate and August 22 for urinary evidence; later manual additions do not imply a completed full-catalog search. After a completed release, both scopes advance through the same actual cutoff. An interrupted window remains pinned until completion.
 
-## Release contract
+An unsuccessful workflow uploads its raw screening, source/model receipts and review queues as `metauro-monthly-checkpoint`. The next update restores a checkpoint only when its runtime and input overlay hashes still match. Recovery makes no new model decisions and does not advance the search watermark. Local workspaces under `runtime/monthly/` are scratch; durable audit packets are retained under `updates/monthly/<run_id>/`.
 
-Each source checkout must provide `data/monthly_automation/state.json` pointing
-to a completed, checksummed release manifest. The manifest must identify the
-expected repository and cutoff, contain the raw screening packet receipts, a
-nonempty human-review artifact inventory, the application-gate receipt, and
-checksums for every served UI artifact. Both source checkouts must be clean and
-committed. A missing, incomplete, mismatched, or modified release is rejected;
-the current application pointer remains in place.
+## Publication and consumer contract
 
-`updates/manifest.json` is the publication pointer. Files under
-`updates/<source>/versions/` are immutable content for that pointer. Git history
-provides rollback: revert the monthly refresh commit rather than editing an
-installed overlay or the preserved source snapshot in place.
+Both scopes must complete discovery, both screening pipelines, adjudication, application and validation before either publication pointer changes. New overlays retain historical study estimates and their scientific gates. Display-only additions do not recalculate an existing pool. Summary workbooks/PDFs are generated only under `summary/{yes,no}`. A summary or regression failure restores the previous two-scope pointer and summaries, leaving the paid receipts available for recovery.
 
-## Manual-review files and local cleanup
+The release keeps existing parent-pool winners when new correlated estimates arrive. Newly extracted aggressive-prostate estimates remain visible but held until their diagnosis-defined endpoint and endpoint-specific counts have a validated review receipt. These downstream policy holds are included in the exported human-review CSV, separately labeled from model disagreements; the original native application CSV and gate remain intact.
 
-Completed review files become durable only after the source project archives
-them with a checksum, decision checkpoint, and application audit. Temporary
-files awaiting that process belong in the ignored `review-inbox/`, not at the
-repository root. After incorporation is verified, remove the inbox copy; do
-not remove the archived file, checkpoint, audit, or evidence revision.
+The full application suite is run for this code release. Recurring evidence publication runs the native packet validators, fixture-based recovery/source/uncertainty/release tests, historical-row conservation checks and summary manifest verification. Historical live-data count assertions are not used to reject a month's legitimate new evidence.
 
-The ignored `runtime/`, `test-deps/`, Python caches, diagnostic scratch
-directories, and SQLite `-wal`/`-shm` files are disposable. Do not bulk-delete
-date-named files inside `sources/`, `reports/`, or `evidence-revisions/`: those
-trees are part of the evidence and provenance contract even when they are not
-loaded by the web application.
+`updates/monthly/state.json` records a completed release, its actual per-scope search cutoffs, run ID and checksummed release receipt. Read-only consumers can call:
+
+```python
+from automation.autonomous_monthly import validate_completed_release
+release = validate_completed_release(repo_root, require_through="2026-09-27")
+```
+
+The function returns `None` when there is no autonomous monthly release. It rejects corrupt/incomplete releases and cutoffs older than the requested minimum. A later completed cutoff is accepted unchanged. The verified export is reconstructible using `automation.sync_sources.assembled_source(repo_root, scope)` and the central `summary/` collection; this performs no review or pooling. Use an isolated Python process to avoid module-name collisions with another application.
+
+The workflow commits the full `updates/`, `summary/`, `monthlyHumanReview/` and `runtime_code/` trees, including deletion awareness. Git history provides release rollback. Historical `sources/`, `evidence-manifest.json`, revision receipts and review decisions remain preserved. The old source-import utilities are retained solely for explicit legacy maintenance; they are not part of the monthly workflow.

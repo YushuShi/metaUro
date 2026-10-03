@@ -84,8 +84,11 @@ jobs:
             git commit -m 'Publish autonomous monthly urinary evidence update'
             git push origin "HEAD:${{ github.event.repository.default_branch }}"
           fi
+      - name: Preserve in-flight paid screening receipts
+        if: always() && (failure() || cancelled()) && (github.event_name == 'schedule' || inputs.mode == 'update')
+        run: python -m automation.autonomous_monthly checkpoint
       - name: Save interrupted paid screening receipts
-        if: failure() && (github.event_name == 'schedule' || inputs.mode == 'update')
+        if: always() && (failure() || cancelled()) && (github.event_name == 'schedule' || inputs.mode == 'update')
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: metauro-monthly-checkpoint

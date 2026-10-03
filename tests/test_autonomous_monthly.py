@@ -163,11 +163,34 @@ def test_monthly_workflow_has_no_remote_source_checkout():
     assert 'automation.autonomous_monthly prepare' in workflow
     assert 'automation.autonomous_monthly publish' in workflow
     assert "MONTHLY_REQUIRE_VALID_NCBI_KEY: 'false'" in workflow
+    assert workflow.count('always() && (failure() || cancelled())') == 2
+    assert 'automation.autonomous_monthly checkpoint' in workflow
 
 
 def test_absent_monthly_success_is_not_inferred_from_manual_overlay(tmp_path):
     scaffold(tmp_path)
     assert monthly.validate_completed_release(tmp_path) is None
+
+
+def test_cancellation_checkpoint_preserves_paid_packets_without_publishing(tmp_path):
+    scaffold(tmp_path)
+    span=monthly.window(tmp_path,date(2026,10,3))
+    write(tmp_path/'updates/monthly/active.json',span)
+    work=tmp_path/'runtime/monthly'/span['run_id']/'metaPee'
+    native=span['start_dates']['metaPee']+'_'+span['end_date']
+    write(work/'data/monthly_updates'/native/'responses/paid.json',{'request':'complete'})
+    write(work/'data/monthly_reports'/native/'cost.json',{'tokens':10})
+    csv=work/'monthlyHumanReview'/(native+'.csv');csv.parent.mkdir(parents=True)
+    csv.write_text('context_id,human_review_reason\nfixture,pending\n')
+    before=(tmp_path/'updates/manifest.json').read_bytes()
+    result=monthly.checkpoint(tmp_path)
+    assert result['copied_packet_trees']==2
+    recovery=tmp_path/'updates/monthly'/span['run_id']/'recovery/metaPee'
+    assert read(recovery/'monthly_updates'/native/'responses/paid.json')=={'request':'complete'}
+    assert read(recovery/'monthly_reports'/native/'cost.json')=={'tokens':10}
+    assert (tmp_path/'monthlyHumanReview'/(span['run_id']+'_metaPee.csv')).read_bytes()==csv.read_bytes()
+    assert (tmp_path/'updates/manifest.json').read_bytes()==before
+    assert not (tmp_path/'updates/monthly/state.json').exists()
 
 
 def complete_fixture(root):

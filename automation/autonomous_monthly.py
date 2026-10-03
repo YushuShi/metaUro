@@ -159,6 +159,38 @@ def _copy_tree_exact(source, target):
     shutil.copytree(source, target, ignore=_copy_ignore)
 
 
+def checkpoint(root=ROOT, span=None):
+    """Preserve in-flight paid packets after failure or workflow cancellation."""
+    root = Path(root).resolve()
+    span = span or read(root/'updates/monthly/active.json', {})
+    if not span:
+        return {'status':'no_active_run'}
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2}',str(span.get('run_id',''))):
+        raise ValueError('Invalid checkpoint run ID')
+    date.fromisoformat(span['end_date'])
+    if set(span['start_dates']) != set(SOURCES):
+        raise ValueError('Invalid checkpoint source scopes')
+    audit = root/'updates/monthly'/span['run_id']
+    copied = 0
+    for scope in SOURCES:
+        date.fromisoformat(span['start_dates'][scope])
+        work = root/'runtime/monthly'/span['run_id']/scope
+        native_id = span['start_dates'][scope]+'_'+span['end_date']
+        for kind in ('monthly_updates','monthly_reports'):
+            source = work/'data'/kind/native_id
+            if source.exists():
+                _copy_tree_exact(source,audit/'recovery'/scope/kind/native_id)
+                copied += 1
+        candidates = [work/'monthlyHumanReview'/(native_id+'_export.csv'),
+                      work/'monthlyHumanReview'/(native_id+'.csv')]
+        candidate = next((path for path in candidates if path.is_file()),None)
+        if candidate is not None:
+            target = root/'monthlyHumanReview'/(span['run_id']+'_'+scope+'.csv')
+            target.parent.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(candidate,target)
+    return {'status':'checkpoint_saved','run_id':span['run_id'],'copied_packet_trees':copied}
+
+
 def prepare(root=ROOT, *, today=None):
     root = Path(root).resolve()
     check = preflight(root, gateway=True, today=today)
@@ -236,23 +268,7 @@ def prepare(root=ROOT, *, today=None):
     except BaseException as exc:
         result.update(status="failed", error_type=type(exc).__name__)
         write(receipt_path, result)
-        # Persist paid receipts after interruption without publishing partial pools.
-        for scope in SOURCES:
-            work = root / "runtime/monthly" / span["run_id"] / scope
-            for kind in ("monthly_updates", "monthly_reports"):
-                native_id = span["start_dates"][scope] + "_" + span["end_date"]
-                source = work / "data" / kind / native_id
-                if source.exists():
-                    _copy_tree_exact(source, audit / "recovery" / scope / kind / native_id)
-            # The human queue remains available even if a later scope fails.
-            native_id = span['start_dates'][scope] + '_' + span['end_date']
-            candidates = [work/'monthlyHumanReview'/(native_id+'_export.csv'),
-                          work/'monthlyHumanReview'/(native_id+'.csv')]
-            candidate = next((path for path in candidates if path.is_file()),None)
-            if candidate is not None:
-                target = root / "monthlyHumanReview" / (span["run_id"] + "_" + scope + ".csv")
-                target.parent.mkdir(parents=True, exist_ok=True)
-                shutil.copyfile(candidate, target)
+        checkpoint(root,span)
         raise
 
 
@@ -479,7 +495,7 @@ def restore(root=ROOT):
 def main(argv=None):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--repo-root", type=Path, default=ROOT)
-    parser.add_argument("command", choices=("preflight", "prepare", "publish", "restore"))
+    parser.add_argument("command", choices=("preflight", "prepare", "publish", "restore", "checkpoint"))
     parser.add_argument("--gateway", action="store_true")
     args = parser.parse_args(argv)
     if args.command == "preflight":
@@ -488,6 +504,9 @@ def main(argv=None):
         return 0 if result["ready"] else 1
     if args.command == 'restore':
         print(json.dumps(restore(args.repo_root),indent=2))
+        return 0
+    if args.command == 'checkpoint':
+        print(json.dumps(checkpoint(args.repo_root),indent=2))
         return 0
     result = prepare(args.repo_root) if args.command == "prepare" else publish(args.repo_root)
     print(json.dumps({key: result.get(key) for key in ("repository", "status", "run_id", "end_date")}, indent=2))

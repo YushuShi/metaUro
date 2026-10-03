@@ -24,7 +24,7 @@ python -m automation.autonomous_monthly publish
 
 Preparation fixes a window ending on the last complete UTC day. Conservative initial watermarks are June 30 for prostate and August 22 for urinary evidence; later manual additions do not imply a completed full-catalog search. After a completed release, both scopes advance through the same actual cutoff. An interrupted window remains pinned until completion.
 
-An unsuccessful workflow uploads its raw screening, source/model receipts and review queues as `metauro-monthly-checkpoint`. The next update restores a checkpoint only when its runtime and input overlay hashes still match. Recovery makes no new model decisions and does not advance the search watermark. Local workspaces under `runtime/monthly/` are scratch; durable audit packets are retained under `updates/monthly/<run_id>/`.
+A failed or cancelled workflow first checkpoints any in-flight paid packets, then uploads its raw screening, source/model receipts and review queues as `metauro-monthly-checkpoint`. The next update restores a checkpoint only when its runtime and input overlay hashes still match. Recovery makes no new model decisions and does not advance the search watermark. Local workspaces under `runtime/monthly/` are scratch; durable audit packets are retained under `updates/monthly/<run_id>/`.
 
 ## Publication and consumer contract
 

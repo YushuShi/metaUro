@@ -248,6 +248,17 @@ def prepare(root=ROOT, *, today=None):
                 raise ValueError("Independent scope has not validated")
             result["scopes"][scope] = scope_receipt
             _copy_tree_exact(native, audit / scope / "screening")
+            gate = read(native/'monthly_application_gate.json')
+            native_csv = bound(work, gate['review_csv'])
+            if (sha(native/'monthly_application_gate.json') != scope_receipt['application_gate_sha256']
+                    or sha(native_csv) != gate['review_csv_sha256']
+                    or native_csv != Path(scope_receipt['native_human_review_csv']).resolve()):
+                raise ValueError('Native review CSV does not match the validated application gate')
+            preserved_csv = audit/scope/'review/native.csv'
+            preserved_csv.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(native_csv, preserved_csv)
+            scope_receipt['native_review_csv_artifact'] = {
+                'path':str(preserved_csv.relative_to(root)), 'sha256':sha(preserved_csv)}
             reports = work / "data/monthly_reports" / native.name
             if reports.exists():
                 _copy_tree_exact(reports, audit / scope / "reports")
@@ -433,6 +444,65 @@ import an analysis engine, make requests, or perform pooling/review work.
             if sha(bound(root,relative)) != digest:
                 raise ValueError("Release artifact checksum mismatch: " + relative)
     for scope in SOURCES:
+        receipt = release['scopes'][scope]
+        screening = path.parent/scope/'screening'
+        native_manifest = screening/'monthly_run_manifest.json'
+        if sha(native_manifest) != receipt.get('native_manifest_sha256'):
+            raise ValueError('Native monthly manifest checksum mismatch')
+        native = read(native_manifest)
+        if (native.get('repository') != scope or native.get('run_id') != receipt.get('run_id')
+                or native.get('status') not in {'validated', 'completed'}):
+            raise ValueError('Native monthly manifest identity mismatch')
+        raw = native.get('raw_packet_sha256', {})
+        if (not {'candidates.json', 'final_screening.json'}.issubset(raw)
+                or raw != receipt.get('raw_packet_sha256')):
+            raise ValueError('Native raw screening inventory mismatch')
+        for relative, digest in raw.items():
+            if sha(bound(screening, relative)) != digest:
+                raise ValueError('Native raw screening checksum mismatch: ' + relative)
+        parallel = native.get('independent_review', {})
+        artifacts = parallel.get('artifact_sha256', {})
+        status = {key:value for key,value in parallel.items() if key != 'artifact_sha256'}
+        if (parallel.get('complete') is not True
+                or parallel.get('models') != {'r2':'claude-opus-5', 'r3':'gemini-3.7-flash'}
+                or status != receipt.get('independent_review')
+                or 'monthly_parallel/monthly_status.json' not in artifacts):
+            raise ValueError('Independent review status or inventory mismatch')
+        for inventory in (artifacts, parallel.get('source_sha256', {}),
+                          native.get('review', {}).get('source_sha256', {})):
+            if not inventory:
+                raise ValueError('Native review evidence inventory is absent')
+            for relative, digest in inventory.items():
+                if sha(bound(screening, relative)) != digest:
+                    raise ValueError('Native review evidence checksum mismatch: ' + relative)
+        if read(screening/'monthly_parallel/monthly_status.json') != status:
+            raise ValueError('Independent review status receipt mismatch')
+        gate_path = screening/'monthly_application_gate.json'
+        if (sha(gate_path) != receipt.get('application_gate_sha256')
+                or native.get('application_gate_sha256') != receipt.get('application_gate_sha256')):
+            raise ValueError('Native application gate checksum mismatch')
+        gate = read(gate_path)
+        applied_filter = read(screening/'monthly_application_filter.json', {})
+        if (applied_filter.get('gate_sha256') != receipt['application_gate_sha256']
+                or applied_filter.get('source_final_screening_sha256') != gate.get('source_final_screening_sha256')):
+            raise ValueError('Native application filter checksum mismatch')
+        if native.get('review_artifacts_sha256') != {
+                gate['review_csv']:gate['review_csv_sha256'],
+                gate['adjudication_path']:gate['adjudication_sha256']}:
+            raise ValueError('Native review artifact inventory mismatch')
+        native_review = receipt.get('native_review_csv_artifact', {})
+        native_csv = path.parent/scope/'review/native.csv'
+        relative_csv = str(native_csv.relative_to(root))
+        if (native_review.get('path') != relative_csv
+                or native_review.get('sha256') != gate.get('review_csv_sha256')
+                or release['audit_artifact_sha256'].get(relative_csv) != gate.get('review_csv_sha256')
+                or sha(native_csv) != gate.get('review_csv_sha256')):
+            raise ValueError('Preserved native review CSV checksum mismatch')
+        relative_adjudication = Path(gate['adjudication_path']).relative_to(
+            Path('data/monthly_updates')/receipt['run_id'])
+        if (sha(bound(screening, relative_adjudication)) != gate.get('adjudication_sha256')
+                or sha(screening/'final_screening.json') != gate.get('source_final_screening_sha256')):
+            raise ValueError('Native application gate evidence checksum mismatch')
         manifest = load_overlay(root,scope)
         if manifest.get("search_through") != cutoff or manifest.get("producer") != "metaUro":
             raise ValueError("Monthly scope provenance is invalid")

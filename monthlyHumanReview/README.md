@@ -28,3 +28,9 @@ multiline evidence and reviewer comments retain their text. Before Git
 publication, `automation.autonomous_monthly verify-index` checks that every
 required release file has exactly the validated bytes in Git's staging area;
 line-ending conversion or clean filters cannot silently invalidate a receipt.
+
+Each release also preserves the original native review table at
+`updates/monthly/<run>/<scope>/review/native.csv`. The native gate binds this
+exact table; the exported queue may additionally contain downstream scope
+holds. Release verification checks both tables and the native screening,
+independent-review, adjudication, and application-filter hash references.

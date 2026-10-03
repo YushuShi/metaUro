@@ -1,0 +1,65 @@
+{
+  "status": "verified",
+  "timestamp": "2026-10-03T20:26:44.055615+00:00",
+  "base_commit": "b9f7afc91188c4fcf23f1f3bd7f9386d07c593f0",
+  "test_result": "........................................................................ [ 97%]\n..                                                                       [100%]\n74 passed in 40.35s",
+  "native_review_table": "updates/monthly/<global run>/<scope>/review/native.csv",
+  "verified_inner_links": [
+    "Scoped receipt to native manifest and raw-packet inventory",
+    "Native independent-review status/models/artifact/source receipts",
+    "Native adjudication source packet inventory",
+    "Original CSV and adjudication table to application gate",
+    "Application filter to gate and final screening",
+    "Gate to final-screening source hash",
+    "All required local release bytes to Git stage-0 blobs"
+  ],
+  "negative_cases": [
+    "Changed CSV",
+    "Changed gate",
+    "Changed adjudication",
+    "Changed final screening",
+    "Changed candidates",
+    "Changed native manifest",
+    "Changed independent source receipt",
+    "Changed application filter"
+  ],
+  "independent_recheck": [
+    {
+      "target": "candidates.json",
+      "stale_inner_receipt_rejected": true,
+      "error": "Native raw screening checksum mismatch: candidates.json"
+    },
+    {
+      "target": "monthly_parallel/source_receipt.json",
+      "stale_inner_receipt_rejected": true,
+      "error": "Native review evidence checksum mismatch: monthly_parallel/source_receipt.json"
+    },
+    {
+      "target": "monthly_run_manifest.json",
+      "stale_inner_receipt_rejected": true,
+      "error": "Native monthly manifest checksum mismatch"
+    }
+  ],
+  "vendored_runtime_files_verified": 183,
+  "vendored_manifest_sha256": "2eb10a38632443678b2532ac1984eb88001a58cb75afb9eab4844e1b6270dc0c",
+  "immutable_baseline_and_published_results_changed": false,
+  "checkpoint": {
+    "run_id": 37151040841,
+    "artifact_id": 11283379609,
+    "digest": "sha256:cff2b0585bba19a3276a4fa11146ede7009b16532fe36d2874f58c6363d9adec",
+    "preserve_and_upload": "success",
+    "publication": "skipped",
+    "query_results": 5388,
+    "candidate_pmids": 138,
+    "candidate_contexts": 241,
+    "completed_primary_r1_contexts": 28,
+    "runtime_and_overlay_inputs_match": true
+  },
+  "files_sha256": {
+    "automation/autonomous_monthly.py": "a5c266ab6ad8e7981ef81ee4d06e2237618211fd7b469ddc24e1c330693b8620",
+    "tests/test_autonomous_monthly.py": "36209bc625af660bbe864e0534f2ec1e153c0e768a3eccd57f05cb4e877c3448",
+    "tests/test_monthly_transport.py": "6845ceaa6c699fd68566e8b0c879dd5bc91b810f0ec6b32ce083312f35cfa1cd",
+    "tests/native_proof_fixture.py": "1909da3a416b130a28fa74e95d13e5ba293c27ca0133c531ff7bdcdc8bac2107",
+    "monthlyHumanReview/README.md": "7d531ca1ada4460b6fddab1412f25e42eb50a8181082a82a0bfe2acc0d2ed1d2"
+  }
+}

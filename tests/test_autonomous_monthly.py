@@ -6,6 +6,7 @@ import pytest
 
 from automation import autonomous_monthly as monthly
 from automation.sync_sources import read, sha, write
+from native_proof_fixture import add_native_proofs
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -199,6 +200,22 @@ def test_cancellation_checkpoint_preserves_paid_packets_without_publishing(tmp_p
 
 def complete_fixture(root):
     audit, result = prepared_fixture(root)
+    for scope in monthly.SOURCES:
+        screening = audit/scope/'screening'
+        native_csv = audit/scope/'review/native.csv'
+        native_csv.parent.mkdir(parents=True)
+        native_csv.write_bytes(b'review_id,reason\n')
+        write(screening/'astra/adjudications.json', {'results':[]})
+        write(screening/'final_screening.json', {'results':[]})
+        gate = {'review_csv':'monthlyHumanReview/native.csv', 'review_csv_sha256':sha(native_csv),
+                'adjudication_path':'data/monthly_updates/'+result['run_id']+'/astra/adjudications.json',
+                'adjudication_sha256':sha(screening/'astra/adjudications.json'),
+                'source_final_screening_sha256':sha(screening/'final_screening.json')}
+        write(screening/'monthly_application_gate.json', gate)
+        result['scopes'][scope].update(run_id=result['run_id'],
+            application_gate_sha256=sha(screening/'monthly_application_gate.json'),
+            native_review_csv_artifact={'path':str(native_csv.relative_to(root)), 'sha256':sha(native_csv)})
+        add_native_proofs(screening, scope, result['scopes'][scope])
     monthly.prepare_overlays(root,audit,result)
     write(root/'updates/manifest.json',result['prepared_overlay_index'])
     write(root/'summary/no/fixture.json',{'scope':'complete'})

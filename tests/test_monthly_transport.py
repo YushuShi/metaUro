@@ -15,6 +15,7 @@ from automation import autonomous_monthly as monthly
 from automation.autonomous_scope import (_CanonicalReviewCSV, canonical_review_safe,
                                          export_review_queue, load_registered_driver)
 from automation.sync_sources import sha, write
+from native_proof_fixture import add_native_proofs
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -36,16 +37,33 @@ def completed_fixture(root, csv_bytes):
     write(root/'summary/proof.json', {'studies':[]})
     audit = root/'updates/monthly'/run_id
     write(audit/'proof.json', {'models':'unchanged'})
+    receipts = {}
     index = {'schema_version':1, 'sources':{}}
     for scope in monthly.SOURCES:
+        native_csv = audit/scope/'review/native.csv'
+        native_csv.parent.mkdir(parents=True)
+        native_csv.write_bytes(csv_bytes)
+        screening = audit/scope/'screening'
+        write(screening/'astra/adjudications.json', {'results':[]})
+        write(screening/'final_screening.json', {'results':[]})
+        write(screening/'monthly_application_gate.json', {
+            'review_csv':'monthlyHumanReview/native.csv', 'review_csv_sha256':sha(native_csv),
+            'adjudication_path':'data/monthly_updates/'+run_id+'/astra/adjudications.json',
+            'adjudication_sha256':sha(screening/'astra/adjudications.json'),
+            'source_final_screening_sha256':sha(screening/'final_screening.json')})
+        receipts[scope] = {'run_id':run_id,
+            'application_gate_sha256':sha(screening/'monthly_application_gate.json'),
+            'native_review_csv_artifact':{'path':str(native_csv.relative_to(root)), 'sha256':sha(native_csv)}}
+        add_native_proofs(screening, scope, receipts[scope])
         relative = scope+'/versions/monthly/manifest.json'
         write(root/'updates'/relative, {'source':scope, 'producer':'metaUro',
               'search_through':cutoff, 'files':{}, 'review_files':[]})
         index['sources'][scope] = {'manifest':relative, 'sha256':sha(root/'updates'/relative)}
     write(root/'updates/manifest.json', index)
     release = {'status':'completed', 'run_id':run_id, 'end_date':cutoff,
-        'scopes':dict.fromkeys(monthly.SOURCES, {}), 'prepared_overlay_index':index,
-        'audit_artifact_sha256':{str(p.relative_to(root)):sha(p) for p in (review, audit/'proof.json')},
+        'scopes':receipts, 'prepared_overlay_index':index,
+        'audit_artifact_sha256':{str(p.relative_to(root)):sha(p)
+            for p in [review, *audit.rglob('*')] if p.is_file()},
         'summary_sha256':{'summary/proof.json':sha(root/'summary/proof.json')}}
     write(audit/'release.json', release)
     write(root/'updates/monthly/state.json', {'repository':'metaUro', 'status':'completed',
@@ -160,6 +178,33 @@ def test_unreferenced_recovery_sidecar_is_scratch_but_hash_bound_sidecar_is_requ
     git(tmp_path, 'add', '--', str(state_path.relative_to(tmp_path)), str(release_path.relative_to(tmp_path)))
     with pytest.raises(ValueError, match='missing or unresolved.*sqlite3-wal'):
         monthly.verify_git_index(tmp_path)
+
+
+@pytest.mark.parametrize('artifact', ['native_csv', 'gate', 'adjudication', 'final_screening',
+    'candidates', 'native_manifest', 'parallel_source', 'application_filter'])
+def test_native_gate_proofs_cannot_be_resealed_with_changed_bytes(tmp_path, artifact):
+    completed_fixture(tmp_path, b'review_id,reason\n')
+    state_path = tmp_path/'updates/monthly/state.json'
+    state = json.loads(state_path.read_text())
+    release_path = tmp_path/state['manifest_path']
+    release = json.loads(release_path.read_text())
+    scope = release_path.parent/'metaPee'
+    target = {'native_csv':scope/'review/native.csv',
+              'gate':scope/'screening/monthly_application_gate.json',
+              'adjudication':scope/'screening/astra/adjudications.json',
+              'final_screening':scope/'screening/final_screening.json',
+              'candidates':scope/'screening/candidates.json',
+              'application_filter':scope/'screening/monthly_application_filter.json',
+              'native_manifest':scope/'screening/monthly_run_manifest.json',
+              'parallel_source':scope/'screening/monthly_parallel/source_receipt.json'}[artifact]
+    target.write_bytes(b'{}\n')
+    # Updating the outer inventory cannot hide a broken native evidence chain.
+    release['audit_artifact_sha256'][str(target.relative_to(tmp_path))] = sha(target)
+    write(release_path, release)
+    state['manifest_sha256'] = sha(release_path)
+    write(state_path, state)
+    with pytest.raises(ValueError, match='checksum mismatch'):
+        monthly.validate_completed_release(tmp_path)
 
 
 def test_driver_registers_during_import_and_restores_previous_on_failure(tmp_path, monkeypatch):

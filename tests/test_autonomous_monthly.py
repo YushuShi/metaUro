@@ -165,6 +165,10 @@ def test_monthly_workflow_has_no_remote_source_checkout():
     assert "MONTHLY_REQUIRE_VALID_NCBI_KEY: 'false'" in workflow
     assert workflow.count('always() && (failure() || cancelled())') == 2
     assert 'automation.autonomous_monthly checkpoint' in workflow
+    assert 'runs-on: ubuntu-24.04' in workflow
+    assert 'bash automation/install_poppler.sh "$RUNNER_TEMP/poppler-26.07.0"' in workflow
+    assert workflow.index('Install and verify the exact PDF reader') < workflow.index('Search, screen independently, extract, and pool')
+    assert 'tests/test_poppler_runtime.py -q' in workflow
 
 
 def test_absent_monthly_success_is_not_inferred_from_manual_overlay(tmp_path):

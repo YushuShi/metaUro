@@ -6,6 +6,15 @@ import csv
 import hashlib
 from pathlib import Path
 
+SCREENING_STAGE_ORDER = ('discover', 'first-screen', 'second-screen', 'report', 'full-text', 'finalize')
+
+
+def configure_stage_order(pipeline):
+    # Match the native --stage all sequence: the preliminary report must run
+    # before finalization writes the complete canonical exclusion ledger.
+    # Keep the vendored source receipt unchanged so discovery can resume.
+    pipeline.STAGES = SCREENING_STAGE_ORDER
+
 
 def export_review_queue(root, run, result):
     """Add downstream policy holds without changing the native application gate."""
@@ -59,6 +68,7 @@ def main(argv=None):
     args = parser.parse_args(argv)
     from automation import monthly_pipeline as pipeline
     from automation.autonomous_projection import refresh_ui
+    configure_stage_order(pipeline)
     root = Path.cwd().resolve()
     config = pipeline.load_config(root, 'automation/monthly_config.json')
     config['repository'] = args.scope

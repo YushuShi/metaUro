@@ -44,6 +44,8 @@ jobs:
           python-version: '3.12'
       - name: Install build dependencies
         run: python -m pip install -r requirements.txt pytest jsonschema
+      - name: Install and verify the exact PDF reader
+        run: bash automation/install_poppler.sh "$RUNNER_TEMP/poppler-26.07.0"
       - name: Check browser-facing helpers
         run: |
           node tests/settings.test.js static/analysis-settings.js
@@ -56,7 +58,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install --yes fonts-noto-cjk
       - name: Validate release safeguards
-        run: python -m pytest tests/test_autonomous_monthly.py tests/test_source_updates.py tests/test_trend_ci_guard.py tests/test_release_artifact_policy.py -q
+        run: python -m pytest tests/test_autonomous_monthly.py tests/test_source_updates.py tests/test_trend_ci_guard.py tests/test_release_artifact_policy.py tests/test_autonomous_native_reports.py tests/test_poppler_runtime.py -q
       - name: Validate urinary NCBI fallback
         working-directory: runtime_code/monthly/metaPee
         run: python -m pytest tests/test_ncbi_throttle.py -q

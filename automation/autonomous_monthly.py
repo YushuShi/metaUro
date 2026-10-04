@@ -355,6 +355,17 @@ def prepare_overlays(root, audit, result):
     result["prepared_overlay_index"] = {"schema_version": 1, "sources": prepared}
 
 
+def summary_lock_scratch(relative):
+    """Recognize only the summary builder's non-artifact lock directory."""
+    parts = Path(relative).parts
+    return len(parts) == 3 and parts[:2] == ('summary', '.locks') and parts[2].endswith('.lock')
+
+
+def summary_inventory(root):
+    return {str(path.relative_to(root)):sha(path) for path in (root/'summary').rglob('*')
+            if path.is_file() and not summary_lock_scratch(path.relative_to(root))}
+
+
 def publish(root=ROOT, *, validate=True):
     """Validate summaries before marking the local release publishable by GitHub."""
     root = Path(root).resolve()
@@ -389,7 +400,7 @@ def publish(root=ROOT, *, validate=True):
         if any(sha(bound(root, name)) != digest for name, digest in protected.items()):
             raise ValueError("Immutable evidence changed before publication")
         result.update(status="completed", completed_at=datetime.now(timezone.utc).isoformat(),
-                      summary_sha256={str(p.relative_to(root)): sha(p) for p in (root / "summary").rglob("*") if p.is_file()})
+                      summary_sha256=summary_inventory(root))
         write(audit / "release.json", result)
         write(root / "updates/monthly/state.json", {"version": VERSION, "repository": "metaUro",
               "status": "completed", "run_id": active["run_id"],
@@ -535,6 +546,7 @@ def verify_git_index(root=ROOT):
         required.update(str(path.relative_to(root)) for path in (root/name).rglob('*')
                         if path.is_file() and '__pycache__' not in path.parts
                         and path.name != '.DS_Store'
+                        and not summary_lock_scratch(path.relative_to(root))
                         and not path.name.endswith(('.sqlite3-wal', '.sqlite3-shm')))
     # Recovery can contain obsolete SQLite sidecars. A sidecar explicitly bound
     # by a completed proof remains mandatory, just like every other audit file.

@@ -241,6 +241,27 @@ def test_completed_cutoff_is_a_minimum_and_verification_is_read_only(tmp_path):
         monthly.validate_completed_release(tmp_path)
 
 
+def test_rebuilt_publication_inventory_omits_summary_builder_locks(tmp_path, monkeypatch):
+    audit, result = complete_fixture(tmp_path)
+    result['status'] = 'validated'
+    write(audit/'release.json', result)
+    write(audit/'immutable_before.json', {})
+    write(tmp_path/'updates/manifest.json', read(audit/'input.json')['overlay_index'])
+    write(tmp_path/'updates/monthly/active.json', {'run_id':result['run_id']})
+    import summary_outputs
+    def regenerate(root):
+        for mode in ('no', 'yes'):
+            lock = root/'summary/.locks'/(mode+'.lock')
+            lock.parent.mkdir(parents=True, exist_ok=True)
+            lock.write_bytes(b'')
+        write(root/'summary/no/regenerated.json', {'verified':True})
+    monkeypatch.setattr(summary_outputs, 'refresh_all', regenerate)
+    published = monthly.publish(tmp_path, validate=False)
+    assert not any('/.locks/' in name for name in published['summary_sha256'])
+    assert 'summary/no/regenerated.json' in published['summary_sha256']
+    assert monthly.validate_completed_release(tmp_path)['status'] == 'completed'
+
+
 def test_completed_checkpoint_cannot_publish_without_installed_artifacts(tmp_path):
     audit,result=prepared_fixture(tmp_path)
     result['status']='completed'

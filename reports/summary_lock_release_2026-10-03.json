@@ -1,0 +1,101 @@
+{
+  "status": "verified",
+  "timestamp": "2026-10-04T02:13:40.481444+00:00",
+  "base_commit": "0772f38a5de497578b2e600e3db2182cfe0e129b",
+  "failure": "Post-science Git publication rejected ignored summary/.locks/no.lock; broad summary inventory had incorrectly bound both empty builder locks.",
+  "repair": "Exclude only summary/.locks/*.lock from newly generated summary inventory and unreferenced file scanning. Explicit hash references remain mandatory regardless of scratch classification.",
+  "tests": "........................................................................ [ 92%]\n......                                                                   [100%]\n78 passed in 43.22s",
+  "checkpoint": {
+    "run_id": 37151577942,
+    "failure_step": "Publish complete evidence release and human-review queue",
+    "failure_reason": "Required release file is missing or unresolved in Git index: summary/.locks/no.lock",
+    "artifact_id": 11284847325,
+    "artifact_digest": "sha256:1dd135617892d7948a03557161863474daf50a5ad0a4454cca27d31d8a74c5b1",
+    "completed_science": {
+      "MetaVir": {
+        "status": "validated",
+        "run_id": "2026-07-01_2026-10-02",
+        "independent_review": {
+          "complete": true,
+          "expected_r2": 31,
+          "completed_r2": 31,
+          "required_r3": 3,
+          "completed_r3": 3
+        },
+        "human_review_pending": 0,
+        "output_sha256": {
+          "static/i18n-translations.json": "18d300088be90a0b81d0595826bc07a50c43184e4ac1f56b7a18b85d96f246eb"
+        }
+      },
+      "metaPee": {
+        "status": "validated",
+        "run_id": "2026-08-23_2026-10-02",
+        "independent_review": {
+          "complete": true,
+          "expected_r2": 8,
+          "completed_r2": 8,
+          "required_r3": 0,
+          "completed_r3": 0
+        },
+        "human_review_pending": 0,
+        "output_sha256": {
+          "static/i18n-translations.json": "a1bf78606a906456e7e47d29ded4133b7330c24e9184e10802d08c67b110bc3e"
+        }
+      }
+    },
+    "audit_files": 120,
+    "all_audit_sha256_match": true,
+    "runtime_manifest_matches": true,
+    "overlay_index_matches": true,
+    "erroneously_bound_summary_scratch": {
+      "summary/.locks/no.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "summary/.locks/yes.lock": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "cache_only_replay": {
+    "source_run": 37151577942,
+    "checkpoint_root": "/tmp/metauro-checkpoint-37151577942",
+    "review_scope": "read-only completed native checkpoint replay; no discovery, cache application, pooling or publication performed locally",
+    "overlay_index_matches_current": true,
+    "runtime_manifest_matches_current": true,
+    "original_audit_files_checked": 120,
+    "original_audit_hash_mismatches": 0,
+    "scope_replay": [
+      {
+        "scope": "metaPee",
+        "temporary_copy": "/var/folders/r5/9kxkj4757mzfff03y8rjgkp80000gn/T/uro-paid-replay-metaPee-29v3kl4f",
+        "primary_rows": 241,
+        "r2": 8,
+        "r3": 0,
+        "paid_cache_files_unchanged": 1,
+        "paid_receipts_unchanged": 1,
+        "new_network_or_model_calls": 0,
+        "primary_scientific_rows_unchanged": true,
+        "adjudication_discrepancies": 0
+      },
+      {
+        "scope": "MetaVir",
+        "temporary_copy": "/var/folders/r5/9kxkj4757mzfff03y8rjgkp80000gn/T/uro-paid-replay-MetaVir-293amd6m",
+        "primary_rows": 408,
+        "r2": 31,
+        "r3": 3,
+        "paid_cache_files_unchanged": 5,
+        "paid_receipts_unchanged": 5,
+        "new_network_or_model_calls": 0,
+        "primary_scientific_rows_unchanged": true,
+        "adjudication_discrepancies": 0
+      }
+    ],
+    "model_recall_risk_found": false,
+    "paid_recall_protection": "NoGateway rejects all client accesses, socket connection methods raise; actual native cached R1/R2/R3 and independent Claude/Gemini stages plus adjudication completed without calls.",
+    "expected_recomputed_metadata": "Canonical full_text_review ncbi_requests/reused_tracks and report timestamps can update; native pipeline must regenerate gates/release hashes as existing prepare does.",
+    "unexercised": "Network preflight, discovery catalog equality reconstruction, UI reapplication and final publication were reviewed structurally but not executed by this bounded audit."
+  },
+  "vendored_runtime_files_verified": 183,
+  "immutable_sources_and_current_results_changed": false,
+  "files_sha256": {
+    "automation/autonomous_monthly.py": "526025b1d1bbabf1a404b0d6a7a635af04ece9b8fef2e17a1588377d63485877",
+    "tests/test_autonomous_monthly.py": "2e6bfd414b4b87bc87c38ae1c6f81e276cc9b79770f1dd8f2c89c1e76a36f7e4",
+    "tests/test_monthly_transport.py": "75e3dea3435a691a9844c7c1441e46bc15d2d5322169f65c481194152b63eee9"
+  }
+}

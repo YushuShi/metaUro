@@ -180,6 +180,45 @@ def test_unreferenced_recovery_sidecar_is_scratch_but_hash_bound_sidecar_is_requ
         monthly.verify_git_index(tmp_path)
 
 
+@pytest.mark.parametrize('mode', ['no', 'yes'])
+def test_summary_lock_is_scratch_unless_explicitly_hash_bound(tmp_path, mode):
+    completed_fixture(tmp_path, b'pmid,reason\n')
+    ignore = tmp_path/'summary/.gitignore'
+    ignore.write_text('.locks/\n')
+    git(tmp_path, 'add', '--', 'summary/.gitignore')
+    relative = f'summary/.locks/{mode}.lock'
+    lock = tmp_path/relative
+    lock.parent.mkdir(parents=True)
+    lock.write_bytes(b'')
+    inventory = monthly.summary_inventory(tmp_path)
+    assert relative not in inventory
+    assert inventory == {'summary/proof.json':sha(tmp_path/'summary/proof.json'),
+                         'summary/.gitignore':sha(ignore)}
+    assert git(tmp_path, 'check-ignore', relative).decode().strip() == relative
+    assert monthly.verify_git_index(tmp_path)['status'] == 'verified'
+    # An explicit reference always wins over the scratch-file scan exclusion.
+    state_path = tmp_path/'updates/monthly/state.json'
+    state = json.loads(state_path.read_text())
+    release_path = tmp_path/state['manifest_path']
+    release = json.loads(release_path.read_text())
+    release['summary_sha256'][relative] = sha(lock)
+    write(release_path, release)
+    state['manifest_sha256'] = sha(release_path)
+    write(state_path, state)
+    git(tmp_path, 'add', '--', str(state_path.relative_to(tmp_path)), str(release_path.relative_to(tmp_path)))
+    with pytest.raises(ValueError, match=r'missing or unresolved.*summary/\.locks'):
+        monthly.verify_git_index(tmp_path)
+    git(tmp_path, 'add', '-f', '--', relative)
+    assert monthly.verify_git_index(tmp_path)['status'] == 'verified'
+
+
+def test_summary_inventory_retains_lock_named_files_outside_builder_lock_directory(tmp_path):
+    path = tmp_path/'summary/no/study.lock'
+    path.parent.mkdir(parents=True)
+    path.write_bytes(b'authoritative fixture')
+    assert monthly.summary_inventory(tmp_path) == {'summary/no/study.lock':sha(path)}
+
+
 @pytest.mark.parametrize('artifact', ['native_csv', 'gate', 'adjudication', 'final_screening',
     'candidates', 'native_manifest', 'parallel_source', 'application_filter'])
 def test_native_gate_proofs_cannot_be_resealed_with_changed_bytes(tmp_path, artifact):

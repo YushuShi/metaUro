@@ -158,6 +158,9 @@ def test_failed_summary_build_restores_both_scope_pointers(tmp_path,monkeypatch)
 def test_monthly_workflow_has_no_remote_source_checkout():
     workflow=(ROOT/'.github/workflows/monthly-source-refresh.yml').read_text()
     assert workflow.count('uses: actions/checkout@')==1
+    assert 'ref: V2' in workflow
+    assert 'git push origin "HEAD:V2"' in workflow
+    assert 'github.event.repository.default_branch' not in workflow
     assert 'SOURCE_METAPEE_SSH_KEY' not in workflow
     assert 'SOURCE_METAVIR_SSH_KEY' not in workflow
     assert 'git add -A -- updates summary monthlyHumanReview runtime_code' in workflow

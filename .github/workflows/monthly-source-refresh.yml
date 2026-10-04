@@ -33,10 +33,11 @@ jobs:
       CORNELL_API_BASE_URL: ${{ secrets.CORNELL_API_BASE_URL || secrets.API_BASE_URI }}
       MONTHLY_REQUIRE_VALID_NCBI_KEY: 'false'
     steps:
-      - name: Check out the application
+      - name: Check out the V2 application and results
         uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5
         with:
-          ref: ${{ github.event.repository.default_branch }}
+          # Scheduled workflows start on main; evidence releases belong on V2.
+          ref: V2
           fetch-depth: 0
       - name: Set up Python
         uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -85,7 +86,7 @@ jobs:
           python -m automation.autonomous_monthly verify-index
           if ! git diff --cached --quiet; then
             git commit -m 'Publish autonomous monthly urinary evidence update'
-            git push origin "HEAD:${{ github.event.repository.default_branch }}"
+            git push origin "HEAD:V2"
           fi
       - name: Preserve in-flight paid screening receipts
         if: always() && (failure() || cancelled()) && (github.event_name == 'schedule' || inputs.mode == 'update')

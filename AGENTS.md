@@ -2,6 +2,11 @@
 
 ## Published results are release artifacts
 
+- Publish updated results and their producing code to `V2` (user instruction,
+  October 3, 2026). Keep the monthly scheduler on GitHub's default branch
+  configured to check out and publish `V2`; scheduler-only changes on `main`
+  must not introduce new result artifacts.
+
 - `summary/` is the sole location for current disease summary XLSX and PDF
   outputs, with shared `yes/` and `no/` mode directories for all disease scopes.
   Update generators and downloads through `summary_outputs.py`; never recreate

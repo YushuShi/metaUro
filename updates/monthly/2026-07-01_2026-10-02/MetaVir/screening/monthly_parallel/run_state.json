@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-04T02:28:41.828681+00:00",
+  "protocol_version": "metavir-claude-gemini-parallel-v1",
+  "publication_date_end": "2026-10-02",
+  "models": {
+    "r2": "claude-opus-5",
+    "r3": "gemini-3.7-flash"
+  },
+  "model_transport": {
+    "api_style": "chat_completions",
+    "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+    "response_format_omitted": true
+  },
+  "catalog_exposures": 446,
+  "r1_pass_contexts": 31,
+  "r2_official_metadata_repair_status": "complete",
+  "r2_official_metadata_repaired_pmids": [],
+  "r2_official_metadata_repair_request_count": 0,
+  "claude_r2_completed_contexts": 31,
+  "claude_r2_exclusions": 28,
+  "gemini_r3_science_gate_contexts": 3,
+  "gemini_r3_pmc_eligible_contexts": 3,
+  "gemini_r3_completed_contexts": 3,
+  "gemini_r3_exclusions": 3,
+  "gemini_r3_decision_free_no_pmcid_deferrals": 0,
+  "unresolved_operational_problems": 0,
+  "model_cache_acceptance_consistency": {
+    "contract_version": "metavir-model-cache-acceptance-reconciliation-v1",
+    "cache_files_scanned": 5,
+    "gateway_receipts_scanned": 5,
+    "reconciled_cache_files_this_invocation": 0,
+    "remaining_acceptance_mismatches": 0,
+    "scientific_decisions_changed": false
+  },
+  "status": "complete",
+  "stopped_reason": "monthly_current_window",
+  "resume_command": "python scripts/run_claude_gemini_parallel_review.py --stage all --batch-size 8 --workers 1",
+  "canonical_chatgpt_artifacts_modified": false,
+  "cornell_credential_source": "local:MetaVir/mykey.env",
+  "credential_handling": "Only allowlisted Cornell and NCBI names are read from the local regular non-symlink MetaVir/mykey.env file; values are not exported to the process environment or persisted in review artifacts.",
+  "provider_route": {
+    "r2": {
+      "requested_provider_model": "claude-opus-5",
+      "route": "Cornell gateway Chat Completions API",
+      "direct_provider_credential": "absent",
+      "direct_provider_note": "No usable direct Anthropic credential is available."
+    },
+    "r3": {
+      "requested_provider_model": "gemini-3.7-flash",
+      "route": "Cornell gateway Chat Completions API",
+      "direct_provider_credential": "invalid",
+      "direct_provider_note": "The available direct Gemini credential failed prior validation and is not used."
+    },
+    "authorization": "User approved Cornell gateway credentials for Claude R2 and Gemini R3.",
+    "token_accounting": "Provider-reported response usage through Cornell is retained when present; missing usage is unavailable and never approximated."
+  }
+}

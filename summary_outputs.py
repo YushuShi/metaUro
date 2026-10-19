@@ -138,6 +138,8 @@ def input_fingerprint(repo_root, source, mode):
     # changes and interactive request settings do not alter default summaries.
     inputs.add(repo / 'summary_outputs.py')
     inputs.add(repo / 'display_localization.py')
+    if source == 'MetaVir':
+        inputs.add(repo / 'prostate_scopes.py')
     inputs.update((repo / 'runtime_code').glob('*.py'))
     inputs.add(repo / 'runtime_code/manifest.json')
     for relative in ('data/exposure_hierarchy.json',
@@ -290,6 +292,11 @@ def run_summary_build(source_root, cache_root, plot_root, languages, builder):
     plot_localization = sys.modules.get("scripts.plot_localization")
     if plot_localization is not None:
         install_plot_localization(plot_localization)
+    if source_root.name == 'MetaVir' and plot_localization is not None:
+        from prostate_scopes import install_plotting
+        renderer = sys.modules.get(builder.__module__)
+        if renderer is not None:
+            install_plotting(renderer, plot_localization)
     from runtime_code.summary_pi_style import install as install_summary_pi
     renderer = sys.modules.get(builder.__module__)
     if renderer is not None and hasattr(renderer, '_draw_bounded_interval'):

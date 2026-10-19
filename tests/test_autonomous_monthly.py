@@ -24,7 +24,7 @@ def scaffold(root):
         write(base/'Cached_results/fiber/cancer_incidence_true_all.json', {'studies':[study('1')]})
     write(root/'runtime_code/monthly/manifest.json', {'version':monthly.VERSION,'files':files})
     write(root/'updates/manifest.json', {'schema_version':1,'sources':{}})
-    for name in ('autonomous_scope.py','autonomous_projection.py'):
+    for name in ('autonomous_scope.py','autonomous_projection.py','prostate_scope_results.py'):
         path = root/'automation'/name
         path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text('# isolated fixture\n')
@@ -321,6 +321,8 @@ def test_retry_keeps_output_hashes_against_materialization_baseline(tmp_path,mon
     import sys
     import types
     from automation import autonomous_projection as projection
+    from automation import prostate_scope_results
+    monkeypatch.setattr(prostate_scope_results, 'materialize', lambda *_: [])
     module_path=ROOT/'runtime_code/monthly/MetaVir/automation/monthly_ui.py'
     spec=importlib.util.spec_from_file_location('automation.monthly_ui',module_path)
     ui=importlib.util.module_from_spec(spec);spec.loader.exec_module(ui)
@@ -388,3 +390,26 @@ def test_exported_policy_holds_do_not_modify_native_review_gate_csv(tmp_path,mon
     assert len(rows)==1 and rows[0]['stage']=='Post-review scope policy'
     assert rows[0]['pipeline_1_decision']=='INCLUDE_META'
     assert rows[0]['adjudication_status']=='policy_hold' and rows[0]['human_review_status']=='pending'
+
+
+def test_additive_evidence_revision_preserves_and_validates_monthly_audit(tmp_path):
+    audit,parent=complete_fixture(tmp_path)
+    state=read(tmp_path/'updates/monthly/state.json')
+    current=monthly.load_overlay(tmp_path,'MetaVir')
+    current.update(kind='evidence_scope_revision',run_id='fixture-scope')
+    mp=tmp_path/'updates/MetaVir/versions/fixture-scope/manifest.json';write(mp,current)
+    index=read(tmp_path/'updates/manifest.json')
+    index['sources']['MetaVir']={'manifest':str(mp.relative_to(tmp_path/'updates')),'sha256':sha(mp)}
+    write(tmp_path/'updates/manifest.json',index)
+    code=tmp_path/'scope.py';code.write_text('# derived evidence only\n')
+    summary=tmp_path/'summary/no/fixture.json';write(summary,{'scope':'derived'})
+    revision={'repository':'metaUro','status':'completed','revision_id':'fixture-scope',
+        'active_overlay_index':index,'parent_monthly':{'manifest_path':state['manifest_path'],
+            'manifest_sha256':state['manifest_sha256'],'run_id':state['run_id'],'cutoff':parent['end_date']},
+        'parent_audit_artifact_sha256':parent['audit_artifact_sha256'],
+        'summary_sha256':{'summary/no/fixture.json':sha(summary)},'code_sha256':{'scope.py':sha(code)}}
+    write(tmp_path/'evidence-revisions/fixture-scope/release.json',revision)
+    assert monthly.validate_completed_release(tmp_path)['evidence_revision']=='fixture-scope'
+    code.write_text('# tampered\n')
+    with pytest.raises(ValueError,match='revision artifact checksum'):
+        monthly.validate_completed_release(tmp_path)

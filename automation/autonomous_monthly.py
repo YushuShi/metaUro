@@ -124,13 +124,20 @@ def materialize(root, scope, work):
         shutil.copyfile(settings, work / settings.name)
     # Shared worker is copied into the isolated namespace, where its native
     # imports resolve exclusively against this pinned runtime and dataset.
-    for name in ("autonomous_scope.py", "autonomous_projection.py"):
+    for name in ("autonomous_scope.py", "autonomous_projection.py", "prostate_scope_results.py"):
         shutil.copyfile(root / "automation" / name, work / "automation" / name)
     # The approved ASB rows already exist in the urinary evidence. Their
     # translated summary label must travel with the next published overlay,
     # rather than editing the immutable source catalog or today's summaries.
     relative = 'static/i18n-translations.json'
     catalog = read(work / relative, {})
+    if scope == 'MetaVir':
+        from prostate_scopes import LABEL, TRANSLATIONS, extend_catalog
+        catalog[LABEL] = TRANSLATIONS
+        write(work / relative, catalog)
+        baseline_path = work / 'static/seer-baseline.json'
+        if baseline_path.exists():
+            write(baseline_path, extend_catalog(read(baseline_path)))
     labels = read(root / 'runtime_code/monthly/metaPee' / relative, {}).get(
         'Non-nutritive sweetener intake', {})
     if labels:
@@ -446,9 +453,31 @@ import an analysis engine, make requests, or perform pooling/review work.
     if (release.get("status") != "completed" or release.get("run_id") != state.get("run_id")
             or release.get("end_date") != cutoff or set(release.get("scopes", {})) != set(SOURCES)):
         raise ValueError("Incomplete or mismatched autonomous release receipt")
+    revision = None
     if read(root / "updates/manifest.json") != release["prepared_overlay_index"]:
-        raise ValueError("Active overlay differs from the completed monthly release")
-    for inventory in (release.get("audit_artifact_sha256", {}), release.get("summary_sha256", {})):
+        current = load_overlay(root, 'MetaVir') or {}
+        revision_id = current.get('run_id', '')
+        revision_path = bound(root, 'evidence-revisions/' + revision_id + '/release.json')
+        if current.get('kind') != 'evidence_scope_revision' or not revision_path.is_file():
+            raise ValueError("Active overlay differs from the completed monthly release")
+        revision = read(revision_path)
+        expected_parent = {'manifest_path':state['manifest_path'],
+            'manifest_sha256':state['manifest_sha256'], 'run_id':state['run_id'], 'cutoff':cutoff}
+        if (revision.get('repository') != 'metaUro' or revision.get('status') != 'completed'
+                or revision.get('revision_id') != revision_id
+                or revision.get('parent_monthly') != expected_parent
+                or revision.get('active_overlay_index') != read(root/'updates/manifest.json')
+                or revision.get('parent_audit_artifact_sha256') != release.get('audit_artifact_sha256')):
+            raise ValueError('Evidence revision does not reconcile with the completed monthly release')
+        for field in ('summary_sha256','code_sha256'):
+            inventory = revision.get(field)
+            if not isinstance(inventory, dict) or not inventory:
+                raise ValueError('Evidence revision inventory is absent')
+            for relative, digest in inventory.items():
+                if sha(bound(root, relative)) != digest:
+                    raise ValueError('Evidence revision artifact checksum mismatch: '+relative)
+    summary_inventory = revision['summary_sha256'] if revision else release.get('summary_sha256', {})
+    for inventory in (release.get("audit_artifact_sha256", {}), summary_inventory):
         if not inventory:
             raise ValueError("Release artifact inventory is absent")
         for relative, digest in inventory.items():
@@ -525,7 +554,8 @@ import an analysis engine, make requests, or perform pooling/review work.
                 raise ValueError("Human review checksum mismatch")
     return {"repository":"metaUro", "cutoff":cutoff, "run_id":state['run_id'],
             "manifest_sha256":state['manifest_sha256'], "manifest_path":state['manifest_path'],
-            "source_scopes":list(SOURCES), "status":"completed"}
+            "source_scopes":list(SOURCES), "status":"completed",
+            **({'evidence_revision':revision['revision_id']} if revision else {})}
 
 
 def verify_git_index(root=ROOT):

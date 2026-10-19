@@ -216,6 +216,9 @@ def refresh_ui(repo_root, run_dir, blocked_context_ids):
                     if isinstance(preserved.get('screening_stats'), dict):
                         preserved['screening_stats']['extracted'] = len(protected)
                     ui._write(path, preserved)
+    if scope == 'MetaVir':
+        from automation.prostate_scope_results import materialize
+        materialize(repo)
     after = ui._hashes(repo,roots)
     changed = {**catalog_outputs, **{path:after[path] for path in after if after[path] != before.get(path)}}
     if set(before)-set(after):

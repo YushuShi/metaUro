@@ -1051,14 +1051,35 @@ document.addEventListener('DOMContentLoaded', async () => {
         const measure = elements.filterMeasure ? elements.filterMeasure.value : 'All';
         const exposureType = elements.filterExposureType ? elements.filterExposureType.value : 'Anything';
 
+        function matchesStudyDesign(study, selected) {
+            const normalize = value => String(value || '').trim().toLowerCase()
+                .replace(/[_\u2010-\u2015\u2212]/g, '-').replace(/\s+/g, ' ');
+            const filter = normalize(selected);
+            if (!filter || filter === 'all') return true;
+
+            const design = normalize(study.Design);
+            // An observational analysis within a trial retains its own recorded design.
+            const trialPosition = design.search(/\b(?:rcts?|trials?)\b/);
+            const observationalPosition = design.search(/\bobservational\b/);
+            const observational = /\b(?:cohort|case[ -]?(?:control|referent)|cross[ -]?sectional|ecological|biomarker[ -]analysis)\b/.test(design) ||
+                (observationalPosition >= 0 && (trialPosition < 0 || observationalPosition < trialPosition));
+            const clinicalTrial = !observational && !/\btrial[ -]emulation\b/.test(design) && (
+                trialPosition >= 0 ||
+                (/\brandomi[sz]ed\b/.test(design) && !/\bnon[ -]?randomi[sz]ed\b/.test(design) &&
+                    /\b(?:intervention|controlled|treatment)\b/.test(design))
+            );
+            if (/^clinical trials?$/.test(filter)) return clinicalTrial;
+            if (filter !== 'prospective' && filter !== 'retrospective') return false;
+
+            const temporal = filter === 'prospective' ? /\bprospective\b/ : /\bretrospective\b/;
+            // Design is authoritative; Timing is only a legacy temporal fallback.
+            if (/\b(?:prospective|retrospective)\b/.test(design)) return temporal.test(design);
+            if (clinicalTrial) return false;
+            return temporal.test(normalize(study.Timing));
+        }
+
         currentStudies = allStudies.filter(study => {
-            if (timing !== 'All') {
-                if (timing === 'Clinical Trials') {
-                    if (study.Design !== 'Clinical Trials') return false;
-                } else if (study.Timing !== timing) {
-                    return false;
-                }
-            }
+            if (!matchesStudyDesign(study, timing)) return false;
             if (stage !== 'All' && study.Stage !== stage) return false;
             // Quality affects selection, not whether an extracted row is visible.
             if (measure !== 'All' && canonicalEffectMeasure(study['Effect Type']) !== measure) return false;

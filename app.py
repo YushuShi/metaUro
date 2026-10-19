@@ -33,6 +33,7 @@ SCOPE_PARENTS = {
     'urothelial_carcinoma_of_the_renal_pelvis': 'kidney_and_renal_pelvis_cancer',
     'renal_sarcoma': 'kidney_and_renal_pelvis_cancer',
     'aggressive_prostate_cancer': 'prostate_cancer',
+    'prostate_cancer_excluding_aggressive': 'prostate_cancer',
 }
 SUMMARY_MANIFESTS = {
     'metaPee': 'summary/{mode}/summary_manifest.json',
@@ -131,7 +132,7 @@ def product_branding(text):
 def scope_catalog():
     result = []
     for source in SOURCES:
-        catalog = json.loads((ROOT / 'sources' / source / 'static/seer-baseline.json').read_text())
+        catalog = json.loads((assembled_source(ROOT, source) / 'static/seer-baseline.json').read_text())
         for disease in catalog['diseases']:
             scope_id = disease['id']
             result.append({
@@ -330,7 +331,7 @@ def decorate_html(body, source, path):
         minimum['title'] = '0 includes studies regardless of case count. Missing cases use N × the baseline risk selected in Settings.'
     for script in soup.select('script[src]'):
         if '/static/script.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=20260925-display'
+            script['src'] = script['src'].split('?')[0] + '?v=20261018-recorded-design'
         elif '/static/i18n.js' in script['src']:
             script['src'] = script['src'].split('?')[0] + '?v=20260925-display'
     # Relative downloads/links produced by source templates must stay with their source.

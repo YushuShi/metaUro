@@ -106,7 +106,7 @@ def test_all_summary_artifacts_have_one_canonical_location():
         folder = ROOT / 'summary' / mode
         manifest = json.loads((folder / 'summary_manifest.json').read_text())
         assert set(manifest['sources']) == set(outputs.SOURCES)
-        assert len(manifest['scopes']) == 8
+        assert len(manifest['scopes']) == 9
         assert set(manifest['artifacts']) == outputs.declared_artifacts(manifest)
         assert all(outputs.sha(folder / name) == value['sha256']
                    for name, value in manifest['artifacts'].items())

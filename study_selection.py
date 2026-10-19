@@ -248,13 +248,14 @@ def _selection_audit(source):
     }
 
 
-@lru_cache(maxsize=2)
+@generation_cache(maxsize=2)
 def _disease_contexts(source):
     source = _source_name(source)
-    catalog = json.loads((ROOT / 'sources' / source / 'static/seer-baseline.json').read_text())
+    catalog = json.loads((assembled_source(ROOT, source) / 'static/seer-baseline.json').read_text())
     labels = {row['id']: row['label'] for row in catalog['diseases']}
     if source != 'metaPee':
-        return {label: (label,) for label in labels.values()}
+        from prostate_scopes import GENERAL, LABEL
+        return {label: (GENERAL if label == LABEL else label,) for label in labels.values()}
     children = defaultdict(list)
     for child, parent in URINARY_PARENTS.items():
         if child in labels and parent in labels:
@@ -340,7 +341,7 @@ def _reason_label(codes):
     }.get(code, 'Other recorded eligibility criterion'))
 
 
-def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=()):
+def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=(), excluded_report_pmids=()):
     diseases = set(diseases)
     first = [
         row for row in audit['first']
@@ -371,6 +372,8 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=
         pmid for pmid, rows in final_by_pmid.items()
         if any(row['final_status'] in RETAINED_STATUSES for row in rows)
     }
+    scope_excluded = retained & set(excluded_report_pmids)
+    retained -= scope_excluded
     poolable = set(current_pool_pmids)
     if not poolable <= retained:
         raise ValueError('Current pooled reports do not reconcile with the screening audit')
@@ -378,6 +381,9 @@ def _context_counts(audit, diseases, exposure, current_pool_pmids, current_rows=
     excluded = assessed - retained
     reason_counts = Counter()
     for pmid in excluded:
+        if pmid in scope_excluded:
+            reason_counts['Aggressive-only evidence outside the selected prostate scope'] += 1
+            continue
         codes = {
             row.get('exclusion_code') or 'UNSPECIFIED'
             for row in final_by_pmid.get(pmid, [])
@@ -437,6 +443,13 @@ def _build_selection_flow(source, disease=None, exposure=None):
         if item[0] == selected_disease and item[1] == selected_exposure
     )
     packet, pool_provenance = _current_pool_packets(source)[(selected_disease, selected_exposure)]
+    from prostate_scopes import GENERAL, LABEL, NOTE
+    scope_excluded = set()
+    if selected_disease == LABEL:
+        parent_packet = _current_pool_packets(source).get((GENERAL, selected_exposure))
+        if parent_packet:
+            parent_pmids = {str(row['PMID']) for row in parent_packet[0].get('studies', [])}
+            scope_excluded = parent_pmids - {str(row['PMID']) for row in packet.get('studies', [])}
     return {
         'available': True,
         'disease': selected_disease,
@@ -445,10 +458,10 @@ def _build_selection_flow(source, disease=None, exposure=None):
         'context_diseases': list(selected_context[2]),
         'include_subexposures': 'no',
         'unit': 'Unique reports (PubMed IDs)',
-        'scope_note': '',
+        'scope_note': NOTE if selected_disease == LABEL else '',
         'notes': [],
         'provenance': [*audit['provenance'], pool_provenance],
-        **_context_counts(audit, selected_context[2], selected_exposure, selected_context[3], packet.get('studies') or []),
+        **_context_counts(audit, selected_context[2], selected_exposure, selected_context[3], packet.get('studies') or [], scope_excluded),
     }
 
 

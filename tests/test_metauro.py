@@ -28,7 +28,7 @@ SUMMARY_SCOPE_IDS = {
     'bladder_cancer', 'urothelial_carcinoma_of_the_bladder',
     'kidney_and_renal_pelvis_cancer', 'renal_cell_carcinoma',
     'clear_cell_renal_cell_carcinoma', 'papillary_renal_cell_carcinoma',
-    'prostate_cancer', 'aggressive_prostate_cancer',
+    'prostate_cancer', 'aggressive_prostate_cancer', 'prostate_cancer_excluding_aggressive',
 }
 
 
@@ -58,9 +58,9 @@ def client():
 
 def test_catalog_keeps_all_sources_and_exact_endpoints(client):
     scopes = client.get('/api/scopes').json
-    assert len(scopes) == 14
+    assert len(scopes) == 15
     assert len([s for s in scopes if s['source'] == 'metaPee']) == 12
-    assert {s['id'] for s in scopes if s['source'] == 'MetaVir'} == {'prostate_cancer', 'aggressive_prostate_cancer'}
+    assert {s['id'] for s in scopes if s['source'] == 'MetaVir'} == {'prostate_cancer', 'aggressive_prostate_cancer', 'prostate_cancer_excluding_aggressive'}
     by_id = {scope['id']: scope for scope in scopes}
     assert [by_id[scope]['hierarchy_depth'] for scope in (
         'bladder_cancer', 'kidney_and_renal_pelvis_cancer', 'prostate_cancer')] == [0, 0, 0]
@@ -73,7 +73,7 @@ def test_settings_markup_is_complete_and_scope_aware(client, source, scope):
     response = client.get(f'/settings?source={source}&scope={scope}&include_subexposures=no')
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
-    assert_unified_scope_hierarchy(soup.select_one('#disease'), 14)
+    assert_unified_scope_hierarchy(soup.select_one('#disease'), 15)
     assert soup.select_one('#disease option[selected]')['data-scope-key'] == scope
     assert soup.select_one('#include-subexposures option[selected]')['value'] == 'no'
     assert soup.select_one('#include-subexposures').find_parent('section')['id'] == 'exposure-settings'
@@ -108,7 +108,7 @@ def test_source_page_assets_and_summary(client, source):
     assert response.status_code == 200, response.data[:1000]
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.title.string.startswith('MetaUro')
-    assert_unified_scope_hierarchy(soup.select_one('#disease'), 14)
+    assert_unified_scope_hierarchy(soup.select_one('#disease'), 15)
     assert not soup.select_one('#include-subexposures')
     assert 'Saved evidence' not in soup.header.get_text()
     selection_link = soup.select_one('.header-actions [data-uro-nav="selection"]')

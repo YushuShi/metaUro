@@ -55,6 +55,9 @@ def serve(source, pipe):
         spec = importlib.util.spec_from_file_location('metauro_engine', folder / 'app.py')
         engine = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(engine)
+        if source == 'MetaVir':
+            from prostate_scopes import install_engine
+            install_engine(engine)
         from runtime_code.trend_ci_runtime import install_core, install_completion
         install_core(sys.modules["meta_analysis"])
         install_completion()

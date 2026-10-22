@@ -71,9 +71,41 @@ def test_current_urinary_flow_is_exposure_specific_and_reconciles():
     assert build_selection_flow('urinary', 'Bladder cancer', 'Vitamin D')['reasons']
 
 
+def test_vital_alcohol_rcc_estimate_is_pooled_once_and_prisma_reconciles():
+    import json
+    from automation.sync_sources import assembled_source
+
+    root = Path(__file__).resolve().parents[1]
+    packet_path = (
+        assembled_source(root, 'metaPee')
+        / 'combined/provisional_ui/subexposure_views/no/Cached_results/alcohol/'
+        'renal_cell_carcinoma_incidence_true_core.json'
+    )
+    packet = json.loads(packet_path.read_text())
+    selected = [
+        row for row in packet['studies']
+        if str(row.get('PMID')) == '23665301'
+        and row.get('subexposure_pooling_selected') is True
+        and row.get('disease_hierarchy_pooling_selected') is not False
+    ]
+    assert len(selected) == 1
+    assert selected[0]['Primary Estimate'] is True
+    assert selected[0]['Effect Type'] == 'HR'
+    assert selected[0]['Effect Size'] == pytest.approx(0.69)
+    assert selected[0]['Lower CI'] == pytest.approx(0.43)
+    assert selected[0]['Upper CI'] == pytest.approx(1.11)
+
+    flow = build_selection_flow('urinary', 'Renal cell carcinoma', 'Alcohol')
+    assert (flow['included_reports'], flow['poolable_reports'], flow['nonpoolable_reports']) == (38, 19, 19)
+    assert 'Specific pooling reason not recorded' not in {
+        reason['label'] for reason in flow['nonpoolable_reasons']
+    }
+
+
 def test_current_prostate_selection_is_exposure_specific():
     result = build_selection_flow('prostate', 'Prostate cancer', 'Vitamin D')
-    assert (result['screened'], result['screening_excluded'], result['assessed']) == (1215, 738, 477)
+    # The prior monthly ledger includes first-stage FAIL PMIDs 42553583, 42608357, and 42737443.
+    assert (result['screened'], result['screening_excluded'], result['assessed']) == (1218, 741, 477)
     assert (result['eligibility_excluded'], result['included_reports'], result['poolable_reports'], result['nonpoolable_reports']) == (417, 60, 28, 32)
     assert sum(item['count'] for item in result['reasons']) == result['eligibility_excluded']
     assert result['context_diseases'] == ['Prostate cancer']

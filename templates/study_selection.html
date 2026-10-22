@@ -60,7 +60,7 @@
       </section>
       <section class="flow-stage flow-stage--pooled" aria-labelledby="phase-pooled">
         <h2 class="flow-phase" id="phase-pooled">Pooled</h2>
-        <div class="flow-box flow-box--pool"><h3>Reports in the current pooled result</h3>{{ count(flow.poolable_reports) }}</div>
+        <div class="flow-box flow-box--pool"><h3>Reports in the current pooled result</h3>{{ count(flow.poolable_reports) }}{% if flow.pooled_estimates is not none and flow.pooled_estimates != flow.poolable_reports %}<p>These {{ '{:,}'.format(flow.poolable_reports) }} publications contribute {{ '{:,}'.format(flow.pooled_estimates) }} effect estimates to the pooled calculation.</p>{% endif %}</div>
       </section>
     </div>
   </figure>

@@ -82,6 +82,155 @@ EGGERS_FEWER_THAN_TEN_MESSAGE = (
 EGGERS_UNAVAILABLE_MESSAGE = (
     'Egger’s test could not be reliably estimated for this meta-analysis.'
 )
+POOL_NARRATIVE = re.compile(r'^The pooled analysis of (\d+) studies yielded\b')
+POOL_TEMPLATE_OLD = 'The pooled analysis of {count} studies yielded'
+POOL_TEMPLATE_NEW = 'The pooled analysis of {count} effect estimates from {publications} publications yielded'
+POOL_TRANSLATION_PREFIXES = {
+    'zh-CN': ('对 {count} 项研究的合并分析', '对来自 {publications} 篇文献的 {count} 个效应估计值进行合并分析'),
+    'zh-TW': ('對 {count} 項研究的合併分析', '對來自 {publications} 篇文獻的 {count} 個效果估計值進行合併分析'),
+    'nl': ('De gepoolde analyse van {count} studies', 'De gepoolde analyse van {count} effectschattingen uit {publications} publicaties'),
+    'ko': ('{count}개 연구의 통합 분석', '{publications}편의 논문에서 나온 {count}개 효과 추정치의 통합 분석'),
+}
+
+
+def _add_pooling_translations(catalog):
+    for old_key, translations in list(catalog.items()):
+        if not old_key.startswith(POOL_TEMPLATE_OLD) or not isinstance(translations, dict):
+            continue
+        updated = {}
+        for language, (old_prefix, new_prefix) in POOL_TRANSLATION_PREFIXES.items():
+            value = translations.get(language)
+            if isinstance(value, str) and value.startswith(old_prefix):
+                updated[language] = new_prefix + value[len(old_prefix):]
+        if updated:
+            catalog[old_key.replace(POOL_TEMPLATE_OLD, POOL_TEMPLATE_NEW, 1)] = updated
+
+
+def _patch_urinary_pooling_script(body):
+    """Keep MetaUro's display labels accurate across language and measure toggles."""
+    script = body.decode('utf-8')
+    old_nonsignificant = (
+        'The pooled analysis of {count} studies yielded an effect size of {estimate} '
+        '(95% CI: {low}–{high}), indicating no statistically significant association '
+        'between {exposure} and {disease}. Although the point estimate suggests a '
+        'potential {relationship} relationship, the confidence interval includes the '
+        'null. These findings were accompanied by {heterogeneity} (I² = {i2}%), {implication}.'
+    )
+    new_nonsignificant = old_nonsignificant.replace(POOL_TEMPLATE_OLD, POOL_TEMPLATE_NEW, 1)
+    rewrites = (
+        (
+            r'        if (!/^The pooled analysis of \d+ studies yielded/i.test(original)) {',
+            r'        const reportAware = /^The pooled analysis of \d+ effect estimates from \d+ publications yielded/i.test(original);'
+            '\n' + r'        if (!reportAware && !/^The pooled analysis of \d+ studies yielded/i.test(original)) {',
+        ),
+        (
+            r'        const countMatch = original.match(/^The pooled analysis of (\d+) studies/i);',
+            r'        const countMatch = original.match(/^The pooled analysis of (\d+) (?:studies|effect estimates from (\d+) publications)/i);'
+            '\n        const publications = countMatch ? countMatch[2] : null;',
+        ),
+        (
+            '            count,\n            estimate: es.toFixed(2),',
+            '            count,\n            publications,\n            estimate: es.toFixed(2),',
+        ),
+        (
+            '            elements.resultsInterpretation.textContent = uiText(template, common);',
+            "            elements.resultsInterpretation.textContent = uiText(reportAware ? template.replace('"
+            + POOL_TEMPLATE_OLD + "', '" + POOL_TEMPLATE_NEW + "') : template, common);",
+        ),
+        (
+            "            '" + old_nonsignificant + "',",
+            "            (reportAware ? '" + new_nonsignificant + "' : '" + old_nonsignificant + "'),",
+        ),
+        (
+            "            lastHeadlineStudyCount = Number(data.headline.n_studies)",
+            "            lastHeadlineStudyCount = Number(data.headline.n_effect_estimates)\n"
+            "                || Number(data.headline.n_studies)",
+        ),
+    )
+    for old, new in rewrites:
+        if script.count(old) != 1:
+            app.logger.error('Urinary pooling-label patch did not match the served source script')
+            return body
+        script = script.replace(old, new, 1)
+    return script.encode('utf-8')
+
+
+def _selected_pool_rows(payload, source):
+    """Find the saved or request-selected inputs behind a pooled response."""
+    rows = payload.get('studies') if isinstance(payload, dict) else None
+    if not isinstance(rows, list):
+        return None
+    rows = [row for row in rows if isinstance(row, dict)]
+    if rows and all('Settings Pooling Selected' in row for row in rows):
+        return [row for row in rows if row.get('Settings Pooling Selected') is True]
+    scope_field = ('disease_hierarchy_pooling_selected' if source == 'metaPee'
+                   else 'disease_scope_pooling_selected')
+    return [row for row in rows
+            if row.get('subexposure_pooling_selected') is True
+            and row.get(scope_field) is not False]
+
+
+def _pool_input_counts(payload, source):
+    rows = _selected_pool_rows(payload, source)
+    if not rows:
+        return None
+    pmids = [str(row.get('PMID') or '').strip() for row in rows]
+    if any(not pmid or pmid.casefold() in {'na', 'n/a', 'none', 'nan'} for pmid in pmids):
+        return None
+    return len(rows), len(set(pmids))
+
+
+def _selection_pool_estimates(flow, source):
+    """Count actual selected estimates in the versioned current-pool packet."""
+    if not flow.get('available'):
+        return None
+    packet = next((item for item in flow.get('provenance', ())
+                   if item.get('label') == 'Current direct-exposure pool and recorded restrictions'), None)
+    if not packet:
+        return None
+    try:
+        path = bound(ROOT, packet['path'])
+        if sha(path) != packet['sha256']:
+            return None
+        payload = json.loads(path.read_text())
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    counts = _pool_input_counts(payload, source)
+    if not counts or counts[1] != flow.get('poolable_reports'):
+        return None
+    declared = payload.get('pooled_study_count')
+    if declared is not None and declared != counts[0]:
+        return None
+    return counts[0]
+
+
+def current_pooling_interpretation(result, source):
+    """Label pooled input rows and distinct publications without recalculation."""
+    if source != 'metaPee' or not isinstance(result, dict):
+        return
+    headline = result.get('headline')
+    if not isinstance(headline, dict):
+        return
+    counts = _pool_input_counts(result, source)
+    if not counts:
+        return
+    estimates, publications = counts
+    declared = result.get('pooled_study_count')
+    if declared is not None and declared != estimates:
+        return
+    result['pooled_estimate_count'] = estimates
+    result['pooled_publication_count'] = publications
+    headline['n_effect_estimates'] = estimates
+    headline['n_publications'] = publications
+    interpretation = headline.get('results_interpretation')
+    if not isinstance(interpretation, str):
+        return
+    match = POOL_NARRATIVE.match(interpretation)
+    if match and int(match.group(1)) == estimates and estimates != publications:
+        headline['results_interpretation'] = POOL_NARRATIVE.sub(
+            f'The pooled analysis of {estimates} effect estimates from {publications} publications yielded',
+            interpretation, count=1,
+        )
 
 
 def current_egger_interpretation(result, analysis_request=None):
@@ -331,9 +480,9 @@ def decorate_html(body, source, path):
         minimum['title'] = '0 includes studies regardless of case count. Missing cases use N × the baseline risk selected in Settings.'
     for script in soup.select('script[src]'):
         if '/static/script.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=20261018-recorded-design'
+            script['src'] = script['src'].split('?')[0] + '?v=20261022-pooling-counts'
         elif '/static/i18n.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=20260925-display'
+            script['src'] = script['src'].split('?')[0] + '?v=20261022-pooling-counts'
     # Relative downloads/links produced by source templates must stay with their source.
     for node in soup.select('[href], [src], [action], [data]'):
         for attr in ('href', 'src', 'action', 'data'):
@@ -389,6 +538,7 @@ def study_selection():
     available = {item: set(selection_catalog(item)) for item in SOURCES}
     selection_scopes = [item for item in ctx['scopes'] if item['label'] in available[item['source']]]
     flow = build_selection_flow(source, ctx['current']['label'], request.args.get('exposure'))
+    flow = {**flow, 'pooled_estimates': _selection_pool_estimates(flow, source)}
     analysis_query = {'scope': ctx['current']['id'], 'include_subexposures': 'no'}
     if flow.get('exposure'):
         analysis_query['exposure'] = flow['exposure']
@@ -539,7 +689,7 @@ def evidence(source, path):
                 b'    function storedLanguage() {',
                 b"    function storedLanguage() {\n        const requested = new URL(window.location.href).searchParams.get('lang');\n        if (SUPPORTED_LANGUAGES.has(requested)) return requested;",
             )
-            body = body.replace(b'i18n-translations.json?v=1.4', b'i18n-translations.json?v=20260925-display')
+            body = body.replace(b'i18n-translations.json?v=1.4', b'i18n-translations.json?v=20261022-pooling-counts')
         if path == 'static/script.js':
             body = body.replace(b'    function updateLastUpdated(ts = null) {', b'    function updateLastUpdated(ts = null) {\n        if (elements.lastUpdated?.dataset.publishedAt) return;')
             body = body.replace(b"setSelectedExposure('Vitamin A');", b"setSelectedExposure(new URL(location.href).searchParams.get('exposure') || 'Vitamin A');")
@@ -548,16 +698,21 @@ def evidence(source, path):
                 b"'Quality Score', 'Verified', 'Exclusion Flags'",
                 b"'Quality Score', 'VERIFY', 'Exclusion Flags'",
             )
+            if source == 'metaPee':
+                body = _patch_urinary_pooling_script(body)
     elif 'text/css' in content_type:
         body = prefix_text(body.decode('utf-8'), prefix).encode()
     elif 'application/json' in content_type and body and request.method != 'HEAD' and status not in {204, 304}:
         payload = json.loads(body)
         if path in {'analyze', 'reanalyze'} and isinstance(payload, dict):
+            current_pooling_interpretation(payload, source)
             interpretation = current_egger_interpretation(payload, analysis_request)
             if interpretation is not None:
                 payload['headline']['funnel_interpretation'] = interpretation
         if path == 'static/i18n-translations.json' and isinstance(payload, dict):
             payload.update(UI_LABEL_TRANSLATIONS)
+            if source == 'metaPee':
+                _add_pooling_translations(payload)
             payload = normalize_catalog(payload)
         monthly = load_overlay(ROOT, source)
         if isinstance(payload, dict) and 'last_updated' in payload and monthly and monthly.get('completed_at'):

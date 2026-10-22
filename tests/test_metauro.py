@@ -362,7 +362,8 @@ def test_selection_page_is_exposure_specific_and_shows_criteria(client):
     text = soup.get_text(' ', strip=True)
     assert 'Bladder cancer · Vitamin D' in text
     assert 'Animal, laboratory, or preclinical study: 1' in text
-    assert 'Review or meta-analysis without an eligible primary estimate: 14' in text
+    assert 'Publication is a review or meta-analysis: 14' in text
+    assert 'without an eligible primary estimate' not in text
     assert 'Not recorded' not in text
     assert 'Identification' not in text
     assert 'How to read this diagram' not in text

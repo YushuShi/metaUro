@@ -155,6 +155,22 @@ def _patch_urinary_pooling_script(body):
     return script.encode('utf-8')
 
 
+def _patch_jbi_tooltip_script(body):
+    """Read itemized answers from both saved JBI record layouts."""
+    original = b'        return Object.entries(study.JBI)'
+    replacement = (
+        b'        const answers = study.JBI.answers;\n'
+        b"        const itemized = answers && typeof answers === 'object' && !Array.isArray(answers)\n"
+        b'            && Object.keys(answers).some(question => /^q\\d+$/i.test(question))\n'
+        b'            ? answers : study.JBI;\n'
+        b'        return Object.entries(itemized)'
+    )
+    if body.count(original) != 1:
+        app.logger.error('JBI tooltip patch did not match the served source script')
+        return body
+    return body.replace(original, replacement, 1)
+
+
 def _selected_pool_rows(payload, source):
     """Find the saved or request-selected inputs behind a pooled response."""
     rows = payload.get('studies') if isinstance(payload, dict) else None
@@ -667,7 +683,10 @@ def evidence(source, path):
             # Settings catalogs and UI assets do not need the scientific engine.
             code_static = ROOT / 'runtime_code' / source / 'static'
             static_root = code_static if path == 'static/script.js' else assembled_source(ROOT, source) / 'static'
-            asset = send_from_directory(static_root, path[len('static/'):])
+            asset = send_from_directory(
+                static_root, path[len('static/'):],
+                conditional=path != 'static/script.js',
+            )
             asset.direct_passthrough = False
             status, response_headers, body = asset.status_code, list(asset.headers), asset.get_data()
         else:
@@ -698,6 +717,7 @@ def evidence(source, path):
                 b"'Quality Score', 'Verified', 'Exclusion Flags'",
                 b"'Quality Score', 'VERIFY', 'Exclusion Flags'",
             )
+            body = _patch_jbi_tooltip_script(body)
             if source == 'metaPee':
                 body = _patch_urinary_pooling_script(body)
     elif 'text/css' in content_type:
@@ -726,6 +746,8 @@ def evidence(source, path):
         elif key.lower() == 'content-disposition':
             outgoing[index] = (key, product_branding(value))
     response = Response(body, status=status, headers=outgoing)
+    if path == 'static/script.js':
+        response.headers['Cache-Control'] = 'no-store'
     if path in {'analyze', 'reanalyze'}:
         response.headers['Cache-Control'] = 'no-store'
     response.headers['X-metaUro-Source'] = source

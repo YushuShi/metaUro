@@ -190,6 +190,48 @@ def declared_artifacts(manifest):
     return files
 
 
+def _cohort_audit_groups(manifest):
+    """Recover source ownership without discarding legacy audit records."""
+    groups = {source: list(audits) for source, audits in
+              manifest.get('cohort_selection_audits_by_source', {}).items() if isinstance(audits, list)}
+    history = list(manifest.get('cohort_selection_audit_history', []))
+    for source, info in manifest.get('sources', {}).items():
+        audits = info.get('metadata', {}).get('cohort_selection_audits')
+        if isinstance(audits, list):
+            if source not in groups:
+                groups[source] = list(audits)
+            elif groups[source] != audits:
+                entry = {'source': source, 'provenance': 'legacy_source_metadata',
+                         'reason': 'Superseded by explicit source audit mapping', 'audits': audits}
+                if entry not in history:
+                    history.append(entry)
+    established_sources = set(groups)
+    covered = [audit for audits in groups.values() for audit in audits]
+    unassigned = []
+    for audit in manifest.get('cohort_selection_audits', []):
+        if audit in covered:
+            covered.remove(audit)
+            continue
+        disease = str(audit.get('disease', ''))
+        owners = []
+        for source, info in manifest.get('sources', {}).items():
+            labels = {str(manifest.get('scopes', {}).get(scope, {}).get('label', scope))
+                      for scope in info.get('scopes', [])}
+            if disease and disease in labels:
+                owners.append(source)
+        if len(owners) == 1 and owners[0] not in established_sources:
+            groups.setdefault(owners[0], []).append(audit)
+        else:
+            unassigned.append(audit)
+    if unassigned:
+        entry = {'provenance': 'legacy_flat_cohort_selection_audits',
+                 'reason': 'Source ownership or current source-audit generation could not be established uniquely',
+                 'audits': unassigned}
+        if entry not in history:
+            history.append(entry)
+    return groups, history
+
+
 def finalize_build(source_root, plot_root, manifest):
     """Publish checksums and remove outputs no longer declared by this build."""
     repo = metauro_root(source_root)
@@ -210,6 +252,20 @@ def finalize_build(source_root, plot_root, manifest):
     previous_path = folder / 'summary_manifest.json'
     previous = read_manifest(previous_path)
     previous_source = previous.get('sources', {}).get(source, {})
+    audit_groups, audit_history = _cohort_audit_groups(previous)
+    incoming_audits = manifest.get('cohort_selection_audits_by_source', {}).get(source, manifest.get('cohort_selection_audits'))
+    if isinstance(incoming_audits, list):
+        if source in audit_groups and audit_groups[source] != incoming_audits:
+            entry = {'source': source, 'provenance': 'previous_source_audit',
+                     'reason': 'Superseded by this source refresh', 'audits': audit_groups[source]}
+            if entry not in audit_history:
+                audit_history.append(entry)
+        audit_groups[source] = list(incoming_audits)
+    if audit_groups:
+        manifest['cohort_selection_audits_by_source'] = audit_groups
+        manifest['cohort_selection_audits'] = [audit for owner in sorted(audit_groups) for audit in audit_groups[owner]]
+    if audit_history:
+        manifest['cohort_selection_audit_history'] = audit_history
     new_scopes = set(manifest['scopes'])
     own_scopes = set(previous_source.get('scopes', [])) | new_scopes
     other_scopes = {key: value for key, value in previous.get('scopes', {}).items()
@@ -217,11 +273,17 @@ def finalize_build(source_root, plot_root, manifest):
     manifest['scopes'].update(other_scopes)
     complete_declared = declared | declared_artifacts({'scopes': other_scopes})
     for path in folder.rglob('*'):
+        # The optional cohort view is a complete publication of its own. A
+        # base-mode rebuild must not clean its nested assets against base names.
+        if path.relative_to(folder).parts[0] == 'cohort_latest':
+            continue
         if (path.is_file() and is_summary_artifact(path)
                 and str(path.relative_to(folder)) not in complete_declared):
             path.unlink()
     # Diagnostic PNGs are transient companions, not published summary files.
     for path in folder.rglob('*.png'):
+        if path.relative_to(folder).parts[0] == 'cohort_latest':
+            continue
         if is_summary_artifact(path):
             path.unlink()
     manifest['sources'] = previous.get('sources', {})
@@ -280,12 +342,15 @@ def _current(folder, fingerprint, source):
 
 @contextmanager
 def _build_lock(folder):
-    if os.environ.get('METAURO_SUMMARY_LOCK_HELD') == str(folder):
+    # Base and latest publications share a mode tree; serializing them also
+    # prevents a base stage from replacing a concurrently refreshed variant.
+    scope = folder.parent if folder.name == 'cohort_latest' else folder
+    if os.environ.get('METAURO_SUMMARY_LOCK_HELD') in {str(folder), str(scope)}:
         yield
         return
-    locks = folder.parent / '.locks'
+    locks = scope.parent / '.locks'
     locks.mkdir(parents=True, exist_ok=True)
-    with (locks / (folder.name + '.lock')).open('a') as handle:
+    with (locks / (scope.name + '.lock')).open('a') as handle:
         fcntl.flock(handle, fcntl.LOCK_EX)
         try:
             yield

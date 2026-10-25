@@ -40,11 +40,18 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 .uro-footer { max-width: 1200px; margin: 1.5rem auto 0; padding: 1.25rem; border-top: 1px solid var(--border); text-align: center; color: #64748b; font-size: .875rem; }
 .review-count { display: inline-flex; align-items: center; justify-content: center; min-width: 2.25rem; padding: .2rem .45rem; border-radius: 999px; background: #e8eef7; color: #334155; font-size: .8rem; font-weight: 700; font-variant-numeric: tabular-nums; }
 .review-count--exclude { background: #f1f5f9; }
+.summary-scope-form,.summary-scope-picker { flex-wrap: wrap; gap: 1.25rem; max-width: 100%; }
+.summary-cohort-control { display: flex; flex-direction: column; gap: .45rem; margin-left: .5rem; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: 8px; background: #f8fafc; min-width: 0; }
+.summary-cohort-control label,.evidence-cohort-control label { display: block; font-size: .85rem; font-weight: 600; line-height: 1.4; white-space: normal; }
+.summary-cohort-control select,.evidence-cohort-control select { max-width: 100%; min-width: 0; padding: .5rem .65rem; border: 1px solid #c4cbd5; border-radius: 5px; font: inherit; background: #fff; color: #172033; }
+.evidence-cohort-control { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
 @media (max-width: 850px) {
   .uro-settings .settings-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .search-box { flex-wrap: wrap; }
 }
 @media (max-width: 650px) {
+  .summary-cohort-control { width: 100%; box-sizing: border-box; margin: .5rem 0 0; }
+  .summary-cohort-control select,.evidence-cohort-control,.evidence-cohort-control select { width: 100%; box-sizing: border-box; }
   .uro-header { padding: 1rem 1rem 2rem; }
   .uro-header .header-action { padding: .5rem .75rem; font-size: .875rem; }
   main { padding: 1.5rem 1rem; }

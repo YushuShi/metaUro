@@ -421,6 +421,7 @@ def decorate_html(body, source, path):
         latest = latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no')))
         form = soup.select_one('form.summary-scope-form, form.summary-scope-picker')
         if form:
+            group = soup.new_tag('div', attrs={'class':'summary-cohort-control'})
             label = soup.new_tag('label', attrs={'for':'summary-cohort-mode'})
             label.string = 'Records from the same cohort'
             control = soup.new_tag('select', id='summary-cohort-mode', attrs={'name':'latest_cohort', 'onchange':'this.form.submit()'})
@@ -428,7 +429,7 @@ def decorate_html(body, source, path):
                 option = soup.new_tag('option', value=value); option.string=text
                 if (value == 'yes') == latest: option['selected']='selected'
                 control.append(option)
-            form.append(label); form.append(control)
+            group.append(label); group.append(control); form.append(group)
         for link in soup.select('a[href]'):
             if '/summary/' in link['href']:
                 link['href'] += ('&' if '?' in link['href'] else '?') + 'latest_cohort=' + ('yes' if latest else 'no')
@@ -465,6 +466,20 @@ def decorate_html(body, source, path):
     for heading in soup.select('#studies-table thead th'):
         if heading.get_text(' ', strip=True).upper() == 'VERIFIED':
             heading.string = 'VERIFY'
+    if ctx['page'] == 'evidence' and not soup.select_one('#evidence-keep-latest-cohort'):
+        table = soup.select_one('#studies-table')
+        section = table.find_parent('section') if table else None
+        filters = section.select_one('.filters-container') if section else None
+        if filters:
+            group = soup.new_tag('div', attrs={'class':'filter-group evidence-cohort-control'})
+            label = soup.new_tag('label', attrs={'for':'evidence-keep-latest-cohort'})
+            label.string = 'Records from the same cohort'
+            control = soup.new_tag('select', id='evidence-keep-latest-cohort')
+            for value, text in [('false','Include all records (default)'),('true','Keep latest publication per cohort')]:
+                option = soup.new_tag('option', value=value); option.string=text
+                if value == 'false': option['selected']='selected'
+                control.append(option)
+            group.append(label); group.append(control); filters.append(group)
     # The source applications retain these explanatory controls, but metaUro's
     # consolidated interface keeps the forest and extracted-study sections terse.
     for selector in ('#forest-scale-label', '#analysis-baseline-notice', '.poolability-help', '.summary-back-link', '.summary-eyebrow', '.summary-method-note', '.summary-intro > p', '.summary-section-heading p'):

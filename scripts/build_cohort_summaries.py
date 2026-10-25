@@ -65,6 +65,7 @@ def build(source, mode, languages=None):
         from cohort_summary_support import bind_cohort_manifest
         bind_cohort_manifest(manifest, ROOT)
         manifest['cohort_selection_audits'] = audits
+        manifest['cohort_selection_audits_by_source'] = {source: audits}
         manifest['keep_latest_cohort'] = True
         manifest['cohort_policy'] = 'Latest definitely dated publication per identified cohort; numbered cohorts, ties and unknowns retained separately.'
         return original_finalize(source_root, folder, manifest)

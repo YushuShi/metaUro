@@ -41,7 +41,7 @@ async function runtime({source='metapee',selector='disease',scope=0,blockedStora
     const ids=['analysis-settings-dialog','open-analysis-settings','close-analysis-settings',
         'settings-baseline-source','settings-age','settings-years','settings-sex','settings-race','settings-manual-risk',
         'settings-effect-measure','settings-forest-scale','settings-study-design','settings-exposure-rate','power-controls-per-case',
-        'settings-manual-field','settings-risk-value','settings-risk-context','settings-disease-name','settings-disease-definition',
+        'settings-manual-field','settings-risk-value','settings-risk-context','settings-disease-name','settings-disease-definition','settings-keep-latest-cohort','evidence-keep-latest-cohort',
         'settings-baseline-note','settings-exposure-rate-field','pooled-incidence'];
     for(const id of ids)nodes[id]=element(id);
     nodes['analysis-settings-dialog'].dataset.repository='metaUro';
@@ -112,6 +112,19 @@ test('invalid per-endpoint manual storage cannot poison a fresh analysis',async(
 });
 test('unavailable localStorage still permits edits and baseline preview',async()=>{
     storage.clear();const app=await runtime({blockedStorage:true});manual(app,6);assert.equal(app.settings.p0(),0.06);
+});
+test('inline cohort choice shares settings, persistence, reset, and change events',async()=>{
+    storage.clear();const app=await runtime();
+    assert.equal(app.nodes['evidence-keep-latest-cohort'].value,'false');
+    app.nodes['evidence-keep-latest-cohort'].value='true';app.nodes['evidence-keep-latest-cohort'].dispatch('change');
+    assert.equal(app.settings.get().keep_latest_cohort,true);
+    assert.equal(app.nodes['settings-keep-latest-cohort'].value,'true');
+    assert.ok(app.events.some(event=>event.type==='analysissettingschange'&&event.detail.keep_latest_cohort===true));
+    const reload=await runtime();assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'true');
+    reload.nodes['settings-keep-latest-cohort'].value='false';reload.nodes['settings-keep-latest-cohort'].dispatch('change');
+    assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'false');
+    reload.settings.set('keep_latest_cohort',true);assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'true');
+    reload.settings.reset();assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'false');
 });
 (async()=>{
     let failed=0;for(const {name,fn} of cases){try{await fn();console.log(`PASS ${name}`);}catch(error){failed++;console.error(`FAIL ${name}: ${error.stack}`);}}

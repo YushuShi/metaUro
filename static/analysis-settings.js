@@ -64,7 +64,7 @@
     function storageKey() {return `metaUro:${window.MetaUro.source}`;}
     function save() {rememberBaseline();try {localStorage.setItem(storageKey(),JSON.stringify({...state,scope_baselines:scopeBaselines}));} catch (_) { /* Settings still work when browser storage is unavailable. */ }}
     function setField(key,value) {
-        state[key] = key==='keep_latest_cohort' ? value==='true' : ['age','years','manual_risk_percent','exposure_rate','controls_per_case'].includes(key) ? (value === '' ? null : Number(value)) : value;
+        state[key] = key==='keep_latest_cohort' ? value===true || value==='true' : ['age','years','manual_risk_percent','exposure_rate','controls_per_case'].includes(key) ? (value === '' ? null : Number(value)) : value;
         if(key==='manual_risk_percent' && disease()?.manual_required) state.baseline_source=value==='' ? 'seer' : 'manual';
         if (state.age + state.years > 90) state.years = Math.max(...(catalog?.years || [5,10,15,20,25,30,35,40,45,50]).filter(y => state.age + y <= 90));
         save();sync();
@@ -83,7 +83,8 @@
         return info;
     }
     function sync() {
-        for (const [key,id] of Object.entries(fields)) if ($(id)) $(id).value = key==='exposure_rate' ? (state[key]===null ? '' : state[key]*100) : state[key] ?? '';
+        for (const [key,id] of Object.entries(fields)) if ($(id)) $(id).value = key==='keep_latest_cohort' ? String(state[key]) : key==='exposure_rate' ? (state[key]===null ? '' : state[key]*100) : state[key] ?? '';
+        if ($('evidence-keep-latest-cohort')) $('evidence-keep-latest-cohort').value=String(state.keep_latest_cohort);
         if ($('power-study-design')) $('power-study-design').value=state.study_design;
         if ($('power-exposure-percentage')) $('power-exposure-percentage').value=state.exposure_rate===null ? '' : state.exposure_rate*100;
         const retrospective=state.study_design==='retrospective';
@@ -252,6 +253,7 @@
         $('download-funnel-png')?.addEventListener('click',event=>downloadPlot(event,'funnel'));
         dialog?.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
         for(const [key,id] of Object.entries(fields)) $(id)?.addEventListener('change',event=>setField(key,key==='exposure_rate' && event.target.value!=='' ? Number(event.target.value)/100 : event.target.value));
+        $('evidence-keep-latest-cohort')?.addEventListener('change',event=>setField('keep_latest_cohort',event.target.value));
         $('power-study-design')?.addEventListener('change',event=>setField('study_design',event.target.value));
         $('power-exposure-percentage')?.addEventListener('change',event=>setField('exposure_rate',event.target.value==='' ? '' : Number(event.target.value)/100));
         $('display-measure')?.addEventListener('change',event=>setField('effect_measure',event.target.value));
@@ -298,6 +300,7 @@
         for(const [key,allowed] of Object.entries(choices)) if(allowed.includes(saved[key])) next[key]=saved[key];
         if(Number.isFinite(saved.exposure_rate) && saved.exposure_rate>0 && saved.exposure_rate<1)next.exposure_rate=saved.exposure_rate;
         if(Number.isFinite(saved.controls_per_case) && saved.controls_per_case>0)next.controls_per_case=saved.controls_per_case;
+        if(typeof saved.keep_latest_cohort==='boolean')next.keep_latest_cohort=saved.keep_latest_cohort;
         if(next.age+next.years>90)next.years=Math.max(...(catalog?.years || [5,10]).filter(x=>x+next.age<=90));
         return next;
     }

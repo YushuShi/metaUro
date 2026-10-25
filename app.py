@@ -14,7 +14,7 @@ from flask import Flask, Response, abort, jsonify, redirect, render_template, re
 from source_worker import SOURCES, workers
 from study_selection import build_selection_flow, selection_catalog
 from automation.sync_sources import assembled_source, load_overlay, bound, sha
-from summary_outputs import ensure_current, summary_dir, summary_mode
+from summary_outputs import ensure_current, summary_dir, summary_mode, latest_cohort_mode
 
 ROOT = Path(__file__).resolve().parent
 app = Flask(__name__)
@@ -417,6 +417,21 @@ def decorate_html(body, source, path):
             if control:
                 old_controls.append(str(control))
         old_header.replace_with(BeautifulSoup(render_template('_header.html', **ctx), 'html.parser'))
+    if ctx['page'] == 'summary':
+        latest = latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no')))
+        form = soup.select_one('form.summary-scope-form, form.summary-scope-picker')
+        if form:
+            label = soup.new_tag('label', attrs={'for':'summary-cohort-mode'})
+            label.string = 'Records from the same cohort'
+            control = soup.new_tag('select', id='summary-cohort-mode', attrs={'name':'latest_cohort', 'onchange':'this.form.submit()'})
+            for value, text in [('no','Include all records (default)'),('yes','Keep latest publication per cohort')]:
+                option = soup.new_tag('option', value=value); option.string=text
+                if (value == 'yes') == latest: option['selected']='selected'
+                control.append(option)
+            form.append(label); form.append(control)
+        for link in soup.select('a[href]'):
+            if '/summary/' in link['href']:
+                link['href'] += ('&' if '?' in link['href'] else '?') + 'latest_cohort=' + ('yes' if latest else 'no')
     # Remove duplicate source-brand navigation, while preserving the source study UI.
     for node in soup.select('.hero h1'):
         node.string = 'MetaUro'
@@ -646,7 +661,7 @@ def evidence(source, path):
     if request.method in {'GET', 'HEAD'} and (path == 'summary' or path.startswith('summary/')):
         try:
             mode = summary_mode(request.args.get('include_subexposures'))
-            folder = ensure_current(ROOT, source, mode)
+            folder = ensure_current(ROOT, source, mode, keep_latest_cohort=latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))))
         except ValueError as exc:
             return jsonify(error=str(exc)), 400
         except Exception:
@@ -672,7 +687,7 @@ def evidence(source, path):
                 mimetype=('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                           if workbook_match else 'application/pdf'),
                 as_attachment=bool(workbook_match),
-                download_name=asset.name,
+                download_name=('cohort-latest_' if latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))) else '') + asset.name,
             )
             response.headers['Cache-Control'] = 'no-store'
             response.headers['X-metaUro-Source'] = source

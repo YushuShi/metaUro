@@ -33,10 +33,20 @@ def summary_mode(value):
     raise ValueError('include_subexposures must be yes or no')
 
 
-def summary_dir(repo_root, source, mode):
+def latest_cohort_mode(value=None):
+    value = os.environ.get('METAURO_KEEP_LATEST_COHORT', 'no') if value is None else value
+    text = str(value).strip().lower()
+    if text not in {'yes','true','1','no','false','0',''}:
+        raise ValueError('latest_cohort must be yes or no')
+    return text in {'yes','true','1'}
+
+
+def summary_dir(repo_root, source, mode, keep_latest_cohort=None):
     if source not in SOURCES:
         raise ValueError('Unknown summary source')
-    return Path(repo_root).resolve() / 'summary' / summary_mode(mode)
+    folder = Path(repo_root).resolve() / 'summary' / summary_mode(mode)
+    latest = latest_cohort_mode() if keep_latest_cohort is None else bool(keep_latest_cohort)
+    return folder / 'cohort_latest' if latest else folder
 
 
 def metauro_root(source_root):
@@ -137,6 +147,11 @@ def input_fingerprint(repo_root, source, mode):
     # Track the code actually used by these offline generators. Browser-only
     # changes and interactive request settings do not alter default summaries.
     inputs.add(repo / 'summary_outputs.py')
+    inputs.add(repo / 'cohort_identity.py')
+    inputs.add(repo / 'cohort_summary_support.py')
+    if (repo / 'data/cohort_record_metadata.json').exists(): inputs.add(repo / 'data/cohort_record_metadata.json')
+    if (repo / 'data/cohort_registry.json').exists(): inputs.add(repo / 'data/cohort_registry.json')
+    inputs.add(repo / 'scripts/build_cohort_summaries.py')
     inputs.add(repo / 'display_localization.py')
     if source == 'MetaVir':
         inputs.add(repo / 'prostate_scopes.py')
@@ -334,18 +349,21 @@ def run_summary_build(source_root, cache_root, plot_root, languages, builder):
                 shutil.rmtree(stage)
 
 
-def ensure_current(repo_root, source, mode='yes', *, force=False):
+def ensure_current(repo_root, source, mode='yes', *, force=False, keep_latest_cohort=False):
     from automation.sync_sources import assembled_source
     repo = Path(repo_root).resolve()
     mode = summary_mode(mode)
-    folder = summary_dir(repo, source, mode)
+    folder = summary_dir(repo, source, mode, keep_latest_cohort)
     with _build_lock(folder):
         fingerprint = input_fingerprint(repo, source, mode)
         if not force and _current(folder, fingerprint, source):
             return folder
         command = [sys.executable, '-B', str(repo / 'sources' / source / 'scripts/build_summary_plots.py'),
                    '--cache-root', str(cache_dir(repo, source, mode)), '--plot-root', str(folder)]
-        environment = dict(os.environ, MPLBACKEND='Agg', PYTHONDONTWRITEBYTECODE='1',
+        if keep_latest_cohort:
+            command = [sys.executable, '-B', str(repo / 'scripts/build_cohort_summaries.py'),
+                       '--source', source, '--mode', mode]
+        environment = dict(os.environ, METAURO_KEEP_LATEST_COHORT='yes' if keep_latest_cohort else 'no', MPLBACKEND='Agg' , PYTHONDONTWRITEBYTECODE='1',
                            METAURO_SUMMARY_LOCK_HELD=str(folder),
                            METAURO_SUMMARY_SOURCE_ROOT=str(assembled_source(repo, source)))
         subprocess.run(command, cwd=repo, env=environment, check=True)

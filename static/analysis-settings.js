@@ -4,14 +4,14 @@
     if (window.AnalysisSettings) return;
     const $ = id => document.getElementById(id);
     const diseaseInput = () => $('disease') || $('summary-disease') || $('summary-scope');
-    const defaults = {baseline_source:'seer',age:60,years:10,sex:'both',race:'all_races_ethnicities',manual_risk_percent:null,effect_measure:'RR',forest_scale:'both',study_design:'prospective',exposure_rate:0.5,controls_per_case:1};
+    const defaults = {baseline_source:'seer',age:60,years:10,sex:'both',race:'all_races_ethnicities',manual_risk_percent:null,effect_measure:'RR',forest_scale:'both',study_design:'prospective',exposure_rate:0.5,controls_per_case:1,keep_latest_cohort:false};
     let state = {...defaults}, catalog = null, loadError = '', lastResponse = null, changeTimer;
     let activeDiseaseScope = '', scopeBaselines = {};
     let readyResolve;
     const ready = new Promise(resolve => {readyResolve = resolve;});
     const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
     const number = value => value === null || value === undefined || String(value).trim() === '' ? NaN : Number(value);
-    const fields = {baseline_source:'settings-baseline-source',age:'settings-age',years:'settings-years',sex:'settings-sex',race:'settings-race',manual_risk_percent:'settings-manual-risk',effect_measure:'settings-effect-measure',forest_scale:'settings-forest-scale',study_design:'settings-study-design',exposure_rate:'settings-exposure-rate',controls_per_case:'power-controls-per-case'};
+    const fields = {baseline_source:'settings-baseline-source',age:'settings-age',years:'settings-years',sex:'settings-sex',race:'settings-race',manual_risk_percent:'settings-manual-risk',effect_measure:'settings-effect-measure',forest_scale:'settings-forest-scale',study_design:'settings-study-design',exposure_rate:'settings-exposure-rate',controls_per_case:'power-controls-per-case',keep_latest_cohort:'settings-keep-latest-cohort'};
 
     function disease() {
         if (!catalog) return null;
@@ -64,7 +64,7 @@
     function storageKey() {return `metaUro:${window.MetaUro.source}`;}
     function save() {rememberBaseline();try {localStorage.setItem(storageKey(),JSON.stringify({...state,scope_baselines:scopeBaselines}));} catch (_) { /* Settings still work when browser storage is unavailable. */ }}
     function setField(key,value) {
-        state[key] = ['age','years','manual_risk_percent','exposure_rate','controls_per_case'].includes(key) ? (value === '' ? null : Number(value)) : value;
+        state[key] = key==='keep_latest_cohort' ? value==='true' : ['age','years','manual_risk_percent','exposure_rate','controls_per_case'].includes(key) ? (value === '' ? null : Number(value)) : value;
         if(key==='manual_risk_percent' && disease()?.manual_required) state.baseline_source=value==='' ? 'seer' : 'manual';
         if (state.age + state.years > 90) state.years = Math.max(...(catalog?.years || [5,10,15,20,25,30,35,40,45,50]).filter(y => state.age + y <= 90));
         save();sync();

@@ -150,7 +150,14 @@ document.addEventListener('DOMContentLoaded', async () => {
         pooledPowerPerGroup: document.getElementById('pooled-power-per-group')
     };
     window.addEventListener('analysissettingsready', () => updateBaselineIncidence());
+    let lastKeepLatestCohort = window.AnalysisSettings?.get().keep_latest_cohort || false;
+    window.addEventListener('analysissettingsready', () => {lastKeepLatestCohort=window.AnalysisSettings.get().keep_latest_cohort;});
     window.addEventListener('analysissettingschange', () => {
+        const latest = window.AnalysisSettings.get().keep_latest_cohort;
+        if (latest !== lastKeepLatestCohort) {
+            lastKeepLatestCohort = latest;
+            if (allStudies.length || currentStudies.length) {runAnalysis();return;}
+        }
         updateBaselineIncidence();
         if (currentStudies.length) {
             // Server conversion metadata described the preceding settings.
@@ -975,7 +982,32 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+    function clearCohortSelectionForFilters() {
+        if (!window.AnalysisSettings?.get()?.keep_latest_cohort) return;
+        for (const study of [...allStudies, ...currentStudies]) {
+            delete study.cohort_latest_excluded;
+            delete study.cohort_selection_reason;
+            delete study['Cohort Pooling Selected'];
+            delete study['Cohort Selection Reason'];
+        }
+    }
+    function mergeCohortSelection(data) {
+        const rowKey = row => JSON.stringify([String(row.PMID || row.pmid || ''), String(row.Study || ''), ...['Effect Size','Lower CI','Upper CI'].map(k => Number(row[k]))]);
+        const returned = new Map((data.studies || []).map(row => [rowKey(row), row]));
+        const flagFields = new Set(['cohort_latest_excluded','cohort_selection_reason','Cohort Pooling Selected','Cohort Selection Reason','cohort_selection_evaluated']);
+        const fields = [...flagFields,'Cohort Name','Cohort Publication Date','cohort_provenance','cohort_record_metadata_id','cohort_record_metadata','cohort_record_metadata_source'];
+        for (const study of [...allStudies, ...currentStudies]) {
+            const row = returned.get(rowKey(study));
+            if (!row) continue;
+            for (const key of fields) {
+                if (flagFields.has(key) && window.AnalysisSettings?.get()?.keep_latest_cohort && row.cohort_selection_evaluated !== true) continue;
+                if (Object.prototype.hasOwnProperty.call(row,key)) study[key] = row[key]; else delete study[key];
+            }
+        }
+    }
+
     function applyFilters() {
+        clearCohortSelectionForFilters();
         const timing = elements.filterTiming ? elements.filterTiming.value : 'All';
         const stage = elements.filterStage ? elements.filterStage.value : 'All';
         const quality = elements.filterQuality ? elements.filterQuality.value : 'Moderate+';
@@ -1187,7 +1219,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                     displayedAnalysis = { ...data, headline: null, plot_url: null, funnel_plot_url: null, baujat_plot_url: null,
                         summary_html: '<p>Eligible studies are listed below. No studies meet the default pooling criteria.</p>' };
                 } else {
-                    displayedAnalysis = data.subexposure_projection && selectedPoolingQuality() === 'Moderate+' ? data : await requestReanalysis(selectedStudies, analysisContext);
+                    displayedAnalysis = !window.AnalysisSettings?.get()?.keep_latest_cohort && data.subexposure_projection && selectedPoolingQuality() === 'Moderate+' ? data : await requestReanalysis(selectedStudies, analysisContext);
                 }
 
                 if (staleRequest()) return;
@@ -1251,6 +1283,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function refreshCaseSelection() {
+        clearCohortSelectionForFilters();
         window.CaseCounts.rememberSelection(currentStudies);
         renderStudiesTable();
         window.CaseCounts.restoreSelection(currentStudies);
@@ -1287,11 +1320,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const sampleSizeValue = Number(String(study['Sample Size'] ?? '').replace(/,/g, ''));
             const hasRequiredSampleSize = Number.isInteger(sampleSizeValue) && sampleSizeValue > 0;
             const jbiEntries = itemizedJbiEntries(study);
-            const isChecked = ((study.subexposure_pooling_selected !== false || fairQualityOptIn) && qualityIsEligible && hasRequiredSampleSize && eligibleEffectMeasurement && passesMinimum) ? 'checked' : '';
+            const isChecked = (study.cohort_latest_excluded !== true && (study.subexposure_pooling_selected !== false || fairQualityOptIn) && qualityIsEligible && hasRequiredSampleSize && eligibleEffectMeasurement && passesMinimum) ? 'checked' : '';
 
             // Build Exclusion Reason Title
             let unselectedReason = "";
             if (!isChecked) {
+                if (study.cohort_latest_excluded === true) unselectedReason = study.cohort_selection_reason;
+                else 
                 if (study.subexposure_pooling_selected === false && study.subexposure_pooling_reason) unselectedReason = study.subexposure_pooling_reason;
                 else                 if (!qualityIsEligible) unselectedReason = uiText('Excluded by default: JBI rating is below Moderate');
                 else if (!eligibleEffectMeasurement) unselectedReason = uiText('Excluded from meta-analysis: effect measurement must be RR, IRR, OR, or HR');
@@ -1316,7 +1351,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <td style="text-align: center; padding: 0.75rem; vertical-align: middle;">
                     <button class="expand-btn" data-index="${index}" style="background: none; border: none; color: var(--primary); padding: 0; cursor: pointer; font-size: 1.1rem; width: 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onclick="window.toggleStudyDetails(${index}, this)">▶</button>
                 </td>
-                <td><input type="checkbox" class="study-checkbox" data-index="${index}" ${passesMinimum ? '' : 'disabled'} ${isChecked} ${!fairQualityOptIn && (study.display_only === true || study.subexposure_pooling_selected === false || qualityScore.toLowerCase() === 'fair') ? 'disabled' : ''}></td>
+                <td><input type="checkbox" class="study-checkbox" data-index="${index}" ${passesMinimum && study.cohort_latest_excluded !== true ? '' : 'disabled'} ${isChecked} ${!fairQualityOptIn && (study.display_only === true || study.subexposure_pooling_selected === false || qualityScore.toLowerCase() === 'fair') ? 'disabled' : ''}></td>
                 <td>${index + 1}</td>
                 <td title="${unselectedReason}">
                     <a href="${study.Link}" target="_blank" class="notranslate" translate="no" style="color: var(--primary); text-decoration: none; font-weight: 800;">
@@ -1522,6 +1557,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             appendDirectionImputationNotice(detailsTr.querySelector('[data-direction-imputation]'), study, true);
             elements.studiesTbody.appendChild(tr);
+            const cohortDetails = document.createElement('div');
+            cohortDetails.className = 'snippet-item notranslate';
+            cohortDetails.setAttribute('translate', 'no');
+            const cohortTitle = document.createElement('strong');
+            cohortTitle.textContent = 'Cohort / study name';
+            const cohortText = document.createElement('p');
+            cohortText.textContent = `${study['Cohort Name'] || 'Not reported'} · Publication: ${study['Cohort Publication Date'] || study.Year || 'Not recorded'}${study.cohort_selection_reason ? ' · ' + study.cohort_selection_reason : ''}`;
+            cohortDetails.append(cohortTitle, cohortText);
+            detailsTr.querySelector('.snippets-container')?.prepend(cohortDetails);
             elements.studiesTbody.appendChild(detailsTr);
         });
         updateSortIcons();
@@ -1720,6 +1764,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function updateResultsUI(data, analysisContext = null) {
+        mergeCohortSelection(data);
+        if (currentStudies.length) {
+            window.CaseCounts.rememberSelection(currentStudies);
+            renderStudiesTable();
+            window.CaseCounts.restoreSelection(currentStudies);
+        }
         data = window.AnalysisSettings.receive(data);
         clearPreviousAnalysis(data);
         if (analysisContext) {

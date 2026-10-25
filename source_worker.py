@@ -66,7 +66,10 @@ def serve(source, pipe):
         install_plot_localization(plot_localization)
         # All source-app summary links read the single published output tree.
         from summary_outputs import summary_dir
-        engine.active_plot_dir = lambda: str(summary_dir(ROOT, source, engine.subexposure_mode()))
+        from flask import request, has_request_context
+        from summary_outputs import latest_cohort_mode
+        engine.active_plot_dir = lambda: str(summary_dir(ROOT, source, engine.subexposure_mode(),
+            latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))) if has_request_context() else False))
         original_summary_manifest = engine.load_summary_manifest
 
         def source_summary_manifest():

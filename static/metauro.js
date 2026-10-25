@@ -19,7 +19,7 @@
       const page = link.dataset.uroNav;
       const productPage = {settings: '/settings', selection: '/study-selection'}[page];
       const url = new URL(productPage || `${item.prefix}/${page === 'summary' ? 'summary' : config.track === 'chatgpt' && item.group_id === 'prostate' ? 'chatgpt' : ''}`, location.origin);
-      for (const key of ['lang', 'smoking_status', 'ethnicity', 'gender']) {
+      for (const key of ['lang', 'smoking_status', 'ethnicity', 'gender', 'latest_cohort']) {
         const value = new URL(location.href).searchParams.get(key);
         if(value !== null) url.searchParams.set(key,value);
       }

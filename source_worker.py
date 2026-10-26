@@ -44,6 +44,8 @@ def serve(source, pipe):
     runtime.mkdir(parents=True, exist_ok=True)
     os.environ['MPLCONFIGDIR'] = str(runtime / 'matplotlib')
     os.environ['MPLBACKEND'] = 'Agg'
+    os.environ['META_PREPRINT_REPO_ROOT']=str(ROOT)
+    os.environ['META_PREPRINT_SOURCE_REPO']=source
     os.environ['VERIFICATIONS_FILE'] = str(runtime / 'verifications.json')
     os.chdir(folder)
     # UI calculation updates are separate from the immutable evidence snapshot.
@@ -54,7 +56,15 @@ def serve(source, pipe):
     try:
         spec = importlib.util.spec_from_file_location('metauro_engine', folder / 'app.py')
         engine = importlib.util.module_from_spec(spec)
+        sys.modules[spec.name]=engine
         spec.loader.exec_module(engine)
+        from automation.sync_sources import _effective_file,load_overlay
+        def preprint_cache_path_alias(path):
+            relative=str(Path(path).resolve().relative_to(folder.resolve()))
+            durable=_effective_file(ROOT,source,relative,load_overlay(ROOT,source))
+            if durable is None:raise ValueError('The selected source cache is not in the active evidence generation.')
+            return str(durable.resolve().relative_to(ROOT.resolve()))
+        engine.preprint_cache_path_alias=preprint_cache_path_alias
         if source == 'MetaVir':
             from prostate_scopes import install_engine
             install_engine(engine)
@@ -65,11 +75,13 @@ def serve(source, pipe):
         from scripts import plot_localization
         install_plot_localization(plot_localization)
         # All source-app summary links read the single published output tree.
-        from summary_outputs import summary_dir
+        from summary_outputs import summary_view_dir
         from flask import request, has_request_context
         from summary_outputs import latest_cohort_mode
-        engine.active_plot_dir = lambda: str(summary_dir(ROOT, source, engine.subexposure_mode(),
-            latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))) if has_request_context() else False))
+        from preprint_ui import request_bool
+        engine.active_plot_dir = lambda: str(summary_view_dir(ROOT, source, engine.subexposure_mode(),
+            latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))) if has_request_context() else False,
+            include_preprints=request_bool(request.args.get('include_preprints')) if has_request_context() else False))
         original_summary_manifest = engine.load_summary_manifest
 
         def source_summary_manifest():

@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "expected_runs": 6,
+  "mode": "no",
+  "runs": [
+    {
+      "kind": "preprint_off",
+      "source": "metaPee",
+      "keep_latest_cohort": false,
+      "output": "summary/no",
+      "seconds": 96.41
+    },
+    {
+      "kind": "preprint_off",
+      "source": "MetaVir",
+      "keep_latest_cohort": false,
+      "output": "summary/no",
+      "seconds": 60.33
+    },
+    {
+      "kind": "preprint_off",
+      "source": "metaPee",
+      "keep_latest_cohort": true,
+      "output": "summary/no/cohort_latest",
+      "seconds": 102.43
+    },
+    {
+      "kind": "preprint_off",
+      "source": "MetaVir",
+      "keep_latest_cohort": true,
+      "output": "summary/no/cohort_latest",
+      "seconds": 61.27
+    },
+    {
+      "kind": "preprint_on",
+      "source": "MetaVir",
+      "keep_latest_cohort": false,
+      "command": [
+        "/opt/homebrew/Caskroom/miniforge/base/bin/python",
+        "-B",
+        "scripts/build_preprint_summaries.py",
+        "--source",
+        "MetaVir",
+        "--mode",
+        "no",
+        "--languages",
+        "en"
+      ],
+      "seconds": 50.76,
+      "log": "build_logs/uro_final_optional_no_False.log"
+    },
+    {
+      "kind": "preprint_on",
+      "source": "MetaVir",
+      "keep_latest_cohort": true,
+      "command": [
+        "/opt/homebrew/Caskroom/miniforge/base/bin/python",
+        "-B",
+        "scripts/build_preprint_summaries.py",
+        "--source",
+        "MetaVir",
+        "--mode",
+        "no",
+        "--languages",
+        "en",
+        "--keep-latest-cohort"
+      ],
+      "seconds": 51.12,
+      "log": "build_logs/uro_final_optional_no_True.log"
+    }
+  ],
+  "model_calls": 0
+}

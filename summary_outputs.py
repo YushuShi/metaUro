@@ -15,6 +15,7 @@ import subprocess
 import sys
 import tempfile
 import uuid
+from preprint_ui import preprint_variant_root,preprint_manifest_stamp,preprint_status,preprint_manifest_path,applicable_preprint_contexts,verify_preprint_summary_asset
 
 SOURCES = ('metaPee', 'MetaVir')
 MODES = ('yes', 'no')
@@ -41,12 +42,20 @@ def latest_cohort_mode(value=None):
     return text in {'yes','true','1'}
 
 
-def summary_dir(repo_root, source, mode, keep_latest_cohort=None):
+def summary_dir(repo_root, source, mode, keep_latest_cohort=None,include_preprints=None):
     if source not in SOURCES:
         raise ValueError('Unknown summary source')
     folder = Path(repo_root).resolve() / 'summary' / summary_mode(mode)
     latest = latest_cohort_mode() if keep_latest_cohort is None else bool(keep_latest_cohort)
-    return folder / 'cohort_latest' if latest else folder
+    folder=folder/'cohort_latest' if latest else folder
+    if include_preprints is None:include_preprints=os.environ.get('METAURO_INCLUDE_PREPRINTS','no')=='yes'
+    return preprint_variant_root(folder,include_preprints)
+
+
+def summary_view_dir(repo_root,source,mode,keep_latest_cohort=False,include_preprints=False):
+    if include_preprints and preprint_status(repo_root)['available'] and not applicable_preprint_contexts(repo_root,{'source_repo':source,'include_subexposures':summary_mode(mode)}):
+        include_preprints=False
+    return summary_dir(repo_root,source,mode,keep_latest_cohort,include_preprints)
 
 
 def metauro_root(source_root):
@@ -275,14 +284,14 @@ def finalize_build(source_root, plot_root, manifest):
     for path in folder.rglob('*'):
         # The optional cohort view is a complete publication of its own. A
         # base-mode rebuild must not clean its nested assets against base names.
-        if path.relative_to(folder).parts[0] == 'cohort_latest':
+        if path.relative_to(folder).parts[0] in {'cohort_latest','preprints_included'}:
             continue
         if (path.is_file() and is_summary_artifact(path)
                 and str(path.relative_to(folder)) not in complete_declared):
             path.unlink()
     # Diagnostic PNGs are transient companions, not published summary files.
     for path in folder.rglob('*.png'):
-        if path.relative_to(folder).parts[0] == 'cohort_latest':
+        if path.relative_to(folder).parts[0] in {'cohort_latest','preprints_included'}:
             continue
         if is_summary_artifact(path):
             path.unlink()
@@ -414,11 +423,22 @@ def run_summary_build(source_root, cache_root, plot_root, languages, builder):
                 shutil.rmtree(stage)
 
 
-def ensure_current(repo_root, source, mode='yes', *, force=False, keep_latest_cohort=False):
+def ensure_current(repo_root, source, mode='yes', *, force=False, keep_latest_cohort=False,include_preprints=False):
     from automation.sync_sources import assembled_source
     repo = Path(repo_root).resolve()
     mode = summary_mode(mode)
-    folder = summary_dir(repo, source, mode, keep_latest_cohort)
+    folder = summary_dir(repo, source, mode, keep_latest_cohort,include_preprints)
+    if include_preprints:
+        status=preprint_status(repo)
+        if not status['available']:raise ValueError('Reviewed-preprint summary release is unavailable.')
+        recovery=json.loads(preprint_manifest_path(repo).read_text())
+        relevant=applicable_preprint_contexts(repo,{'source_repo':source,'include_subexposures':mode})
+        if not relevant:
+            return ensure_current(repo,source,mode,force=force,keep_latest_cohort=keep_latest_cohort)
+        manifest=read_manifest(folder/'summary_manifest.json')
+        if not verify_preprint_summary_asset(folder/'summary_manifest.json',repo) or not _current(folder,input_fingerprint(repo,source,mode),source):
+            raise ValueError('Reviewed-preprint summary assets need an offline release for this source and mode.')
+        return folder
     with _build_lock(folder):
         fingerprint = input_fingerprint(repo, source, mode)
         if not force and _current(folder, fingerprint, source):
@@ -428,7 +448,7 @@ def ensure_current(repo_root, source, mode='yes', *, force=False, keep_latest_co
         if keep_latest_cohort:
             command = [sys.executable, '-B', str(repo / 'scripts/build_cohort_summaries.py'),
                        '--source', source, '--mode', mode]
-        environment = dict(os.environ, METAURO_KEEP_LATEST_COHORT='yes' if keep_latest_cohort else 'no', MPLBACKEND='Agg' , PYTHONDONTWRITEBYTECODE='1',
+        environment = dict(os.environ,METAURO_INCLUDE_PREPRINTS='no', METAURO_KEEP_LATEST_COHORT='yes' if keep_latest_cohort else 'no', MPLBACKEND='Agg' , PYTHONDONTWRITEBYTECODE='1',
                            METAURO_SUMMARY_LOCK_HELD=str(folder),
                            METAURO_SUMMARY_SOURCE_ROOT=str(assembled_source(repo, source)))
         subprocess.run(command, cwd=repo, env=environment, check=True)

@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "verified_on": "2026-10-26",
+  "models": {
+    "primary_r3": {"model": "gpt-6-luna", "reasoning_effort": "xhigh"},
+    "independent_r3": {"model": "gemini-3.8-flash", "reasoning_effort": "high"},
+    "final_adjudication": {"model": "gpt-6-astra", "reasoning_effort": "xhigh"}
+  },
+  "official_sources": [
+    "https://developers.openai.com/api/docs/guides/latest-model",
+    "https://developers.openai.com/api/docs/guides/deployment-checklist#set-up-reasoningeffort",
+    "https://ai.google.dev/gemini-api/docs/models/gemini-3.8-flash",
+    "https://ai.google.dev/gemini-api/docs/pricing"
+  ],
+  "accounting": "Persist dispatch before each call and raw response, exact model, reasoning configuration, usage and gateway cost afterwards. Gateway-reported cost is authoritative. Missing cost remains explicitly unknown; distinguish fallback estimates from billed cost. No implicit retry of an unacknowledged request.",
+  "scope": "Only native R3-required contexts blocked by missing or unusable PMC source and a verified Europe PMC PMID-linked preprint with accessible full text. No title/abstract-only substitution for full text; no new screening of unrelated or completed evidence.",
+  "source_policy": "Separate preprint-source overlay. Published PMID and journal publication date anchor article identity and cohort ordering; preprint identifier, DOI, version, posted date, retrieval URL, link note and source checksum are retained separately. No original evidence is overwritten. Default include_preprints is false.",
+  "credential_values_in_artifacts": false
+}

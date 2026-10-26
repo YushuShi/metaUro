@@ -151,12 +151,16 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
     window.addEventListener('analysissettingsready', () => updateBaselineIncidence());
     let lastKeepLatestCohort = window.AnalysisSettings?.get().keep_latest_cohort || false;
-    window.addEventListener('analysissettingsready', () => {lastKeepLatestCohort=window.AnalysisSettings.get().keep_latest_cohort;});
+    let lastIncludePreprints = window.AnalysisSettings?.get().include_preprints || false;
+    window.addEventListener('analysissettingsready', () => {lastKeepLatestCohort=window.AnalysisSettings.get().keep_latest_cohort;lastIncludePreprints=window.AnalysisSettings.get().include_preprints;});
     window.addEventListener('analysissettingschange', () => {
         const latest = window.AnalysisSettings.get().keep_latest_cohort;
-        if (latest !== lastKeepLatestCohort) {
+        const includePreprints=window.AnalysisSettings.get().include_preprints;
+        const sourceChanged=includePreprints!==lastIncludePreprints;
+        if (latest !== lastKeepLatestCohort || sourceChanged) {
             lastKeepLatestCohort = latest;
-            if (allStudies.length || currentStudies.length) {runAnalysis();return;}
+            lastIncludePreprints = includePreprints;
+            if ((sourceChanged && selectedDiseaseValue() && selectedExposureValue()) || allStudies.length || currentStudies.length) {runAnalysis();return;}
         }
         updateBaselineIncidence();
         if (currentStudies.length) {
@@ -1557,6 +1561,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 
             appendDirectionImputationNotice(detailsTr.querySelector('[data-direction-imputation]'), study, true);
             elements.studiesTbody.appendChild(tr);
+            if(study.preprint_derived===true){tr.classList.add('preprint-derived');const article=tr.querySelector('a[href]');if(article){article.append(document.createTextNode(' · Preprint'));article.title='Preprint-derived statistics; this source has not been peer reviewed.';}}
             const cohortDetails = document.createElement('div');
             cohortDetails.className = 'snippet-item notranslate';
             cohortDetails.setAttribute('translate', 'no');

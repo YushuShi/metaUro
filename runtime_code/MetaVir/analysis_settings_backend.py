@@ -119,11 +119,13 @@ def normalize_settings(values, catalog):
         'sex': defaults.get('sex', 'both'), 'race': defaults.get('race', 'all_races_ethnicities'),
         'manual_risk_percent': None, 'effect_measure': 'RR', 'forest_scale': 'both',
         'study_design': 'prospective', 'exposure_rate': 0.5, 'controls_per_case': 1.0,
-        'keep_latest_cohort': False,
+        'keep_latest_cohort': False, 'include_preprints': False,
     }
     result.update({k: v for k, v in values.items() if k in result})
     if not isinstance(result['keep_latest_cohort'], bool):
         raise ValueError('keep_latest_cohort must be true or false.')
+    if not isinstance(result['include_preprints'], bool):
+        raise ValueError('include_preprints must be true or false.')
     choices = {
         'baseline_source': {'seer', 'manual'}, 'effect_measure': {'RR', 'HR', 'OR'},
         'forest_scale': {'both', 'log', 'original'},
@@ -430,15 +432,16 @@ def forest_annotation_rows(studies, canonical, context):
     # Forest labels are deliberately citation-only. Multiple estimates from the
     # same publication may share a label; provenance remains in source_study.
     labels = [_study_label(study, compact=True) for study, _ in selected]
-    rows = [(label, str(study.get('Study') or label), *values)
+    rows = [(label + (' [preprint]' if study.get('preprint_derived') is True else ''), str(study.get('Study') or label), *values, study.get('preprint_derived') is True)
             for label, (study, values) in zip(labels, selected)]
     pooled = [rr_to_display(canonical.get(key), target, context['baseline']['p0'])
               for key in ('pooled_es', 'ci_low', 'ci_upp')]
     if all(v is not None and v > 0 for v in pooled):
-        rows.append(('Pooled result', 'Pooled result', *pooled))
+        rows.append(('Pooled result', 'Pooled result', *pooled, False))
     return [{'study': label, 'source_study': original, 'estimate': point, 'ci_low': low, 'ci_upp': high,
-             'log_estimate': math.log(point), 'log_ci_low': math.log(low), 'log_ci_upp': math.log(high)}
-            for label, original, point, low, high in rows]
+             'log_estimate': math.log(point), 'log_ci_low': math.log(low), 'log_ci_upp': math.log(high),
+             **({'preprint_derived': True} if preprint else {})}
+            for label, original, point, low, high, preprint in rows]
 
 
 def _forest_plots(studies, canonical, context):
@@ -465,7 +468,7 @@ def _forest_plots(studies, canonical, context):
     for y, row in enumerate(rows):
         pooled = row['study'] == 'Pooled result'
         weight = 'bold' if pooled else 'normal'
-        names.text(0, y, textwrap.fill(row['study'], 54, break_long_words=False), va='center', fontsize=8, weight=weight)
+        names.text(0, y, textwrap.fill(row['study'], 54, break_long_words=False), va='center', fontsize=8, weight=weight, **({'color':'#000080'} if row.get('preprint_derived') else {}))
         point, low, high = row['estimate'], row['ci_low'], row['ci_upp']
         axis.errorbar(point, y, xerr=[[point - low], [high - point]], fmt='D' if pooled else 'o',
                       color='#1e3a5f' if pooled else '#377d97', capsize=3)
@@ -797,3 +800,12 @@ def install_app(app, meta_analysis, app_file):
         if token is not None:
             _ACTIVE.reset(token)
             g.seer_settings_token = None
+
+    # Apply an opt-in local source view before native request eligibility.
+    import sys
+    from preprint_ui import install_common_runtime
+    app_namespace = next((vars(module) for module in tuple(sys.modules.values())
+                          if module is not None and getattr(module, '__file__', None)
+                          and Path(module.__file__).resolve() == Path(app_file).resolve()), None)
+    if app_namespace is not None:
+        install_common_runtime(app, app_namespace, repo, _ACTIVE.get)

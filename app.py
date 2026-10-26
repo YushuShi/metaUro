@@ -12,6 +12,7 @@ from urllib.parse import urlencode
 from bs4 import BeautifulSoup
 from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_file, send_from_directory
 from source_worker import SOURCES, workers
+from preprint_ui import install_status_endpoint,request_bool
 from study_selection import build_selection_flow, selection_catalog
 from automation.sync_sources import assembled_source, load_overlay, bound, sha
 from summary_outputs import ensure_current, summary_dir, summary_mode, latest_cohort_mode
@@ -423,6 +424,8 @@ def decorate_html(body, source, path):
         if form:
             form['class'] = list(form.get('class', [])) + ['uro-summary-control-row']
             disease_control = form.select_one('#summary-scope, #summary-disease')
+            if request_bool(request.args.get('include_preprints')):
+                hidden=soup.new_tag('input',attrs={'type':'hidden','name':'include_preprints','value':'true'});form.append(hidden)
             if disease_control:
                 disease_group = disease_control.find_parent(class_='input-group')
                 if not disease_group or disease_group is form:
@@ -574,6 +577,9 @@ def decorate_html(body, source, path):
     return str(soup)
 
 
+install_status_endpoint(app,ROOT)
+
+
 @app.get('/')
 def index():
     return redirect('/evidence/urinary/')
@@ -708,7 +714,7 @@ def evidence(source, path):
     if request.method in {'GET', 'HEAD'} and (path == 'summary' or path.startswith('summary/')):
         try:
             mode = summary_mode(request.args.get('include_subexposures'))
-            folder = ensure_current(ROOT, source, mode, keep_latest_cohort=latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))))
+            folder = ensure_current(ROOT, source, mode, keep_latest_cohort=latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))),include_preprints=request_bool(request.args.get('include_preprints')))
         except ValueError as exc:
             return jsonify(error=str(exc)), 400
         except Exception:

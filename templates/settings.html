@@ -39,6 +39,14 @@
       <p id="settings-baseline-note" role="status" aria-live="polite"></p>
       <p class="uro-footnote">Manual risk is saved separately for each disease. A subtype never inherits its parent cancer’s baseline.</p>
     </section>
+        <section class="settings-section">
+            <h3>Preprint evidence</h3>
+            <label class="settings-field" for="settings-include-preprints">Include recovered preprint evidence
+                <select id="settings-include-preprints"><option value="false">No</option><option value="true">Yes</option></select>
+            </label>
+            <p>Yes uses reviewed preprint recoveries linked to the published article. Preprints have not been peer reviewed. The same article is counted once; all original saved evidence is preserved.</p>
+            <p id="settings-preprint-status" role="status" aria-live="polite">Checking released recovery availability…</p>
+        </section>
     <section class="settings-section"><h2>Cohort records</h2><label class="settings-field" for="settings-keep-latest-cohort">Records from the same cohort<select id="settings-keep-latest-cohort"><option value="false">Include all records</option><option value="true">Keep latest publication per cohort</option></select></label><p>Numbered cohorts remain separate. All recorded evidence remains available.</p></section>
     <section class="settings-section" id="display" aria-labelledby="display-title">
       <h2 id="display-title">Forest Plot</h2>
@@ -65,4 +73,5 @@
     <div id="settings-source-citation" class="analysis-baseline-citation" aria-live="polite"></div>
     <div class="uro-settings-actions"><p id="settings-save-status" role="status">Changes apply to your current analysis.</p><button class="uro-secondary" id="reset-settings" type="button">Reset {{ source_label|lower }} preferences</button></div>
   </div>
-</main><footer class="uro-footer">MetaUro · Urologic cancer &amp; nutrition</footer></body></html>
+</main><footer class="uro-footer">MetaUro · Urologic cancer &amp; nutrition</footer><script src="/static/preprint-settings.js?v=20261026" defer></script>
+</body></html>

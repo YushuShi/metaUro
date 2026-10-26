@@ -19,6 +19,16 @@ python -m pip install -r requirements.txt
 python app.py
 ```
 
+If startup reports `ModuleNotFoundError: No module named 'bs4'`, the Python
+environment running the app is missing Beautiful Soup. It is already declared as
+`beautifulsoup4` in `requirements.txt`; its import name is `bs4`. Use the project
+interpreter explicitly to install and run in the same environment:
+
+```bash
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python app.py
+```
+
 Open http://127.0.0.1:5012. Production: `gunicorn --workers 1 --threads 4 --timeout 240 app:app`. A Render configuration is included. The first analysis starts the relevant Python engine; subsequent requests reuse it. Each source serializes calculations to protect its original global state and plotting code. Different sources can run concurrently. Allow sufficient memory for two scientific Python engines and their evidence.
 
 ## Interface

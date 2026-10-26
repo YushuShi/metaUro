@@ -480,6 +480,27 @@ def decorate_html(body, source, path):
                 if value == 'false': option['selected']='selected'
                 control.append(option)
             group.append(label); group.append(control); filters.append(group)
+    if ctx['page'] == 'evidence':
+        table = soup.select_one('#studies-table')
+        section = table.find_parent('section') if table else None
+        filters = section.select_one('.filters-container') if section else None
+        if filters and not filters.select_one('.evidence-selection-options'):
+            filters['class'] = list(filters.get('class', [])) + ['evidence-selection-controls']
+            filters.attrs.pop('style', None)
+            options = soup.new_tag('div', attrs={'class':'evidence-selection-options'})
+            for group in list(filters.select(':scope > .filter-group')):
+                field = group.select_one('select, input')
+                if field:
+                    group['data-filter'] = field.get('id', '')
+                for node in group.select('label, select, input'):
+                    node.attrs.pop('style', None)
+                options.append(group.extract())
+            filters.insert(0, options)
+            for button in filters.select('#select-all-btn, #deselect-all-btn, #update-btn, #export-studies-btn'):
+                actions = button.parent
+                if actions and actions is not filters:
+                    actions['class'] = list(dict.fromkeys([*actions.get('class', []), 'evidence-selection-actions']))
+                    actions.attrs.pop('style', None)
     # The source applications retain these explanatory controls, but metaUro's
     # consolidated interface keeps the forest and extracted-study sections terse.
     for selector in ('#forest-scale-label', '#analysis-baseline-notice', '.poolability-help', '.summary-back-link', '.summary-eyebrow', '.summary-method-note', '.summary-intro > p', '.summary-section-heading p'):

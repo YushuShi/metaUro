@@ -24,7 +24,7 @@ def scaffold(root):
         write(base/'Cached_results/fiber/cancer_incidence_true_all.json', {'studies':[study('1')]})
     write(root/'runtime_code/monthly/manifest.json', {'version':monthly.VERSION,'files':files})
     write(root/'updates/manifest.json', {'schema_version':1,'sources':{}})
-    for name in ('autonomous_scope.py','autonomous_projection.py','prostate_scope_results.py'):
+    for name in ('autonomous_scope.py','autonomous_projection.py','prostate_scope_results.py','preprint_recovery_bridge.py'):
         path = root/'automation'/name
         path.parent.mkdir(parents=True,exist_ok=True)
         path.write_text('# isolated fixture\n')

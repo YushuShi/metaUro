@@ -267,7 +267,7 @@ def preflight(root: Path, config: dict[str, Any], *, environ: dict[str, str] | N
     for commands in (config.get("ui_commands", []), config["validation_commands"]):
         for command in commands:
             render_command(command, root, window, run_dir, reports_dir)
-    return {"repository": config["repository"], "window": window, "ready": not missing and not problems, "missing_secret_names": missing, "problems": problems, "network_calls": 0}
+    return {"repository": config["repository"], "window": window, "ready": not missing and not problems, "missing_secret_names": missing, "problems": problems, "network_calls": 0, "preprint_recovery_models": ["gpt-6-luna", "gemini-3.8-flash", "gpt-6-astra"]}
 
 
 def default_runner(argv: list[str], cwd: Path, env: dict[str, str]) -> None:
@@ -381,6 +381,13 @@ def run_pipeline(root: Path, config: dict[str, Any], *, runner: Callable[..., An
         manifest["ui_refresh"] = ui_refresher(root, run_dir, blocked)
         for index, command in enumerate(config.get("ui_commands", [])):
             execute(f"ui:{index}", render_command(command, root, window, run_dir, reports_dir))
+        # Separate preprint R3 never enters native PMC screening packets.
+        manifest["current_step"] = "preprint-recovery"
+        atomic_json(manifest_path, manifest)
+        from automation.monthly_preprint_recovery import recover_run
+        manifest["preprint_recovery"] = recover_run(root, run_dir, reports_dir)
+        manifest["steps"].append({"step": "preprint-recovery", "completed_at": utc_now()})
+        atomic_json(manifest_path, manifest)
         execute("cost-report", native_command(root, config, window, "cost-report"))
         for index, command in enumerate(config["validation_commands"]):
             execute(f"validation:{index}", render_command(command, root, window, run_dir, reports_dir))

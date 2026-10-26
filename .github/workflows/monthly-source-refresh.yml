@@ -82,7 +82,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add -A -- updates summary monthlyHumanReview runtime_code
+          git add -A -- updates summary monthlyHumanReview runtime_code manualReview/preprint_recovery
           python -m automation.autonomous_monthly verify-index
           if ! git diff --cached --quiet; then
             git commit -m 'Publish autonomous monthly urinary evidence update'
@@ -99,5 +99,8 @@ jobs:
           path: |
             updates/monthly/
             monthlyHumanReview/
+            manualReview/preprint_recovery/
+            .monthly-checkpoint/preprint_recovery/
+          include-hidden-files: true
           if-no-files-found: ignore
           retention-days: 90

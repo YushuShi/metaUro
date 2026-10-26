@@ -44,6 +44,10 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 .summary-cohort-control { display: flex; flex-direction: column; gap: .45rem; margin-left: .5rem; padding: .8rem 1rem; border: 1px solid var(--border); border-radius: 8px; background: #f8fafc; min-width: 0; }
 .summary-cohort-control label,.evidence-cohort-control label { display: block; font-size: .85rem; font-weight: 600; line-height: 1.4; white-space: normal; }
 .summary-cohort-control select,.evidence-cohort-control select { max-width: 100%; min-width: 0; padding: .5rem .65rem; border: 1px solid #c4cbd5; border-radius: 5px; font: inherit; background: #fff; color: #172033; }
+.uro-summary-control-row { display: flex; flex-wrap: nowrap; align-items: flex-end; justify-content: flex-start; column-gap: 2rem; }
+.uro-summary-control-row .summary-disease-control,.uro-summary-control-row .summary-cohort-control { display: flex; flex-direction: column; gap: .4rem; flex: 1 1 0; width: auto; min-width: 0; max-width: 25rem; margin: 0; padding: 0; border: 0; border-radius: 0; background: none; }
+.uro-summary-control-row label { margin: 0; font-size: .85rem; font-weight: 600; line-height: 1.4; white-space: normal; }
+.uro-summary-control-row select { width: 100%; max-width: 100%; min-width: 0; min-height: 40px; }
 .evidence-cohort-control { display: flex; flex-direction: column; gap: .35rem; min-width: 0; }
 /* Study filters share one compact desktop row; actions remain on their own row. */
 .evidence-selection-controls { display: flex; flex-direction: column; gap: .75rem; margin-bottom: 1.25rem; }
@@ -62,6 +66,8 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
   .evidence-selection-options { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; }
 }
 @media (max-width: 650px) {
+  .uro-summary-control-row { column-gap: 1rem; }
+  .uro-summary-control-row label { font-size: .78rem; }
   .evidence-selection-options { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .evidence-selection-options > [data-filter="filter-exposure-type"],.evidence-selection-options > [data-filter="evidence-keep-latest-cohort"] { grid-column: 1 / -1; }
   .evidence-selection-options label { font-size: .8rem; }

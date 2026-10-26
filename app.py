@@ -421,11 +421,22 @@ def decorate_html(body, source, path):
         latest = latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no')))
         form = soup.select_one('form.summary-scope-form, form.summary-scope-picker')
         if form:
+            form['class'] = list(form.get('class', [])) + ['uro-summary-control-row']
+            disease_control = form.select_one('#summary-scope, #summary-disease')
+            if disease_control:
+                disease_group = disease_control.find_parent(class_='input-group')
+                if not disease_group or disease_group is form:
+                    disease_group = soup.new_tag('div', attrs={'class':'input-group'})
+                    disease_label = form.select_one('label[for="' + disease_control['id'] + '"]')
+                    disease_control.insert_before(disease_group)
+                    if disease_label: disease_group.append(disease_label.extract())
+                    disease_group.append(disease_control.extract())
+                disease_group['class'] = list(disease_group.get('class', [])) + ['summary-disease-control']
             group = soup.new_tag('div', attrs={'class':'summary-cohort-control'})
             label = soup.new_tag('label', attrs={'for':'summary-cohort-mode'})
             label.string = 'Records from the same cohort'
             control = soup.new_tag('select', id='summary-cohort-mode', attrs={'name':'latest_cohort', 'onchange':'this.form.submit()'})
-            for value, text in [('no','Include all records (default)'),('yes','Keep latest publication per cohort')]:
+            for value, text in [('no','Include all records'),('yes','Keep latest publication per cohort')]:
                 option = soup.new_tag('option', value=value); option.string=text
                 if (value == 'yes') == latest: option['selected']='selected'
                 control.append(option)
@@ -475,7 +486,7 @@ def decorate_html(body, source, path):
             label = soup.new_tag('label', attrs={'for':'evidence-keep-latest-cohort'})
             label.string = 'Records from the same cohort'
             control = soup.new_tag('select', id='evidence-keep-latest-cohort')
-            for value, text in [('false','Include all records (default)'),('true','Keep latest publication per cohort')]:
+            for value, text in [('false','Include all records'),('true','Keep latest publication per cohort')]:
                 option = soup.new_tag('option', value=value); option.string=text
                 if value == 'false': option['selected']='selected'
                 control.append(option)

@@ -115,7 +115,7 @@ test('unavailable localStorage still permits edits and baseline preview',async()
 });
 test('inline cohort choice shares settings, persistence, reset, and change events',async()=>{
     storage.clear();const app=await runtime();
-    assert.equal(app.nodes['evidence-keep-latest-cohort'].value,'false');
+    assert.equal(app.nodes['evidence-keep-latest-cohort'].value,'true');
     app.nodes['evidence-keep-latest-cohort'].value='true';app.nodes['evidence-keep-latest-cohort'].dispatch('change');
     assert.equal(app.settings.get().keep_latest_cohort,true);
     assert.equal(app.nodes['settings-keep-latest-cohort'].value,'true');
@@ -124,7 +124,7 @@ test('inline cohort choice shares settings, persistence, reset, and change event
     reload.nodes['settings-keep-latest-cohort'].value='false';reload.nodes['settings-keep-latest-cohort'].dispatch('change');
     assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'false');
     reload.settings.set('keep_latest_cohort',true);assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'true');
-    reload.settings.reset();assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'false');
+    reload.settings.reset();assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'true');
 });
 test('preprint source choice defaults off and survives reload, summary navigation and reset',async()=>{
     storage.clear();const app=await runtime();assert.equal(app.settings.get().include_preprints,false);

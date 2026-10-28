@@ -419,7 +419,7 @@ def decorate_html(body, source, path):
                 old_controls.append(str(control))
         old_header.replace_with(BeautifulSoup(render_template('_header.html', **ctx), 'html.parser'))
     if ctx['page'] == 'summary':
-        latest = latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no')))
+        latest = latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'yes')))
         form = soup.select_one('form.summary-scope-form, form.summary-scope-picker')
         if form:
             form['class'] = list(form.get('class', [])) + ['uro-summary-control-row']
@@ -491,7 +491,7 @@ def decorate_html(body, source, path):
             control = soup.new_tag('select', id='evidence-keep-latest-cohort')
             for value, text in [('false','Include all records'),('true','Keep latest publication per cohort')]:
                 option = soup.new_tag('option', value=value); option.string=text
-                if value == 'false': option['selected']='selected'
+                if value == 'true': option['selected']='selected'
                 control.append(option)
             group.append(label); group.append(control); filters.append(group)
     if ctx['page'] == 'evidence':
@@ -701,6 +701,9 @@ def evidence(source, path):
             return jsonify(error='An analysis request must be a JSON object.'), 400
         analysis_request = payload
         settings = payload.get('analysis_settings')
+        if settings is None or isinstance(settings, dict):
+            settings = {'keep_latest_cohort': True, **(settings or {})}
+            payload['analysis_settings'] = settings
         if isinstance(settings, dict) and settings.get('baseline_source') == 'manual':
             risk = settings.get('manual_risk_percent')
             try:
@@ -714,7 +717,7 @@ def evidence(source, path):
     if request.method in {'GET', 'HEAD'} and (path == 'summary' or path.startswith('summary/')):
         try:
             mode = summary_mode(request.args.get('include_subexposures'))
-            folder = ensure_current(ROOT, source, mode, keep_latest_cohort=latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))),include_preprints=request_bool(request.args.get('include_preprints')))
+            folder = ensure_current(ROOT, source, mode, keep_latest_cohort=latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'yes'))),include_preprints=request_bool(request.args.get('include_preprints')))
         except ValueError as exc:
             return jsonify(error=str(exc)), 400
         except Exception:
@@ -740,7 +743,7 @@ def evidence(source, path):
                 mimetype=('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                           if workbook_match else 'application/pdf'),
                 as_attachment=bool(workbook_match),
-                download_name=('cohort-latest_' if latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))) else '') + asset.name,
+                download_name=('cohort-latest_' if latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'yes'))) else '') + asset.name,
             )
             response.headers['Cache-Control'] = 'no-store'
             response.headers['X-metaUro-Source'] = source
@@ -761,7 +764,7 @@ def evidence(source, path):
             headers = {k: v for k, v in request.headers if k.lower() not in {'host', 'content-length', 'connection'}}
             status, response_headers, body = workers[source].request(
                 path='/' + path + ('?' + request.query_string.decode() if request.query_string else ''),
-                method=request.method, data=request.get_data(), headers=headers)
+                method=request.method, data=json.dumps(analysis_request) if analysis_request is not None else request.get_data(), headers=headers)
     except (RuntimeError, TimeoutError, EOFError, BrokenPipeError, ValueError, OSError):
         app.logger.exception('Source engine failed: %s', source)
         return jsonify(error='This evidence source is temporarily unavailable. Please try again.'), 503
@@ -821,6 +824,9 @@ def evidence(source, path):
     response.headers['X-metaUro-Source'] = source
     return response
 
+
+from sample_size_summary import install_app as install_sample_size_summary
+install_sample_size_summary(app, globals())
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1' if 'PORT' not in os.environ else '0.0.0.0', port=int(os.environ.get('PORT', '5012')), debug=False, use_reloader=False)

@@ -4,7 +4,7 @@
     if (window.AnalysisSettings) return;
     const $ = id => document.getElementById(id);
     const diseaseInput = () => $('disease') || $('summary-disease') || $('summary-scope');
-    const defaults = {baseline_source:'seer',age:60,years:10,sex:'both',race:'all_races_ethnicities',manual_risk_percent:null,effect_measure:'RR',forest_scale:'both',study_design:'prospective',exposure_rate:0.5,controls_per_case:1,keep_latest_cohort:false,include_preprints:false};
+    const defaults = {baseline_source:'seer',age:60,years:10,sex:'both',race:'all_races_ethnicities',manual_risk_percent:null,effect_measure:'RR',forest_scale:'both',study_design:'prospective',exposure_rate:0.5,controls_per_case:1,keep_latest_cohort:true,include_preprints:false};
     let state = {...defaults}, catalog = null, loadError = '', lastResponse = null, changeTimer;
     let activeDiseaseScope = '', scopeBaselines = {};
     let readyResolve;

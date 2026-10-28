@@ -80,7 +80,7 @@ def serve(source, pipe):
         from summary_outputs import latest_cohort_mode
         from preprint_ui import request_bool
         engine.active_plot_dir = lambda: str(summary_view_dir(ROOT, source, engine.subexposure_mode(),
-            latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'no'))) if has_request_context() else False,
+            latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'yes'))) if has_request_context() else False,
             include_preprints=request_bool(request.args.get('include_preprints')) if has_request_context() else False))
         original_summary_manifest = engine.load_summary_manifest
 
@@ -94,6 +94,8 @@ def serve(source, pipe):
         engine.load_summary_manifest = source_summary_manifest
         engine.LOG_FILE = str(runtime / 'engine.log')
         engine.app.config.update(TESTING=False)
+        from runtime_code.sample_size_summary_native import install_app as install_sample_size_summary
+        install_sample_size_summary(engine.app, engine)
         client = engine.app.test_client(use_cookies=False)
         pipe.send({'ready': True})
     except Exception:

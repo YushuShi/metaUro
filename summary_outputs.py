@@ -35,7 +35,7 @@ def summary_mode(value):
 
 
 def latest_cohort_mode(value=None):
-    value = os.environ.get('METAURO_KEEP_LATEST_COHORT', 'no') if value is None else value
+    value = os.environ.get('METAURO_KEEP_LATEST_COHORT', 'yes') if value is None else value
     text = str(value).strip().lower()
     if text not in {'yes','true','1','no','false','0',''}:
         raise ValueError('latest_cohort must be yes or no')

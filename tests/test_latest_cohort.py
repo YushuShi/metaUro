@@ -35,7 +35,8 @@ def test_final_capture_selects_only_working_frame_and_keeps_rounds(source):
 
 
 def test_cohort_summary_is_a_separate_optional_directory():
-    assert summary_outputs.summary_dir(ROOT, 'MetaVir', 'yes') == ROOT / 'summary/yes'
+    assert summary_outputs.summary_dir(ROOT, 'MetaVir', 'yes') == ROOT / 'summary/yes/cohort_latest'
+    assert summary_outputs.summary_dir(ROOT, 'MetaVir', 'yes', False) == ROOT / 'summary/yes'
     assert summary_outputs.summary_dir(ROOT, 'MetaVir', 'yes', True) == ROOT / 'summary/yes/cohort_latest'
     assert summary_outputs.summary_dir(ROOT, 'metaPee', 'no', True) == ROOT / 'summary/no/cohort_latest'
 

@@ -27,7 +27,8 @@ def request_bool(value):
 
 def preprint_manifest_path(repo_root):
     root = Path(repo_root)
-    folder = 'updates' if root.name == 'metaUro' else 'data'
+    uro_layout = (root / 'source_worker.py').is_file() and (root / 'evidence-manifest.json').is_file()
+    folder = 'updates' if root.name == 'metaUro' or uro_layout else 'data'
     return root / folder / 'preprint_recovery' / 'active_manifest.json'
 
 

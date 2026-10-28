@@ -51,8 +51,16 @@ async function runtime({search='',state={keep_latest_cohort:true},repository='Me
  assert.equal(racing.nodes['sample-summary-status'].textContent,before,'A stale failure must not replace newer success');assert.equal(racing.nodes['sample-summary-plots'].children.length,4);
  const dense=await runtime({fetcher:async(url,options,{catalog})=>({ok:true,json:async()=>url.pathname.endsWith('/catalog')?catalog:{panels:[{measurement:'all',design:'prospective',points:Array.from({length:24},(_,i)=>({exposure:'Long exposure name '+i,effect_size:.8,total_n:1000,study_count:3}))}]}})});
  const labels=descendants(dense.nodes['sample-summary-plots'],node=>node.attributes.class==='sample-point-label').map(node=>({x:Number(node.attributes.x),y:Number(node.attributes.y)-12,w:Math.max(...node.children.map(line=>line.textContent.length))*7+10,h:node.children.length*15+4}));
- let collisions=0;for(let i=0;i<labels.length;i++)for(let j=i+1;j<labels.length;j++){const a=labels[i],b=labels[j];if(a.x<b.x+b.w&&a.x+a.w>b.x&&a.y<b.y+b.h&&a.y+a.h>b.y)collisions++;}
- assert.equal(labels.length,24);assert.equal(collisions,0,'Clustered exposure callouts must remain readable');
+ assert.equal(labels.length,24);
+ const denseGroups=descendants(dense.nodes['sample-summary-plots'],node=>node.tagName==='g'&&node.attributes.tabindex==='0');
+ for(const group of denseGroups){
+  assert(!group.children.some(node=>node.tagName==='line'),'Exposure labels must not have connector lines');
+  const dot=group.children.find(node=>node.tagName==='circle'),label=group.children.find(node=>node.tagName==='text');
+  assert.equal(Number(label.attributes.x)-Number(dot.attributes.cx),13,'Every label must stay directly beside its own dot');
+  const height=label.children.length*15+4;
+  assert.equal(Number(label.attributes.y)-12+height/2,Number(dot.attributes.cy),'Label block must stay vertically centered on its dot');
+ }
+ assert.equal(new Set(labels.map(label=>`${label.x},${label.y}`)).size,1,'Overlapping labels are allowed instead of moving names away from coincident dots');
  const continuous=await runtime({fetcher:async(url,options,{catalog})=>({ok:true,json:async()=>url.pathname.endsWith('/catalog')?catalog:{panels:[{measurement:'all',design:'prospective',effect_label:'Mean difference',points:[{exposure:'Negative mean difference',effect_size:-2,total_n:100,study_count:2},{exposure:'Another negative mean difference',effect_size:-1,total_n:200,study_count:3}]}]}})});
  const circles=descendants(continuous.nodes['sample-summary-plots'],node=>node.tagName==='circle');assert.equal(circles.length,2);for(const dot of circles){assert(Number.isFinite(Number(dot.attributes.cx)));assert(Number(dot.attributes.cx)>=82&&Number(dot.attributes.cx)<=650,'Negative mean differences must stay inside the plot bounds');}
  assert(continuous.nodes['sample-summary-plots'].textContent.includes('Mean difference'));
@@ -84,5 +92,5 @@ async function runtime({search='',state={keep_latest_cohort:true},repository='Me
  const uro=await runtime({repository:'MetaUro',state:null,storage:{'metaUro:metaPee':{age:60,sex:'both'},'metaUro:MetaVir':{age:70,sex:'male'}},fetcher:async(url,options,{catalog,defaultData})=>({ok:true,json:async()=>url.pathname.endsWith('/catalog')?{...catalog,diseases:catalog.diseases.map(item=>({...item,baseline_percent:item.value==='B'&&url.searchParams.get('age')==='70'?9:item.baseline_percent}))}:defaultData})});
  await uro.changeDisease('B');assert.equal(uro.nodes['sample-baseline'].value,'9','Changing evidence source must refresh its baseline under that source’s saved settings');assert.equal(uro.requests.at(-1).searchParams.get('age'),'70');assert.equal(uro.requests.at(-1).searchParams.get('baseline_percent'),'9');
  for(const url of [...ui.requests,...uro.requests].filter(url=>url.pathname.endsWith('/catalog')))assert(!url.searchParams.has('baseline_percent'),'Per-disease overrides must not leak into other catalog baselines');
- console.log('PASS explicit settings, stale-request protection, negative mean differences, dense labels and source-specific baseline refresh.');
+ console.log('PASS explicit settings, stale requests, continuous effects, adjacent labels without connectors, and source-specific baseline refresh.');
 })().catch(error=>{console.error(error);process.exitCode=1;});

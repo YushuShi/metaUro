@@ -128,9 +128,8 @@
         if (logRatio) svg.append(svgNode('line', {x1: x(0), y1: box.top, x2: x(0), y2: height - box.bottom, stroke: '#81909b', 'stroke-dasharray': '5 4', class: 'sample-null-line'}));
         svg.append(svgNode('text', {x: box.left + plotWidth / 2, y: height - 20, 'text-anchor': 'middle', class: 'sample-axis'}, axisLabel));
         svg.append(svgNode('text', {transform: `translate(22 ${box.top + plotHeight / 2}) rotate(-90)`, 'text-anchor': 'middle', class: 'sample-axis'}, 'log₁₀(required total sample size)'));
-        // Keep callouts close to their dots; place crowded labels in open rows.
+        // Keep each name directly beside its dot, even in crowded regions.
         const labels = points.map(p => ({p, px: x(effectX(p)), py: y(Math.log10(Number(p.total_n)))})).sort((a, b) => a.py - b.py);
-        const occupied = [];
         for (const item of labels) {
             const lines = [];
             const words = String(item.p.exposure).split(/\s+/);
@@ -139,23 +138,12 @@
                 else lines[lines.length - 1] += ' ' + word;
             }
             lines.push(`N = ${fmt(item.p.total_n)}`);
-            const labelHeight = lines.length * 15 + 4, labelWidth = Math.min(285, Math.max(...lines.map(line => line.length)) * 7 + 10);
-            let lx = Math.min(width - labelWidth - 8, item.px + 13), ly = item.py - labelHeight / 2;
-            const collides = (cx, cy) => occupied.some(other => cx < other.x + other.w + 7 && cx + labelWidth + 7 > other.x && cy < other.y + other.h + 6 && cy + labelHeight + 6 > other.y);
-            let placed = false;
-            for (let offset = 0; offset < plotHeight; offset += 10) {
-                for (const direction of [1, -1]) {
-                    const cy = Math.max(box.top, Math.min(height - box.bottom - labelHeight, ly + offset * direction));
-                    if (!collides(lx, cy)) {ly = cy; placed = true; break;}
-                }
-                if (placed) break;
-            }
-            occupied.push({x: lx, y: ly, w: labelWidth, h: labelHeight});
+            const labelHeight = lines.length * 15 + 4;
+            const lx = item.px + 13, ly = item.py - labelHeight / 2;
             const dotColor = plotColor(item.p.dot_color || item.p.color);
             const labelColor = plotColor(item.p.label_color || item.p.color, dotColor);
             const group = svgNode('g', {tabindex: '0', style: `--sample-dot-color:${dotColor};--sample-label-color:${labelColor}`});
             group.append(svgNode('title', {}, `${item.p.exposure}: ${measure} ${Number(item.p.effect_size).toPrecision(5)}${logRatio ? `; log(${measure}) ${effectX(item.p).toPrecision(5)}` : ''}; ${fmt(item.p.total_n)} total participants; ${fmt(item.p.study_count)} studies.`));
-            group.append(svgNode('line', {x1: item.px + 4, y1: item.py, x2: lx - 3, y2: ly + labelHeight / 2, stroke: '#91a3b1', 'stroke-width': .8}));
             group.append(svgNode('circle', {cx: item.px, cy: item.py, r: 5}));
             const text = svgNode('text', {x: lx, y: ly + 12, class: 'sample-point-label'});
             lines.forEach((line, i) => text.append(svgNode('tspan', {x: lx, dy: i === 0 ? 0 : 15}, line)));

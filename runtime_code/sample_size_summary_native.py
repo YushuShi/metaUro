@@ -194,10 +194,26 @@ def _distinct_count(rows):
     return len(keys)
 
 
+def _point_style(exposure, repo, preprint_derived=False):
+    """Match the immutable source Summary scatter and its preprint labels."""
+    import colorsys
+    import hashlib
+    import re
+    # sources/<source>/scripts/diagnostic_style.py::exposure_color is the
+    # shared renderer used by summary_outputs and build_cohort_summaries.
+    key = re.sub(r'[^a-z0-9]+', '_', str(exposure).lower()).strip('_')
+    hue = int.from_bytes(hashlib.sha256(key.encode()).digest()[:4], 'big') / 2**32
+    rgb = colorsys.hls_to_rgb(hue, 0.43, 0.65)
+    color = '#' + ''.join(f'{round(channel * 255):02x}' for channel in rgb)
+    # build_cohort_summaries recolors recovered-source text only; dots retain
+    # their ordinary per-exposure colors in the published Summary scatter.
+    return {'dot_color': color, 'label_color': '#000080' if preprint_derived else color}
+
+
 def _pool(namespace, repo, scope, exposure, rows, baseline, settings, dietary):
     frame = _frame(rows, dietary)
     if len(frame) < 2:
-        return None, 0
+        return None, 0, False
     analysis = namespace['meta_analysis']
     engine = inspect.unwrap(analysis.perform_meta_analysis)
     if namespace.get('resolve_incidence'):
@@ -223,8 +239,8 @@ def _pool(namespace, repo, scope, exposure, rows, baseline, settings, dietary):
     canonical = headline.get('canonical_rr') or headline
     rr = canonical.get('pooled_es')
     if rr is None or not math.isfinite(float(rr)) or float(rr) <= 0:
-        return None, 0
-    return float(rr), _distinct_count(pooled)
+        return None, 0, False
+    return float(rr), _distinct_count(pooled), any(row.get('preprint_derived') is True for row in pooled)
 
 
 def install_app(app, namespace):
@@ -283,10 +299,11 @@ def install_app(app, namespace):
                     from preprint_ui import preprint_manifest_stamp
                     recovery_stamp += str(preprint_manifest_stamp(repo))
                 for measurement in ('all', 'dietary'):
-                    rr, count = pooled_source(str(path) if path else '', stamp.st_mtime_ns if stamp else 0,
-                                             stamp.st_size if stamp else 0, json.dumps(scope, sort_keys=True),
-                                             exposure, json.dumps(settings, sort_keys=True),
-                                             measurement == 'dietary', recovery_stamp)
+                    rr, count, preprint_derived = pooled_source(
+                        str(path) if path else '', stamp.st_mtime_ns if stamp else 0,
+                        stamp.st_size if stamp else 0, json.dumps(scope, sort_keys=True),
+                        exposure, json.dumps(settings, sort_keys=True),
+                        measurement == 'dietary', recovery_stamp)
                     if count < 2 or rr is None:
                         continue
                     for panel in (row for row in panels if row['measurement'] == measurement):
@@ -299,7 +316,8 @@ def install_app(app, namespace):
                             panel['omitted'].append({'exposure': exposure, 'reason': reason or 'No finite effect estimate is available.'})
                         else:
                             panel['points'].append({'exposure': exposure, 'effect_size': effect, 'total_n': total,
-                                                    'study_count': count, 'pooled_rr': rr})
+                                                    'study_count': count, 'pooled_rr': rr,
+                                                    **_point_style(exposure, repo, preprint_derived)})
             return jsonify(disease=scope['value'], baseline_percent=baseline.get('risk_percent'), baseline=baseline,
                            settings=options, analysis_settings=settings, panels=panels,
                            evidence_note='Each measurement group uses the same eligible pooled evidence for prospective and retrospective planning. At least two distinct study reports are required.')

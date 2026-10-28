@@ -56,6 +56,31 @@ async function runtime({search='',state={keep_latest_cohort:true},repository='Me
  const continuous=await runtime({fetcher:async(url,options,{catalog})=>({ok:true,json:async()=>url.pathname.endsWith('/catalog')?catalog:{panels:[{measurement:'all',design:'prospective',effect_label:'Mean difference',points:[{exposure:'Negative mean difference',effect_size:-2,total_n:100,study_count:2},{exposure:'Another negative mean difference',effect_size:-1,total_n:200,study_count:3}]}]}})});
  const circles=descendants(continuous.nodes['sample-summary-plots'],node=>node.tagName==='circle');assert.equal(circles.length,2);for(const dot of circles){assert(Number.isFinite(Number(dot.attributes.cx)));assert(Number(dot.attributes.cx)>=82&&Number(dot.attributes.cx)<=650,'Negative mean differences must stay inside the plot bounds');}
  assert(continuous.nodes['sample-summary-plots'].textContent.includes('Mean difference'));
+ // Ratio effects use natural-log coordinates, while sample size stays log10.
+ const logarithmic=await runtime({fetcher:async(url,options,{catalog})=>({ok:true,json:async()=>url.pathname.endsWith('/catalog')?catalog:{panels:[{measurement:'all',design:'prospective',points:[
+  {exposure:'Protective',effect_size:.5,total_n:1000,study_count:2,dot_color:'#2475C0',label_color:'#8DC9E8'},
+  {exposure:'Reference',effect_size:1,total_n:1000,study_count:2,color:'#123456'},
+  {exposure:'Harmful',effect_size:4,total_n:1000,study_count:2,dot_color:'#C9354C',label_color:'#EEA4BC'},
+  {exposure:'Invalid zero ratio',effect_size:0,total_n:1000,study_count:2},
+  {exposure:'Invalid negative ratio',effect_size:-1,total_n:1000,study_count:2}
+ ]},{measurement:'all',design:'retrospective',points:[{exposure:'Odds',effect_size:.5,total_n:1000,study_count:2,color:'#000080'}]}]}})});
+ const ratioCard=logarithmic.nodes['sample-summary-plots'].children[0];
+ const ratioDots=descendants(ratioCard,node=>node.tagName==='circle');assert.equal(ratioDots.length,3);
+ const positions=ratioDots.map(dot=>Number(dot.attributes.cx));
+ assert(Math.abs((positions[2]-positions[1])/(positions[1]-positions[0])-2)<1e-10,'Doubling log-effect distance must double horizontal distance');
+ const nullLine=descendants(ratioCard,node=>node.attributes.class==='sample-null-line')[0];
+ assert(Math.abs(Number(nullLine.attributes.x1)-positions[1])<1e-10,'RR=1 must lie on the log-effect zero line');
+ assert(ratioCard.textContent.includes('log(RR) (natural log)'));
+ assert(ratioCard.textContent.includes('log₁₀(required total sample size)'));
+ assert(logarithmic.nodes['sample-summary-plots'].children[1].textContent.includes('log(OR) (natural log)'));
+ const colored=descendants(ratioCard,node=>node.tagName==='g'&&node.attributes.tabindex==='0');
+ assert(colored[0].attributes.style.includes('--sample-dot-color:#2475C0'));
+ assert(colored[0].attributes.style.includes('--sample-label-color:#8DC9E8'));
+ assert(colored[1].attributes.style.includes('--sample-dot-color:#123456'));
+ assert(colored[2].attributes.style.includes('--sample-label-color:#EEA4BC'));
+ assert(colored[0].textContent.includes('1000')||colored[0].textContent.includes('1,000'),'Sample size labels must keep the untransformed total');
+ assert(!continuous.nodes['sample-summary-plots'].textContent.includes('log(Mean difference)'),'Continuous effects must not be logarithmically transformed');
+ console.log('PASS natural-log RR/OR coordinates, no-effect zero, unchanged log10 sample sizes, and Summary dot/label colors.');
  const uro=await runtime({repository:'MetaUro',state:null,storage:{'metaUro:metaPee':{age:60,sex:'both'},'metaUro:MetaVir':{age:70,sex:'male'}},fetcher:async(url,options,{catalog,defaultData})=>({ok:true,json:async()=>url.pathname.endsWith('/catalog')?{...catalog,diseases:catalog.diseases.map(item=>({...item,baseline_percent:item.value==='B'&&url.searchParams.get('age')==='70'?9:item.baseline_percent}))}:defaultData})});
  await uro.changeDisease('B');assert.equal(uro.nodes['sample-baseline'].value,'9','Changing evidence source must refresh its baseline under that source’s saved settings');assert.equal(uro.requests.at(-1).searchParams.get('age'),'70');assert.equal(uro.requests.at(-1).searchParams.get('baseline_percent'),'9');
  for(const url of [...ui.requests,...uro.requests].filter(url=>url.pathname.endsWith('/catalog')))assert(!url.searchParams.has('baseline_percent'),'Per-disease overrides must not leak into other catalog baselines');

@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sample size summary | {{ sample_size_title }}</title>
     {% for href in sample_size_styles %}<link rel="stylesheet" href="{{ href }}">{% endfor %}
-    <link rel="stylesheet" href="/static/sample-size-summary.css?v=20261027">
-    <script src="/static/sample-size-summary.js?v=20261027" defer></script>
+    <link rel="stylesheet" href="/static/sample-size-summary.css?v=20261027-log-colors">
+    <script src="/static/sample-size-summary.js?v=20261027-log-colors" defer></script>
     {% if sample_size_title == 'MetaNeuro' %}
     <script src="/static/subexposures.js" defer></script>
     <script src="/static/settings.js" defer></script>
@@ -16,7 +16,7 @@
     {% include sample_size_header %}
     <main class="sample-summary" id="main">
         <h1>Sample size summary</h1>
-        <p class="sample-intro">Compare the total participants required to detect each exposure’s pooled effect. Prospective and retrospective panels use the same selected evidence with their respective planning formulas. Each dot requires at least two studies.</p>
+        <p class="sample-intro">Compare the total participants required to detect each exposure’s pooled effect. Prospective and retrospective panels use the same selected evidence with their respective planning formulas. Ratio effects use natural-log RR or OR horizontally; total sample size uses log₁₀ vertically. Each dot requires at least two studies.</p>
         <form id="sample-summary-form" class="sample-summary-controls">
             <label class="sample-disease-field" for="sample-summary-disease">Disease
                 <select id="sample-summary-disease" name="disease" required disabled><option value="">Loading diseases…</option></select>

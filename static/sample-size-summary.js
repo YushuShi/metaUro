@@ -12,6 +12,7 @@
     const number = value => value === null || value === undefined || String(value).trim() === '' ? NaN : Number(value);
     const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
     const fmt = value => Number(value).toLocaleString(undefined, {maximumFractionDigits: 0});
+    const plotColor = (value, fallback = '#2475c0') => /^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(String(value || '')) ? value : fallback;
     const element = (tag, text, className) => {const node = document.createElement(tag); if (text !== undefined) node.textContent = text; if (className) node.className = className; return node;};
     function settings() {
         if (window.AnalysisSettings?.get) return window.AnalysisSettings.get();
@@ -103,16 +104,20 @@
         const height = Math.max(540, points.reduce((total, p) => total + (Math.ceil(String(p.exposure).length / 30) + 1) * 15 + 16, 130));
         const box = {left: 82, right: 310, top: 40, bottom: 75};
         const plotWidth = width - box.left - box.right, plotHeight = height - box.top - box.bottom;
-        const xs = points.map(p => Number(p.effect_size)), ys = points.map(p => Math.log10(Number(p.total_n)));
-        let xmin = Math.min(...xs), xmax = Math.max(...xs), ymin = Math.min(...ys), ymax = Math.max(...ys);
+        const measure = panel.effect_label || panel.effect_measure || (panel.design === 'retrospective' ? 'OR' : 'RR');
+        const logRatio = ['RR', 'OR'].includes(measure.toUpperCase());
+        const effectX = point => logRatio ? Math.log(Number(point.effect_size)) : Number(point.effect_size);
+        const axisLabel = logRatio ? `log(${measure}) (natural log)` : measure;
+        const xs = points.map(effectX), ys = points.map(p => Math.log10(Number(p.total_n)));
+        let xmin = Math.min(...xs, ...(logRatio ? [0] : [])), xmax = Math.max(...xs, ...(logRatio ? [0] : [])), ymin = Math.min(...ys), ymax = Math.max(...ys);
         const xpad = Math.max((xmax - xmin) * .12, Math.abs(xmin) * .04, .03);
         const ypad = Math.max((ymax - ymin) * .08, .15);
-        xmin = panel.effect_label === 'Mean difference' ? xmin - xpad : Math.max(0, xmin - xpad);
+        xmin -= xpad;
         xmax += xpad; ymin -= ypad; ymax += ypad;
         const x = value => box.left + (value - xmin) / (xmax - xmin) * plotWidth;
         const y = value => box.top + (ymax - value) / (ymax - ymin) * plotHeight;
-        const svg = svgNode('svg', {viewBox: `0 0 ${width} ${height}`, class: 'sample-chart', role: 'img', 'aria-label': `${panel.measurement === 'dietary' ? 'Dietary only' : 'All exposure measurements'}, ${panel.design}: effect size versus log base 10 of required total sample size.`});
-        svg.append(svgNode('title', {}, 'Each labeled dot is one exposure. The vertical axis is log₁₀(total participants).'));
+        const svg = svgNode('svg', {viewBox: `0 0 ${width} ${height}`, class: 'sample-chart', role: 'img', 'aria-label': `${panel.measurement === 'dietary' ? 'Dietary only' : 'All exposure measurements'}, ${panel.design}: ${axisLabel} versus log base 10 of required total sample size.`});
+        svg.append(svgNode('title', {}, `Each labeled dot is one exposure. The horizontal axis is ${axisLabel}. The vertical axis is log₁₀(total participants).`));
         for (let i = 0; i <= 5; i++) {
             const xv = xmin + i / 5 * (xmax - xmin), yv = ymin + i / 5 * (ymax - ymin);
             svg.append(svgNode('line', {x1: box.left, y1: y(yv), x2: width - box.right, y2: y(yv), stroke: '#e3e9ee'}));
@@ -120,10 +125,11 @@
             svg.append(svgNode('text', {x: x(xv), y: height - box.bottom + 25, 'text-anchor': 'middle', class: 'sample-tick'}, Number(xv.toPrecision(3)).toString()));
         }
         svg.append(svgNode('path', {d: `M${box.left},${box.top}V${height - box.bottom}H${width - box.right}`, fill: 'none', stroke: '#81909b'}));
-        svg.append(svgNode('text', {x: box.left + plotWidth / 2, y: height - 20, 'text-anchor': 'middle', class: 'sample-axis'}, `Effect size (${panel.effect_label || panel.effect_measure || (panel.design === 'retrospective' ? 'OR' : 'RR')})`));
+        if (logRatio) svg.append(svgNode('line', {x1: x(0), y1: box.top, x2: x(0), y2: height - box.bottom, stroke: '#81909b', 'stroke-dasharray': '5 4', class: 'sample-null-line'}));
+        svg.append(svgNode('text', {x: box.left + plotWidth / 2, y: height - 20, 'text-anchor': 'middle', class: 'sample-axis'}, axisLabel));
         svg.append(svgNode('text', {transform: `translate(22 ${box.top + plotHeight / 2}) rotate(-90)`, 'text-anchor': 'middle', class: 'sample-axis'}, 'log₁₀(required total sample size)'));
         // Keep callouts close to their dots; place crowded labels in open rows.
-        const labels = points.map(p => ({p, px: x(Number(p.effect_size)), py: y(Math.log10(Number(p.total_n)))})).sort((a, b) => a.py - b.py);
+        const labels = points.map(p => ({p, px: x(effectX(p)), py: y(Math.log10(Number(p.total_n)))})).sort((a, b) => a.py - b.py);
         const occupied = [];
         for (const item of labels) {
             const lines = [];
@@ -145,8 +151,10 @@
                 if (placed) break;
             }
             occupied.push({x: lx, y: ly, w: labelWidth, h: labelHeight});
-            const group = svgNode('g', {tabindex: '0'});
-            group.append(svgNode('title', {}, `${item.p.exposure}: effect ${Number(item.p.effect_size).toPrecision(5)}; ${fmt(item.p.total_n)} total participants; ${fmt(item.p.study_count)} studies.`));
+            const dotColor = plotColor(item.p.dot_color || item.p.color);
+            const labelColor = plotColor(item.p.label_color || item.p.color, dotColor);
+            const group = svgNode('g', {tabindex: '0', style: `--sample-dot-color:${dotColor};--sample-label-color:${labelColor}`});
+            group.append(svgNode('title', {}, `${item.p.exposure}: ${measure} ${Number(item.p.effect_size).toPrecision(5)}${logRatio ? `; log(${measure}) ${effectX(item.p).toPrecision(5)}` : ''}; ${fmt(item.p.total_n)} total participants; ${fmt(item.p.study_count)} studies.`));
             group.append(svgNode('line', {x1: item.px + 4, y1: item.py, x2: lx - 3, y2: ly + labelHeight / 2, stroke: '#91a3b1', 'stroke-width': .8}));
             group.append(svgNode('circle', {cx: item.px, cy: item.py, r: 5}));
             const text = svgNode('text', {x: lx, y: ly + 12, class: 'sample-point-label'});
@@ -158,7 +166,9 @@
     function renderPanel(panel) {
         const card = element('article', undefined, 'sample-plot-card');
         card.append(element('h2', `${panel.measurement === 'dietary' ? 'Dietary only' : 'All exposure measurements'} · ${panel.design === 'retrospective' ? 'Retrospective' : 'Prospective'}`));
-        const points = (panel.points || []).filter(p => number(p.study_count) >= 2 && number(p.total_n) > 0 && Number.isFinite(number(p.total_n)) && Number.isFinite(number(p.effect_size)));
+        const measure = panel.effect_label || panel.effect_measure || (panel.design === 'retrospective' ? 'OR' : 'RR');
+        const logRatio = ['RR', 'OR'].includes(measure.toUpperCase());
+        const points = (panel.points || []).filter(p => number(p.study_count) >= 2 && number(p.total_n) > 0 && Number.isFinite(number(p.total_n)) && Number.isFinite(number(p.effect_size)) && (!logRatio || number(p.effect_size) > 0));
         card.append(element('p', `${points.length} exposures · ${panel.design === 'retrospective' ? 'Unmatched case-control planning' : 'Prospective planning'}`, 'sample-panel-note'));
         if (panel.note) card.append(element('p', panel.note, 'sample-panel-note'));
         if (points.length) {
@@ -167,7 +177,7 @@
             const wrapper = element('div', undefined, 'sample-table-scroll'), table = element('table'), head = element('thead'), header = element('tr');
             ['Exposure', 'Effect size', 'Total N', 'Studies'].forEach(label => {const th = element('th', label); th.scope = 'col'; header.append(th);});
             head.append(header); table.append(head); const body = element('tbody');
-            points.forEach(point => {const row = element('tr'); [point.exposure, Number(point.effect_size).toPrecision(5), fmt(point.total_n), fmt(point.study_count)].forEach(value => row.append(element('td', value))); body.append(row);});
+            points.forEach(point => {const row = element('tr'); [point.exposure, Number(point.effect_size).toPrecision(5), fmt(point.total_n), fmt(point.study_count)].forEach((value, index) => {const cell = element('td', value); if (index === 0) cell.setAttribute('style', `color:${plotColor(point.label_color || point.color || point.dot_color)}`); row.append(cell);}); body.append(row);});
             table.append(body); wrapper.append(table); details.append(wrapper); card.append(details);
         } else card.append(element('p', panel.reason || 'No exposures have at least two eligible studies and a finite required sample size.'));
         if (panel.omitted?.length) {

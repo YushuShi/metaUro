@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="{{ request.args.get('lang', 'en') }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sample size summary | {{ sample_size_title }}</title>
+    {% for href in sample_size_styles %}<link rel="stylesheet" href="{{ href }}">{% endfor %}
+    <link rel="stylesheet" href="/static/sample-size-summary.css?v=20261027-close-labels">
+    <script src="/static/sample-size-summary.js?v=20261027-close-labels" defer></script>
+    {% if sample_size_title == 'MetaNeuro' %}
+    <script src="/static/subexposures.js" defer></script>
+    <script src="/static/settings.js" defer></script>
+    {% endif %}
+</head>
+<body data-sample-size-repository="{{ sample_size_title }}" data-sample-size-source="{{ source|default('') }}">
+    {% include sample_size_header %}
+    <main class="sample-summary" id="main">
+        <h1>Sample size summary</h1>
+        <p class="sample-intro">Compare the total participants required to detect each exposure’s pooled effect. Prospective and retrospective panels use the same selected evidence with their respective planning formulas. Ratio effects use natural-log RR or OR horizontally; total sample size uses log₁₀ vertically. Each dot requires at least two studies.</p>
+        <form id="sample-summary-form" class="sample-summary-controls">
+            <label class="sample-disease-field" for="sample-summary-disease">Disease
+                <select id="sample-summary-disease" name="disease" required disabled><option value="">Loading diseases…</option></select>
+            </label>
+            <label for="sample-baseline">Baseline incidence (%)
+                <input id="sample-baseline" name="baseline_percent" type="number" min="0.00000001" max="99.99999999" step="any" placeholder="App default">
+                <small id="sample-baseline-note">Uses the app’s default for the selected disease.</small>
+            </label>
+            <label for="sample-control-exposure">Intervention / exposure among controls (%)
+                <input id="sample-control-exposure" name="control_exposure_percent" type="number" min="0.00000001" max="99.99999999" step="any" value="50" required>
+                <small>Used for retrospective case-control planning.</small>
+            </label>
+            <label for="sample-allocation">Allocation ratio (1 : r)
+                <input id="sample-allocation" name="allocation_ratio" type="number" min="0.000001" step="any" value="1" required>
+                <small>Unexposed : exposed; cases : controls.</small>
+            </label>
+            <label for="sample-alpha">Type I error (α)
+                <input id="sample-alpha" name="alpha" type="number" min="0.000001" max="0.999999" step="any" value="0.05" required>
+            </label>
+            <label for="sample-power">Power
+                <input id="sample-power" name="power" type="number" min="0.500001" max="0.999999" step="any" value="0.8" required>
+            </label>
+            <label for="sample-sidedness">Sidedness
+                <select id="sample-sidedness" name="sidedness"><option value="two">Two-sided</option><option value="one">One-sided</option></select>
+            </label>
+            <button type="submit" id="sample-summary-submit" disabled>Update plots</button>
+        </form>
+        <p id="sample-summary-status" role="status" aria-live="polite">Loading the disease catalog…</p>
+        <p id="sample-summary-context" class="sample-context"></p>
+        <div id="sample-summary-plots" class="sample-summary-grid" aria-busy="false"></div>
+    </main>
+    {% if sample_size_title not in ['MetaOnco', 'MetaUro'] %}<script src="/static/i18n.js" defer></script>{% endif %}
+</body>
+</html>

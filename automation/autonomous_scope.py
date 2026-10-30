@@ -151,6 +151,8 @@ def main(argv=None):
     if result.get('status') != 'validated':
         raise RuntimeError('Monthly evidence pipeline did not validate')
     run = root / 'data/monthly_updates' / result['run_id']
+    from automation.preprint_recovery_bridge import capture_scope_recovery
+    preprint_recovery = capture_scope_recovery(root, run, result.get('preprint_recovery'))
     parallel = pipeline.read_json(run/'monthly_parallel/monthly_status.json')
     if parallel.get('complete') is not True or parallel.get('models') != {'r2':'claude-opus-5','r3':'gemini-3.7-flash'}:
         raise RuntimeError('Independent Claude/Gemini review did not complete')
@@ -163,6 +165,8 @@ def main(argv=None):
                           'validation': ['shared verified R1','claude-opus-5','gemini-3.7-flash']},
                'raw_packet_sha256': pipeline.packet_hashes(run),
                'independent_review': parallel,
+               'preprint_recovery': preprint_recovery,
+               'preprint_recovery_hold_count': len((preprint_recovery or {}).get('holds') or []),
                'native_manifest_sha256': pipeline.sha256(run / pipeline.MANIFEST_FILENAME),
                'application_gate_sha256': result['application_gate_sha256'],
                'human_review_pending': len(pending),

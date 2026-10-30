@@ -20,6 +20,7 @@ def vendor(legacy_root):
         manifest['origins'][scope] = {'commit':subprocess.check_output(['git','-C',str(source),'rev-parse','HEAD'],text=True).strip(),
             'note':'Code and catalog snapshot; historical evidence comes only from metaUro sources plus its updates.'}
         paths = set(source.glob('*.py')) | set((source/'scripts').glob('*.py')) | set((source/'automation').glob('*.py'))
+        paths |= set((source/'automation/preprint_recovery').glob('*.py'))
         paths |= set((source/'data').glob('*.json')) | set((source/'static').glob('*.json'))
         paths |= set(source.glob('*.csv')) | {source/'automation/monthly_config.json'}
         # Explicitly scoped scientific adjudications used by the saved code.

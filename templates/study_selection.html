@@ -49,7 +49,7 @@
         <div class="flow-box flow-next"><h3>Reports assessed in detail</h3>{{ count(flow.assessed) }}{% if flow.supplemental_reports %}<p>Includes {{ flow.supplemental_reports }} additional report(s) from targeted primary-source review, separate from the initial screening above.</p>{% endif %}</div>
         <span class="flow-branch" aria-hidden="true"></span>
         <div class="flow-box flow-box--side"><h3>Reports excluded after detailed assessment</h3>{{ count(flow.eligibility_excluded) }}
-          <ul class="flow-reasons">{% for reason in flow.reasons %}<li>{{ reason.label }}: <strong>{{ '{:,}'.format(reason.count) }}</strong></li>{% endfor %}</ul>
+          <ul class="flow-reasons">{% for reason in flow.reasons %}<li>{{ reason.label|replace('Review or meta-analysis without an eligible primary estimate', 'Publication is a review or meta-analysis') }}: <strong>{{ '{:,}'.format(reason.count) }}</strong></li>{% endfor %}</ul>
         </div>
       </section>
       <section class="flow-stage" aria-labelledby="phase-included">
@@ -60,7 +60,7 @@
       </section>
       <section class="flow-stage flow-stage--pooled" aria-labelledby="phase-pooled">
         <h2 class="flow-phase" id="phase-pooled">Pooled</h2>
-        <div class="flow-box flow-box--pool"><h3>Reports in the current pooled result</h3>{{ count(flow.poolable_reports) }}</div>
+        <div class="flow-box flow-box--pool"><h3>Reports in the current pooled result</h3>{{ count(flow.poolable_reports) }}{% if flow.pooled_estimates is not none and flow.pooled_estimates != flow.poolable_reports %}<p>These {{ '{:,}'.format(flow.poolable_reports) }} publications contribute {{ '{:,}'.format(flow.pooled_estimates) }} effect estimates to the pooled calculation.</p>{% endif %}</div>
       </section>
     </div>
   </figure>

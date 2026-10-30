@@ -24,7 +24,7 @@ from automation.sync_sources import (SOURCES, allowed, assembled_source, bound,
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "metauro-autonomous-monthly-v1"
-MODELS = ("gpt-5.6-luna", "gpt-5.6-sol", "claude-opus-5", "gemini-3.7-flash", "gpt-6-astra")
+MODELS = ("gpt-5.6-luna", "gpt-5.6-sol", "claude-opus-5", "gemini-3.7-flash", "gpt-6-astra", "gpt-6-luna", "gemini-3.8-flash")
 CONFIG = "automation/autonomous_monthly_config.json"
 
 
@@ -124,13 +124,20 @@ def materialize(root, scope, work):
         shutil.copyfile(settings, work / settings.name)
     # Shared worker is copied into the isolated namespace, where its native
     # imports resolve exclusively against this pinned runtime and dataset.
-    for name in ("autonomous_scope.py", "autonomous_projection.py"):
+    for name in ("autonomous_scope.py", "autonomous_projection.py", "prostate_scope_results.py", "preprint_recovery_bridge.py"):
         shutil.copyfile(root / "automation" / name, work / "automation" / name)
     # The approved ASB rows already exist in the urinary evidence. Their
     # translated summary label must travel with the next published overlay,
     # rather than editing the immutable source catalog or today's summaries.
     relative = 'static/i18n-translations.json'
     catalog = read(work / relative, {})
+    if scope == 'MetaVir':
+        from prostate_scopes import LABEL, TRANSLATIONS, extend_catalog
+        catalog[LABEL] = TRANSLATIONS
+        write(work / relative, catalog)
+        baseline_path = work / 'static/seer-baseline.json'
+        if baseline_path.exists():
+            write(baseline_path, extend_catalog(read(baseline_path)))
     labels = read(root / 'runtime_code/monthly/metaPee' / relative, {}).get(
         'Non-nutritive sweetener intake', {})
     if labels:
@@ -172,10 +179,13 @@ def checkpoint(root=ROOT, span=None):
         raise ValueError('Invalid checkpoint source scopes')
     audit = root/'updates/monthly'/span['run_id']
     copied = 0
+    from automation.preprint_recovery_bridge import checkpoint_private, checkpoint_queues
     for scope in SOURCES:
         date.fromisoformat(span['start_dates'][scope])
         work = root/'runtime/monthly'/span['run_id']/scope
         native_id = span['start_dates'][scope]+'_'+span['end_date']
+        checkpoint_private(root, work, scope, native_id)
+        checkpoint_queues(root, work, scope, native_id, span['run_id'])
         for kind in ('monthly_updates','monthly_reports'):
             source = work/'data'/kind/native_id
             if source.exists():
@@ -236,6 +246,8 @@ def prepare(root=ROOT, *, today=None):
                     saved = audit / scope / label
                     if saved.exists():
                         shutil.copytree(saved, work/'data'/kind/native_id, dirs_exist_ok=True)
+            from automation.preprint_recovery_bridge import restore_private
+            restore_private(root, work, scope, span['start_dates'][scope] + '_' + span['end_date'])
             env = environment()
             env["METAURO_REPO_ROOT"] = str(root)
             env["PYTHONPATH"] = str(root)
@@ -266,7 +278,12 @@ def prepare(root=ROOT, *, today=None):
             root_csv.parent.mkdir(parents=True, exist_ok=True)
             shutil.copyfile(Path(scope_receipt["human_review_csv"]), root_csv)
             result["scopes"][scope]["human_review_csv"] = str(root_csv.relative_to(root))
+            from automation.preprint_recovery_bridge import publish_scope_recovery
+            result["scopes"][scope]["preprint_recovery"] = publish_scope_recovery(
+                root, work, audit, scope, span["run_id"], scope_receipt.get("preprint_recovery"))
             write(receipt_path, result)
+        from automation.preprint_recovery_bridge import aggregate_recovery
+        result["preprint_recovery"] = aggregate_recovery(result["scopes"])
         prepare_overlays(root, audit, result)
         protected = read(audit / "immutable_before.json")
         if any(sha(bound(root, name)) != digest for name, digest in protected.items()):
@@ -446,9 +463,31 @@ import an analysis engine, make requests, or perform pooling/review work.
     if (release.get("status") != "completed" or release.get("run_id") != state.get("run_id")
             or release.get("end_date") != cutoff or set(release.get("scopes", {})) != set(SOURCES)):
         raise ValueError("Incomplete or mismatched autonomous release receipt")
+    revision = None
     if read(root / "updates/manifest.json") != release["prepared_overlay_index"]:
-        raise ValueError("Active overlay differs from the completed monthly release")
-    for inventory in (release.get("audit_artifact_sha256", {}), release.get("summary_sha256", {})):
+        current = load_overlay(root, 'MetaVir') or {}
+        revision_id = current.get('run_id', '')
+        revision_path = bound(root, 'evidence-revisions/' + revision_id + '/release.json')
+        if current.get('kind') != 'evidence_scope_revision' or not revision_path.is_file():
+            raise ValueError("Active overlay differs from the completed monthly release")
+        revision = read(revision_path)
+        expected_parent = {'manifest_path':state['manifest_path'],
+            'manifest_sha256':state['manifest_sha256'], 'run_id':state['run_id'], 'cutoff':cutoff}
+        if (revision.get('repository') != 'metaUro' or revision.get('status') != 'completed'
+                or revision.get('revision_id') != revision_id
+                or revision.get('parent_monthly') != expected_parent
+                or revision.get('active_overlay_index') != read(root/'updates/manifest.json')
+                or revision.get('parent_audit_artifact_sha256') != release.get('audit_artifact_sha256')):
+            raise ValueError('Evidence revision does not reconcile with the completed monthly release')
+        for field in ('summary_sha256','code_sha256'):
+            inventory = revision.get(field)
+            if not isinstance(inventory, dict) or not inventory:
+                raise ValueError('Evidence revision inventory is absent')
+            for relative, digest in inventory.items():
+                if sha(bound(root, relative)) != digest:
+                    raise ValueError('Evidence revision artifact checksum mismatch: '+relative)
+    summary_inventory = revision['summary_sha256'] if revision else release.get('summary_sha256', {})
+    for inventory in (release.get("audit_artifact_sha256", {}), summary_inventory):
         if not inventory:
             raise ValueError("Release artifact inventory is absent")
         for relative, digest in inventory.items():
@@ -514,6 +553,8 @@ import an analysis engine, make requests, or perform pooling/review work.
         if (sha(bound(screening, relative_adjudication)) != gate.get('adjudication_sha256')
                 or sha(screening/'final_screening.json') != gate.get('source_final_screening_sha256')):
             raise ValueError('Native application gate evidence checksum mismatch')
+        from automation.preprint_recovery_bridge import validate_published_recovery
+        validate_published_recovery(root, receipt.get("preprint_recovery"))
         manifest = load_overlay(root,scope)
         if manifest.get("search_through") != cutoff or manifest.get("producer") != "metaUro":
             raise ValueError("Monthly scope provenance is invalid")
@@ -525,7 +566,8 @@ import an analysis engine, make requests, or perform pooling/review work.
                 raise ValueError("Human review checksum mismatch")
     return {"repository":"metaUro", "cutoff":cutoff, "run_id":state['run_id'],
             "manifest_sha256":state['manifest_sha256'], "manifest_path":state['manifest_path'],
-            "source_scopes":list(SOURCES), "status":"completed"}
+            "source_scopes":list(SOURCES), "status":"completed",
+            **({'evidence_revision':revision['revision_id']} if revision else {})}
 
 
 def verify_git_index(root=ROOT):
@@ -542,7 +584,7 @@ def verify_git_index(root=ROOT):
     runtime_manifest(root)
     required = {'evidence-manifest.json'}
     required.update(entry['path'] for entry in read(root/'evidence-manifest.json')['files'])
-    for name in ('updates', 'summary', 'monthlyHumanReview', 'runtime_code'):
+    for name in ('updates', 'summary', 'monthlyHumanReview', 'runtime_code', 'manualReview/preprint_recovery'):
         required.update(str(path.relative_to(root)) for path in (root/name).rglob('*')
                         if path.is_file() and '__pycache__' not in path.parts
                         and path.name != '.DS_Store'
@@ -604,6 +646,8 @@ def restore(root=ROOT):
                 run_id = span.get('run_id','')
                 if not re.fullmatch(r'\d{4}-\d{2}-\d{2}_\d{4}-\d{2}-\d{2}',run_id):
                     continue
+                from automation.preprint_recovery_bridge import restore_uploaded_recovery
+                restore_uploaded_recovery(root, folder, span)
                 target = root/'updates/monthly'/run_id
                 if target.exists():
                     return {'status':'local_checkpoint_retained','run_id':run_id}

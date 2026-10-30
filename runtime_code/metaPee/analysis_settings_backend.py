@@ -17,6 +17,7 @@ import re
 from case_counts import project_cases, project_frame, filter_frame, minimum_cases
 
 _ACTIVE = ContextVar('seer_analysis_settings', default=None)
+_COHORT_CONTEXT = ContextVar('metauro_cohort_selection', default=None)
 
 
 def settings_active():
@@ -42,12 +43,57 @@ def _study_key(row):
             projection_id)
 
 
+def _cohort_record_key(row):
+    from cohort_identity import record_metadata_key
+    return (record_metadata_key(row), _study_key(row)[-1])
+
+
 def capture_pooling_rows(frame):
     """Record the actual rows retained by each repository's existing policies."""
+    selected = select_cohort_pooling_frame(frame)
+    # This is the engine's final working pooling frame, separate from df_all.
+    # Keep recorded display rows intact while selecting this request's analysis.
+    if len(selected) != len(frame):
+        excluded = selected.attrs['cohort_selection_audit']['excluded']
+        frame.drop(index=frame.index[[item['row_index'] for item in excluded]], inplace=True)
     active = _ACTIVE.get()
     if active is not None:
         active['pooled_study_keys'] = {_study_key(row) for row in frame.to_dict(orient='records')}
         active['pooled_plot_rows'] = frame.to_dict(orient='records')
+
+
+@contextmanager
+def latest_cohort_pooling(enabled=True):
+    """Offline summary selection using the same final pooling gate as the UI."""
+    context = {'enabled': bool(enabled)}
+    token = _COHORT_CONTEXT.set(context)
+    try:
+        yield context
+    finally:
+        _COHORT_CONTEXT.reset(token)
+
+
+def select_cohort_pooling_frame(frame):
+    """Select latest publications only after existing pooling eligibility checks."""
+    active, offline = _ACTIVE.get(), _COHORT_CONTEXT.get()
+    enabled = bool(active and active['settings'].get('keep_latest_cohort')) or bool(offline and offline['enabled'])
+    if not enabled:
+        if offline is not None:
+            offline['rows'] = frame.to_dict(orient='records')
+        return frame
+    from cohort_identity import filter_latest_cohort_frame
+    selected = filter_latest_cohort_frame(frame, repo_root=Path(__file__).resolve().parents[2], group_fields=[])
+    audit = selected.attrs.get('cohort_selection_audit', {})
+    if offline is not None:
+        offline.update(rows=selected.to_dict(orient='records'), audit=audit)
+    if active is not None:
+        active['cohort_evaluated_record_keys'] = {_cohort_record_key(row) for row in frame.to_dict(orient='records')}
+        active['cohort_selection_audit'] = audit
+        active['cohort_excluded_record_keys'] = {
+            _cohort_record_key(row) for row in frame.to_dict(orient='records')
+        }.difference(_cohort_record_key(row) for row in selected.to_dict(orient='records'))
+    return selected
+
 
 
 def _number(value):
@@ -73,8 +119,13 @@ def normalize_settings(values, catalog):
         'sex': defaults.get('sex', 'both'), 'race': defaults.get('race', 'all_races_ethnicities'),
         'manual_risk_percent': None, 'effect_measure': 'RR', 'forest_scale': 'both',
         'study_design': 'prospective', 'exposure_rate': 0.5, 'controls_per_case': 1.0,
+        'keep_latest_cohort': False, 'include_preprints': False,
     }
     result.update({k: v for k, v in values.items() if k in result})
+    if not isinstance(result['keep_latest_cohort'], bool):
+        raise ValueError('keep_latest_cohort must be true or false.')
+    if not isinstance(result['include_preprints'], bool):
+        raise ValueError('include_preprints must be true or false.')
     choices = {
         'baseline_source': {'seer', 'manual'}, 'effect_measure': {'RR', 'HR', 'OR'},
         'forest_scale': {'both', 'log', 'original'},
@@ -376,15 +427,16 @@ def forest_annotation_rows(studies, canonical, context):
     # Forest labels are deliberately citation-only. Multiple estimates from the
     # same publication may share a label; provenance remains in source_study.
     labels = [_study_label(study, compact=True) for study, _ in selected]
-    rows = [(label, str(study.get('Study') or label), *values)
+    rows = [(label + (' [preprint]' if study.get('preprint_derived') is True else ''), str(study.get('Study') or label), *values, study.get('preprint_derived') is True)
             for label, (study, values) in zip(labels, selected)]
     pooled = [rr_to_display(canonical.get(key), target, context['baseline']['p0'])
               for key in ('pooled_es', 'ci_low', 'ci_upp')]
     if all(v is not None and v > 0 for v in pooled):
-        rows.append(('Pooled result', 'Pooled result', *pooled))
+        rows.append(('Pooled result', 'Pooled result', *pooled, False))
     return [{'study': label, 'source_study': original, 'estimate': point, 'ci_low': low, 'ci_upp': high,
-             'log_estimate': math.log(point), 'log_ci_low': math.log(low), 'log_ci_upp': math.log(high)}
-            for label, original, point, low, high in rows]
+             'log_estimate': math.log(point), 'log_ci_low': math.log(low), 'log_ci_upp': math.log(high),
+             **({'preprint_derived': True} if preprint else {})}
+            for label, original, point, low, high, preprint in rows]
 
 
 def _forest_plots(studies, canonical, context):
@@ -411,7 +463,7 @@ def _forest_plots(studies, canonical, context):
     for y, row in enumerate(rows):
         pooled = row['study'] == 'Pooled result'
         weight = 'bold' if pooled else 'normal'
-        names.text(0, y, textwrap.fill(row['study'], 54, break_long_words=False), va='center', fontsize=8, weight=weight)
+        names.text(0, y, textwrap.fill(row['study'], 54, break_long_words=False), va='center', fontsize=8, weight=weight, **({'color':'#000080'} if row.get('preprint_derived') else {}))
         point, low, high = row['estimate'], row['ci_low'], row['ci_upp']
         axis.errorbar(point, y, xerr=[[point - low], [high - point]], fmt='D' if pooled else 'o',
                       color='#1e3a5f' if pooled else '#377d97', capsize=3)
@@ -508,6 +560,7 @@ def _project(result, context):
     result = copy.deepcopy(result)
     settings, baseline = context['settings'], context['baseline']
     result['analysis_settings'] = settings
+    result['cohort_selection'] = context.get('cohort_selection_audit', {'enabled': False})
     result['baseline_risk'] = baseline
     result['min_cases'] = context.get('min_cases', 0)
     result['_analysis_settings_applied'] = True
@@ -531,9 +584,18 @@ def _project(result, context):
     result['studies'] = [_study_conversion(row, baseline['p0'], settings['effect_measure'],
                         context.get('normalizer'), context.get('converter')) for row in result.get('studies', [])]
     result['studies'] = [project_cases(row, {**baseline, 'p0': row['Conversion Baseline Risk']}) for row in result['studies']]
+    from cohort_identity import enrich_cohort_records
+    result['studies'] = enrich_cohort_records(result['studies'], repo_root=Path(__file__).resolve().parents[2])
     if 'pooled_study_keys' in context:
         for row in result['studies']:
-            row['Settings Pooling Selected'] = _study_key(row) in context['pooled_study_keys']
+            evaluated = _cohort_record_key(row) in context.get('cohort_evaluated_record_keys', set())
+            excluded = _cohort_record_key(row) in context.get('cohort_excluded_record_keys', set())
+            row['Settings Pooling Selected'] = _study_key(row) in context['pooled_study_keys'] and not excluded
+            row['cohort_selection_evaluated'] = evaluated
+            row['cohort_latest_excluded'] = excluded if evaluated else None
+            if row['cohort_latest_excluded']:
+                row['cohort_selection_reason'] = 'A later publication from the same cohort was retained.'
+    result['all_studies'] = copy.deepcopy(result['studies'])
     result['planning_or'] = {key: rr_to_display(value, 'OR', baseline['p0']) for key, value in canonical.items()}
     result['sample_size'] = sample_size_for_rr(canonical['pooled_es'], baseline['p0'], settings['study_design'], settings['exposure_rate'], settings.get('controls_per_case', 1.0))
     result['sample_size']['effect_estimate'] = result['planning_or'] if settings['study_design'] == 'retrospective' else canonical
@@ -716,3 +778,12 @@ def install_app(app, meta_analysis, app_file):
         if token is not None:
             _ACTIVE.reset(token)
             g.seer_settings_token = None
+
+    # Apply an opt-in local source view before native request eligibility.
+    import sys
+    from preprint_ui import install_common_runtime
+    app_namespace = next((vars(module) for module in tuple(sys.modules.values())
+                          if module is not None and getattr(module, '__file__', None)
+                          and Path(module.__file__).resolve() == Path(app_file).resolve()), None)
+    if app_namespace is not None:
+        install_common_runtime(app, app_namespace, repo, _ACTIVE.get)

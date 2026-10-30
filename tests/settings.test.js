@@ -30,8 +30,8 @@ function element(id, extra={}) {
         setAttribute(name,value){attrs[name]=value;},getAttribute:name=>attrs[name],removeAttribute(name){delete attrs[name];},
         showModal(){this.open=true;},close(){this.open=false;},...extra};
 }
-async function runtime({source='metapee',selector='disease',scope=0,blockedStorage=false}={}) {
-    const catalog=catalogFor(source), prefix=`/evidence/${source}`, fetches=[],events=[];
+async function runtime({source='metapee',selector='disease',scope=0,blockedStorage=false,page='analysis',search=''}={}) {
+    const catalog=catalogFor(source), prefix=`/evidence/${source}`, fetches=[],events=[],redirects=[];
     const option=index=>({value:selector==='summary-scope'?catalog.diseases[index].id:catalog.diseases[index].label,
         textContent:catalog.diseases[index].label,dataset:selector==='summary-scope'?{}:{
             disease:index&&source==='metavir'?catalog.diseases[0].label:catalog.diseases[index].label,
@@ -41,14 +41,14 @@ async function runtime({source='metapee',selector='disease',scope=0,blockedStora
     const ids=['analysis-settings-dialog','open-analysis-settings','close-analysis-settings',
         'settings-baseline-source','settings-age','settings-years','settings-sex','settings-race','settings-manual-risk',
         'settings-effect-measure','settings-forest-scale','settings-study-design','settings-exposure-rate','power-controls-per-case',
-        'settings-manual-field','settings-risk-value','settings-risk-context','settings-disease-name','settings-disease-definition',
+        'settings-manual-field','settings-risk-value','settings-risk-context','settings-disease-name','settings-disease-definition','settings-include-preprints','settings-keep-latest-cohort','evidence-keep-latest-cohort',
         'settings-baseline-note','settings-exposure-rate-field','pooled-incidence'];
     for(const id of ids)nodes[id]=element(id);
     nodes['analysis-settings-dialog'].dataset.repository='metaUro';
-    const window={MetaUro:{source,prefix},dispatchEvent:event=>events.push(event),addEventListener(){}};
-    const sandbox={window,document:{readyState:'complete',getElementById:id=>nodes[id]||null,
+    const window={MetaUro:{source,prefix,page},dispatchEvent:event=>events.push(event),addEventListener(){}};
+    const sandbox={window,URL,URLSearchParams,document:{readyState:'complete',getElementById:id=>nodes[id]||null,
         createElement:tag=>element(tag),addEventListener(){}},
-        location:{pathname:`${prefix}/`,search:'',href:`http://localhost${prefix}/`},
+        location:{pathname:`${prefix}/`,search,href:`http://localhost${prefix}/${search}`,assign(url){redirects.push(url);},replace(url){redirects.push(url);}},
         localStorage:{getItem:key=>{if(blockedStorage)throw Error('storage blocked');return storage.get(key)||null;},
             setItem:(key,value)=>{if(blockedStorage)throw Error('storage blocked');storage.set(key,value);},removeItem:key=>storage.delete(key)},
         fetch:async url=>{fetches.push(url);return {ok:true,json:async()=>url.includes('seer-baseline')?catalog:{}};},
@@ -58,7 +58,7 @@ async function runtime({source='metapee',selector='disease',scope=0,blockedStora
     assert.ok(window.AnalysisSettings,'AnalysisSettings is exported');
     await Promise.race([window.AnalysisSettings.ready,new Promise((_,reject)=>setTimeout(()=>reject(Error('Settings.ready did not settle')),250))]);
     assert.deepEqual(fetches,[`${prefix}/static/seer-baseline.json`,`${prefix}/static/settings-exposure-hierarchy.json`],'catalogs use active source prefix');
-    return {settings:window.AnalysisSettings,nodes,events,catalog,select(index){
+    return {settings:window.AnalysisSettings,nodes,events,catalog,redirects,select(index){
         const next=option(index);Object.assign(nodes[selector],{value:next.value,selectedOptions:[next]});nodes[selector].dispatch('change');
     }};
 }
@@ -112,6 +112,33 @@ test('invalid per-endpoint manual storage cannot poison a fresh analysis',async(
 });
 test('unavailable localStorage still permits edits and baseline preview',async()=>{
     storage.clear();const app=await runtime({blockedStorage:true});manual(app,6);assert.equal(app.settings.p0(),0.06);
+});
+test('inline cohort choice shares settings, persistence, reset, and change events',async()=>{
+    storage.clear();const app=await runtime();
+    assert.equal(app.nodes['evidence-keep-latest-cohort'].value,'true');
+    app.nodes['evidence-keep-latest-cohort'].value='true';app.nodes['evidence-keep-latest-cohort'].dispatch('change');
+    assert.equal(app.settings.get().keep_latest_cohort,true);
+    assert.equal(app.nodes['settings-keep-latest-cohort'].value,'true');
+    assert.ok(app.events.some(event=>event.type==='analysissettingschange'&&event.detail.keep_latest_cohort===true));
+    const reload=await runtime();assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'true');
+    reload.nodes['settings-keep-latest-cohort'].value='false';reload.nodes['settings-keep-latest-cohort'].dispatch('change');
+    assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'false');
+    reload.settings.set('keep_latest_cohort',true);assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'true');
+    reload.settings.reset();assert.equal(reload.nodes['evidence-keep-latest-cohort'].value,'true');
+});
+test('preprint source choice defaults off and survives reload, summary navigation and reset',async()=>{
+    storage.clear();const app=await runtime();assert.equal(app.settings.get().include_preprints,false);
+    app.nodes['settings-include-preprints'].value='true';app.nodes['settings-include-preprints'].dispatch('change');
+    assert.equal(app.settings.get().include_preprints,true);
+    assert.ok(app.events.some(event=>event.type==='analysissettingschange'&&event.detail.include_preprints===true));
+    const summary=await runtime({page:'summary',search:'?scope=bladder_cancer&lang=en'});
+    assert.equal(new URL(summary.redirects[0]).searchParams.get('include_preprints'),'true');
+    assert.equal(new URL(summary.redirects[0]).searchParams.get('scope'),'bladder_cancer');
+    const explicitOff=await runtime({page:'summary',search:'?include_preprints=false'});
+    assert.equal(explicitOff.settings.get().include_preprints,false);assert.equal(explicitOff.redirects.length,0);
+    explicitOff.settings.set('include_preprints',true);assert.equal(new URL(explicitOff.redirects.at(-1)).searchParams.get('include_preprints'),'true');
+    assert.equal((await runtime({source:'metavir'})).settings.get().include_preprints,false);
+    app.settings.reset();assert.equal(app.settings.get().include_preprints,false);
 });
 (async()=>{
     let failed=0;for(const {name,fn} of cases){try{await fn();console.log(`PASS ${name}`);}catch(error){failed++;console.error(`FAIL ${name}: ${error.stack}`);}}

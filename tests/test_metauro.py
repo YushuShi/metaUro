@@ -11,6 +11,7 @@ sys.path.insert(0, str(ROOT))
 from app import (
     EGGERS_FEWER_THAN_TEN_MESSAGE,
     EGGERS_UNAVAILABLE_MESSAGE,
+    POOL_TEMPLATE_NEW,
     UI_LABEL_TRANSLATIONS,
     app,
     current_egger_interpretation,
@@ -28,7 +29,7 @@ SUMMARY_SCOPE_IDS = {
     'bladder_cancer', 'urothelial_carcinoma_of_the_bladder',
     'kidney_and_renal_pelvis_cancer', 'renal_cell_carcinoma',
     'clear_cell_renal_cell_carcinoma', 'papillary_renal_cell_carcinoma',
-    'prostate_cancer', 'aggressive_prostate_cancer',
+    'prostate_cancer', 'aggressive_prostate_cancer', 'prostate_cancer_excluding_aggressive',
 }
 
 
@@ -58,9 +59,9 @@ def client():
 
 def test_catalog_keeps_all_sources_and_exact_endpoints(client):
     scopes = client.get('/api/scopes').json
-    assert len(scopes) == 14
+    assert len(scopes) == 15
     assert len([s for s in scopes if s['source'] == 'metaPee']) == 12
-    assert {s['id'] for s in scopes if s['source'] == 'MetaVir'} == {'prostate_cancer', 'aggressive_prostate_cancer'}
+    assert {s['id'] for s in scopes if s['source'] == 'MetaVir'} == {'prostate_cancer', 'aggressive_prostate_cancer', 'prostate_cancer_excluding_aggressive'}
     by_id = {scope['id']: scope for scope in scopes}
     assert [by_id[scope]['hierarchy_depth'] for scope in (
         'bladder_cancer', 'kidney_and_renal_pelvis_cancer', 'prostate_cancer')] == [0, 0, 0]
@@ -73,7 +74,7 @@ def test_settings_markup_is_complete_and_scope_aware(client, source, scope):
     response = client.get(f'/settings?source={source}&scope={scope}&include_subexposures=no')
     assert response.status_code == 200
     soup = BeautifulSoup(response.data, 'html.parser')
-    assert_unified_scope_hierarchy(soup.select_one('#disease'), 14)
+    assert_unified_scope_hierarchy(soup.select_one('#disease'), 15)
     assert soup.select_one('#disease option[selected]')['data-scope-key'] == scope
     assert soup.select_one('#include-subexposures option[selected]')['value'] == 'no'
     assert soup.select_one('#include-subexposures').find_parent('section')['id'] == 'exposure-settings'
@@ -108,7 +109,7 @@ def test_source_page_assets_and_summary(client, source):
     assert response.status_code == 200, response.data[:1000]
     soup = BeautifulSoup(response.data, 'html.parser')
     assert soup.title.string.startswith('MetaUro')
-    assert_unified_scope_hierarchy(soup.select_one('#disease'), 14)
+    assert_unified_scope_hierarchy(soup.select_one('#disease'), 15)
     assert not soup.select_one('#include-subexposures')
     assert 'Saved evidence' not in soup.header.get_text()
     selection_link = soup.select_one('.header-actions [data-uro-nav="selection"]')
@@ -362,10 +363,12 @@ def test_selection_page_is_exposure_specific_and_shows_criteria(client):
     text = soup.get_text(' ', strip=True)
     assert 'Bladder cancer · Vitamin D' in text
     assert 'Animal, laboratory, or preclinical study: 1' in text
-    assert 'Review or meta-analysis without an eligible primary estimate: 14' in text
+    assert 'Publication is a review or meta-analysis: 14' in text
+    assert 'without an eligible primary estimate' not in text
     assert 'Not recorded' not in text
     assert 'Identification' not in text
     assert 'How to read this diagram' not in text
+    assert 'effect estimates to the pooled calculation' not in text
     assert not soup.select_one('details.flow-reasons')
     assert soup.select_one('a[href="https://doi.org/10.1371/journal.pmed.1003583"]')
     assert not any(name in soup.get_text().lower() for name in ('metapee', 'metavir'))
@@ -376,6 +379,71 @@ def test_selection_page_is_exposure_specific_and_shows_criteria(client):
         if link['href'].startswith('/'):
             assert client.get(link['href']).status_code == 200
     assert client.get('/study-selection?group=unknown').status_code == 404
+
+
+def test_alcohol_rcc_reports_and_pooled_estimates_are_labeled_separately(client):
+    page = client.get('/study-selection?scope=renal_cell_carcinoma&exposure=Alcohol')
+    assert page.status_code == 200
+    soup = BeautifulSoup(page.data, 'html.parser')
+    pooled_box = soup.select_one('.flow-box--pool')
+    assert pooled_box.select_one('.flow-count').get_text(strip=True) == '19'
+    assert 'These 19 publications contribute 21 effect estimates to the pooled calculation.' in pooled_box.get_text(' ', strip=True)
+
+    from automation.sync_sources import assembled_source
+    saved_path = (assembled_source(ROOT, 'metaPee') /
+                  'combined/provisional_ui/subexposure_views/no/Cached_results/alcohol/renal_cell_carcinoma_incidence_true_core.json')
+    saved = json.loads(saved_path.read_text())
+    request_body = {
+        'disease': 'Renal cell carcinoma', 'exposure': 'Alcohol',
+        'outcome': 'Incidence', 'exclude_meta': True, 'include_subexposures': 'no',
+    }
+    response = client.post('/evidence/urinary/analyze?include_subexposures=no', json=request_body)
+    assert response.status_code == 200
+    data = response.json
+    assert (data['pooled_publication_count'], data['pooled_estimate_count']) == (19, 21)
+    assert (data['headline']['n_publications'], data['headline']['n_effect_estimates']) == (19, 21)
+    assert data['pooled_study_count'] == 21  # Legacy numeric field remains compatible.
+    assert data['headline']['results_interpretation'].startswith(
+        'The pooled analysis of 21 effect estimates from 19 publications yielded'
+    )
+    pooled_rows = [row for row in data['studies']
+                   if row.get('subexposure_pooling_selected') is True
+                   and row.get('disease_hierarchy_pooling_selected') is not False]
+    assert len(pooled_rows) == 21
+    assert len({row['PMID'] for row in pooled_rows}) == 19
+    for field in ('pooled_es', 'ci_low', 'ci_upp', 'i2'):
+        assert data['headline'][field] == saved['headline'][field]
+
+    reanalysis = client.post('/evidence/urinary/reanalyze?include_subexposures=no',
+                             json={**request_body, 'studies': pooled_rows})
+    assert reanalysis.status_code == 200
+    revised = reanalysis.json
+    assert (revised['pooled_publication_count'], revised['pooled_estimate_count']) == (19, 21)
+    assert revised['headline']['results_interpretation'].startswith(
+        'The pooled analysis of 21 effect estimates from 19 publications yielded'
+    )
+    assert len([row for row in revised['studies'] if row.get('Settings Pooling Selected') is True]) == 21
+
+
+def test_urinary_script_keeps_estimate_and_publication_labels_on_toggles(client):
+    page = BeautifulSoup(client.get('/evidence/urinary/').data, 'html.parser')
+    script_tag = page.select_one('script[src*="/static/script.js"]')
+    assert script_tag['src'].endswith('?v=20261022-pooling-counts')
+    i18n_tag = page.select_one('script[src*="/static/i18n.js"]')
+    assert i18n_tag['src'].endswith('?v=20261022-pooling-counts')
+    i18n_script = client.get(i18n_tag['src']).get_data(as_text=True)
+    assert 'i18n-translations.json?v=20261022-pooling-counts' in i18n_script
+    script = client.get(script_tag['src']).get_data(as_text=True)
+    assert 'const reportAware = /^The pooled analysis of' in script
+    assert 'template.replace(\'The pooled analysis of {count} studies yielded\',' in script
+    assert 'effect estimates from {publications} publications yielded' in script
+    assert 'lastHeadlineStudyCount = Number(data.headline.n_effect_estimates)' in script
+    translations = client.get('/evidence/urinary/static/i18n-translations.json').json
+    revised = [value for key, value in translations.items() if key.startswith(POOL_TEMPLATE_NEW)]
+    assert len(revised) == 3
+    for values in revised:
+        assert set(values) >= {'zh-CN', 'zh-TW', 'nl', 'ko'}
+        assert all('{count}' in text and '{publications}' in text for text in values.values())
 
 
 def test_selection_page_with_incomplete_scope_does_not_show_a_flow(client):

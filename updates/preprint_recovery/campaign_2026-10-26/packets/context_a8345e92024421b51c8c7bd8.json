@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "context": {
+    "repository": "metaFemina",
+    "pmid": "34588148",
+    "context_id": "34588148|DASH diet|parent:breast",
+    "exposure": "DASH diet",
+    "disease": "Breast cancer",
+    "outcome": "Incidence",
+    "decision": "UNRESOLVED",
+    "confidence": "medium",
+    "selected_reviewer": null,
+    "reason": "The matching title, authors, Iranian-women case-control population and explicit version-of-record DOI support linked-article identity, and the preprint independently supports the overall adjusted breast-cancer estimate, but neither reviewer bundle can be accepted unchanged because Luna asserts a nonmatching R2 digest while Gemini alters reported group counts and omits required JBI scoring; this requires bundle validation, not scientific exclusion or substitution of journal statistics.",
+    "unresolved_fields": "[\"Luna sets reaffirms_r2_estimate=true but returns a digest beginning ec8b8ac that matches neither supplied R2 digest, violating the exact-echo requirement.\", \"Gemini reports Tertile 3 as 108 cases and 140 controls, whereas Table 3 reports 140/108 under cases/controls; this is an unsupported correction, and the source's category counts conflict with its overall 477/507 label.\", \"Both reviewers answer JBI q8 Yes although standardized ascertainment of cancer-free status in controls is unreported; this requires reassessment rather than an inferred Yes.\", \"Gemini omits the required JBI score_percent and grade; adjudication cannot repair the selected bundle.\"]",
+    "unreported_fields": "null",
+    "optional_unreported_fields": "null",
+    "known_missing_fields": "null",
+    "preprint_id": "PPR199347",
+    "preprint_version": "1",
+    "title": "Adherence to the DASH Diet and Risk of Breast Cancer.",
+    "published_url": "https://pubmed.ncbi.nlm.nih.gov/34588148/",
+    "preprint_url": "https://www.researchsquare.com/article/rs-54630/v1.pdf?c=1648259592000",
+    "source_text_sha256": "ee43aff24ce64736ba60c287bc3bbc9a4b198ef6a3c8a32cefbb8535ea3a1ec6",
+    "result_sha256": "37c85699f2c51f950017851c184e2e2b753533602518ce01064d9d1874d9019d",
+    "astra_response_sha256": "6467dc6b21833081bc894850941be3b4105e9c6f85de1f00cf16faeebc9d5f0a",
+    "review_packet": "packets/context_a8345e92024421b51c8c7bd8.json"
+  },
+  "source": {
+    "published_pmid": "34588148",
+    "published_title": "Adherence to the DASH Diet and Risk of Breast Cancer.",
+    "published_doi": "10.1016/j.clbc.2021.07.010",
+    "preprint_id": "PPR199347",
+    "preprint_doi": "10.21203/rs.3.rs-54630/v1",
+    "preprint_version": "1",
+    "preprint_posted_date": "2020-08-11",
+    "retrieval_url": "https://www.researchsquare.com/article/rs-54630/v1.pdf?c=1648259592000",
+    "text_sha256": "ee43aff24ce64736ba60c287bc3bbc9a4b198ef6a3c8a32cefbb8535ea3a1ec6",
+    "raw_source_sha256": "3617db2bda1190a3d08a3fea8bc50e41abb058c722db7c91b9a3222e948535d0"
+  },
+  "reviewers": {
+    "luna": {
+      "identity_valid": true,
+      "identity_reason": "The verified Europe PMC-linked version 1 preprint has the same title (apart from terminal punctuation) and authors as the PMID-linked record, and its text confirms the same research question and population: DASH adherence and breast cancer among Iranian women. The preprint itself identifies a version of record; only this preprint was reviewed for statistics, not journal full text.",
+      "status": "INCLUDE_META",
+      "reason": "The linked preprint reports an eligible hospital-based case-control study of FFQ-derived DASH adherence and breast cancer among Iranian women, with a usable overall adjusted OR, 95% CI, total sample size, and Moderate JBI appraisal.",
+      "cohort_names": [],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Unclear",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        },
+        "score_percent": 80,
+        "grade": "Moderate"
+      },
+      "unresolved_fields": [
+        "The exact coefficient P value and standard error are not reported; the reported Ptrend=0.03 is not used as a coefficient P value. The reported 95% CI is sufficient for pooling."
+      ],
+      "extraction": {
+        "effect_type": "OR",
+        "effect_size": 0.66,
+        "ci_lower": 0.46,
+        "ci_upper": 0.94,
+        "p_value": null,
+        "total_n": 984,
+        "cases": 477,
+        "comparison_direction": "higher_vs_lower",
+        "comparison_group": "Tertile 3 (highest DASH adherence)",
+        "reference_group": "Tertile 1 (lowest DASH adherence)",
+        "unit": "DASH score tertile",
+        "scale": "Tertiles of the summed energy-adjusted DASH score",
+        "adjusted_model": "Unconditional logistic regression, Model B; adjusted for age, energy intake, education, smoking, alcohol intake, physical activity, family history of breast cancer, marital status, oral contraceptive use, parity, fertility treatment, hormone replacement therapy, and BMI.",
+        "subgroup": "Overall study population (women)",
+        "stratum": null,
+        "design": "Hospital-based case-control study",
+        "timing": "Diet assessed by FFQ at interview; cases were asked to recall consumption before cancer symptoms.",
+        "exposure_measurement_type": "dietary_intake",
+        "p_value_provenance": "Ptrend=0.03 is a trend test, not an exact P value for the highest-versus-lowest-tertile coefficient; it is not extracted as the target P value.",
+        "ci_provenance": "Reported 95% CI for the overall Model B OR comparing Tertile 3 with Tertile 1.",
+        "standard_error": null,
+        "ci_level": 95,
+        "p_value_relation": "unknown"
+      },
+      "response_receipt_sha256": "2b7f2a3154c31810c7d0f15e70aaf28b9fa4bc14194ec0eb7b6d76f8f8ab0a79"
+    },
+    "gemini": {
+      "identity_valid": true,
+      "identity_reason": "The preprint title ('Adherence to the DASH Diet and Risk of Breast Cancer'), authors (Fatemeh Toorang, Bahareh Sasanfar, Ahmad Esmaillzadeh, Kazem Zendehdel), study population (477 breast cancer cases and 507 controls at the Cancer Institute of Iran), and research question match the published article (PMID 34588148; DOI 10.1016/j.clbc.2021.07.010), which is also explicitly linked on page 1 of the preprint as its Version of Record.",
+      "status": "INCLUDE_META",
+      "reason": "Hospital-based case-control study evaluating adherence to the DASH dietary pattern and breast cancer risk among Iranian women, providing multivariable odds ratios, 95% confidence intervals, and full sample size.",
+      "cohort_names": [
+        "Cancer Institute of Iran Case-Control Study"
+      ],
+      "jbi": {
+        "checklist_type": "case_control",
+        "answers": {
+          "q1": "Yes",
+          "q2": "Yes",
+          "q3": "Yes",
+          "q4": "Yes",
+          "q5": "Yes",
+          "q6": "Yes",
+          "q7": "Yes",
+          "q8": "Yes",
+          "q9": "Unclear",
+          "q10": "Yes",
+          "q11": "NA",
+          "q12": "NA",
+          "q13": "NA"
+        }
+      },
+      "unresolved_fields": [],
+      "extraction": {
+        "effect_type": "OR",
+        "effect_size": 0.66,
+        "ci_lower": 0.46,
+        "ci_upper": 0.94,
+        "p_value": null,
+        "total_n": 984,
+        "cases": 477,
+        "comparison_direction": "higher_vs_lower",
+        "comparison_group": "highest tertile (Tertile 3) of DASH diet score",
+        "reference_group": "lowest tertile (Tertile 1) of DASH diet score",
+        "unit": "DASH score (Fung method, range 8-40)",
+        "scale": "tertiles",
+        "adjusted_model": "Model B: adjusted for age, energy intake, education, smoking, alcohol intake, physical activity, family history of breast cancer, marital status, oral contraceptive use, parity, fertility treatment, hormone replacement therapy, and BMI",
+        "subgroup": "overall",
+        "stratum": "total population",
+        "design": "hospital-based case-control",
+        "timing": "retrospective dietary assessment (168-item FFQ covering the past 12 months)",
+        "exposure_measurement_type": "dietary_intake",
+        "p_value_provenance": "P for trend = 0.03 reported; exact contrast-specific p-value not reported",
+        "ci_provenance": "Table 3, Model B, Tertile 3: 0.66(0.46-0.94)",
+        "standard_error": null,
+        "ci_level": 95,
+        "p_value_relation": "unknown"
+      },
+      "response_receipt_sha256": "a998db14e8d1e558a46579a3ca170580709d27b9ec3aacefb7c43cce5c89388b"
+    }
+  },
+  "astra": {
+    "decision": "UNRESOLVED",
+    "selected_reviewer": null,
+    "confidence": "medium",
+    "reason": "The matching title, authors, Iranian-women case-control population and explicit version-of-record DOI support linked-article identity, and the preprint independently supports the overall adjusted breast-cancer estimate, but neither reviewer bundle can be accepted unchanged because Luna asserts a nonmatching R2 digest while Gemini alters reported group counts and omits required JBI scoring; this requires bundle validation, not scientific exclusion or substitution of journal statistics.",
+    "unresolved_fields": [
+      "Luna sets reaffirms_r2_estimate=true but returns a digest beginning ec8b8ac that matches neither supplied R2 digest, violating the exact-echo requirement.",
+      "Gemini reports Tertile 3 as 108 cases and 140 controls, whereas Table 3 reports 140/108 under cases/controls; this is an unsupported correction, and the source's category counts conflict with its overall 477/507 label.",
+      "Both reviewers answer JBI q8 Yes although standardized ascertainment of cancer-free status in controls is unreported; this requires reassessment rather than an inferred Yes.",
+      "Gemini omits the required JBI score_percent and grade; adjudication cannot repair the selected bundle."
+    ],
+    "unreported_fields": null,
+    "optional_unreported_fields": null,
+    "known_missing_fields": null
+  },
+  "policy": "Facts and short reviewer rationales only; original source/model bodies remain private."
+}

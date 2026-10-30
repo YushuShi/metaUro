@@ -110,7 +110,18 @@ document.addEventListener('DOMContentLoaded', async () => {
         interactiveAnalysisNote: document.getElementById('interactive-analysis-note')
     };
     window.addEventListener('analysissettingsready', () => updateBaselineIncidence());
+    let lastKeepLatestCohort = window.AnalysisSettings?.get().keep_latest_cohort || false;
+    let lastIncludePreprints = window.AnalysisSettings?.get().include_preprints || false;
+    window.addEventListener('analysissettingsready', () => {lastKeepLatestCohort=window.AnalysisSettings.get().keep_latest_cohort;lastIncludePreprints=window.AnalysisSettings.get().include_preprints;});
     window.addEventListener('analysissettingschange', () => {
+        const latest = window.AnalysisSettings.get().keep_latest_cohort;
+        const includePreprints=window.AnalysisSettings.get().include_preprints;
+        const sourceChanged=includePreprints!==lastIncludePreprints;
+        if (latest !== lastKeepLatestCohort || sourceChanged) {
+            lastKeepLatestCohort = latest;
+            lastIncludePreprints = includePreprints;
+            if ((sourceChanged && selectedDiseaseValue() && selectedExposureValue()) || allStudies.length || currentStudies.length) {runAnalysis();return;}
+        }
         updateBaselineIncidence();
         if (currentStudies.length) {
             refreshCaseSelection();
@@ -1045,20 +1056,66 @@ document.addEventListener('DOMContentLoaded', async () => {
         return grade === 'good' || grade === 'moderate';
     }
 
+    function clearCohortSelectionForFilters() {
+        if (!window.AnalysisSettings?.get()?.keep_latest_cohort) return;
+        for (const study of [...allStudies, ...currentStudies]) {
+            delete study.cohort_latest_excluded;
+            delete study.cohort_selection_reason;
+            delete study['Cohort Pooling Selected'];
+            delete study['Cohort Selection Reason'];
+        }
+    }
+    function mergeCohortSelection(data) {
+        const rowKey = row => JSON.stringify([String(row.PMID || row.pmid || ''), String(row.Study || ''), ...['Effect Size','Lower CI','Upper CI'].map(k => Number(row[k]))]);
+        const returned = new Map((data.studies || []).map(row => [rowKey(row), row]));
+        const flagFields = new Set(['cohort_latest_excluded','cohort_selection_reason','Cohort Pooling Selected','Cohort Selection Reason','cohort_selection_evaluated']);
+        const fields = [...flagFields,'Cohort Name','Cohort Publication Date','cohort_provenance','cohort_record_metadata_id','cohort_record_metadata','cohort_record_metadata_source'];
+        for (const study of [...allStudies, ...currentStudies]) {
+            const row = returned.get(rowKey(study));
+            if (!row) continue;
+            for (const key of fields) {
+                if (flagFields.has(key) && window.AnalysisSettings?.get()?.keep_latest_cohort && row.cohort_selection_evaluated !== true) continue;
+                if (Object.prototype.hasOwnProperty.call(row,key)) study[key] = row[key]; else delete study[key];
+            }
+        }
+    }
+
     function applyFilters() {
+        clearCohortSelectionForFilters();
         const timing = elements.filterTiming ? elements.filterTiming.value : 'All';
         const stage = elements.filterStage ? elements.filterStage.value : 'All';
         const measure = elements.filterMeasure ? elements.filterMeasure.value : 'All';
         const exposureType = elements.filterExposureType ? elements.filterExposureType.value : 'Anything';
 
+        function matchesStudyDesign(study, selected) {
+            const normalize = value => String(value || '').trim().toLowerCase()
+                .replace(/[_\u2010-\u2015\u2212]/g, '-').replace(/\s+/g, ' ');
+            const filter = normalize(selected);
+            if (!filter || filter === 'all') return true;
+
+            const design = normalize(study.Design);
+            // An observational analysis within a trial retains its own recorded design.
+            const trialPosition = design.search(/\b(?:rcts?|trials?)\b/);
+            const observationalPosition = design.search(/\bobservational\b/);
+            const observational = /\b(?:cohort|case[ -]?(?:control|referent)|cross[ -]?sectional|ecological|biomarker[ -]analysis)\b/.test(design) ||
+                (observationalPosition >= 0 && (trialPosition < 0 || observationalPosition < trialPosition));
+            const clinicalTrial = !observational && !/\btrial[ -]emulation\b/.test(design) && (
+                trialPosition >= 0 ||
+                (/\brandomi[sz]ed\b/.test(design) && !/\bnon[ -]?randomi[sz]ed\b/.test(design) &&
+                    /\b(?:intervention|controlled|treatment)\b/.test(design))
+            );
+            if (/^clinical trials?$/.test(filter)) return clinicalTrial;
+            if (filter !== 'prospective' && filter !== 'retrospective') return false;
+
+            const temporal = filter === 'prospective' ? /\bprospective\b/ : /\bretrospective\b/;
+            // Design is authoritative; Timing is only a legacy temporal fallback.
+            if (/\b(?:prospective|retrospective)\b/.test(design)) return temporal.test(design);
+            if (clinicalTrial) return false;
+            return temporal.test(normalize(study.Timing));
+        }
+
         currentStudies = allStudies.filter(study => {
-            if (timing !== 'All') {
-                if (timing === 'Clinical Trials') {
-                    if (study.Design !== 'Clinical Trials') return false;
-                } else if (study.Timing !== timing) {
-                    return false;
-                }
-            }
+            if (!matchesStudyDesign(study, timing)) return false;
             if (stage !== 'All' && study.Stage !== stage) return false;
             // Quality affects selection, not whether an extracted row is visible.
             if (measure !== 'All' && canonicalEffectMeasure(study['Effect Type']) !== measure) return false;
@@ -1203,7 +1260,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 applyFilters();
                 const analysisContext = { disease, exposure };
                 const selectedStudies = selectedStudiesFromTable();
-                const displayedAnalysis = fairQualityRequested() && selectedStudies.length
+                const displayedAnalysis = (fairQualityRequested() || window.AnalysisSettings?.get()?.keep_latest_cohort) && selectedStudies.length
                     ? await requestReanalysis(selectedStudies, analysisContext) : data;
                 updateResultsUI(displayedAnalysis, analysisContext);
                 elements.results.classList.remove('hidden');
@@ -1264,6 +1321,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function refreshCaseSelection() {
+        clearCohortSelectionForFilters();
         window.CaseCounts.rememberSelection(currentStudies);
         renderStudiesTable();
         window.CaseCounts.restoreSelection(currentStudies);
@@ -1316,11 +1374,13 @@ document.addEventListener('DOMContentLoaded', async () => {
             const sampleSizeValue = Number(String(study['Sample Size'] ?? '').replace(/,/g, ''));
             const hasRequiredSampleSize = Number.isInteger(sampleSizeValue) && sampleSizeValue > 0;
             const jbiEntries = itemizedJbiEntries(study);
-            const isChecked = (study.disease_hierarchy_pooling_selected !== false && study.subexposure_pooling_selected !== false && qualityIsEligible && hasRequiredSampleSize && eligibleEffectMeasurement && passesMinimum) ? 'checked' : '';
+            const isChecked = (study.cohort_latest_excluded !== true && study.disease_hierarchy_pooling_selected !== false && study.subexposure_pooling_selected !== false && qualityIsEligible && hasRequiredSampleSize && eligibleEffectMeasurement && passesMinimum) ? 'checked' : '';
 
             // Build Exclusion Reason Title
             let unselectedReason = "";
             if (!isChecked) {
+                if (study.cohort_latest_excluded === true) unselectedReason = study.cohort_selection_reason;
+                else 
                 if (study.disease_hierarchy_pooling_selected === false && study.disease_hierarchy_pooling_reason) unselectedReason = study.disease_hierarchy_pooling_reason;
                 else if (study.subexposure_pooling_selected === false && study.subexposure_pooling_reason) unselectedReason = study.subexposure_pooling_reason;
                 else                 if (!qualityIsEligible) unselectedReason = uiText('Excluded by default: JBI rating is below Moderate');
@@ -1346,7 +1406,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                 <td style="text-align: center; padding: 0.75rem; vertical-align: middle;">
                     <button class="expand-btn" data-index="${index}" style="background: none; border: none; color: var(--primary); padding: 0; cursor: pointer; font-size: 1.1rem; width: 100%; display: flex; align-items: center; justify-content: center; transition: transform 0.2s;" onclick="window.toggleStudyDetails(${index}, this)">▶</button>
                 </td>
-                <td><input type="checkbox" class="study-checkbox" data-index="${index}" ${passesMinimum ? '' : 'disabled'} ${isChecked} ${study.display_only === true || study.subexposure_pooling_selected === false || (qualityScore.toLowerCase() === 'fair' && !study.fair_quality_opted_in) ? 'disabled' : ''}></td>
+                <td><input type="checkbox" class="study-checkbox" data-index="${index}" ${passesMinimum && study.cohort_latest_excluded !== true ? '' : 'disabled'} ${isChecked} ${study.display_only === true || study.subexposure_pooling_selected === false || (qualityScore.toLowerCase() === 'fair' && !study.fair_quality_opted_in) ? 'disabled' : ''}></td>
                 <td>${index + 1}</td>
                 <td title="${unselectedReason}">
                     <a href="${study.Link}" target="_blank" class="notranslate" translate="no" style="color: var(--primary); text-decoration: none; font-weight: 800;">
@@ -1558,6 +1618,16 @@ document.addEventListener('DOMContentLoaded', async () => {
             `;
 
             elements.studiesTbody.appendChild(tr);
+            if(study.preprint_derived===true){tr.classList.add('preprint-derived');const article=tr.querySelector('a[href]');if(article){article.append(document.createTextNode(' · Preprint'));article.title='Preprint-derived statistics; this source has not been peer reviewed.';}}
+            const cohortDetails = document.createElement('div');
+            cohortDetails.className = 'snippet-item notranslate';
+            cohortDetails.setAttribute('translate', 'no');
+            const cohortTitle = document.createElement('strong');
+            cohortTitle.textContent = 'Cohort / study name';
+            const cohortText = document.createElement('p');
+            cohortText.textContent = `${study['Cohort Name'] || 'Not reported'} · Publication: ${study['Cohort Publication Date'] || study.Year || 'Not recorded'}${study.cohort_selection_reason ? ' · ' + study.cohort_selection_reason : ''}`;
+            cohortDetails.append(cohortTitle, cohortText);
+            detailsTr.querySelector('.snippets-container')?.prepend(cohortDetails);
             elements.studiesTbody.appendChild(detailsTr);
         });
         updateSortIcons();
@@ -1759,6 +1829,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     }
 
     function updateResultsUI(data, analysisContext = null) {
+        mergeCohortSelection(data);
+        if (currentStudies.length) {
+            window.CaseCounts.rememberSelection(currentStudies);
+            renderStudiesTable();
+            window.CaseCounts.restoreSelection(currentStudies);
+        }
         data = window.AnalysisSettings.receive(data);
         clearPreviousAnalysis(data);
         if (analysisContext) {

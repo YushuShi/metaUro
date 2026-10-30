@@ -12,9 +12,10 @@ from urllib.parse import urlencode
 from bs4 import BeautifulSoup
 from flask import Flask, Response, abort, jsonify, redirect, render_template, request, send_file, send_from_directory
 from source_worker import SOURCES, workers
+from preprint_ui import install_status_endpoint,request_bool
 from study_selection import build_selection_flow, selection_catalog
 from automation.sync_sources import assembled_source, load_overlay, bound, sha
-from summary_outputs import ensure_current, summary_dir, summary_mode
+from summary_outputs import ensure_current, summary_dir, summary_mode, latest_cohort_mode
 
 ROOT = Path(__file__).resolve().parent
 app = Flask(__name__)
@@ -33,6 +34,7 @@ SCOPE_PARENTS = {
     'urothelial_carcinoma_of_the_renal_pelvis': 'kidney_and_renal_pelvis_cancer',
     'renal_sarcoma': 'kidney_and_renal_pelvis_cancer',
     'aggressive_prostate_cancer': 'prostate_cancer',
+    'prostate_cancer_excluding_aggressive': 'prostate_cancer',
 }
 SUMMARY_MANIFESTS = {
     'metaPee': 'summary/{mode}/summary_manifest.json',
@@ -81,6 +83,171 @@ EGGERS_FEWER_THAN_TEN_MESSAGE = (
 EGGERS_UNAVAILABLE_MESSAGE = (
     'Egger’s test could not be reliably estimated for this meta-analysis.'
 )
+POOL_NARRATIVE = re.compile(r'^The pooled analysis of (\d+) studies yielded\b')
+POOL_TEMPLATE_OLD = 'The pooled analysis of {count} studies yielded'
+POOL_TEMPLATE_NEW = 'The pooled analysis of {count} effect estimates from {publications} publications yielded'
+POOL_TRANSLATION_PREFIXES = {
+    'zh-CN': ('对 {count} 项研究的合并分析', '对来自 {publications} 篇文献的 {count} 个效应估计值进行合并分析'),
+    'zh-TW': ('對 {count} 項研究的合併分析', '對來自 {publications} 篇文獻的 {count} 個效果估計值進行合併分析'),
+    'nl': ('De gepoolde analyse van {count} studies', 'De gepoolde analyse van {count} effectschattingen uit {publications} publicaties'),
+    'ko': ('{count}개 연구의 통합 분석', '{publications}편의 논문에서 나온 {count}개 효과 추정치의 통합 분석'),
+}
+
+
+def _add_pooling_translations(catalog):
+    for old_key, translations in list(catalog.items()):
+        if not old_key.startswith(POOL_TEMPLATE_OLD) or not isinstance(translations, dict):
+            continue
+        updated = {}
+        for language, (old_prefix, new_prefix) in POOL_TRANSLATION_PREFIXES.items():
+            value = translations.get(language)
+            if isinstance(value, str) and value.startswith(old_prefix):
+                updated[language] = new_prefix + value[len(old_prefix):]
+        if updated:
+            catalog[old_key.replace(POOL_TEMPLATE_OLD, POOL_TEMPLATE_NEW, 1)] = updated
+
+
+def _patch_urinary_pooling_script(body):
+    """Keep MetaUro's display labels accurate across language and measure toggles."""
+    script = body.decode('utf-8')
+    old_nonsignificant = (
+        'The pooled analysis of {count} studies yielded an effect size of {estimate} '
+        '(95% CI: {low}–{high}), indicating no statistically significant association '
+        'between {exposure} and {disease}. Although the point estimate suggests a '
+        'potential {relationship} relationship, the confidence interval includes the '
+        'null. These findings were accompanied by {heterogeneity} (I² = {i2}%), {implication}.'
+    )
+    new_nonsignificant = old_nonsignificant.replace(POOL_TEMPLATE_OLD, POOL_TEMPLATE_NEW, 1)
+    rewrites = (
+        (
+            r'        if (!/^The pooled analysis of \d+ studies yielded/i.test(original)) {',
+            r'        const reportAware = /^The pooled analysis of \d+ effect estimates from \d+ publications yielded/i.test(original);'
+            '\n' + r'        if (!reportAware && !/^The pooled analysis of \d+ studies yielded/i.test(original)) {',
+        ),
+        (
+            r'        const countMatch = original.match(/^The pooled analysis of (\d+) studies/i);',
+            r'        const countMatch = original.match(/^The pooled analysis of (\d+) (?:studies|effect estimates from (\d+) publications)/i);'
+            '\n        const publications = countMatch ? countMatch[2] : null;',
+        ),
+        (
+            '            count,\n            estimate: es.toFixed(2),',
+            '            count,\n            publications,\n            estimate: es.toFixed(2),',
+        ),
+        (
+            '            elements.resultsInterpretation.textContent = uiText(template, common);',
+            "            elements.resultsInterpretation.textContent = uiText(reportAware ? template.replace('"
+            + POOL_TEMPLATE_OLD + "', '" + POOL_TEMPLATE_NEW + "') : template, common);",
+        ),
+        (
+            "            '" + old_nonsignificant + "',",
+            "            (reportAware ? '" + new_nonsignificant + "' : '" + old_nonsignificant + "'),",
+        ),
+        (
+            "            lastHeadlineStudyCount = Number(data.headline.n_studies)",
+            "            lastHeadlineStudyCount = Number(data.headline.n_effect_estimates)\n"
+            "                || Number(data.headline.n_studies)",
+        ),
+    )
+    for old, new in rewrites:
+        if script.count(old) != 1:
+            app.logger.error('Urinary pooling-label patch did not match the served source script')
+            return body
+        script = script.replace(old, new, 1)
+    return script.encode('utf-8')
+
+
+def _patch_jbi_tooltip_script(body):
+    """Read itemized answers from both saved JBI record layouts."""
+    original = b'        return Object.entries(study.JBI)'
+    replacement = (
+        b'        const answers = study.JBI.answers;\n'
+        b"        const itemized = answers && typeof answers === 'object' && !Array.isArray(answers)\n"
+        b'            && Object.keys(answers).some(question => /^q\\d+$/i.test(question))\n'
+        b'            ? answers : study.JBI;\n'
+        b'        return Object.entries(itemized)'
+    )
+    if body.count(original) != 1:
+        app.logger.error('JBI tooltip patch did not match the served source script')
+        return body
+    return body.replace(original, replacement, 1)
+
+
+def _selected_pool_rows(payload, source):
+    """Find the saved or request-selected inputs behind a pooled response."""
+    rows = payload.get('studies') if isinstance(payload, dict) else None
+    if not isinstance(rows, list):
+        return None
+    rows = [row for row in rows if isinstance(row, dict)]
+    if rows and all('Settings Pooling Selected' in row for row in rows):
+        return [row for row in rows if row.get('Settings Pooling Selected') is True]
+    scope_field = ('disease_hierarchy_pooling_selected' if source == 'metaPee'
+                   else 'disease_scope_pooling_selected')
+    return [row for row in rows
+            if row.get('subexposure_pooling_selected') is True
+            and row.get(scope_field) is not False]
+
+
+def _pool_input_counts(payload, source):
+    rows = _selected_pool_rows(payload, source)
+    if not rows:
+        return None
+    pmids = [str(row.get('PMID') or '').strip() for row in rows]
+    if any(not pmid or pmid.casefold() in {'na', 'n/a', 'none', 'nan'} for pmid in pmids):
+        return None
+    return len(rows), len(set(pmids))
+
+
+def _selection_pool_estimates(flow, source):
+    """Count actual selected estimates in the versioned current-pool packet."""
+    if not flow.get('available'):
+        return None
+    packet = next((item for item in flow.get('provenance', ())
+                   if item.get('label') == 'Current direct-exposure pool and recorded restrictions'), None)
+    if not packet:
+        return None
+    try:
+        path = bound(ROOT, packet['path'])
+        if sha(path) != packet['sha256']:
+            return None
+        payload = json.loads(path.read_text())
+    except (OSError, ValueError, KeyError, TypeError):
+        return None
+    counts = _pool_input_counts(payload, source)
+    if not counts or counts[1] != flow.get('poolable_reports'):
+        return None
+    declared = payload.get('pooled_study_count')
+    if declared is not None and declared != counts[0]:
+        return None
+    return counts[0]
+
+
+def current_pooling_interpretation(result, source):
+    """Label pooled input rows and distinct publications without recalculation."""
+    if source != 'metaPee' or not isinstance(result, dict):
+        return
+    headline = result.get('headline')
+    if not isinstance(headline, dict):
+        return
+    counts = _pool_input_counts(result, source)
+    if not counts:
+        return
+    estimates, publications = counts
+    declared = result.get('pooled_study_count')
+    if declared is not None and declared != estimates:
+        return
+    result['pooled_estimate_count'] = estimates
+    result['pooled_publication_count'] = publications
+    headline['n_effect_estimates'] = estimates
+    headline['n_publications'] = publications
+    interpretation = headline.get('results_interpretation')
+    if not isinstance(interpretation, str):
+        return
+    match = POOL_NARRATIVE.match(interpretation)
+    if match and int(match.group(1)) == estimates and estimates != publications:
+        headline['results_interpretation'] = POOL_NARRATIVE.sub(
+            f'The pooled analysis of {estimates} effect estimates from {publications} publications yielded',
+            interpretation, count=1,
+        )
 
 
 def current_egger_interpretation(result, analysis_request=None):
@@ -131,7 +298,7 @@ def product_branding(text):
 def scope_catalog():
     result = []
     for source in SOURCES:
-        catalog = json.loads((ROOT / 'sources' / source / 'static/seer-baseline.json').read_text())
+        catalog = json.loads((assembled_source(ROOT, source) / 'static/seer-baseline.json').read_text())
         for disease in catalog['diseases']:
             scope_id = disease['id']
             result.append({
@@ -251,6 +418,35 @@ def decorate_html(body, source, path):
             if control:
                 old_controls.append(str(control))
         old_header.replace_with(BeautifulSoup(render_template('_header.html', **ctx), 'html.parser'))
+    if ctx['page'] == 'summary':
+        latest = latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'yes')))
+        form = soup.select_one('form.summary-scope-form, form.summary-scope-picker')
+        if form:
+            form['class'] = list(form.get('class', [])) + ['uro-summary-control-row']
+            disease_control = form.select_one('#summary-scope, #summary-disease')
+            if request_bool(request.args.get('include_preprints')):
+                hidden=soup.new_tag('input',attrs={'type':'hidden','name':'include_preprints','value':'true'});form.append(hidden)
+            if disease_control:
+                disease_group = disease_control.find_parent(class_='input-group')
+                if not disease_group or disease_group is form:
+                    disease_group = soup.new_tag('div', attrs={'class':'input-group'})
+                    disease_label = form.select_one('label[for="' + disease_control['id'] + '"]')
+                    disease_control.insert_before(disease_group)
+                    if disease_label: disease_group.append(disease_label.extract())
+                    disease_group.append(disease_control.extract())
+                disease_group['class'] = list(disease_group.get('class', [])) + ['summary-disease-control']
+            group = soup.new_tag('div', attrs={'class':'summary-cohort-control'})
+            label = soup.new_tag('label', attrs={'for':'summary-cohort-mode'})
+            label.string = 'Records from the same cohort'
+            control = soup.new_tag('select', id='summary-cohort-mode', attrs={'name':'latest_cohort', 'onchange':'this.form.submit()'})
+            for value, text in [('no','Include all records'),('yes','Keep latest publication per cohort')]:
+                option = soup.new_tag('option', value=value); option.string=text
+                if (value == 'yes') == latest: option['selected']='selected'
+                control.append(option)
+            group.append(label); group.append(control); form.append(group)
+        for link in soup.select('a[href]'):
+            if '/summary/' in link['href']:
+                link['href'] += ('&' if '?' in link['href'] else '?') + 'latest_cohort=' + ('yes' if latest else 'no')
     # Remove duplicate source-brand navigation, while preserving the source study UI.
     for node in soup.select('.hero h1'):
         node.string = 'MetaUro'
@@ -284,6 +480,41 @@ def decorate_html(body, source, path):
     for heading in soup.select('#studies-table thead th'):
         if heading.get_text(' ', strip=True).upper() == 'VERIFIED':
             heading.string = 'VERIFY'
+    if ctx['page'] == 'evidence' and not soup.select_one('#evidence-keep-latest-cohort'):
+        table = soup.select_one('#studies-table')
+        section = table.find_parent('section') if table else None
+        filters = section.select_one('.filters-container') if section else None
+        if filters:
+            group = soup.new_tag('div', attrs={'class':'filter-group evidence-cohort-control'})
+            label = soup.new_tag('label', attrs={'for':'evidence-keep-latest-cohort'})
+            label.string = 'Records from the same cohort'
+            control = soup.new_tag('select', id='evidence-keep-latest-cohort')
+            for value, text in [('false','Include all records'),('true','Keep latest publication per cohort')]:
+                option = soup.new_tag('option', value=value); option.string=text
+                if value == 'true': option['selected']='selected'
+                control.append(option)
+            group.append(label); group.append(control); filters.append(group)
+    if ctx['page'] == 'evidence':
+        table = soup.select_one('#studies-table')
+        section = table.find_parent('section') if table else None
+        filters = section.select_one('.filters-container') if section else None
+        if filters and not filters.select_one('.evidence-selection-options'):
+            filters['class'] = list(filters.get('class', [])) + ['evidence-selection-controls']
+            filters.attrs.pop('style', None)
+            options = soup.new_tag('div', attrs={'class':'evidence-selection-options'})
+            for group in list(filters.select(':scope > .filter-group')):
+                field = group.select_one('select, input')
+                if field:
+                    group['data-filter'] = field.get('id', '')
+                for node in group.select('label, select, input'):
+                    node.attrs.pop('style', None)
+                options.append(group.extract())
+            filters.insert(0, options)
+            for button in filters.select('#select-all-btn, #deselect-all-btn, #update-btn, #export-studies-btn'):
+                actions = button.parent
+                if actions and actions is not filters:
+                    actions['class'] = list(dict.fromkeys([*actions.get('class', []), 'evidence-selection-actions']))
+                    actions.attrs.pop('style', None)
     # The source applications retain these explanatory controls, but metaUro's
     # consolidated interface keeps the forest and extracted-study sections terse.
     for selector in ('#forest-scale-label', '#analysis-baseline-notice', '.poolability-help', '.summary-back-link', '.summary-eyebrow', '.summary-method-note', '.summary-intro > p', '.summary-section-heading p'):
@@ -330,9 +561,9 @@ def decorate_html(body, source, path):
         minimum['title'] = '0 includes studies regardless of case count. Missing cases use N × the baseline risk selected in Settings.'
     for script in soup.select('script[src]'):
         if '/static/script.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=20260925-display'
+            script['src'] = script['src'].split('?')[0] + '?v=20261022-pooling-counts'
         elif '/static/i18n.js' in script['src']:
-            script['src'] = script['src'].split('?')[0] + '?v=20260925-display'
+            script['src'] = script['src'].split('?')[0] + '?v=20261022-pooling-counts'
     # Relative downloads/links produced by source templates must stay with their source.
     for node in soup.select('[href], [src], [action], [data]'):
         for attr in ('href', 'src', 'action', 'data'):
@@ -344,6 +575,9 @@ def decorate_html(body, source, path):
         if controls:
             controls.append(BeautifulSoup(''.join(old_controls), 'html.parser'))
     return str(soup)
+
+
+install_status_endpoint(app,ROOT)
 
 
 @app.get('/')
@@ -388,6 +622,7 @@ def study_selection():
     available = {item: set(selection_catalog(item)) for item in SOURCES}
     selection_scopes = [item for item in ctx['scopes'] if item['label'] in available[item['source']]]
     flow = build_selection_flow(source, ctx['current']['label'], request.args.get('exposure'))
+    flow = {**flow, 'pooled_estimates': _selection_pool_estimates(flow, source)}
     analysis_query = {'scope': ctx['current']['id'], 'include_subexposures': 'no'}
     if flow.get('exposure'):
         analysis_query['exposure'] = flow['exposure']
@@ -466,6 +701,9 @@ def evidence(source, path):
             return jsonify(error='An analysis request must be a JSON object.'), 400
         analysis_request = payload
         settings = payload.get('analysis_settings')
+        if settings is None or isinstance(settings, dict):
+            settings = {'keep_latest_cohort': True, **(settings or {})}
+            payload['analysis_settings'] = settings
         if isinstance(settings, dict) and settings.get('baseline_source') == 'manual':
             risk = settings.get('manual_risk_percent')
             try:
@@ -479,7 +717,7 @@ def evidence(source, path):
     if request.method in {'GET', 'HEAD'} and (path == 'summary' or path.startswith('summary/')):
         try:
             mode = summary_mode(request.args.get('include_subexposures'))
-            folder = ensure_current(ROOT, source, mode)
+            folder = ensure_current(ROOT, source, mode, keep_latest_cohort=latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'yes'))),include_preprints=request_bool(request.args.get('include_preprints')))
         except ValueError as exc:
             return jsonify(error=str(exc)), 400
         except Exception:
@@ -505,7 +743,7 @@ def evidence(source, path):
                 mimetype=('application/vnd.openxmlformats-officedocument.spreadsheetml.sheet'
                           if workbook_match else 'application/pdf'),
                 as_attachment=bool(workbook_match),
-                download_name=asset.name,
+                download_name=('cohort-latest_' if latest_cohort_mode(request.args.get('latest_cohort', request.args.get('keep_latest_cohort', 'yes'))) else '') + asset.name,
             )
             response.headers['Cache-Control'] = 'no-store'
             response.headers['X-metaUro-Source'] = source
@@ -516,14 +754,17 @@ def evidence(source, path):
             # Settings catalogs and UI assets do not need the scientific engine.
             code_static = ROOT / 'runtime_code' / source / 'static'
             static_root = code_static if path == 'static/script.js' else assembled_source(ROOT, source) / 'static'
-            asset = send_from_directory(static_root, path[len('static/'):])
+            asset = send_from_directory(
+                static_root, path[len('static/'):],
+                conditional=path != 'static/script.js',
+            )
             asset.direct_passthrough = False
             status, response_headers, body = asset.status_code, list(asset.headers), asset.get_data()
         else:
             headers = {k: v for k, v in request.headers if k.lower() not in {'host', 'content-length', 'connection'}}
             status, response_headers, body = workers[source].request(
                 path='/' + path + ('?' + request.query_string.decode() if request.query_string else ''),
-                method=request.method, data=request.get_data(), headers=headers)
+                method=request.method, data=json.dumps(analysis_request) if analysis_request is not None else request.get_data(), headers=headers)
     except (RuntimeError, TimeoutError, EOFError, BrokenPipeError, ValueError, OSError):
         app.logger.exception('Source engine failed: %s', source)
         return jsonify(error='This evidence source is temporarily unavailable. Please try again.'), 503
@@ -538,7 +779,7 @@ def evidence(source, path):
                 b'    function storedLanguage() {',
                 b"    function storedLanguage() {\n        const requested = new URL(window.location.href).searchParams.get('lang');\n        if (SUPPORTED_LANGUAGES.has(requested)) return requested;",
             )
-            body = body.replace(b'i18n-translations.json?v=1.4', b'i18n-translations.json?v=20260925-display')
+            body = body.replace(b'i18n-translations.json?v=1.4', b'i18n-translations.json?v=20261022-pooling-counts')
         if path == 'static/script.js':
             body = body.replace(b'    function updateLastUpdated(ts = null) {', b'    function updateLastUpdated(ts = null) {\n        if (elements.lastUpdated?.dataset.publishedAt) return;')
             body = body.replace(b"setSelectedExposure('Vitamin A');", b"setSelectedExposure(new URL(location.href).searchParams.get('exposure') || 'Vitamin A');")
@@ -547,16 +788,22 @@ def evidence(source, path):
                 b"'Quality Score', 'Verified', 'Exclusion Flags'",
                 b"'Quality Score', 'VERIFY', 'Exclusion Flags'",
             )
+            body = _patch_jbi_tooltip_script(body)
+            if source == 'metaPee':
+                body = _patch_urinary_pooling_script(body)
     elif 'text/css' in content_type:
         body = prefix_text(body.decode('utf-8'), prefix).encode()
     elif 'application/json' in content_type and body and request.method != 'HEAD' and status not in {204, 304}:
         payload = json.loads(body)
         if path in {'analyze', 'reanalyze'} and isinstance(payload, dict):
+            current_pooling_interpretation(payload, source)
             interpretation = current_egger_interpretation(payload, analysis_request)
             if interpretation is not None:
                 payload['headline']['funnel_interpretation'] = interpretation
         if path == 'static/i18n-translations.json' and isinstance(payload, dict):
             payload.update(UI_LABEL_TRANSLATIONS)
+            if source == 'metaPee':
+                _add_pooling_translations(payload)
             payload = normalize_catalog(payload)
         monthly = load_overlay(ROOT, source)
         if isinstance(payload, dict) and 'last_updated' in payload and monthly and monthly.get('completed_at'):
@@ -570,11 +817,16 @@ def evidence(source, path):
         elif key.lower() == 'content-disposition':
             outgoing[index] = (key, product_branding(value))
     response = Response(body, status=status, headers=outgoing)
+    if path == 'static/script.js':
+        response.headers['Cache-Control'] = 'no-store'
     if path in {'analyze', 'reanalyze'}:
         response.headers['Cache-Control'] = 'no-store'
     response.headers['X-metaUro-Source'] = source
     return response
 
+
+from sample_size_summary import install_app as install_sample_size_summary
+install_sample_size_summary(app, globals())
 
 if __name__ == '__main__':
     app.run(host='127.0.0.1' if 'PORT' not in os.environ else '0.0.0.0', port=int(os.environ.get('PORT', '5012')), debug=False, use_reloader=False)

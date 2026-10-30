@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-04T02:26:52.902225+00:00",
+  "protocol_version": "metapee-claude-gemini-parallel-v1",
+  "publication_date_end": "2026-10-02",
+  "models": {
+    "r2": "claude-opus-5",
+    "r3": "gemini-3.7-flash"
+  },
+  "model_transport": {
+    "api_style": "chat_completions",
+    "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
+    "response_format_omitted": true
+  },
+  "catalog_exposures": 449,
+  "r1_pass_contexts": 8,
+  "r2_official_metadata_repair_status": "complete",
+  "r2_official_metadata_repaired_pmids": [],
+  "r2_official_metadata_repair_request_count": 0,
+  "claude_r2_completed_contexts": 8,
+  "claude_r2_exclusions": 8,
+  "gemini_r3_science_gate_contexts": 0,
+  "gemini_r3_pmc_eligible_contexts": 0,
+  "gemini_r3_completed_contexts": 0,
+  "gemini_r3_settled_contexts": 0,
+  "gemini_r3_exclusions": 0,
+  "gemini_r3_decision_free_no_pmcid_deferrals": 0,
+  "gemini_r3_decision_free_twice_verified_source_failure_deferrals": 0,
+  "unresolved_operational_problems": 0,
+  "model_cache_receipt_acceptance_consistency": {
+    "cache_files": 1,
+    "matched_receipts": 1,
+    "unmatched_receipts": 0
+  },
+  "interrupted_active_unknown_billing_receipts": 0,
+  "status": "complete",
+  "stopped_reason": "monthly_current_window",
+  "budget_restart_required": false,
+  "budget_blocked_stages": [],
+  "budget_restart_guard": "No new model work is dispatched for a blocked stage until the operator confirms that the Cornell budget was reset with --resume-after-budget-reset.",
+  "resume_command": "python scripts/run_claude_gemini_parallel_review.py --stage all --batch-size 8 --workers 1",
+  "canonical_chatgpt_artifacts_modified": false,
+  "provider_route": {
+    "r2": {
+      "requested_provider_model": "claude-opus-5",
+      "route": "Cornell gateway Chat Completions API",
+      "direct_provider_credential": "absent",
+      "direct_provider_note": "No usable direct Anthropic credential is available."
+    },
+    "r3": {
+      "requested_provider_model": "gemini-3.7-flash",
+      "route": "Cornell gateway Chat Completions API",
+      "direct_provider_credential": "absent",
+      "direct_provider_note": "No usable direct Google Gemini credential is available."
+    },
+    "authorization": "User approved Cornell gateway credentials for Claude R2 and Gemini R3.",
+    "token_accounting": "Provider-reported response usage through Cornell is retained when present; missing usage is unavailable and never approximated."
+  }
+}

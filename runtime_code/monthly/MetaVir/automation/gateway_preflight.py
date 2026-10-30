@@ -12,7 +12,7 @@ def required_models(config_path=None):
             not all(isinstance(name,str) and name.strip()==name and name for name in models) or
             len(models)!=len(set(models))):
         raise RuntimeError('gateway_models must be a nonempty list of exact, unique model IDs.')
-    return tuple(dict.fromkeys([*models, 'claude-opus-5', 'gemini-3.7-flash']))
+    return tuple(dict.fromkeys([*models, 'claude-opus-5', 'gemini-3.7-flash', 'gpt-6-luna', 'gemini-3.8-flash', 'gpt-6-astra']))
 def check():
     models=required_models()
     key=(os.environ.get('CORNELL_API_KEY') or '').strip()

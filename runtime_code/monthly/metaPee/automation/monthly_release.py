@@ -15,6 +15,9 @@ from automation.monthly_pipeline import ACTIVE_PATH, MANIFEST_FILENAME, STATE_PA
 ROOT = Path.cwd()
 ALLOWED_ROOTS = ('Cached_results', 'ClaudeGemini_results', 'Disease_hierarchy_results', 'static', 'Plot', 'combined', 'Subexposure_results', 'Subexposure_views', 'data/subexposure_views', 'data/metaneuro', 'cost.txt', 'additionalExposureCost.txt', 'ClaudeGeminiCost.txt', 'data/monthly_updates', 'data/monthly_reports', 'data/monthly_automation')
 
+# Optional monthly R3 review queues are durable release evidence.
+ALLOWED_ROOTS += ('manualReview/preprint_recovery',)
+
 def command(args, **kwargs):
     return subprocess.run(args, check=True, text=True, **kwargs)
 
@@ -25,7 +28,7 @@ def safe_checkpoint_path(path):
     parts=Path(path).parts
     suffix=Path(path).suffix.lower()
     return (not Path(path).is_absolute() and '..' not in parts and '\\' not in str(path)
-            and any(str(path).startswith(base+'/') for base in ('data/monthly_updates','data/monthly_reports','data/monthly_automation','monthlyHumanReview'))
+            and any(str(path).startswith(base+'/') for base in ('data/monthly_updates','data/monthly_reports','data/monthly_automation','manualReview/preprint_recovery','monthlyHumanReview'))
             and (suffix in {'.json','.jsonl','.csv','.txt','.xml','.html','.htm','.pdf','.sqlite3'}
                  or str(path).endswith(('.sqlite3-wal','.sqlite3-shm'))))
 
@@ -47,7 +50,16 @@ def active_run(config):
 
 def checkpoint():
     target=ROOT/'.monthly-checkpoint'
-    if target.exists():shutil.rmtree(target)
+    # Preserve private preprint raw sources and unknown-cost call ledgers.
+    # They are workflow checkpoint inputs, never public Git release artifacts.
+    if target.is_symlink():raise RuntimeError('Checkpoint root cannot be a symlink')
+    if target.exists():
+        private = target/'preprint_recovery'
+        if private.is_symlink():raise RuntimeError('Private recovery checkpoint cannot be a symlink')
+        for child in target.iterdir():
+            if child.name == 'preprint_recovery':continue
+            if child.is_dir() and not child.is_symlink():shutil.rmtree(child)
+            else:child.unlink()
     config=configuration()
     active=active_run(config)
     if not active:return
@@ -63,6 +75,10 @@ def checkpoint():
     review=ROOT/'monthlyHumanReview'/(run.name+'.csv')
     if review.is_file() and not review.is_symlink():
         dest=target/review.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(review,dest)
+    queue=ROOT/'manualReview/preprint_recovery/monthly'
+    for file in sorted(queue.glob(run.name+'_*.csv')) if queue.is_dir() else []:
+        if file.is_symlink():raise RuntimeError('Preprint review queue must be a regular file')
+        dest=target/file.relative_to(ROOT);dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(file,dest)
     print(f'Recovery checkpoint prepared for {run.name}.')
 
 def restore_checkpoint(folder,config):
@@ -116,6 +132,26 @@ def restore_checkpoint(folder,config):
         if dest.exists() and dest.read_bytes()!=review.read_bytes():
             raise RuntimeError('A recovery file differs from an existing monthly artifact; no files were overwritten.')
         if not dest.exists():copies.append((review,dest))
+    # Restore this validated unpublished interval's entire private subtree,
+    # including extensionless raw blobs and unacknowledged dispatch receipts.
+    private=payload/'preprint_recovery'/run_id
+    if private.is_symlink():raise RuntimeError('Private recovery checkpoint cannot be a symlink')
+    if private.is_dir():
+        for file in sorted(private.rglob('*')):
+            if file.is_symlink():raise RuntimeError('Private recovery checkpoint contains a symlink')
+            if not file.is_file():continue
+            relative=Path('.monthly-checkpoint/preprint_recovery')/run_id/file.relative_to(private)
+            dest=within_repo(ROOT,relative)
+            if dest.exists() and dest.read_bytes()!=file.read_bytes():
+                raise RuntimeError('Private recovery bytes conflict; no call ledger may be overwritten')
+            if not dest.exists():copies.append((file,dest))
+    queue=payload/'manualReview/preprint_recovery/monthly'
+    for file in sorted(queue.glob(run_id+'_*.csv')) if queue.is_dir() else []:
+        if file.is_symlink():raise RuntimeError('Preprint review queue must be a regular file')
+        dest=within_repo(ROOT,file.relative_to(payload))
+        if dest.exists() and dest.read_bytes()!=file.read_bytes():
+            raise RuntimeError('Preprint review checkpoint conflicts; existing review preserved')
+        if not dest.exists():copies.append((file,dest))
     for source,dest in copies:
         dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(source,dest)
     # A committed pointer to the previous completed month must be replaced with

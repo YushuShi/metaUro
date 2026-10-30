@@ -1,0 +1,32 @@
+.sample-summary { max-width: 1760px; margin: 0 auto; padding: 2rem; color: var(--text, #243746); font-family: var(--font-family, 'Inter', sans-serif); }
+.sample-summary h1 { margin: 0 0 .7rem; font-size: 2rem; color: var(--primary, #153e49); }
+.sample-intro { max-width: 84ch; line-height: 1.65; margin-bottom: 1.5rem; }
+.sample-summary-controls { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.1rem; background: var(--card-bg, #fff); border: 1px solid var(--border, #d8e0e6); border-radius: 12px; padding: 1.4rem; }
+.sample-summary-controls label { display: flex; flex-direction: column; gap: .4rem; font-size: .88rem; font-weight: 600; min-width: 0; }
+.sample-summary-controls input, .sample-summary-controls select { width: 100%; min-width: 0; box-sizing: border-box; padding: .65rem .7rem; border: 1px solid var(--border, #bfcbd4); border-radius: 6px; background: #fff; color: #243746; font: inherit; }
+.sample-summary-controls small { font-weight: 400; color: #536573; line-height: 1.4; }
+.sample-summary-controls button { align-self: end; min-height: 42px; padding: .7rem 1rem; background: var(--primary, #153e49); color: var(--on-primary, #fff); border: 1px solid var(--primary, #153e49); border-radius: 7px; font: inherit; font-weight: 600; cursor: pointer; }
+.sample-summary-controls button:disabled { opacity: .55; cursor: wait; }
+.sample-summary [role=status] { min-height: 1.5em; margin: 1.2rem 0 .6rem; }
+.sample-summary [role=status].sample-error { color: #ae273c; }
+.sample-context { font-size: .88rem; line-height: 1.6; color: #536573; }
+.sample-summary-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 1.3rem; margin-top: 1.3rem; }
+.sample-plot-card { min-width: 0; background: var(--card-bg, #fff); border: 1px solid var(--border, #d8e0e6); border-radius: 12px; padding: 1rem; }
+.sample-plot-card h2 { margin: 0 0 .35rem; font-size: 1.15rem; color: var(--primary, #153e49); }
+.sample-plot-card .sample-panel-note { font-size: .84rem; color: #536573; line-height: 1.5; }
+.sample-chart-scroll { overflow-x: auto; margin: 1rem -.3rem; }
+.sample-chart { display: block; width: 100%; min-width: 640px; height: auto; overflow: visible; font-family: var(--font-family, 'Inter', sans-serif); }
+.sample-chart .sample-tick { font-size: 12px; fill: #536573; }
+.sample-chart .sample-axis { font-size: 14px; font-weight: 600; fill: #243746; }
+.sample-chart .sample-point-label { font-size: 12px; fill: var(--sample-label-color, #243746); paint-order: stroke; stroke: #fff; stroke-width: 4px; stroke-linejoin: round; }
+.sample-chart circle { fill: var(--sample-dot-color, var(--primary, #2475c0)); stroke: #fff; stroke-width: 1.5; }
+.sample-chart g:focus circle { stroke: #111; stroke-width: 3; }
+.sample-plot-card details { margin-top: .7rem; font-size: .85rem; }
+.sample-plot-card summary { cursor: pointer; color: var(--primary, #153e49); padding: .4rem 0; }
+.sample-table-scroll { overflow-x: auto; max-height: 340px; }
+.sample-plot-card table { width: 100%; border-collapse: collapse; font-size: .83rem; }
+.sample-plot-card th, .sample-plot-card td { padding: .6rem .4rem; text-align: left; border-bottom: 1px solid #e1e7ec; }
+.sample-plot-card th { position: sticky; top: 0; background: #f5f8fa; }
+.sample-plot-card li { margin: .4rem 0; }
+@media (max-width: 1050px) { .sample-summary-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 740px) { .sample-summary { padding: 1rem; } .sample-summary-grid { grid-template-columns: 1fr; } .sample-summary-controls { padding: 1rem; } .sample-disease-field { grid-column: 1 / -1; } }

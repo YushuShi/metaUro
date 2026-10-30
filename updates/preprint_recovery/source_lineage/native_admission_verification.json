@@ -1,0 +1,452 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "native_policy_review": {
+    "schema_version": 1,
+    "status": "PASS",
+    "native_gate_receipt": "preprint_recovery_2026-10-26/special_runtime/uro_positive_qa/receipt.json",
+    "native_gate_receipt_sha256": "4fa56af47619d8b217f82f5560326d0dd627eb4d364295371e07a82b3b53f5d5",
+    "native_gate_manifest_sha256": "c73008ef06431246a8966aaaaa06507946f2d1e409a6a8a60416b044de8ecea1",
+    "models": 0,
+    "policy_comparison": [
+      {
+        "path": "meta_analysis.py",
+        "native_sha256": "cea64bb9d8e5bc262b31949e904d7ada6174fe075e0f55baffa93281cb7fc8b4",
+        "installed_source_sha256": "02c1ed0c13f5403e801de5a6295019a396c8e665276c6208669cca9a4af9e362",
+        "identical": false
+      },
+      {
+        "path": "scripts/dual_screening.py",
+        "native_sha256": "b56745503f1095898f9ea487eb014966f441d237b833f22a992397c95358bc7c",
+        "installed_source_sha256": "b521b87637e19e0c8b769fe8b931db065bd269c83fe71420ebc2db633139520a",
+        "identical": false
+      },
+      {
+        "path": "scripts/incidence_endpoint_policy.py",
+        "native_sha256": "c000a54562c6acf5b5c722563e429e4bf959f325ad182a7bf28e7ffe84fc5d21",
+        "installed_source_sha256": "c000a54562c6acf5b5c722563e429e4bf959f325ad182a7bf28e7ffe84fc5d21",
+        "identical": true
+      },
+      {
+        "path": "scripts/relaxed_poolability.py",
+        "native_sha256": "a32eb8091713b47f0abedca36bec7bfcd85e2d2878b2cc1e8cd14f4483aebc80",
+        "installed_source_sha256": "b59afc6fc82309e63bc3eef81d625356c5f20bff903f73e2c651d79a6de68ae6",
+        "identical": false
+      }
+    ],
+    "semantic_review": {
+      "endpoint_policy": "Identical native source and installed source code.",
+      "numerical_policy_difference": "Current native source adds trend-specific CI/P guards. Uro installs the same protection through runtime_code/trend_ci_runtime.py before requests. Recovered red-meat input has directly reported measured CI; processed-meat input has no approved poolable CI and remains display-only. No journal numerical fields are copied into the approved source bundle.",
+      "native_meta_analysis_difference": "Current native source adds trend-CI guard, latest-cohort final gate and cohort/audit serialization. Uro runtime supplies those safeguards and exact final selection. Remaining Egger changes concern explanatory prose only.",
+      "dual_screening_difference": "Current native normalization binds field-specific P-value source context/guard evidence. Runtime performs no screening; the complete already approved native source bundle is retained. Original source records and endpoint scope are identical under canonical whole-row hashes.",
+      "actual_native_disposition": "All yes/no and latest false/true combinations pool exactly one approved red-meat preprint estimate, retain processed-meat preprint finding as display-only with zero contribution, and restore original headlines when disabled."
+    },
+    "required_source_snapshot_rule": "No immutable sources/ or evidence-manifest.json writes. No generic whole-cache mismatch bypass; exact target-row/context/protection proof remains required."
+  },
+  "actual_QA_receipt_sha256": "4fa56af47619d8b217f82f5560326d0dd627eb4d364295371e07a82b3b53f5d5",
+  "actual_QA_manifest_sha256": "c73008ef06431246a8966aaaaa06507946f2d1e409a6a8a60416b044de8ecea1",
+  "frozen_bundle_equivalence": [
+    {
+      "context_id": "preprint-uro:77f0df98bc0a756067d774d4282d4d8e",
+      "scientific_rows_sha256": "3f7ca2e0ecd7e654c9a184ad6d161f1388f317c129d7163ce6d2ea6cfc526167",
+      "allowed_metadata_difference": "Source manifest SHA changed from QA preview to frozen release; all other recovered fields identical."
+    },
+    {
+      "context_id": "preprint-uro:10ff039e38a4533c5c6d3af73f5c3d23",
+      "scientific_rows_sha256": "6ed8e0a5a1210dea407ce1ffb8f28c2d56f5aca920632003ca0af27db5a0308f",
+      "allowed_metadata_difference": "Source manifest SHA changed from QA preview to frozen release; all other recovered fields identical."
+    },
+    {
+      "context_id": "preprint-uro:e78084f4e01badc8ed637dc9f9077eef",
+      "scientific_rows_sha256": "b043720a445fdd94fcdc1d59cd3b93e1255223306284f6d609a2554a3d4eb046",
+      "allowed_metadata_difference": "Source manifest SHA changed from QA preview to frozen release; all other recovered fields identical."
+    },
+    {
+      "context_id": "preprint-uro:be72bb38b7958b72decfb9e1eeef1d27",
+      "scientific_rows_sha256": "19df67ed9005f751a28a9ff13613f39ada5d1470db0f100b7c5f28581c363eb8",
+      "allowed_metadata_difference": "Source manifest SHA changed from QA preview to frozen release; all other recovered fields identical."
+    }
+  ],
+  "actual_QA_runs": [
+    {
+      "exposure": "Red meat",
+      "mode": "yes",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 14
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "yes",
+      "keep_latest_cohort": false,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 1,
+      "selected_rows": 15
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "yes",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 14
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "yes",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 13
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "yes",
+      "keep_latest_cohort": true,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 1,
+      "selected_rows": 14
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "yes",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 13
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "no",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 14
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "no",
+      "keep_latest_cohort": false,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 1,
+      "selected_rows": 15
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "no",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 14
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "no",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 13
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "no",
+      "keep_latest_cohort": true,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 1,
+      "selected_rows": 14
+    },
+    {
+      "exposure": "Red meat",
+      "mode": "no",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 36,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 13
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "yes",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "yes",
+      "keep_latest_cohort": false,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "yes",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "yes",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "yes",
+      "keep_latest_cohort": true,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "yes",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "no",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "no",
+      "keep_latest_cohort": false,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "no",
+      "keep_latest_cohort": false,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "no",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "no",
+      "keep_latest_cohort": true,
+      "include_preprints": true,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 1,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    },
+    {
+      "exposure": "Processed meat intake",
+      "mode": "no",
+      "keep_latest_cohort": true,
+      "include_preprints": false,
+      "http_status": 200,
+      "display_rows": 19,
+      "recovered_display_rows": 0,
+      "recovered_pooled_rows": 0,
+      "selected_rows": 10
+    }
+  ],
+  "default_source_mutations": [],
+  "approved_quantitative_bundle_verification": {
+    "status": "PASS",
+    "policy": "Complete approved native rows remain in manifest; original reported quantitative bundle and PMID/ID provenance survive installed native projection; native-derived presentation/case estimates are separate.",
+    "checks": [
+      {
+        "context_id": "preprint-uro:77f0df98bc0a756067d774d4282d4d8e",
+        "selector": {
+          "source_repo": "MetaVir",
+          "disease": "Prostate cancer",
+          "exposure": "Processed meat intake",
+          "outcome": "Incidence",
+          "include_subexposures": "yes",
+          "source_variant": "combined"
+        },
+        "source_effect_id": "preprint:MetaVir:PPR87858:v1:48bfe3acb90fff6961e8f4ac",
+        "fields_checked": [
+          "Effect Type",
+          "Effect Size",
+          "Lower CI",
+          "Upper CI",
+          "P Value",
+          "Sample Size",
+          "reported_effect_type",
+          "reported_effect_size",
+          "reported_ci_lower",
+          "reported_ci_upper",
+          "reported_p_value"
+        ],
+        "differences": {},
+        "source_record_sha256": "ef27a983a2b910d4eac47d8d99b23ca54daa44d6ad6102283552f900f21ab75c"
+      },
+      {
+        "context_id": "preprint-uro:10ff039e38a4533c5c6d3af73f5c3d23",
+        "selector": {
+          "source_repo": "MetaVir",
+          "disease": "Prostate cancer",
+          "exposure": "Processed meat intake",
+          "outcome": "Incidence",
+          "include_subexposures": "no",
+          "source_variant": "combined"
+        },
+        "source_effect_id": "preprint:MetaVir:PPR87858:v1:48bfe3acb90fff6961e8f4ac",
+        "fields_checked": [
+          "Effect Type",
+          "Effect Size",
+          "Lower CI",
+          "Upper CI",
+          "P Value",
+          "Sample Size",
+          "reported_effect_type",
+          "reported_effect_size",
+          "reported_ci_lower",
+          "reported_ci_upper",
+          "reported_p_value"
+        ],
+        "differences": {},
+        "source_record_sha256": "1892a384d4eede3a98f5f67b7bd05bdaa037246dd130b3dde70a23f6c03b7b07"
+      },
+      {
+        "context_id": "preprint-uro:e78084f4e01badc8ed637dc9f9077eef",
+        "selector": {
+          "source_repo": "MetaVir",
+          "disease": "Prostate cancer",
+          "exposure": "Red meat",
+          "outcome": "Incidence",
+          "include_subexposures": "yes",
+          "source_variant": "combined"
+        },
+        "source_effect_id": "preprint:MetaVir:PPR87858:v1:40aba6b698001d49fa378280",
+        "fields_checked": [
+          "Effect Type",
+          "Effect Size",
+          "Lower CI",
+          "Upper CI",
+          "P Value",
+          "Sample Size",
+          "reported_effect_type",
+          "reported_effect_size",
+          "reported_ci_lower",
+          "reported_ci_upper",
+          "reported_p_value"
+        ],
+        "differences": {},
+        "source_record_sha256": "e7d6e82701614261ebb9950ab2c125ca8037611319f40370f6a28e1d3d51a980"
+      },
+      {
+        "context_id": "preprint-uro:be72bb38b7958b72decfb9e1eeef1d27",
+        "selector": {
+          "source_repo": "MetaVir",
+          "disease": "Prostate cancer",
+          "exposure": "Red meat",
+          "outcome": "Incidence",
+          "include_subexposures": "no",
+          "source_variant": "combined"
+        },
+        "source_effect_id": "preprint:MetaVir:PPR87858:v1:40aba6b698001d49fa378280",
+        "fields_checked": [
+          "Effect Type",
+          "Effect Size",
+          "Lower CI",
+          "Upper CI",
+          "P Value",
+          "Sample Size",
+          "reported_effect_type",
+          "reported_effect_size",
+          "reported_ci_lower",
+          "reported_ci_upper",
+          "reported_p_value"
+        ],
+        "differences": {},
+        "source_record_sha256": "e103e1391740422bb91958140ebc0b498d9ffa0f9e90b3ebc2e2ab55db166aa9"
+      }
+    ]
+  },
+  "approved_quantitative_bundle_verification_sha256": "cdc84b1acee756d5e0542b97ecc93b05351930a0641c54d4e73a7e5a1307df2a"
+}

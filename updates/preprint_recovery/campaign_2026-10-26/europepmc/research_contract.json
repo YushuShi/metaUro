@@ -1,0 +1,83 @@
+{
+  "schema_version": 1,
+  "base_url": "https://www.ebi.ac.uk/europepmc/webservices/rest",
+  "authorization": "Public API requires no key/login; optional contact email was not provided. No user action needed for metadata lookup.",
+  "endpoints": {
+    "batch_med": "GET /search?query=SRC:MED AND EXT_ID:(PMID OR PMID...)&resultType=core&format=json&pageSize=100&synonym=false",
+    "exact_record": "GET /article/{source}/{id}?resultType=core&format=json",
+    "batch_status": "POST /status-update-search?format=json; Content-Type:application/json; body {ids:[{src:MED,extId:PMID},{src:PPR,extId:PPRID}]}",
+    "pmc_oa_fulltext": "GET /{PMC_ID}/fullTextXML; documented identifier is PMC, not arbitrary PPR ID",
+    "server_versions": "GET https://api.biorxiv.org/details/{medrxiv|biorxiv}/{exact linked DOI}/na/json; follow explicit jatsxml URLs"
+  },
+  "link_contract": [
+    "Fetch exact MED source/PMID, retain raw response hash and selected record position.",
+    "Accept discovery candidate only from commentCorrectionList source=PPR and type=Preprint in; preserve complete note and orderIn.",
+    "Fetch exact PPR source/ID and retain reciprocal source=MED,type=Preprint of relation matching the original PMID.",
+    "Classify CrossRef Pre-print loader and title-first-author-match notes separately. Neither substitutes for native context/sample/author/outcome/effect identity verification.",
+    "No indexed PPR relation is no_indexed_preprint_link, not a global assertion that no preprint exists. HTTP/JSON/semantic errors are metadata_unavailable, never absence.",
+    "Handle older versions with /article/PPR/ID, because search normally exposes latest only. Preserve every explicit version and source date. Do not infer latest from accession number or server retrieval date.",
+    "For shared-DOI servers, Europe PMC may overwrite metadata and omit versionList. Check public server's exact DOI API; its newest version may differ from an old Unpaywall PDF in Europe PMC.",
+    "Original published PMID, publication date, and cohort identity stay separate from PPR ID, preprint posting date, version date, and DOI. A preprint is a source replacement, not an independent second study."
+  ],
+  "fulltext_contract": [
+    "Follow exact PPR fullTextUrlList PDF/HTML/DOI URL, then explicit PDF/citation anchors from that exact landing page, or exact-DOI server API JATS URLs.",
+    "Record request URL, final URL, timestamp, HTTP headers/status, byte count, raw SHA256, text SHA256, licence evidence, DOI/version and parent link receipt.",
+    "Validate actual full body, Methods and Results, identifier/author/sample alignment; abstract-only metadata or challenge HTML is not full text.",
+    "Do not bypass sign-in, CAPTCHA, access controls or fabricate links by title. Preserve 403/429 failures and stop after bounded normal retries.",
+    "Distinguish public access from reuse rights. Retain exact version licence; Free/OA flags are not blanket permission. Do not publish unlicensed whole papers, whole prompts or whole extracted article text. Public release can retain facts, version identifiers, original URLs, hashes, costs, short evidence and producing code; full raw PDFs/text remain local."
+  ],
+  "observed_api_quirks": [
+    "Old /status-update endpoint is404; current OpenAPI /status-update-search returns200.",
+    "Status responses currently contain malformed href values beginning nullPPR/nullMED; treat src/ext_ID and relation IDs as identities and build trusted canonical links yourself.",
+    "PPR840839/fullTextXML returned500 and is not a valid general PPR retrieval mechanism.",
+    "PPR616676's indexed EuropePMC PDF link returned403 expired/invalid, while its explicitly indexed ResearchSquare PDF worked.",
+    "PPR1059020 unversioned EuropePMC core/Unpaywall PDF pointed tov1, while official server API identifiedv4 and returned its accessible JATS URL. Handoff selectsv4.",
+    "One exploratory search returned future publication metadata; index order/date never overrides the campaign's authoritative cutoff."
+  ],
+  "rate_and_errors": {
+    "official_forum_limit": "10 requests/second or500/minute perIP (EuropePMC team2020,2025 replies)",
+    "prototype": "Sequential requests; at least1 second between starts per process,100 MED IDs/batch,75 PPR IDs/batch,30s timeout,maximum3 attempts,429/5xx Retry-After handling with bounded backoff. HTTP403 challenges are not retried/bypassed.",
+    "incremental_cache": "Snapshot every exact input bytes/SHA, query only unseen PMIDs, deduplicate across repositories, retain immutable response receipts; failed cached batches get new numbered retry receipts instead of becoming permanent absence. Default OFF does not perform network calls."
+  },
+  "controls": {
+    "positive": {
+      "published_pmid": "39325770",
+      "ppr": "PPR840839",
+      "doi": "10.1101/2024.04.19.590240",
+      "relationship": "reciprocal CrossRef-loader"
+    },
+    "negative": {
+      "published_pmid": "7977277",
+      "result": "MED record found; no indexed PPR relation"
+    },
+    "versions": {
+      "ppr": "PPR596760",
+      "result": "direct article endpoint exposesv3 and historyv1-v5,includingPPR565388/PPR594111/PPR713642/PPR731380"
+    }
+  },
+  "primary_sources": [
+    "https://europepmc.org/developers",
+    "https://dev.europepmc.org/RestfulWebService",
+    "https://www.ebi.ac.uk/europepmc/webservices/rest/v3/api-docs",
+    "https://europepmc.org/Preprints",
+    "https://pmc.ncbi.nlm.nih.gov/articles/PMC11426508/",
+    "https://www.crossref.org/documentation/research-nexus/posted-content-includes-preprints/",
+    "https://api.biorxiv.org/",
+    "https://groups.google.com/a/ebi.ac.uk/g/epmc-webservices/c/f0TIuqrmvHw",
+    "https://groups.google.com/a/ebi.ac.uk/g/epmc-webservices/c/MfxQ8nvIT5Q/m/u_72r8e1BQAJ",
+    "https://groups.google.com/a/ebi.ac.uk/g/epmc-webservices/c/cZLnV1JhCj8"
+  ],
+  "model_calls": 0,
+  "model_cost_usd": 0,
+  "dispatch_authorized": false,
+  "mandatory_PMC_first_gate": {
+    "policy": "Only fetch any linked PPR metadata/full text if original PMID has no current PMCID or affirmative actual full-PMC unavailability, and no verified full PMC article source exists in ANY repository/track. Unknown/metadata/format/model failures do not authorize fallback.",
+    "module": "preprint_retrieval_gate.py",
+    "authority": "../article_availability_gate/authorized_linked_article_gate.json",
+    "current_scope": 6228,
+    "linked_candidates": 18,
+    "article_source_eligible": 17,
+    "blocked_available_PMID": "34010397",
+    "historical_preprints": "Retain prior requests/bodies/costs privately as audit; do not use blocked-source evidence."
+  }
+}

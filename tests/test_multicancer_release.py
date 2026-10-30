@@ -2,7 +2,7 @@
 import json
 from pathlib import Path
 import unittest
-from automation.sync_sources import load_overlay, read, sha, assembled_source
+from automation.sync_sources import read, sha, assembled_source
 from automation.import_multicancer_review import ROOT, AUDIT, VERSION
 
 
@@ -20,9 +20,9 @@ class MulticancerReleaseTests(unittest.TestCase):
 
     def test_overlay_checksums_and_all_historical_rows_are_preserved(self):
         for source,release in read(AUDIT/'source_release.json').items():
-            current=load_overlay(ROOT,source)
+            historical=read(ROOT/'updates'/source/'versions'/VERSION/'manifest.json')
             for relative,entry in release['overlay_files'].items():
-                self.assertEqual(current['files'][relative],entry)
+                self.assertEqual(historical['files'][relative],entry)
                 path=ROOT/'updates'/source/entry['stored_path']
                 self.assertEqual(sha(path),entry['sha256'])
                 if not relative.endswith('.json'):continue

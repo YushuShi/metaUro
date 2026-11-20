@@ -99,3 +99,24 @@ a:focus-visible, button:focus-visible, select:focus-visible { outline: 3px solid
 /* Source provenance: only reviewed preprint-derived entries use navy. */
 .preprint-derived, .preprint-derived a, .preprint-derived strong, .preprint-derived input { color: #000080 !important; }
 .preprint-derived .study-link, .preprint-derived .evidence-details { border-left-color: #000080; }
+
+/* Use the available screen width for page layouts, including named page wrappers. */
+@media screen {
+    body > main,
+    body > main[class] {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        padding-inline: clamp(.75rem, 2vw, 2rem);
+    }
+    body .about-container,
+    body > main.about-container {
+        box-sizing: border-box;
+        width: auto;
+        max-width: none;
+        margin-inline: clamp(.75rem, 2vw, 2rem);
+    }
+}
+
+@media screen { body .uro-footer { max-width: none; padding-inline: clamp(.75rem, 2vw, 2rem); } }

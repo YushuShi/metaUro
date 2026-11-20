@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Sample size summary | {{ sample_size_title }}</title>
     {% for href in sample_size_styles %}<link rel="stylesheet" href="{{ href }}">{% endfor %}
-    <link rel="stylesheet" href="/static/sample-size-summary.css?v=20261027-close-labels">
-    <script src="/static/sample-size-summary.js?v=20261027-close-labels" defer></script>
+    <link rel="stylesheet" href="/static/sample-size-summary.css?v=20261114-triangle-max-size">
+    <script src="/static/sample-size-summary.js?v=20261114-ln-table" defer></script>
     {% if sample_size_title == 'MetaNeuro' %}
     <script src="/static/subexposures.js" defer></script>
     <script src="/static/settings.js" defer></script>
@@ -16,7 +16,7 @@
     {% include sample_size_header %}
     <main class="sample-summary" id="main">
         <h1>Sample size summary</h1>
-        <p class="sample-intro">Compare the total participants required to detect each exposure’s pooled effect. Prospective and retrospective panels use the same selected evidence with their respective planning formulas. Ratio effects use natural-log RR or OR horizontally; total sample size uses log₁₀ vertically. Each dot requires at least two studies.</p>
+        <p class="sample-intro">Compare the total participants required to detect each exposure’s pooled effect. Prospective and retrospective panels use the same selected evidence with their respective planning formulas. Ratio effects use ln(RR) or ln(OR) horizontally; total sample size uses log₁₀ vertically. Each dot requires at least two studies.</p>
         <form id="sample-summary-form" class="sample-summary-controls">
             <label class="sample-disease-field" for="sample-summary-disease">Disease
                 <select id="sample-summary-disease" name="disease" required disabled><option value="">Loading diseases…</option></select>
@@ -42,11 +42,16 @@
             <label for="sample-sidedness">Sidedness
                 <select id="sample-sidedness" name="sidedness"><option value="two">Two-sided</option><option value="one">One-sided</option></select>
             </label>
+            <label for="sample-maximum-size">Maximum sample size
+                <input id="sample-maximum-size" name="max_sample_size" type="number" min="1" max="9007199254740991" step="1" value="20000" required>
+                <small>Show exposures requiring no more than this total N.</small>
+            </label>
             <button type="submit" id="sample-summary-submit" disabled>Update plots</button>
         </form>
         <p id="sample-summary-status" role="status" aria-live="polite">Loading the disease catalog…</p>
         <p id="sample-summary-context" class="sample-context"></p>
         <div id="sample-summary-plots" class="sample-summary-grid" aria-busy="false"></div>
+        <p class="sample-rct-note"><sup>*</sup> All eligible randomized-trial estimates share the pooled effect’s direction. <sup>#</sup> At least one does not, including an exactly null estimate. Markers use the selected evidence in each panel; direction is based on point estimates, not statistical significance. Exposures without trials remain included and unmarked.</p>
     </main>
     {% if sample_size_title not in ['MetaOnco', 'MetaUro'] %}<script src="/static/i18n.js" defer></script>{% endif %}
 </body>

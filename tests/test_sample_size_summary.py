@@ -15,6 +15,13 @@ class Worker:
         return 200,[],json.dumps(dict(disease='Prostate cancer',baseline_percent=5,panels=self.panels)).encode()
 
 class SampleSizeSummaryTests(unittest.TestCase):
+    def setUp(self):
+        # Delegate contract fixtures do not need to hydrate assembled source files.
+        self.catalog_patch=patch.object(app,'scope_catalog',return_value=[
+            dict(id='bladder_cancer',label='Bladder cancer',source='metaPee'),
+            dict(id='prostate_cancer',label='Prostate cancer',source='MetaVir')])
+        self.catalog_patch.start()
+        self.addCleanup(self.catalog_patch.stop)
     def test_scope_is_forwarded_to_matching_native_worker(self):
         urinary,prostate=Worker(),Worker()
         with patch.dict(app.workers,metaPee=urinary,MetaVir=prostate):
@@ -34,7 +41,7 @@ class SampleSizeSummaryTests(unittest.TestCase):
     def test_native_colors_match_each_immutable_source_summary(self):
         from runtime_code.sample_size_summary_native import _point_style
         from matplotlib.colors import to_hex
-        root=Path(__file__).resolve().parents[1]
+        root=Path(app.__file__).resolve().parent
         for source in ['MetaVir','metaPee']:
             path=root/'sources'/source/'scripts/diagnostic_style.py'
             spec=importlib.util.spec_from_file_location('summary_style_'+source,path)
@@ -46,8 +53,12 @@ class SampleSizeSummaryTests(unittest.TestCase):
     def test_native_color_metadata_is_forwarded_without_changing_calculations(self):
         urinary,prostate=Worker(),Worker()
         point=dict(exposure='Vitamin D',effect_size=.8,total_n=1000,study_count=3,
-                   label_color='#000080',dot_color='#763fac')
-        prostate.panels=[dict(measurement='all',design='prospective',points=[point])]
+                   label_color='#000080',dot_color='#763fac',rct_marker='#',rct_count=2,
+                   rct_same_direction_count=1,rct_other_direction_count=1)
+        unmarked=dict(exposure='Observational exposure',effect_size=.9,total_n=2000,
+                      study_count=2,rct_marker='',rct_count=0,
+                      rct_same_direction_count=0,rct_other_direction_count=0)
+        prostate.panels=[dict(measurement='all',design='prospective',points=[point,unmarked])]
         with patch.dict(app.workers,metaPee=urinary,MetaVir=prostate):
             response=app.app.test_client().get('/api/sample-size-summary?disease=prostate_cancer')
         self.assertEqual(response.status_code,200)

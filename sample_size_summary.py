@@ -6,6 +6,9 @@ from sample_size_planning import DEFAULTS
 
 
 def install_app(app, namespace):
+    from web_source_worker import install_workers
+    install_workers(namespace['workers'])
+
     def call(source, path, values):
         status,headers,body=namespace['workers'][source].request(
             path=path+'?'+urlencode(values),method='GET',data=b'',headers={})

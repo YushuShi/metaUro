@@ -41,11 +41,11 @@ async function runtime({search='',state={keep_latest_cohort:true},repository='Me
  return{nodes,requests,window,state,location,catalog,defaultData,document,downloads,blobs,setNext(value){nextResponse=value;},async submit(){await nodes['sample-summary-form'].dispatch('submit');},async changeDisease(value){nodes['sample-summary-disease'].value=value;await nodes['sample-summary-disease'].dispatch('change');},async editBaseline(value){nodes['sample-baseline'].value=value;await nodes['sample-baseline'].dispatch('input');}};
 }
 (async()=>{
- const ui=await runtime();assert.equal(ui.nodes['sample-baseline'].value,'1');assert.equal(ui.nodes['sample-summary-plots'].children.length,4);
+ const ui=await runtime();assert.equal(ui.nodes['sample-baseline'].value,'1');assert.equal(ui.nodes['sample-summary-plots'].children.length,4);assert(!ui.requests.at(-1).searchParams.has('baseline_percent'));
  const titles=ui.nodes['sample-summary-plots'].children.map(card=>card.children[0].textContent);assert.deepEqual(titles,['All exposure measurements · Prospective','All exposure measurements · Retrospective','Dietary only · Prospective','Dietary only · Retrospective']);
  const text=ui.nodes['sample-summary-plots'].textContent;assert(text.includes('Coffee'));for(const excluded of ['One study','Invalid N','Missing ES'])assert(!text.includes(excluded));
  await ui.editBaseline('7');await ui.submit();assert.equal(ui.requests.at(-1).searchParams.get('baseline_percent'),'7');
- await ui.changeDisease('B');assert.equal(ui.nodes['sample-baseline'].value,'2');assert.equal(ui.requests.at(-1).searchParams.get('baseline_percent'),'2');assert.equal(ui.requests.at(-1).searchParams.get('disease'),'B');
+ await ui.changeDisease('B');assert.equal(ui.nodes['sample-baseline'].value,'2');assert(!ui.requests.at(-1).searchParams.has('baseline_percent'));assert.equal(ui.requests.at(-1).searchParams.get('disease'),'B');
  for(const [id,value] of Object.entries({'sample-control-exposure':'35','sample-allocation':'2','sample-alpha':'.01','sample-power':'.9','sample-sidedness':'one'}))ui.nodes[id].value=value;
  await ui.submit();for(const [key,value] of Object.entries({control_exposure_percent:'35',allocation_ratio:'2',alpha:'.01',power:'.9',sidedness:'one'}))assert.equal(ui.requests.at(-1).searchParams.get(key),value);
  ui.setNext({ok:false,status:400,json:async()=>({error:'Validation rejected'})});await ui.submit();assert.equal(ui.nodes['sample-summary-status'].textContent,'Validation rejected');assert.equal(ui.nodes['sample-summary-plots'].children.length,0);assert.equal(ui.nodes['sample-summary-submit'].disabled,false);assert.equal(ui.nodes['sample-summary-plots'].attributes['aria-busy'],'false');
@@ -256,7 +256,7 @@ async function runtime({search='',state={keep_latest_cohort:true},repository='Me
  const raceXml=await capRace.blobs[0].text();assert.equal((raceXml.match(/<circle\b/g)||[]).length,3);
  console.log('PASS default/custom maximum, inclusive boundary and exact axis ceiling, all-panel/table/export filtering, validation before fetch and submitted-setting snapshots.');
  const uro=await runtime({repository:'MetaUro',state:null,storage:{'metaUro:metaPee':{age:60,sex:'both'},'metaUro:MetaVir':{age:70,sex:'male'}},fetcher:async(url,options,{catalog,defaultData})=>({ok:true,json:async()=>url.pathname.endsWith('/catalog')?{...catalog,diseases:catalog.diseases.map(item=>({...item,baseline_percent:item.value==='B'&&url.searchParams.get('age')==='70'?9:item.baseline_percent}))}:defaultData})});
- await uro.changeDisease('B');assert.equal(uro.nodes['sample-baseline'].value,'9','Changing evidence source must refresh its baseline under that source’s saved settings');assert.equal(uro.requests.at(-1).searchParams.get('age'),'70');assert.equal(uro.requests.at(-1).searchParams.get('baseline_percent'),'9');
+ await uro.changeDisease('B');assert.equal(uro.nodes['sample-baseline'].value,'9','Changing evidence source must refresh its baseline under that source’s saved settings');assert.equal(uro.requests.at(-1).searchParams.get('age'),'70');assert(!uro.requests.at(-1).searchParams.has('baseline_percent'));
  for(const url of [...ui.requests,...uro.requests].filter(url=>url.pathname.endsWith('/catalog')))assert(!url.searchParams.has('baseline_percent'),'Per-disease overrides must not leak into other catalog baselines');
  console.log('PASS explicit settings, stale requests, continuous effects, adjacent labels without connectors, and source-specific baseline refresh.');
 })().catch(error=>{console.error(error);process.exitCode=1;});

@@ -310,11 +310,13 @@
         const currentController = controller;
         const query = params();
         for (const [key, value] of new FormData(form)) {if (String(value).trim()) query.set(key, value); else query.delete(key);}
+        // A displayed app baseline is not a manual incidence override.
+        if (!baselineEdited) query.delete('baseline_percent');
         // Catalog and main summary scope parameters may use different IDs.
         query.delete('scope');
         query.delete('exposure');
         const url = new URL(location.href); url.search = query.toString(); history.replaceState({}, '', url);
-        setStatus('Calculating sample sizes from the selected evidence…'); plots.setAttribute('aria-busy', 'true');
+        setStatus('Loading sample size plots…'); plots.setAttribute('aria-busy', 'true');
         $('sample-summary-submit').disabled = true;
         try {
             const data = await json(`/api/sample-size-summary?${query}`, {signal: currentController.signal});

@@ -6,6 +6,8 @@ from sample_size_planning import DEFAULTS
 
 
 def install_app(app, namespace):
+    from sample_size_defaults import install as install_defaults
+    install_defaults(app, profile='uro')
     from web_source_worker import install_workers
     install_workers(namespace['workers'])
 

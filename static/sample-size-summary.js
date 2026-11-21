@@ -12,8 +12,40 @@
     const number = value => value === null || value === undefined || String(value).trim() === '' ? NaN : Number(value);
     const normalize = value => String(value || '').toLowerCase().replace(/[^a-z0-9]+/g, '_').replace(/^_|_$/g, '');
     const fmt = value => Number(value).toLocaleString(undefined, {maximumFractionDigits: 0});
-    const effect = value => Number(value).toFixed(3);
+    // Normalize the last binary digit of ln values before decimal display so
+    // native and server-rendered plots agree at a rounding boundary.
+    const threeDecimals = new Intl.NumberFormat('en-US', {minimumFractionDigits: 3, maximumFractionDigits: 3, useGrouping: false});
+    const effect = value => threeDecimals.format(Number(Number(value).toPrecision(15)));
     const rankings = new Map();
+    const bootstrap = readBootstrap();
+    let showingDefault = false, displayedMaximum, formEdited = false;
+    function readBootstrap() {
+        try {
+            const payload = JSON.parse($('sample-summary-initial')?.textContent || 'null');
+            return payload?.catalog?.diseases?.some(item => item.value === payload.summary?.disease)
+                && Array.isArray(payload.summary.panels) && payload.query ? payload : null;
+        } catch (_) {return null;}
+    }
+    function matchesDefaults(query, catalogOnly = false) {
+        if (!bootstrap) return false;
+        // Plot formatting and routing do not change the pooled data. The form
+        // supplies the effective allocation and control exposure percentage.
+        const presentation = ['lang', 'disease', 'scope', 'outcome', 'exposure', 'exposures', 'max_sample_size',
+            'effect_measure', 'forest_scale', 'study_design', 'studyDesign',
+            'exposure_rate', 'controls_per_case', 'controlExposurePercent', 'controlsPerCase'];
+        for (const [key, value] of query) {
+            if (query.getAll(key).length !== 1) return false;
+            if (presentation.includes(key)) continue;
+            if (catalogOnly && (Object.hasOwn(inputs, key) || key === 'baseline_percent')) continue;
+            const expected = bootstrap.query[key];
+            if (typeof expected === 'number' && value.trim() !== '' && Number(value) === expected) continue;
+            if (typeof expected === 'boolean' && (expected ? ['true','yes','1'] : ['false','no','0']).includes(value.toLowerCase())) continue;
+            if (key === 'sidedness' && expected === 'two' && value === '2') continue;
+            if (typeof expected === 'string' && value === expected) continue;
+            return false;
+        }
+        return true;
+    }
     const plotColor = (value, fallback = '#2475c0') => /^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$/i.test(String(value || '')) ? value : fallback;
     const trialMarker = point => ['*', '#'].includes(point.rct_marker) ? point.rct_marker : '';
     const trialNote = point => trialMarker(point) ? `${fmt(point.rct_count)} randomized trial report(s): ${point.rct_marker === '*' ? 'all estimates share' : 'at least one estimate does not share'} the pooled effect direction.` : '';
@@ -69,8 +101,13 @@
         // A summary-only override belongs to the selected disease. The catalog
         // must retain each other disease's own baseline when switching scopes.
         query.delete('baseline_percent');
-        const next = await json(`/api/sample-size-summary/catalog?${query}`);
+        const sameSource = repository !== 'MetaUro' || $('sample-summary-disease').value === bootstrap?.summary.disease;
+        const next = sameSource && matchesDefaults(query, true) ? bootstrap.catalog : await json(`/api/sample-size-summary/catalog?${query}`);
         if (sequence !== catalogSequence) return;
+        applyCatalog(next, first);
+        await update();
+    }
+    function applyCatalog(next, first, savedSettings = true) {
         catalog = next;
         if (!Array.isArray(catalog.diseases) || !catalog.diseases.length) throw new Error('No diseases are available for sample-size planning.');
         const select = $('sample-summary-disease');
@@ -83,7 +120,7 @@
         lastDisease = select.value;
         if (first) {
             for (const [key, id] of Object.entries(inputs)) {
-                const current = settings();
+                const current = savedSettings ? settings() : {};
                 const stored = key === 'control_exposure_percent' ? current.controlExposurePercent ?? (current.exposure_rate == null ? null : Number(current.exposure_rate) * 100)
                     : key === 'allocation_ratio' ? current.controls_per_case ?? current.controlsPerCase : null;
                 const value = initial.get(key) ?? stored ?? catalog.defaults?.[key];
@@ -94,7 +131,6 @@
         defaultBaseline();
         select.disabled = false;
         $('sample-summary-submit').disabled = false;
-        await update();
     }
     function svgNode(tag, attributes, text) {
         const node = document.createElementNS('http://www.w3.org/2000/svg', tag);
@@ -218,7 +254,7 @@
         dialog.addEventListener('close', () => dialog.remove());
         document.body.append(dialog); dialog.showModal();
     }
-    function renderPanel(panel, maximumSampleSize) {
+    function renderPanel(panel, maximumSampleSize, existingChart) {
         const card = element('article', undefined, 'sample-plot-card');
         const title = `${panel.measurement === 'dietary' ? 'Dietary only' : 'All exposure measurements'} · ${panel.design === 'retrospective' ? 'Retrospective' : 'Prospective'}`;
         card.append(element('h2', title));
@@ -232,7 +268,7 @@
         card.append(element('p', `${points.length} exposures · ${panel.design === 'retrospective' ? 'Unmatched case-control planning' : 'Prospective planning'} · Maximum N = ${fmt(maximumSampleSize)}${aboveMaximum ? ` · ${aboveMaximum} above maximum` : ''}`, 'sample-panel-note'));
         if (panel.note) card.append(element('p', panel.note, 'sample-panel-note'));
         if (points.length) {
-            const chart = drawChart(points, panel, maximumSampleSize);
+            const chart = existingChart || drawChart(points, panel, maximumSampleSize);
             chart.setAttribute('data-disease', $('sample-summary-disease').selectedOptions[0]?.textContent || '');
             chart.setAttribute('data-disease-key', $('sample-summary-disease').value);
             chart.setAttribute('data-planning-context', $('sample-summary-context').textContent);
@@ -299,6 +335,17 @@
         }
         return card;
     }
+    function showSummary(data, query, maximumSampleSize, hydrate = false) {
+        const panels = ['all', 'dietary'].flatMap(measurement => ['prospective', 'retrospective'].map(design => data.panels?.find(panel => panel.measurement === measurement && panel.design === design) || {measurement, design, points: []}));
+        const base = number(data.baseline_percent);
+        $('sample-summary-context').textContent = [Number.isFinite(base) ? `Baseline incidence ${base.toLocaleString(undefined, {maximumSignificantDigits: 6})}%` : 'Baseline incidence unavailable', `${query.get('control_exposure_percent')}% exposure among controls`, `allocation 1:${query.get('allocation_ratio')}`, `${Number(query.get('power')) * 100}% power`, `α = ${query.get('alpha')}`, `${query.get('sidedness') === 'one' ? 'one' : 'two'}-sided`, `Maximum sample size ${fmt(maximumSampleSize)}`, data.note || '', ...(data.notices || [])].filter(Boolean).join(' · ');
+        const cards = panels.map((panel, index) => renderPanel(panel, maximumSampleSize,
+            hydrate ? plots.children[index]?.querySelector?.('svg.sample-chart') : null));
+        plots.replaceChildren(...cards);
+        setStatus(`Sample size summary updated for ${$('sample-summary-disease').selectedOptions[0]?.textContent || data.disease}.`);
+        showingDefault = data === bootstrap?.summary;
+        displayedMaximum = maximumSampleSize;
+    }
     async function update() {
         if (!form.reportValidity()) return;
         const maximumSampleSize = number($('sample-maximum-size').value);
@@ -316,28 +363,41 @@
         query.delete('scope');
         query.delete('exposure');
         const url = new URL(location.href); url.search = query.toString(); history.replaceState({}, '', url);
-        setStatus('Loading sample size plots…'); plots.setAttribute('aria-busy', 'true');
+        if (bootstrap && query.get('disease') === bootstrap.summary.disease && matchesDefaults(query)) {
+            if (!showingDefault || displayedMaximum !== maximumSampleSize) {
+                showSummary(bootstrap.summary, query, maximumSampleSize);
+            } else {
+                setStatus(`Sample size summary updated for ${$('sample-summary-disease').selectedOptions[0]?.textContent || bootstrap.summary.disease}.`);
+            }
+            plots.setAttribute('aria-busy', 'false');
+            $('sample-summary-submit').disabled = false;
+            return;
+        }
+        setStatus(showingDefault ? 'Showing default plots while updating your selection…' : 'Loading sample size plots…');
+        plots.setAttribute('aria-busy', 'true');
         $('sample-summary-submit').disabled = true;
         try {
             const data = await json(`/api/sample-size-summary?${query}`, {signal: currentController.signal});
             if (currentController !== controller) return;
-            const panels = ['all', 'dietary'].flatMap(measurement => ['prospective', 'retrospective'].map(design => data.panels?.find(panel => panel.measurement === measurement && panel.design === design) || {measurement, design, points: []}));
-            const base = number(data.baseline_percent);
-            $('sample-summary-context').textContent = [Number.isFinite(base) ? `Baseline incidence ${base.toLocaleString(undefined, {maximumSignificantDigits: 6})}%` : 'Baseline incidence unavailable', `${query.get('control_exposure_percent')}% exposure among controls`, `allocation 1:${query.get('allocation_ratio')}`, `${Number(query.get('power')) * 100}% power`, `α = ${query.get('alpha')}`, `${query.get('sidedness') === 'one' ? 'one' : 'two'}-sided`, `Maximum sample size ${fmt(maximumSampleSize)}`, data.note || '', ...(data.notices || [])].filter(Boolean).join(' · ');
-            plots.replaceChildren(...panels.map(panel => renderPanel(panel, maximumSampleSize)));
-            setStatus(`Sample size summary updated for ${$('sample-summary-disease').selectedOptions[0]?.textContent || data.disease}.`);
+            showSummary(data, query, maximumSampleSize);
         } catch (error) {
             if (currentController === controller && !currentController.signal.aborted && error.name !== 'AbortError') {
-                plots.replaceChildren(); setStatus(error.message, true);
+                if (showingDefault) {
+                    setStatus(`${error.message}. Showing default plots for ${bootstrap.summary.disease}.`, true);
+                } else {
+                    plots.replaceChildren();
+                    setStatus(error.message, true);
+                }
             }
         } finally {
             if (currentController === controller) {plots.setAttribute('aria-busy', 'false'); $('sample-summary-submit').disabled = false;}
         }
     }
-    form.addEventListener('submit', event => {event.preventDefault(); update();});
+    form.addEventListener('input', () => {formEdited = true;});
+    form.addEventListener('submit', event => {event.preventDefault(); formEdited = true; update();});
     $('sample-baseline').addEventListener('input', () => {baselineEdited = $('sample-baseline').value !== '';});
     $('sample-summary-disease').addEventListener('change', () => {
-        baselineEdited = false; lastDisease = $('sample-summary-disease').value;
+        formEdited = true; baselineEdited = false; lastDisease = $('sample-summary-disease').value;
         if (repository === 'MetaUro') {
             settingsChanged = true;
             loadCatalog().catch(error => setStatus(error.message, true));
@@ -355,10 +415,20 @@
     };
     window.addEventListener('analysissettingschange', refresh);
     window.addEventListener('planning-settings-change', refresh);
+    if (bootstrap) {
+        $('sample-summary-disease').value = bootstrap.summary.disease;
+        lastDisease = bootstrap.summary.disease;
+        applyCatalog(bootstrap.catalog, true, false);
+        const maximum = number($('sample-maximum-size').value);
+        showSummary(bootstrap.summary, new URLSearchParams(bootstrap.query), maximum,
+            maximum === Number(bootstrap.query.max_sample_size));
+    }
     document.addEventListener('DOMContentLoaded', () => {
         (async () => {
             if (window.AnalysisSettings?.ready) await window.AnalysisSettings.ready;
-            await loadCatalog(true);
+            // The HTML already contains working default plots. Resolve saved
+            // preferences independently and calculate only if they differ.
+            if (!formEdited) await loadCatalog(true);
         })().catch(error => setStatus(error.message, true));
     });
 })();

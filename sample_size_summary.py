@@ -7,7 +7,7 @@ from sample_size_planning import DEFAULTS
 
 def install_app(app, namespace):
     from sample_size_defaults import install as install_defaults
-    install_defaults(app, profile='uro')
+    initial_page = install_defaults(app, profile='uro')
     from web_source_worker import install_workers
     install_workers(namespace['workers'])
 
@@ -27,10 +27,18 @@ def install_app(app, namespace):
 
     @app.get('/sample-size-summary')
     def sample_size_summary():
-        try: selected=selected_scope()
-        except ValueError: selected=namespace['scope_catalog']()[0]
-        context=namespace['context'](selected['source'],'sample-size-summary')
-        context['current']=selected
+        initial = initial_page()
+        if initial:
+            selected = initial['selected']
+            source = selected['source']
+            context = dict(source=source, prefix=namespace['public_prefix'](source),
+                           page='sample-size-summary', current={'id':selected['value']},
+                           include_subexposures='yes')
+        else:
+            try: selected=selected_scope()
+            except ValueError: selected=namespace['scope_catalog']()[0]
+            context=namespace['context'](selected['source'],'sample-size-summary')
+            context['current']=selected
         return render_template('sample_size_summary.html',sample_size_title='MetaUro',
             sample_size_styles=['/static/theme.css','/static/metauro.css'],
             sample_size_header='_site_header.html',**context)

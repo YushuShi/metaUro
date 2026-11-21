@@ -6,7 +6,7 @@
     <title>Sample size summary | {{ sample_size_title }}</title>
     {% for href in sample_size_styles %}<link rel="stylesheet" href="{{ href }}">{% endfor %}
     <link rel="stylesheet" href="/static/sample-size-summary.css?v=20261114-triangle-max-size">
-    <script src="/static/sample-size-summary.js?v=20261120-precomputed-defaults" defer></script>
+    <script src="/static/sample-size-summary.js?v=20261120-first-paint" defer></script>
     {% if sample_size_title == 'MetaNeuro' %}
     <script src="/static/subexposures.js" defer></script>
     <script src="/static/settings.js" defer></script>
@@ -19,10 +19,14 @@
         <p class="sample-intro">Compare the total participants required to detect each exposure’s pooled effect. Prospective and retrospective panels use the same selected evidence with their respective planning formulas. Ratio effects use ln(RR) or ln(OR) horizontally; total sample size uses log₁₀ vertically. Each dot requires at least two studies.</p>
         <form id="sample-summary-form" class="sample-summary-controls">
             <label class="sample-disease-field" for="sample-summary-disease">Disease
-                <select id="sample-summary-disease" name="disease" required disabled><option value="">Loading diseases…</option></select>
+                <select id="sample-summary-disease" name="disease" required{% if not sample_initial %} disabled{% endif %}>
+                    {% if sample_initial %}{% for item in sample_initial.bootstrap.catalog.diseases %}
+                    <option value="{{ item.value }}"{% if item.value == sample_initial.selected.value %} selected{% endif %}>{{ item.label }}</option>
+                    {% endfor %}{% else %}<option value="">Loading diseases…</option>{% endif %}
+                </select>
             </label>
             <label for="sample-baseline">Baseline incidence (%)
-                <input id="sample-baseline" name="baseline_percent" type="number" min="0.00000001" max="99.99999999" step="any" placeholder="App default">
+                <input id="sample-baseline" name="baseline_percent" type="number" min="0.00000001" max="99.99999999" step="any" placeholder="App default"{% if sample_initial and sample_initial.selected.baseline_percent is not none %} value="{{ sample_initial.selected.baseline_percent }}"{% endif %}>
                 <small id="sample-baseline-note">Uses the app’s default for the selected disease.</small>
             </label>
             <label for="sample-control-exposure">Intervention / exposure among controls (%)
@@ -46,13 +50,14 @@
                 <input id="sample-maximum-size" name="max_sample_size" type="number" min="1" max="9007199254740991" step="1" value="20000" required>
                 <small>Show exposures requiring no more than this total N.</small>
             </label>
-            <button type="submit" id="sample-summary-submit" disabled>Update plots</button>
+            <button type="submit" id="sample-summary-submit"{% if not sample_initial %} disabled{% endif %}>Update plots</button>
         </form>
-        <p id="sample-summary-status" role="status" aria-live="polite">Loading the disease catalog…</p>
-        <p id="sample-summary-context" class="sample-context"></p>
-        <div id="sample-summary-plots" class="sample-summary-grid" aria-busy="false"></div>
+        <p id="sample-summary-status" role="status" aria-live="polite">{% if sample_initial %}Sample size summary for {{ sample_initial.selected.label }}.{% else %}Loading the disease catalog…{% endif %}</p>
+        <p id="sample-summary-context" class="sample-context">{% if sample_initial %}{{ sample_initial.context }}{% endif %}</p>
+        <div id="sample-summary-plots" class="sample-summary-grid" aria-busy="false">{% if sample_initial %}{{ sample_initial.panels|safe }}{% endif %}</div>
         <p class="sample-rct-note"><sup>*</sup> All eligible randomized-trial estimates share the pooled effect’s direction. <sup>#</sup> At least one does not, including an exactly null estimate. Markers use the selected evidence in each panel; direction is based on point estimates, not statistical significance. Exposures without trials remain included and unmarked.</p>
     </main>
+    {% if sample_initial %}<script id="sample-summary-initial" type="application/json">{{ sample_initial.bootstrap|tojson }}</script>{% endif %}
     {% if sample_size_title not in ['MetaOnco', 'MetaUro'] %}<script src="/static/i18n.js" defer></script>{% endif %}
 </body>
 </html>

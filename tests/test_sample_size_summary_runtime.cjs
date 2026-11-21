@@ -19,7 +19,7 @@ class Node {
  reportValidity(){return this.valid!==false&&!this.validationMessage;}
 }
 function descendants(node,predicate){return [node,...node.children.flatMap(x=>descendants(x,predicate))].filter(predicate);}
-async function runtime({search='',state={keep_latest_cohort:true},repository='MetaGut',source='metaPee',storage={},fetcher}={}){
+async function runtime({search='',state={keep_latest_cohort:true},repository='MetaGut',source='metaPee',storage={},fetcher,inline=false,settingsReady=Promise.resolve()}={}){
  const nodes={};const named={'sample-summary-disease':'disease','sample-baseline':'baseline_percent','sample-control-exposure':'control_exposure_percent','sample-allocation':'allocation_ratio','sample-alpha':'alpha','sample-power':'power','sample-sidedness':'sidedness','sample-maximum-size':'max_sample_size'};
  for(const [id,name] of Object.entries(named)){nodes[id]=new Node(id==='sample-summary-disease'?'select':'input');nodes[id].name=name;}
  for(const id of ['sample-summary-form','sample-summary-status','sample-summary-plots','sample-baseline-note','sample-summary-submit','sample-summary-context'])nodes[id]=new Node();
@@ -27,12 +27,19 @@ async function runtime({search='',state={keep_latest_cohort:true},repository='Me
  const body=new Node('body');body.dataset={sampleSizeRepository:repository,sampleSizeSource:source};
  const downloads=[],blobs=[];
  const document={listeners:{},body,getElementById:id=>nodes[id]||null,createElement(tag){const node=new Node(tag);if(tag==='a')node.addEventListener('click',()=>{if(node.download)downloads.push({filename:node.download,href:node.href});});return node;},createElementNS:(_ns,tag)=>new Node(tag),addEventListener(name,fn){(this.listeners[name]||=[]).push(fn);}};
- const window={listeners:{},AnalysisSettings:{ready:Promise.resolve(),get:()=>state},addEventListener(name,fn){(this.listeners[name]||=[]).push(fn);}};
+ const window={listeners:{},AnalysisSettings:{ready:settingsReady,get:()=>state},addEventListener(name,fn){(this.listeners[name]||=[]).push(fn);}};
  if(state===null)delete window.AnalysisSettings;
  const location={href:'https://example.test/sample-size-summary'+search,search};const history={replaceState(_state,_title,next){location.href=String(next);location.search=new URL(next).search;}};
  const requests=[];let nextResponse=null;
  const catalog={diseases:[{value:'A',label:'Disease A',source:'metaPee',baseline_percent:1},{value:'B',label:'Disease B',source:'MetaVir',baseline_percent:2}],defaults:{alpha:.05,power:.8,sidedness:'two',allocation_ratio:1,control_exposure_percent:50}};
  const defaultData={baseline_percent:1,panels:[{measurement:'dietary',design:'retrospective',points:[{exposure:'Soy',effect_size:.8,total_n:2000,study_count:2}]},{measurement:'all',design:'prospective',points:[{exposure:'Coffee',effect_size:.7,total_n:1000,study_count:2},{exposure:'One study',effect_size:.9,total_n:200,study_count:1},{exposure:'Invalid N',effect_size:.9,total_n:Infinity,study_count:3},{exposure:'Missing ES',effect_size:null,total_n:20,study_count:3}]}]};
+ if (inline) {
+  nodes['sample-summary-initial']=new Node('script');
+  nodes['sample-summary-initial'].textContent=JSON.stringify({
+   catalog,summary:{...defaultData,disease:'A'},query:{...catalog.defaults,max_sample_size:20000,
+    age:60,keep_latest_cohort:true,include_preprints:false,arms:2},
+  });
+ }
  const escape=value=>String(value).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
  const serialize=node=>`<${node.tagName}${Object.entries(node.attributes).map(([key,value])=>` ${key}="${escape(value)}"`).join('')}>${escape(node._text)}${node.children.map(serialize).join('')}</${node.tagName}>`;
  const context={document,window,Blob,XMLSerializer:class{serializeToString(node){return serialize(node);}},URL:class extends URL{static createObjectURL(blob){blobs.push(blob);return 'blob:sample-plot';}static revokeObjectURL(){}},URLSearchParams,location,history,AbortController,console,setTimeout,clearTimeout,localStorage:{getItem(key){return storage[key] ? JSON.stringify(storage[key]) : null;}},FormData:class{constructor(form){}*[Symbol.iterator](){for(const [id,name] of Object.entries(named))yield[name,nodes[id].value];}},fetch:async(url,options)=>{const query=new URL(url,location.href);requests.push(query);if(fetcher)return fetcher(query,options,{catalog,defaultData});if(nextResponse){const result=nextResponse;nextResponse=null;return result;}return{ok:true,json:async()=>query.pathname.endsWith('/catalog')?catalog:defaultData};}};
@@ -41,6 +48,36 @@ async function runtime({search='',state={keep_latest_cohort:true},repository='Me
  return{nodes,requests,window,state,location,catalog,defaultData,document,downloads,blobs,setNext(value){nextResponse=value;},async submit(){await nodes['sample-summary-form'].dispatch('submit');},async changeDisease(value){nodes['sample-summary-disease'].value=value;await nodes['sample-summary-disease'].dispatch('change');},async editBaseline(value){nodes['sample-baseline'].value=value;await nodes['sample-baseline'].dispatch('input');}};
 }
 (async()=>{
+ // The first page already contains these panels. They remain interactive
+ // even if external settings or API requests are slow or unavailable.
+ let releaseSettings;
+ const inline = await runtime({
+  inline:true,search:'?disease=A&power=.80&arms=2',
+  settingsReady:new Promise(resolve=>{releaseSettings=resolve;}),
+  fetcher:async()=>{throw Error('Unexpected network request');}
+ });
+ assert.equal(inline.requests.length,0);
+ assert(inline.nodes['sample-summary-plots'].textContent.includes('Coffee'));
+ assert(!inline.nodes['sample-summary-status'].textContent.includes('Loading'));
+ const nonempty=inline.nodes['sample-summary-plots'].children[0];
+ await descendants(nonempty,n=>n.attributes['data-sort-field']==='study_count')[0].click();
+ assert.equal(descendants(nonempty,n=>n.tagName==='th'&&n.attributes['aria-sort']==='ascending')[0].textContent,'Studies▲');
+ await descendants(nonempty,n=>n.tagName==='a'&&n.textContent==='Download full-size SVG')[0].click();
+ assert.equal(inline.downloads.length,1);
+ releaseSettings();await flush();
+ assert.equal(inline.requests.length,0,'Default click-through must use the HTML payload after settings have loaded');
+ assert.equal(inline.nodes['sample-summary-plots'].children[0],nonempty,'Avoid rebuilding a second time at startup');
+ inline.nodes['sample-maximum-size'].value=500;await inline.submit();
+ assert.equal(inline.requests.length,0);
+ assert(!inline.nodes['sample-summary-plots'].textContent.includes('Coffee'));
+ const savedCustom=await runtime({inline:true,state:{age:70},fetcher:async(url,_options,{catalog,defaultData})=>({
+  ok:true,json:async()=>url.pathname.endsWith('/catalog')?catalog:defaultData})});
+ assert(savedCustom.requests.some(url=>url.pathname.endsWith('/catalog')&&url.searchParams.get('age')==='70'));
+ assert(savedCustom.requests.some(url=>url.pathname.endsWith('/sample-size-summary')&&url.searchParams.get('age')==='70'));
+ const failedCustom=await runtime({inline:true,state:{keep_latest_cohort:false},fetcher:async(url)=>({
+  ok:false,json:async()=>({error:'Unavailable'})})});
+ assert(failedCustom.nodes['sample-summary-plots'].textContent.includes('Coffee'));
+ console.log('PASS inline default plots, sorting and export before settings load, no default API requests, local display limits, and saved custom settings.');
  const ui=await runtime();assert.equal(ui.nodes['sample-baseline'].value,'1');assert.equal(ui.nodes['sample-summary-plots'].children.length,4);assert(!ui.requests.at(-1).searchParams.has('baseline_percent'));
  const titles=ui.nodes['sample-summary-plots'].children.map(card=>card.children[0].textContent);assert.deepEqual(titles,['All exposure measurements · Prospective','All exposure measurements · Retrospective','Dietary only · Prospective','Dietary only · Retrospective']);
  const text=ui.nodes['sample-summary-plots'].textContent;assert(text.includes('Coffee'));for(const excluded of ['One study','Invalid N','Missing ES'])assert(!text.includes(excluded));

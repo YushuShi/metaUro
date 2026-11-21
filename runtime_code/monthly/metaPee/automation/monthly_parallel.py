@@ -12,8 +12,11 @@ import json
 import os
 from pathlib import Path
 
+from automation import monthly_profile
+
 VERSION = "monthly-parallel-v1"
-MODELS = {"r2": "claude-opus-5", "r3": "gemini-3.7-flash"}
+MODELS = ({"r2": monthly_profile.MODELS["opus"], "r3": monthly_profile.MODELS["gemini"]}
+          if monthly_profile.enabled() else {"r2": "claude-opus-5", "r3": "gemini-3.7-flash"})
 COMPARISON = "monthly_parallel_comparison.json"
 
 
@@ -110,7 +113,10 @@ def seed_current_run(run_dir, *, neuro=False):
     if neuro:
         source_hashes["native/discovery.json"] = hashlib.sha256(native_path.read_bytes()).hexdigest()
     packet = {**candidates, "articles": selected_articles, "candidate_contexts": len(passed), "candidate_pmids": len(selected_articles), "generation": VERSION}
-    source_digest = digest({"source_sha256": source_hashes, "candidates": packet, "decisions": first})
+    identity = {"source_sha256": source_hashes, "candidates": packet, "decisions": first}
+    if monthly_profile.enabled():
+        identity["screening_profile"] = monthly_profile.specification()
+    source_digest = digest(identity)
     output = run_dir / "monthly_parallel"
     save(output / "source_receipt.json", {"version": VERSION, "source_sha256": source_hashes, "models": MODELS, "input_digest": source_digest, "shared_stage": "primary R1", "independent_stages": ["Claude R2", "source-gated Gemini R3"]}, immutable=True)
     save(output / "r1_pass_candidates.json", packet, immutable=True)
@@ -308,6 +314,8 @@ def run_parallel(root, run_dir, *, adapter=None, driver=None, client=None):
         if hashlib.sha256((run_dir / name).read_bytes()).hexdigest() != checksum:
             raise RuntimeError("Primary monthly source changed during independent review")
     result = {"version": VERSION, "complete": complete, "models": MODELS, "shared_stage": "primary R1", "expected_r2": len(expected), "completed_r2": len(r2), "required_r3": len(required_r3), "completed_r3": len(r3), "operational_error_type": error_type, "comparison_path": str(run_dir / COMPARISON), "missing_context_ids": sorted((expected-set(r2)) | (required_r3-set(r3))), "source_sha256": source_hashes}
+    if monthly_profile.enabled():
+        result["screening_profile"] = monthly_profile.specification()
     save(output / "monthly_status.json", result)
     result["artifact_sha256"] = {str(path.relative_to(run_dir)): hashlib.sha256(path.read_bytes()).hexdigest() for path in sorted(output.rglob("*")) if path.is_file() and not path.is_symlink() and path.suffix in {".json", ".jsonl", ".csv", ".txt", ".xml", ".html", ".htm", ".pdf"}}
     return result

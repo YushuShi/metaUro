@@ -10,6 +10,7 @@ leaking through the rest of the application.
 
 from __future__ import annotations
 
+from automation import monthly_profile
 from scripts import dietary_only_policy as dietary_policy
 
 from scripts import relaxed_poolability as relaxed_policy
@@ -36,9 +37,9 @@ from openai import OpenAI
 from effect_measure import normalize_effect_type
 
 
-CHATGPT_FIRST_MODEL = "gpt-5.6-luna"
-CHATGPT_SECOND_MODEL = "gpt-5.6-sol"
-CHATGPT_FULL_TEXT_MODEL = "gpt-5.6-luna"
+CHATGPT_FIRST_MODEL = monthly_profile.MODELS["r1"] if monthly_profile.enabled() else "gpt-5.6-luna"
+CHATGPT_SECOND_MODEL = monthly_profile.MODELS["sol"] if monthly_profile.enabled() else "gpt-5.6-sol"
+CHATGPT_FULL_TEXT_MODEL = monthly_profile.MODELS["luna"] if monthly_profile.enabled() else "gpt-5.6-luna"
 DEEPSEEK_FIRST_MODEL = "deepseek-v4-flash"
 DEEPSEEK_SECOND_MODEL = "deepseek-v4-pro"
 DEEPSEEK_FULL_TEXT_MODEL = "deepseek-v4-flash"
@@ -564,6 +565,8 @@ def screening_input_digest(stage: str, model: str, payload: Any) -> str:
         "response_schema": response_schema(stage),
         "payload": payload,
     }
+    if effort := monthly_profile.requested_effort(model):
+        canonical["reasoning_effort"] = effort
     encoded = json.dumps(
         canonical,
         ensure_ascii=False,
@@ -644,6 +647,7 @@ def full_text_input_digest(
 def empty_usage(model: str) -> dict[str, Any]:
     return {
         "model": model,
+        **({"reasoning_effort_requested": effort} if (effort := monthly_profile.requested_effort(model)) else {}),
         "calls": 0,
         "input_tokens": 0,
         "cached_input_tokens": 0,
@@ -992,6 +996,7 @@ def call_json(
             if runtime.api_style == "responses":
                 response = runtime.client.responses.create(
                     model=model,
+                    **monthly_profile.request_options(model, responses=True),
                     instructions=system,
                     input=contracted_prompt,
                     text={"format": schema},
@@ -1011,13 +1016,22 @@ def call_json(
                 content = response.choices[0].message.content
             else:
                 raise RuntimeError(f"Unsupported API style: {runtime.api_style}")
+            reported = monthly_profile.reported_effort(response)
+            if monthly_profile.requested_effort(model):
+                with _USAGE_LOCK:
+                    counts = usage.setdefault("reasoning_effort_reported_counts", {})
+                    key = reported or "unreported"
+                    counts[key] = counts.get(key, 0) + 1
             _add_usage(usage, response, exposure_weights)
             if on_usage is not None:
                 try:
                     on_usage()
                 except OSError as exc:  # never repeat a billed call for a local I/O error
                     print(f"WARNING: usage checkpoint could not be written: {exc}", flush=True)
+            monthly_profile.verify_reported(model, getattr(response, "model", None), reported)
             return json_from_text(content)
+        except monthly_profile.ResponsePolicyMismatch:
+            raise
         except Exception as exc:  # pragma: no cover - retry timing is integration-only
             last_error = exc
             if _is_transient_gateway_error(exc):

@@ -3,8 +3,12 @@ import json
 import os
 from pathlib import Path
 from openai import OpenAI
+from automation import monthly_profile
+
 MODELS=('gpt-5.6-luna','gpt-5.6-sol','claude-opus-5','gemini-3.7-flash','gpt-6-astra')
 def required_models(config_path=None):
+    if monthly_profile.enabled():
+        return tuple(dict.fromkeys(monthly_profile.MODELS.values()))
     path=Path(config_path or 'automation/monthly_config.json')
     config=json.loads(path.read_text()) if path.is_file() else {}
     models=config.get('gateway_models',list(MODELS))

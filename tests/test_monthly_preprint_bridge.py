@@ -36,9 +36,9 @@ def fixture(tmp_path, *, jobs=True):
     return work, run, binding
 
 
-def test_new_source_prerequisites_leave_existing_native_models_available():
+def test_gateway_preflight_covers_primary_independent_and_preprint_screening():
     assert set(bridge.FALLBACK_MODELS).issubset(monthly.MODELS)
-    assert {"gpt-5.6-luna", "gpt-5.6-sol", "claude-opus-5", "gemini-3.7-flash"}.issubset(monthly.MODELS)
+    assert set(monthly.MODELS) == set(monthly.monthly_profile.MODELS.values())
 
 
 def test_native_scientific_receipt_is_preserved_without_another_review(tmp_path):

@@ -20,7 +20,10 @@ from urllib.request import Request, urlopen
 from urllib.error import HTTPError
 
 VERSION = "monthly-separate-preprint-r3-v1"
-MODELS = ("gpt-6-luna", "gemini-3.8-flash", "gpt-6-astra")
+from automation import monthly_profile
+
+MODELS = (tuple(monthly_profile.MODELS[role] for role in ("luna", "gemini", "adjudicator"))
+          if monthly_profile.enabled() else ("gpt-6-luna", "gemini-3.8-flash", "gpt-6-astra"))
 SECOND_NAMES = ("second_screen.json", "chatgpt_second_screen.json",
                 "monthly_parallel/claude_r2_results.json", "monthly_parallel/claude_r2_progress.json")
 SOURCE_NAMES = ("full_text_review.json", "chatgpt_full_text_review.json", "full_text_sources.json", "full_text_source_manifest.json",

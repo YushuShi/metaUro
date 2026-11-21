@@ -29,3 +29,16 @@ def test_native_report_finalization_keeps_canonical_ledger(scope, tmp_path):
     assert proof['old_order_rejected'] is True
     assert proof['registered_native_driver_r2'] is True
     assert proof['model_and_network_calls'] == 0
+
+
+@pytest.mark.parametrize("scope", ["metaPee", "MetaVir"])
+def test_isolated_monthly_model_requests(scope, tmp_path):
+    from automation.autonomous_monthly import environment, monthly_profile
+
+    worker = ROOT / "runtime_code/monthly" / scope
+    expected = monthly_profile.specification()
+    assert (worker / "automation/monthly_profile.py").read_bytes() == Path(monthly_profile.__file__).read_bytes()
+    env = environment(os.environ)
+    env.update(PYTHONDONTWRITEBYTECODE="1", MPLCONFIGDIR=str(tmp_path / "mpl"))
+    subprocess.run([sys.executable, str(ROOT / "tests/native_screening_profile_probe.py"), str(worker), str(tmp_path), json.dumps(expected)],
+                   cwd=worker, env=env, check=True, timeout=60)

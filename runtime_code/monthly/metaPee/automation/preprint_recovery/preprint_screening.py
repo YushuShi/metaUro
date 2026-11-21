@@ -16,11 +16,17 @@ import re
 import unicodedata
 from datetime import datetime, timezone
 
+from automation import monthly_profile
+
 MODELS = {
     'luna': ('gpt-6-luna', 'xhigh'),
     'gemini': ('gemini-3.8-flash', 'high'),
     'astra': ('gpt-6-astra', 'xhigh'),
 }
+if monthly_profile.enabled():
+    MODELS = {role: (monthly_profile.MODELS[stage], monthly_profile.EFFORT[stage])
+              for role, stage in (('luna', 'luna'), ('gemini', 'gemini'), ('astra', 'adjudicator'))}
+
 VERSION = 'title-author-or-linked-preprint-dual-r3-astra-2026-10-26-v2'
 ADJUDICATION_POLICY = 'standalone-preprint-estimate-native-r3-2026-10-26-v2'
 PRODUCER_SOURCE_BYTES = Path(__file__).read_bytes()

@@ -19,6 +19,8 @@ from typing import Any, Iterable
 
 
 MODEL_RATES_USD_PER_MILLION: dict[str, dict[str, float]] = {
+    "gpt-6-luna": {"input": 0.10, "cached_input": 0.01, "output": 0.50},
+    "gpt-6.1-sol": {"input": 2.00, "cached_input": 0.10, "output": 10.00},
     "gpt-5.6-luna": {
         "input": 0.20,
         "cached_input": 0.02,
@@ -76,6 +78,9 @@ def estimated_cost_usd(usage: dict[str, Any], model: Any = None) -> float:
     )
     uncached_tokens = input_tokens - cached_tokens
     output_tokens = max(0, int(usage.get("output_tokens") or 0))
+    if priced_model in {"gpt-6-luna", "gpt-6.1-sol"}:
+        return (uncached_tokens * rates["input"] + cached_tokens * rates["cached_input"]
+                + output_tokens * rates["output"]) / 1_000_000
     long_input_tokens = min(
         input_tokens,
         max(0, int(usage.get("long_context_input_tokens") or 0)),
@@ -297,7 +302,7 @@ def render_cost_report(
     costs: dict[tuple[str, str], float] = {}
     tokens: dict[tuple[str, str], dict[str, int]] = {}
     for row in rows:
-        key = (row["exposure"], row["model"])
+        key = (row["exposure"], row["model"].rsplit("-", 1)[-1])
         costs[key] = costs.get(key, 0.0) + row["estimated_cost_usd"]
         token_totals = tokens.setdefault(
             key,
@@ -349,10 +354,12 @@ def render_cost_report(
         "Rates (USD per 1 million tokens)",
         "--------------------------------",
         "Model | Input | Cached input | Output",
+        "gpt-6-luna | $0.10 | $0.01 | $0.50",
+        "gpt-6.1-sol | $2.00 | $0.10 | $10.00",
         "gpt-5.6-luna | $0.20 | $0.02 | $1.20",
         "gpt-5.6-sol | $5.00 | $0.50 | $30.00",
         (
-            "For a call with more than 272,000 input tokens, retained usage is "
+            "For historical GPT-5.6 calls with more than 272,000 input tokens, retained usage is "
             "costed at 2x input/cached-input and 1.5x output rates."
         ),
         "",
@@ -364,10 +371,10 @@ def render_cost_report(
         "Sol output tokens | Sol total tokens",
     ]
     for exposure in exposures:
-        luna = costs.get((exposure, "gpt-5.6-luna"), 0.0)
-        sol = costs.get((exposure, "gpt-5.6-sol"), 0.0)
-        luna_tokens = tokens.get((exposure, "gpt-5.6-luna"), {})
-        sol_tokens = tokens.get((exposure, "gpt-5.6-sol"), {})
+        luna = costs.get((exposure, "luna"), 0.0)
+        sol = costs.get((exposure, "sol"), 0.0)
+        luna_tokens = tokens.get((exposure, "luna"), {})
+        sol_tokens = tokens.get((exposure, "sol"), {})
         luna_input = int(luna_tokens.get("input_tokens") or 0)
         luna_cached = int(luna_tokens.get("cached_input_tokens") or 0)
         luna_output = int(luna_tokens.get("output_tokens") or 0)
@@ -383,10 +390,10 @@ def render_cost_report(
         )
 
     total_luna = sum(
-        value for (exposure, model), value in costs.items() if model == "gpt-5.6-luna"
+        value for (exposure, model), value in costs.items() if model == "luna"
     )
     total_sol = sum(
-        value for (exposure, model), value in costs.items() if model == "gpt-5.6-sol"
+        value for (exposure, model), value in costs.items() if model == "sol"
     )
     lines.extend(
         [

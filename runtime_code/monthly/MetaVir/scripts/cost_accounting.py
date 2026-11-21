@@ -19,6 +19,8 @@ from typing import Any, Iterable
 
 
 MODEL_RATES_USD_PER_MILLION: dict[str, dict[str, float]] = {
+    "gpt-6-luna": {"input": 0.10, "cached_input": 0.01, "output": 0.50},
+    "gpt-6.1-sol": {"input": 2.00, "cached_input": 0.10, "output": 10.00},
     "gpt-5.6-luna": {
         "input": 0.20,
         "cached_input": 0.02,
@@ -220,7 +222,7 @@ def render_cost_report(
 
     costs: dict[tuple[str, str], float] = {}
     for row in rows:
-        key = (row["exposure"], row["model"])
+        key = (row["exposure"], row["model"].rsplit("-", 1)[-1])
         costs[key] = costs.get(key, 0.0) + row["estimated_cost_usd"]
 
     timestamp = updated_at or datetime.now().astimezone().isoformat()
@@ -247,6 +249,8 @@ def render_cost_report(
         "Rates (USD per 1 million tokens)",
         "--------------------------------",
         "Model | Input | Cached input | Output",
+        "gpt-6-luna | $0.10 | $0.01 | $0.50",
+        "gpt-6.1-sol | $2.00 | $0.10 | $10.00",
         "gpt-5.6-luna | $0.20 | $0.02 | $1.20",
         "gpt-5.6-sol | $5.00 | $0.50 | $30.00",
         "",
@@ -255,18 +259,18 @@ def render_cost_report(
         "Exposure | Candidate this run | Luna | Sol | Total",
     ]
     for exposure in exposures:
-        luna = costs.get((exposure, "gpt-5.6-luna"), 0.0)
-        sol = costs.get((exposure, "gpt-5.6-sol"), 0.0)
+        luna = costs.get((exposure, "luna"), 0.0)
+        sol = costs.get((exposure, "sol"), 0.0)
         lines.append(
             f"{exposure} | {'yes' if exposure in candidate_set else 'no'} | "
             f"{_fmt_usd(luna)} | {_fmt_usd(sol)} | {_fmt_usd(luna + sol)}"
         )
 
     total_luna = sum(
-        value for (exposure, model), value in costs.items() if model == "gpt-5.6-luna"
+        value for (exposure, model), value in costs.items() if model == "luna"
     )
     total_sol = sum(
-        value for (exposure, model), value in costs.items() if model == "gpt-5.6-sol"
+        value for (exposure, model), value in costs.items() if model == "sol"
     )
     lines.extend(
         [
@@ -317,7 +321,7 @@ def render_additional_exposure_cost_report(
     exposures = additional_configured_exposures(repo_root)
     costs: dict[tuple[str, str], float] = {}
     for row in rows:
-        key = (row["exposure"], row["model"])
+        key = (row["exposure"], row["model"].rsplit("-", 1)[-1])
         costs[key] = costs.get(key, 0.0) + row["estimated_cost_usd"]
     timestamp = updated_at or datetime.now().astimezone().isoformat()
     lines = [
@@ -328,8 +332,8 @@ def render_additional_exposure_cost_report(
         "Exposure | Luna | Sol | Total",
     ]
     for exposure in exposures:
-        luna = costs.get((exposure, "gpt-5.6-luna"), 0.0)
-        sol = costs.get((exposure, "gpt-5.6-sol"), 0.0)
+        luna = costs.get((exposure, "luna"), 0.0)
+        sol = costs.get((exposure, "sol"), 0.0)
         lines.append(
             f"{exposure} | {_fmt_usd(luna)} | {_fmt_usd(sol)} | "
             f"{_fmt_usd(luna + sol)}"

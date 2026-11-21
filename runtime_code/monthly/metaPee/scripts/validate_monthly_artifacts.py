@@ -22,9 +22,9 @@ from scripts import dual_screening as screening  # noqa: E402
 EXPECTED_PROTOCOL_VERSION = screening.SCREENING_PROTOCOL_VERSION
 EXPECTED_MODELS = {
     "chatgpt": {
-        "first": "gpt-5.6-luna",
-        "second": "gpt-5.6-sol",
-        "full_text": "gpt-5.6-luna",
+        "first": screening.CHATGPT_FIRST_MODEL,
+        "second": screening.CHATGPT_SECOND_MODEL,
+        "full_text": screening.CHATGPT_FULL_TEXT_MODEL,
     },
 }
 REQUIRED_REPORTS = (

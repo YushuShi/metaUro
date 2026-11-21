@@ -19,12 +19,13 @@ import subprocess
 import sys
 import tempfile
 
+from runtime_code.monthly.metaPee.automation import monthly_profile
 from automation.sync_sources import (SOURCES, allowed, assembled_source, bound,
     legacy_summary_artifact, load_overlay, read, sha, write, _check_rows)
 
 ROOT = Path(__file__).resolve().parents[1]
 VERSION = "metauro-autonomous-monthly-v1"
-MODELS = ("gpt-5.6-luna", "gpt-5.6-sol", "claude-opus-5", "gemini-3.7-flash", "gpt-6-astra", "gpt-6-luna", "gemini-3.8-flash")
+MODELS = tuple(dict.fromkeys(monthly_profile.MODELS.values()))
 CONFIG = "automation/autonomous_monthly_config.json"
 
 
@@ -33,6 +34,7 @@ def environment(environ=None):
     for name in ("NCBI_EMAIL", "NCBI_API_KEY", "CORNELL_API_KEY", "CORNELL_API_BASE_URL", "API_BASE_URI"):
         env[name] = str(env.get(name) or "").strip()
     env["CORNELL_API_BASE_URL"] = env["CORNELL_API_BASE_URL"] or env["API_BASE_URI"]
+    env[monthly_profile.ENV] = monthly_profile.PROFILE
     env.update(MONTHLY_REQUIRE_VALID_NCBI_KEY="false", MONTHLY_AUTOMATION_REQUIRE_GATE="true",
                MPLBACKEND="Agg", PYTHONDONTWRITEBYTECODE="1", PYTHONUNBUFFERED="1")
     return env
@@ -86,6 +88,7 @@ def preflight(root=ROOT, *, gateway=False, environ=None, today=None):
               "missing_secret_names": missing, "optional_ncbi_api_key": True,
               "runtime_sha256": sha(root / "runtime_code/monthly/manifest.json"),
               "runtime_files": len(manifest["files"]), "external_repository_dependencies": [],
+              "screening_profile": monthly_profile.specification(),
               "models": list(MODELS), "window": window(root, today), "model_requests": 0}
     if gateway and not missing:
         from openai import OpenAI
@@ -221,6 +224,7 @@ def prepare(root=ROOT, *, today=None):
     current_index = read(root / "updates/manifest.json", {"schema_version": 1, "sources": {}})
     pinned = read(audit / "input.json", {})
     inputs = {"version": VERSION, "runtime_sha256": check["runtime_sha256"],
+              "screening_profile": check["screening_profile"],
               "overlay_index": current_index, "window": span}
     if pinned and pinned != inputs:
         raise ValueError("Interrupted run inputs changed; retain receipts and review before resuming")
@@ -513,8 +517,21 @@ import an analysis engine, make requests, or perform pooling/review work.
         parallel = native.get('independent_review', {})
         artifacts = parallel.get('artifact_sha256', {})
         status = {key:value for key,value in parallel.items() if key != 'artifact_sha256'}
+        profile = receipt.get('screening_profile')
+        if profile != parallel.get('screening_profile'):
+            raise ValueError('Scope and independent review screening profiles disagree')
+        if profile is None:
+            expected_independent = {'r2': 'claude-opus-5', 'r3': 'gemini-3.7-flash'}
+        else:
+            if profile != monthly_profile.specification():
+                raise ValueError('Unrecognized monthly screening profile')
+            models = monthly_profile.MODELS
+            expected_independent = {'r2': models['opus'], 'r3': models['gemini']}
+            expected_primary = {'first': models['r1'], 'second': models['sol'], 'full_text': models['luna']}
+            if read(screening/'final_screening.json').get('screening_models') != expected_primary:
+                raise ValueError('Primary screening models differ from the pinned monthly profile')
         if (parallel.get('complete') is not True
-                or parallel.get('models') != {'r2':'claude-opus-5', 'r3':'gemini-3.7-flash'}
+                or parallel.get('models') != expected_independent
                 or status != receipt.get('independent_review')
                 or 'monthly_parallel/monthly_status.json' not in artifacts):
             raise ValueError('Independent review status or inventory mismatch')

@@ -114,13 +114,16 @@ def main(argv=None):
     parser.add_argument('--start-date', required=True)
     parser.add_argument('--end-date', required=True)
     args = parser.parse_args(argv)
-    from automation import monthly_pipeline as pipeline
+    from automation import monthly_pipeline as pipeline, monthly_profile
+    if not monthly_profile.enabled():
+        raise ValueError("Autonomous worker requires the active monthly screening profile")
     from automation.autonomous_projection import refresh_ui
     configure_stage_order(pipeline)
     configure_native_runtime()
     root = Path.cwd().resolve()
     config = pipeline.load_config(root, 'automation/monthly_config.json')
     config['repository'] = args.scope
+    config['screening_profile'] = monthly_profile.specification()
     # The parent pins the complete window and runtime; native immutable packets
     # provide exact request-level resume without loading historical R1 lineages.
     from datetime import date, timedelta
@@ -154,15 +157,19 @@ def main(argv=None):
     from automation.preprint_recovery_bridge import capture_scope_recovery
     preprint_recovery = capture_scope_recovery(root, run, result.get('preprint_recovery'))
     parallel = pipeline.read_json(run/'monthly_parallel/monthly_status.json')
-    if parallel.get('complete') is not True or parallel.get('models') != {'r2':'claude-opus-5','r3':'gemini-3.7-flash'}:
+    models = monthly_profile.MODELS
+    if (parallel.get('complete') is not True
+            or parallel.get('models') != {'r2': models['opus'], 'r3': models['gemini']}
+            or parallel.get('screening_profile') != monthly_profile.specification()):
         raise RuntimeError('Independent Claude/Gemini review did not complete')
     review = result['review']
     exported_queue = export_review_queue(root, run, result)
     pending = set(review['blocked_context_ids']) | {row['context_id'] for row in result['ui_refresh'].get('projection_holds', [])}
     receipt = {'repository': 'metaUro', 'source_scope': args.scope, 'status': 'validated',
                'run_id': result['run_id'], 'start_date': args.start_date, 'end_date': args.end_date,
-               'models': {'primary': ['gpt-5.6-luna','gpt-5.6-sol','gpt-5.6-luna'],
-                          'validation': ['shared verified R1','claude-opus-5','gemini-3.7-flash']},
+               'screening_profile': monthly_profile.specification(),
+               'models': {'primary': [models['r1'], models['sol'], models['luna']],
+                          'validation': ['shared verified R1', models['opus'], models['gemini']]},
                'raw_packet_sha256': pipeline.packet_hashes(run),
                'independent_review': parallel,
                'preprint_recovery': preprint_recovery,

@@ -41,6 +41,7 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(REPO_ROOT))
 
 from scripts import audit_blocked_pmc_sources  # noqa: E402
+from automation import monthly_profile
 from scripts import dual_screening  # noqa: E402
 from scripts import monthly_evidence_update  # noqa: E402
 
@@ -50,8 +51,8 @@ OUTPUT_DIR = DATA_DIR / "claude_gemini_screening" / "all_history_through_2026-08
 COST_PATH = REPO_ROOT / "ClaudeGeminiCost.txt"
 AUTHORIZED_CREDENTIAL_FILE = REPO_ROOT / "mykey.env"
 
-CLAUDE_R2_MODEL = "claude-opus-5"
-GEMINI_R3_MODEL = "gemini-3.7-flash"
+CLAUDE_R2_MODEL = monthly_profile.MODELS["opus"] if monthly_profile.enabled() else "claude-opus-5"
+GEMINI_R3_MODEL = monthly_profile.MODELS["gemini"] if monthly_profile.enabled() else "gemini-3.7-flash"
 PROTOCOL_VERSION = "metavir-claude-gemini-parallel-v1"
 PUBLICATION_DATE_END = "2026-08-29"
 R2_MAX_CONTEXTS_PER_UNIT = 12
@@ -964,6 +965,7 @@ def _work_unit_key(stage: str, context_ids: Iterable[str], source_sha256: str = 
     return stable_digest(
         {
             "protocol": PROTOCOL_VERSION,
+            **({"screening_profile": monthly_profile.specification()} if monthly_profile.enabled() else {}),
             "stage": stage,
             "context_ids": sorted(context_ids),
             "source_sha256": source_sha256,
@@ -1341,6 +1343,11 @@ def _call_gateway_json(
     last_feedback = ""
     for path in existing_paths:
         cached = load_json(path, {})
+        if cached.get("validation_status") in {"valid", "received", "invalid"}:
+            if requested := monthly_profile.requested_effort(model):
+                if cached.get("model_requested") != model or cached.get("reasoning_effort_requested") != requested:
+                    raise ValueError("Cached model request differs from the current monthly profile")
+                monthly_profile.verify_reported(model, cached.get("model_reported"), cached.get("reasoning_effort_reported"))
         if (
             force_fresh_cached_adjudication
             and cached.get("validation_contract_version")
@@ -1433,6 +1440,7 @@ def _call_gateway_json(
             {
                 "stage": stage,
                 "model": model,
+                **monthly_profile.request_options(model),
                 "api_style": "chat_completions",
                 "system": system,
                 "input": contracted_prompt,
@@ -1449,6 +1457,7 @@ def _call_gateway_json(
             if raw_api is not None:
                 raw_response = raw_api.create(
                     model=model,
+                    **monthly_profile.request_options(model),
                     messages=[
                         {"role": "system", "content": system},
                         {"role": "user", "content": contracted_prompt},
@@ -1460,6 +1469,7 @@ def _call_gateway_json(
             else:  # pragma: no cover - compatibility with older OpenAI clients
                 response = completions.create(
                     model=model,
+                    **monthly_profile.request_options(model),
                     messages=[
                         {"role": "system", "content": system},
                         {"role": "user", "content": contracted_prompt},
@@ -1485,6 +1495,7 @@ def _call_gateway_json(
                     "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
                     "response_format_omitted": True,
                     "model_requested": model,
+                    **({"reasoning_effort_requested": effort} if (effort := monthly_profile.requested_effort(model)) else {}),
                     "model_reported": "",
                     "work_unit_key": base_unit_key,
                     "attempt": attempt,
@@ -1548,7 +1559,9 @@ def _call_gateway_json(
             "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
             "response_format_omitted": True,
             "model_requested": model,
+            **({"reasoning_effort_requested": effort} if (effort := monthly_profile.requested_effort(model)) else {}),
             "model_reported": str(getattr(response, "model", "") or ""),
+            **({"reasoning_effort_reported": monthly_profile.reported_effort(response)} if effort else {}),
             "work_unit_key": base_unit_key,
             "attempt": attempt,
             "context_ids": sorted(context_ids),
@@ -1587,6 +1600,7 @@ def _call_gateway_json(
             _write_cost_files(output_dir)
         normalization_events = []
         try:
+            monthly_profile.verify_reported(model, receipt["model_reported"], receipt.get("reasoning_effort_reported"))
             payload, normalization_events = parse_and_normalize_output_text(
                 output_text
             )
@@ -1609,6 +1623,8 @@ def _call_gateway_json(
                     validation_error=safe_error(exc),
                 )
                 _write_cost_files(output_dir)
+            if isinstance(exc, monthly_profile.ResponsePolicyMismatch):
+                raise
             last_feedback = safe_error(exc)
             continue
         _transition_cached_validation(
@@ -2244,6 +2260,7 @@ def _recover_interrupted_active_dispatch(output_dir: Path) -> int:
                 "schema_transport": "prompt_embedded_schema_with_strict_local_validation",
                 "response_format_omitted": True,
                 "model_requested": model,
+                **({"reasoning_effort_requested": effort} if (effort := monthly_profile.requested_effort(model)) else {}),
                 "model_reported": "",
                 "work_unit_key": work_unit_key,
                 "attempt": None,

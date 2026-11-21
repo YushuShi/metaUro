@@ -18,6 +18,8 @@ import sys
 from datetime import date, datetime, timedelta, timezone
 from typing import Any, Callable
 
+from automation import monthly_profile
+
 VERSION = "monthly-incremental-v1"
 STAGES = ("discover", "first-screen", "second-screen", "full-text", "finalize", "report")
 STATE_PATH = "data/monthly_automation/state.json"
@@ -267,7 +269,7 @@ def preflight(root: Path, config: dict[str, Any], *, environ: dict[str, str] | N
     for commands in (config.get("ui_commands", []), config["validation_commands"]):
         for command in commands:
             render_command(command, root, window, run_dir, reports_dir)
-    return {"repository": config["repository"], "window": window, "ready": not missing and not problems, "missing_secret_names": missing, "problems": problems, "network_calls": 0, "preprint_recovery_models": ["gpt-6-luna", "gemini-3.8-flash", "gpt-6-astra"]}
+    return {"repository": config["repository"], "window": window, "ready": not missing and not problems, "missing_secret_names": missing, "problems": problems, "network_calls": 0, "preprint_recovery_models": [monthly_profile.MODELS[role] for role in ("luna", "gemini", "adjudicator")]}
 
 
 def default_runner(argv: list[str], cwd: Path, env: dict[str, str]) -> None:

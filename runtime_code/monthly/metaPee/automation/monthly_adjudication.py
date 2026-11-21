@@ -19,7 +19,9 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Callable
 
-MODEL = "gpt-6-astra"
+from automation import monthly_profile
+
+MODEL = monthly_profile.MODELS["adjudicator"]
 VERSION = "monthly-astra-review-v1"
 HUMAN_FIELDS = ("human_decision", "reviewer", "comment")
 CLAIM_FIELDS = ("effect_size", "effect_type", "ci_lower", "ci_upper", "total_n", "cases",
@@ -284,13 +286,18 @@ def preflight(client=None) -> dict:
 def cornell_transport(request: dict) -> dict:
     response = _client().responses.create(model=MODEL, instructions=INSTRUCTIONS,
         input=json.dumps(request["input"], ensure_ascii=False), store=False,
+        **monthly_profile.request_options(MODEL, responses=True),
         text={"format": {"type": "json_schema", "name": "monthly_astra_adjudication", "strict": True, "schema": RESULT_SCHEMA}})
-    return {"result": json.loads(response.output_text), "model": response.model, "response_id": response.id,
+    reported = getattr(getattr(response, "reasoning", None), "effort", None)
+    return {**({"reasoning_effort_reported": reported} if "reasoning_effort" in request else {}),
+            "result": json.loads(response.output_text), "model": response.model, "response_id": response.id,
             "usage": response.usage.model_dump() if response.usage else {}}
 
 
 def _validate_response(response: dict, request: dict) -> tuple[dict, dict]:
     envelope = response if "result" in response else {"result": response, "model": MODEL}
+    if request.get("reasoning_effort") and envelope.get("reasoning_effort_reported") not in (None, request["reasoning_effort"]):
+        raise ValueError("Gateway returned a different Astra reasoning effort")
     if envelope.get("model") != MODEL:
         raise ValueError("Adjudication response came from a different model")
     result = envelope.get("result")
@@ -343,6 +350,7 @@ def adjudicate_run(run_dir: Path, reports_dir: Path, transport: Callable | None 
     prepared = []
     for dispute in disputes:
         request = {"version": VERSION, "model": MODEL, "instructions": INSTRUCTIONS,
+                   **({"reasoning_effort": effort} if (effort := monthly_profile.requested_effort(MODEL)) else {}),
                    "response_schema": RESULT_SCHEMA, "input": dispute}
         prepared.append({"request_digest": _digest(request), "request": request, "model": MODEL, "status": "prepared"})
     records = []
@@ -351,6 +359,7 @@ def adjudicate_run(run_dir: Path, reports_dir: Path, transport: Callable | None 
     checkpoint_review()
     for dispute in disputes:
         request = {"version": VERSION, "model": MODEL, "instructions": INSTRUCTIONS,
+                   **({"reasoning_effort": effort} if (effort := monthly_profile.requested_effort(MODEL)) else {}),
                    "response_schema": RESULT_SCHEMA, "input": dispute}
         sha = _digest(request)
         _write(output / "requests" / f"{sha}.json", request, immutable=True)

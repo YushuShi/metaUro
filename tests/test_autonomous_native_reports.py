@@ -42,3 +42,18 @@ def test_isolated_monthly_model_requests(scope, tmp_path):
     env.update(PYTHONDONTWRITEBYTECODE="1", MPLCONFIGDIR=str(tmp_path / "mpl"))
     subprocess.run([sys.executable, str(ROOT / "tests/native_screening_profile_probe.py"), str(worker), str(tmp_path), json.dumps(expected)],
                    cwd=worker, env=env, check=True, timeout=60)
+
+@pytest.mark.parametrize("scope", ["metaPee", "MetaVir"])
+def test_worker_commands_from_outside_checkout(scope, tmp_path):
+    worker = ROOT / "runtime_code/monthly" / scope / "automation"
+    env = {key: value for key, value in os.environ.items()
+           if key not in {"PYTHONPATH", "CORNELL_API_KEY", "CORNELL_API_BASE_URL", "API_BASE_URI"}}
+    env["PYTHONDONTWRITEBYTECODE"] = "1"
+    for script in ("monthly_pipeline", "monthly_adjudication", "preprint_recovery/preprint_screening", "gateway_preflight"):
+        result = subprocess.run([sys.executable, str(worker / (script + ".py")), "--help"],
+                                cwd=tmp_path, env=env, capture_output=True, text=True, timeout=30)
+        if script == "gateway_preflight":
+            # This command has no argument parser. Missing credentials prevent network access.
+            assert result.returncode == 1 and "credentials are missing" in result.stdout, result.stderr
+        else:
+            assert result.returncode == 0 and "usage:" in result.stdout, result.stderr

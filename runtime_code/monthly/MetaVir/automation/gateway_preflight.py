@@ -1,8 +1,12 @@
 """Check exact required model availability without leaking credential values."""
 import json
 import os
+import sys
 from pathlib import Path
 from openai import OpenAI
+if __name__ == "__main__" and not __package__:
+    sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from automation import monthly_profile
 
 MODELS=('gpt-5.6-luna','gpt-5.6-sol','claude-opus-5','gemini-3.7-flash','gpt-6-astra')
